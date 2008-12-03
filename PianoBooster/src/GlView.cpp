@@ -247,8 +247,10 @@ void CGLView::init()
 
     setFocusPolicy(Qt::ClickFocus);
     //m_timer->start(5); // todo increase the tick time for Midi handling
-    m_timer.start(12, this );
-    m_realtime.start();
+    //m_timer.start(12, this );
+    //m_realtime.start();
+
+    startMediaTimer(12, this );
 
 }
 
@@ -277,4 +279,24 @@ m_fullRedrawFlag = true; //fixme
     {
         QWidget::timerEvent(event);
     }
+}
+
+void CGLView::mediaTimerEvent(int deltaTime)
+{
+    int eventBits;
+    eventBits = m_song->task(deltaTime);
+
+    m_fullRedrawFlag = false;
+    if (eventBits != 0)
+    {
+        if ((eventBits & EVENT_BITS_forceFullRredraw) != 0)
+            m_fullRedrawFlag = true;
+        m_qtWindow->songEventUpdated(eventBits);
+    }
+#ifdef _WIN32
+m_fullRedrawFlag = true; //fixme
+#endif
+    // if m_fullRedrawFlag is true it will redraw the eniter GL window
+    glDraw();
+    m_fullRedrawFlag = true;
 }

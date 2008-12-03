@@ -13,9 +13,9 @@ ENDIF(WIN32)
 PROJECT( pianobooster )
 
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
-    Chord.cpp rtmidi/RtMidi.cpp)
+    Chord.cpp rtmidi/RtMidi.cpp rtmidi/RtTimer.cpp)
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
-    MidiDevice.h Chord.h tmidi/RtMidi.h)
+    MidiDevice.h Chord.h rtmidi/RtMidi.h rtmidi/RtTimer.h)
 
 IF(WIN32)
     SET(PB_BASE_SRCS ${PB_BASE_SRCS} MidiDevice.cpp)

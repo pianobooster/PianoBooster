@@ -29,7 +29,7 @@
 
 #include "GuiMidiSetupDialog.h"
 
-#include "rtmidi/RtMidi.h"
+#include "rtmidi/RtTimer.h"
 
 GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     : QDialog(parent)

@@ -50,11 +50,6 @@ CMidiDevice::~CMidiDevice()
 
 void CMidiDevice::init()
 {
-    //m_outPort = 1;
-
-    //m_midiout->openPort( m_outPort );
-    //m_inPort = 1;
-    //m_midiin->openPort( m_inPort );
 }
 
 // dev = 0 for midi input, dev = 1 for output
@@ -196,9 +191,6 @@ int CMidiDevice::checkMidiInput()
     return m_inputMessage.size();
 }
 
-void sendGSModeEnter()
-{
-}
 // reads the real midi event
 CMidiEvent CMidiDevice::readMidiInput()
 {

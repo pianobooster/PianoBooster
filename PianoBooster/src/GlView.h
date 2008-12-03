@@ -6,10 +6,11 @@
 #include <QGLWidget>
 #include "Song.h"
 #include "Score.h"
+#include "rtmidi/RtTimer.h"
 
 class Window;
 
-class CGLView : public QGLWidget
+class CGLView : public QGLWidget, RtTimer
 {
     Q_OBJECT
 
@@ -25,6 +26,8 @@ public:
 
 protected:
     void timerEvent(QTimerEvent *event);
+    void mediaTimerEvent(int deltaTime);
+
     void initializeGL();
     void paintGL();
     void resizeGL(int width, int height);

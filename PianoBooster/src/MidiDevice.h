@@ -36,7 +36,7 @@
 
 #include "MidiEvent.h"
 
-#include "rtmidi/RtMidi.h"
+#include "rtmidi/RtTimer.h"
 
 class CMidiDevice
 {
@@ -61,7 +61,7 @@ private:
     int m_midiPorts[2];      // select which MIDI output port to open
     std::vector<unsigned char> m_inputMessage;
     unsigned char savedRawBytes[40]; // Raw data is used for used for a SYSTEM_EVENT
-    unsigned int rawDataIndex; 
+    unsigned int rawDataIndex;
 };
 
 #endif //__MIDI_DEVICE_H__
