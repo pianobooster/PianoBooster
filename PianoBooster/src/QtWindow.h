@@ -100,7 +100,7 @@ protected:
 
 private:
     void decodeCommandLine();
-
+    void displayUsage();
     void createActions();
     void createMenus();
     void createToolBars();

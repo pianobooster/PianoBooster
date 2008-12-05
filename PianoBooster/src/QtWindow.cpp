@@ -103,18 +103,49 @@ Window::~Window()
 {
     delete m_settings;
 }
+///////////////////////////////////////////////////////////////////////////////
+//! @brief               Displays the usage
+void Window::displayUsage()
+{
+    fprintf(stderr, "Usage: pianobooster [flags]\n");
+    fprintf(stderr, "       -d: Increase the debug level\n");
+    fprintf(stderr, "       -s: Small screen display\n");
+    fprintf(stderr, "       -q: Quick start\n");
+    fprintf(stderr, "       -h: --help: Displays this help message\n");
+    fprintf(stderr, "       -v: Displays version number and then exits\n");
+}
 
 void Window::decodeCommandLine()
 {
     QStringList argList = QCoreApplication::arguments();
     for (int i = 0; i < argList.size(); ++i)
     {
-        if (argList.at(i).startsWith("-d"))
-            Cfg::debugLevel++;
-        if (argList.at(i).startsWith("-s"))
-            CStavePos::setStaveCentralOffset(60);
-        if (argList.at(i).startsWith("-q"))
-            Cfg::quickStart = true;
+        if (argList.at(i).startsWith("-"))
+        {
+            if (argList.at(i).startsWith("-d"))
+                Cfg::debugLevel++;
+            else if (argList.at(i).startsWith("-s"))
+                CStavePos::setStaveCentralOffset(60);
+            else if (argList.at(i).startsWith("-q"))
+                Cfg::quickStart = true;
+            else if (argList.at(i).startsWith("-h") || argList.at(i).startsWith("-?") ||argList.at(i).startsWith("--help"))
+            {
+                displayUsage();
+                exit(0);
+            }
+            else if (argList.at(i).startsWith("-v"))
+            {
+                fprintf(stderr, "pianobooster Version " PB_VERSION"\n");
+                exit(0);
+            }
+            else
+            {
+                fprintf(stderr, "ERROR: Unknown arguments \n");
+                displayUsage();
+                exit(0);
+            }
+        }
+
     }
 }
 
@@ -190,7 +221,7 @@ void Window::about()
 {
    QMessageBox::about(this, tr("About"),
             tr(
-                "<b>PainoBooster - Version " PP_VERSION "</b> <br><br>"
+                "<b>PainoBooster - Version " PB_VERSION "</b> <br><br>"
                 "A fun way of <b>Boosting</b> your <b>Piano</b> playing skills!<br><br>"
                 "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
                 "Copyright(c) L. J. Barman, 2008; All rights reserved.<br><br>"

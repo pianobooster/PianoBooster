@@ -2,7 +2,7 @@
 /*!
 @file           Draw.h
 
-@brief          The Design.
+@brief          .
 
 @author         L. J. Barman
 

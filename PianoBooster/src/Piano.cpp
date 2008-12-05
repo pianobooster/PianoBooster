@@ -2,7 +2,7 @@
 /*!
 @file           Piano.cpp
 
-@brief          The Design.
+@brief          xxx.
 
 @author         L. J. Barman
 
