@@ -49,6 +49,8 @@ CGLView::CGLView(Window *parent)
 
     m_song = new CSong();
     m_score = new CScore();
+    m_midiTicks = 0;
+    m_scrollTicks = 0;
 }
 
 CGLView::~CGLView()
@@ -88,6 +90,9 @@ void CGLView::paintGL()
     m_score->drawScore(m_fullRedrawFlag);
     if (m_fullRedrawFlag)
         drawTimeSignature();
+
+    m_scrollTicks = 0;
+    m_midiTicks += m_realtime.restart();
 }
 
 void CGLView::drawTimeSignature()
@@ -199,9 +204,17 @@ void CGLView::resizeGL(int width, int height)
 
     int space = height - (heightAboveStave + heightBelowStave + minTitleHeight + minStaveGap);
     //m_titleHeight = qBound(minTitleHeight, minTitleHeight + space/2, 70);
-    m_titleHeight = 60;
     // staveGap = qBound(minStaveGap, minStaveGap+ space/2, static_cast<int>(CStavePos::staveHeight() * 3));
-    staveGap = static_cast<int>(CStavePos::staveHeight() * 3);
+    if (Cfg::smallScreen)
+    {
+        staveGap = minStaveGap;
+        m_titleHeight = minTitleHeight;
+    }
+    else
+    {
+        staveGap = static_cast<int>(CStavePos::staveHeight() * 3);
+        m_titleHeight = 60;
+    }
     maxSoreHeight = heightAboveStave + heightBelowStave + staveGap + m_titleHeight;
     int sizeX = qMin(width, maxSoreWidth);
     int sizeY = qMin(height, maxSoreHeight);
@@ -274,10 +287,10 @@ void CGLView::init()
 
     setFocusPolicy(Qt::ClickFocus);
     //m_timer->start(5); // todo increase the tick time for Midi handling
-    //m_timer.start(12, this );
-    //m_realtime.start();
+    m_timer.start(5, this ); // was 5
+    m_realtime.start();
 
-    startMediaTimer(12, this );
+    //startMediaTimer(12, this );
 
 }
 
@@ -286,7 +299,13 @@ void CGLView::timerEvent(QTimerEvent *event)
     int eventBits;
     if (event->timerId() == m_timer.timerId())
     {
-        eventBits = m_song->task(m_realtime.restart());
+        int ticks;
+        ticks = m_realtime.restart();
+        m_midiTicks += ticks;
+        m_scrollTicks += ticks;
+        eventBits = m_song->task(m_midiTicks);
+        //if (m_midiTicks >= 20) ppTrace("m_midiTicks = %d", m_midiTicks); //fixme
+        m_midiTicks = 0;
 
         m_fullRedrawFlag = false;
         if (eventBits != 0)
@@ -299,7 +318,8 @@ void CGLView::timerEvent(QTimerEvent *event)
 m_fullRedrawFlag = true; //fixme
 #endif
         // if m_fullRedrawFlag is true it will redraw the eniter GL window
-        glDraw();
+        //if (m_scrollTicks>= 12)
+            glDraw();
         m_fullRedrawFlag = true;
     }
     else
@@ -310,6 +330,7 @@ m_fullRedrawFlag = true; //fixme
 
 void CGLView::mediaTimerEvent(int deltaTime)
 {
+/*
     int eventBits;
     eventBits = m_song->task(deltaTime);
 
@@ -326,4 +347,5 @@ m_fullRedrawFlag = true; //fixme
     // if m_fullRedrawFlag is true it will redraw the eniter GL window
     glDraw();
     m_fullRedrawFlag = true;
+*/
 }

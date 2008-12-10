@@ -80,6 +80,8 @@ void CMidiFile::openMidiFile(string filename)
 {
     if (m_file.is_open())
         m_file.close();
+    m_file.clear();  // clear any errors
+
     m_file.open(filename.c_str(), ios_base::in | ios_base::binary);
     if (m_file.fail() == true)
     {

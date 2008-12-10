@@ -34,7 +34,7 @@
 
 float Cfg::m_staveEndX;
 int Cfg::debugLevel;
-bool Cfg::smallScreen = true;
+bool Cfg::smallScreen = false;
 bool Cfg::quickStart = false;
 int Cfg::m_appX;
 int Cfg::m_appY;

@@ -76,7 +76,7 @@ SET( PIANOBOOSTER_RCS
 )
 
 # enable warnings
-ADD_DEFINITIONS( -Wall )
+ADD_DEFINITIONS( -Wall)
 
 # by default only QtCore and QtGui modules are enabled
 # other modules must be enabled like this:
@@ -110,7 +110,9 @@ ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS} ${PIANOBOOSTER_MOC_SRCS}
     ${PIANOBOOSTER_UI_HDRS}
 )
 
-SET_TARGET_PROPERTIES(pianobooster PROPERTIES COMPILE_FLAGS -DHAS_SCORE=1)
+SET_TARGET_PROPERTIES(pianobooster PROPERTIES COMPILE_FLAGS "-DHAS_SCORE=1 -Wall")
+SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
+
 
 # last thing we have to do is to tell CMake what libraries our executable needs,
 # luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:

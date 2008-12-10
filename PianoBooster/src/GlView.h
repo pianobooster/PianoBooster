@@ -71,6 +71,8 @@ private:
     CScore* m_score;
     QBasicTimer m_timer;
     QTime m_realtime;
+    int m_midiTicks;
+    int m_scrollTicks;
     CRating* m_rating;
     QFont m_timeSigFont;
     QFont m_timeRatingFont;

@@ -125,7 +125,7 @@ void Window::decodeCommandLine()
             if (argList.at(i).startsWith("-d"))
                 Cfg::debugLevel++;
             else if (argList.at(i).startsWith("-s"))
-                CStavePos::setStaveCentralOffset(60);
+                Cfg::smallScreen = true;
             else if (argList.at(i).startsWith("-q"))
                 Cfg::quickStart = true;
             else if (argList.at(i).startsWith("-h") || argList.at(i).startsWith("-?") ||argList.at(i).startsWith("--help"))
