@@ -111,7 +111,7 @@ private:
     int m_head;
     int m_tail;
 
-    // this should be atomic operation when two dfferent threads are at each end of the queue
+    // this should be atomic operation when two different threads are at each end of the queue
     volatile int m_count;
 };
 

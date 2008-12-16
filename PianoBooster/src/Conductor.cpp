@@ -731,7 +731,7 @@ void CConductor::rewind()
     m_currentTimeSigTop = m_startTimeSigTop;
     m_currentTimeSigBottom = m_startTimeSigBottom;
 
-    m_goodPlayedNotes.clear();  // The good notes the pianest plays
+    m_goodPlayedNotes.clear();  // The good notes the pianist plays
     m_goodNoteLines.clear();
     m_badNoteLines.clear();
     resetWantedChord();

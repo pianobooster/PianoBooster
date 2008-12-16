@@ -2,7 +2,7 @@
 /*!
 @file           Conductor.h
 
-@brief          The realtime midi engine. Send notes to the midi device and reponds to the midi keyboard.
+@brief          The realtime midi engine. Send notes to the midi device and responds to the midi keyboard.
 
 @author         L. J. Barman
 
@@ -74,7 +74,7 @@ public:
     //! first check if there is space to add a midi event
     int midiEventSpace();
 
-    //! add a chord to be played by the pianest
+    //! add a chord to be played by the pianist
     void chordEventInsert(CChord chord) {m_wantedChordQueue->push(chord);}
 
     //! first check if there is space to add a chord event
@@ -237,8 +237,8 @@ private:
     int m_silenceTimeOut; // used to create silence if the student stops for toooo long
     CChord m_wantedChord;  // The chord the pianist needs to play
     CChord m_savedwantedChord; // A copy of the wanted chord complete with both left and right parts
-    CChord m_goodPlayedNotes;  // The good notes the pianest plays
-    CChord m_goodNoteLines; // The coloured note lines that appear on the score when the pianest plays
+    CChord m_goodPlayedNotes;  // The good notes the pianist plays
+    CChord m_goodNoteLines; // The coloured note lines that appear on the score when the pianist plays
     CChord m_badNoteLines;
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef
     int m_lastSound;

@@ -44,7 +44,7 @@ public:
     CMidiDevice();
     ~CMidiDevice();
     void init();
-    //! add a midi event to be played imidiataly
+    //! add a midi event to be played immediately
     void playMidiEvent(CMidiEvent event);
     int checkMidiInput();
     CMidiEvent readMidiInput();

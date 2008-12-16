@@ -2,7 +2,7 @@
 /*!
 @file           Chord.h
 
-@brief          Find the all the chords in a piece of muisic.
+@brief          Find the all the chords in a piece of music.
 
 @author         L. J. Barman
 
@@ -140,7 +140,7 @@ public:
     }
 
     static void setPianoRange(int lowestNote, int highestNote ){
-        m_cfg_highestPianoNote = highestNote; // The highest note on the users piano keboard;
+        m_cfg_highestPianoNote = highestNote; // The highest note on the users piano keyboard;
         m_cfg_lowestPianoNote = lowestNote;
     }
 
