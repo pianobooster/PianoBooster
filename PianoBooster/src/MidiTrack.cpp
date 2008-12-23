@@ -148,7 +148,7 @@ void  CMidiTrack::ignoreSysexEvent(byte_t data)
 
     if (data >= 127)
     {
-        // this could be a varible length word
+        // this could be a variable length word
         ppLog("SysexEvent, is too long %d", data);
         errorFail(SMF_CORRUPTED_MIDI_FILE);
         return;
@@ -328,8 +328,8 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
 {
     switch ( status )
     {
-    case MIDI_SYSEXEVENT:    /* System exclusive Transmited */
-    case 0xf7:  /* System exclusive Not transmited */
+    case MIDI_SYSEXEVENT:    /* System exclusive Transmitted */
+    case 0xf7:  /* System exclusive Not transmitted */
         ppDEBUG_TRACK((2,"SYSEXEVENT xx"));
         //read_sysex_event(); // FIXME was
         ignoreSysexEvent(data1);

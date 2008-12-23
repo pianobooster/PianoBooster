@@ -35,6 +35,7 @@
 #include "Util.h"
 #include "Chord.h"
 #include "Rating.h"
+#include "Tempo.h"
 
 #if HAS_SCORE
 class CScore;
@@ -88,16 +89,8 @@ public:
     bool playingMusic() {return m_playing;}
 
 
-    float getSpeed() {return m_userSpeed;}
-    void setSpeed(float speed)
-    {
-        // limit the allowed speed
-        if (speed > 2.0f)
-            speed = 2.0f;
-        if (speed < 0.1f)
-            speed = 0.1f;
-        m_userSpeed = speed;
-    }
+    float getSpeed() {return m_tempo.getSpeed();}
+    void setSpeed(float speed) { m_tempo.setSpeed(speed); }
     void muteChannel(int channel, bool state);
     void mutePart(int channel, bool state);
     void transpose(int transpose);
@@ -147,7 +140,7 @@ public:
     }
     CRating* getRating(){return &m_rating;}
 
-    // You MUST clear the time sig to 0 first before setting an new start tim Sig
+    // You MUST clear the time sig to 0 first before setting an new start time Sig
     void setStartTimeSig(int top, int bottom) {
         if (top == 0 || m_startTimeSigTop == 0) {
             m_startTimeSigTop = top; m_startTimeSigBottom = bottom;
@@ -183,7 +176,7 @@ protected:
     bool validatePianistNote(CMidiEvent& inputNote);
     bool validatePianistChord();
 
-    void setEventBits(int bits) { m_realTimeEventBits |= bits; } // dont change the other bits
+    void setEventBits(int bits) { m_realTimeEventBits |= bits; } // don't change the other bits
 
 private:
     void allSoundOff();
@@ -227,13 +220,12 @@ private:
         return m_muteChannels[chan];
     }
 
-    float m_userSpeed; // controls the speed of the piece playing
-    float m_midiTempo; // controls the speed of the piece playing
+    CTempo m_tempo;
     int m_startTimeSigTop; // The time Sig at the start of the piece
     int m_startTimeSigBottom;
     int m_currentTimeSigTop; // The current time Sig at the start of the piece
     int m_currentTimeSigBottom;
-    int m_leadLagAdjust; // Sycronises the sound the the video
+    int m_leadLagAdjust; // Synchronise the sound the the video
     int m_silenceTimeOut; // used to create silence if the student stops for toooo long
     CChord m_wantedChord;  // The chord the pianist needs to play
     CChord m_savedwantedChord; // A copy of the wanted chord complete with both left and right parts

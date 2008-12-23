@@ -35,7 +35,7 @@
 
 #define CONVENTION_LEFT_HAND_CHANNEL (3-1)
 #define CONVENTION_RIGHT_HAND_CHANNEL (4-1)
-#define GM_PIANO_PATCH        0 // The defualt grand piano sound
+#define GM_PIANO_PATCH        0 // The default grand piano sound
 
 class CSong;
 class QListWidget;

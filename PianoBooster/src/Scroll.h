@@ -89,7 +89,7 @@ private:
     void removeSlots();
     int findWantedChord(int note, CColour colour, int wantedDelta);
 
-    int m_id;      // There are lots of these class running but each class has a uniq id
+    int m_id;      // There are lots of these class running but each class has a unique id
     CNotation *m_notation;
     int m_deltaHead;
     int m_deltaTail;

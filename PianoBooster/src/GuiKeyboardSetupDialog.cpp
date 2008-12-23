@@ -158,7 +158,7 @@ void GuiKeyboardSetupDialog::reject()
 {
     m_song->testWrongNoteSound(false);
     m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", 1).toInt() - 1,
-                                 m_settings->value("Keyboard/WrongSound", 24).toInt() - 1);
+                                 m_settings->value("Keyboard/WrongSound", 7).toInt() - 1);
 
     this->QDialog::reject();
 }

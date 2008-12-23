@@ -35,7 +35,7 @@ const staveLookup_t*  CStavePos::m_staveLookUpKey;
 float CStavePos::m_staveCentralOffset = (staveHeight() * 3)/2;
 
 ////////////////////////////////////////////////////////////////////////////////
-//! @brief Calculates the postion of a note on the stave
+//! @brief Calculates the position of a note on the stave
 void CStavePos::notePos(whichPart_t hand, int midiNote)
 {
     const int notesInAnOctive = 7; // Don't count middle C twice

@@ -61,7 +61,7 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth)
         glVertex2f (x - noteWidth/2 - 4, CStavePos(hand, index).getPosYRelative());
         glVertex2f (x + noteWidth/2 + 4, CStavePos(hand, index).getPosYRelative());
 
-        // Move the indexx closer to the stave center
+        // Move the index closer to the stave centre
         if (index > 0)
             index -= 2;
         else

@@ -34,7 +34,7 @@
 #include "MidiEvent.h"
 #include "MidiTrack.h"
 
-#define DEFAULT_PPQN        96      /* Standard value for pulse per quater note */
+#define DEFAULT_PPQN        96      /* Standard value for pulse per quarter note */
 
 using namespace std;
 #define MAX_TRACKS  40

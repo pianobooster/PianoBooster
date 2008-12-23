@@ -35,7 +35,7 @@
 #include <stdio.h>
 
 typedef  struct {
-    int pianoNote;   // 0 is Midle C, 1 is D
+    int pianoNote;   // 0 is Middle C, 1 is D
     int accidental;
 } staveLookup_t;
 
@@ -45,7 +45,7 @@ typedef  struct {
 //----------------------------------------------------------------------------
 // CStavePos
 //----------------------------------------------------------------------------
-//! @brief Calculates the postion on the stave from the stave index number.
+//! @brief Calculates the position on the stave from the stave index number.
 class CStavePos
 {
 public:
@@ -59,10 +59,10 @@ public:
     };
 
     ////////////////////////////////////////////////////////////////////////////////
-    //! @brief Contructs the Stave position object.
+    //! @brief Constructs the Stave position object.
     //! @param hand         the top (right hand) or the bottom the (left hand) see @ref whichPart_t.
     //! @param index        the save index number: 0 central line, 5 = top line, -5 the bottom line.
-    //! @param accidental   Incates an accidental 0 = none, 1=sharp, -1 =flat.
+    //! @param accidental   Indicates an accidental 0 = none, 1=sharp, -1 =flat.
     CStavePos(whichPart_t hand, int index, int accidental = 0)
     {
         m_staveIndex = index;
@@ -122,7 +122,7 @@ public:
 
 
 private:
-    // FIXME TODO This could be improved as the calulations could a done in the constructor
+    // FIXME TODO This could be improved as the calculations could a done in the constructor
     char m_staveIndex;    // 0 central line, 5 = top line, -5 the bottom line,
     int m_accidental;         // 0 = none, 1=sharp, -1 =flat, 2=natural
     float m_offsetY;

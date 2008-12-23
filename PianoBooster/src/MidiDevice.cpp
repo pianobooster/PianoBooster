@@ -114,7 +114,7 @@ bool CMidiDevice::openMidiPort(int dev, string portName)
 }
 
 
-//! add a midi event to be played imidiataly
+//! add a midi event to be played immediately
 void CMidiDevice::playMidiEvent(CMidiEvent event)
 {
     if (m_midiPorts[1] < 0)

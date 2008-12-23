@@ -93,6 +93,21 @@ private slots:
         keyboardSetup->exec();
     }
 
+    void toggleSidePanel()
+    {
+        m_sidePanel->setVisible(!m_sidePanel->isVisible());
+    }
+
+    void enableFollowTempo()
+    {
+        CTempo::enableFollowTempo(true);
+    }
+    void disableFollowTempo()
+    {
+        CTempo::enableFollowTempo(false);
+    }
+
+
 protected:
     void closeEvent(QCloseEvent *event);
     void keyPressEvent ( QKeyEvent * event );

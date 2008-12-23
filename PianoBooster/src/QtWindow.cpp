@@ -145,7 +145,6 @@ void Window::decodeCommandLine()
                 exit(0);
             }
         }
-
     }
 }
 
@@ -174,6 +173,21 @@ void Window::createActions()
     m_setupKeyboardAct->setShortcut(tr("Ctrl+K"));
     m_setupKeyboardAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
+
+    QAction* toggleSidePanelAct = new QAction(tr("&Show/Hide the side panel"), this);
+    toggleSidePanelAct->setShortcut(tr("F11"));
+    connect(toggleSidePanelAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
+    addAction(toggleSidePanelAct);
+
+    QAction* enableFollowTempoAct = new QAction(this);
+    enableFollowTempoAct->setShortcut(tr("Shift+F1"));
+    connect(enableFollowTempoAct, SIGNAL(triggered()), this, SLOT(enableFollowTempo()));
+    addAction(enableFollowTempoAct);
+
+    QAction* disableFollowTempoAct = new QAction(this);
+    disableFollowTempoAct->setShortcut(tr("Alt+F1"));
+    connect(disableFollowTempoAct, SIGNAL(triggered()), this, SLOT(disableFollowTempo()));
+    addAction(disableFollowTempoAct);
 }
 
 void Window::createMenus()
@@ -272,6 +286,9 @@ void Window::keyPressEvent ( QKeyEvent * event )
         return;
 
     if (event->isAutoRepeat() == true)
+        return;
+
+    if (event->key() == Qt::Key_F1)
         return;
 
     int c = event->text().toAscii().at(0);

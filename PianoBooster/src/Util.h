@@ -43,7 +43,7 @@ using namespace std;
 
 typedef unsigned char byte;
 
-#define arraySize(a) (sizeof(a)/sizeof(a[0]))     /* Returns (at compile time) the number of elelement in an array */
+#define arraySize(a) (sizeof(a)/sizeof(a[0]))     /* Returns (at compile time) the number of elements in an array */
 
 #define ppDEBUG(args)     ppDebug args
 
@@ -88,7 +88,7 @@ class Cfg2
 public:
     static const int playZoneEarly()     {return 25;} // 20 Was 25
     static const int playZoneLate()      {return 25;}
-    static const int silenceTimeOut()    {return 8000;} // the time in msec before everyting goes quiet
+    static const int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
     static const int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
 
 };

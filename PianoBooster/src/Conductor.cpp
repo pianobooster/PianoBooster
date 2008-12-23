@@ -181,7 +181,7 @@ int CConductor::calcBoostVolume(int channel, int volume)
             if (channel == CNote::rightHandChan() && CNote::getActiveHand() != PB_PART_left)
                 activePart = true;
         }
-        else // otherwise allways bost both hands
+        else // otherwise always boost both hands
         {
             if (channel == CNote::leftHandChan() || channel == CNote::rightHandChan())
                 activePart = true;
@@ -211,7 +211,7 @@ int CConductor::calcBoostVolume(int channel, int volume)
     return returnVolume;
 }
 
-/* send boost volume by adusting all channels */
+/* send boost volume by adjusting all channels */
 void CConductor::outputBoostVolume()
 {
     int chan;
@@ -384,7 +384,7 @@ void CConductor::fetchNextChord()
     }
     while (m_wantedChord.trimOutOfRangeNotes(m_transpose)==0);
 
-    // count the good notes so that the live precentage looks OK
+    // count the good notes so that the live percentage looks OK
     m_rating.totalNotes(m_wantedChord.length());
     setEventBits( EVENT_BITS_forceFullRredraw);
 
@@ -459,6 +459,9 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 #endif
             if (validatePianistChord() == true)
             {
+                if (m_chordDeltaTime < 0)
+                    m_tempo.removePlayingTicks(-m_chordDeltaTime);
+
                 m_goodPlayedNotes.clear();
                 fetchNextChord();
             }
@@ -553,7 +556,7 @@ void CConductor::outputSavedNotesOff()
         playTransposeEvent(m_savedNoteOffQueue->pop()); // Output the saved note off events
 }
 
-// untangle the sound incase there is any notes off just after we have stopped
+// untangle the sound in case there is any notes off just after we have stopped
 void CConductor::findImminentNotesOff()
 {
     int i;
@@ -595,13 +598,12 @@ void CConductor::realTimeEngine(int mSecTicks)
     int type;
     int ticks; // Midi ticks
 
-    //mSecTicks = 2; // for debuging only
+    //mSecTicks = 2; // for debugging only
 
-    ticks = static_cast<int>(mSecTicks * m_userSpeed * 100000000.0 /m_midiTempo);
+    ticks = m_tempo.mSecToTicks(mSecTicks);
 
     while (checkMidiInput() > 0)
         pianistInput(readMidiInput());
-
 
     if (getfollowState() == PB_FOLLOW_waiting )
     {
@@ -618,16 +620,19 @@ void CConductor::realTimeEngine(int mSecTicks)
 
         if (m_followPlayingTimeOut > 0)
         {
+            m_tempo.insertPlayingTicks(ticks);
+
             m_followPlayingTimeOut -= ticks;
             if (m_followPlayingTimeOut <= 0)
             {
+                m_tempo.clearPlayingTicks();
                 m_followPlayingTimeOut = 0;
                 m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
                 setEventBits( EVENT_BITS_forceFullRredraw);
 
                 missedNotesColour(Cfg::playedStoppedColour());
                 findImminentNotesOff();
-                // Don't keep any saved notes off  if there are no notes down
+                // Don't keep any saved notes off if there are no notes down
                 if (pianistNotesDown() == 0)
                     outputSavedNotesOff();
                 m_silenceTimeOut = Cfg2::silenceTimeOut();
@@ -640,6 +645,7 @@ void CConductor::realTimeEngine(int mSecTicks)
     if (m_playing == false)
         return;
 
+    m_tempo.adjustTempo(&ticks);
 
 #if HAS_SCORE
     m_scoreWin->scrollDeltaTime(ticks);
@@ -661,15 +667,12 @@ void CConductor::realTimeEngine(int mSecTicks)
         }
 
         if (type == MIDI_PB_tempo)
-        {
-            m_midiTempo = float (m_nextMidiEvent.data1()) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
-            ppDebug("Midi Tempo %f  %d", m_midiTempo, CMidiFile::getPulsesPerQuarterNote());
-        }
-        if (type == MIDI_PB_timeSignature)
+            m_tempo.setMidiTempo(m_nextMidiEvent.data1());
+        else if (type == MIDI_PB_timeSignature)
         {
             m_currentTimeSigTop = m_nextMidiEvent.data1();
             m_currentTimeSigBottom = m_nextMidiEvent.data2();
-            ppDebug("Midi Time Signature %f", m_midiTempo);
+            ppDebug("Midi Time Signature %d/%d", m_currentTimeSigTop,m_currentTimeSigBottom);
         }
         else if ( type != MIDI_NONE )   // this marks the end of the piece of music
         {
@@ -721,8 +724,9 @@ void CConductor::rewind()
     }
     m_lastSound = -1;
     m_rating.reset();
-    m_midiTempo = 1000000 * 120 / 60;// 120 beats per minute is the default
     m_playingDeltaTime = 0;
+    m_tempo.reset();
+
     m_songEventQueue->clear();
     m_savedNoteQueue->clear();
     m_savedNoteOffQueue->clear();
@@ -738,7 +742,7 @@ void CConductor::rewind()
 
     m_cfg_earlyNotesPoint = CMidiFile::ppqnAdjust(20); // was 10 playZoneEarly
     m_cfg_stopPoint = CMidiFile::ppqnAdjust(0); //was -3; // stop just after the beat
-    m_cfg_imminentNotesOffPoint = CMidiFile::ppqnAdjust(-15);  // look ahead and find an Notes off comming up
+    m_cfg_imminentNotesOffPoint = CMidiFile::ppqnAdjust(-15);  // look ahead and find an Notes off coming up
     // Annie song 25
 
     m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg2::playZoneEarly()); // when playing along
@@ -758,7 +762,7 @@ void CConductor::init()
     if (m_scoreWin)
         m_scoreWin->setInputChords(&m_goodNoteLines, &m_badNoteLines, &m_rating);
 #endif
-    setPianoSoundPatches(1-1, 24-1); // 6-1
+    setPianoSoundPatches(1-1, 7-1); // 6-1
 
     rewind();
 }

@@ -317,7 +317,7 @@ void CGLView::timerEvent(QTimerEvent *event)
 #ifdef _WIN32
 m_fullRedrawFlag = true; //fixme
 #endif
-        // if m_fullRedrawFlag is true it will redraw the eniter GL window
+        // if m_fullRedrawFlag is true it will redraw the entire GL window
         //if (m_scrollTicks>= 12)
             glDraw();
         m_fullRedrawFlag = true;
@@ -344,7 +344,7 @@ void CGLView::mediaTimerEvent(int deltaTime)
 #ifdef _WIN32
 m_fullRedrawFlag = true; //fixme
 #endif
-    // if m_fullRedrawFlag is true it will redraw the eniter GL window
+    // if m_fullRedrawFlag is true it will redraw the entire GL window
     glDraw();
     m_fullRedrawFlag = true;
 */

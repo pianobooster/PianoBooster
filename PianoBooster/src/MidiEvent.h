@@ -50,11 +50,11 @@
 #define MIDI_NONE                   0x0ff0
 #define MIDI_ERROR                  0x0ff1
 #define MIDI_PB_EOF                 0x0ff2
-#define MIDI_PB_chordSeperator      0x0ff3  // All the notes (note on) between these counts as one chord
+#define MIDI_PB_chordSeparator      0x0ff3  // All the notes (note on) between these counts as one chord
 #define MIDI_PB_tempo               0x0ff4
 #define MIDI_PB_timeSignature       0x0ff5
-#define MIDI_PB_collateRawMidiData  0x0ff6 
-#define MIDI_PB_outputRawMidiData   0x0ff7  // Raw data is used for used for a SYSTEM_EVENT 
+#define MIDI_PB_collateRawMidiData  0x0ff6
+#define MIDI_PB_outputRawMidiData   0x0ff7  // Raw data is used for used for a SYSTEM_EVENT
 
 /*===================================*/
 /*                                   */
@@ -186,7 +186,7 @@ public:
 
     void chordSeparator(CMidiEvent &event)
     {
-        m_type = MIDI_PB_chordSeperator;
+        m_type = MIDI_PB_chordSeparator;
         m_note = 0;
         m_channel = event.channel();
         m_deltaTime = 0;
@@ -210,7 +210,7 @@ public:
         m_note = nextByte;
         m_velocity = 0;
     }
-    
+
     // Raw data is used for used for a SYSTEM_EVENT
     void outputCollatedRawBytes(int deltaTime)
     {

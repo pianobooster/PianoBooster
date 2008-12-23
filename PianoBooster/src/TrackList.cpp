@@ -69,7 +69,7 @@ void CTrackList::examineMidiEvent(CMidiEvent event)
         if (event.type() == MIDI_NOTE_ON)
         {
             m_midiActiveChannels[chan] = true;
-            // count each note so we can guess the keysignature
+            // count each note so we can guess the key signature
             if (event.note() >= 0 && event.note() < MAX_MIDI_NOTES)
                 m_noteFrequency[chan][event.note()]++;
         }
@@ -147,7 +147,7 @@ int CTrackList::guessKeySignature(int chanA, int chanB)
         score += scale[(idx + 7 )%MIDI_OCTAVE]; // Tone
         score += scale[(idx + 9 )%MIDI_OCTAVE]; // Tone
         score += scale[(idx + 11)%MIDI_OCTAVE]; // Tone
-                                                // the Last note dont count it
+                                                // the Last note don't count it
 
         if (score > highScore)
         {

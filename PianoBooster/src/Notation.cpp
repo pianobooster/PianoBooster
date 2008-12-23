@@ -41,7 +41,7 @@ CSlot CNotation::nextBeatMarker()
     if (m_beatPerBarCounter >= m_timeSigNumerator)
         m_beatPerBarCounter = -1;
 
-    if (m_beatPerBarCounter == -1)    // Sneek in a bar line
+    if (m_beatPerBarCounter == -1)    // Sneak in a bar line
         slot.setSymbol( m_beatLength - cfg_barGap, CSymbol( PB_SYMBOL_barLine, PB_PART_both, 0 ));
     else if (m_beatPerBarCounter == 0)
         slot.setSymbol( cfg_barGap, CSymbol( PB_SYMBOL_barMarker, PB_PART_both, 0 ));
@@ -92,11 +92,11 @@ void CNotation::findNoteSlots()
         midi = m_midiInputQueue->pop();
 
         m_currentDeltaTime += midi.deltaTime();
-        if (midi.type() == MIDI_PB_chordSeperator || midi.type() == MIDI_PB_EOF)
+        if (midi.type() == MIDI_PB_chordSeparator || midi.type() == MIDI_PB_EOF)
         {
             if (m_currentSlot.length() > 0)
             {
-                // the cord seperator arrives very late so we are behind the times
+                // the cord separator arrives very late so we are behind the times
                 m_slotQueue->push(m_currentSlot);
                 m_currentSlot.clear();
             }
@@ -176,10 +176,10 @@ void CNotation::midiEventInsert(CMidiEvent event)
 {
     if (m_findScrollerChord.findChord(event, m_displayChannel, PB_PART_both ) == true)
     {
-        // the Score works differently we just send down a chord seperator
-        CMidiEvent seperator;
-        seperator.chordSeparator(event);
-        m_midiInputQueue->push(seperator);
+        // the Score works differently we just send down a chord separator
+        CMidiEvent separator;
+        separator.chordSeparator(event);
+        m_midiInputQueue->push(separator);
     }
 
     m_midiInputQueue->push(event);
