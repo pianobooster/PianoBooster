@@ -29,17 +29,16 @@
 
 #include "Tempo.h"
 
-int CTempo::m_cfg_followTempoAmount = 10;
-int CTempo::m_cfg_maxJumpAhead = 25;
+int CTempo::m_cfg_followTempoAmount = 0;
+int CTempo::m_cfg_maxJumpAhead = 0;
 
 
 void CTempo::enableFollowTempo(bool enable)
 {
-ppTrace("enableFollowTempo %d", enable);
     if (enable)
     {
-        m_cfg_maxJumpAhead = 1;
-        m_cfg_followTempoAmount = 1;
+        //m_cfg_maxJumpAhead = 1;
+        //m_cfg_followTempoAmount = 1;
     }
     else
     {

@@ -219,14 +219,19 @@ void CTrackList::refresh()
         }
     }
 
+    int goodChan = -1;
     // Find an unused channel that we can use for the keyboard
     for (chan = 0; chan < MAX_MIDI_CHANNELS; chan++)
     {
         if (m_midiActiveChannels[chan] == false)
         {
-            m_song->setPianistChannels(chan,chan);
-            ppLog("Using Pianist Channels %d", chan +1);
-            break;
+            if (goodChan != -1)
+            {
+                m_song->setPianistChannels(goodChan,chan);
+                ppLog("Using Pianist Channels %d + %d", goodChan +1, chan +1);
+                break;
+            }
+            goodChan = chan;
         }
     }
 }

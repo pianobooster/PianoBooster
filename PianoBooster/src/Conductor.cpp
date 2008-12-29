@@ -308,6 +308,12 @@ void CConductor::playMusic(bool start)
 
         event.controlChangeEvent(0, m_pianistGoodChan, MIDI_MAIN_VOLUME, 127);
         playMidiEvent(event); // Play the midi note or event
+        event.programChangeEvent(0,m_pianistGoodChan, m_cfg_rightNoteSound);
+        playMidiEvent( event );
+        event.controlChangeEvent(0, m_pianistBadChan, MIDI_MAIN_VOLUME, 127);
+        playMidiEvent(event); // Play the midi note or event
+        event.programChangeEvent(0,m_pianistBadChan, m_cfg_wrongNoteSound);
+        playMidiEvent( event );
 
         /*
         const unsigned char gsModeEnterData[] =  {0xf0, 0x41, 0x10, 0x42, 0x12, 0x40, 0x00, 0x7f, 0x00, 0x41, 0xf7};
@@ -441,8 +447,6 @@ void CConductor::pianistInput(CMidiEvent inputNote)
     if (m_testWrongNoteSound)
         goodSound = false;
 
-    inputNote.setChannel(m_pianistGoodChan);
-
     if (inputNote.type() == MIDI_NOTE_ON)
     {
         whichPart_t hand;
@@ -482,7 +486,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
     else if (inputNote.type() == MIDI_NOTE_OFF)
     {
         m_goodNoteLines.removeNote(inputNote.note());
-        m_badNoteLines.removeNote(inputNote.note());
+        if (m_badNoteLines.removeNote(inputNote.note()))
+            goodSound = false;
         bool hasNote = m_goodPlayedNotes.removeNote(inputNote.note());
 
 #if HAS_SCORE
@@ -495,7 +500,17 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         outputSavedNotesOff();
     }
 
-    // change the sound to the right or wrong sound
+    if (goodSound == true)
+    {
+        inputNote.setChannel(m_pianistGoodChan);
+    }
+    else
+    {
+        inputNote.setChannel(m_pianistBadChan);
+    }
+
+
+    /*
     int pianoSound = (goodSound == true) ? m_cfg_rightNoteSound : m_cfg_wrongNoteSound;
 
     if (pianoSound != m_lastSound)
@@ -506,6 +521,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         midiSound.programChangeEvent(0,inputNote.channel(),pianoSound);
         playMidiEvent( midiSound );
     }
+    */
 
     playMidiEvent( inputNote );
 }

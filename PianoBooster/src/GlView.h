@@ -32,11 +32,11 @@
 #include <QGLWidget>
 #include "Song.h"
 #include "Score.h"
-#include "rtmidi/RtTimer.h"
+//#include "rtmidi/RtTimer.h"
 
 class Window;
 
-class CGLView : public QGLWidget, RtTimer
+class CGLView : public QGLWidget//, RtTimer
 {
     Q_OBJECT
 

@@ -1,7 +1,12 @@
 /*
+v0.5.0: (28 November 2008)
+- first release
 
+v0.5.0: (29 December 2008)
+- fixed the windows file open bug
+- changed the wrong note sound to use a separate midi channel.
 
 
 */
 
-#define PB_VERSION "0.5.0x"
+#define PB_VERSION "0.5.1"

@@ -36,7 +36,7 @@
 
 #include "MidiEvent.h"
 
-#include "rtmidi/RtTimer.h"
+#include "rtmidi/RtMidi.h"
 
 class CMidiDevice
 {

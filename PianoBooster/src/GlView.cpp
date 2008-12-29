@@ -286,12 +286,12 @@ void CGLView::init()
 // */
 
     setFocusPolicy(Qt::ClickFocus);
-    //m_timer->start(5); // todo increase the tick time for Midi handling
-    m_timer.start(5, this ); // was 5
+
+    // todo increase the tick time for Midi handling
+    m_timer.start(12, this ); // was 5
     m_realtime.start();
 
     //startMediaTimer(12, this );
-
 }
 
 void CGLView::timerEvent(QTimerEvent *event)
