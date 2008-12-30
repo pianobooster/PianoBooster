@@ -80,6 +80,3 @@
    As part of GNU General Public License the source code for PianoBooster is available from
    the Source Forge site  <http://pianobooster.sourceforge.net/>
 
-   See the file compiling.txt for instructions on how to compile and build the source code.
-   Please notify the author if you make any changes to Piano Booster.
-
