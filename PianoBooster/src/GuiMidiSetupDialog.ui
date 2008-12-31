@@ -34,7 +34,10 @@
         <item row="0" column="0" >
          <widget class="QLabel" name="label" >
           <property name="text" >
-           <string>Midi Input Device</string>
+           <string>Midi Input Device:</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
@@ -44,12 +47,35 @@
         <item row="1" column="0" >
          <widget class="QLabel" name="label_2" >
           <property name="text" >
-           <string>Midi Output Device</string>
+           <string>Midi Output Device:</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
         <item row="1" column="1" >
          <widget class="QComboBox" name="midiOutputCombo" />
+        </item>
+        <item row="2" column="0" >
+         <widget class="QLabel" name="label_3" >
+          <property name="text" >
+           <string>Latency fix (mSec):</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" >
+         <widget class="QLineEdit" name="latencyFixEdit" >
+          <property name="toolTip" >
+           <string>A work around for poor latency</string>
+          </property>
+          <property name="inputMask" >
+           <string>0000; </string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -69,7 +95,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons" >
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>

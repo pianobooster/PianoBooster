@@ -55,7 +55,7 @@ CConductor::CConductor()
     m_skill = 0;
     m_silenceTimeOut = 0;
     m_realTimeEventBits = 0;
-    setPianistChannels(1-1,1-1);
+    setPianistChannels(1-1,2-1);
 
     for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
     {
@@ -295,6 +295,21 @@ void CConductor::setActiveChannel(int channel)
     autoMute();
 }
 
+void CConductor::testWrongNoteSound(bool enable)
+{
+    m_testWrongNoteSound = enable;
+    CMidiEvent event;
+
+    event.controlChangeEvent(0, m_pianistGoodChan, MIDI_MAIN_VOLUME, 127);
+    playMidiEvent(event); // Play the midi note or event
+    event.programChangeEvent(0,m_pianistGoodChan, m_cfg_rightNoteSound);
+    playMidiEvent( event );
+    event.controlChangeEvent(0, m_pianistBadChan, MIDI_MAIN_VOLUME, 127);
+    playMidiEvent(event); // Play the midi note or event
+    event.programChangeEvent(0,m_pianistBadChan, m_cfg_wrongNoteSound);
+    playMidiEvent( event );
+}
+
 
 void CConductor::playMusic(bool start)
 {
@@ -304,16 +319,8 @@ void CConductor::playMusic(bool start)
     if (start)
     {
         autoMute();
-        CMidiEvent event;
 
-        event.controlChangeEvent(0, m_pianistGoodChan, MIDI_MAIN_VOLUME, 127);
-        playMidiEvent(event); // Play the midi note or event
-        event.programChangeEvent(0,m_pianistGoodChan, m_cfg_rightNoteSound);
-        playMidiEvent( event );
-        event.controlChangeEvent(0, m_pianistBadChan, MIDI_MAIN_VOLUME, 127);
-        playMidiEvent(event); // Play the midi note or event
-        event.programChangeEvent(0,m_pianistBadChan, m_cfg_wrongNoteSound);
-        playMidiEvent( event );
+        testWrongNoteSound(false);
 
         /*
         const unsigned char gsModeEnterData[] =  {0xf0, 0x41, 0x10, 0x42, 0x12, 0x40, 0x00, 0x7f, 0x00, 0x41, 0xf7};
@@ -410,7 +417,7 @@ void CConductor::fetchNextChord()
     }
 
     //put the split point in the middle
-    m_pianistSplitPoint = (lowestTreble + highestBase) /2;
+    m_pianistSplitPoint = ((lowestTreble + highestBase) /2 ) + m_transpose;
 }
 
 bool CConductor::validatePianistNote(CMidiEvent& inputNote)
@@ -511,6 +518,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
 
     /*
+    // use the same channel for the right and wrong note
     int pianoSound = (goodSound == true) ? m_cfg_rightNoteSound : m_cfg_wrongNoteSound;
 
     if (pianoSound != m_lastSound)
@@ -523,7 +531,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
     }
     */
 
-    playMidiEvent( inputNote );
+    if (goodSound == false || Cfg::latencyFix == 0)
+       playMidiEvent( inputNote );
 }
 
 // Counts the number of notes the pianist has down
@@ -683,7 +692,10 @@ void CConductor::realTimeEngine(int mSecTicks)
         }
 
         if (type == MIDI_PB_tempo)
+        {
             m_tempo.setMidiTempo(m_nextMidiEvent.data1());
+            m_leadLagAdjust = m_tempo.mSecToTicks( -Cfg::latencyFix);
+        }
         else if (type == MIDI_PB_timeSignature)
         {
             m_currentTimeSigTop = m_nextMidiEvent.data1();

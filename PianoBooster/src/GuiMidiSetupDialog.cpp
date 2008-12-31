@@ -78,6 +78,9 @@ void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
     i = midiOutputCombo->findText(m_settings->value("midi/output").toString());
     if (i!=-1)
         midiOutputCombo->setCurrentIndex(i);
+
+    latencyFixEdit->setText(QString().setNum(Cfg::latencyFix));
+
     updateMidiInfoText();
 }
 
@@ -101,6 +104,14 @@ void GuiMidiSetupDialog::updateMidiInfoText()
         midiInfoText->append("<span style=\"color:black\">Note: the Microsoft SW Synth introduces an unwanted delay!</span>");
     else
         midiInfoText->append("<span style=\"color:gray\">Midi Output Device: " + midiOutputCombo->currentText() +"</span>");
+
+    int latencyFix = latencyFixEdit->text().toInt();
+    latencyFix = qBound(0, latencyFix, 2000);
+    latencyFixEdit->setText(QString().setNum(latencyFix));
+
+    if (latencyFix > 0)
+        midiInfoText->append("<span style=\"color:black\">Please see the website for the latency fix instructions.</span>");
+
 }
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
@@ -116,14 +127,22 @@ void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 void GuiMidiSetupDialog::accept()
 {
     m_settings->setValue("midi/input", midiInputCombo->currentText());
-    m_settings->setValue("midi/output", midiOutputCombo->currentText());
     m_song->openMidiPort(0,string(midiInputCombo->currentText().toAscii()));
-    m_song->openMidiPort(1,string(midiOutputCombo->currentText().toAscii()));
     if (midiInputCombo->currentText().startsWith("None"))
         CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
     else
         CChord::setPianoRange(m_settings->value("Keyboard/lowestNote", 0).toInt(),
                           m_settings->value("Keyboard/highestNote", 127).toInt());
+
+
+    if (m_settings->value("midi/output").toString() != midiOutputCombo->currentText())
+    {
+        m_settings->setValue("midi/output", midiOutputCombo->currentText());
+        m_settings->setValue("midi/latency", latencyFixEdit->text().toInt());    
+        m_song->openMidiPort(1,string(midiOutputCombo->currentText().toAscii()));
+    }
+
+    Cfg::latencyFix = latencyFixEdit->text().toInt();
 
     m_song->regenerateChordQueue();
     this->QDialog::accept();

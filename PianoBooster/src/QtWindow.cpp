@@ -81,8 +81,8 @@ Window::Window()
     show();
 
 
-    m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", 1).toInt() - 1,
-                                 m_settings->value("Keyboard/WrongSound", 24).toInt() - 1);
+    m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", Cfg::defualtRightPatch()).toInt() - 1,
+                                 m_settings->value("Keyboard/WrongSound", Cfg::defualtWrongPatch()).toInt() - 1);
 
     QString midiInputName = m_settings->value("midi/input").toString();
     if (midiInputName.startsWith("None"))
@@ -90,6 +90,9 @@ Window::Window()
     else
         CChord::setPianoRange(m_settings->value("Keyboard/lowestNote", 0).toInt(),
                           m_settings->value("Keyboard/highestNote", 127).toInt());
+
+    Cfg::latencyFix = m_settings->value("midi/latency", 0).toInt();
+    
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
 

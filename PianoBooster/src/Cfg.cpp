@@ -33,12 +33,12 @@
 #include "Cfg.h"
 
 float Cfg::m_staveEndX;
-int Cfg::debugLevel;
+int Cfg::debugLevel = 0;
 bool Cfg::smallScreen = false;
 bool Cfg::quickStart = false;
 int Cfg::m_appX;
 int Cfg::m_appY;
 int Cfg::m_appWidth;
 int Cfg::m_appHeight;
-
+int Cfg::latencyFix = 0;
 

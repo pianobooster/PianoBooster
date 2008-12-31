@@ -32,7 +32,7 @@
 #include "MidiEvent.h"
 #include "Queue.h"
 #include "MidiDevice.h"
-#include "Util.h"
+#include "Cfg.h"
 #include "Chord.h"
 #include "Rating.h"
 #include "Tempo.h"
@@ -90,7 +90,11 @@ public:
 
 
     float getSpeed() {return m_tempo.getSpeed();}
-    void setSpeed(float speed) { m_tempo.setSpeed(speed); }
+    void setSpeed(float speed)
+    {
+        m_tempo.setSpeed(speed);
+        m_leadLagAdjust = m_tempo.mSecToTicks( -Cfg::latencyFix);
+    }
     void muteChannel(int channel, bool state);
     void mutePart(int channel, bool state);
     void transpose(int transpose);
@@ -147,7 +151,8 @@ public:
         }
     }
     void getCurrentTimeSig(int *top, int *bottom) {*top = m_currentTimeSigTop; *bottom = m_currentTimeSigBottom;}
-    void testWrongNoteSound(bool enable) {m_testWrongNoteSound = enable;}
+    void testWrongNoteSound(bool enable);
+    
     void setPianoSoundPatches(int rightSound, int wrongSound){
         m_cfg_rightNoteSound = rightSound;
         m_cfg_wrongNoteSound = wrongSound;
@@ -244,6 +249,7 @@ private:
     int m_cfg_imminentNotesOffPoint;
     int m_cfg_playZoneEarly; // when playing along
     int m_cfg_playZoneLate;
+
     bool m_testWrongNoteSound;
     int m_boostVolume;
     int m_activeChannel; // The current part that is being displayed (used for boost and autoMute)
