@@ -369,7 +369,7 @@ void CConductor::resetWantedChord()
     m_wantedChord.clear();
     m_chordDeltaTime = m_playingDeltaTime;
     m_pianistSplitPoint = MIDDLE_C;
-    m_followPlayingTimeOut = CMidiFile::ppqnAdjust(Cfg2::playZoneLate() * SPEED_ADJUST_FACTOR);
+    m_followPlayingTimeOut = CMidiFile::ppqnAdjust(Cfg::playZoneLate() * SPEED_ADJUST_FACTOR);
 
     outputStavedNotes();
     m_followState = PB_FOLLOW_searching;
@@ -660,7 +660,7 @@ void CConductor::realTimeEngine(int mSecTicks)
                 // Don't keep any saved notes off if there are no notes down
                 if (pianistNotesDown() == 0)
                     outputSavedNotesOff();
-                m_silenceTimeOut = Cfg2::silenceTimeOut();
+                m_silenceTimeOut = Cfg::silenceTimeOut();
             }
         }
         return;
@@ -773,8 +773,8 @@ void CConductor::rewind()
     m_cfg_imminentNotesOffPoint = CMidiFile::ppqnAdjust(-15);  // look ahead and find an Notes off coming up
     // Annie song 25
 
-    m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg2::playZoneEarly()); // when playing along
-    m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg2::playZoneLate());
+    m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg::playZoneEarly()); // when playing along
+    m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate());
 }
 
 void CConductor::init()

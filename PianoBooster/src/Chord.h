@@ -31,7 +31,7 @@
 
 #include <assert.h>
 
-#include "Util.h"
+#include "Cfg.h"
 #include "MidiFile.h"
 #include "Queue.h"
 
@@ -186,7 +186,7 @@ public:
         m_runningDeltaTime = 0;
         m_completeChord.clear();
         m_currentChord.clear();
-        m_cfg_ChordNoteGap = CMidiFile::ppqnAdjust(Cfg2::chordNoteGap());
+        m_cfg_ChordNoteGap = CMidiFile::ppqnAdjust(Cfg::chordNoteGap());
     }
 
 

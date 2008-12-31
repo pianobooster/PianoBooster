@@ -4,7 +4,9 @@ v0.5.0: (28 November 2008)
 
 v0.5.0: (29 December 2008)
 - fixed the windows file open bug
+- Changed the default wrong note sound to
 - changed the wrong note sound to use a separate midi channel.
+-
 
 
 */

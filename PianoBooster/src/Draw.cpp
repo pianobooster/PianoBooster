@@ -428,8 +428,8 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
             {
                 float topY = CStavePos(PB_PART_right, 10).getPosY();
                 float bottomY = CStavePos(PB_PART_left, -10).getPosY();
-                float early = Cfg2::playZoneEarly() * HORIZONTAL_SPACING_FACTOR;
-                float late = Cfg2::playZoneLate() * HORIZONTAL_SPACING_FACTOR;
+                float early = Cfg::playZoneEarly() * HORIZONTAL_SPACING_FACTOR;
+                float late = Cfg::playZoneLate() * HORIZONTAL_SPACING_FACTOR;
                 //glColor3f (0.7, 1.0, 0.7);
                 glColor3f (0.0, 0.0, 0.3);
                 glRectf(x-late, topY, x + early, bottomY);

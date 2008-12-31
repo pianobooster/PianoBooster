@@ -50,6 +50,12 @@ public:
 
     static const float staveThickness()      {return 1;}
 
+    static const int playZoneEarly()     {return 25;} // 20 Was 25
+    static const int playZoneLate()      {return 25;}
+    static const int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
+    static const int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
+
+
     static const CColour menuColour()        {return CColour(0.1, 0.6, 0.6);}
     static const CColour menuSelectedColour(){return CColour(0.7, 0.7, 0.1);}
 

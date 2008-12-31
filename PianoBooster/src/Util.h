@@ -83,14 +83,4 @@ void ppError(const char *msg, ...);
 #define SPEED_ADJUST_FACTOR     1000
 #define deltaAdjust(delta) ((delta)/SPEED_ADJUST_FACTOR )
 
-class Cfg2
-{
-public:
-    static const int playZoneEarly()     {return 25;} // 20 Was 25
-    static const int playZoneLate()      {return 25;}
-    static const int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
-    static const int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
-
-};
-
 #endif //__UTIL_H__
