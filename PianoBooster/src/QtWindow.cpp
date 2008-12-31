@@ -91,8 +91,8 @@ Window::Window()
         CChord::setPianoRange(m_settings->value("Keyboard/lowestNote", 0).toInt(),
                           m_settings->value("Keyboard/highestNote", 127).toInt());
 
-    Cfg::latencyFix = m_settings->value("midi/latency", 0).toInt();
-    
+    Cfg::latencyFix = 0; //m_settings->value("midi/latency", 0).toInt();
+
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
 

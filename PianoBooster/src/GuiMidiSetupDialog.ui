@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>246</width>
-    <height>266</height>
+    <width>250</width>
+    <height>298</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -58,7 +58,7 @@
          <widget class="QComboBox" name="midiOutputCombo" />
         </item>
         <item row="2" column="0" >
-         <widget class="QLabel" name="label_3" >
+         <widget class="QLabel" name="latencyFixLabel" >
           <property name="text" >
            <string>Latency fix (mSec):</string>
           </property>
@@ -95,7 +95,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons" >
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>

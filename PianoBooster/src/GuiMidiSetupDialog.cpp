@@ -80,7 +80,8 @@ void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
         midiOutputCombo->setCurrentIndex(i);
 
     latencyFixEdit->setText(QString().setNum(Cfg::latencyFix));
-
+    latencyFixEdit->hide();
+    latencyFixLabel->hide();
     updateMidiInfoText();
 }
 
@@ -138,7 +139,7 @@ void GuiMidiSetupDialog::accept()
     if (m_settings->value("midi/output").toString() != midiOutputCombo->currentText())
     {
         m_settings->setValue("midi/output", midiOutputCombo->currentText());
-        m_settings->setValue("midi/latency", latencyFixEdit->text().toInt());    
+        m_settings->setValue("midi/latency", latencyFixEdit->text().toInt());
         m_song->openMidiPort(1,string(midiOutputCombo->currentText().toAscii()));
     }
 

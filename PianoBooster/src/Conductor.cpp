@@ -708,6 +708,7 @@ void CConductor::realTimeEngine(int mSecTicks)
 
             // Is this this channel_muted
             //if (isChannelMuted(channel) == false) //fixme
+            if (channel!= m_pianistGoodChan && channel!= m_pianistBadChan)
             {
                 if (getfollowState() >= PB_FOLLOW_earlyNotes && m_playMode == PB_PLAY_MODE_followYou)
                 {
