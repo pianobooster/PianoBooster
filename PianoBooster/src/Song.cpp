@@ -81,7 +81,7 @@ void CSong::loadSong(QString filename)
 void CSong::midiFileInfo()
 {
     m_trackList->clear();
-    setStartTimeSig(0,0);
+    setTimeSig(0,0);
 
     // Read the next events to find the active channels
     CMidiEvent event;
@@ -92,7 +92,7 @@ void CSong::midiFileInfo()
 
         if (event.type() == MIDI_PB_timeSignature)
         {
-            setStartTimeSig(event.data1(),event.data2());
+            setTimeSig(event.data1(),event.data2());
         }
 
         if (event.type() == MIDI_PB_EOF)

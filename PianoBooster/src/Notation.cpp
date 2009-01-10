@@ -38,15 +38,15 @@ CSlot CNotation::nextBeatMarker()
 
     m_beatPerBarCounter++;
 
-    if (m_beatPerBarCounter >= m_timeSigNumerator)
+    if (m_beatPerBarCounter >= m_bar.getTimeSigTop())
         m_beatPerBarCounter = -1;
 
     if (m_beatPerBarCounter == -1)    // Sneak in a bar line
-        slot.setSymbol( m_beatLength - cfg_barGap, CSymbol( PB_SYMBOL_barLine, PB_PART_both, 0 ));
+        slot.setSymbol( m_bar.getBeatLength() - cfg_barGap, CSymbol( PB_SYMBOL_barLine, PB_PART_both, 0 ));
     else if (m_beatPerBarCounter == 0)
         slot.setSymbol( cfg_barGap, CSymbol( PB_SYMBOL_barMarker, PB_PART_both, 0 ));
     else
-        slot.setSymbol( m_beatLength, CSymbol( PB_SYMBOL_beatMarker, PB_PART_both, 0 ));
+        slot.setSymbol( m_bar.getBeatLength(), CSymbol( PB_SYMBOL_beatMarker, PB_PART_both, 0 ));
     return slot;
 }
 
@@ -109,7 +109,7 @@ void CNotation::findNoteSlots()
         }
 
         else if (midi.type() == MIDI_PB_timeSignature)
-            setTimeSignature(midi.data1(), midi.data2());
+            m_bar.setTimeSig(midi.data1(), midi.data2());
         else if (midi.type() == MIDI_NOTE_ON)
         {
             whichPart_t hand = CNote::findHand( midi, m_displayChannel, PB_PART_both );
@@ -195,6 +195,6 @@ void CNotation::reset()
         m_mergeSlots[i].clear();
     m_currentSlot.clear();
     m_beatPerBarCounter=0;
-    setTimeSignature( 4 , 4);
+    m_bar.reset();
     m_findScrollerChord.reset();
 }

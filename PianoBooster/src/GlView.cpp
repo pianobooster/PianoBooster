@@ -105,7 +105,7 @@ void CGLView::drawTimeSignature()
 
     if (m_song == 0) return;
 
-    m_song->getCurrentTimeSig(&topNumber, &bottomNumber);
+    m_song->getTimeSig(&topNumber, &bottomNumber);
     if (topNumber == 0 ) return;
 
     char bufferTop[10], bufferBottom[10];

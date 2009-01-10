@@ -2,7 +2,7 @@
 v0.5.0: (28 November 2008)
 - first release
 
-v0.5.0: (1 January 2009)
+v0.5.1: (1 January 2009)
 - fixed the windows file open bug
 - changed the default wrong note sound to Harpsichord
 - changed the wrong note sound to use a separate midi channel.
@@ -11,4 +11,4 @@ v0.5.0: (1 January 2009)
 
 */
 
-#define PB_VERSION "0.5.1"
+#define PB_VERSION "0.5.2"

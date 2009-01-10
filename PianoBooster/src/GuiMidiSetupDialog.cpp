@@ -136,7 +136,7 @@ void GuiMidiSetupDialog::accept()
                           m_settings->value("Keyboard/highestNote", 127).toInt());
 
 
-    if (m_settings->value("midi/output").toString() != midiOutputCombo->currentText())
+    //if (m_settings->value("midi/output").toString() != midiOutputCombo->currentText())
     {
         m_settings->setValue("midi/output", midiOutputCombo->currentText());
         m_settings->setValue("midi/latency", latencyFixEdit->text().toInt());

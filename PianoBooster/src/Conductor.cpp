@@ -61,7 +61,6 @@ CConductor::CConductor()
     {
         m_muteChannels[i] = false;
     }
-    setStartTimeSig(0,0);
     rewind();
     testWrongNoteSound(false);
 }
@@ -698,9 +697,9 @@ void CConductor::realTimeEngine(int mSecTicks)
         }
         else if (type == MIDI_PB_timeSignature)
         {
-            m_currentTimeSigTop = m_nextMidiEvent.data1();
-            m_currentTimeSigBottom = m_nextMidiEvent.data2();
-            ppDebug("Midi Time Signature %d/%d", m_currentTimeSigTop,m_currentTimeSigBottom);
+            m_bar.setTimeSig(m_nextMidiEvent.data1(), m_nextMidiEvent.data2());
+            ppDebug("Midi Time Signature %d/%d", m_nextMidiEvent.data1(),m_nextMidiEvent.data2());
+
         }
         else if ( type != MIDI_NONE )   // this marks the end of the piece of music
         {
@@ -761,8 +760,7 @@ void CConductor::rewind()
     m_savedNoteOffQueue->clear();
     m_wantedChordQueue->clear();
     m_nextMidiEvent.clear();
-    m_currentTimeSigTop = m_startTimeSigTop;
-    m_currentTimeSigBottom = m_startTimeSigBottom;
+    m_bar.rewind();
 
     m_goodPlayedNotes.clear();  // The good notes the pianist plays
     m_goodNoteLines.clear();

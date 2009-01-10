@@ -35,7 +35,7 @@
 #include "Queue.h"
 #include "Symbol.h"
 #include "Chord.h"
-
+#include "Bar.h"
 
 
 #define MAX_SYMBOLS    20  // The maximum number of symbols that can be stored in one slot
@@ -135,12 +135,6 @@ public:
     }
     void reset();
 
-    void setTimeSignature(int numerator, int denominator)
-    {
-        m_timeSigNumerator = numerator;
-        m_timeSigDenominator = denominator;
-        m_beatLength =  (CMidiFile::getPulsesPerQuarterNote() *4)/ denominator;
-    }
     void setChannel(whichPart_t channel) {m_displayChannel = channel;}
 
 
@@ -159,13 +153,11 @@ private:
     CQueue<CMidiEvent>* m_midiInputQueue;   // A Queue of midi events
     CSlot m_currentSlot;
     int m_currentDeltaTime;
-    int m_timeSigNumerator;
-    int m_timeSigDenominator;
-    int m_beatLength;
     int m_beatPerBarCounter;
     CSlot m_mergeSlots[2];
     int m_displayChannel;
     CFindChord m_findScrollerChord;
+    CBar m_bar;
 };
 
 #endif  // __NOTATION_H__

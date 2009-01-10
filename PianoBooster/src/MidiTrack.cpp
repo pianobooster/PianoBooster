@@ -179,8 +179,8 @@ void CMidiTrack::readTimeSignatureEvent()
         errorFail(SMF_CORRUPTED_MIDI_FILE);
         return;
     }
-    timeSigNumerator = readByte();
-    timeSigDenominator = readByte();
+    timeSigNumerator = readByte();  // The number on the top
+    timeSigDenominator = readByte(); // the number on the bottom
     if (timeSigDenominator >= 5)
     {
         errorFail(SMF_CORRUPTED_MIDI_FILE);

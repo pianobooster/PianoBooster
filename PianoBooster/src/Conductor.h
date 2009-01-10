@@ -36,6 +36,7 @@
 #include "Chord.h"
 #include "Rating.h"
 #include "Tempo.h"
+#include "Bar.h"
 
 #if HAS_SCORE
 class CScore;
@@ -145,14 +146,11 @@ public:
     CRating* getRating(){return &m_rating;}
 
     // You MUST clear the time sig to 0 first before setting an new start time Sig
-    void setStartTimeSig(int top, int bottom) {
-        if (top == 0 || m_startTimeSigTop == 0) {
-            m_startTimeSigTop = top; m_startTimeSigBottom = bottom;
-        }
-    }
-    void getCurrentTimeSig(int *top, int *bottom) {*top = m_currentTimeSigTop; *bottom = m_currentTimeSigBottom;}
+    void setTimeSig(int top, int bottom) { m_bar.setTimeSig(top, bottom);}
+
+    void getTimeSig(int *top, int *bottom) {m_bar.getTimeSig(top, bottom);}
     void testWrongNoteSound(bool enable);
-    
+
     void setPianoSoundPatches(int rightSound, int wrongSound){
         m_cfg_rightNoteSound = rightSound;
         m_cfg_wrongNoteSound = wrongSound;
@@ -226,10 +224,7 @@ private:
     }
 
     CTempo m_tempo;
-    int m_startTimeSigTop; // The time Sig at the start of the piece
-    int m_startTimeSigBottom;
-    int m_currentTimeSigTop; // The current time Sig at the start of the piece
-    int m_currentTimeSigBottom;
+    CBar m_bar;
     int m_leadLagAdjust; // Synchronise the sound the the video
     int m_silenceTimeOut; // used to create silence if the student stops for toooo long
     CChord m_wantedChord;  // The chord the pianist needs to play

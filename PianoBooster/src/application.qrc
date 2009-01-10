@@ -8,6 +8,7 @@
         <file>images/play-from-start.png</file>
         <file>images/play.png</file>
         <file>images/save.png</file>
+        <file>images/shortcutwizard.png</file>
         <file>images/stop.png</file>
     </qresource>
 </RCC>
