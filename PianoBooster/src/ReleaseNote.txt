@@ -11,4 +11,4 @@ v0.5.1: (1 January 2009)
 
 */
 
-#define PB_VERSION "0.5.2"
+#define PB_VERSION "0.5.2 SVN"
