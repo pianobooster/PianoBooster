@@ -45,7 +45,30 @@ void fatal(const char *msg, ...)
     exit(EXIT_FAILURE);
 }
 
-void ppLog(const char *msg, ...)
+void ppLog(logLevel_t level, const char *msg, ...)
+{
+    va_list ap;
+    if (level <= 2)//fixme Cfg::logLevel)
+        return;
+
+    va_start(ap, msg);
+    vfprintf(stdout, msg, ap);
+    va_end(ap);
+    fputc('\n', stdout);
+}
+void ppLogInfo(const char *msg, ...)
+{
+    va_list ap;
+
+    //fixme should call ppLog
+
+    va_start(ap, msg);
+    vfprintf(stdout, msg, ap);
+    va_end(ap);
+    fputc('\n', stdout);
+}
+
+void ppLogWarn(const char *msg, ...)
 {
     va_list ap;
 
@@ -65,7 +88,7 @@ void ppTrace(const char *msg, ...)
     fputc('\n', stdout);
 }
 
-void ppDebug(const char *msg, ...)
+void ppDebug( const char *msg, ...)
 {
     va_list ap;
 

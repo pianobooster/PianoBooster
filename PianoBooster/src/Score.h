@@ -54,7 +54,8 @@ public:
 
     //! first check if there is space to add a midi event
     int midiEventSpace()
-    {   size_t i;
+    {
+        size_t i;
         int minSpace;
         int space;
         minSpace = 1000;
@@ -79,10 +80,10 @@ public:
             m_scroll[i]->reset();
     }
 
-    void drawScrollingSymbols()
+    void drawScrollingSymbols(bool show = true)
     {   size_t i;
         for (i=0; i< arraySize(m_scroll); i++)
-            m_scroll[i]->drawScrollingSymbols();
+            m_scroll[i]->drawScrollingSymbols(show);
     }
 
     void scrollDeltaTime(int ticks)

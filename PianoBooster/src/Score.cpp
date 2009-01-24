@@ -61,7 +61,7 @@ void CScore::drawScroll(bool clearBackground)
     {
         float topY = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY();
         float bottomY = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY();
-        drColour (CColour(0.0, 0.0, 0.0));//fixme Cfg::backgroundColour());
+        drColour (Cfg::backgroundColour());
         glRectf(Cfg::scrollStartX(), topY, Cfg::getAppWidth(), bottomY);
     }
     drawSymbol(CSymbol(PB_SYMBOL_playingZone,  CStavePos(PB_PART_both, 0)), Cfg::playZoneX());

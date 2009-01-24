@@ -64,6 +64,7 @@ private:
     void drawDisplayText();
     void drawTimeSignature();
     void drawAccurracyBar();
+    void drawBarNumber();
 
     QColor m_backgroundColour;
     Window* m_qtWindow;  // The parent Window

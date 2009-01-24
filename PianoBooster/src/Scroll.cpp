@@ -132,10 +132,13 @@ void CScroll::removeSlots()
 
 
 //! Draw all the symbols that we have in the list
-void CScroll::drawScrollingSymbols()
+void CScroll::drawScrollingSymbols(bool show)
 {
     insertSlots();  // new symbols at the end of the score
     removeSlots();  // delete old symbols no longer required
+
+    if (show == false)   // Just update the queue only
+        return;
 
     if (m_scrollQueue->length() == 0 || m_scrollQueue->indexPtr(0)->m_displayListId == 0)
         return;

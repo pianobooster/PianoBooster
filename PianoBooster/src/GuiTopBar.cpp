@@ -201,3 +201,9 @@ void GuiTopBar::on_speedSpin_valueChanged(int speed)
     if (!m_song) return;
     m_song->setSpeed(speed/100.0);
 }
+
+void GuiTopBar::on_startBarSpin_valueChanged(double bar)
+{
+    if (!m_song) return;
+    m_song->setPlayFromBar( bar);
+}

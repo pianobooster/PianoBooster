@@ -92,6 +92,8 @@ public:
     CMidiEvent pop() {return m_trackEventQueue->pop();}
     QString getTrackName() {return m_trackName;}
 
+    static void setLogLevel(int level){m_logLevel = level;}
+
 
 private:
     void errorFail(midiErrors_t error)
@@ -163,6 +165,7 @@ private:
     int m_deltaTime;
     midiErrors_t m_midiError;
     QString m_trackName;
+    static int m_logLevel;
 };
 
 #endif // __MIDITRACK_H__

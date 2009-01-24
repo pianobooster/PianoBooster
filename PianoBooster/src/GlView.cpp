@@ -36,7 +36,7 @@
 #include "Cfg.h"
 #include "Draw.h"
 
-int nextListId; //FIXME
+int nextListId; //fixme
 
 CGLView::CGLView(Window *parent)
     : QGLWidget(parent)
@@ -70,7 +70,7 @@ QSize CGLView::minimumSizeHint() const
 
 QSize CGLView::sizeHint() const
 {
-    return QSize(200, 400); //Fixme this does not work
+    return QSize(200, 400); //fixme this does not work
 }
 
 void CGLView::initializeGL()
@@ -86,6 +86,7 @@ void CGLView::paintGL()
 
     if (m_fullRedrawFlag)
         drawDisplayText();
+    drawBarNumber();
 
     m_score->drawScore(m_fullRedrawFlag);
     if (m_fullRedrawFlag)
@@ -191,6 +192,15 @@ void CGLView::drawDisplayText()
     */
 }
 
+void CGLView::drawBarNumber()
+{
+    float y;
+    glColor3f(1.0,1.0,1.0);
+    y = Cfg::getAppHeight() - m_titleHeight - 40;
+
+    renderText(30, y+6, 0,"Bar: " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
+}
+
 void CGLView::resizeGL(int width, int height)
 {
     const int maxSoreWidth = 1024;
@@ -275,7 +285,7 @@ void CGLView::init()
     m_song->setActiveHand(PB_PART_both);
 
     if (!Cfg::quickStart)
-        renderText(10,10,"x",m_timeRatingFont); //FIXME
+        renderText(10,10,"x",m_timeRatingFont); //fixme
 /*
     nextListId = glGenLists (1);
 
@@ -304,7 +314,6 @@ void CGLView::timerEvent(QTimerEvent *event)
         m_midiTicks += ticks;
         m_scrollTicks += ticks;
         eventBits = m_song->task(m_midiTicks);
-        //if (m_midiTicks >= 20) ppTrace("m_midiTicks = %d", m_midiTicks); //fixme
         m_midiTicks = 0;
 
         m_fullRedrawFlag = false;

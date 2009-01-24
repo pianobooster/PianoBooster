@@ -123,7 +123,7 @@ void CNotation::findNoteSlots()
                 CSymbol symbol(symbolType, hand, midi.note());
                 symbol.setColour(Cfg::noteColour());
                 if (m_currentSlot.addSymbol(symbol) == false) {
-                    ppLog("[%d] Over the Max symbols limit", m_displayChannel + 1); //fix me
+                    ppLogWarn("[%d] Over the Max symbols limit", m_displayChannel + 1); //fix me
                 }
                 m_currentSlot.addDeltaTime(m_currentDeltaTime);
                 m_currentDeltaTime = 0;

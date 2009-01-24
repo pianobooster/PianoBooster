@@ -38,7 +38,7 @@ Window::Window()
     QCoreApplication::setOrganizationDomain("pianobooster.sourceforge.net/");
     QCoreApplication::setApplicationName("Piano Booster");
     m_settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "PianoBooster", "Piano Booster");
-
+    setWindowIcon(QIcon(":/images/Logo32x32.png"));
     setWindowTitle(tr("Piano Booster"));
 
     m_glWidget = new CGLView(this);
@@ -126,7 +126,7 @@ void Window::decodeCommandLine()
         if (argList.at(i).startsWith("-"))
         {
             if (argList.at(i).startsWith("-d"))
-                Cfg::debugLevel++;
+                Cfg::logLevel++;
             else if (argList.at(i).startsWith("-s"))
                 Cfg::smallScreen = true;
             else if (argList.at(i).startsWith("-q"))

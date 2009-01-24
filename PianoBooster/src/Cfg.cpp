@@ -33,7 +33,7 @@
 #include "Cfg.h"
 
 float Cfg::m_staveEndX;
-int Cfg::debugLevel = 0;
+int Cfg::logLevel = 0;
 bool Cfg::smallScreen = false;
 bool Cfg::quickStart = false;
 int Cfg::m_appX;

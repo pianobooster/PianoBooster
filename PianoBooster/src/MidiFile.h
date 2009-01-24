@@ -67,6 +67,9 @@ public:
     }
     QString getSongTitle() {return m_songTitle;}
 
+    void setLogLevel(int level){CMidiTrack::setLogLevel(level);}
+
+
 private:
     void initMergedEvents();
     int nextMergedEvent();

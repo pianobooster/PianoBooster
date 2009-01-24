@@ -69,6 +69,8 @@ public:
     void regenerateChordQueue();
 
     void rewind();
+    void setPlayFromBar(double bar);
+
 
     void setActiveHand(whichPart_t hand);
     void setActiveChannel(int part);
@@ -77,8 +79,6 @@ public:
     void refreshScroll();
 
 
-    // set to true to force the score to be redrawn
-    void forceScoreRedraw(){ setEventBits( EVENT_BITS_forceFullRredraw); }
     QString getSongTitle() {return m_songTitle;}
 
 private:

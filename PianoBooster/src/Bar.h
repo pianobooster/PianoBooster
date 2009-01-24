@@ -43,44 +43,73 @@ public:
 
     // You MUST clear the time sig to 0 first before setting an new start Time Signature
     // at the start of the piece of music
-    void setTimeSig(int top, int bottom)
-    {
-        m_currentTimeSigTop = top;
-        m_currentTimeSigBottom = bottom;
-        if (top == 0 || m_startTimeSigTop == 0) {
-            m_startTimeSigTop = top;
-            m_startTimeSigBottom = bottom;
-            if (top == 0 )
-            {
-                m_currentTimeSigTop = 4;
-                m_currentTimeSigBottom = 4;
-            }
-        }
-
-        m_beatLength =  (CMidiFile::getPulsesPerQuarterNote() *4)/ m_currentTimeSigBottom;
-    }
-
+    void setTimeSig(int top, int bottom);
 
     int getTimeSigTop() {return m_currentTimeSigTop;} // The Numerator
     int getBeatLength() {return m_beatLength;}
 
-    void reset() {   setTimeSig( 0 , 0);}
-    void rewind() {  setTimeSig(m_startTimeSigTop, m_startTimeSigBottom);}
+    void setPlayFromBar(double bar);
+    void setPlayFromBar(int bar, int beat = 0, int ticks = 0);
+    void reset() {
+        setTimeSig( 0 , 0);
+        m_playFromBar = 0.0;
+        m_seekingBarNumber = false;
+        m_flushTicks = false;
+    }
+
+    void rewind() {
+        int top = m_startTimeSigTop;
+        int bottom = m_startTimeSigBottom;
+
+        setTimeSig( 0 , 0);
+        setTimeSig(top, bottom);
+        checkGotoBar();
+    }
     void getTimeSig(int *top, int *bottom) {
         *top = m_currentTimeSigTop;
         *bottom = m_currentTimeSigBottom;
     }
 
+    //return true if bar number has changed
+    int addDeltaTime(int ticks);
+
+    //
+    int getBarNumber(){ return m_barCounter;}
+
+    bool seekingBarNumber() { return m_seekingBarNumber;}
+
+    bool hasBarNumberChanged() {
+        bool flag = m_hasBarNumberChanged;
+        m_hasBarNumberChanged = false;
+        return flag;
+    }
+
+    int goToBarNumer();
+
+
 private:
-    //int m_currentDeltaTime;
+
+    double currentPos() { return m_barCounter + static_cast<double>(m_beatCounter)/m_currentTimeSigBottom +
+         static_cast<double>(m_deltaTime)/(m_beatLength * m_currentTimeSigBottom * SPEED_ADJUST_FACTOR); }
+
+    void checkGotoBar();
+
+    int m_deltaTime;
     int m_beatLength;
-    //int m_beatPerBarCounter;
 
     int m_startTimeSigTop; // The time Sig at the start of the piece
     int m_startTimeSigBottom;
     int m_currentTimeSigTop; // The current time Sig at the start of the piece
     int m_currentTimeSigBottom;
 
+    int m_barCounter;
+    int m_beatCounter;
+    double m_playFromBar;
+    int m_playFromBeat;
+    int m_playFromTicks;
+    bool m_seekingBarNumber;
+    bool m_flushTicks;
+    bool m_hasBarNumberChanged;
 };
 
 #endif  // __BAR_H__

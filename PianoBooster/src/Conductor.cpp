@@ -26,12 +26,17 @@
 */
 /*********************************************************************************/
 
-#include "Conductor.h"
+#define OPTION_DEBUG_CONDUCTOR     0
+#if OPTION_DEBUG_CONDUCTOR
+#define ppDEBUG_CONDUCTOR(args)     ppDebug args
+#else
+#define ppDEBUG_CONDUCTOR(args)
+#endif
 
-#if HAS_SCORE
+
+#include "Conductor.h"
 #include "Score.h"
 #include "Cfg.h"
-#endif
 
 playMode_t CConductor::m_playMode = PB_PLAY_MODE_listen;
 
@@ -266,23 +271,23 @@ void CConductor::setActiveHand(whichPart_t hand)
 
     if (m_wantedChord.trimOutOfRangeNotes(m_transpose)==0)
         fetchNextChord();
-    else
-    {
-        int note;
-        int i;
 
-        // Reset the note colours
-        for(i = 0; i < m_savedwantedChord.length(); i++)
-        {
-            note = m_savedwantedChord.getNote(i).pitch();
-            m_scoreWin->setPlayedNoteColour(note, Cfg::noteColour(), m_chordDeltaTime);
-        }
-        for(i = 0; i < m_wantedChord.length(); i++)
-        {
-            note = m_wantedChord.getNote(i).pitch();
-            m_scoreWin->setPlayedNoteColour(note, Cfg::playedStoppedColour(), m_chordDeltaTime);
-        }
+    int note;
+    int i;
+
+    // Reset the note colours
+    for(i = 0; i < m_savedwantedChord.length(); i++)
+    {
+        note = m_savedwantedChord.getNote(i).pitch();
+        m_scoreWin->setPlayedNoteColour(note, Cfg::noteColour(), m_chordDeltaTime);
     }
+    for(i = 0; i < m_wantedChord.length(); i++)
+    {
+        note = m_wantedChord.getNote(i).pitch();
+        m_scoreWin->setPlayedNoteColour(note, Cfg::playedStoppedColour(), m_chordDeltaTime);
+    }
+    findSplitPoint();
+    forceScoreRedraw();
 }
 
 void CConductor::setActiveChannel(int channel)
@@ -349,10 +354,17 @@ void CConductor::playTransposeEvent(CMidiEvent event)
     if (event.type() == MIDI_CONTROL_CHANGE && event.data1() == MIDI_MAIN_VOLUME)
         event.setDatat2(calcBoostVolume(event.channel(), event.data2() ));
 
-    playMidiEvent(event); // Play the midi note or event
+    // Don't output note on if we are seeking to bar
+    if (!seekingBarNumber())
+        playMidiEvent(event); // Play the midi note or event
+    else
+    {
+        if (event.type() == MIDI_PROGRAM_CHANGE || event.type() == MIDI_CONTROL_CHANGE)
+            playMidiEvent(event); // Play the midi note or event
+    }
 }
 
-void CConductor::outputStavedNotes()
+void CConductor::outputSavedNotes()
 {
     // The saved notes off are note needed any more
     // (as the are also in the savedNoteQueue
@@ -366,21 +378,43 @@ void CConductor::outputStavedNotes()
 void CConductor::resetWantedChord()
 {
     m_wantedChord.clear();
+    ppDEBUG_CONDUCTOR(("resetWantedChord m_chordDeltaTime %d m_playingDeltaTime %d", m_chordDeltaTime, m_playingDeltaTime ));
+
     m_chordDeltaTime = m_playingDeltaTime;
     m_pianistSplitPoint = MIDDLE_C;
     m_followPlayingTimeOut = CMidiFile::ppqnAdjust(Cfg::playZoneLate() * SPEED_ADJUST_FACTOR);
 
-    outputStavedNotes();
+    outputSavedNotes();
     m_followState = PB_FOLLOW_searching;
- }
+}
 
+void CConductor::findSplitPoint()
+{
+    // find the split point
+    int lowestTreble = MIDDLE_C + 50;
+    int highestBase =  MIDDLE_C - 50;
+    CNote note;
+
+    // Find where to put the split point
+    for(int i = 0; i < m_wantedChord.length(); i++)
+    {
+        note = m_wantedChord.getNote(i);
+        if (note.part() == PB_PART_right && note.pitch() < lowestTreble)
+            lowestTreble = note.pitch();
+        if (note.part() == PB_PART_left && note.pitch() > highestBase)
+            highestBase = note.pitch();
+    }
+
+    //put the split point in the middle
+    m_pianistSplitPoint = ((lowestTreble + highestBase) /2 ) + m_transpose;
+}
 
 void CConductor::fetchNextChord()
 {
     m_followState = PB_FOLLOW_searching;
     m_followPlayingTimeOut = m_cfg_playZoneLate * SPEED_ADJUST_FACTOR;
 
-    outputStavedNotes();
+    outputSavedNotes();
 
     do // Remove notes or chords that are out of our range
     {
@@ -399,25 +433,10 @@ void CConductor::fetchNextChord()
     // count the good notes so that the live percentage looks OK
     m_rating.totalNotes(m_wantedChord.length());
     setEventBits( EVENT_BITS_forceFullRredraw);
-
     // now find the split point
-    int lowestTreble = MIDDLE_C + 50;
-    int highestBase =  MIDDLE_C - 50;
-    CNote note;
-
-    // Find where to put the split point
-    for(int i = 0; i < m_wantedChord.length(); i++)
-    {
-        note = m_wantedChord.getNote(i);
-        if (note.part() == PB_PART_right && note.pitch() < lowestTreble)
-            lowestTreble = note.pitch();
-        if (note.part() == PB_PART_left && note.pitch() > highestBase)
-            highestBase = note.pitch();
-    }
-
-    //put the split point in the middle
-    m_pianistSplitPoint = ((lowestTreble + highestBase) /2 ) + m_transpose;
+    findSplitPoint();
 }
+
 
 bool CConductor::validatePianistNote(CMidiEvent& inputNote)
 {
@@ -540,6 +559,13 @@ int CConductor::pianistNotesDown()
     return m_goodNoteLines.length() + m_badNoteLines.length();
 }
 
+void CConductor::addDeltaTime(int ticks)
+{
+    m_scoreWin->scrollDeltaTime(ticks);
+    m_playingDeltaTime += ticks;
+    m_chordDeltaTime +=ticks;
+}
+
 void CConductor::followPlaying()
 {
 
@@ -552,15 +578,24 @@ void CConductor::followPlaying()
     if (m_wantedChord.length() == 0)
         return;
 
-    if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
+    if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint && !seekingBarNumber() )
         m_followState = PB_FOLLOW_earlyNotes;
 
-    if ( m_playMode == PB_PLAY_MODE_followYou )
+    if (seekingBarNumber())
+    {
+        if (deltaAdjust(m_chordDeltaTime) > -m_cfg_stopPoint )
+            fetchNextChord();
+    }
+    else if ( m_playMode == PB_PLAY_MODE_followYou)
     {
         if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
             m_followState = PB_FOLLOW_earlyNotes;
         if (deltaAdjust(m_chordDeltaTime) > -m_cfg_stopPoint )
+        {
             m_followState = PB_FOLLOW_waiting;
+            // Throw away the time past the stop point (by adding a negative ticks)
+            addDeltaTime( m_cfg_stopPoint*SPEED_ADJUST_FACTOR - m_chordDeltaTime);
+        }
     }
     else // m_playMode == PB_PLAY_MODE_playAlong
     {
@@ -669,22 +704,34 @@ void CConductor::realTimeEngine(int mSecTicks)
     if (m_playing == false)
         return;
 
+    if (seekingBarNumber())
+        ticks = 0;
+
     m_tempo.adjustTempo(&ticks);
 
-#if HAS_SCORE
-    m_scoreWin->scrollDeltaTime(ticks);
-#endif
-    m_playingDeltaTime += ticks;
-    m_chordDeltaTime +=ticks;
+
+    ticks = m_bar.addDeltaTime(ticks);
+
+    if (seekingBarNumber())
+        ticks = m_bar.goToBarNumer();
+
+    if (m_bar.hasBarNumberChanged())
+    {
+        ppDEBUG_CONDUCTOR(("m_savedNoteQueue %d m_playingDeltaTime %d",m_savedNoteQueue->space() , m_playingDeltaTime ));
+        ppDEBUG_CONDUCTOR(("getfollowState() %d  %d %d",getfollowState() , m_leadLagAdjust, m_songEventQueue->length() ));
+        forceScoreRedraw();
+    }
+
+    addDeltaTime(ticks);
 
     followPlaying();
-
     while ( m_playingDeltaTime >= m_leadLagAdjust)
     {
         type = m_nextMidiEvent.type();
 
         if (m_songEventQueue->length() == 0 && type == MIDI_PB_EOF)
         {
+            ppLogInfo("The End of the song");
             setEventBits(EVENT_BITS_playingStopped);
             m_playing = false;
             break;
@@ -709,13 +756,14 @@ void CConductor::realTimeEngine(int mSecTicks)
             //if (isChannelMuted(channel) == false) //fixme
             if (channel!= m_pianistGoodChan && channel!= m_pianistBadChan)
             {
-                if (getfollowState() >= PB_FOLLOW_earlyNotes && m_playMode == PB_PLAY_MODE_followYou)
+                if (getfollowState() >= PB_FOLLOW_earlyNotes && m_playMode == PB_PLAY_MODE_followYou && !seekingBarNumber())
                 {
                     // Save up the notes until the pianist press the right key
                     if (m_savedNoteQueue->space()>0)
                         m_savedNoteQueue->push(m_nextMidiEvent);
                     else
-                        ppDebug("Warning the m_savedNoteQueue is full");
+                        ppLogWarn("Warning the m_savedNoteQueue is full");
+
                     if (type == MIDI_NOTE_OFF)
                     {
                         if (m_savedNoteOffQueue->space()>0)
@@ -725,20 +773,23 @@ void CConductor::realTimeEngine(int mSecTicks)
                     }
                 }
                 else
+                {
                     playTransposeEvent(m_nextMidiEvent); // Play the midi note or event
+                    ppDEBUG_CONDUCTOR(("playEvent() chan %d type %d note %d", m_nextMidiEvent.channel() , m_nextMidiEvent.type() , m_nextMidiEvent.note(), m_songEventQueue->length() ));
+                }
             }
         }
         if (m_songEventQueue->length() > 0)
             m_nextMidiEvent = m_songEventQueue->pop();
         else
         {
+            //ppTrace("no data in song queue");
             m_nextMidiEvent.clear();
             break;
         }
 
         m_playingDeltaTime -= m_nextMidiEvent.deltaTime() * SPEED_ADJUST_FACTOR;
-
-//ppTrace("Delta %d type 0x%x Note %d", m_nextMidiEvent.deltaTime(), m_nextMidiEvent.type(), m_nextMidiEvent.note());
+        followPlaying();
     }
 }
 

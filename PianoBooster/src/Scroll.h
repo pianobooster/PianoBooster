@@ -69,7 +69,7 @@ public:
     //! first check if there is space to add a midi event
     int midiEventSpace() { return m_notation->midiEventSpace(); }
 
-    void drawScrollingSymbols();
+    void drawScrollingSymbols(bool show);
     void showScroll(bool show);
 
 private:

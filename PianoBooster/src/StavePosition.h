@@ -122,7 +122,7 @@ public:
 
 
 private:
-    // FIXME TODO This could be improved as the calculations could a done in the constructor
+    // fixme TODO This could be improved as the calculations could a done in the constructor
     char m_staveIndex;    // 0 central line, 5 = top line, -5 the bottom line,
     int m_accidental;         // 0 = none, 1=sharp, -1 =flat, 2=natural
     float m_offsetY;

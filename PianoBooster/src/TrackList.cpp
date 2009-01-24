@@ -205,7 +205,7 @@ void CTrackList::refresh()
     {
         CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
         m_song->setActiveChannel(CNote::bothHandsChan());
-        ppLog("Active both");
+        ppLogInfo("Active both");
         CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()));
     }
     else
@@ -228,7 +228,7 @@ void CTrackList::refresh()
             if (goodChan != -1)
             {
                 m_song->setPianistChannels(goodChan,chan);
-                ppLog("Using Pianist Channels %d + %d", goodChan +1, chan +1);
+                ppLogInfo("Using Pianist Channels %d + %d", goodChan +1, chan +1);
                 break;
             }
             goodChan = chan;

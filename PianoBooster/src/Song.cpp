@@ -46,7 +46,7 @@ void CSong::init()
     if (CNote::bothHandsChan() >= 0)
         setActiveChannel(CNote::bothHandsChan());
     else
-        setActiveChannel(CONVENTION_LEFT_HAND_CHANNEL); //Fixme a mess
+        setActiveChannel(CONVENTION_LEFT_HAND_CHANNEL); //fixme a mess
     setPlayMode(PB_PLAY_MODE_followYou);
     setSpeed(1.0);
     setSkill(3);
@@ -63,12 +63,15 @@ void CSong::loadSong(QString filename)
 #ifdef _WIN32
     filename = filename.replace('/','\\');
 #endif
+    m_midiFile->setLogLevel(3);
     m_midiFile->openMidiFile(string(filename.toAscii()));
-    ppLog("Opening song %s",  string(filename.toAscii()).c_str());
+    ppLogInfo("Opening song %s",  string(filename.toAscii()).c_str());
     transpose(0);
     midiFileInfo();
+    m_midiFile->setLogLevel(99);
     playMusic(false);
     rewind();
+    setPlayFromBar(0.0);
     setEventBits(EVENT_BITS_playingStopped);
     if (!m_midiFile->getSongTitle().isEmpty())
         m_songTitle = m_midiFile->getSongTitle();
@@ -109,6 +112,17 @@ void CSong::rewind()
 #endif
     reset();
     forceScoreRedraw();
+}
+
+void CSong::setPlayFromBar(double bar)
+{
+    this->CConductor::setPlayFromBar(bar);
+    if (playingMusic())
+    {
+        // go back to the start if music is already playing
+        rewind();
+        playMusic(true);
+    }
 }
 
 void CSong::setActiveHand(whichPart_t hand)
@@ -174,43 +188,54 @@ int CSong::task(int ticks)
 {
     realTimeEngine(ticks);
 
-    if (m_reachedMidiEof == true)
-        goto exitTask;
 
     while (true)
     {
-        // Check that there is space
-        if (midiEventSpace() <= 10 || chordEventSpace() <= 10)
-            break;
-#if HAS_SCORE
-        // and that the Score has space also
-        if (m_scoreWin->midiEventSpace() <= 100)
-            break;
-#endif
+        if (m_reachedMidiEof == true)
+            goto exitTask;
 
-        // Read the next events
-        CMidiEvent event = m_midiFile->readMidiEvent();
-
-//ppTrace("Song event delta %d type 0x%x chan %d Note %d", event.deltaTime(), event.type(), event.channel(), event.note());
-
-        // Find the next chord
-        if (m_findChord.findChord(event, getActiveChannel(), PB_PART_both) == true)
-            chordEventInsert( m_findChord.getChord() ); // give the Conductor the chord event
-
-#if HAS_SCORE
-        // send the events to the other end
-        m_scoreWin->midiEventInsert(event);
-#endif
-
-        // send the events to the other end
-        midiEventInsert(event);
-
-
-        if (event.type() == MIDI_PB_EOF)
+        while (true)
         {
-            m_reachedMidiEof = true;
-            break;
+            // Check that there is space
+            if (midiEventSpace() <= 10 || chordEventSpace() <= 10)
+                break;
+
+            // and that the Score has space also
+            if (m_scoreWin->midiEventSpace() <= 100)
+                break;
+
+            // Read the next events
+            CMidiEvent event = m_midiFile->readMidiEvent();
+
+            //ppTrace("Song event delta %d type 0x%x chan %d Note %d", event.deltaTime(), event.type(), event.channel(), event.note());
+
+            // Find the next chord
+            if (m_findChord.findChord(event, getActiveChannel(), PB_PART_both) == true)
+                chordEventInsert( m_findChord.getChord() ); // give the Conductor the chord event
+
+            // send the events to the other end
+            m_scoreWin->midiEventInsert(event);
+
+            // send the events to the other end
+            midiEventInsert(event);
+
+
+            if (event.type() == MIDI_PB_EOF)
+            {
+                m_reachedMidiEof = true;
+                break;
+            }
         }
+
+        // carry on with the data until we reach the bar we want
+        if (seekingBarNumber() && m_reachedMidiEof == false && playingMusic())
+        {
+            realTimeEngine(0);
+            m_scoreWin->drawScrollingSymbols(false); // don't display any thing just  remove from the queue
+        }
+        else
+            break;
+
     }
 
 exitTask:

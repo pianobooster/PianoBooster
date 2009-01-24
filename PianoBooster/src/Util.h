@@ -70,13 +70,23 @@ public:
     }
 };
 
+typedef enum
+{
+    PB_LOG_error,
+    PB_LOG_warn,
+    PB_LOG_info,
+    PB_LOG_verbose,
+} logLevel_t;
+
 void fatal(const char *msg, ...);
-void ppLog(const char *msg, ...);
 void ppTrace(const char *msg, ...);
 void ppDebug(const char *msg, ...);
 void ppError(const char *msg, ...);
+void ppLog(logLevel_t level, const char *msg, ...);
+void ppLogInfo(const char *msg, ...);
+void ppLogWarn(const char *msg, ...);
 
-#ifndef HAS_SCORE // Fixme
+#ifndef HAS_SCORE // fixme
 #define HAS_SCORE  1
 #endif
 

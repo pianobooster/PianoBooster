@@ -111,7 +111,7 @@ public:
     {
         if (m_symbolType == PB_SYMBOL_note)
             m_midiNote += amount;
-        m_stavePos.notePos(m_hand, m_midiNote); // FIXME remove m_stavePos
+        m_stavePos.notePos(m_hand, m_midiNote); // fixme remove m_stavePos
     }
 
 private:

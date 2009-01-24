@@ -52,7 +52,7 @@ typedef enum {
 enum {
     PB_PLAY_MODE_listen,
     PB_PLAY_MODE_followYou,
-    PB_PLAY_MODE_playAlong,
+    PB_PLAY_MODE_playAlong
 };
 
 typedef int playMode_t;
@@ -160,6 +160,14 @@ public:
     void setScore(CScore * scoreWin){m_scoreWin = scoreWin;}
 #endif
 
+    void setEventBits(int bits) { m_realTimeEventBits |= bits; } // don't change the other bits
+    // set to true to force the score to be redrawn
+    void forceScoreRedraw(){ setEventBits( EVENT_BITS_forceFullRredraw); }
+    int getBarNumber(){ return m_bar.getBarNumber();}
+
+    void setPlayFromBar(double bar){ m_bar.setPlayFromBar(bar);}
+
+
 protected:
 
 #if HAS_SCORE
@@ -171,7 +179,7 @@ protected:
 
     int m_realTimeEventBits; //used to signal real time events to the caller of task()
 
-    void outputStavedNotes();
+    void outputSavedNotes();
     void autoMute();
 
     void resetWantedChord();
@@ -179,13 +187,16 @@ protected:
     bool validatePianistNote(CMidiEvent& inputNote);
     bool validatePianistChord();
 
-    void setEventBits(int bits) { m_realTimeEventBits |= bits; } // don't change the other bits
+    bool seekingBarNumber() { return m_bar.seekingBarNumber();}
+
+
 
 private:
     void allSoundOff();
     void resetAllChannels();
     void outputBoostVolume();
     void channelSoundOff(int channel);
+    void findSplitPoint();
     void fetchNextChord();
     void playTransposeEvent(CMidiEvent event);
     void outputSavedNotesOff();
@@ -196,6 +207,9 @@ private:
     void missedNotesColour(CColour colour);
 
     int calcBoostVolume(int chan, int volume);
+
+    void addDeltaTime(int ticks);
+
 
     int m_playingDeltaTime;
     int m_chordDeltaTime;

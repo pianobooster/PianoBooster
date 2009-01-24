@@ -108,7 +108,7 @@ public:
     static int defualtWrongPatch() {return 7;} // Starts at 1
     static int defualtRightPatch() {return 1;} // Starts at 1
 
-    static int debugLevel;
+    static int logLevel;
     static bool smallScreen;
     static bool quickStart;
     static int latencyFix;  // Try to fix the latency (put the time in msec, 0 disables it)

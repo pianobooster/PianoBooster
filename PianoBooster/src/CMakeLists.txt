@@ -47,6 +47,7 @@ SET( PIANOBOOSTER_SRCS
     Notation.cpp
     TrackList.cpp
     Rating.cpp
+    Bar.cpp
 )
 
 

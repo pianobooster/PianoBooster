@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include "MidiFile.h"
 
-int CMidiFile::m_ppqn;
+int CMidiFile::m_ppqn = DEFAULT_PPQN;
 
 
 /* Read 16 bits from the Standard MIDI file */
@@ -64,7 +64,7 @@ int CMidiFile::readHeader(void)
     i = readWord();          /* ntrks (see Standard MIDI File Spec) */
     m_ppqn=readWord();          /* division */
 
-    ppLog("Tracks %d PPQN %d", i, m_ppqn);
+    ppLogInfo("Tracks %d PPQN %d", i, m_ppqn);
 
     if (i == 0)
     {

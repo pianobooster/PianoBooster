@@ -80,7 +80,7 @@ void GuiKeyboardSetupDialog::init(CSong* song, QSettings* settings)
     lowestNoteEdit->setText(QString().setNum(lowestNote));
     highestNoteEdit->setText(QString().setNum(highestNote));
     updateInfoText();
-    rightVolumeLabel->hide(); // Fixme Hide for now
+    rightVolumeLabel->hide(); // fixme Hide for now
     rightVolumeSpin->hide();
     wrongVolumeLabel->hide();
     wrongVolumeSpin->hide();

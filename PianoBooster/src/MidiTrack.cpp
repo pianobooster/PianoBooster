@@ -37,11 +37,13 @@
 #define ppDEBUG_TRACK(args)
 #endif
 
+int CMidiTrack::m_logLevel;
+
 void CMidiTrack::ppDebugTrack(int level, const char *msg, ...)
 {
     va_list ap;
 
-    if (level <3)
+    if (level <m_logLevel)
         return;
 
     fprintf(stdout, "Track %d length %5lu: ", m_trackNumber , m_trackLength);
@@ -149,7 +151,7 @@ void  CMidiTrack::ignoreSysexEvent(byte_t data)
     if (data >= 127)
     {
         // this could be a variable length word
-        ppLog("SysexEvent, is too long %d", data);
+        ppLogWarn("SysexEvent, is too long %d", data);
         errorFail(SMF_CORRUPTED_MIDI_FILE);
         return;
     }
@@ -192,7 +194,7 @@ void CMidiTrack::readTimeSignatureEvent()
         return;
     }
     len = (1<<timeSigDenominator);
-    //if (timeSigNumerator>len*2) // FIXME what is this
+    //if (timeSigNumerator>len*2) // fixme what is this
     //    timeSigNumerator =len*2;
 
     b3 = readByte();           /* Ignore the last bytes */
@@ -331,7 +333,7 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
     case MIDI_SYSEXEVENT:    /* System exclusive Transmitted */
     case 0xf7:  /* System exclusive Not transmitted */
         ppDEBUG_TRACK((2,"SYSEXEVENT xx"));
-        //read_sysex_event(); // FIXME was
+        //read_sysex_event(); // fixme was
         ignoreSysexEvent(data1);
         /*ignore_sysex_event();*/
         break;

@@ -213,7 +213,7 @@ CMidiEvent CMidiDevice::readMidiInput()
         break;
 
     case MIDI_NOTE_PRESSURE: //MIDI_CMD_NOTE_PRESSURE: //POLY_AFTERTOUCH:
-        // Fixme fill in the blanks
+        // fixme fill in the blanks
         //midi_input_bytes[midi_input_length++] = channel | MIDI_CMD_NOTE_PRESSURE;
         //midi_input_bytes[midi_input_length++] = ev->data.note.note;
         //midi_input_bytes[midi_input_length++] = ev->data.note.velocity;
@@ -228,13 +228,13 @@ CMidiEvent CMidiDevice::readMidiInput()
         break;
 
     case MIDI_CHANNEL_PRESSURE: //AFTERTOUCH:
-        // Fixme fill in the blanks
+        // fixme fill in the blanks
         //midi_input_bytes[midi_input_length++] = ev->data.control.channel | MIDI_CMD_CHANNEL_PRESSURE;
         //midi_input_bytes[midi_input_length++] = ev->data.control.value;
         break;
 
     case MIDI_PITCH_BEND: //PITCH_BEND:
-        // Fixme fill in the blanks
+        // fixme fill in the blanks
         //midi_input_bytes[midi_input_length++] = ev->data.control.channel | MIDI_CMD_CHANNEL_PRESSURE;
         //midi_input_bytes[midi_input_length++] = ev->data.control.value;
         break;
