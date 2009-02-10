@@ -52,7 +52,7 @@ public:
 
 protected:
     void timerEvent(QTimerEvent *event);
-    void mediaTimerEvent(int deltaTime);
+    void mediaTimerEvent(int ticks);
 
     void initializeGL();
     void paintGL();
@@ -78,6 +78,9 @@ private:
     QFont m_timeSigFont;
     QFont m_timeRatingFont;
     bool m_fullRedrawFlag;
+    int m_forcefullRedraw;
+    int m_forceRatingRedraw;
+    int m_forceBarRedraw;
     int m_titleHeight;
 };
 

@@ -76,6 +76,10 @@ public:
     //
     int getBarNumber(){ return m_barCounter;}
 
+    double getCurrentBarPos() { return m_barCounter + static_cast<double>(m_beatCounter)/m_currentTimeSigBottom +
+         static_cast<double>(m_deltaTime)/(m_beatLength * m_currentTimeSigBottom * SPEED_ADJUST_FACTOR); }
+
+
     bool seekingBarNumber() { return m_seekingBarNumber;}
 
     bool hasBarNumberChanged() {
@@ -89,8 +93,6 @@ public:
 
 private:
 
-    double currentPos() { return m_barCounter + static_cast<double>(m_beatCounter)/m_currentTimeSigBottom +
-         static_cast<double>(m_deltaTime)/(m_beatLength * m_currentTimeSigBottom * SPEED_ADJUST_FACTOR); }
 
     void checkGotoBar();
 

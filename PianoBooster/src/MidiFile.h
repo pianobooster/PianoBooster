@@ -49,10 +49,7 @@ public:
         midiError(SMF_NO_ERROR);
         m_ppqn = DEFAULT_PPQN;
         for (i = 0; i < arraySize(m_tracks); i++)
-        {
             m_tracks[i] = 0;
-        }
-        playFromBar(0);
     }
 
     void openMidiFile(string filename);
@@ -60,7 +57,6 @@ public:
     int readWord(void);
     int readHeader(void);
     void rewind();
-    void playFromBar(int barNumber) {m_playFromBar = barNumber;}
     static int getPulsesPerQuarterNote(){return m_ppqn;}
     static int ppqnAdjust(float value) {
         return static_cast<int>((value * static_cast<float>(CMidiFile::getPulsesPerQuarterNote()))/DEFAULT_PPQN );
@@ -79,7 +75,6 @@ private:
     midiErrors_t m_midiError;
     CMidiTrack* m_tracks[MAX_TRACKS];
     CMidiEvent m_mergeEvents[MAX_TRACKS];
-    int m_playFromBar;
     QString m_songTitle;
 };
 

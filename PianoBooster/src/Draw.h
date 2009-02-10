@@ -38,6 +38,8 @@
 
 #include "Symbol.h"
 
+#define REDRAW_COUNT 2 // There are two buffers so redraw twice
+
 
 class CDraw
 {
@@ -45,16 +47,25 @@ public:
     CDraw()
     {
         m_displayHand = PB_PART_both;
+        m_forceCompileRedraw = REDRAW_COUNT;
+
     }
 
     void drawSymbol(CSymbol symbol, float x, float y);
     void drawSymbol(CSymbol symbol, float x);
-    static void setDisplayHand(whichPart_t hand)    {m_displayHand = hand;}
+    static void setDisplayHand(whichPart_t hand)
+    {
+        m_displayHand = hand;
+        m_forceCompileRedraw = REDRAW_COUNT;
+    }
     static whichPart_t getDisplayHand()    {return m_displayHand;}
     static void drColour(CColour colour) { glColor3f(colour.red, colour.green, colour.blue);}
+    static void forceCompileRedraw(int value = REDRAW_COUNT) {    m_forceCompileRedraw = value; }
 
 protected:
     static whichPart_t m_displayHand;
+    static int getCompileRedrawCount() {  return m_forceCompileRedraw; }
+
     void oneLine(float x1, float y1, float x2, float y2);
     void drawStaves(float startX, float endX);
     void drawKeySignature(int key);
@@ -62,6 +73,7 @@ protected:
 private:
     void checkAccidental(CSymbol symbol, float x, float y);
     void drawStaveExtentsion(CSymbol symbol, float x, int noteWidth);
+    static int m_forceCompileRedraw;
 
 };
 

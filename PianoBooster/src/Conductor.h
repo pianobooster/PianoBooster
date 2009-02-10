@@ -38,10 +38,7 @@
 #include "Tempo.h"
 #include "Bar.h"
 
-#if HAS_SCORE
 class CScore;
-#endif
-
 
 typedef enum {
     PB_FOLLOW_searching,
@@ -58,8 +55,13 @@ enum {
 typedef int playMode_t;
 
 // The event bits can be ORed together
-#define EVENT_BITS_playingStopped            1  //set when we reach the end of piece
-#define EVENT_BITS_forceFullRredraw          2 // force the score to be redrawn
+#define EVENT_BITS_playingStopped           0x0001  //set when we reach the end of piece
+#define EVENT_BITS_forceFullRedraw         0x0002 // force the whole screen to be redrawn
+#define EVENT_BITS_forceRatingRedraw       0x0004 // force the score to be redrawn
+#define EVENT_BITS_forceBarNumberRedraw    0x0008 // force the bar number to be redrawn
+
+
+
 /*!
  * @brief   xxxxx.
  */
@@ -119,7 +121,7 @@ public:
         if (m_playMode > 2 ) m_playMode = 2;
         if ( m_playMode == PB_PLAY_MODE_listen )
             resetWantedChord();
-        autoMute();
+        activatePianistMutePart();
         outputBoostVolume();
     }
 
@@ -132,6 +134,14 @@ public:
         outputBoostVolume();
     }
 
+    int getPianoVolume() {return m_pianoVolume;}
+    void pianoVolume(int pianoVolume)
+    {
+        m_pianoVolume = pianoVolume;
+        if (m_pianoVolume < -100 ) m_pianoVolume = -100;
+        if (m_pianoVolume > 100 ) m_pianoVolume = 100;
+        outputBoostVolume();
+    }
     static playMode_t getPlayMode() {return m_playMode;}
 
     CChord getWantedChord() {return m_wantedChord;}
@@ -156,23 +166,21 @@ public:
         m_cfg_wrongNoteSound = wrongSound;
     }
 
-#if HAS_SCORE
     void setScore(CScore * scoreWin){m_scoreWin = scoreWin;}
-#endif
 
     void setEventBits(int bits) { m_realTimeEventBits |= bits; } // don't change the other bits
     // set to true to force the score to be redrawn
-    void forceScoreRedraw(){ setEventBits( EVENT_BITS_forceFullRredraw); }
+    void forceScoreRedraw(){ setEventBits( EVENT_BITS_forceFullRedraw); }
     int getBarNumber(){ return m_bar.getBarNumber();}
 
+    double getCurrentBarPos(){ return m_bar.getCurrentBarPos();}
+
     void setPlayFromBar(double bar){ m_bar.setPlayFromBar(bar);}
+    void mutePianistPart(bool state);
 
 
 protected:
-
-#if HAS_SCORE
     CScore* m_scoreWin;
-#endif
 
     CQueue<CMidiEvent>* m_songEventQueue;
     CQueue<CChord>* m_wantedChordQueue;
@@ -180,7 +188,7 @@ protected:
     int m_realTimeEventBits; //used to signal real time events to the caller of task()
 
     void outputSavedNotes();
-    void autoMute();
+    void activatePianistMutePart();
 
     void resetWantedChord();
 
@@ -195,6 +203,8 @@ private:
     void allSoundOff();
     void resetAllChannels();
     void outputBoostVolume();
+    void outputPianoVolume();
+
     void channelSoundOff(int channel);
     void findSplitPoint();
     void fetchNextChord();
@@ -237,6 +247,7 @@ private:
         return m_muteChannels[chan];
     }
 
+
     CTempo m_tempo;
     CBar m_bar;
     int m_leadLagAdjust; // Synchronise the sound the the video
@@ -261,10 +272,12 @@ private:
 
     bool m_testWrongNoteSound;
     int m_boostVolume;
-    int m_activeChannel; // The current part that is being displayed (used for boost and autoMute)
+    int m_pianoVolume;
+    int m_activeChannel; // The current part that is being displayed (used for boost and activatePianistMutePart)
     int m_savedMainVolume[MAX_MIDI_CHANNELS];
     static playMode_t m_playMode;
     int m_skill;
+    bool m_mutePianistPart;
 };
 
 #endif //__CONDUCTOR_H__

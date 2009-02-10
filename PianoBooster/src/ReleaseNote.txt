@@ -8,6 +8,19 @@ v0.5.1: (1 January 2009)
 - changed the wrong note sound to use a separate midi channel.
 - on Windows removed the dos console
 
+v0.5.2 svn: (1 February 2009)
+- Added a play from bar (so you can start from playing any bar)
+- Added a latency fix for high latency sound generators (e.g. the windows GS software synth)
+- Added the ability to "mute your part when playing" along.
+- May have reduced the flickering especially on windows with a low spec machine
+- Added a piano volume slider (so you can adjust the volume of your piano with compaired
+  to the accompaniment)
+- Added an icon for the Piano Booster main window.
+- Fix a bug when swapping hands in the middle of a piece.
+- Fix a bug left or right now correctly dim the other stave.
+- Added start-up checks that Open GL is present.
+- Fix the pulse of sound when stopping the music
+
 
 */
 

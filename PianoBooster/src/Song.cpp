@@ -28,12 +28,7 @@
 
 #include <fstream>
 #include "Song.h"
-
-
-#if HAS_SCORE
 #include "Score.h"
-#endif
-
 
 void CSong::init()
 {
@@ -76,7 +71,6 @@ void CSong::loadSong(QString filename)
     if (!m_midiFile->getSongTitle().isEmpty())
         m_songTitle = m_midiFile->getSongTitle();
 
-    m_midiFile->playFromBar(96*4*10); //todo
 }
 
 
@@ -107,9 +101,7 @@ void CSong::rewind()
 {
     m_midiFile->rewind();
     this->CConductor::rewind();
-#if HAS_SCORE
     m_scoreWin->reset();
-#endif
     reset();
     forceScoreRedraw();
 }
@@ -134,18 +126,14 @@ void CSong::setActiveHand(whichPart_t hand)
 
     this->CConductor::setActiveHand(hand);
 
-#if HAS_SCORE
     m_scoreWin->setDisplayHand(hand);
-#endif
 }
 
 
 void CSong::setActiveChannel(int chan)
 {
     this->CConductor::setActiveChannel(chan);
-#if HAS_SCORE
     m_scoreWin->setActiveChannel(chan);
-#endif
     regenerateChordQueue();
 }
 

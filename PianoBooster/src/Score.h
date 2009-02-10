@@ -129,8 +129,8 @@ public:
         refreshScroll();
     }
 
-    void drawScroll( bool clearBackground);
-    void drawScore(bool refresh);
+    void drawScore();
+    void drawScroll(bool refresh);
 
 
 protected:
@@ -141,6 +141,9 @@ private:
     CRating* m_rating;
     CScroll* m_scroll[MAX_MIDI_CHANNELS];
     int m_activeScroll;
+    GLuint m_scoreDisplayListId;
+    GLuint m_stavesDisplayListId;
+
 };
 
 #endif // _SCORE_H_

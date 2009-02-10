@@ -22,10 +22,16 @@
 #include <QApplication>
 
 #include "QtWindow.h"
+#include <QtOpenGL>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    if (!QGLFormat::hasOpenGL()) {
+        QMessageBox::information(0, "OpenGL support",
+                 "This system does not support OpenGL which is needed to run Piano Booster.");
+        return -1;
+    }
     Window window;
     window.show();
     return app.exec();

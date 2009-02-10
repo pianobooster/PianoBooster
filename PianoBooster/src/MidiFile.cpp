@@ -89,7 +89,6 @@ void CMidiFile::openMidiFile(string filename)
         midiError(SMF_CANNOT_OPEN_FILE);
         return;
     }
-    playFromBar(0);
     rewind();
 }
 

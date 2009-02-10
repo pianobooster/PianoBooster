@@ -33,6 +33,7 @@ typedef unsigned int guint;
 typedef unsigned char guint8;
 
 whichPart_t CDraw::m_displayHand;
+int CDraw::m_forceCompileRedraw;
 
 
 void CDraw::oneLine(float x1, float y1, float x2, float y2)
@@ -471,15 +472,15 @@ void CDraw::drawStaves(float startX, float endX)
     for (i = -4; i <= 4; i+=2 )
     {
         CStavePos pos = CStavePos(PB_PART_right, i);
-        glVertex2f (Cfg::staveStartX(), pos.getPosY());
-        glVertex2f (Cfg::staveEndX(), pos.getPosY());
+        glVertex2f (startX, pos.getPosY());
+        glVertex2f (endX, pos.getPosY());
     }
     drColour ((m_displayHand != PB_PART_right) ? Cfg::staveColour() : Cfg::staveColourDim());
     for (i = -4; i <= 4; i+=2 )
     {
         CStavePos pos = CStavePos(PB_PART_left, i);
-        glVertex2f (Cfg::staveStartX(), pos.getPosY());
-        glVertex2f (Cfg::staveEndX(),   pos.getPosY());
+        glVertex2f (startX, pos.getPosY());
+        glVertex2f (endX,   pos.getPosY());
     }
     glEnd();
 }

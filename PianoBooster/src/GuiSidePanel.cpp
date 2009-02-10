@@ -57,6 +57,8 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* tracks, GuiTopBar* topBar)
 
     boostSlider->setMinimum(-100);
     boostSlider->setMaximum(100);
+    pianoSlider->setMinimum(-100);
+    pianoSlider->setMaximum(100);
 }
 
 void GuiSidePanel::loadBookList()
@@ -112,6 +114,7 @@ void GuiSidePanel::loadSong(QString filename)
         m_topBar->refresh(true);
     }
     m_parent->setWindowTitle("Piano Booster - " + m_song->getSongTitle());
+    autoSetMuteYourPart();
 }
 
 void GuiSidePanel::on_bookCombo_activated (int index)
@@ -172,4 +175,17 @@ void GuiSidePanel::on_leftHandRadio_toggled (bool checked)
     if (checked)
         m_song->setActiveHand(PB_PART_left);
 }
+
+void GuiSidePanel::autoSetMuteYourPart()
+{
+    bool checked = false;
+    if (m_trackList->hasPianoPart())
+    {
+        if (m_song->getActiveChannel() == CNote::bothHandsChan())
+            checked =  true;
+    }
+    muteYourPartCheck->setChecked(checked);
+    m_song->mutePianistPart(checked);
+}
+
 

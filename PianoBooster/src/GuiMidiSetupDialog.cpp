@@ -80,8 +80,8 @@ void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
         midiOutputCombo->setCurrentIndex(i);
 
     latencyFixEdit->setText(QString().setNum(Cfg::latencyFix));
-    latencyFixEdit->hide();
-    latencyFixLabel->hide();
+    //latencyFixEdit->hide(); fixme
+    //latencyFixLabel->hide();
     updateMidiInfoText();
 }
 

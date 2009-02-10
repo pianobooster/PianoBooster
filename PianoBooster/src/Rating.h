@@ -30,6 +30,7 @@
 #define __RATING_H__
 
 #include "Util.h"
+#include "Cfg.h"
 
 class CRating
 {

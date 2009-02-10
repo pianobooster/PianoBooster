@@ -61,13 +61,19 @@ private slots:
     void on_leftHandRadio_toggled (bool checked);
 
     void on_trackList_currentRowChanged(int currentRow) {
-        if (m_trackList) m_trackList->currentRowChanged(currentRow);
+        if (m_trackList){
+            m_trackList->currentRowChanged(currentRow);
+            autoSetMuteYourPart();
+        }
     }
 
     void on_boostSlider_valueChanged(int value) {
         if (m_song) m_song->boostVolume(value);
     }
 
+    void on_pianoSlider_valueChanged(int value) {
+        if (m_song) m_song->pianoVolume(value);
+    }
     void on_listenRadio_toggled (bool checked)
     {
         if (!m_song || !checked) return;
@@ -86,9 +92,16 @@ private slots:
         m_song->setPlayMode(PB_PLAY_MODE_playAlong);
     }
 
+    void on_muteYourPartCheck_toggled (bool checked)
+    {
+        if (m_song) m_song->mutePianistPart(checked);
+    }
+
 private:
     void loadBookList();
     void loadSong(QString filename);
+    void autoSetMuteYourPart();
+
 
     CSong* m_song;
     CScore* m_score;

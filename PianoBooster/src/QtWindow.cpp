@@ -30,9 +30,17 @@
 
 Window::Window()
 {
-//    QGLFormat fmt; //fixme
-//    fmt.setSwapInterval(1);
-//    QGLFormat::setDefaultFormat(fmt);
+    decodeCommandLine();
+
+    if (Cfg::experimentalSwapInterval)
+    {
+        QGLFormat fmt;
+        fmt.setSwapInterval(100);
+        int value = fmt.swapInterval();
+        ppLogInfo("Open GL Swap Interval %d", value);
+        QGLFormat::setDefaultFormat(fmt);
+    }
+
 
     QCoreApplication::setOrganizationName("PianoBooster");
     QCoreApplication::setOrganizationDomain("pianobooster.sourceforge.net/");
@@ -51,8 +59,6 @@ Window::Window()
 
     m_sidePanel = new GuiSidePanel(this, m_settings);
     m_topBar = new GuiTopBar();
-
-    decodeCommandLine();
 
     mainLayout->addWidget(m_sidePanel);
     columnLayout->addWidget(m_topBar);
@@ -91,7 +97,7 @@ Window::Window()
         CChord::setPianoRange(m_settings->value("Keyboard/lowestNote", 0).toInt(),
                           m_settings->value("Keyboard/highestNote", 127).toInt());
 
-    Cfg::latencyFix = 0; //m_settings->value("midi/latency", 0).toInt();
+    Cfg::latencyFix = m_settings->value("midi/latency", 0).toInt();
 
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
@@ -131,6 +137,13 @@ void Window::decodeCommandLine()
                 Cfg::smallScreen = true;
             else if (argList.at(i).startsWith("-q"))
                 Cfg::quickStart = true;
+            else if (argList.at(i).startsWith("-X1"))
+                Cfg::experimentalTempo = true;
+            else if (argList.at(i).startsWith("-X2"))
+                Cfg::experimentalSwapInterval = true;
+            else if (argList.at(i).startsWith("-X3"))
+                Cfg::experimentAllwaysFullRedraw = true;
+
             else if (argList.at(i).startsWith("-h") || argList.at(i).startsWith("-?") ||argList.at(i).startsWith("--help"))
             {
                 displayUsage();
@@ -172,7 +185,7 @@ void Window::createActions()
     m_setupMidiAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupMidiAct, SIGNAL(triggered()), this, SLOT(showMidiSetup()));
 
-    m_setupKeyboardAct = new QAction(QIcon(":/images/open.png"), tr("&Keboard setting ..."), this);
+    m_setupKeyboardAct = new QAction(QIcon(":/images/open.png"), tr("&Keyboard setting ..."), this);
     m_setupKeyboardAct->setShortcut(tr("Ctrl+K"));
     m_setupKeyboardAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
@@ -236,18 +249,22 @@ void Window::createSongControls()
 
 void Window::about()
 {
-   QMessageBox::about(this, tr("About"),
+    QMessageBox about(this);
+    about.setWindowTitle (tr("About"));
+    about.setText(
             tr(
                 "<b>PainoBooster - Version " PB_VERSION "</b> <br><br>"
-                "A fun way of <b>Boosting</b> your <b>Piano</b> playing skills!<br><br>"
+                "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
                 "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
-                "Copyright(c) L. J. Barman, 2008; All rights reserved.<br><br>"
+                "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
                 "This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
                 "This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
                 "Copyright(c) 2003-2007 Gary P. Scavone"
                 ));
+    about.setMinimumWidth(600);
+    about.exec();
 }
 
 void Window::open()

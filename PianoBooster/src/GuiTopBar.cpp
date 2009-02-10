@@ -67,9 +67,9 @@ void GuiTopBar::refresh(bool reset)
         majorCombo->setCurrentIndex(0);
         reloadKeyCombo(true);
         transposeSpin->setValue(0);
-
+        startBarSpin->setValue(0);
     }
-    int index = 3;
+    int index = 0;
     if (m_song)
         index = CStavePos::getKeySignature() + 6;
     if (index >= 0 && index < keyCombo->count())
@@ -205,5 +205,22 @@ void GuiTopBar::on_speedSpin_valueChanged(int speed)
 void GuiTopBar::on_startBarSpin_valueChanged(double bar)
 {
     if (!m_song) return;
+
+    // Stop the muisc playing
+    m_song->playMusic(false);
+    setPlayButtonState(false);
+
     m_song->setPlayFromBar( bar);
+}
+
+
+
+void GuiTopBar::on_saveBarButton_clicked(bool clicked)
+{
+    if (!m_song) return;
+    double barNumber = m_song->getCurrentBarPos();
+    startBarSpin->setValue(barNumber);
+    //on_startBarSpin_valueChanged(barNumber);
+    //m_song->setPlayFromBar( barNumber); fixme
+
 }

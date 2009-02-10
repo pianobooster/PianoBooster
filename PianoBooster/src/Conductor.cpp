@@ -43,9 +43,8 @@ playMode_t CConductor::m_playMode = PB_PLAY_MODE_listen;
 CConductor::CConductor()
 {
     int i;
-#if HAS_SCORE
+
     m_scoreWin = 0;
-#endif
 
     m_songEventQueue = new CQueue<CMidiEvent>(1000);
     m_wantedChordQueue = new CQueue<CChord>(1000);
@@ -55,11 +54,13 @@ CConductor::CConductor()
     m_transpose = 0;
     setSpeed(1.0);
     m_boostVolume = 0;
+    m_pianoVolume = 0;
     m_activeChannel = 0;
     m_leadLagAdjust = 0;
     m_skill = 0;
     m_silenceTimeOut = 0;
     m_realTimeEventBits = 0;
+    m_mutePianistPart = false;
     setPianistChannels(1-1,2-1);
 
     for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
@@ -138,7 +139,7 @@ void CConductor::muteChannel(int channel, bool state)
 
     m_muteChannels[ channel] = state;
     if (state == true)
-        channelSoundOff(channel); // Fixme this is called too often
+        channelSoundOff(channel); // fixme this is called too often
 }
 
 void CConductor::mutePart(int part, bool state)
@@ -172,8 +173,6 @@ int CConductor::calcBoostVolume(int channel, int volume)
     else
         m_savedMainVolume[channel] = volume;
 
-    if ( m_boostVolume == 0 )
-        return volume;
     returnVolume = volume;
     activePart = false;
     if (m_activeChannel == CNote::bothHandsChan())
@@ -210,6 +209,10 @@ int CConductor::calcBoostVolume(int channel, int volume)
         if (m_boostVolume > 0)
             returnVolume = (returnVolume * (100 - m_boostVolume)) / 100;
     }
+        // The piano volume can reduce the volume of the music
+    if (m_pianoVolume>0)
+        returnVolume = (returnVolume * (100 - m_pianoVolume)) / 100;;
+
     if (returnVolume > 127)
         returnVolume = 127;
     return returnVolume;
@@ -222,12 +225,13 @@ void CConductor::outputBoostVolume()
 
     for ( chan =0; chan <MAX_MIDI_CHANNELS; chan++ )
     {
-        if (chan == m_pianistGoodChan)
+        if (chan == m_pianistGoodChan || chan == m_pianistBadChan)
             continue;
         CMidiEvent midi;
         midi.controlChangeEvent(0, chan, MIDI_MAIN_VOLUME, calcBoostVolume(chan,-1));
         playMidiEvent(midi);
     }
+    outputPianoVolume();
 }
 
 void CConductor::transpose(int transpose)
@@ -244,11 +248,10 @@ void CConductor::transpose(int transpose)
     }
 }
 
-void CConductor::autoMute()
+void CConductor::activatePianistMutePart()
 {
     mutePart(PB_PART_all, false);
-
-    if (m_playMode != PB_PLAY_MODE_listen)
+    if (m_playMode != PB_PLAY_MODE_listen && m_mutePianistPart == true)
     {
         if (m_activeChannel == CNote::bothHandsChan())
         {
@@ -257,7 +260,15 @@ void CConductor::autoMute()
             if (CNote::getActiveHand() == PB_PART_both || CNote::getActiveHand() == PB_PART_right)
                 mutePart(CNote::rightHandChan(), true);
         }
+        else
+            mutePart(m_activeChannel, true);
     }
+}
+
+void CConductor::mutePianistPart(bool state)
+{
+    m_mutePianistPart = state;
+    activatePianistMutePart();
 }
 
 void CConductor::setActiveHand(whichPart_t hand)
@@ -265,7 +276,7 @@ void CConductor::setActiveHand(whichPart_t hand)
     if (CNote::getActiveHand() == hand)
         return;
     CNote::setActiveHand(hand);
-    autoMute();
+    activatePianistMutePart();
     outputBoostVolume();
     m_wantedChord = m_savedwantedChord;
 
@@ -296,20 +307,32 @@ void CConductor::setActiveChannel(int channel)
     outputBoostVolume();
     resetWantedChord();
     fetchNextChord();
-    autoMute();
+    activatePianistMutePart();
 }
 
+
+void CConductor::outputPianoVolume()
+{
+    CMidiEvent event;
+    int volume = 127;
+    // if piano volume is between -100 and 0 reduce the volume accordangly
+    if (m_pianoVolume < 0)
+        volume = (volume * (100 + m_pianoVolume)) / 100;
+
+    event.controlChangeEvent(0, m_pianistGoodChan, MIDI_MAIN_VOLUME, volume);
+    playMidiEvent(event); // Play the midi note or event
+    event.controlChangeEvent(0, m_pianistBadChan, MIDI_MAIN_VOLUME, volume);
+    playMidiEvent(event); // Play the midi note or event
+
+}
 void CConductor::testWrongNoteSound(bool enable)
 {
     m_testWrongNoteSound = enable;
     CMidiEvent event;
 
-    event.controlChangeEvent(0, m_pianistGoodChan, MIDI_MAIN_VOLUME, 127);
-    playMidiEvent(event); // Play the midi note or event
+
     event.programChangeEvent(0,m_pianistGoodChan, m_cfg_rightNoteSound);
     playMidiEvent( event );
-    event.controlChangeEvent(0, m_pianistBadChan, MIDI_MAIN_VOLUME, 127);
-    playMidiEvent(event); // Play the midi note or event
     event.programChangeEvent(0,m_pianistBadChan, m_cfg_wrongNoteSound);
     playMidiEvent( event );
 }
@@ -319,10 +342,10 @@ void CConductor::playMusic(bool start)
 {
     m_playing = start;
     allSoundOff();
-    resetAllChannels();
     if (start)
     {
-        autoMute();
+        resetAllChannels();
+        activatePianistMutePart();
 
         testWrongNoteSound(false);
 
@@ -346,7 +369,7 @@ void CConductor::playTransposeEvent(CMidiEvent event)
                 (event.type() == MIDI_NOTE_ON || event.type() == MIDI_NOTE_OFF) )
         event.transpose(m_transpose);
 
-    if (event.type() == MIDI_NOTE_ON && m_muteChannels[event.channel()] == true &&
+    if (event.type() == MIDI_NOTE_ON && isChannelMuted(event.channel()) == true &&
                                 CChord::isNotePlayable(event.note(), m_transpose) == true)
         return; // mute the note by not playing it
 
@@ -430,9 +453,6 @@ void CConductor::fetchNextChord()
     }
     while (m_wantedChord.trimOutOfRangeNotes(m_transpose)==0);
 
-    // count the good notes so that the live percentage looks OK
-    m_rating.totalNotes(m_wantedChord.length());
-    setEventBits( EVENT_BITS_forceFullRredraw);
     // now find the split point
     findSplitPoint();
 }
@@ -481,11 +501,11 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         {
             m_goodPlayedNotes.addNote(hand, inputNote.note());
             m_goodNoteLines.addNote(hand, inputNote.note());
-#if HAS_SCORE
+
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
                         (m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
                         m_chordDeltaTime);
-#endif
+
             if (validatePianistChord() == true)
             {
                 if (m_chordDeltaTime < 0)
@@ -493,6 +513,9 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
                 m_goodPlayedNotes.clear();
                 fetchNextChord();
+                // count the good notes so that the live percentage looks OK
+                m_rating.totalNotes(m_wantedChord.length());
+                setEventBits( EVENT_BITS_forceRatingRedraw);
             }
         }
         else
@@ -515,12 +538,10 @@ void CConductor::pianistInput(CMidiEvent inputNote)
             goodSound = false;
         bool hasNote = m_goodPlayedNotes.removeNote(inputNote.note());
 
-#if HAS_SCORE
         if (hasNote)
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
                     (m_followPlayingTimeOut)? Cfg::noteColour():Cfg::playedStoppedColour(),
                     m_chordDeltaTime);
-#endif
 
         outputSavedNotesOff();
     }
@@ -604,7 +625,7 @@ void CConductor::followPlaying()
             missedNotesColour(Cfg::playedStoppedColour());
             fetchNextChord();
             m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
-            setEventBits( EVENT_BITS_forceFullRredraw);
+            setEventBits( EVENT_BITS_forceRatingRedraw);
         }
     }
 }
@@ -628,7 +649,6 @@ void CConductor::findImminentNotesOff()
     while (deltaAdjust(m_playingDeltaTime) + aheadDelta   > m_cfg_imminentNotesOffPoint)
     {
         if (event.type() == MIDI_NOTE_OFF )// fixme && isChannelMuted(event.channel()) == false)
-
             m_savedNoteOffQueue->push(event);
         if ( i >= m_songEventQueue->length())
             break;
@@ -640,7 +660,6 @@ void CConductor::findImminentNotesOff()
 
 void CConductor::missedNotesColour(CColour colour)
 {
-#if HAS_SCORE
     int i;
     CNote note;
     for (i = 0; i < m_wantedChord.length(); i++)
@@ -649,7 +668,6 @@ void CConductor::missedNotesColour(CColour colour)
         if (m_goodPlayedNotes.searchChord(note.pitch(),m_transpose) == false)
             m_scoreWin->setPlayedNoteColour(note.pitch() + m_transpose, colour, m_chordDeltaTime);
     }
-#endif
 }
 
 void CConductor::realTimeEngine(int mSecTicks)
@@ -687,7 +705,7 @@ void CConductor::realTimeEngine(int mSecTicks)
                 m_tempo.clearPlayingTicks();
                 m_followPlayingTimeOut = 0;
                 m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
-                setEventBits( EVENT_BITS_forceFullRredraw);
+                setEventBits( EVENT_BITS_forceRatingRedraw);
 
                 missedNotesColour(Cfg::playedStoppedColour());
                 findImminentNotesOff();
@@ -719,7 +737,8 @@ void CConductor::realTimeEngine(int mSecTicks)
     {
         ppDEBUG_CONDUCTOR(("m_savedNoteQueue %d m_playingDeltaTime %d",m_savedNoteQueue->space() , m_playingDeltaTime ));
         ppDEBUG_CONDUCTOR(("getfollowState() %d  %d %d",getfollowState() , m_leadLagAdjust, m_songEventQueue->length() ));
-        forceScoreRedraw();
+        //fixme setEventBits( EVENT_BITS_forceBarNumberRedraw);
+        setEventBits( EVENT_BITS_forceFullRedraw);
     }
 
     addDeltaTime(ticks);
@@ -783,7 +802,7 @@ void CConductor::realTimeEngine(int mSecTicks)
             m_nextMidiEvent = m_songEventQueue->pop();
         else
         {
-            //ppTrace("no data in song queue");
+            ppDEBUG_CONDUCTOR(("no data in song queue"));
             m_nextMidiEvent.clear();
             break;
         }
@@ -823,6 +842,9 @@ void CConductor::rewind()
     m_cfg_imminentNotesOffPoint = CMidiFile::ppqnAdjust(-15);  // look ahead and find an Notes off coming up
     // Annie song 25
 
+    if (Cfg::latencyFix!=0)
+        m_cfg_imminentNotesOffPoint = 0;
+
     m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg::playZoneEarly()); // when playing along
     m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate());
 }
@@ -835,11 +857,10 @@ void CConductor::init()
     for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
         muteChannel(channel, false);
 
-#if HAS_SCORE
     assert(m_scoreWin);
     if (m_scoreWin)
         m_scoreWin->setInputChords(&m_goodNoteLines, &m_badNoteLines, &m_rating);
-#endif
+
     setPianoSoundPatches(1-1, 7-1); // 6-1
 
     rewind();

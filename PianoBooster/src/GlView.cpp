@@ -38,12 +38,16 @@
 
 int nextListId; //fixme
 
+
 CGLView::CGLView(Window *parent)
     : QGLWidget(parent)
 {
     m_qtWindow = parent;
     m_rating = 0;
     m_fullRedrawFlag = true;
+    m_forcefullRedraw = 0;
+    m_forceRatingRedraw = 0;
+    m_forceBarRedraw = 0;
 
     m_backgroundColour = QColor(0, 0, 0);
 
@@ -59,7 +63,11 @@ CGLView::~CGLView()
     delete m_song;
     delete m_score;
     m_titleHeight = 0;
-    if (nextListId) { glDeleteLists(nextListId,1); nextListId = 0;}
+    if (nextListId)
+    {
+        glDeleteLists(nextListId, 1);
+        nextListId = 0;
+    }
 
 }
 
@@ -80,20 +88,29 @@ void CGLView::initializeGL()
 
 void CGLView::paintGL()
 {
-    if (m_fullRedrawFlag) // clear the screen only if we are doing a full redraw
+    if (m_fullRedrawFlag)
+        m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
+
+    if (m_forcefullRedraw) // clear the screen only if we are doing a full redraw
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    if (m_fullRedrawFlag)
-        drawDisplayText();
+    drawDisplayText();
+
+    drawAccurracyBar();
+
     drawBarNumber();
 
-    m_score->drawScore(m_fullRedrawFlag);
-    if (m_fullRedrawFlag)
-        drawTimeSignature();
+    m_score->drawScore();
+    m_score->drawScroll(m_forcefullRedraw);
+
+    drawTimeSignature();
 
     m_scrollTicks = 0;
     m_midiTicks += m_realtime.restart();
+
+    if (m_forcefullRedraw) m_forcefullRedraw--;
+
 }
 
 void CGLView::drawTimeSignature()
@@ -135,24 +152,25 @@ void CGLView::drawAccurracyBar()
     if (m_song->getPlayMode() == PB_PLAY_MODE_listen)
         return;
 
-    float y;
+    if (m_forceRatingRedraw == 0)
+        return;
+    m_forceRatingRedraw--;
+
+
     float accuracy;
     CColour colour;
 
-    y = Cfg::getAppHeight() - 14;
+    float y = Cfg::getAppHeight() - 14;
     const float x = 120;
     const int width = 360;
     const int lineWidth = 8/2;
 
-    if (!Cfg::quickStart)
-    {
-        glColor3f(1.0,1.0,1.0);
-        renderText(30, y-4,0 ,"Accuracy:", m_timeRatingFont);
-    }
-
     m_rating->getAccuracy(&colour, &accuracy);
     CDraw::drColour (colour);
     glRectf(x, y - lineWidth, x + width * accuracy, y + lineWidth);
+    CDraw::drColour (Cfg::backgroundColour());
+    glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
+
 
     glLineWidth (1);
     CDraw::drColour (CColour(1.0, 1.0, 1.0));
@@ -175,12 +193,18 @@ void CGLView::drawDisplayText()
     if (Cfg::quickStart)
         return;
 
-    drawAccurracyBar();
+    if (m_forcefullRedraw == 0)
+        return;
+
+    glColor3f(1.0,1.0,1.0);
+    float y = Cfg::getAppHeight() - 14;
+
+    if (m_song->getPlayMode() != PB_PLAY_MODE_listen)
+        renderText(30, y-4,0 ,"Accuracy:", m_timeRatingFont);
 
     if (m_titleHeight < 45 )
         return;
-    float y;
-    glColor3f(1.0,1.0,1.0);
+
     y = Cfg::getAppHeight() - m_titleHeight;
     renderText(30, y+6, 0,"Song: " + m_song->getSongTitle(), m_timeRatingFont);
     /*
@@ -194,11 +218,19 @@ void CGLView::drawDisplayText()
 
 void CGLView::drawBarNumber()
 {
-    float y;
-    glColor3f(1.0,1.0,1.0);
-    y = Cfg::getAppHeight() - m_titleHeight - 40;
+    if (m_forceBarRedraw == 0 || Cfg::quickStart)
+        return;
+    m_forceBarRedraw--;
 
-    renderText(30, y+6, 0,"Bar: " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
+    float y = Cfg::getAppHeight() - m_titleHeight - 34;
+    float x = 30;
+
+    //CDraw::drColour (Cfg::backgroundColour());
+    //CDraw::drColour (Cfg::noteColourDim());
+    //glRectf(x+30+10, y-2, x + 80, y + 16);
+
+    glColor3f(1.0,1.0,1.0);
+    renderText(x, y, 0,"Bar: " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
 
 void CGLView::resizeGL(int width, int height)
@@ -243,6 +275,8 @@ void CGLView::resizeGL(int width, int height)
     Cfg::setAppDimentions(x, y, sizeX, sizeY);
     Cfg::setStaveEndX(sizeX - staveEndGap);
     CStavePos::setStaveCentralOffset(staveGap/2);
+    CDraw::forceCompileRedraw();
+
 }
 
 void CGLView::mousePressEvent(QMouseEvent *event)
@@ -316,15 +350,23 @@ void CGLView::timerEvent(QTimerEvent *event)
         eventBits = m_song->task(m_midiTicks);
         m_midiTicks = 0;
 
-        m_fullRedrawFlag = false;
         if (eventBits != 0)
         {
-            if ((eventBits & EVENT_BITS_forceFullRredraw) != 0)
-                m_fullRedrawFlag = true;
+            if ((eventBits & EVENT_BITS_forceFullRedraw) != 0)
+                m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
+            if ((eventBits & EVENT_BITS_forceRatingRedraw) != 0)
+                m_forceRatingRedraw = REDRAW_COUNT;
+            if ((eventBits & EVENT_BITS_forceBarNumberRedraw) != 0)
+                m_forceBarRedraw = REDRAW_COUNT;
             m_qtWindow->songEventUpdated(eventBits);
         }
+        if(Cfg::experimentAllwaysFullRedraw)
+            m_fullRedrawFlag = true;
+        else
+            m_fullRedrawFlag = false;
+
 #ifdef _WIN32
-m_fullRedrawFlag = true; //fixme
+//m_fullRedrawFlag = true; //fixme
 #endif
         // if m_fullRedrawFlag is true it will redraw the entire GL window
         //if (m_scrollTicks>= 12)
@@ -337,24 +379,6 @@ m_fullRedrawFlag = true; //fixme
     }
 }
 
-void CGLView::mediaTimerEvent(int deltaTime)
+void CGLView::mediaTimerEvent(int ticks)
 {
-/*
-    int eventBits;
-    eventBits = m_song->task(deltaTime);
-
-    m_fullRedrawFlag = false;
-    if (eventBits != 0)
-    {
-        if ((eventBits & EVENT_BITS_forceFullRredraw) != 0)
-            m_fullRedrawFlag = true;
-        m_qtWindow->songEventUpdated(eventBits);
-    }
-#ifdef _WIN32
-m_fullRedrawFlag = true; //fixme
-#endif
-    // if m_fullRedrawFlag is true it will redraw the entire GL window
-    glDraw();
-    m_fullRedrawFlag = true;
-*/
 }

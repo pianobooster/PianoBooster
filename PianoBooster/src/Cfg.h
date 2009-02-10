@@ -29,7 +29,27 @@
 #ifndef __CFG_H__
 #define __CFG_H__
 
-#include "Util.h"
+class CColour
+{
+public:
+    CColour() { red = green = blue = 0; }
+
+
+    CColour(double r, double g, double b)
+    {
+        red = static_cast<float>(r);
+        green = static_cast<float>(g);
+        blue = static_cast<float>(b);
+    }
+    float red, green, blue;
+
+    bool operator==(CColour colour)
+    {
+        if (red == colour.red && green == colour.green && blue == colour.blue)
+            return true;
+        return false;
+    }
+};
 
 #define YELLOW_BACKGROUND   0
 #define BLACK_BACKGROUND    1
@@ -112,6 +132,9 @@ public:
     static bool smallScreen;
     static bool quickStart;
     static int latencyFix;  // Try to fix the latency (put the time in msec, 0 disables it)
+    static bool experimentalTempo;
+    static bool experimentalSwapInterval;
+    static bool experimentAllwaysFullRedraw;
 
 private:
     static float m_staveEndX;

@@ -32,6 +32,8 @@
 #include <fstream>
 #include <sstream>
 #include "Util.h"
+#include "Cfg.h"
+
 
 /* prints an error message to stderr, and dies */
 void fatal(const char *msg, ...)
@@ -48,7 +50,7 @@ void fatal(const char *msg, ...)
 void ppLog(logLevel_t level, const char *msg, ...)
 {
     va_list ap;
-    if (level <= 2)//fixme Cfg::logLevel)
+    if (Cfg::logLevel  < level)
         return;
 
     va_start(ap, msg);
@@ -61,6 +63,8 @@ void ppLogInfo(const char *msg, ...)
     va_list ap;
 
     //fixme should call ppLog
+    if (Cfg::logLevel  <  1)
+        return;
 
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
@@ -71,6 +75,9 @@ void ppLogInfo(const char *msg, ...)
 void ppLogWarn(const char *msg, ...)
 {
     va_list ap;
+
+    if (Cfg::logLevel  <  2)
+        return;
 
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
@@ -100,7 +107,7 @@ void ppDebug( const char *msg, ...)
 
 void ppError(const char *msg, ...)
 {
-        va_list ap;
+    va_list ap;
 
     va_start(ap, msg);
     fputs("Error: ", stdout);

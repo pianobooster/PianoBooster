@@ -76,7 +76,7 @@ int CBar::addDeltaTime(int ticks)
         {
             m_barCounter++;
             m_beatCounter=0;
-            ppLogInfo("Bar number %d", m_barCounter);
+            ppLogWarn("Bar number %d", m_barCounter);
             m_hasBarNumberChanged = true;
         }
     }
@@ -88,7 +88,7 @@ int CBar::goToBarNumer()
 {
     int ticks;
 
-    ticks = static_cast<int>((m_playFromBar - currentPos()) * m_beatLength * SPEED_ADJUST_FACTOR + 1);
+    ticks = static_cast<int>((m_playFromBar - getCurrentBarPos()) * m_beatLength * SPEED_ADJUST_FACTOR + 1);
 
     addDeltaTime(ticks);
     return ticks;
@@ -97,8 +97,8 @@ int CBar::goToBarNumer()
 
 void CBar::checkGotoBar()
 {
-    ppDEBUG_BAR(("checkGotoBar currentPos %.1f", currentPos()));
-    if (currentPos() < m_playFromBar )
+    ppDEBUG_BAR(("checkGotoBar currentBarPos %.1f", getCurrentBarPos()));
+    if (getCurrentBarPos() < m_playFromBar )
         m_seekingBarNumber = true;
     else
     {

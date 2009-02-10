@@ -63,6 +63,8 @@ private slots:
         reloadKeyCombo((index == 0)?true:false);
     }
 
+    void on_saveBarButton_clicked(bool clicked);
+
 private:
     void reloadKeyCombo(bool major);
 

@@ -45,6 +45,8 @@ CScore::CScore()
 
     m_activeScroll = 0;
     m_scroll[m_activeScroll]->showScroll(true);
+    m_scoreDisplayListId = 0;//glGenLists (1);
+    m_stavesDisplayListId = glGenLists (1);
 }
 
 CScore::~CScore()
@@ -53,38 +55,65 @@ CScore::~CScore()
     size_t i;
     for (i=0; i< arraySize(m_scroll); i++)
         delete m_scroll[i];
+
+    if (m_scoreDisplayListId != 0)
+        glDeleteLists(m_scoreDisplayListId, 1);
+    m_scoreDisplayListId = 0;
+
+    if (m_stavesDisplayListId != 0)
+        glDeleteLists(m_stavesDisplayListId, 1);
+    m_stavesDisplayListId = 0;
 }
 
-void CScore::drawScroll(bool clearBackground)
+void CScore::drawScroll(bool refresh)
 {
-    if (clearBackground == true)
+    if (refresh == false)
     {
         float topY = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY();
         float bottomY = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY();
         drColour (Cfg::backgroundColour());
         glRectf(Cfg::scrollStartX(), topY, Cfg::getAppWidth(), bottomY);
     }
-    drawSymbol(CSymbol(PB_SYMBOL_playingZone,  CStavePos(PB_PART_both, 0)), Cfg::playZoneX());
-    drawScrollingSymbols();
-    drawStaves(Cfg::staveStartX(), Cfg::scrollStartX());
-    m_piano->drawPianoInput();
 
+    if (getCompileRedrawCount())
+    {
+        if (m_stavesDisplayListId == 0)
+            m_stavesDisplayListId = glGenLists (1);
+
+        glNewList (m_stavesDisplayListId, GL_COMPILE_AND_EXECUTE);
+            drawSymbol(CSymbol(PB_SYMBOL_playingZone,  CStavePos(PB_PART_both, 0)), Cfg::playZoneX());
+            drawStaves(Cfg::scrollStartX(), Cfg::staveEndX());
+        glEndList ();
+    }
+    else
+        glCallList(m_stavesDisplayListId);
+
+    drawScrollingSymbols();
+    m_piano->drawPianoInput();
 }
 
-void CScore::drawScore(bool refresh)
+void CScore::drawScore()
 {
-    if (refresh)
+    if (getCompileRedrawCount())
     {
-        drColour (Cfg::staveColour());
+        if (m_scoreDisplayListId == 0)
+            m_scoreDisplayListId = glGenLists (1);
 
-        drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_right, -1)), Cfg::clefX()); // The Treble Clef
-        drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());
-        //m_piano->drawPianoKeyboard();
-        drawKeySignature(CStavePos::getKeySignature());
+        glNewList (m_scoreDisplayListId, GL_COMPILE_AND_EXECUTE);
+            drColour (Cfg::staveColour());
+
+            drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_right, -1)), Cfg::clefX()); // The Treble Clef
+            drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());
+            //m_piano->drawPianoKeyboard();
+            drawKeySignature(CStavePos::getKeySignature());
+            drawStaves(Cfg::staveStartX(), Cfg::scrollStartX());
+        glEndList ();
+
+        forceCompileRedraw(getCompileRedrawCount() - 1);
+
     }
-    drawStaves(Cfg::scrollStartX(), Cfg::staveEndX());
-
-    drawScroll(!refresh);
+    else
+        glCallList(m_scoreDisplayListId);
 }
 
 

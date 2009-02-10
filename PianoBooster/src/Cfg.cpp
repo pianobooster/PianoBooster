@@ -41,4 +41,8 @@ int Cfg::m_appY;
 int Cfg::m_appWidth;
 int Cfg::m_appHeight;
 int Cfg::latencyFix = 0;
+bool Cfg::experimentalTempo = false;
+bool Cfg::experimentalSwapInterval = false;
+bool Cfg::experimentAllwaysFullRedraw = false;
+
 

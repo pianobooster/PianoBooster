@@ -194,8 +194,6 @@ void CMidiTrack::readTimeSignatureEvent()
         return;
     }
     len = (1<<timeSigDenominator);
-    //if (timeSigNumerator>len*2) // fixme what is this
-    //    timeSigNumerator =len*2;
 
     b3 = readByte();           /* Ignore the last bytes */
     b4 = readByte();           /* Ignore the last bytes */

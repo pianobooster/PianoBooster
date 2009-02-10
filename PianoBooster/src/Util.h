@@ -48,27 +48,6 @@ typedef unsigned char byte;
 #define ppDEBUG(args)     ppDebug args
 
 
-class CColour
-{
-public:
-    CColour() { red = green = blue = 0; }
-
-
-    CColour(double r, double g, double b)
-    {
-        red = static_cast<float>(r);
-        green = static_cast<float>(g);
-        blue = static_cast<float>(b);
-    }
-    float red, green, blue;
-
-    bool operator==(CColour colour)
-    {
-        if (red == colour.red && green == colour.green && blue == colour.blue)
-            return true;
-        return false;
-    }
-};
 
 typedef enum
 {
@@ -85,10 +64,6 @@ void ppError(const char *msg, ...);
 void ppLog(logLevel_t level, const char *msg, ...);
 void ppLogInfo(const char *msg, ...);
 void ppLogWarn(const char *msg, ...);
-
-#ifndef HAS_SCORE // fixme
-#define HAS_SCORE  1
-#endif
 
 #define SPEED_ADJUST_FACTOR     1000
 #define deltaAdjust(delta) ((delta)/SPEED_ADJUST_FACTOR )

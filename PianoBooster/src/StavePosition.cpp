@@ -28,6 +28,7 @@
 
 
 #include "StavePosition.h"
+#include "Draw.h"
 
 float CStavePos::m_staveCenterY;
 int CStavePos::m_KeySignature;
@@ -64,6 +65,7 @@ void CStavePos::notePos(whichPart_t hand, int midiNote)
 
 void CStavePos::setKeySignature(int key)
 {
+    CDraw::forceCompileRedraw();
     static const staveLookup_t staffLookupFlat6[] = { // Gb [Bb Eb Ab Db Gb Cb]
         {1, 2}, // Cn
         {2, 0}, //.Db
