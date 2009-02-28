@@ -33,6 +33,7 @@
 #include "Cfg.h"
 #include "StavePosition.h"
 
+#define NOT_USED 0x7fffffff
 
 typedef enum
 {
@@ -61,6 +62,7 @@ public:
     //@brief constructors
     CSymbol(musicalSymbol_t type, whichPart_t hand, int midiNote, int midiDuration = 0)
     {
+        init();
         m_symbolType = type;
         m_midiNote = midiNote;
         m_hand = hand;
@@ -106,6 +108,8 @@ public:
 
     void setColour(CColour colour){ m_colour = colour;}
     CColour getColour(){return m_colour;}
+    void setPianistTiming(int timing){ m_pianistTiming = timing;}
+    int getPianistTiming(){ return m_pianistTiming; }
 
     void transpose(int amount)
     {
@@ -121,6 +125,7 @@ private:
         m_midiNote = 0;
         m_hand = PB_PART_none;
         m_midiDuration = 0;
+        m_pianistTiming = NOT_USED;
     }
 
     CStavePos m_stavePos;
@@ -130,6 +135,7 @@ private:
     whichPart_t m_hand;
 
     CColour m_colour;
+    int m_pianistTiming;
 };
 
 

@@ -96,12 +96,22 @@ public:
             m_symbols[i].transpose(amount);
         }
     }
-    void setNoteColour(int note, CColour colour)
+
+    void setNoteColour(int note, CColour colour )
     {
         for (int i = 0; i < m_length; i++)
         {
             if (note == m_symbols[i].getNote() || note == 0)
                 m_symbols[i].setColour(colour);
+        }
+    }
+
+    void setNoteTimming(int note, int timing)
+    {
+        for (int i = 0; i < m_length; i++)
+        {
+            if (note == m_symbols[i].getNote() || note == 0)
+                m_symbols[i].setPianistTiming(timing);
         }
     }
 
@@ -135,7 +145,7 @@ public:
     }
     void reset();
 
-    void setChannel(whichPart_t channel) {m_displayChannel = channel;}
+    void setChannel(int channel) {m_displayChannel = channel;}
 
 
     CSlot nextSlot();

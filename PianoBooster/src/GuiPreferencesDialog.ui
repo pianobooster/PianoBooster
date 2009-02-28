@@ -1,107 +1,32 @@
 <ui version="4.0" >
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog" >
+ <class>GuiPreferencesDialog</class>
+ <widget class="QDialog" name="GuiPreferencesDialog" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>410</width>
-    <height>159</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout_2" >
    <item>
     <widget class="QGroupBox" name="groupBox" >
      <property name="title" >
-      <string>Playing Skills</string>
+      <string>Display  Settings</string>
      </property>
-     <widget class="QCheckBox" name="checkBox" >
-      <property name="geometry" >
-       <rect>
-        <x>13</x>
-        <y>32</y>
-        <width>191</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text" >
-       <string>show Accuracy Indicator</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="checkBox_3" >
-      <property name="geometry" >
-       <rect>
-        <x>30</x>
-        <y>60</y>
-        <width>121</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text" >
-       <string>show High Score</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="" >
-      <property name="geometry" >
-       <rect>
-        <x>211</x>
-        <y>31</y>
-        <width>169</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" >
-       <item>
-        <widget class="QLabel" name="label_3" >
-         <property name="text" >
-          <string>above this</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSpinBox" name="spinBox" />
-       </item>
-       <item>
-        <widget class="QLabel" name="label_4" >
-         <property name="text" >
-          <string>speed</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="" >
-      <property name="geometry" >
-       <rect>
-        <x>211</x>
-        <y>64</y>
-        <width>169</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" >
-       <item>
-        <widget class="QLabel" name="label_6" >
-         <property name="text" >
-          <string>above this</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSpinBox" name="spinBox_3" />
-       </item>
-       <item>
-        <widget class="QLabel" name="label_7" >
-         <property name="text" >
-          <string>speed</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QCheckBox" name="displayOptimiseCheck" >
+        <property name="text" >
+         <string>Enable display optimisation</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -110,7 +35,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons" >
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
@@ -121,7 +46,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>GuiPreferencesDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -137,7 +62,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>GuiPreferencesDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >

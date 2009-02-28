@@ -55,6 +55,7 @@ CGLView::CGLView(Window *parent)
     m_score = new CScore();
     m_midiTicks = 0;
     m_scrollTicks = 0;
+	m_cfg_openGlOptimise = false;
 }
 
 CGLView::~CGLView()
@@ -360,14 +361,11 @@ void CGLView::timerEvent(QTimerEvent *event)
                 m_forceBarRedraw = REDRAW_COUNT;
             m_qtWindow->songEventUpdated(eventBits);
         }
-        if(Cfg::experimentAllwaysFullRedraw)
-            m_fullRedrawFlag = true;
-        else
+        if(m_cfg_openGlOptimise)
             m_fullRedrawFlag = false;
+        else
+            m_fullRedrawFlag = true;
 
-#ifdef _WIN32
-//m_fullRedrawFlag = true; //fixme
-#endif
         // if m_fullRedrawFlag is true it will redraw the entire GL window
         //if (m_scrollTicks>= 12)
             glDraw();

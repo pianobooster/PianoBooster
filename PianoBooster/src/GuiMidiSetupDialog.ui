@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>250</width>
-    <height>298</height>
+    <width>295</width>
+    <height>355</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -58,22 +58,19 @@
          <widget class="QComboBox" name="midiOutputCombo" />
         </item>
         <item row="2" column="0" >
-         <widget class="QLabel" name="latencyFixLabel" >
+         <widget class="QPushButton" name="latencyFixButton" >
           <property name="text" >
-           <string>Latency fix (mSec):</string>
-          </property>
-          <property name="alignment" >
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           <string>Latency</string>
           </property>
          </widget>
         </item>
         <item row="2" column="1" >
-         <widget class="QLineEdit" name="latencyFixEdit" >
-          <property name="toolTip" >
-           <string>A work around for poor latency</string>
+         <widget class="QLabel" name="latencyFixLabel" >
+          <property name="text" >
+           <string>0 (msec)</string>
           </property>
-          <property name="inputMask" >
-           <string>0000; </string>
+          <property name="alignment" >
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -95,7 +92,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons" >
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>

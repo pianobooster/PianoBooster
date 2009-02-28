@@ -52,11 +52,13 @@ CConductor::CConductor()
     m_savedNoteOffQueue = new CQueue<CMidiEvent>(200);
     m_playing = false;
     m_transpose = 0;
+    m_latencyFix = 0;
+    m_leadLagAdjust = 0;
     setSpeed(1.0);
+    setLatencyFix(0);
     m_boostVolume = 0;
     m_pianoVolume = 0;
     m_activeChannel = 0;
-    m_leadLagAdjust = 0;
     m_skill = 0;
     m_silenceTimeOut = 0;
     m_realTimeEventBits = 0;
@@ -349,6 +351,9 @@ void CConductor::playMusic(bool start)
 
         testWrongNoteSound(false);
 
+ppTrace("setLatencyFix %d", getLatencyFix()); // Fixme
+
+
         /*
         const unsigned char gsModeEnterData[] =  {0xf0, 0x41, 0x10, 0x42, 0x12, 0x40, 0x00, 0x7f, 0x00, 0x41, 0xf7};
 
@@ -435,7 +440,7 @@ void CConductor::findSplitPoint()
 void CConductor::fetchNextChord()
 {
     m_followState = PB_FOLLOW_searching;
-    m_followPlayingTimeOut = m_cfg_playZoneLate * SPEED_ADJUST_FACTOR;
+    m_followPlayingTimeOut = m_cfg_playZoneLate;
 
     outputSavedNotes();
 
@@ -460,7 +465,7 @@ void CConductor::fetchNextChord()
 
 bool CConductor::validatePianistNote(CMidiEvent& inputNote)
 {
-    if ( deltaAdjust(m_chordDeltaTime) <= -m_cfg_playZoneEarly)
+    if ( m_chordDeltaTime <= -m_cfg_playZoneEarly)
         return false;
 
     return m_wantedChord.searchChord(inputNote.note(), m_transpose);
@@ -501,15 +506,20 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         {
             m_goodPlayedNotes.addNote(hand, inputNote.note());
             m_goodNoteLines.addNote(hand, inputNote.note());
-
+            int pianistTiming = m_chordDeltaTime + m_cfg_playZoneLate - m_followPlayingTimeOut;
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
                         (m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
-                        m_chordDeltaTime);
+                        m_chordDeltaTime);//pianistTiming);
+
 
             if (validatePianistChord() == true)
             {
                 if (m_chordDeltaTime < 0)
                     m_tempo.removePlayingTicks(-m_chordDeltaTime);
+
+                ppLogWarn ("notes %d, time %d %3d %3d", m_goodPlayedNotes.length(), deltaAdjust(pianistTiming),
+                deltaAdjust(-m_chordDeltaTime),
+                deltaAdjust( m_cfg_playZoneLate - m_followPlayingTimeOut ) );//fixme
 
                 m_goodPlayedNotes.clear();
                 fetchNextChord();
@@ -570,7 +580,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
     }
     */
 
-    if (goodSound == false || Cfg::latencyFix == 0)
+    if (goodSound == false || getLatencyFix() == 0)
        playMidiEvent( inputNote );
 }
 
@@ -620,7 +630,7 @@ void CConductor::followPlaying()
     }
     else // m_playMode == PB_PLAY_MODE_playAlong
     {
-        if (deltaAdjust(m_chordDeltaTime) > m_cfg_playZoneLate )
+        if (m_chordDeltaTime > m_cfg_playZoneLate )
         {
             missedNotesColour(Cfg::playedStoppedColour());
             fetchNextChord();
@@ -759,7 +769,7 @@ void CConductor::realTimeEngine(int mSecTicks)
         if (type == MIDI_PB_tempo)
         {
             m_tempo.setMidiTempo(m_nextMidiEvent.data1());
-            m_leadLagAdjust = m_tempo.mSecToTicks( -Cfg::latencyFix);
+            m_leadLagAdjust = m_tempo.mSecToTicks( -getLatencyFix() );
         }
         else if (type == MIDI_PB_timeSignature)
         {
@@ -842,11 +852,11 @@ void CConductor::rewind()
     m_cfg_imminentNotesOffPoint = CMidiFile::ppqnAdjust(-15);  // look ahead and find an Notes off coming up
     // Annie song 25
 
-    if (Cfg::latencyFix!=0)
+    if (getLatencyFix()!=0)
         m_cfg_imminentNotesOffPoint = 0;
 
-    m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg::playZoneEarly()); // when playing along
-    m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate());
+    m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg::playZoneEarly()) * SPEED_ADJUST_FACTOR; // when playing along
+    m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate()) * SPEED_ADJUST_FACTOR;
 }
 
 void CConductor::init()

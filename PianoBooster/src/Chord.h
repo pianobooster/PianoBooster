@@ -45,9 +45,8 @@ typedef enum
     PB_PART_accump,
     PB_PART_all,
     PB_PART_none,
-};
+} whichPart_t;
 
-typedef int whichPart_t;
 
 #define MAX_CHORD_NOTES    20  // The maximum notes in a chord well we only have 10 fingers
 

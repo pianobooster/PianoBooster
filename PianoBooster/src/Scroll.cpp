@@ -199,7 +199,7 @@ int CScroll::findWantedChord(int note, CColour colour, int wantedDelta)
     return m_wantedIndex;
 }
 
-void CScroll::setPlayedNoteColour(int note, CColour colour, int wantedDelta)
+void CScroll::setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming)
 {
     int index;
     if (m_wantedIndex >= m_scrollQueue->length())
@@ -207,8 +207,15 @@ void CScroll::setPlayedNoteColour(int note, CColour colour, int wantedDelta)
     index = findWantedChord(note, colour, wantedDelta);
     note -= m_transpose;
     m_scrollQueue->indexPtr(index)->setNoteColour(note, colour);
+    if (pianistTimming != NOT_USED)
+    {
+        pianistTimming = deltaAdjust(pianistTimming) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
+
+        m_scrollQueue->indexPtr(index)->setNoteTimming(note, pianistTimming);
+    }
     compileSlot(m_scrollQueue->index(index));
 }
+
 
 void CScroll::refresh()
 {
@@ -307,5 +314,5 @@ void CScroll::reset()
 
     m_scrollQueue->clear();
     m_ppqnFactor = static_cast<float>(DEFAULT_PPQN) / CMidiFile::getPulsesPerQuarterNote();
-    m_noteSpacingFactor = m_ppqnFactor * 0.75; //HORIZONTAL_SPACING_FACTOR
+    m_noteSpacingFactor = m_ppqnFactor * 0.75; //HORIZONTAL_SPACING_FACTOR // fixme
 }

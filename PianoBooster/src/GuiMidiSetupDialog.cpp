@@ -26,7 +26,6 @@
 
 #include <QtGui>
 
-
 #include "GuiMidiSetupDialog.h"
 
 //#include "rtmidi/RtTimer.h"
@@ -35,8 +34,14 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     : QDialog(parent)
 {
     m_song = 0;
+    m_settings = 0;
     setupUi(this);
+    m_latencyFix = 0;
+    m_latencyChanged = false;
+    m_midiChanged = false;
+
 }
+
 
 void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
 {
@@ -46,6 +51,8 @@ void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
     // Check inputs.
     QString portName;
     int i = 0;
+
+    m_latencyFix = m_song->getLatencyFix();
 
     midiInputCombo->addItem(tr("None (PC Keyboard)"));
     while (true)
@@ -79,7 +86,6 @@ void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
     if (i!=-1)
         midiOutputCombo->setCurrentIndex(i);
 
-    latencyFixEdit->setText(QString().setNum(Cfg::latencyFix));
     //latencyFixEdit->hide(); fixme
     //latencyFixLabel->hide();
     updateMidiInfoText();
@@ -106,24 +112,52 @@ void GuiMidiSetupDialog::updateMidiInfoText()
     else
         midiInfoText->append("<span style=\"color:gray\">Midi Output Device: " + midiOutputCombo->currentText() +"</span>");
 
-    int latencyFix = latencyFixEdit->text().toInt();
-    latencyFix = qBound(0, latencyFix, 2000);
-    latencyFixEdit->setText(QString().setNum(latencyFix));
-
-    if (latencyFix > 0)
-        midiInfoText->append("<span style=\"color:black\">Please see the website for the latency fix instructions.</span>");
+    latencyFixLabel->setText(tr("%1 mSec").arg(m_latencyFix));
 
 }
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
 {
     updateMidiInfoText();
+    m_midiChanged = true;
 }
 
 void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 {
     updateMidiInfoText();
+    m_midiChanged = true;
+    m_latencyFix = 0;
 }
+
+void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
+{
+    bool ok;
+    int latencyFix = QInputDialog::getInteger(this, tr("Enter a value for the latency fix in milliseconds"),
+            tr(
+            "The latency fix works by running the music ahead of what you<br>"
+            "are playing to conteract the delay within the sound generator.<br>"
+            "You will need a piano <b>with speakers</b> that are <b>turned up</b>.<br>"
+            "<i>It is not ideal, a low latency sound generator is recommend.</i><br>"
+            "Enter the time in milliseconds for the delay (1000 mSec = 1 sec)<br>"
+            "(For the Microsoft GS Wavetable SW Synth try a value of 350 msec)<br>"
+            "If you are not sure enter a value of zero"
+
+
+            /*"The value entered here tries to compensate for the latency problems on the sound generator\n"
+            "To use this turn up the sound on your piano keyboard\n"
+            "(if your piano keyboard does not have it own speakers then this fix will not work)"
+
+            " see the website for more details"*/),
+                                      m_latencyFix, 0, 1000, 50, &ok);
+    if (ok)
+    {
+        m_latencyFix = latencyFix;
+        updateMidiInfoText();
+        m_latencyChanged = true;
+    }
+
+}
+
 
 void GuiMidiSetupDialog::accept()
 {
@@ -136,15 +170,14 @@ void GuiMidiSetupDialog::accept()
                           m_settings->value("Keyboard/highestNote", 127).toInt());
 
 
-    //if (m_settings->value("midi/output").toString() != midiOutputCombo->currentText())
+    if (m_latencyChanged == false || m_midiChanged == true)
     {
         m_settings->setValue("midi/output", midiOutputCombo->currentText());
-        m_settings->setValue("midi/latency", latencyFixEdit->text().toInt());
         m_song->openMidiPort(1,string(midiOutputCombo->currentText().toAscii()));
     }
 
-    Cfg::latencyFix = latencyFixEdit->text().toInt();
-
+    m_settings->setValue("midi/latency", m_latencyFix);
+    m_song->setLatencyFix(m_latencyFix);
     m_song->regenerateChordQueue();
     this->QDialog::accept();
 }

@@ -35,6 +35,7 @@
 #include "GuiKeyboardSetupDialog.h"
 #include "GuiSidePanel.h"
 #include "GuiTopBar.h"
+#include "GuiPreferencesDialog.h"
 
 
 class CGLView;
@@ -84,6 +85,13 @@ private slots:
         GuiMidiSetupDialog *midiSetupDialog = new GuiMidiSetupDialog(this);
         midiSetupDialog->init(m_song, m_settings);
         midiSetupDialog->exec();
+    }
+
+    void showPreferencesDialog()
+    {
+        GuiPreferencesDialog *preferencesDialog = new GuiPreferencesDialog(this);
+        preferencesDialog->init(m_song, m_settings, m_glWidget);
+        preferencesDialog->exec();
     }
 
     void showKeyboardSetup()
@@ -136,8 +144,11 @@ private:
     QAction *m_songPlayAct;
     QAction *m_setupMidiAct;
     QAction *m_setupKeyboardAct;
+    QAction *m_toggleSidePanelAct;
+    QAction *m_setupPreferencesAct;
 
     QMenu *m_fileMenu;
+    QMenu *m_viewMenu;
     QMenu *m_setupMenu;
     QMenu *m_helpMenu;
     QToolBar *m_songToolBar;

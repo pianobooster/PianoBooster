@@ -97,7 +97,17 @@ Window::Window()
         CChord::setPianoRange(m_settings->value("Keyboard/lowestNote", 0).toInt(),
                           m_settings->value("Keyboard/highestNote", 127).toInt());
 
-    Cfg::latencyFix = m_settings->value("midi/latency", 0).toInt();
+    m_song->setLatencyFix(m_settings->value("midi/latency", 0).toInt());
+
+
+#ifdef _WIN32
+    m_glWidget->m_cfg_openGlOptimise = false; // don't default to true on windows
+#else
+    m_glWidget->m_cfg_openGlOptimise = true;
+#endif
+
+    m_glWidget->m_cfg_openGlOptimise = m_settings->value("display/openGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
+
 
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
@@ -141,8 +151,6 @@ void Window::decodeCommandLine()
                 Cfg::experimentalTempo = true;
             else if (argList.at(i).startsWith("-X2"))
                 Cfg::experimentalSwapInterval = true;
-            else if (argList.at(i).startsWith("-X3"))
-                Cfg::experimentAllwaysFullRedraw = true;
 
             else if (argList.at(i).startsWith("-h") || argList.at(i).startsWith("-?") ||argList.at(i).startsWith("--help"))
             {
@@ -190,10 +198,15 @@ void Window::createActions()
     m_setupKeyboardAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
 
-    QAction* toggleSidePanelAct = new QAction(tr("&Show/Hide the side panel"), this);
-    toggleSidePanelAct->setShortcut(tr("F11"));
-    connect(toggleSidePanelAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
-    addAction(toggleSidePanelAct);
+    m_toggleSidePanelAct = new QAction(tr("&Show/Hide the side panel"), this);
+    m_toggleSidePanelAct->setShortcut(tr("F11"));
+    connect(m_toggleSidePanelAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
+
+    m_setupPreferencesAct = new QAction(QIcon(":/images/open.png"), tr("&Preferences ..."), this);
+    m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
+    //m_setupPreferencesAct->setStatusTip(tr("Setup the Midi input an output"));
+    connect(m_setupPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
+
 
     QAction* enableFollowTempoAct = new QAction(this);
     enableFollowTempoAct->setShortcut(tr("Shift+F1"));
@@ -212,11 +225,14 @@ void Window::createMenus()
     m_fileMenu->addAction(m_openAct);
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_exitAct);
-    menuBar()->addSeparator();
+
+    m_viewMenu = menuBar()->addMenu(tr("&View"));
+    m_viewMenu->addAction(m_toggleSidePanelAct);
 
     m_setupMenu = menuBar()->addMenu(tr("&Setup"));
     m_setupMenu->addAction(m_setupMidiAct);
     m_setupMenu->addAction(m_setupKeyboardAct);
+    m_setupMenu->addAction(m_setupPreferencesAct);
 
     m_helpMenu = menuBar()->addMenu(tr("&Help"));
     m_helpMenu->addAction(m_aboutAct);

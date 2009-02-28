@@ -70,8 +70,8 @@ public:
 
     static const float staveThickness()      {return 1;}
 
-    static const int playZoneEarly()     {return 25;} // 20 Was 25
-    static const int playZoneLate()      {return 25;}
+    static const int playZoneEarly()     {return m_playZoneEarly;} // 20 Was 25
+    static const int playZoneLate()      {return m_playZoneLate;}
     static const int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
     static const int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
 
@@ -131,14 +131,15 @@ public:
     static int logLevel;
     static bool smallScreen;
     static bool quickStart;
-    static int latencyFix;  // Try to fix the latency (put the time in msec, 0 disables it)
     static bool experimentalTempo;
     static bool experimentalSwapInterval;
-    static bool experimentAllwaysFullRedraw;
 
 private:
     static float m_staveEndX;
     static int m_appX, m_appY, m_appWidth, m_appHeight;
+    static const int m_playZoneEarly;
+    static const int m_playZoneLate;
+
 
 };
 

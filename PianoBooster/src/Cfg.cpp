@@ -33,16 +33,16 @@
 #include "Cfg.h"
 
 float Cfg::m_staveEndX;
-int Cfg::logLevel = 0;
+int Cfg::logLevel = 1;
 bool Cfg::smallScreen = false;
 bool Cfg::quickStart = false;
 int Cfg::m_appX;
 int Cfg::m_appY;
 int Cfg::m_appWidth;
 int Cfg::m_appHeight;
-int Cfg::latencyFix = 0;
 bool Cfg::experimentalTempo = false;
 bool Cfg::experimentalSwapInterval = false;
-bool Cfg::experimentAllwaysFullRedraw = false;
 
+const int Cfg::m_playZoneEarly = 25; // Was 25
+const int Cfg::m_playZoneLate = 25;
 

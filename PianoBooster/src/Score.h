@@ -98,9 +98,9 @@ public:
         m_rating = rating;
     }
 
-    void setPlayedNoteColour(int note, CColour colour, int wantedDelta)
+    void setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming = NOT_USED)
     {
-        m_scroll[m_activeScroll]->setPlayedNoteColour(note, colour, wantedDelta);
+        m_scroll[m_activeScroll]->setPlayedNoteColour(note, colour, wantedDelta, pianistTimming);
     }
 
 

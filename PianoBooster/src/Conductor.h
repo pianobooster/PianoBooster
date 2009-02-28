@@ -96,8 +96,15 @@ public:
     void setSpeed(float speed)
     {
         m_tempo.setSpeed(speed);
-        m_leadLagAdjust = m_tempo.mSecToTicks( -Cfg::latencyFix);
+        m_leadLagAdjust = m_tempo.mSecToTicks( -getLatencyFix() );
     }
+    void setLatencyFix(int latencyFix)
+    {
+        m_latencyFix = latencyFix;
+        m_leadLagAdjust = m_tempo.mSecToTicks( -getLatencyFix());
+    }
+    int getLatencyFix() { return m_latencyFix; }
+
     void muteChannel(int channel, bool state);
     void mutePart(int channel, bool state);
     void transpose(int transpose);
@@ -278,6 +285,8 @@ private:
     static playMode_t m_playMode;
     int m_skill;
     bool m_mutePianistPart;
+    int m_latencyFix;     // Try to fix the latency (put the time in msec, 0 disables it)
+
 };
 
 #endif //__CONDUCTOR_H__

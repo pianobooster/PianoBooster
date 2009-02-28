@@ -60,7 +60,7 @@ public:
     void scrollDeltaTime(int ticks);
     void transpose(int transpose);
     void refresh();
-    void setPlayedNoteColour(int note, CColour colour, int wantedDelta);
+    void setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming);
     void setChannel(int chan)    {m_notation->setChannel( chan );}
 
     //! add a midi event to be analysed and displayed on the score

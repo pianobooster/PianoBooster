@@ -36,6 +36,7 @@ SET( PIANOBOOSTER_SRCS
     GuiSidePanel.cpp
     GuiMidiSetupDialog.cpp
     GuiKeyboardSetupDialog.cpp
+    GuiPreferencesDialog.cpp
     GlView.cpp
     ${PB_BASE_SRCS}
     StavePosition.cpp
@@ -60,6 +61,7 @@ SET( PIANOBOOSTER_MOC_HDRS
     GuiSidePanel.h
     GuiMidiSetupDialog.h
     GuiKeyboardSetupDialog.h
+    GuiPreferencesDialog.h
 )
 
 # some .ui files
@@ -68,6 +70,7 @@ SET( PIANOBOOSTER_UIS
     ./GuiSidePanel.ui
     ./GuiMidiSetupDialog.ui
     ./GuiKeyboardSetupDialog.ui
+    ./GuiPreferencesDialog.ui
 
 )
 

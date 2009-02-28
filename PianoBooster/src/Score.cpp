@@ -71,7 +71,7 @@ void CScore::drawScroll(bool refresh)
     {
         float topY = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY();
         float bottomY = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY();
-        drColour (Cfg::backgroundColour());
+        drColour (CColour(0.0, 0.0, 0.0));//Cfg::backgroundColour()); //fixme
         glRectf(Cfg::scrollStartX(), topY, Cfg::getAppWidth(), bottomY);
     }
 
