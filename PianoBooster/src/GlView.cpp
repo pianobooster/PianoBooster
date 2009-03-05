@@ -36,9 +36,6 @@
 #include "Cfg.h"
 #include "Draw.h"
 
-int nextListId; //fixme
-
-
 CGLView::CGLView(Window *parent)
     : QGLWidget(parent)
 {
@@ -55,7 +52,7 @@ CGLView::CGLView(Window *parent)
     m_score = new CScore();
     m_midiTicks = 0;
     m_scrollTicks = 0;
-	m_cfg_openGlOptimise = false;
+    m_cfg_openGlOptimise = false;
 }
 
 CGLView::~CGLView()
@@ -64,11 +61,6 @@ CGLView::~CGLView()
     delete m_song;
     delete m_score;
     m_titleHeight = 0;
-    if (nextListId)
-    {
-        glDeleteLists(nextListId, 1);
-        nextListId = 0;
-    }
 
 }
 
@@ -166,7 +158,10 @@ void CGLView::drawAccurracyBar()
     const int width = 360;
     const int lineWidth = 8/2;
 
-    m_rating->getAccuracy(&colour, &accuracy);
+    m_rating->calculateAccuracy();
+
+    accuracy = m_rating->getAccuracyValue();
+    colour = m_rating->getAccuracyColour();
     CDraw::drColour (colour);
     glRectf(x, y - lineWidth, x + width * accuracy, y + lineWidth);
     CDraw::drColour (Cfg::backgroundColour());
@@ -320,15 +315,7 @@ void CGLView::init()
     m_song->setActiveHand(PB_PART_both);
 
     if (!Cfg::quickStart)
-        renderText(10,10,"x",m_timeRatingFont); //fixme
-/*
-    nextListId = glGenLists (1);
-
-    glNewList (nextListId, GL_COMPILE);
-    //renderText(10.0,10.0,0.0,"xxxxx");
-    //renderText(10,10,"xxxxx");
-    glEndList ();
-// */
+        renderText(10,10,"~", m_timeRatingFont); //fixme this is a work arround for a QT bug.
 
     setFocusPolicy(Qt::ClickFocus);
 

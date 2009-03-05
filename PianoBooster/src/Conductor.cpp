@@ -64,6 +64,7 @@ CConductor::CConductor()
     m_realTimeEventBits = 0;
     m_mutePianistPart = false;
     setPianistChannels(1-1,2-1);
+    cfg_timingMarkersFlag = false;
 
     for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
     {
@@ -197,6 +198,11 @@ int CConductor::calcBoostVolume(int channel, int volume)
         if (channel == m_activeChannel)
             activePart= true;
     }
+    if (channel == m_activeChannel)
+        activePart= true;
+
+    //if (channel == 5)  activePart= true; // for debuging
+
     if (activePart)
     {
         if (returnVolume == 0 )
@@ -350,6 +356,11 @@ void CConductor::playMusic(bool start)
         activatePianistMutePart();
 
         testWrongNoteSound(false);
+        if (seekingBarNumber())
+            resetWantedChord();
+
+
+
 
 ppTrace("setLatencyFix %d", getLatencyFix()); // Fixme
 
@@ -408,13 +419,31 @@ void CConductor::resetWantedChord()
     m_wantedChord.clear();
     ppDEBUG_CONDUCTOR(("resetWantedChord m_chordDeltaTime %d m_playingDeltaTime %d", m_chordDeltaTime, m_playingDeltaTime ));
 
+    m_followPlayingTimeOut = false;
     m_chordDeltaTime = m_playingDeltaTime;
+    m_pianistTiming = m_chordDeltaTime;
     m_pianistSplitPoint = MIDDLE_C;
-    m_followPlayingTimeOut = CMidiFile::ppqnAdjust(Cfg::playZoneLate() * SPEED_ADJUST_FACTOR);
 
     outputSavedNotes();
     m_followState = PB_FOLLOW_searching;
 }
+
+// switch modes if we are playing well enough (ie don't slow down if we are playing late)
+void CConductor::setFollowSkillAdvanced(bool enable)
+{
+    if (getLatencyFix() == 0)
+    {
+        m_followSkillAdvanced = enable;
+        m_stopPoint = (enable) ? m_cfg_stopPointAdvanced: m_cfg_stopPointBeginner ;
+    }
+    else
+    {
+        // behave differently if we are using the latency fix
+        m_cfg_earlyNotesPoint = m_cfg_imminentNotesOffPoint; //disable the earily notes
+        m_followSkillAdvanced = true;
+    }
+}
+
 
 void CConductor::findSplitPoint()
 {
@@ -440,7 +469,7 @@ void CConductor::findSplitPoint()
 void CConductor::fetchNextChord()
 {
     m_followState = PB_FOLLOW_searching;
-    m_followPlayingTimeOut = m_cfg_playZoneLate;
+    m_followPlayingTimeOut = false;
 
     outputSavedNotes();
 
@@ -455,6 +484,7 @@ void CConductor::fetchNextChord()
         m_wantedChord = m_wantedChordQueue->pop();
         m_savedwantedChord = m_wantedChord;
         m_chordDeltaTime -= m_wantedChord.getDeltaTime() * SPEED_ADJUST_FACTOR;
+        m_pianistTiming = m_chordDeltaTime;
     }
     while (m_wantedChord.trimOutOfRangeNotes(m_transpose)==0);
 
@@ -506,10 +536,10 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         {
             m_goodPlayedNotes.addNote(hand, inputNote.note());
             m_goodNoteLines.addNote(hand, inputNote.note());
-            int pianistTiming = m_chordDeltaTime + m_cfg_playZoneLate - m_followPlayingTimeOut;
+            int pianistTiming = (/*m_followPlayingTimeOut ||*/ !cfg_timingMarkersFlag) ? NOT_USED : m_pianistTiming;
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
-                        (m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
-                        m_chordDeltaTime);//pianistTiming);
+                        (!m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
+                        m_chordDeltaTime, pianistTiming);
 
 
             if (validatePianistChord() == true)
@@ -517,14 +547,14 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 if (m_chordDeltaTime < 0)
                     m_tempo.removePlayingTicks(-m_chordDeltaTime);
 
-                ppLogWarn ("notes %d, time %d %3d %3d", m_goodPlayedNotes.length(), deltaAdjust(pianistTiming),
-                deltaAdjust(-m_chordDeltaTime),
-                deltaAdjust( m_cfg_playZoneLate - m_followPlayingTimeOut ) );//fixme
-
                 m_goodPlayedNotes.clear();
                 fetchNextChord();
                 // count the good notes so that the live percentage looks OK
                 m_rating.totalNotes(m_wantedChord.length());
+                if (m_rating.getAccuracyValue() > 0.8)
+                    setFollowSkillAdvanced(true); // change the skill level only when they are good enough
+                else
+                    setFollowSkillAdvanced(false);
                 setEventBits( EVENT_BITS_forceRatingRedraw);
             }
         }
@@ -550,7 +580,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
         if (hasNote)
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
-                    (m_followPlayingTimeOut)? Cfg::noteColour():Cfg::playedStoppedColour(),
+                    (!m_followPlayingTimeOut)? Cfg::noteColour():Cfg::playedStoppedColour(),
                     m_chordDeltaTime);
 
         outputSavedNotesOff();
@@ -608,24 +638,25 @@ void CConductor::followPlaying()
 
     if (m_wantedChord.length() == 0)
         return;
-
+/* fixme delete
     if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint && !seekingBarNumber() )
         m_followState = PB_FOLLOW_earlyNotes;
+/*/
 
     if (seekingBarNumber())
     {
-        if (deltaAdjust(m_chordDeltaTime) > -m_cfg_stopPoint )
+        if (deltaAdjust(m_chordDeltaTime) > -m_stopPoint )
             fetchNextChord();
     }
     else if ( m_playMode == PB_PLAY_MODE_followYou)
     {
         if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
             m_followState = PB_FOLLOW_earlyNotes;
-        if (deltaAdjust(m_chordDeltaTime) > -m_cfg_stopPoint )
+        if (deltaAdjust(m_chordDeltaTime) > -m_stopPoint )
         {
             m_followState = PB_FOLLOW_waiting;
             // Throw away the time past the stop point (by adding a negative ticks)
-            addDeltaTime( m_cfg_stopPoint*SPEED_ADJUST_FACTOR - m_chordDeltaTime);
+            addDeltaTime( -m_stopPoint*SPEED_ADJUST_FACTOR - m_chordDeltaTime);
         }
     }
     else // m_playMode == PB_PLAY_MODE_playAlong
@@ -689,6 +720,9 @@ void CConductor::realTimeEngine(int mSecTicks)
 
     ticks = m_tempo.mSecToTicks(mSecTicks);
 
+    if (!m_followPlayingTimeOut)
+        m_pianistTiming += ticks;
+
     while (checkMidiInput() > 0)
         pianistInput(readMidiInput());
 
@@ -705,15 +739,15 @@ void CConductor::realTimeEngine(int mSecTicks)
         }
 
 
-        if (m_followPlayingTimeOut > 0)
+        if (m_pianistTiming > m_cfg_playZoneLate)
         {
             m_tempo.insertPlayingTicks(ticks);
 
-            m_followPlayingTimeOut -= ticks;
-            if (m_followPlayingTimeOut <= 0)
+            if (m_followPlayingTimeOut == false)
             {
+                m_followPlayingTimeOut = true;
+
                 m_tempo.clearPlayingTicks();
-                m_followPlayingTimeOut = 0;
                 m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
                 setEventBits( EVENT_BITS_forceRatingRedraw);
 
@@ -747,7 +781,7 @@ void CConductor::realTimeEngine(int mSecTicks)
     {
         ppDEBUG_CONDUCTOR(("m_savedNoteQueue %d m_playingDeltaTime %d",m_savedNoteQueue->space() , m_playingDeltaTime ));
         ppDEBUG_CONDUCTOR(("getfollowState() %d  %d %d",getfollowState() , m_leadLagAdjust, m_songEventQueue->length() ));
-        //fixme setEventBits( EVENT_BITS_forceBarNumberRedraw);
+        //fixme this did not work setEventBits( EVENT_BITS_forceBarNumberRedraw);
         setEventBits( EVENT_BITS_forceFullRedraw);
     }
 
@@ -785,7 +819,10 @@ void CConductor::realTimeEngine(int mSecTicks)
             //if (isChannelMuted(channel) == false) //fixme
             if (channel!= m_pianistGoodChan && channel!= m_pianistBadChan)
             {
-                if (getfollowState() >= PB_FOLLOW_earlyNotes && m_playMode == PB_PLAY_MODE_followYou && !seekingBarNumber())
+                if (getfollowState() >= PB_FOLLOW_earlyNotes &&
+                        m_playMode == PB_PLAY_MODE_followYou &&
+                        !seekingBarNumber() &&
+                        m_followSkillAdvanced == false)
                 {
                     // Save up the notes until the pianist press the right key
                     if (m_savedNoteQueue->space()>0)
@@ -847,13 +884,14 @@ void CConductor::rewind()
     m_badNoteLines.clear();
     resetWantedChord();
 
-    m_cfg_earlyNotesPoint = CMidiFile::ppqnAdjust(20); // was 10 playZoneEarly
-    m_cfg_stopPoint = CMidiFile::ppqnAdjust(0); //was -3; // stop just after the beat
+    m_cfg_earlyNotesPoint = CMidiFile::ppqnAdjust(15); // was 10 playZoneEarly
+    m_cfg_stopPointBeginner = CMidiFile::ppqnAdjust(-0); //was -3; // stop just after the beat
+    m_cfg_stopPointAdvanced = CMidiFile::ppqnAdjust(-15); //was -3; // stop just after the beat
     m_cfg_imminentNotesOffPoint = CMidiFile::ppqnAdjust(-15);  // look ahead and find an Notes off coming up
-    // Annie song 25
 
-    if (getLatencyFix()!=0)
-        m_cfg_imminentNotesOffPoint = 0;
+    setFollowSkillAdvanced(false);
+
+    // Annie song 25
 
     m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg::playZoneEarly()) * SPEED_ADJUST_FACTOR; // when playing along
     m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate()) * SPEED_ADJUST_FACTOR;

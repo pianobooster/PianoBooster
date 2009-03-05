@@ -107,8 +107,7 @@ Window::Window()
 #endif
 
     m_glWidget->m_cfg_openGlOptimise = m_settings->value("display/openGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
-
-
+    m_song->cfg_timingMarkersFlag = m_settings->value("score/timingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
 

@@ -70,7 +70,7 @@ public:
 
     static const float staveThickness()      {return 1;}
 
-    static const int playZoneEarly()     {return m_playZoneEarly;} // 20 Was 25
+    static const int playZoneEarly()     {return m_playZoneEarly;}
     static const int playZoneLate()      {return m_playZoneLate;}
     static const int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
     static const int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap

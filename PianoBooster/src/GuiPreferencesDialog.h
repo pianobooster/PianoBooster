@@ -45,11 +45,10 @@ class GuiPreferencesDialog : public QDialog, private Ui::GuiPreferencesDialog
 
 public:
     GuiPreferencesDialog(QWidget *parent = 0);
-    void init(CSong* song, QSettings* settings, CGLView* glView);    
+    void init(CSong* song, QSettings* settings, CGLView* glView);
 
 private slots:
     void accept();
-    void on_displayOptimiseCheck_toggled (bool checked);
 
 private:
     QSettings* m_settings;

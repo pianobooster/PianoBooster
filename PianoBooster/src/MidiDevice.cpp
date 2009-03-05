@@ -179,6 +179,8 @@ void CMidiDevice::playMidiEvent(CMidiEvent event)
     }
 
     m_midiout->sendMessage( &message );
+
+    //event.printDetails(); // usefull for debuging
 }
 
 

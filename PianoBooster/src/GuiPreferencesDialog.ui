@@ -14,15 +14,37 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2" >
    <item>
+    <widget class="QGroupBox" name="groupBox_2" >
+     <property name="title" >
+      <string>Score Settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3" >
+      <item>
+       <widget class="QCheckBox" name="timingMarkersCheck" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Maximum" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>Timing markers</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <widget class="QGroupBox" name="groupBox" >
      <property name="title" >
-      <string>Display  Settings</string>
+      <string>Video  Settings</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout" >
       <item>
-       <widget class="QCheckBox" name="displayOptimiseCheck" >
+       <widget class="QCheckBox" name="videoOptimiseCheck" >
         <property name="text" >
-         <string>Enable display optimisation</string>
+         <string>Video optimisation</string>
         </property>
        </widget>
       </item>

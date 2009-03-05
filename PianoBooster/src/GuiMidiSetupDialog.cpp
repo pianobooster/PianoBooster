@@ -118,15 +118,15 @@ void GuiMidiSetupDialog::updateMidiInfoText()
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
 {
-    updateMidiInfoText();
     m_midiChanged = true;
+    updateMidiInfoText();
 }
 
 void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 {
-    updateMidiInfoText();
-    m_midiChanged = true;
     m_latencyFix = 0;
+    m_midiChanged = true;
+    updateMidiInfoText();
 }
 
 void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
@@ -152,8 +152,8 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
     if (ok)
     {
         m_latencyFix = latencyFix;
-        updateMidiInfoText();
         m_latencyChanged = true;
+        updateMidiInfoText();
     }
 
 }

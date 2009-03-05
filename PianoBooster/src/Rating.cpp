@@ -40,7 +40,7 @@ void CRating::reset()
     m_factor = 2.0;
 }
 
-bool CRating::getAccuracy(CColour* colourPtr, float* accuracyPtr)
+void CRating::calculateAccuracy()
 {
     int direction = 0;
 
@@ -99,11 +99,6 @@ bool CRating::getAccuracy(CColour* colourPtr, float* accuracyPtr)
             }
         }
     }
-
-    *colourPtr = m_currentColour;
-    *accuracyPtr = m_currentAccuracy;
-
-    return (direction == 0)? false : true;
 }
 
 

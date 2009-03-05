@@ -222,5 +222,4 @@ void GuiTopBar::on_saveBarButton_clicked(bool clicked)
     startBarSpin->setValue(barNumber);
     //on_startBarSpin_valueChanged(barNumber);
     //m_song->setPlayFromBar( barNumber); fixme
-
 }

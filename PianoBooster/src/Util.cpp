@@ -33,7 +33,11 @@
 #include <sstream>
 #include "Util.h"
 #include "Cfg.h"
+#include <QTime>
 
+
+
+static QTime s_realtime;
 
 /* prints an error message to stderr, and dies */
 void fatal(const char *msg, ...)
@@ -95,6 +99,7 @@ void ppTrace(const char *msg, ...)
     fputc('\n', stdout);
 }
 
+
 void ppDebug( const char *msg, ...)
 {
     va_list ap;
@@ -116,3 +121,13 @@ void ppError(const char *msg, ...)
     fputc('\n', stdout);
 }
 
+void ppTiming(const char *msg, ...)
+{
+    va_list ap;
+
+    va_start(ap, msg);
+    fprintf(stdout, "T %4d " , s_realtime.restart() );
+    vfprintf(stdout, msg, ap);
+    va_end(ap);
+    fputc('\n', stdout);
+}

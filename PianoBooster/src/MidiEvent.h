@@ -220,6 +220,10 @@ public:
         m_velocity = 0;
     }
 
+    void printDetails()
+    {
+        ppTiming("chan %2d type %2X note %3d", channel(), type(), note() );
+    }
 
 private:
     int m_type;

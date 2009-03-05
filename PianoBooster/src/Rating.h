@@ -56,7 +56,10 @@ public:
         return percent;
     }
 
-    bool getAccuracy(CColour* colourPtr, float* accuracyPtr);
+    void calculateAccuracy();
+
+    float getAccuracyValue(){ return m_currentAccuracy; }
+    CColour getAccuracyColour() { return m_currentColour; }
 
 private:
     int m_totalNotesCount;

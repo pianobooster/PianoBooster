@@ -455,7 +455,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
         int pianistX = symbol.getPianistTiming();
         if ( pianistX != NOT_USED)
         {
-            pianistX =  x - pianistX * HORIZONTAL_SPACING_FACTOR;
+            pianistX =  x + pianistX * HORIZONTAL_SPACING_FACTOR;
             drColour(CColour(1.0, 1.0, 1.0));
             glLineWidth (2.0);
             glBegin(GL_LINES);

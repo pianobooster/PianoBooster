@@ -185,6 +185,8 @@ public:
     void setPlayFromBar(double bar){ m_bar.setPlayFromBar(bar);}
     void mutePianistPart(bool state);
 
+    bool cfg_timingMarkersFlag;
+
 
 protected:
     CScore* m_scoreWin;
@@ -253,7 +255,7 @@ private:
             return true;
         return m_muteChannels[chan];
     }
-
+    void setFollowSkillAdvanced(bool enable);
 
     CTempo m_tempo;
     CBar m_bar;
@@ -265,17 +267,22 @@ private:
     CChord m_goodNoteLines; // The coloured note lines that appear on the score when the pianist plays
     CChord m_badNoteLines;
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef
+    bool m_followSkillAdvanced;
     int m_lastSound;
+    int m_stopPoint;   // Were we stop the music if the pianist is late
     int m_cfg_rightNoteSound;
     int m_cfg_wrongNoteSound;
     int m_pianistGoodChan;
     int m_pianistBadChan;
     int m_cfg_earlyNotesPoint; // don't press the note too early
-    int m_cfg_stopPoint;   // Were we stop the music if the pianist is late
-    int m_followPlayingTimeOut;  // O dear, the student is too slow
+    int m_cfg_stopPointAdvanced;   // Were we stop the music if the pianist is late
+    int m_cfg_stopPointBeginner;   // Were we stop the music if the pianist is late
     int m_cfg_imminentNotesOffPoint;
     int m_cfg_playZoneEarly; // when playing along
     int m_cfg_playZoneLate;
+
+    int m_pianistTiming;  //measure whether the pianest is playing early or late
+    bool m_followPlayingTimeOut;  // O dear, the student is too slow
 
     bool m_testWrongNoteSound;
     int m_boostVolume;

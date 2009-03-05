@@ -44,18 +44,19 @@ void GuiPreferencesDialog::init(CSong* song, QSettings* settings, CGLView * glVi
     m_song = song;
     m_settings = settings;
     m_glView = glView;
-    displayOptimiseCheck->setChecked(m_glView->m_cfg_openGlOptimise);
-}
-
-void GuiPreferencesDialog::on_displayOptimiseCheck_toggled(bool checked)
-{
-
+    videoOptimiseCheck->setChecked(m_glView->m_cfg_openGlOptimise);
+    timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
 }
 
 void GuiPreferencesDialog::accept()
 {
-	m_glView->m_cfg_openGlOptimise = displayOptimiseCheck->isChecked();
-	m_settings->setValue("display/openGlOptimise", m_glView->m_cfg_openGlOptimise );
-	
-	this->QDialog::accept();
+    m_glView->m_cfg_openGlOptimise = videoOptimiseCheck->isChecked();
+    m_settings->setValue("display/openGlOptimise", m_glView->m_cfg_openGlOptimise );
+    //void on_timingMarkersCheck_toggled (bool checked);
+    m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
+    m_settings->setValue("score/timingMarkers", m_song->cfg_timingMarkersFlag );
+
+
+
+    this->QDialog::accept();
 }

@@ -64,6 +64,7 @@ void ppError(const char *msg, ...);
 void ppLog(logLevel_t level, const char *msg, ...);
 void ppLogInfo(const char *msg, ...);
 void ppLogWarn(const char *msg, ...);
+void ppTiming(const char *msg, ...);
 
 #define SPEED_ADJUST_FACTOR     1000
 #define deltaAdjust(delta) ((delta)/SPEED_ADJUST_FACTOR )

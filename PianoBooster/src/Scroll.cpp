@@ -314,5 +314,5 @@ void CScroll::reset()
 
     m_scrollQueue->clear();
     m_ppqnFactor = static_cast<float>(DEFAULT_PPQN) / CMidiFile::getPulsesPerQuarterNote();
-    m_noteSpacingFactor = m_ppqnFactor * 0.75; //HORIZONTAL_SPACING_FACTOR // fixme
+    m_noteSpacingFactor = m_ppqnFactor * HORIZONTAL_SPACING_FACTOR;
 }
