@@ -36,6 +36,7 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     m_song = 0;
     m_settings = 0;
     m_glView = 0;
+    setWindowTitle("Preferences");
 }
 
 

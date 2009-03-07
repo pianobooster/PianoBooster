@@ -81,9 +81,9 @@ public:
 
 #if BLACK_BACKGROUND
     static const CColour staveColour()           {return CColour(0.1, 0.7, 0.1);} // green
-    static const CColour staveColourDim()        {return CColour(0.2, 0.5, 0.2);} // grey
+    static const CColour staveColourDim()        {return CColour(0.15, 0.40, 0.15);} // grey
     static const CColour noteColour()            {return CColour(0.1, 0.9, 0.1);} // green
-    static const CColour noteColourDim()         {return CColour(0.3, 0.6, 0.3);} // green
+    static const CColour noteColourDim()         {return CColour(0.25, 0.45, 0.25);} // green
     //static const CColour playedGoodColour()    {return CColour(0.6, 0.6, 1.0);} // grey
     static const CColour playedGoodColour()      {return CColour(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
     static const CColour playedBadColour()       {return CColour(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0

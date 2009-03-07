@@ -118,7 +118,6 @@ public:
         }
         if (timing < m_maxLeftEdge)
             m_maxLeftEdge = timing;
-ppTrace("m_maxLeftEdge  %d %d", m_maxLeftEdge,  timing); //fixme
     }
 
     void clearAllNoteTimmings()

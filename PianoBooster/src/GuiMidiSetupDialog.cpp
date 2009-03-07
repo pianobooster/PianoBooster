@@ -40,6 +40,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     m_latencyChanged = false;
     m_midiChanged = false;
 
+    setWindowTitle("Midi Setup");
 }
 
 

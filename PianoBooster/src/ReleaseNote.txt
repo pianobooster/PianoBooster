@@ -21,7 +21,7 @@ v0.5.2 beta1: (7 March 2009)
 - Fix a bug left or right now correctly dim the other stave.
 - Added start-up checks that Open GL is present.
 - Fix the pulse of sound when stopping the music
-- Added timing markers.
+- Added timing markers which show when the pianist pressed the note.
 
 
 */

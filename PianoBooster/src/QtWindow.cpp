@@ -295,8 +295,8 @@ void Window::open()
 
 void Window::readSettings()
 {
-    QPoint pos = m_settings->value("window/pos", QPoint(0, 0)).toPoint();
-    QSize size = m_settings->value("window/size", QSize(600, 400)).toSize();
+    QPoint pos = m_settings->value("window/pos", QPoint(25, 25)).toPoint();
+    QSize size = m_settings->value("window/size", QSize(800, 600)).toSize();
     resize(size);
     move(pos);
 }

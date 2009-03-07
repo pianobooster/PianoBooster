@@ -12,19 +12,10 @@ ENDIF(WIN32)
 # set project's name
 PROJECT( pianobooster )
 
-SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
+SET(PB_BASE_SRCS MidiFile.cpp MidiDevice.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp rtmidi/RtMidi.cpp)
-SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
+SET(PB_BASE_HDR MidiFile.h MidiDevice.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     MidiDevice.h Chord.h Tempo.h rtmidi/RtMidi.h)
-
-IF(WIN32)
-    SET(PB_BASE_SRCS ${PB_BASE_SRCS} MidiDevice.cpp)
-    ADD_DEFINITIONS(-Wall -g -D__WINDOWS_MM__ -D_WIN32)
-ELSE(WIN32)
-    SET(PB_BASE_SRCS ${PB_BASE_SRCS} MidiDevice.cpp)
-    #ADD_DEFINITIONS("-Wall -ansi -pedantic")
-    ADD_DEFINITIONS(-Wall -g -D__LINUX_ALSASEQ__)
-ENDIF(WIN32)
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
@@ -71,7 +62,6 @@ SET( PIANOBOOSTER_UIS
     ./GuiMidiSetupDialog.ui
     ./GuiKeyboardSetupDialog.ui
     ./GuiPreferencesDialog.ui
-
 )
 
 # and finally an resource file
@@ -80,7 +70,7 @@ SET( PIANOBOOSTER_RCS
 )
 
 # enable warnings
-ADD_DEFINITIONS( -Wall)
+ADD_DEFINITIONS(-Wall)
 
 # by default only QtCore and QtGui modules are enabled
 # other modules must be enabled like this:
@@ -119,12 +109,13 @@ LINK_LIBRARIES( ${QT_LIBRARIES} )
 
 # Add in the link libraries for each operating system
 IF(${CMAKE_SYSTEM} MATCHES "Linux")
+    ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
     LINK_LIBRARIES (asound)
 ENDIF(${CMAKE_SYSTEM} MATCHES "Linux")
 
 IF(${CMAKE_SYSTEM} MATCHES "Windows")
     FIND_PACKAGE(WINDRES REQUIRED)
-    ADD_DEFINITIONS(-D__WINDOWS_MM__)
+    ADD_DEFINITIONS(-D__WINDOWS_MM__ -D_WIN32)
     LINK_LIBRARIES(winmm opengl32)
 ENDIF(${CMAKE_SYSTEM} MATCHES "Windows")
 
@@ -140,7 +131,6 @@ ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS} ${PIANOBOOSTER_MOC_SRCS}
     ${PIANOBOOSTER_UI_HDRS}
 )
 
-SET_TARGET_PROPERTIES(pianobooster PROPERTIES COMPILE_FLAGS "-Wall")
 SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 
 

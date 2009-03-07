@@ -30,9 +30,6 @@
   <property name="windowTitle" >
    <string>Form</string>
   </property>
-  <property name="windowIcon" >
-   <iconset/>
-  </property>
   <layout class="QHBoxLayout" >
    <property name="sizeConstraint" >
     <enum>QLayout::SetMaximumSize</enum>
