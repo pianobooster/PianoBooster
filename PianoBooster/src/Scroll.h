@@ -87,6 +87,7 @@ private:
     bool validPianistChord(int index);
     bool insertSlots();
     void removeSlots();
+    void removeEarlyTimingMakers();
     int findWantedChord(int note, CColour colour, int wantedDelta);
 
     int m_id;      // There are lots of these class running but each class has a unique id

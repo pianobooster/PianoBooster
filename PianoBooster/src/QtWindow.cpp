@@ -121,6 +121,7 @@ Window::~Window()
 {
     delete m_settings;
 }
+
 ///////////////////////////////////////////////////////////////////////////////
 //! @brief               Displays the usage
 void Window::displayUsage()

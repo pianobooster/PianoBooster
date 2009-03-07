@@ -53,6 +53,7 @@ public:
         m_deltaTime = 0;
         m_av8Left = 0;
         m_av8Right = 0;
+        m_maxLeftEdge = 0;
     }
 
     CSymbol getSymbol(int index) {return m_symbols[index];}
@@ -61,6 +62,8 @@ public:
     void setDeltaTime(int delta) {m_deltaTime = delta;}
     void addDeltaTime(int delta) {m_deltaTime += delta;}
     int getDeltaTime() {return m_deltaTime;}
+    int getLeftSideDeltaTime() {return m_deltaTime + m_maxLeftEdge;}
+
     void setAv8Left(int val) {m_av8Left = val;}
     int getAv8Left() {return m_av8Left;}
 
@@ -113,6 +116,18 @@ public:
             if (note == m_symbols[i].getNote() || note == 0)
                 m_symbols[i].setPianistTiming(timing);
         }
+        if (timing < m_maxLeftEdge)
+            m_maxLeftEdge = timing;
+ppTrace("m_maxLeftEdge  %d %d", m_maxLeftEdge,  timing); //fixme
+    }
+
+    void clearAllNoteTimmings()
+    {
+        for (int i = 0; i < m_length; i++)
+        {
+            m_symbols[i].setPianistTiming(NOT_USED);
+        }
+        m_maxLeftEdge = 0;
     }
 
 protected:
@@ -124,6 +139,7 @@ private:
     int m_length;
     int m_av8Left;
     int m_av8Right;
+    int m_maxLeftEdge; // the furthest the note will appear on the left hand edge (used when removing the note)
 };
 
 

@@ -98,17 +98,32 @@ bool CScroll::insertSlots()
         m_headSlot = m_notation->nextSlot();
         if (m_headSlot.length() == 0 || m_headSlot.getSymbolType(0) == PB_SYMBOL_theEnd) // this means we have reached the end of the file
             return false;
-
     }
     return true;
+}
+
+void CScroll::removeEarlyTimingMakers()
+{
+    int delta = deltaAdjust(m_deltaTail) * m_noteSpacingFactor  + Cfg::playZoneX() - Cfg::scrollStartX() - NOTE_AHEAD_GAP;
+    // only look a few steps (10) into the scroll queue
+    for (int i = 0; i < 10 && i < m_scrollQueue->length(); i++ )
+    {
+        if (delta < -(m_scrollQueue->index(i).getLeftSideDeltaTime() * m_noteSpacingFactor))
+        {
+            m_scrollQueue->indexPtr(i)->clearAllNoteTimmings();
+            compileSlot(m_scrollQueue->index(i));
+        }
+        delta += m_scrollQueue->index(i).getDeltaTime() * m_noteSpacingFactor;
+    }
 }
 
 void CScroll::removeSlots()
 {
     while (m_scrollQueue->length() > 0)
     {
-        if (deltaAdjust(m_deltaTail) * m_noteSpacingFactor > -Cfg::playZoneX() + Cfg::scrollStartX() + NOTE_AHEAD_GAP -(m_scrollQueue->index(0).getDeltaTime() * m_noteSpacingFactor) )
+        if (deltaAdjust(m_deltaTail) * m_noteSpacingFactor > -Cfg::playZoneX() + Cfg::scrollStartX() + NOTE_AHEAD_GAP -(m_scrollQueue->index(0).getLeftSideDeltaTime() * m_noteSpacingFactor) )
             break;
+
         CSlotDisplayList info = m_scrollQueue->pop();
 
         m_deltaTail += info.getDeltaTime() * SPEED_ADJUST_FACTOR;
@@ -123,9 +138,6 @@ void CScroll::removeSlots()
         {
             m_wantedIndex = 0;
             m_wantedDelta = m_deltaTail;
-            //if (m_scrollQueue->length() >= 1)
-              //  m_wantedDelta += m_scrollQueue->indexPtr(0)->getDeltaTime() * SPEED_ADJUST_FACTOR;
-
         }
     }
 }
@@ -136,6 +148,7 @@ void CScroll::drawScrollingSymbols(bool show)
 {
     insertSlots();  // new symbols at the end of the score
     removeSlots();  // delete old symbols no longer required
+    removeEarlyTimingMakers();
 
     if (show == false)   // Just update the queue only
         return;
@@ -211,7 +224,7 @@ void CScroll::setPlayedNoteColour(int note, CColour colour, int wantedDelta, int
     {
         pianistTimming = deltaAdjust(pianistTimming) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
 
-        m_scrollQueue->indexPtr(index)->setNoteTimming(note, pianistTimming);
+        m_scrollQueue->indexPtr(index)->setNoteTimming(note, -pianistTimming);//fixme
     }
     compileSlot(m_scrollQueue->index(index));
 }

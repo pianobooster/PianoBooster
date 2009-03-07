@@ -113,6 +113,27 @@ QT4_WRAP_CPP( PIANOBOOSTER_MOC_SRCS ${PIANOBOOSTER_MOC_HDRS} )
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
 INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR})
 
+# tell CMake what libraries our executable needs,
+# luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:
+LINK_LIBRARIES( ${QT_LIBRARIES} )
+
+# Add in the link libraries for each operating system
+IF(${CMAKE_SYSTEM} MATCHES "Linux")
+    LINK_LIBRARIES (asound)
+ENDIF(${CMAKE_SYSTEM} MATCHES "Linux")
+
+IF(${CMAKE_SYSTEM} MATCHES "Windows")
+    FIND_PACKAGE(WINDRES REQUIRED)
+    ADD_DEFINITIONS(-D__WINDOWS_MM__)
+    LINK_LIBRARIES(winmm opengl32)
+ENDIF(${CMAKE_SYSTEM} MATCHES "Windows")
+
+IF(${CMAKE_SYSTEM} MATCHES "Darwin")
+    ADD_DEFINITIONS(-D__MACOSX_CORE__)
+    LINK_LIBRARIES("-framework CoreMidi -framework CoreAudio -framework CoreFoundation -framework OpenGL")
+ENDIF(${CMAKE_SYSTEM} MATCHES "Darwin")
+
+
 # here we instruct CMake to build "pianobooster" executable from all of the source files
 ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS} ${PIANOBOOSTER_MOC_SRCS}
     ${PIANOBOOSTER_RC_SRCS}
@@ -122,14 +143,4 @@ ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS} ${PIANOBOOSTER_MOC_SRCS}
 SET_TARGET_PROPERTIES(pianobooster PROPERTIES COMPILE_FLAGS "-Wall")
 SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 
-
-# last thing we have to do is to tell CMake what libraries our executable needs,
-# luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:
-TARGET_LINK_LIBRARIES( pianobooster ${QT_LIBRARIES} )
-
-IF(UNIX)
-    TARGET_LINK_LIBRARIES (pianobooster asound)
-ELSE(UNIX)
-    TARGET_LINK_LIBRARIES (pianobooster Winmm.lib opengl32)
-ENDIF(UNIX)
 
