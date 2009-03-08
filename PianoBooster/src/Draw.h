@@ -28,8 +28,13 @@
 #ifndef __DRAW_H__
 #define __DRAW_H__
 
-#include <GL/gl.h>
-#include <GL/glu.h>
+#ifdef __APPLE__
+  #include <OpenGL/gl.h>
+  #include <OpenGL/glu.h>
+#else
+  #include <GL/gl.h>
+  #include <GL/glu.h>
+#endif
 
 #define HORIZONTAL_SPACING_FACTOR   (0.75) // defines the speed of the scrolling
 
