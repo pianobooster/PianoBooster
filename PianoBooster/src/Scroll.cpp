@@ -224,7 +224,7 @@ void CScroll::setPlayedNoteColour(int note, CColour colour, int wantedDelta, int
     {
         pianistTimming = deltaAdjust(pianistTimming) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
 
-        m_scrollQueue->indexPtr(index)->setNoteTimming(note, -pianistTimming);//fixme
+        m_scrollQueue->indexPtr(index)->setNoteTimming(note, pianistTimming);
     }
     compileSlot(m_scrollQueue->index(index));
 }
