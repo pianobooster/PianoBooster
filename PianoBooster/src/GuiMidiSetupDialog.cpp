@@ -136,7 +136,7 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
     int latencyFix = QInputDialog::getInteger(this, tr("Enter a value for the latency fix in milliseconds"),
             tr(
             "The latency fix works by running the music ahead of what you<br>"
-            "are playing to conteract the delay within the sound generator.<br>"
+            "are playing to counteract the delay within the sound generator.<br>"
             "You will need a piano <b>with speakers</b> that are <b>turned up</b>.<br>"
             "<i>It is not ideal, a low latency sound generator is recommend.</i><br>"
             "Enter the time in milliseconds for the delay (1000 mSec = 1 sec)<br>"
