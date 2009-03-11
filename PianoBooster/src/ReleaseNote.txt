@@ -8,7 +8,7 @@ v0.5.1: (1 January 2009)
 - changed the wrong note sound to use a separate midi channel.
 - on Windows removed the dos console
 
-v0.5.2 beta1: (7 March 2009)
+v0.6.1: (11 March 2009)
 - Added a play from bar (so you can start from playing any bar)
 - Added a latency fix for high latency sound generators (e.g. the windows GS software synth)
     (requires a piano keyboard _with_ it's own speakers/sound generator)
@@ -26,5 +26,5 @@ v0.5.2 beta1: (7 March 2009)
 
 */
 
-#define PB_VERSION "0.6.1 Beta1"
+#define PB_VERSION "0.6.1"
 
