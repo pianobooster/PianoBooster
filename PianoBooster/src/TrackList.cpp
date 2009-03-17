@@ -247,7 +247,7 @@ QString CTrackList::getChannelProgramName(int chan)
 
     if (chan==10-1)
         return "Drums";
-    QString name = getProgramName(program);
+    QString name = getProgramName(program +1); // Skip
     if (name.isEmpty())
         name = "Unknown";
 
@@ -258,6 +258,7 @@ QString CTrackList::getProgramName(int program)
 {
     const char * const gmInstrumentNames[] =
     {
+                   "(None)",  // Don't use
         /* 1.   */ "Grand Piano",
         /* 2.   */ "Bright Piano",
         /* 3.   */ "Electric Grand",

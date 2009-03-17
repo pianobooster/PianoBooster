@@ -48,7 +48,7 @@ void GuiKeyboardSetupDialog::init(CSong* song, QSettings* settings)
 
     // Check inputs.
     QString programName;
-    int i = 0;
+    int i;
 
     i = 0;
     while (true)
@@ -62,9 +62,9 @@ void GuiKeyboardSetupDialog::init(CSong* song, QSettings* settings)
     }
 
     int program = m_settings->value("Keyboard/RightSound", Cfg::defualtRightPatch()).toInt();
-    rightSoundCombo->setCurrentIndex(program - 1);
+    rightSoundCombo->setCurrentIndex(program);
     program = m_settings->value("Keyboard/WrongSound", Cfg::defualtWrongPatch()).toInt();
-    wrongSoundCombo->setCurrentIndex(program - 1);
+    wrongSoundCombo->setCurrentIndex(program);
     int lowestNote = m_settings->value("Keyboard/lowestNote", "0").toInt();
     int highestNote = m_settings->value("Keyboard/highestNote", "127").toInt();
 
@@ -137,8 +137,8 @@ void GuiKeyboardSetupDialog::keyReleaseEvent ( QKeyEvent * event )
 
 void GuiKeyboardSetupDialog::accept()
 {
-    m_settings->setValue("Keyboard/RightSound", rightSoundCombo->currentIndex()+1);
-    m_settings->setValue("Keyboard/WrongSound", wrongSoundCombo->currentIndex()+1);
+    m_settings->setValue("Keyboard/RightSound", rightSoundCombo->currentIndex());
+    m_settings->setValue("Keyboard/WrongSound", wrongSoundCombo->currentIndex());
     int lowestNote = lowestNoteEdit->text().toInt();
     int highestNote = highestNoteEdit->text().toInt();
     lowestNote = qBound(0, lowestNote, 127);

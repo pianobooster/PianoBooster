@@ -36,6 +36,7 @@
 #include "GuiSidePanel.h"
 #include "GuiTopBar.h"
 #include "GuiPreferencesDialog.h"
+#include "GuiLoopingDialog.h"
 
 
 class CGLView;
@@ -94,6 +95,13 @@ private slots:
         preferencesDialog->exec();
     }
 
+    void showLoopingDialog()
+    {
+        GuiLoopingDialog *loopingDialog = new GuiLoopingDialog(this);
+        loopingDialog->init(m_song, m_settings, m_glWidget);
+        loopingDialog->show();
+    }
+
     void showKeyboardSetup()
     {
         GuiKeyboardSetupDialog *keyboardSetup = new GuiKeyboardSetupDialog(this);
@@ -146,9 +154,11 @@ private:
     QAction *m_setupKeyboardAct;
     QAction *m_toggleSidePanelAct;
     QAction *m_setupPreferencesAct;
+    QAction *m_LoopingSongAct;
 
     QMenu *m_fileMenu;
     QMenu *m_viewMenu;
+    QMenu *m_songMenu;
     QMenu *m_setupMenu;
     QMenu *m_helpMenu;
     QToolBar *m_songToolBar;

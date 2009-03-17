@@ -339,10 +339,16 @@ void CConductor::testWrongNoteSound(bool enable)
     CMidiEvent event;
 
 
-    event.programChangeEvent(0,m_pianistGoodChan, m_cfg_rightNoteSound);
-    playMidiEvent( event );
-    event.programChangeEvent(0,m_pianistBadChan, m_cfg_wrongNoteSound);
-    playMidiEvent( event );
+    if (m_cfg_rightNoteSound>=0) // ignore if set to -1 ("None")
+    {
+        event.programChangeEvent(0, m_pianistGoodChan, m_cfg_rightNoteSound);
+        playMidiEvent( event );
+    }
+    if (m_cfg_wrongNoteSound>=0)
+    {
+        event.programChangeEvent(0, m_pianistBadChan, m_cfg_wrongNoteSound);
+        playMidiEvent( event );
+    }
 }
 
 
@@ -586,13 +592,19 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         outputSavedNotesOff();
     }
 
-    if (goodSound == true)
+
+    if (goodSound == true || m_cfg_wrongNoteSound < 0)
     {
-        inputNote.setChannel(m_pianistGoodChan);
+        if (m_cfg_rightNoteSound >= 0) // don't play anything if the sound is set to -1 (none)
+        {
+            inputNote.setChannel(m_pianistGoodChan);
+            playMidiEvent( inputNote );
+        }
     }
     else
     {
         inputNote.setChannel(m_pianistBadChan);
+        playMidiEvent( inputNote );
     }
 
 
@@ -610,8 +622,6 @@ void CConductor::pianistInput(CMidiEvent inputNote)
     }
     */
 
-    if (goodSound == false || getLatencyFix() == 0)
-       playMidiEvent( inputNote );
 }
 
 // Counts the number of notes the pianist has down

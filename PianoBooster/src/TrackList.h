@@ -67,6 +67,8 @@ public:
     void examineMidiEvent(CMidiEvent event);
     bool hasPianoPart();
     int guessKeySignature(int chanA, int chanB);
+
+    // The programme name now starts at 1 with 0 = "(none)"
     static QString getProgramName(int program);
 
 

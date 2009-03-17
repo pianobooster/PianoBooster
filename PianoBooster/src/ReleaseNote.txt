@@ -23,8 +23,11 @@ v0.6.1: (11 March 2009)
 - Fix the pulse of sound when stopping the music
 - Added timing markers which show when the pianist pressed the note.
 
+v0.6.2: (11 March 2009)
+- added "<None>" as intrument sound.
+- when setting a latency fix of >0 the instrument is automatical set to <None>
 
 */
 
-#define PB_VERSION "0.6.1"
+#define PB_VERSION "0.6.2 svn"
 

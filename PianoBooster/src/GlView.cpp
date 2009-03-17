@@ -111,7 +111,7 @@ void CGLView::drawTimeSignature()
     if (Cfg::quickStart)
         return;
 
-    float x,y;
+    int x,y;
     int topNumber, bottomNumber;
 
     if (m_song == 0) return;
@@ -193,7 +193,7 @@ void CGLView::drawDisplayText()
         return;
 
     glColor3f(1.0,1.0,1.0);
-    float y = Cfg::getAppHeight() - 14;
+    int y = Cfg::getAppHeight() - 14;
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen)
         renderText(30, y-4,0 ,"Accuracy:", m_timeRatingFont);
@@ -224,7 +224,7 @@ void CGLView::drawBarNumber()
     //CDraw::drColour (Cfg::backgroundColour());
     //CDraw::drColour (Cfg::noteColourDim());
     //glRectf(x+30+10, y-2, x + 80, y + 16);
-
+//ppTrace("Draw bar number"); //fixme
     glColor3f(1.0,1.0,1.0);
     renderText(x, y, 0,"Bar: " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
@@ -315,7 +315,10 @@ void CGLView::init()
     m_song->setActiveHand(PB_PART_both);
 
     if (!Cfg::quickStart)
+    {
         renderText(10,10,"~", m_timeRatingFont); //fixme this is a work arround for a QT bug.
+        renderText(10,10,"~", m_timeSigFont); //fixme this is a work arround for a QT bug.
+    }
 
     setFocusPolicy(Qt::ClickFocus);
 

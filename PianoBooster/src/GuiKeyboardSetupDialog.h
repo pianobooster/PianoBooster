@@ -80,8 +80,8 @@ private:
     void keyReleaseEvent ( QKeyEvent * event );
 
     void updateSounds (){
-        m_song->setPianoSoundPatches(rightSoundCombo->currentIndex(),
-                                     wrongSoundCombo->currentIndex());
+        m_song->setPianoSoundPatches(rightSoundCombo->currentIndex() -1,
+                                     wrongSoundCombo->currentIndex() -1);
     }
 
     void updateInfoText();

@@ -208,6 +208,12 @@ void Window::createActions()
     connect(m_setupPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
 
 
+    m_LoopingSongAct = new QAction(QIcon(":/images/open.png"), tr("&Looping ..."), this);
+    m_LoopingSongAct->setShortcut(tr("Ctrl+L"));
+    //m_setupPreferencesAct->setStatusTip(tr("Setup the Midi input an output"));
+    connect(m_LoopingSongAct, SIGNAL(triggered()), this, SLOT(showLoopingDialog()));
+
+
     QAction* enableFollowTempoAct = new QAction(this);
     enableFollowTempoAct->setShortcut(tr("Shift+F1"));
     connect(enableFollowTempoAct, SIGNAL(triggered()), this, SLOT(enableFollowTempo()));
@@ -229,7 +235,10 @@ void Window::createMenus()
     m_viewMenu = menuBar()->addMenu(tr("&View"));
     m_viewMenu->addAction(m_toggleSidePanelAct);
 
-    m_setupMenu = menuBar()->addMenu(tr("&Setup"));
+    //m_songMenu = menuBar()->addMenu(tr("&Song"));
+    //m_songMenu->addAction(m_LoopingSongAct);
+
+    m_setupMenu = menuBar()->addMenu(tr("Set&up"));
     m_setupMenu->addAction(m_setupMidiAct);
     m_setupMenu->addAction(m_setupKeyboardAct);
     m_setupMenu->addAction(m_setupPreferencesAct);
