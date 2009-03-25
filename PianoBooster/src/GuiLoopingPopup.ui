@@ -1,0 +1,81 @@
+<ui version="4.0" >
+ <class>GuiLoopingPopup</class>
+ <widget class="QWidget" name="GuiLoopingPopup" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>157</width>
+    <height>70</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Minimum" hsizetype="Minimum" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <property name="spacing" >
+      <number>0</number>
+     </property>
+     <property name="sizeConstraint" >
+      <enum>QLayout::SetMinimumSize</enum>
+     </property>
+     <property name="topMargin" >
+      <number>2</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>4</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_3" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string>Repeat Bars:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="loopBarsSpin" >
+       <property name="maximumSize" >
+        <size>
+         <width>62</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="frame" >
+        <bool>true</bool>
+       </property>
+       <property name="decimals" >
+        <number>1</number>
+       </property>
+       <property name="maximum" >
+        <double>99.900000000000006</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="loopingText" >
+     <property name="text" >
+      <string>End bar</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
