@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -57,16 +57,14 @@ void CBar::setTimeSig(int top, int bottom)
 
 int CBar::addDeltaTime(int ticks)
 {
-
     if (m_flushTicks == true && ticks != 0) // ignore this set of ticks
     {
-
         ppDEBUG_BAR(("addDeltaTime m_flushTicks ticks %d", ticks));
         m_flushTicks = false;
         return 0;
     }
     m_deltaTime +=ticks;
-    if (ticks && m_playFromBar> 0.0)
+    if (ticks && m_enablePlayFromBar)
         checkGotoBar();
     while (m_deltaTime > m_beatLength * SPEED_ADJUST_FACTOR)
     {
@@ -77,7 +75,7 @@ int CBar::addDeltaTime(int ticks)
             m_barCounter++;
             m_beatCounter=0;
             ppLogWarn("Bar number %d", m_barCounter);
-            m_hasBarNumberChanged = true;
+            m_eventBits |= EVENT_BITS_newBarNumber;
         }
     }
 
@@ -97,14 +95,18 @@ int CBar::goToBarNumer()
 
 void CBar::checkGotoBar()
 {
-    ppDEBUG_BAR(("checkGotoBar currentBarPos %.1f", getCurrentBarPos()));
-    if (getCurrentBarPos() < m_playFromBar )
+    double currentBar = getCurrentBarPos();
+    ppDEBUG_BAR(("checkGotoBar currentBarPos %.1f", currentBar));
+    if (currentBar < m_playFromBar )
         m_seekingBarNumber = true;
     else
     {
         if (m_seekingBarNumber == true)
             m_flushTicks = true; // now throw away ticks before we start the music
         m_seekingBarNumber = false;
+
+        if (m_enableLooping && currentBar > m_playUptoBar )
+            m_eventBits |= EVENT_BITS_UptoBarReached;
     }
 }
 
@@ -112,12 +114,28 @@ void CBar::checkGotoBar()
 void CBar::setPlayFromBar(double bar)
 {
     m_playFromBar = bar;
+    m_playUptoBar = m_playFromBar + m_loopingBars;
+    setupEnableFlags();
     checkGotoBar();
-
 }
 
 void CBar::setPlayFromBar(int bar, int beat, int ticks)
 {
     double playFromBar = bar;
     setPlayFromBar( playFromBar);
+}
+
+void CBar::setPlayUptoBar(double endBar)
+{
+    setLoopingBars(endBar - m_playUptoBar);
+}
+
+void CBar::setLoopingBars(double bars)
+{
+    if (bars < 0.0)
+        bars = 0;
+    m_loopingBars = bars;
+    m_playUptoBar = m_playFromBar + m_loopingBars;
+    setupEnableFlags();
+    checkGotoBar();
 }

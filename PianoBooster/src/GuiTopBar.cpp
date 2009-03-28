@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -30,6 +30,8 @@
 
 #include "GuiTopBar.h"
 #include "TrackList.h"
+#include "GuiLoopingPopup.h"
+
 
 GuiTopBar::GuiTopBar(QWidget *parent)
     : QWidget(parent)
@@ -191,8 +193,7 @@ void GuiTopBar::on_playFromStartButton_clicked(bool clicked)
     if (!m_song) return;
 
     m_atTheEndOfTheSong = false;
-    m_song->rewind();
-    m_song->playMusic(true);
+    m_song->playFromStartBar();
     setPlayButtonState(true);
 }
 
@@ -220,6 +221,22 @@ void GuiTopBar::on_saveBarButton_clicked(bool clicked)
     if (!m_song) return;
     double barNumber = m_song->getCurrentBarPos();
     startBarSpin->setValue(barNumber);
-    //on_startBarSpin_valueChanged(barNumber);
-    //m_song->setPlayFromBar( barNumber); fixme
+}
+
+
+void GuiTopBar::on_loopingBarsPopupButton_clicked(bool clicked)
+{
+    if (!m_song) return;
+
+    m_song->playMusic(false);
+    setPlayButtonState(false);
+
+    QPoint pos = mapToGlobal(loopingBarsPopupButton->pos()) ;
+
+    pos.ry() += loopingBarsPopupButton->height() + 2;
+    pos.rx() += -5; // Tweak the possition slightly
+    GuiLoopingPopup *loopingPopup = new GuiLoopingPopup(loopingBarsPopupButton);
+    loopingPopup->init(m_song);
+    loopingPopup->move (pos);
+    loopingPopup->show();
 }

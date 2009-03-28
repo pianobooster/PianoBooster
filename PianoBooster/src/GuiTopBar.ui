@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>764</width>
+    <width>839</width>
     <height>34</height>
    </rect>
   </property>
@@ -57,7 +57,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="application.qrc" >:/images/play-from-start.png</iconset>
+        <iconset resource="application.qrc" >
+         <normaloff>:/images/play-from-start.png</normaloff>:/images/play-from-start.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -79,7 +80,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="application.qrc" >:/images/play.png</iconset>
+        <iconset resource="application.qrc" >
+         <normaloff>:/images/play.png</normaloff>:/images/play.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -126,6 +128,25 @@
       <widget class="QSpinBox" name="transposeSpin" />
      </item>
      <item>
+      <widget class="QToolButton" name="loopingBarsPopupButton" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>12</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="checkable" >
+        <bool>true</bool>
+       </property>
+       <property name="arrowType" >
+        <enum>Qt::DownArrow</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="label_3" >
        <property name="text" >
         <string>Start Bar:</string>
@@ -151,7 +172,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="application.qrc" >:/images/flag.png</iconset>
+        <iconset resource="application.qrc" >
+         <normaloff>:/images/flag.png</normaloff>:/images/flag.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -166,7 +188,7 @@
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>0</width>
          <height>30</height>

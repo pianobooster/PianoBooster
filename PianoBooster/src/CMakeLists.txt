@@ -21,8 +21,6 @@ SET(QT_USE_QTOPENGL TRUE)
 
 
 FIND_PACKAGE( OpenGL REQUIRED )
-MESSAGE("the GL include directory ${OPENGL_INCLUDE_DIR}")
-
 
 # this command finds Qt4 libraries and sets all required variables
 # note that it's Qt4, not QT4 or qt4
@@ -77,7 +75,7 @@ SET( PIANOBOOSTER_SRCS
     GuiMidiSetupDialog.cpp
     GuiKeyboardSetupDialog.cpp
     GuiPreferencesDialog.cpp
-    GuiLoopingDialog.cpp
+    GuiLoopingPopup.cpp
     GlView.cpp
     ${PB_BASE_SRCS}
     StavePosition.cpp
@@ -103,7 +101,7 @@ SET( PIANOBOOSTER_MOC_HDRS
     GuiMidiSetupDialog.h
     GuiKeyboardSetupDialog.h
     GuiPreferencesDialog.h
-    GuiLoopingDialog.h
+    GuiLoopingPopup.h
 )
 
 # some .ui files
@@ -113,7 +111,7 @@ SET( PIANOBOOSTER_UIS
     ./GuiMidiSetupDialog.ui
     ./GuiKeyboardSetupDialog.ui
     ./GuiPreferencesDialog.ui
-    ./GuiLoopingDialog.ui
+    ./GuiLoopingPopup.ui
 )
 
 # and finally an resource file

@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -35,7 +35,6 @@ GuiLoopingPopup::GuiLoopingPopup(QWidget *parent)
     setupUi(this);
     m_song = 0;
     setWindowTitle("Continious Looping");
-    //fixme setModal(false);
     setWindowFlags(Qt::Popup);
 }
 

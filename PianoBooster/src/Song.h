@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -63,13 +63,19 @@ public:
     }
 
     void init();
-    int task(int ticks);
+    eventBits_t task(int ticks);
     bool pcKeyPress(int key, bool down);
     void loadSong(QString filename);
     void regenerateChordQueue();
 
     void rewind();
-    void setPlayFromBar(double bar);
+//fixme    void setPlayFromBar(double bar);
+    void playFromStartBar()
+    {
+        rewind();
+        playMusic(true);
+    }
+
 
 
     void setActiveHand(whichPart_t hand);

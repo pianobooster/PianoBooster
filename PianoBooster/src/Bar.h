@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -33,6 +33,16 @@
 #include "MidiFile.h"
 
 
+// The event bits can be ORed together
+#define EVENT_BITS_playingStopped          0x0001  //set when we reach the end of piece
+#define EVENT_BITS_forceFullRedraw         0x0002 // force the whole screen to be redrawn
+#define EVENT_BITS_forceRatingRedraw       0x0004 // force the score to be redrawn
+#define EVENT_BITS_newBarNumber            0x0008 // force the bar number to be redrawn
+#define EVENT_BITS_UptoBarReached          0x0010 // Used for looping when playing between two bars.
+
+typedef unsigned long eventBits_t;
+
+
 
 // controls the bar numbers
 class CBar
@@ -53,9 +63,18 @@ public:
     void reset() {
         setTimeSig( 0 , 0);
         m_playFromBar = 0.0;
+        m_playUptoBar = 0.0;
+        m_loopingBars = 0.0;
         m_seekingBarNumber = false;
         m_flushTicks = false;
+        m_eventBits = 0;
+        setupEnableFlags();
     }
+
+    void setPlayUptoBar(double bar);
+    double getPlayUptoBar(){ return m_playUptoBar;}
+    void setLoopingBars(double bars);
+    double getLoopingBars(){ return m_loopingBars;}
 
     void rewind() {
         int top = m_startTimeSigTop;
@@ -82,19 +101,24 @@ public:
 
     bool seekingBarNumber() { return m_seekingBarNumber;}
 
-    bool hasBarNumberChanged() {
-        bool flag = m_hasBarNumberChanged;
-        m_hasBarNumberChanged = false;
-        return flag;
+    // get and reset the curent bar event bits
+    eventBits_t readEventBits() {
+        eventBits_t bits = m_eventBits;
+        m_eventBits = 0;
+        return bits;
     }
 
     int goToBarNumer();
 
-
 private:
-
-
     void checkGotoBar();
+    void setupEnableFlags()
+    {
+        m_enableLooping = (m_loopingBars > 0.0)?true:false;
+        m_enablePlayFromBar = (m_enableLooping || m_playFromBar > 0.0)?true:false;
+    }
+
+
 
     int m_deltaTime;
     int m_beatLength;
@@ -107,11 +131,16 @@ private:
     int m_barCounter;
     int m_beatCounter;
     double m_playFromBar;
+    double m_playUptoBar;
+    double m_loopingBars;
     int m_playFromBeat;
     int m_playFromTicks;
     bool m_seekingBarNumber;
     bool m_flushTicks;
-    bool m_hasBarNumberChanged;
+    eventBits_t m_eventBits;
+    bool m_enableLooping;
+    bool m_enablePlayFromBar;
+
 };
 
 #endif  // __BAR_H__

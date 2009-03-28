@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -224,7 +224,6 @@ void CGLView::drawBarNumber()
     //CDraw::drColour (Cfg::backgroundColour());
     //CDraw::drColour (Cfg::noteColourDim());
     //glRectf(x+30+10, y-2, x + 80, y + 16);
-//ppTrace("Draw bar number"); //fixme
     glColor3f(1.0,1.0,1.0);
     renderText(x, y, 0,"Bar: " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
@@ -316,8 +315,8 @@ void CGLView::init()
 
     if (!Cfg::quickStart)
     {
-        renderText(10,10,"~", m_timeRatingFont); //fixme this is a work arround for a QT bug.
-        renderText(10,10,"~", m_timeSigFont); //fixme this is a work arround for a QT bug.
+        renderText(10,10,"~", m_timeRatingFont); //fixme this is a work around for a QT bug.
+        renderText(10,10,"~", m_timeSigFont); //this is a work around for a QT bug.
     }
 
     setFocusPolicy(Qt::ClickFocus);
@@ -331,7 +330,7 @@ void CGLView::init()
 
 void CGLView::timerEvent(QTimerEvent *event)
 {
-    int eventBits;
+    eventBits_t eventBits;
     if (event->timerId() == m_timer.timerId())
     {
         int ticks;
@@ -343,12 +342,15 @@ void CGLView::timerEvent(QTimerEvent *event)
 
         if (eventBits != 0)
         {
+            if ((eventBits & EVENT_BITS_UptoBarReached) != 0)
+                m_song->playFromStartBar();
             if ((eventBits & EVENT_BITS_forceFullRedraw) != 0)
                 m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
             if ((eventBits & EVENT_BITS_forceRatingRedraw) != 0)
                 m_forceRatingRedraw = REDRAW_COUNT;
-            if ((eventBits & EVENT_BITS_forceBarNumberRedraw) != 0)
-                m_forceBarRedraw = REDRAW_COUNT;
+            if ((eventBits & EVENT_BITS_newBarNumber) != 0)
+                m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT; // fixme this did not work so redraw every things
+
             m_qtWindow->songEventUpdated(eventBits);
         }
         if(m_cfg_openGlOptimise)

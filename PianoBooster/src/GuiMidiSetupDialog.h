@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -57,9 +57,9 @@ private:
     void updateMidiInfoText();
     QSettings* m_settings;
     CSong* m_song;
-	int m_latencyFix;
-	bool m_latencyChanged;
-	bool m_midiChanged;
+    int m_latencyFix;
+    bool m_latencyChanged;
+    bool m_midiChanged;
 };
 
 #endif //__GUIMIDISETUPDIALOG_H__

@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -60,6 +60,7 @@ public:
 
     float getAccuracyValue(){ return m_currentAccuracy; }
     CColour getAccuracyColour() { return m_currentColour; }
+    bool isAccuracyGood() { return m_goodAccuracyFlag; }
 
 private:
     int m_totalNotesCount;
@@ -70,6 +71,8 @@ private:
     float m_currentAccuracy;
     float m_factor;
     CColour m_currentColour;
+    bool m_goodAccuracyFlag;
+
 };
 
 

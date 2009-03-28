@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -38,6 +38,7 @@ void CRating::reset()
     m_previousNoteCount = -1;
     m_previousLateNoteCount = 0;
     m_factor = 2.0;
+    m_goodAccuracyFlag = false;
 }
 
 void CRating::calculateAccuracy()
@@ -65,7 +66,7 @@ void CRating::calculateAccuracy()
             float stepDown;
             CColour colour;
         } accuracyItem_t;
-        const accuracyItem_t accaracyTable[] =
+        const accuracyItem_t accuracyTable[] =
         {
             {1.00, 0.01, -0.08, CColour(0.5, 0.5, 1.0)}, // Only the colour is used on the top score
             {0.75, 0.01, -0.07, CColour(0.7, 0.3, 1.0)},
@@ -75,13 +76,13 @@ void CRating::calculateAccuracy()
         };
 
         size_t i;
-        for (i = 0; i< arraySize(accaracyTable); i++)
+        for (i = 0; i< arraySize(accuracyTable); i++)
         {
-            if (m_currentAccuracy >= accaracyTable[i].value  || i+1 == arraySize(accaracyTable))
+            if (m_currentAccuracy >= accuracyTable[i].value  || i+1 == arraySize(accuracyTable))
             {
-                float stepAmount = (direction > 0) ? accaracyTable[i].stepUp : accaracyTable[i].stepDown;
+                float stepAmount = (direction > 0) ? accuracyTable[i].stepUp : accuracyTable[i].stepDown;
                 if (stepAmount < 0 && CConductor::getPlayMode() == PB_PLAY_MODE_playAlong)
-                    stepAmount = accaracyTable[i].stepUp + accaracyTable[i].stepDown;
+                    stepAmount = accuracyTable[i].stepUp + accuracyTable[i].stepDown;
                 m_currentAccuracy += stepAmount *m_factor;
                 break;
             }
@@ -90,11 +91,15 @@ void CRating::calculateAccuracy()
         if (m_currentAccuracy < 0) m_currentAccuracy = 0;
         if (m_currentAccuracy > 1) m_currentAccuracy = 1;
 
-        for (i = 0; i< arraySize(accaracyTable); i++)
+        m_goodAccuracyFlag = false;
+
+        for (i = 0; i< arraySize(accuracyTable); i++)
         {
-            if (m_currentAccuracy >= accaracyTable[i].value || i+1 == arraySize(accaracyTable))
+            if (m_currentAccuracy >= accuracyTable[i].value || i+1 == arraySize(accuracyTable))
             {
-                m_currentColour = accaracyTable[i].colour ;
+                m_currentColour = accuracyTable[i].colour;
+                if (m_currentAccuracy >= accuracyTable[ 1 ].value) // the second row in the table
+                    m_goodAccuracyFlag = true;
                 break;
             }
         }

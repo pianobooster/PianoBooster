@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -258,7 +258,7 @@ void CMidiTrack::readMetaEvent(byte_t type)
         tempo = b1 << 16 | b2 << 8 | b3; // microseconds per quarter-note#
         event.metaEvent(readDelaTime(), MIDI_PB_tempo, tempo, 0);
         m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((3,"Set Tempo %d", tempo));
+        ppDEBUG_TRACK((2,"Set Tempo %d", tempo));
         break;
     }
 

@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -139,6 +139,7 @@ void GuiKeyboardSetupDialog::accept()
 {
     m_settings->setValue("Keyboard/RightSound", rightSoundCombo->currentIndex());
     m_settings->setValue("Keyboard/WrongSound", wrongSoundCombo->currentIndex());
+    m_settings->setValue("Keyboard/RightSoundPrevious", rightSoundCombo->currentIndex());
     int lowestNote = lowestNoteEdit->text().toInt();
     int highestNote = highestNoteEdit->text().toInt();
     lowestNote = qBound(0, lowestNote, 127);

@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -43,7 +43,7 @@ class CScore;
 typedef enum {
     PB_FOLLOW_searching,
     PB_FOLLOW_earlyNotes,
-    PB_FOLLOW_waiting,
+    PB_FOLLOW_waiting
 } followState_t;
 
 enum {
@@ -54,12 +54,11 @@ enum {
 
 typedef int playMode_t;
 
-// The event bits can be ORed together
-#define EVENT_BITS_playingStopped           0x0001  //set when we reach the end of piece
-#define EVENT_BITS_forceFullRedraw         0x0002 // force the whole screen to be redrawn
-#define EVENT_BITS_forceRatingRedraw       0x0004 // force the score to be redrawn
-#define EVENT_BITS_forceBarNumberRedraw    0x0008 // force the bar number to be redrawn
-
+typedef enum {
+    PB_STOP_POINT_MODE_automatic,
+    PB_STOP_POINT_MODE_onTheBeat,
+    PB_STOP_POINT_MODE_afterTheBeat
+} stopPointMode_t;
 
 
 /*!
@@ -168,14 +167,16 @@ public:
     void getTimeSig(int *top, int *bottom) {m_bar.getTimeSig(top, bottom);}
     void testWrongNoteSound(bool enable);
 
+    // -1 means no sound -2 means ignore this paramater
     void setPianoSoundPatches(int rightSound, int wrongSound){
         m_cfg_rightNoteSound = rightSound;
-        m_cfg_wrongNoteSound = wrongSound;
+        if ( wrongSound != -2)
+            m_cfg_wrongNoteSound = wrongSound;
     }
 
     void setScore(CScore * scoreWin){m_scoreWin = scoreWin;}
 
-    void setEventBits(int bits) { m_realTimeEventBits |= bits; } // don't change the other bits
+    void setEventBits(eventBits_t bits) { m_realTimeEventBits |= bits; } // don't change the other bits
     // set to true to force the score to be redrawn
     void forceScoreRedraw(){ setEventBits( EVENT_BITS_forceFullRedraw); }
     int getBarNumber(){ return m_bar.getBarNumber();}
@@ -183,9 +184,15 @@ public:
     double getCurrentBarPos(){ return m_bar.getCurrentBarPos();}
 
     void setPlayFromBar(double bar){ m_bar.setPlayFromBar(bar);}
+    void setPlayUptoBar(double bar){ m_bar.setPlayUptoBar(bar);}
+    double getPlayUptoBar(){ return m_bar.getPlayUptoBar();}
+    void setLoopingBars(double bars){ m_bar.setLoopingBars(bars);}
+    double getLoopingBars(){ return m_bar.getLoopingBars();}
+
     void mutePianistPart(bool state);
 
     bool cfg_timingMarkersFlag;
+    stopPointMode_t cfg_stopPointMode;
 
 
 protected:
@@ -194,7 +201,7 @@ protected:
     CQueue<CMidiEvent>* m_songEventQueue;
     CQueue<CChord>* m_wantedChordQueue;
 
-    int m_realTimeEventBits; //used to signal real time events to the caller of task()
+    eventBits_t m_realTimeEventBits; //used to signal real time events to the caller of task()
 
     void outputSavedNotes();
     void activatePianistMutePart();

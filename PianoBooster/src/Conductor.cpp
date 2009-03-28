@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -65,6 +65,7 @@ CConductor::CConductor()
     m_mutePianistPart = false;
     setPianistChannels(1-1,2-1);
     cfg_timingMarkersFlag = false;
+    cfg_stopPointMode = PB_STOP_POINT_MODE_automatic;
 
     for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
     {
@@ -365,12 +366,6 @@ void CConductor::playMusic(bool start)
         if (seekingBarNumber())
             resetWantedChord();
 
-
-
-
-ppTrace("setLatencyFix %d", getLatencyFix()); // Fixme
-
-
         /*
         const unsigned char gsModeEnterData[] =  {0xf0, 0x41, 0x10, 0x42, 0x12, 0x40, 0x00, 0x7f, 0x00, 0x41, 0xf7};
 
@@ -437,17 +432,19 @@ void CConductor::resetWantedChord()
 // switch modes if we are playing well enough (ie don't slow down if we are playing late)
 void CConductor::setFollowSkillAdvanced(bool enable)
 {
-    if (getLatencyFix() == 0)
-    {
-        m_followSkillAdvanced = enable;
-        m_stopPoint = (enable) ? m_cfg_stopPointAdvanced: m_cfg_stopPointBeginner ;
-    }
-    else
+    if (getLatencyFix() >= 0)
     {
         // behave differently if we are using the latency fix
         m_cfg_earlyNotesPoint = m_cfg_imminentNotesOffPoint; //disable the earily notes
-        m_followSkillAdvanced = true;
     }
+
+    if (cfg_stopPointMode == PB_STOP_POINT_MODE_onTheBeat)
+        enable = false;
+    if (cfg_stopPointMode == PB_STOP_POINT_MODE_afterTheBeat)
+        enable = true;
+
+    m_followSkillAdvanced = enable;
+    m_stopPoint = (enable) ? m_cfg_stopPointAdvanced: m_cfg_stopPointBeginner ;
 }
 
 
@@ -542,7 +539,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         {
             m_goodPlayedNotes.addNote(hand, inputNote.note());
             m_goodNoteLines.addNote(hand, inputNote.note());
-            int pianistTiming = (/*m_followPlayingTimeOut ||*/ !cfg_timingMarkersFlag) ? NOT_USED : m_pianistTiming;
+            int pianistTiming = ( cfg_timingMarkersFlag && m_followSkillAdvanced) ?  m_pianistTiming : NOT_USED;
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
                         (!m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
                         m_chordDeltaTime, pianistTiming);
@@ -557,7 +554,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 fetchNextChord();
                 // count the good notes so that the live percentage looks OK
                 m_rating.totalNotes(m_wantedChord.length());
-                if (m_rating.getAccuracyValue() > 0.8)
+                m_rating.calculateAccuracy();
+                if (m_rating.isAccuracyGood() || m_playMode == PB_PLAY_MODE_playAlong)
                     setFollowSkillAdvanced(true); // change the skill level only when they are good enough
                 else
                     setFollowSkillAdvanced(false);
@@ -787,13 +785,15 @@ void CConductor::realTimeEngine(int mSecTicks)
     if (seekingBarNumber())
         ticks = m_bar.goToBarNumer();
 
-    if (m_bar.hasBarNumberChanged())
+    setEventBits( m_bar.readEventBits());
+
+#if OPTION_DEBUG_CONDUCTOR
+    if (m_realTimeEventBits | EVENT_BITS_newBarNumber)
     {
         ppDEBUG_CONDUCTOR(("m_savedNoteQueue %d m_playingDeltaTime %d",m_savedNoteQueue->space() , m_playingDeltaTime ));
         ppDEBUG_CONDUCTOR(("getfollowState() %d  %d %d",getfollowState() , m_leadLagAdjust, m_songEventQueue->length() ));
-        //fixme this did not work setEventBits( EVENT_BITS_forceBarNumberRedraw);
-        setEventBits( EVENT_BITS_forceFullRedraw);
     }
+#endif
 
     addDeltaTime(ticks);
 

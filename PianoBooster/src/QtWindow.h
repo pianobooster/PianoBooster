@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -36,7 +36,7 @@
 #include "GuiSidePanel.h"
 #include "GuiTopBar.h"
 #include "GuiPreferencesDialog.h"
-#include "GuiLoopingDialog.h"
+#include "GuiLoopingPopup.h"
 
 
 class CGLView;
@@ -95,13 +95,6 @@ private slots:
         preferencesDialog->exec();
     }
 
-    void showLoopingDialog()
-    {
-        GuiLoopingDialog *loopingDialog = new GuiLoopingDialog(this);
-        loopingDialog->init(m_song, m_settings, m_glWidget);
-        loopingDialog->show();
-    }
-
     void showKeyboardSetup()
     {
         GuiKeyboardSetupDialog *keyboardSetup = new GuiKeyboardSetupDialog(this);
@@ -135,7 +128,6 @@ private:
     void createActions();
     void createMenus();
     void createToolBars();
-    void createSongControls();
     void readSettings();
     void writeSettings();
 
@@ -154,7 +146,6 @@ private:
     QAction *m_setupKeyboardAct;
     QAction *m_toggleSidePanelAct;
     QAction *m_setupPreferencesAct;
-    QAction *m_LoopingSongAct;
 
     QMenu *m_fileMenu;
     QMenu *m_viewMenu;

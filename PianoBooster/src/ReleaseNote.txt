@@ -21,12 +21,17 @@ v0.6.1: (11 March 2009)
 - Fix a bug left or right now correctly dim the other stave.
 - Added start-up checks that Open GL is present.
 - Fix the pulse of sound when stopping the music
-- Added timing markers which show when the pianist pressed the note.
+- Added "timing markers" which show when the pianist pressed the note.
+- Changed the build so that it now works on the Mac (thanks to Christian)
 
 v0.6.2: (11 March 2009)
 - added "<None>" as intrument sound.
 - when setting a latency fix of >0 the instrument is automatical set to <None>
-
+- turn all the sound off when exiting the program.
+- Added looping to continually play between to bars.
+- Added the option to change the follow mode stop point.
+- Automatically switches the follow mode stop point if you are playing well enough.
+- Added a logo to the source tree in "images/logo64x64.png"
 */
 
 #define PB_VERSION "0.6.2 svn"

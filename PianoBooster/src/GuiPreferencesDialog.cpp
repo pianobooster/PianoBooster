@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -47,6 +47,10 @@ void GuiPreferencesDialog::init(CSong* song, QSettings* settings, CGLView * glVi
     m_glView = glView;
     videoOptimiseCheck->setChecked(m_glView->m_cfg_openGlOptimise);
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
+    followStopPointCombo->addItem("Automatic (Recommended)");
+    followStopPointCombo->addItem("On the Beat");
+    followStopPointCombo->addItem("After the Beat");
+    followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
 }
 
 void GuiPreferencesDialog::accept()
@@ -56,8 +60,8 @@ void GuiPreferencesDialog::accept()
     //void on_timingMarkersCheck_toggled (bool checked);
     m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
     m_settings->setValue("score/timingMarkers", m_song->cfg_timingMarkersFlag );
-
-
+    m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
+    m_settings->setValue("score/stopPointMode", m_song->cfg_stopPointMode );
 
     this->QDialog::accept();
 }

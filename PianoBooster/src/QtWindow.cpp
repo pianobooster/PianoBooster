@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -50,6 +50,7 @@ Window::Window()
     setWindowTitle(tr("Piano Booster"));
 
     m_glWidget = new CGLView(this);
+
     m_song = m_glWidget->getSongObject();
     m_score = m_glWidget->getScoreObject();
 
@@ -58,7 +59,7 @@ Window::Window()
     QVBoxLayout *columnLayout = new QVBoxLayout;
 
     m_sidePanel = new GuiSidePanel(this, m_settings);
-    m_topBar = new GuiTopBar();
+    m_topBar = new GuiTopBar(this);
 
     mainLayout->addWidget(m_sidePanel);
     columnLayout->addWidget(m_topBar);
@@ -69,10 +70,16 @@ Window::Window()
     m_song->init();
     m_glWidget->init();
 
+    /* fixme
+     // Set up gl display format
+    QGLFormat format = m_glWidget->format();
+    format.setSwapInterval(100);
+    m_glWidget->setFormat(format);
+    */
+
     m_sidePanel->init(m_song, m_song->getTrackList(), m_topBar);
     m_topBar->init(m_song, m_song->getTrackList());
     createActions();
-    createSongControls();
     createMenus();
     //createToolBars();
     readSettings();
@@ -108,6 +115,7 @@ Window::Window()
 
     m_glWidget->m_cfg_openGlOptimise = m_settings->value("display/openGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
     m_song->cfg_timingMarkersFlag = m_settings->value("score/timingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
+    m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("score/stopPointMode", m_song->cfg_stopPointMode ).toInt());
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
 
@@ -207,13 +215,6 @@ void Window::createActions()
     //m_setupPreferencesAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
 
-
-    m_LoopingSongAct = new QAction(QIcon(":/images/open.png"), tr("&Looping ..."), this);
-    m_LoopingSongAct->setShortcut(tr("Ctrl+L"));
-    //m_setupPreferencesAct->setStatusTip(tr("Setup the Midi input an output"));
-    connect(m_LoopingSongAct, SIGNAL(triggered()), this, SLOT(showLoopingDialog()));
-
-
     QAction* enableFollowTempoAct = new QAction(this);
     enableFollowTempoAct->setShortcut(tr("Shift+F1"));
     connect(enableFollowTempoAct, SIGNAL(triggered()), this, SLOT(enableFollowTempo()));
@@ -234,9 +235,6 @@ void Window::createMenus()
 
     m_viewMenu = menuBar()->addMenu(tr("&View"));
     m_viewMenu->addAction(m_toggleSidePanelAct);
-
-    //m_songMenu = menuBar()->addMenu(tr("&Song"));
-    //m_songMenu->addAction(m_LoopingSongAct);
 
     m_setupMenu = menuBar()->addMenu(tr("Set&up"));
     m_setupMenu->addAction(m_setupMidiAct);
@@ -266,10 +264,6 @@ void Window::createToolBars()
 
     m_songToolBar->addWidget(m_speedSpin);
     connect(m_speedSpin, SIGNAL(valueChanged (int)), this, SLOT(setSpeed(int)));
-}
-
-void Window::createSongControls()
-{
 }
 
 void Window::about()
@@ -318,6 +312,10 @@ void Window::writeSettings()
 
 void Window::closeEvent(QCloseEvent *event)
 {
+    if (m_song->playingMusic())
+    {
+        m_song->playMusic(false);
+    }
     if (QFile::exists(m_sidePanel->getCurrentSongFileName()))
         m_settings->setValue("CurrentSong",m_sidePanel->getCurrentSongFileName());
 

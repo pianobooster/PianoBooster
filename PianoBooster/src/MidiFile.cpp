@@ -1,7 +1,7 @@
 /*                          oooOOO MidiFile.cpp OOOooo
 * Reads a Standard MIDI File
 
-    Copyright (c)   1993, 2008, L. J. Barman, all rights reserved
+    Copyright (c)   1993, 2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 

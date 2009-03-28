@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -50,7 +50,7 @@ public:
     void setMidiTempo(int tempo)
     {
         m_midiTempo = float (tempo) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
-        ppDebug("Midi Tempo %f  %d", m_midiTempo, CMidiFile::getPulsesPerQuarterNote());
+        ppLogWarn("Midi Tempo %f  %d", m_midiTempo, CMidiFile::getPulsesPerQuarterNote());
     }
 
     void setSpeed(float speed)

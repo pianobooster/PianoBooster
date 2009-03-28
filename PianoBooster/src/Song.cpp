@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -67,6 +67,7 @@ void CSong::loadSong(QString filename)
     playMusic(false);
     rewind();
     setPlayFromBar(0.0);
+    setLoopingBars(0.0);
     setEventBits(EVENT_BITS_playingStopped);
     if (!m_midiFile->getSongTitle().isEmpty())
         m_songTitle = m_midiFile->getSongTitle();
@@ -106,6 +107,7 @@ void CSong::rewind()
     forceScoreRedraw();
 }
 
+/* Fixme
 void CSong::setPlayFromBar(double bar)
 {
     this->CConductor::setPlayFromBar(bar);
@@ -115,7 +117,7 @@ void CSong::setPlayFromBar(double bar)
         rewind();
         playMusic(true);
     }
-}
+}*/
 
 void CSong::setActiveHand(whichPart_t hand)
 {
@@ -172,7 +174,7 @@ void CSong::refreshScroll()
     forceScoreRedraw();
 }
 
-int CSong::task(int ticks)
+eventBits_t CSong::task(int ticks)
 {
     realTimeEngine(ticks);
 
@@ -227,7 +229,7 @@ int CSong::task(int ticks)
     }
 
 exitTask:
-    int eventBits = m_realTimeEventBits;
+    eventBits_t eventBits = m_realTimeEventBits;
     m_realTimeEventBits = 0;
     return eventBits;
 }

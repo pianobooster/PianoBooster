@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -87,8 +87,6 @@ void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
     if (i!=-1)
         midiOutputCombo->setCurrentIndex(i);
 
-    //latencyFixEdit->hide(); fixme
-    //latencyFixLabel->hide();
     updateMidiInfoText();
 }
 
@@ -125,7 +123,6 @@ void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
 
 void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 {
-    m_latencyFix = 0;
     m_midiChanged = true;
     updateMidiInfoText();
 }
@@ -140,7 +137,7 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
             "You will need a piano <b>with speakers</b> that are <b>turned up</b>.<br>"
             "<i>It is not ideal, a low latency sound generator is recommend.</i><br>"
             "Enter the time in milliseconds for the delay (1000 mSec = 1 sec)<br>"
-            "(For the Microsoft GS Wavetable SW Synth try a value of 350 msec)<br>"
+            "(For the Microsoft GS Wavetable SW Synth try a value of 200 msec)<br>"
             "If you are not sure enter a value of zero"
 
 
@@ -180,5 +177,23 @@ void GuiMidiSetupDialog::accept()
     m_settings->setValue("midi/latency", m_latencyFix);
     m_song->setLatencyFix(m_latencyFix);
     m_song->regenerateChordQueue();
+    if (m_latencyChanged)
+    {
+        if( m_latencyFix> 0)
+        {
+            int rightSound = m_settings->value("Keyboard/RightSound", Cfg::defualtRightPatch()).toInt();
+            m_settings->setValue("Keyboard/RightSoundPrevious", rightSound); // Save the current right sound
+            // Mute the Piano if we are using the latency fix;
+            m_settings->setValue("Keyboard/RightSound", 0);
+            m_song->setPianoSoundPatches( -1, -2); // -1 means no sound and -2 means ignore this paramater
+        }
+        else
+        {
+            int previousRightSound = m_settings->value("Keyboard/RightSoundPrevious", Cfg::defualtRightPatch()).toInt();
+            m_settings->setValue("Keyboard/RightSound", previousRightSound);
+            m_song->setPianoSoundPatches(previousRightSound, -2); // -2 means ignore this paramater
+        }
+    }
+
     this->QDialog::accept();
 }

@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -64,6 +64,8 @@ private slots:
     }
 
     void on_saveBarButton_clicked(bool clicked);
+    void on_loopingBarsPopupButton_clicked(bool clicked);
+
 
 private:
     void reloadKeyCombo(bool major);
