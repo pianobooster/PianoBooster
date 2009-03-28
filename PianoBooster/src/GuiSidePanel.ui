@@ -170,6 +170,12 @@
         </item>
         <item>
          <widget class="QSlider" name="pianoSlider" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="toolTip" >
            <string>Adjust the volume of your piano</string>
           </property>
