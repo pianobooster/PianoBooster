@@ -24,9 +24,9 @@ v0.6.1: (11 March 2009)
 - Added "timing markers" which show when the pianist pressed the note.
 - Changed the build so that it now works on the Mac (thanks to Christian)
 
-v0.6.2: (11 March 2009)
-- added "<None>" as intrument sound.
-- when setting a latency fix of >0 the instrument is automatical set to <None>
+v0.6.2: (28 March 2009)
+- added "<None>" as instrument sound.
+- when setting a latency fix of >0 the instrument is automatically set to 'None'
 - turn all the sound off when exiting the program.
 - Added looping to continually play between to bars.
 - Added the option to change the follow mode stop point.
