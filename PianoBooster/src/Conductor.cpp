@@ -646,10 +646,6 @@ void CConductor::followPlaying()
 
     if (m_wantedChord.length() == 0)
         return;
-/* fixme delete
-    if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint && !seekingBarNumber() )
-        m_followState = PB_FOLLOW_earlyNotes;
-/*/
 
     if (seekingBarNumber())
     {

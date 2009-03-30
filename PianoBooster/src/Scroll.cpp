@@ -104,7 +104,7 @@ bool CScroll::insertSlots()
 
 void CScroll::removeEarlyTimingMakers()
 {
-    int delta = deltaAdjust(m_deltaTail) * m_noteSpacingFactor  + Cfg::playZoneX() - Cfg::scrollStartX() - NOTE_AHEAD_GAP;
+    float delta = deltaAdjust(m_deltaTail) * m_noteSpacingFactor  + Cfg::playZoneX() - Cfg::scrollStartX() - NOTE_AHEAD_GAP;
     // only look a few steps (10) into the scroll queue
     for (int i = 0; i < 10 && i < m_scrollQueue->length(); i++ )
     {

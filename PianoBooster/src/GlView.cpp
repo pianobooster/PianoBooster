@@ -111,7 +111,7 @@ void CGLView::drawTimeSignature()
     if (Cfg::quickStart)
         return;
 
-    int x,y;
+    float x,y;
     int topNumber, bottomNumber;
 
     if (m_song == 0) return;
@@ -349,7 +349,7 @@ void CGLView::timerEvent(QTimerEvent *event)
             if ((eventBits & EVENT_BITS_forceRatingRedraw) != 0)
                 m_forceRatingRedraw = REDRAW_COUNT;
             if ((eventBits & EVENT_BITS_newBarNumber) != 0)
-                m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT; // fixme this did not work so redraw every things
+                m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT; // fixme this did not work so redraw everything
 
             m_qtWindow->songEventUpdated(eventBits);
         }

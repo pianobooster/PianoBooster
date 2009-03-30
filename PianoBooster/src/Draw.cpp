@@ -452,7 +452,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
     if (symbol.getType() == PB_SYMBOL_note)
     {
         drawStaveExtentsion(symbol, x, 16);
-        int pianistX = symbol.getPianistTiming();
+        float pianistX = symbol.getPianistTiming();
         if ( pianistX != NOT_USED)
         {
             pianistX =  x + pianistX * HORIZONTAL_SPACING_FACTOR;
