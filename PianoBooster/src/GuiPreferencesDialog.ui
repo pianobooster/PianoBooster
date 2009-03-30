@@ -20,16 +20,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3" >
       <item>
-       <layout class="QFormLayout" name="formLayout" >
-        <property name="fieldGrowthPolicy" >
-         <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-        </property>
-        <property name="formAlignment" >
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-        <property name="rightMargin" >
-         <number>6</number>
-        </property>
+       <layout class="QGridLayout" name="gridLayout" >
         <item row="0" column="0" >
          <widget class="QCheckBox" name="timingMarkersCheck" >
           <property name="sizePolicy" >
@@ -65,6 +56,19 @@
            </size>
           </property>
          </widget>
+        </item>
+        <item row="0" column="1" >
+         <spacer name="horizontalSpacer" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
