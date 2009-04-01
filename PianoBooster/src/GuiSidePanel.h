@@ -101,6 +101,7 @@ private:
     void loadBookList();
     void loadSong(QString filename);
     void autoSetMuteYourPart();
+    bool eventFilter(QObject *obj, QEvent *event);
 
 
     CSong* m_song;

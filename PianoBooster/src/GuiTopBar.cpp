@@ -41,6 +41,8 @@ GuiTopBar::GuiTopBar(QWidget *parent)
     m_song = 0;
     setupUi(this);
 
+    parent->installEventFilter(this);
+
     speedSpin->setMaximum(200);
     speedSpin->setMinimum(20);
     speedSpin->setSuffix(" %");
@@ -239,4 +241,23 @@ void GuiTopBar::on_loopingBarsPopupButton_clicked(bool clicked)
     loopingPopup->init(m_song);
     loopingPopup->move (pos);
     loopingPopup->show();
+}
+
+bool GuiTopBar::eventFilter(QObject *obj, QEvent *event)
+{
+    if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+        if (keyEvent->key()==Qt::Key_Up) {
+            speedSpin->stepUp();
+            return true;
+        } else if (keyEvent->key()==Qt::Key_Down) {
+            speedSpin->stepDown();
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        // it's not a key event, lets do standard event processing
+        return QObject::eventFilter(obj, event);
+    }
 }

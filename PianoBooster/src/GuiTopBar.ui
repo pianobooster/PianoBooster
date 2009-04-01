@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>GuiTopBar</class>
- <widget class="QWidget" name="GuiTopBar" >
-  <property name="geometry" >
+ <widget class="QWidget" name="GuiTopBar">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,173 +10,179 @@
     <height>34</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>0</width>
     <height>34</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>524287</width>
     <height>524287</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" >
-   <property name="sizeConstraint" >
+  <layout class="QHBoxLayout">
+   <property name="sizeConstraint">
     <enum>QLayout::SetMaximumSize</enum>
    </property>
-   <property name="topMargin" >
+   <property name="topMargin">
     <number>0</number>
    </property>
-   <property name="bottomMargin" >
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
-    <layout class="QHBoxLayout" >
-     <property name="spacing" >
+    <layout class="QHBoxLayout">
+     <property name="spacing">
       <number>6</number>
      </property>
-     <property name="sizeConstraint" >
+     <property name="sizeConstraint">
       <enum>QLayout::SetFixedSize</enum>
      </property>
      <item>
-      <widget class="QPushButton" name="playFromStartButton" >
-       <property name="toolTip" >
+      <widget class="QPushButton" name="playFromStartButton">
+       <property name="toolTip">
         <string>Start playing music from the start</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="icon" >
-        <iconset resource="application.qrc" >
+       <property name="icon">
+        <iconset>
          <normaloff>:/images/play-from-start.png</normaloff>:/images/play-from-start.png</iconset>
        </property>
-       <property name="iconSize" >
+       <property name="iconSize">
         <size>
          <width>24</width>
          <height>24</height>
         </size>
        </property>
-       <property name="checkable" >
+       <property name="shortcut">
+        <string>Home</string>
+       </property>
+       <property name="checkable">
         <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="playButton" >
-       <property name="toolTip" >
+      <widget class="QPushButton" name="playButton">
+       <property name="toolTip">
         <string>Start and stop playing music</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="icon" >
-        <iconset resource="application.qrc" >
+       <property name="icon">
+        <iconset>
          <normaloff>:/images/play.png</normaloff>:/images/play.png</iconset>
        </property>
-       <property name="iconSize" >
+       <property name="iconSize">
         <size>
          <width>24</width>
          <height>24</height>
         </size>
        </property>
-       <property name="checkable" >
-        <bool>true</bool>
+       <property name="shortcut">
+        <string>Space</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_2" >
-       <property name="text" >
+      <widget class="QLabel" name="label_2">
+       <property name="text">
         <string>Speed:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="speedSpin" />
+      <widget class="QSpinBox" name="speedSpin"/>
      </item>
      <item>
-      <widget class="QLabel" name="label_5" >
-       <property name="text" >
+      <widget class="QLabel" name="label_5">
+       <property name="text">
         <string>Key:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="keyCombo" />
+      <widget class="QComboBox" name="keyCombo"/>
      </item>
      <item>
-      <widget class="QComboBox" name="majorCombo" />
+      <widget class="QComboBox" name="majorCombo"/>
      </item>
      <item>
-      <widget class="QLabel" name="label" >
-       <property name="text" >
+      <widget class="QLabel" name="label">
+       <property name="text">
         <string>Transpose:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="transposeSpin" />
+      <widget class="QSpinBox" name="transposeSpin"/>
      </item>
      <item>
-      <widget class="QToolButton" name="loopingBarsPopupButton" >
-       <property name="text" >
+      <widget class="QToolButton" name="loopingBarsPopupButton">
+       <property name="text">
         <string/>
        </property>
-       <property name="iconSize" >
+       <property name="iconSize">
         <size>
          <width>12</width>
          <height>24</height>
         </size>
        </property>
-       <property name="checkable" >
+       <property name="checkable">
         <bool>true</bool>
        </property>
-       <property name="arrowType" >
+       <property name="arrowType">
         <enum>Qt::DownArrow</enum>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_3" >
-       <property name="text" >
+      <widget class="QLabel" name="label_3">
+       <property name="text">
         <string>Start Bar:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="startBarSpin" >
-       <property name="decimals" >
+      <widget class="QDoubleSpinBox" name="startBarSpin">
+       <property name="decimals">
         <number>1</number>
        </property>
-       <property name="maximum" >
+       <property name="maximum">
         <double>999.899999999999977</double>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="saveBarButton" >
-       <property name="toolTip" >
+      <widget class="QPushButton" name="saveBarButton">
+       <property name="toolTip">
         <string>Save this Bar Number</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="icon" >
-        <iconset resource="application.qrc" >
+       <property name="icon">
+        <iconset>
          <normaloff>:/images/flag.png</normaloff>:/images/flag.png</iconset>
        </property>
-       <property name="iconSize" >
+       <property name="iconSize">
         <size>
          <width>24</width>
          <height>24</height>
@@ -185,10 +192,10 @@
      </item>
      <item>
       <spacer>
-       <property name="orientation" >
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+       <property name="sizeHint" stdset="0">
         <size>
          <width>0</width>
          <height>30</height>
@@ -200,8 +207,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="application.qrc" />
- </resources>
+ <resources/>
  <connections/>
 </ui>

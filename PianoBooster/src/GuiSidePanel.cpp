@@ -41,6 +41,7 @@ GuiSidePanel::GuiSidePanel(QWidget *parent, QSettings* settings)
     m_topBar = 0;
     m_settings = settings;
     setupUi(this);
+    parent->installEventFilter(this);
 }
 
 void GuiSidePanel::init(CSong* songObj, CTrackList* tracks, GuiTopBar* topBar)
@@ -52,8 +53,11 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* tracks, GuiTopBar* topBar)
 
     loadBookList();
 
+
     followYouRadio->setChecked(true);
     bothHandsRadio->setChecked(true);
+    printf("left%d",leftHandRadio->isChecked());
+    printf("both%d",bothHandsRadio->isChecked());
 
     boostSlider->setMinimum(-100);
     boostSlider->setMaximum(100);
@@ -188,4 +192,30 @@ void GuiSidePanel::autoSetMuteYourPart()
     m_song->mutePianistPart(checked);
 }
 
+bool GuiSidePanel::eventFilter(QObject *obj, QEvent *event)
+{
+    if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+        if (keyEvent->key()==Qt::Key_PageUp) {
+            if (bothHandsRadio->isChecked()==true) {
+                   rightHandRadio->setChecked(true);
+            } else if (leftHandRadio->isChecked()==true) {
+                bothHandsRadio->setChecked(true);
+            }
+            return true;
+        } else if (keyEvent->key()==Qt::Key_PageDown) {
+            if (bothHandsRadio->isChecked()==true) {
+                   leftHandRadio->setChecked(true);
+            } else if (rightHandRadio->isChecked()==true) {
+                bothHandsRadio->setChecked(true);
+            }
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        // it's not a key event, lets do standard event processing
+        return QObject::eventFilter(obj, event);
+    }
+}
 
