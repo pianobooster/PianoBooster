@@ -2,6 +2,8 @@
    TO COMPILE THE SOURCE CODE IN LINUX
 ===============================================================================================
 
+   Ensure that the following packages are installed cmake', 'libqt4-dev', 'libasound2-dev'.
+
    In the PianoBooster directory type "cd build" to change to the "build" directory
    then type "cmake ../src", followed by "make".
 
@@ -15,12 +17,12 @@
 
    To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
    When installing Qt select the option to download and install the MinGW compiler. Open the
-   Qt Command Prompt and then change to the "PianoBooster\build" directory and then type the 
+   Qt Command Prompt and then change to the "PianoBooster\build" directory and then type the
    command below.
 
    "C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" ..\src
 
-   Once this is completed type "make".  
+   Once this is completed type "make".
 
    Please notify the author if you make any changes to the Piano Booster source code.
 

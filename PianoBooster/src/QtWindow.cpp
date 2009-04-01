@@ -110,7 +110,7 @@ Window::Window()
 #ifdef _WIN32
     m_glWidget->m_cfg_openGlOptimise = false; // don't default to true on windows
 #else
-    m_glWidget->m_cfg_openGlOptimise = true;
+    m_glWidget->m_cfg_openGlOptimise = false; // changed to defualt to false on platforms
 #endif
 
     m_glWidget->m_cfg_openGlOptimise = m_settings->value("display/openGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();

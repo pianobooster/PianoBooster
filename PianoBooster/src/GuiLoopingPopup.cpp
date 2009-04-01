@@ -59,10 +59,6 @@ void GuiLoopingPopup::on_loopBarsSpin_valueChanged(double bars)
 {
     if (!m_song) return;
 
-    // Stop the muisc playing
-    m_song->playMusic(false);
-    //fixme setPlayButtonState(false);
-
     m_song->setLoopingBars( bars);
     updateInfo();
 }
