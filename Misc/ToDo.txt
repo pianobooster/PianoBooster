@@ -1,0 +1,59 @@
+Piano Booster To Do tasks (in no particular order)
+
+======== EASY ========
+
++ Add keyboard shortcuts. (Owen)
+- Help for keyboard short cuts.
+- Add assignable Left and Right hand midi channels.
+- Save the setting per song (e.g. remember the current speed settings)
+- changing the piano sound to use the same sound as on the part.
+- [Bug] fix patches when all 16 channels are being used (mute parts 15 + 16)
+- add a tempo display in BPM.
+- Add - one finger play - playing just one note of a cord will be accepted (Optional
+- Add - rhythm practice - any note played at the right time will be accepted
+
+======== MEDIUM ========
+
+- Adding a high score of your playing ability.
+- Add stars -- see if you can collect all 10 stars. 
+- Reduce the midi timing jitter by:
+    1. Change to using rtTimer  (as supplied by Pedro)
+    2. Increase the midi tick rate to 1 mSec
+- Make the graphics move smoothly across the screen, without the flickering or tearing by:.
+    1.  synchronise the frame rate to match screen/lcd monitor refresh rate.
+- Fix the text flickering problem (probably a QT bug.) 
+- Display note durations as a piano roll type display.
+- Display note duration using simple musical notation (without any rests or note beams)
+- Automatically adjust the speed (as an option) to match the playing ability.
+
+
+======== DIFFICULT ========
+
+- reduce the midi timing jitter by:
+    3. Move the conductor realtime engine so it runs in it own thread.
+- Show the rests in each bar.
+- Add note beams.
+- show a graph of how your playing has improved over time.
+
+======== NO PLANS FOR ========
+
+- Proper beautiful music notation complete with slurs, triplets,  correct note spacing etc.
+      (Please use the printed musical score for this instead)
+
+======== NON SOFTWARE TASKS ========
+
+- Add a PB links page on the web site.
+- writing a user manual.
+- Expand the faq.
+- Publicise PB by posting to other forums .
+- Publicise PB by getting other sites to link to PB.
+- Get a collection of suitable pieces that can be distributed with PB with the right licence.
+- Writing a music teaching course
+
+
+====== NOTE ======
+
+Note: changed the '-' to a '+' when the task has been started. 
+
+
+
