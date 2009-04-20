@@ -40,7 +40,7 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
 }
 
 
-void GuiPreferencesDialog::init(CSong* song, QSettings* settings, CGLView * glView)
+void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glView)
 {
     m_song = song;
     m_settings = settings;

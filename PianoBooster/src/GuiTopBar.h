@@ -49,6 +49,9 @@ public:
 
     void setPlayButtonState(bool checked, bool atTheEnd = false);
 
+    void setSpeed(int value){ speedSpin->setValue(value); }
+    int getSpeed(){return speedSpin->value();}
+
 private slots:
     void on_playButton_clicked(bool clicked);
     void on_playFromStartButton_clicked(bool clicked);

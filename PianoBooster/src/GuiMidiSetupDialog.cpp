@@ -44,7 +44,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
 }
 
 
-void GuiMidiSetupDialog::init(CSong* song, QSettings* settings)
+void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 {
     m_song = song;
     m_settings = settings;

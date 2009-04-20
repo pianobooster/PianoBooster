@@ -1,5 +1,5 @@
 /*!
-    @file           QtWindow.cpp
+    @file           QtWindow.h
 
     @brief          xxx.
 
@@ -37,6 +37,8 @@
 #include "GuiTopBar.h"
 #include "GuiPreferencesDialog.h"
 #include "GuiLoopingPopup.h"
+#include "Settings.h"
+
 
 
 class CGLView;
@@ -131,7 +133,7 @@ private:
     void readSettings();
     void writeSettings();
 
-    QSettings* m_settings;
+    CSettings* m_settings;
 
     GuiSidePanel *m_sidePanel;
     GuiTopBar *m_topBar;

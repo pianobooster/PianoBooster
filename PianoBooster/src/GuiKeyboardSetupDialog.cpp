@@ -41,7 +41,7 @@ GuiKeyboardSetupDialog::GuiKeyboardSetupDialog(QWidget *parent)
     setWindowTitle("Piano Keyboard Settings");
 }
 
-void GuiKeyboardSetupDialog::init(CSong* song, QSettings* settings)
+void GuiKeyboardSetupDialog::init(CSong* song, CSettings* settings)
 {
     m_song = song;
     m_settings = settings;

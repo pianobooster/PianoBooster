@@ -12,19 +12,22 @@ Piano Booster To Do tasks (in no particular order)
 - Add - one finger play - playing just one note of a cord will be accepted (Optional
 - Add - rhythm practice - any note played at the right time will be accepted
 
+
 ======== MEDIUM ========
 
 - Adding a high score of your playing ability.
-- Add stars -- see if you can collect all 10 stars. 
+- Add stars -- see if you can collect all 10 stars.
 - Reduce the midi timing jitter by:
     1. Change to using rtTimer  (as supplied by Pedro)
     2. Increase the midi tick rate to 1 mSec
 - Make the graphics move smoothly across the screen, without the flickering or tearing by:.
     1.  synchronise the frame rate to match screen/lcd monitor refresh rate.
-- Fix the text flickering problem (probably a QT bug.) 
+- Fix the text flickering problem (probably a QT bug.)
 - Display note durations as a piano roll type display.
 - Display note duration using simple musical notation (without any rests or note beams)
 - Automatically adjust the speed (as an option) to match the playing ability.
+- Adding a metronome/drum track to the piece being played.
+- read the midi file tracks (at present the tracks are split only by midi channel number)
 
 
 ======== DIFFICULT ========
@@ -53,7 +56,7 @@ Piano Booster To Do tasks (in no particular order)
 
 ====== NOTE ======
 
-Note: changed the '-' to a '+' when the task has been started. 
+Note: changed the '-' to a '+' when the task has been started.
 
 
 

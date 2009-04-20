@@ -45,7 +45,7 @@ Window::Window()
     QCoreApplication::setOrganizationName("PianoBooster");
     QCoreApplication::setOrganizationDomain("pianobooster.sourceforge.net/");
     QCoreApplication::setApplicationName("Piano Booster");
-    m_settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "PianoBooster", "Piano Booster");
+    m_settings = new CSettings(this);
     setWindowIcon(QIcon(":/images/Logo32x32.png"));
     setWindowTitle(tr("Piano Booster"));
 
@@ -60,6 +60,8 @@ Window::Window()
 
     m_sidePanel = new GuiSidePanel(this, m_settings);
     m_topBar = new GuiTopBar(this);
+
+    m_settings->init(m_song, m_sidePanel, m_topBar);
 
     mainLayout->addWidget(m_sidePanel);
     columnLayout->addWidget(m_topBar);
@@ -291,7 +293,7 @@ void Window::open()
     QString currentSong = m_settings->value("CurrentSong").toString();
 
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
-                            currentSong, tr("Midi Files (*.mid *.kar)"));
+                            currentSong, tr("Midi Files (*.mid *.midi *.kar)"));
     if (!fileName.isEmpty())
         m_sidePanel->openSongFile(fileName);
 }

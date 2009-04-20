@@ -34,6 +34,8 @@
 #include "Song.h"
 #include "Score.h"
 #include "TrackList.h"
+#include "Settings.h"
+
 
 #include "ui_GuiSidePanel.h"
 
@@ -44,7 +46,7 @@ class GuiSidePanel : public QWidget, private Ui::GuiSidePanel
     Q_OBJECT
 
 public:
-    GuiSidePanel(QWidget *parent, QSettings* settings);
+    GuiSidePanel(QWidget *parent, CSettings* settings);
 
     void init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar);
     void openSongFile(QString filename);
@@ -52,6 +54,16 @@ public:
     {
         return m_bookPath + bookCombo->currentText() + '/' + songCombo->currentText();
     }
+
+    void refresh()
+    {
+        if (m_trackList)
+        {
+            m_trackList->refresh();
+        }
+        autoSetMuteYourPart();
+    }
+    void loadBookList();
 
 private slots:
     void on_songCombo_activated (int index);
@@ -98,7 +110,6 @@ private slots:
     }
 
 private:
-    void loadBookList();
     void loadSong(QString filename);
     void autoSetMuteYourPart();
     bool eventFilter(QObject *obj, QEvent *event);
@@ -109,7 +120,7 @@ private:
     QString m_bookPath;
     CTrackList* m_trackList;
     GuiTopBar* m_topBar;
-    QSettings* m_settings;
+    CSettings* m_settings;
     QWidget *m_parent;
 };
 

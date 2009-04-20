@@ -18,6 +18,7 @@ ADD_DEFINITIONS(-Wall)
 # by default only QtCore and QtGui modules are enabled
 # other modules must be enabled like this:
 SET(QT_USE_QTOPENGL TRUE)
+SET(QT_USE_QTXML TRUE)
 
 
 FIND_PACKAGE( OpenGL REQUIRED )
@@ -88,6 +89,7 @@ SET( PIANOBOOSTER_SRCS
     TrackList.cpp
     Rating.cpp
     Bar.cpp
+    Settings.cpp
 )
 
 

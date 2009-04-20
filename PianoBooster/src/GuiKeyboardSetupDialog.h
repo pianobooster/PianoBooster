@@ -32,6 +32,7 @@
 #include <QtGui>
 
 #include "Song.h"
+#include "Settings.h"
 
 
 #include "ui_GuiKeyboardSetupDialog.h"
@@ -43,7 +44,7 @@ class GuiKeyboardSetupDialog : public QDialog, private Ui::GuiKeyboardSetupDialo
 public:
     GuiKeyboardSetupDialog(QWidget *parent = 0);
 
-    void init(CSong* song, QSettings* settings);
+    void init(CSong* song, CSettings* settings);
 
 private slots:
     void accept();
@@ -86,7 +87,7 @@ private:
 
     void updateInfoText();
 
-    QSettings* m_settings;
+    CSettings* m_settings;
     CSong* m_song;
 };
 

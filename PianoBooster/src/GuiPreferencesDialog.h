@@ -33,6 +33,7 @@
 #include <QtGui>
 
 #include "Song.h"
+#include "Settings.h"
 
 
 #include "ui_GuiPreferencesDialog.h"
@@ -45,13 +46,13 @@ class GuiPreferencesDialog : public QDialog, private Ui::GuiPreferencesDialog
 
 public:
     GuiPreferencesDialog(QWidget *parent = 0);
-    void init(CSong* song, QSettings* settings, CGLView* glView);
+    void init(CSong* song, CSettings* settings, CGLView* glView);
 
 private slots:
     void accept();
 
 private:
-    QSettings* m_settings;
+    CSettings* m_settings;
     CSong* m_song;
     CGLView *m_glView;
 };

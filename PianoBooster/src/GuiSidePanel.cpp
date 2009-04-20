@@ -32,7 +32,7 @@
 #include "GuiTopBar.h"
 #include "TrackList.h"
 
-GuiSidePanel::GuiSidePanel(QWidget *parent, QSettings* settings)
+GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     : QWidget(parent), m_parent(parent)
 {
     m_song = 0;
@@ -97,8 +97,6 @@ void GuiSidePanel::loadBookList()
 
 void GuiSidePanel::openSongFile(QString filename)
 {
-    QDir dirBooks(filename);
-
     if (!QFile::exists(filename))
         return;
 
@@ -109,6 +107,7 @@ void GuiSidePanel::openSongFile(QString filename)
     loadSong(filename);
 }
 
+/*Fix me */
 void GuiSidePanel::loadSong(QString filename)
 {
     m_song->loadSong(filename);
@@ -137,6 +136,7 @@ void GuiSidePanel::on_bookCombo_activated (int index)
     for (int i = 0; i < songNames.size(); ++i)
     {
         if ( songNames.at(i).endsWith(".mid", Qt::CaseInsensitive ) ||
+             songNames.at(i).endsWith(".midi", Qt::CaseInsensitive ) ||
              songNames.at(i).endsWith(".kar", Qt::CaseInsensitive ) )
         {
             songCombo->addItem( songNames.at(i));

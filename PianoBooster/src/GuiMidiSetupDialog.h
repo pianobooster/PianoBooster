@@ -32,6 +32,8 @@
 #include <QtGui>
 
 #include "Song.h"
+#include "Settings.h"
+
 
 
 #include "ui_GuiMidiSetupDialog.h"
@@ -43,7 +45,7 @@ class GuiMidiSetupDialog : public QDialog, private Ui::GuiMidiSettingsDialog
 public:
     GuiMidiSetupDialog(QWidget *parent = 0);
 
-    void init(CSong* song, QSettings* settings);
+    void init(CSong* song, CSettings* settings);
 
 private slots:
     void accept();
@@ -55,7 +57,7 @@ private slots:
 private:
 
     void updateMidiInfoText();
-    QSettings* m_settings;
+    CSettings* m_settings;
     CSong* m_song;
     int m_latencyFix;
     bool m_latencyChanged;
