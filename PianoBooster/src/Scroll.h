@@ -36,10 +36,12 @@
 
 #define QUEUE_LENGTH    1000
 
+class CSettings;
+
 class CScroll : public CDraw
 {
 public:
-    CScroll(int id)
+    CScroll(int id, CSettings* settings) : CDraw(settings)
     {
         m_id = id;
         m_notation = new CNotation();

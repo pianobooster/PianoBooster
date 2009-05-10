@@ -91,6 +91,10 @@ public:
     static const CColour backgroundColour()      {return CColour(0.0, 0.0, 0.0);} // black
     static const CColour barMarkerColour()       {return CColour(0.5, 0.5, 0.5);} // grey
     static const CColour beatMarkerColour()       {return CColour(0.3, 0.3, 0.3);} // grey
+    static const CColour pianoGoodColour()      {return playedGoodColour();}
+    static const CColour pianoBadColour()       {return CColour(1.0, 0.0, 0.0);}
+    static const CColour noteNameColour()       {return CColour(1.0, 1.0, 1.0);}
+
 #endif
 
 #if YELLOW_BACKGROUND
@@ -125,8 +129,8 @@ public:
 
 
 
-    static int defualtWrongPatch() {return 7;} // Starts at 1
-    static int defualtRightPatch() {return 1;} // Starts at 1
+    static int defaultWrongPatch() {return 7;} // Starts at 1
+    static int defaultRightPatch() {return 1;} // Starts at 1
 
     static int logLevel;
     static bool smallScreen;

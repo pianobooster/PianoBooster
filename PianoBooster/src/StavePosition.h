@@ -35,7 +35,7 @@
 #include <stdio.h>
 
 typedef  struct {
-    int pianoNote;   // 0 is Middle C, 1 is D
+    int pianoNote;   // 1 is Middle C, 2 is D
     int accidental;
 } staveLookup_t;
 
@@ -119,7 +119,9 @@ public:
     static const float verticalNoteSpacing()      {return 7;}
     static const float staveHeight()              {return verticalNoteSpacing() * 8;}
     static const float staveCentralOffset()       {return m_staveCentralOffset;}
-
+    // convert the midi note to the note name A B C D E F G
+    static staveLookup_t midiNote2Name(int midiNote);
+    static const staveLookup_t* getstaveLookupTable(int key);
 
 private:
     // fixme TODO This could be improved as the calculations could a done in the constructor
@@ -130,7 +132,7 @@ private:
 
 
     static int m_KeySignature;
-    static const staveLookup_t*  m_staveLookUpKey;
+    static const staveLookup_t*  m_staveLookUpTable;
     static float m_staveCentralOffset;
     static float m_staveCenterY;
 };

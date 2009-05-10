@@ -47,6 +47,7 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     m_glView = glView;
     videoOptimiseCheck->setChecked(m_glView->m_cfg_openGlOptimise);
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
+    showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
     followStopPointCombo->addItem("Automatic (Recommended)");
     followStopPointCombo->addItem("On the Beat");
     followStopPointCombo->addItem("After the Beat");
@@ -57,9 +58,9 @@ void GuiPreferencesDialog::accept()
 {
     m_glView->m_cfg_openGlOptimise = videoOptimiseCheck->isChecked();
     m_settings->setValue("display/openGlOptimise", m_glView->m_cfg_openGlOptimise );
-    //void on_timingMarkersCheck_toggled (bool checked);
     m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
     m_settings->setValue("score/timingMarkers", m_song->cfg_timingMarkersFlag );
+    m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("score/stopPointMode", m_song->cfg_stopPointMode );
 

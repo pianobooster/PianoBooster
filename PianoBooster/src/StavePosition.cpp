@@ -32,7 +32,7 @@
 
 float CStavePos::m_staveCenterY;
 int CStavePos::m_KeySignature;
-const staveLookup_t*  CStavePos::m_staveLookUpKey;
+const staveLookup_t*  CStavePos::m_staveLookUpTable;
 float CStavePos::m_staveCentralOffset = (staveHeight() * 3)/2;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -46,8 +46,7 @@ void CStavePos::notePos(whichPart_t hand, int midiNote)
 
     const staveLookup_t* lookUpItem;
 
-    //lookUpItem = &staffLookupFlat3[index];
-    lookUpItem = &m_staveLookUpKey[index];
+    lookUpItem = &m_staveLookUpTable[index];
 
     if (m_hand == PB_PART_right)
         m_staveIndex =   lookUpItem->pianoNote - 7;
@@ -58,14 +57,44 @@ void CStavePos::notePos(whichPart_t hand, int midiNote)
     m_accidental = lookUpItem->accidental;
     //ppTrace("chan %d Note %2d - %2d (%d %d %d),\n", midiNote, m_staveIndex, m_accidental,
         //index%semitonesInAnOctive, lookUpItem->pianoNote, (midiNote/semitonesInAnOctive)*notesInAnOctive);
-
 }
 
+// convert the midi note to the note name C=1, D=2, E=3, F=4, G=5, A=6, B=7
+staveLookup_t CStavePos::midiNote2Name(int midiNote)
+{
+    const staveLookup_t* staffLookupC = getstaveLookupTable(0); // Key of C so we get all the not names
 
+    const int semitonesInAnOctive = 12;
+    int index = midiNote % semitonesInAnOctive;
+
+    staveLookup_t item = staffLookupC[index];
+
+    if (item.accidental != 0) // should it be a sharp or a flat
+    {
+        // Should it be called for example G# or Ab
+        if (item.pianoNote != m_staveLookUpTable[index].pianoNote)
+        {
+            item.pianoNote = m_staveLookUpTable[index].pianoNote;
+            if (m_KeySignature > 0)
+                item.accidental = 1; // And change to sharp
+            else
+                item.accidental = -1;  // But use a flat
+        }
+    }
+    return item;
+}
 
 void CStavePos::setKeySignature(int key)
 {
+    m_KeySignature = key;
+    m_staveLookUpTable = getstaveLookupTable(key);
     CDraw::forceCompileRedraw();
+}
+
+const staveLookup_t* CStavePos::getstaveLookupTable(int key)
+{
+    const staveLookup_t* staveLookup;
+
     static const staveLookup_t staffLookupFlat6[] = { // Gb [Bb Eb Ab Db Gb Cb]
         {1, 2}, // Cn
         {2, 0}, //.Db
@@ -264,22 +293,22 @@ void CStavePos::setKeySignature(int key)
     };
 // Cb Gb Db Ab Eb Bb <> F# C# G# D# A# E#
 
-    m_KeySignature = key;
     switch (key)
     {
-        case -6: m_staveLookUpKey = staffLookupFlat6;  break;
-        case -5: m_staveLookUpKey = staffLookupFlat5;  break;
-        case -4: m_staveLookUpKey = staffLookupFlat4;  break;
-        case -3: m_staveLookUpKey = staffLookupFlat3;  break;
-        case -2: m_staveLookUpKey = staffLookupFlat2;  break;
-        case -1: m_staveLookUpKey = staffLookupFlat1;  break;
-        case  0: m_staveLookUpKey = staffLookupC;      break;
-        case  1: m_staveLookUpKey = staffLookupSharp1; break;
-        case  2: m_staveLookUpKey = staffLookupSharp2; break;
-        case  3: m_staveLookUpKey = staffLookupSharp3; break;
-        case  4: m_staveLookUpKey = staffLookupSharp4; break;
-        case  5: m_staveLookUpKey = staffLookupSharp5; break;
-        case  6: m_staveLookUpKey = staffLookupSharp6; break;
-        default: m_staveLookUpKey = staffLookupC;      break;
+        case -6: staveLookup = staffLookupFlat6;  break;
+        case -5: staveLookup = staffLookupFlat5;  break;
+        case -4: staveLookup = staffLookupFlat4;  break;
+        case -3: staveLookup = staffLookupFlat3;  break;
+        case -2: staveLookup = staffLookupFlat2;  break;
+        case -1: staveLookup = staffLookupFlat1;  break;
+        case  0: staveLookup = staffLookupC;      break;
+        case  1: staveLookup = staffLookupSharp1; break;
+        case  2: staveLookup = staffLookupSharp2; break;
+        case  3: staveLookup = staffLookupSharp3; break;
+        case  4: staveLookup = staffLookupSharp4; break;
+        case  5: staveLookup = staffLookupSharp5; break;
+        case  6: staveLookup = staffLookupSharp6; break;
+        default: staveLookup = staffLookupC;      break;
     }
+    return staveLookup;
 }

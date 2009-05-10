@@ -62,14 +62,14 @@ public:
         m_findChord.reset();
     }
 
-    void init();
+    void init(CScore * scoreWin, CSettings* settings);
     eventBits_t task(int ticks);
     bool pcKeyPress(int key, bool down);
     void loadSong(QString filename);
     void regenerateChordQueue();
 
     void rewind();
-//fixme    void setPlayFromBar(double bar);
+
     void playFromStartBar()
     {
         rewind();

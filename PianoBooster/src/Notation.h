@@ -68,21 +68,8 @@ public:
     int getAv8Left() {return m_av8Left;}
 
     // return false on error
-    bool addSymbol(CSymbol symbol)
-    {
-        if (m_length >= MAX_SYMBOLS)
-            return false;
-        for (int i=0; i < m_length; i++)
-        {
-            // don't add duplicates
-            if (m_symbols[i].getNote() == symbol.getNote() &&
-                m_symbols[i].getType() == symbol.getType() &&
-                m_symbols[i].getHand() == symbol.getHand())
-                return true;
-        }
-        m_symbols[m_length++] = symbol;
-        return true;
-    }
+    bool addSymbol(CSymbol symbol);
+    void analyse();
 
     void setSymbol(int delta, CSymbol symbol)
     {

@@ -72,8 +72,14 @@ bool CScroll::insertSlots()
     if (m_headSlot.length() == 0 || m_headSlot.getSymbolType(0) == PB_SYMBOL_theEnd) // this means we have reached the end of the file
         return false;
 
-    while (deltaAdjust(m_deltaHead) * m_noteSpacingFactor < (Cfg::staveEndX() - Cfg::playZoneX() - m_headSlot.getDeltaTime() * m_noteSpacingFactor - NOTE_BEHIND_GAP))
+    while (true)
     {
+        int headDelta = deltaAdjust(m_deltaHead) * m_noteSpacingFactor;
+        int slotDetlta = Cfg::staveEndX() - Cfg::playZoneX() - m_headSlot.getDeltaTime() * m_noteSpacingFactor - NOTE_BEHIND_GAP;
+
+        if (headDelta > slotDetlta)
+            break;
+
         if (m_show)
         {
             if (m_symbolID == 0)
@@ -195,7 +201,7 @@ bool CScroll::validPianistChord(int index)
 
 int CScroll::findWantedChord(int note, CColour colour, int wantedDelta)
 {
-    if (colour == Cfg::playedBadColour())
+    if (colour == Cfg::playedBadColour()) // fixme should be an enum
         return m_wantedIndex;
     {
         while ( m_wantedIndex + 1 < m_scrollQueue->length())

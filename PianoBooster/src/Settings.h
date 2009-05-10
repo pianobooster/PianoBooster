@@ -45,6 +45,14 @@ public:
 
     void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
 
+    bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
+    void setNoteNamesEnabled(bool value);
+    void setAdvancedMode(bool value) { m_advancedMode = value;}
+    bool showNoteNames(){
+        if (m_noteNamesEnabled && !m_advancedMode)
+            return true;
+        return false;
+    }
 private:
 
     QDomDocument m_domDocument;
@@ -54,6 +62,8 @@ private:
     CSong* m_song;
     GuiSidePanel* m_guiSidePanel;
     GuiTopBar* m_guiTopBar;
+    bool m_noteNamesEnabled;
+    bool m_advancedMode;
 };
 
 #endif // __SETTINGS_H__

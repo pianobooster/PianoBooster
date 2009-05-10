@@ -31,29 +31,48 @@
 
 #include "Draw.h"
 #include "Chord.h"
+#include "Settings.h"
+
+
+typedef struct {
+        float posY;
+        float posYOriginal;
+        int type; // not used
+        int pitch;
+} noteNameItem_t;
+
 
 class CPiano : protected CDraw
 {
 
 public:
-    CPiano()
+    CPiano(CSettings* settings) : CDraw(settings)
     {
-        m_goodChord = 0;
-        m_badChord = 0;
     }
-    void drawPianoKeyboard();
+
     void drawPianoInput();
 
-    void setInputChords(CChord* good, CChord* bad)
-    {
-        m_goodChord = good;
-        m_badChord = bad;
-    }
-private:
-    void drawPianoInputChord(CChord* chord, CColour colour);
+    void addPianistNote(whichPart_t part, int note, bool good);
+    bool removePianistNote(int note);
 
-    CChord* m_goodChord;
-    CChord* m_badChord;
+    int pianistAllNotesDown(); // Counts the number of notes the pianist has down
+    int pianistBadNotesDown();
+    void clear();
+
+private:
+    void spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex);
+    void drawPianoInputLines(CChord* chord, CColour colour, int lineLength);
+    void drawPianoInputNoteNames();
+    void spaceNoteNames();
+    void addNoteNameItem(float posY, int pitch, int type);
+    void removeNoteNameItem(int pitch);
+    void noteNameListClear();
+
+    noteNameItem_t  m_noteNameList[20];
+    unsigned int m_noteNameListLength;
+
+    CChord m_goodChord;  // The coloured note lines that appear on the score when the pianist plays
+    CChord m_badChord;
 };
 
 #endif //__PIANO_H__

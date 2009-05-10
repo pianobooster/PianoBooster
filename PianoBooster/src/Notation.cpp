@@ -30,6 +30,68 @@
 #include "Notation.h"
 #include "Cfg.h"
 
+#define MERGESLOT_NOTE_INDEX        0
+#define MERGESLOT_BEATMARK_INDEX    1
+
+bool CSlot::addSymbol(CSymbol symbol)
+{
+    int i;
+    if (m_length >= MAX_SYMBOLS)
+        return false;
+
+    // Sort the entries low to high
+    for (i = m_length - 1; i >= 0; i--)
+    {
+        if (m_symbols[i].getNote() <= symbol.getNote())
+        {
+            // don't add duplicates
+            if (m_symbols[i].getNote() == symbol.getNote() &&
+                m_symbols[i].getType() == symbol.getType() &&
+                m_symbols[i].getHand() == symbol.getHand())
+                return true;
+            break;
+        }
+        // move the previous entry up one possition
+        m_symbols[i+1] = m_symbols[i];
+    }
+    m_symbols[i+1] = symbol;
+    m_length++;
+    return true;
+}
+
+// find
+void CSlot::analyse()
+{
+    int i;
+    int rightIndex = 0;
+    int leftIndex = 0;
+    int rightTotal = 0;
+    int leftTotal = 0;
+
+    for (i = 0; i < m_length; i++)
+    {
+        if (m_symbols[i].getType() == PB_SYMBOL_note)
+        {
+            if (m_symbols[i].getHand() == PB_PART_right)
+                rightTotal++;
+            else if (m_symbols[i].getHand() == PB_PART_left)
+                leftTotal++;
+        }
+    }
+    for (i = 0; i < m_length; i++)
+    {
+        if (m_symbols[i].getType() == PB_SYMBOL_note)
+        {
+            if (m_symbols[i].getHand() == PB_PART_right)
+                m_symbols[i].setIndex(rightIndex++, rightTotal);
+            else if (m_symbols[i].getHand() == PB_PART_left)
+                m_symbols[i].setIndex(leftIndex++, leftTotal );
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////
+
 CSlot CNotation::nextBeatMarker()
 {
     const int cfg_barGap = CMidiFile::getPulsesPerQuarterNote() * 30 / DEFAULT_PPQN;
@@ -97,6 +159,7 @@ void CNotation::findNoteSlots()
             if (m_currentSlot.length() > 0)
             {
                 // the cord separator arrives very late so we are behind the times
+                m_currentSlot.analyse();
                 m_slotQueue->push(m_currentSlot);
                 m_currentSlot.clear();
             }
@@ -154,10 +217,15 @@ CSlot CNotation::nextSlot()
     int mergeIdx;
     CSlot slot;
 
-    if (m_mergeSlots[1].length() == 0)
+    if (m_mergeSlots[MERGESLOT_BEATMARK_INDEX].length() == 0)
     {
-        m_mergeSlots[0] = nextNoteSlot();
-        m_mergeSlots[1] = nextBeatMarker();
+        // load up the two slots on start up
+        m_mergeSlots[MERGESLOT_NOTE_INDEX] = nextNoteSlot();
+        m_mergeSlots[MERGESLOT_BEATMARK_INDEX] = nextBeatMarker();
+
+        // This inserts the beat marksers into the queue early (so they get drawn underneath)
+        m_mergeSlots[MERGESLOT_BEATMARK_INDEX].addDeltaTime(
+            -CMidiFile::getPulsesPerQuarterNote() * BEAT_MARKER_OFFSET / DEFAULT_PPQN);
     }
 
     if (m_mergeSlots[0].getSymbolType(0) == PB_SYMBOL_theEnd)

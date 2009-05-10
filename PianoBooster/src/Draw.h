@@ -45,12 +45,14 @@
 
 #define REDRAW_COUNT 2 // There are two buffers so redraw twice
 
+class CSettings;
 
 class CDraw
 {
 public:
-    CDraw()
+    CDraw(CSettings* settings)
     {
+        m_settings = settings;
         m_displayHand = PB_PART_both;
         m_forceCompileRedraw = REDRAW_COUNT;
 
@@ -74,12 +76,16 @@ protected:
     void oneLine(float x1, float y1, float x2, float y2);
     void drawStaves(float startX, float endX);
     void drawKeySignature(int key);
+    void drawNoteName(int midiNote, float x, float y, int type);
+    CSettings* m_settings;
 
 private:
+    void drawStaveNoteName(CSymbol symbol, float x, float y);
+
     void checkAccidental(CSymbol symbol, float x, float y);
     void drawStaveExtentsion(CSymbol symbol, float x, int noteWidth);
     static int m_forceCompileRedraw;
-
+    const static int m_beatMarkerHeight = 10; // The height of the beat markers in stave postions
 };
 
 #endif //__DRAW_H__

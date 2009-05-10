@@ -36,10 +36,11 @@
 #include "Cfg.h"
 #include "Draw.h"
 
-CGLView::CGLView(Window *parent)
+CGLView::CGLView(Window* parent, CSettings* settings)
     : QGLWidget(parent)
 {
     m_qtWindow = parent;
+    m_settings = settings;
     m_rating = 0;
     m_fullRedrawFlag = true;
     m_forcefullRedraw = 0;
@@ -49,7 +50,7 @@ CGLView::CGLView(Window *parent)
     m_backgroundColour = QColor(0, 0, 0);
 
     m_song = new CSong();
-    m_score = new CScore();
+    m_score = new CScore(m_settings);
     m_midiTicks = 0;
     m_scrollTicks = 0;
     m_cfg_openGlOptimise = false;

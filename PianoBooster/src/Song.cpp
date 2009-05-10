@@ -30,12 +30,12 @@
 #include "Song.h"
 #include "Score.h"
 
-void CSong::init()
+void CSong::init(CScore * scoreWin, CSettings* settings)
 {
 
     CNote::setChannelHands(-1, -1);
 
-    this->CConductor::init();
+    this->CConductor::init(scoreWin, settings);
 
     setActiveHand(PB_PART_both);
     if (CNote::bothHandsChan() >= 0)

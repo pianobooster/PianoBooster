@@ -39,6 +39,8 @@
 #include "Bar.h"
 
 class CScore;
+class CPiano;
+class CSettings;
 
 typedef enum {
     PB_FOLLOW_searching,
@@ -70,6 +72,8 @@ public:
     CConductor();
     ~CConductor();
 
+    void init(CScore * scoreWin, CSettings* settings);
+
 
     //! add a midi event to be analysed and played
     void midiEventInsert(CMidiEvent event);
@@ -83,7 +87,6 @@ public:
     //! first check if there is space to add a chord event
     int chordEventSpace() { return m_wantedChordQueue->space();}
 
-    void init();
     void rewind();
 
     void realTimeEngine(int mSecTicks);
@@ -174,8 +177,6 @@ public:
             m_cfg_wrongNoteSound = wrongSound;
     }
 
-    void setScore(CScore * scoreWin){m_scoreWin = scoreWin;}
-
     void setEventBits(eventBits_t bits) { m_realTimeEventBits |= bits; } // don't change the other bits
     // set to true to force the score to be redrawn
     void forceScoreRedraw(){ setEventBits( EVENT_BITS_forceFullRedraw); }
@@ -228,7 +229,6 @@ private:
     void outputSavedNotesOff();
     void findImminentNotesOff();
 
-    int pianistNotesDown(); // Counts the number of notes the pianist has down
     void followPlaying();
     void missedNotesColour(CColour colour);
 
@@ -264,6 +264,9 @@ private:
     }
     void setFollowSkillAdvanced(bool enable);
 
+    CSettings* m_settings;
+    CPiano* m_piano;
+
     CTempo m_tempo;
     CBar m_bar;
     int m_leadLagAdjust; // Synchronise the sound the the video
@@ -271,8 +274,6 @@ private:
     CChord m_wantedChord;  // The chord the pianist needs to play
     CChord m_savedwantedChord; // A copy of the wanted chord complete with both left and right parts
     CChord m_goodPlayedNotes;  // The good notes the pianist plays
-    CChord m_goodNoteLines; // The coloured note lines that appear on the score when the pianist plays
-    CChord m_badNoteLines;
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef
     bool m_followSkillAdvanced;
     int m_lastSound;
@@ -288,7 +289,7 @@ private:
     int m_cfg_playZoneEarly; // when playing along
     int m_cfg_playZoneLate;
 
-    int m_pianistTiming;  //measure whether the pianest is playing early or late
+    int m_pianistTiming;  //measure whether the pianist is playing early or late
     bool m_followPlayingTimeOut;  // O dear, the student is too slow
 
     bool m_testWrongNoteSound;

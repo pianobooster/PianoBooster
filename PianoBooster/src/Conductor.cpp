@@ -36,6 +36,7 @@
 
 #include "Conductor.h"
 #include "Score.h"
+#include "Piano.h"
 #include "Cfg.h"
 
 playMode_t CConductor::m_playMode = PB_PLAY_MODE_listen;
@@ -45,6 +46,7 @@ CConductor::CConductor()
     int i;
 
     m_scoreWin = 0;
+    m_piano = 0;
 
     m_songEventQueue = new CQueue<CMidiEvent>(1000);
     m_wantedChordQueue = new CQueue<CChord>(1000);
@@ -82,7 +84,6 @@ CConductor::~CConductor()
     delete m_savedNoteQueue;
     delete m_savedNoteOffQueue;
 }
-
 
 //! add a midi event to be analysed and displayed on the score
 void CConductor::midiEventInsert(CMidiEvent event)
@@ -432,7 +433,16 @@ void CConductor::resetWantedChord()
 // switch modes if we are playing well enough (ie don't slow down if we are playing late)
 void CConductor::setFollowSkillAdvanced(bool enable)
 {
-    if (getLatencyFix() >= 0)
+    m_settings-> setAdvancedMode(enable);
+
+    static bool oldShowingNoteNames = false; // fixme FIX
+
+    bool showingNoteNames  = m_settings->showNoteNames();
+    if ( oldShowingNoteNames != showingNoteNames && showingNoteNames == true)
+       m_scoreWin->refreshScroll(); // force a redraw to show the note names;
+    oldShowingNoteNames = showingNoteNames;
+
+    if (getLatencyFix() > 0)
     {
         // behave differently if we are using the latency fix
         m_cfg_earlyNotesPoint = m_cfg_imminentNotesOffPoint; //disable the earily notes
@@ -506,7 +516,7 @@ bool CConductor::validatePianistNote(CMidiEvent& inputNote)
 
 bool CConductor::validatePianistChord()
 {
-    if (m_badNoteLines.length() >= 2)
+    if (m_piano->pianistBadNotesDown() >= 2)
         return false;
 
     if (m_skill>=3)
@@ -538,7 +548,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         if ( validatePianistNote(inputNote) == true)
         {
             m_goodPlayedNotes.addNote(hand, inputNote.note());
-            m_goodNoteLines.addNote(hand, inputNote.note());
+            m_piano->addPianistNote(hand, inputNote.note(),true);
             int pianistTiming = ( cfg_timingMarkersFlag && m_followSkillAdvanced) ?  m_pianistTiming : NOT_USED;
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
                         (!m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
@@ -568,17 +578,16 @@ void CConductor::pianistInput(CMidiEvent inputNote)
             {
                 goodSound = false;
 
-                m_badNoteLines.addNote(hand, inputNote.note());
+                m_piano->addPianistNote(hand, inputNote.note(), false);
                 m_rating.wrongNotes(1);
             }
             else
-                m_goodNoteLines.addNote(hand, inputNote.note());
+                m_piano->addPianistNote(hand, inputNote.note(), true);
         }
     }
     else if (inputNote.type() == MIDI_NOTE_OFF)
     {
-        m_goodNoteLines.removeNote(inputNote.note());
-        if (m_badNoteLines.removeNote(inputNote.note()))
+        if (m_piano->removePianistNote(inputNote.note()) ==  true)
             goodSound = false;
         bool hasNote = m_goodPlayedNotes.removeNote(inputNote.note());
 
@@ -622,12 +631,6 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
 }
 
-// Counts the number of notes the pianist has down
-int CConductor::pianistNotesDown()
-{
-    return m_goodNoteLines.length() + m_badNoteLines.length();
-}
-
 void CConductor::addDeltaTime(int ticks)
 {
     m_scoreWin->scrollDeltaTime(ticks);
@@ -637,7 +640,6 @@ void CConductor::addDeltaTime(int ticks)
 
 void CConductor::followPlaying()
 {
-
     if ( m_playMode == PB_PLAY_MODE_listen )
         return;
 
@@ -758,7 +760,7 @@ void CConductor::realTimeEngine(int mSecTicks)
                 missedNotesColour(Cfg::playedStoppedColour());
                 findImminentNotesOff();
                 // Don't keep any saved notes off if there are no notes down
-                if (pianistNotesDown() == 0)
+                if (m_piano->pianistAllNotesDown() == 0)
                     outputSavedNotesOff();
                 m_silenceTimeOut = Cfg::silenceTimeOut();
             }
@@ -886,8 +888,8 @@ void CConductor::rewind()
     m_bar.rewind();
 
     m_goodPlayedNotes.clear();  // The good notes the pianist plays
-    m_goodNoteLines.clear();
-    m_badNoteLines.clear();
+    if (m_piano)
+        m_piano->clear();
     resetWantedChord();
 
     m_cfg_earlyNotesPoint = CMidiFile::ppqnAdjust(15); // was 10 playZoneEarly
@@ -895,17 +897,21 @@ void CConductor::rewind()
     m_cfg_stopPointAdvanced = CMidiFile::ppqnAdjust(-15); //was -3; // stop just after the beat
     m_cfg_imminentNotesOffPoint = CMidiFile::ppqnAdjust(-15);  // look ahead and find an Notes off coming up
 
-    setFollowSkillAdvanced(false);
-
     // Annie song 25
 
     m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg::playZoneEarly()) * SPEED_ADJUST_FACTOR; // when playing along
     m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate()) * SPEED_ADJUST_FACTOR;
 }
 
-void CConductor::init()
+void CConductor::init(CScore * scoreWin, CSettings* settings)
 {
     int channel;
+
+    m_scoreWin = scoreWin;
+    m_settings = settings;
+
+    setFollowSkillAdvanced(false);
+
     m_followState = PB_FOLLOW_searching;
     this->CMidiDevice::init();
     for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
@@ -913,7 +919,10 @@ void CConductor::init()
 
     assert(m_scoreWin);
     if (m_scoreWin)
-        m_scoreWin->setInputChords(&m_goodNoteLines, &m_badNoteLines, &m_rating);
+    {
+        m_scoreWin->setRatingObject(&m_rating);
+        m_piano = m_scoreWin->getPianoObject();
+    }
 
     setPianoSoundPatches(1-1, 7-1); // 6-1
 

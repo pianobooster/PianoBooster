@@ -35,9 +35,18 @@ CSettings::CSettings(QWidget *mainWindow) : QSettings(CSettings::IniFormat, CSet
 {
     // It is all done in the initialisation list
 
+    m_advancedMode = false;
     load();
     save();
+    m_noteNamesEnabled = value("score/noteNames", false ).toBool();
 }
+
+
+void CSettings::setNoteNamesEnabled(bool value) {
+    m_noteNamesEnabled = value;
+    setValue("score/noteNames", value );
+}
+
 
 void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
 {
@@ -58,7 +67,6 @@ void CSettings::load()
 
      QDomText t = m_domDocument.createTextNode("Hello World");
      songs.appendChild(t);
-
 }
 void CSettings::save()
 {
@@ -73,7 +81,7 @@ void CSettings::save()
     file.close();
 }
 
-/*
+/* fixme work in progress
      QDomDocument doc("mydocument");
      QFile file("mydocument.xml");
      if (!file.open(QIODevice::ReadOnly))
@@ -137,3 +145,4 @@ void CSettings::openSongFile(QString filename, bool bookListReload)
     m_guiSidePanel->refresh();
     m_mainWindow->setWindowTitle("Piano Booster - " + m_song->getSongTitle());
 }
+

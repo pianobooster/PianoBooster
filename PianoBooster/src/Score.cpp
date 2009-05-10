@@ -31,15 +31,15 @@
 #include "Draw.h"
 #include "Score.h"
 
-CScore::CScore()
+CScore::CScore(CSettings* settings) : CDraw(settings)
 {
     size_t i;
-    m_piano = new CPiano();
+    m_piano = new CPiano(settings);
     m_rating = 0;
     m_activeScroll = -1;
     for (i=0; i< arraySize(m_scroll); i++)
     {
-        m_scroll[i] = new CScroll(i);
+        m_scroll[i] = new CScroll(i, settings);
         m_scroll[i]->setChannel(i);
     }
 
@@ -71,7 +71,7 @@ void CScore::drawScroll(bool refresh)
     {
         float topY = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY();
         float bottomY = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY();
-        drColour (CColour(0.0, 0.0, 0.0));//Cfg::backgroundColour()); //fixme
+        drColour (Cfg::backgroundColour());
         glRectf(Cfg::scrollStartX(), topY, Cfg::getAppWidth(), bottomY);
     }
 
@@ -104,7 +104,6 @@ void CScore::drawScore()
 
             drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_right, -1)), Cfg::clefX()); // The Treble Clef
             drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());
-            //m_piano->drawPianoKeyboard();
             drawKeySignature(CStavePos::getKeySignature());
             drawStaves(Cfg::staveStartX(), Cfg::scrollStartX());
         glEndList ();

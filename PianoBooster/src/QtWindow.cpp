@@ -49,7 +49,7 @@ Window::Window()
     setWindowIcon(QIcon(":/images/Logo32x32.png"));
     setWindowTitle(tr("Piano Booster"));
 
-    m_glWidget = new CGLView(this);
+    m_glWidget = new CGLView(this, m_settings);
 
     m_song = m_glWidget->getSongObject();
     m_score = m_glWidget->getScoreObject();
@@ -68,8 +68,7 @@ Window::Window()
     columnLayout->addWidget(m_glWidget);
     mainLayout->addLayout(columnLayout);
 
-    m_song->setScore(m_score);
-    m_song->init();
+    m_song->init(m_score, m_settings);
     m_glWidget->init();
 
     /* fixme
@@ -93,11 +92,8 @@ Window::Window()
 
     m_glWidget->setFocus(Qt::ActiveWindowFocusReason);
 
-    show();
-
-
-    m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", Cfg::defualtRightPatch()).toInt() - 1,
-                                 m_settings->value("Keyboard/WrongSound", Cfg::defualtWrongPatch()).toInt() - 1);
+    m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", Cfg::defaultRightPatch()).toInt() - 1,
+                                 m_settings->value("Keyboard/WrongSound", Cfg::defaultWrongPatch()).toInt() - 1);
 
     QString midiInputName = m_settings->value("midi/input").toString();
     if (midiInputName.startsWith("None"))
@@ -112,7 +108,7 @@ Window::Window()
 #ifdef _WIN32
     m_glWidget->m_cfg_openGlOptimise = false; // don't default to true on windows
 #else
-    m_glWidget->m_cfg_openGlOptimise = false; // changed to defualt to false on platforms
+    m_glWidget->m_cfg_openGlOptimise = false; // changed to default to false on platforms
 #endif
 
     m_glWidget->m_cfg_openGlOptimise = m_settings->value("display/openGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
@@ -120,6 +116,8 @@ Window::Window()
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("score/stopPointMode", m_song->cfg_stopPointMode ).toInt());
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
+
+    show();
 
     if (m_song->openMidiPort(1,string(m_settings->value("midi/output").toString().toAscii()))==false)
     {

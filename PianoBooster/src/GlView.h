@@ -32,6 +32,7 @@
 #include <QGLWidget>
 #include "Song.h"
 #include "Score.h"
+#include "Settings.h"
 //#include "rtmidi/RtTimer.h"
 
 class Window;
@@ -41,7 +42,7 @@ class CGLView : public QGLWidget//, RtTimer
     Q_OBJECT
 
 public:
-    CGLView(Window *parent);
+    CGLView(Window *parent, CSettings* settings);
     ~CGLView();
 
     QSize minimumSizeHint() const;
@@ -69,6 +70,7 @@ private:
 
     QColor m_backgroundColour;
     Window* m_qtWindow;  // The parent Window
+    CSettings* m_settings;
     CSong* m_song;
     CScore* m_score;
     QBasicTimer m_timer;

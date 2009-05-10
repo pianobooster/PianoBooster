@@ -33,12 +33,14 @@
 
 #include "Scroll.h"
 #include "Piano.h"
+#include "Settings.h"
+
 
 class CScore : public CDraw
 {
 public:
 
-    CScore();
+    CScore(CSettings* settings);
 
     ~CScore();
 
@@ -92,11 +94,12 @@ public:
             m_scroll[i]->scrollDeltaTime(ticks);
     }
 
-    void setInputChords(CChord* good, CChord* bad, CRating* rating)
+    void setRatingObject(CRating* rating)
     {
-        m_piano->setInputChords(good, bad);
         m_rating = rating;
     }
+
+    CPiano* getPianoObject() { return m_piano;}
 
     void setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming = NOT_USED)
     {

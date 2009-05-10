@@ -45,7 +45,6 @@ typedef enum
     PB_SYMBOL_sharp,
     PB_SYMBOL_flat,
     PB_SYMBOL_natural,
-    PB_SYMBOL_pianoKeyboard,
     PB_SYMBOL_barLine,
     PB_SYMBOL_barMarker,
     PB_SYMBOL_beatMarker,
@@ -53,6 +52,7 @@ typedef enum
     PB_SYMBOL_theEnd
 } musicalSymbol_t;
 
+#define BEAT_MARKER_OFFSET  20 // used to ensure that beat markers are drawn under the note by drawing them early
 
 class CSymbol
 {
@@ -115,8 +115,17 @@ public:
     {
         if (m_symbolType == PB_SYMBOL_note)
             m_midiNote += amount;
-        m_stavePos.notePos(m_hand, m_midiNote); // The save possition has now moved
+        m_stavePos.notePos(m_hand, m_midiNote); // The save position has now moved
     }
+    void setIndex(int index, int total)
+    {
+        m_index = index;
+        m_total = total;
+    }
+
+    int getNoteIndex() { return m_index; }
+    int getNoteTotal() { return m_total; }
+
 
 private:
     void init()
@@ -126,6 +135,7 @@ private:
         m_hand = PB_PART_none;
         m_midiDuration = 0;
         m_pianistTiming = NOT_USED;
+        setIndex(0,0);
     }
 
     CStavePos m_stavePos;
@@ -136,6 +146,8 @@ private:
 
     CColour m_colour;
     int m_pianistTiming;
+    int m_index;  // the number of the note per hand starting from the bottom.
+    int m_total;  // the number of the notes per hand;
 };
 
 
