@@ -31,6 +31,7 @@
 
 #include <QString>
 #include <QList>
+
 #include "MidiEvent.h"
 
 #define CONVENTION_LEFT_HAND_CHANNEL (3-1)

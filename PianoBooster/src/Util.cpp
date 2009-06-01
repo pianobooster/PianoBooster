@@ -70,6 +70,8 @@ void ppLogInfo(const char *msg, ...)
     if (Cfg::logLevel  <  1)
         return;
 
+    fputs("Info: ", stdout);
+
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
     va_end(ap);
@@ -83,6 +85,8 @@ void ppLogWarn(const char *msg, ...)
     if (Cfg::logLevel  <  2)
         return;
 
+    fputs("Warn: ", stdout);
+
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
     va_end(ap);
@@ -92,6 +96,8 @@ void ppLogWarn(const char *msg, ...)
 void ppTrace(const char *msg, ...)
 {
     va_list ap;
+
+    fputs("Trace: ", stdout);
 
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
@@ -104,6 +110,7 @@ void ppDebug( const char *msg, ...)
 {
     va_list ap;
 
+    fputs("Debug: ", stdout);
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
     va_end(ap);
@@ -114,8 +121,8 @@ void ppError(const char *msg, ...)
 {
     va_list ap;
 
-    va_start(ap, msg);
     fputs("Error: ", stdout);
+    va_start(ap, msg);
     vfprintf(stdout, msg, ap);
     va_end(ap);
     fputc('\n', stdout);

@@ -51,9 +51,6 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* tracks, GuiTopBar* topBar)
     m_topBar = topBar;
     m_trackList->init(songObj, trackList);
 
-    loadBookList();
-
-
     followYouRadio->setChecked(true);
     bothHandsRadio->setChecked(true);
     printf("left%d",leftHandRadio->isChecked());
@@ -67,117 +64,60 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* tracks, GuiTopBar* topBar)
 
 void GuiSidePanel::loadBookList()
 {
-    QString currentSong = m_settings->value("CurrentSong").toString();
-    QDir dirBooks;
-    QString currentBook;
-    if (currentSong.isEmpty())
-        dirBooks.setPath( QDir::homePath());
-    else
-    {
-        dirBooks.setPath(currentSong);
-        dirBooks.cdUp();
-        currentBook = dirBooks.dirName();
-        dirBooks.cdUp();
-    }
-    m_bookPath =  dirBooks.path() + '/';
-
-    dirBooks.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
-    QStringList bookNames = dirBooks.entryList();
+    QStringList bookNames = m_settings->getBookList();
 
     bookCombo->clear();
 
     for (int i = 0; i < bookNames.size(); ++i)
     {
         bookCombo->addItem( bookNames.at(i));
-        if (bookNames.at(i) == currentBook)
+        if (bookNames.at(i) == m_settings->getCurrentBookName())
             bookCombo->setCurrentIndex(i);
     }
     on_bookCombo_activated(-1);
 }
 
-void GuiSidePanel::openSongFile(QString filename)
-{
-    if (!QFile::exists(filename))
-        return;
-
-    m_settings->setValue("CurrentSong", filename);
-
-    loadBookList();
-
-    loadSong(filename);
-}
-
-/*Fix me */
-void GuiSidePanel::loadSong(QString filename)
-{
-    m_song->loadSong(filename);
-    if (m_trackList)
-    {
-        m_trackList->refresh();
-        m_topBar->refresh(true);
-    }
-    m_parent->setWindowTitle("Piano Booster - " + m_song->getSongTitle());
-    autoSetMuteYourPart();
-}
-
 void GuiSidePanel::on_bookCombo_activated (int index)
 {
-    QDir dirSongs = QDir(m_bookPath + bookCombo->currentText());
-    dirSongs.setFilter(QDir::Files);
     QString currentSong;
 
-    if (index < 0)
-        currentSong = m_settings->value("CurrentSong").toString();
+    m_settings->setCurrentBookName(bookCombo->currentText(), (index >= 0)? true : false);
+
+    currentSong = m_settings->getCurrentSongName();
 
     songCombo->clear();
-    QStringList songNames = dirSongs.entryList();
+    QStringList songNames = m_settings->getSongList();
 
-    int j = 0;
     for (int i = 0; i < songNames.size(); ++i)
     {
-        if ( songNames.at(i).endsWith(".mid", Qt::CaseInsensitive ) ||
-             songNames.at(i).endsWith(".midi", Qt::CaseInsensitive ) ||
-             songNames.at(i).endsWith(".kar", Qt::CaseInsensitive ) )
-        {
-            songCombo->addItem( songNames.at(i));
-            if (m_bookPath + bookCombo->currentText() + '/' + songNames.at(i) == currentSong)
-                songCombo->setCurrentIndex(j);
-            j++;
-        }
+        songCombo->addItem( songNames.at(i));
+        if (songNames.at(i) == currentSong)
+            songCombo->setCurrentIndex(i);
     }
-    on_songCombo_activated(index); // Now load the selected song
+    on_songCombo_activated(0); // Now load the selected song
 }
 
-void GuiSidePanel::on_songCombo_activated(int index) {
-    if (!m_song) return;
-
-    QString str = m_bookPath + bookCombo->currentText() + '/' + songCombo->currentText();
-
-    loadSong(str);
+void GuiSidePanel::on_songCombo_activated(int index)
+{
+    m_settings->setCurrentSongName(songCombo->currentText());
 }
 
 void GuiSidePanel::on_rightHandRadio_toggled (bool checked)
 {
-    if (!m_song ) return;
-
     if (checked)
-        m_song->setActiveHand(PB_PART_right);
+        m_settings->setActiveHand(PB_PART_right);
 }
 
 void GuiSidePanel::on_bothHandsRadio_toggled (bool checked)
 {
-    if (!m_song ) return;
-
     if (checked)
-        m_song->setActiveHand(PB_PART_both);
+        m_settings->setActiveHand(PB_PART_both);
 }
 
 void GuiSidePanel::on_leftHandRadio_toggled (bool checked)
 {
-    if (!m_song ) return;
-
     if (checked)
-        m_song->setActiveHand(PB_PART_left);
+        m_settings->setActiveHand(PB_PART_left);
 }
 
 void GuiSidePanel::autoSetMuteYourPart()
@@ -190,6 +130,36 @@ void GuiSidePanel::autoSetMuteYourPart()
     }
     muteYourPartCheck->setChecked(checked);
     m_song->mutePianistPart(checked);
+}
+
+void GuiSidePanel::setSongName(QString songName)
+{
+    for (int i = 0; i < songCombo->count(); ++i)
+    {
+        if (songCombo->itemText(i) == songName)
+            songCombo->setCurrentIndex(i);
+    }
+}
+
+void GuiSidePanel::setBookName(QString bookName)
+{
+    for (int i = 0; i < bookCombo->count(); ++i)
+    {
+        if (bookCombo->itemText(i) == bookName)
+            bookCombo->setCurrentIndex(i);
+    }
+}
+
+// pass either 'left' 'right' or 'both'
+void GuiSidePanel::setCurrentHand(QString hand)
+{
+    if (hand == "left")
+        leftHandRadio->setChecked(true);
+    else if (hand == "right")
+        rightHandRadio->setChecked(true);
+    else
+        bothHandsRadio->setChecked(true);
+    //on_bothHandsRadio_toggled
 }
 
 bool GuiSidePanel::eventFilter(QObject *obj, QEvent *event)

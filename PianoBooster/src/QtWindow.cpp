@@ -59,7 +59,7 @@ Window::Window()
     QVBoxLayout *columnLayout = new QVBoxLayout;
 
     m_sidePanel = new GuiSidePanel(this, m_settings);
-    m_topBar = new GuiTopBar(this);
+    m_topBar = new GuiTopBar(this, m_settings);
 
     m_settings->init(m_song, m_sidePanel, m_topBar);
 
@@ -82,7 +82,6 @@ Window::Window()
     m_topBar->init(m_song, m_song->getTrackList());
     createActions();
     createMenus();
-    //createToolBars();
     readSettings();
 
     QWidget *centralWin = new QWidget();
@@ -93,7 +92,7 @@ Window::Window()
     m_glWidget->setFocus(Qt::ActiveWindowFocusReason);
 
     m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", Cfg::defaultRightPatch()).toInt() - 1,
-                                 m_settings->value("Keyboard/WrongSound", Cfg::defaultWrongPatch()).toInt() - 1);
+                                 m_settings->value("Keyboard/WrongSound", Cfg::defaultWrongPatch()).toInt() - 1, true);
 
     QString midiInputName = m_settings->value("midi/input").toString();
     if (midiInputName.startsWith("None"))
@@ -116,6 +115,8 @@ Window::Window()
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("score/stopPointMode", m_song->cfg_stopPointMode ).toInt());
 
     m_song->openMidiPort(0, string(midiInputName.toAscii()));
+
+    m_settings->loadSettings();
 
     show();
 
@@ -245,27 +246,6 @@ void Window::createMenus()
     m_helpMenu->addAction(m_aboutAct);
 }
 
-void Window::createToolBars()
-{
-    m_songToolBar = addToolBar(tr("Song"));
-    m_songToolBar->addAction(m_openAct);
-    m_songButton = new QPushButton("&Play", this);
-    m_songButton->setCheckable(true);
-    m_songToolBar->addWidget(m_songButton);
-    connect(m_songButton, SIGNAL(clicked (bool)), this, SLOT(playMusic(bool)));
-
-    m_songToolBar->addWidget(new QLabel("Speed", this));
-    m_speedSpin = new QSpinBox(this);
-    m_speedSpin->setMaximum(200);
-    m_speedSpin->setMinimum(20);
-    m_speedSpin->setSuffix(" %");
-    m_speedSpin->setSingleStep(2);
-    m_speedSpin->setValue(100);
-
-    m_songToolBar->addWidget(m_speedSpin);
-    connect(m_speedSpin, SIGNAL(valueChanged (int)), this, SLOT(setSpeed(int)));
-}
-
 void Window::about()
 {
     QMessageBox about(this);
@@ -288,12 +268,12 @@ void Window::about()
 
 void Window::open()
 {
-    QString currentSong = m_settings->value("CurrentSong").toString();
+    QString currentSong = m_settings->getCurrentSongLongFileName();
 
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
                             currentSong, tr("Midi Files (*.mid *.midi *.kar)"));
     if (!fileName.isEmpty())
-        m_sidePanel->openSongFile(fileName);
+        m_settings->openSongFile(fileName);
 }
 
 void Window::readSettings()
@@ -306,8 +286,9 @@ void Window::readSettings()
 
 void Window::writeSettings()
 {
-     m_settings->setValue("window/pos", pos());
-     m_settings->setValue("window/size", size());
+    m_settings->setValue("window/pos", pos());
+    m_settings->setValue("window/size", size());
+    m_settings->writeSettings();
 }
 
 void Window::closeEvent(QCloseEvent *event)
@@ -316,8 +297,6 @@ void Window::closeEvent(QCloseEvent *event)
     {
         m_song->playMusic(false);
     }
-    if (QFile::exists(m_sidePanel->getCurrentSongFileName()))
-        m_settings->setValue("CurrentSong",m_sidePanel->getCurrentSongFileName());
 
     writeSettings();
 }

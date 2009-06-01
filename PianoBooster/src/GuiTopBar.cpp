@@ -33,8 +33,8 @@
 #include "GuiLoopingPopup.h"
 
 
-GuiTopBar::GuiTopBar(QWidget *parent)
-    : QWidget(parent)
+GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
+    : QWidget(parent), m_settings(settings)
 {
 
     m_atTheEndOfTheSong = false;

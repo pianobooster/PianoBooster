@@ -1,4 +1,6 @@
-#
+# Cmake File for Piano Booster
+# for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
+
 cmake_minimum_required(VERSION 2.4)
 
 IF(MSVC)
@@ -60,7 +62,7 @@ LINK_LIBRARIES( ${QT_LIBRARIES} )
 
 
 
-SET(PB_BASE_SRCS MidiFile.cpp MidiDevice.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
+SET(PB_BASE_SRCS MidiFile.cpp MidiDevice.cpp MidiDeviceRt.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp rtmidi/RtMidi.cpp)
 SET(PB_BASE_HDR MidiFile.h MidiDevice.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     MidiDevice.h Chord.h Tempo.h rtmidi/RtMidi.h)

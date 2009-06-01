@@ -65,23 +65,6 @@ public:
 private slots:
     void open();
     void about();
-    void playMusic(bool start)
-    {
-        if (m_song)
-        {
-            bool start = !m_song->playingMusic();
-            if (start == true)
-                m_song->rewind();
-            m_song->playMusic(start);
-            m_songButton->setChecked(start);
-        }
-    }
-
-    void setSpeed(int speed)
-    {
-        if (!m_song) return;
-        m_song->setSpeed(speed/100.0);
-    }
 
     void showMidiSetup()
     {
@@ -129,7 +112,6 @@ private:
     void displayUsage();
     void createActions();
     void createMenus();
-    void createToolBars();
     void readSettings();
     void writeSettings();
 
@@ -154,10 +136,7 @@ private:
     QMenu *m_songMenu;
     QMenu *m_setupMenu;
     QMenu *m_helpMenu;
-    QToolBar *m_songToolBar;
 
-    QPushButton* m_songButton;
-    QSpinBox* m_speedSpin;
     CSong* m_song;
     CScore* m_score;
 };

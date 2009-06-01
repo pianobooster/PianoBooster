@@ -1,6 +1,6 @@
 /*********************************************************************************/
 /*!
-@file           MidiDevice.h
+@file           MidiDeviceRt.h
 
 @brief          xxxxxx.
 
@@ -26,37 +26,42 @@
 */
 /*********************************************************************************/
 
-#ifndef __MIDI_DEVICE_H__
-#define __MIDI_DEVICE_H__
+#ifndef __MIDI_DEVICE_RT_H__
+#define __MIDI_DEVICE_RT_H__
 
-#include "Util.h"
-/*!
- * @brief   xxxxx.
- */
-
-#include "MidiEvent.h"
 
 #include "MidiDeviceBase.h"
 
-class CMidiDevice : public CMidiDeviceBase
-{
-public:
-    CMidiDevice();
-    ~CMidiDevice();
-    void init();
-    //! add a midi event to be played immediately
-    void playMidiEvent(const CMidiEvent & event);
-    int checkMidiInput();
-    CMidiEvent readMidiInput();
+#include "rtmidi/RtMidi.h"
 
-    string getMidiPortName(int dev, unsigned index);
-    bool openMidiPort(int dev, string portName);
+
+class CMidiDeviceRt : public CMidiDeviceBase
+{
+    virtual void init();
+    //! add a midi event to be played immediately
+    virtual void playMidiEvent(const CMidiEvent & event);
+    virtual int checkMidiInput();
+    virtual CMidiEvent readMidiInput();
+
+    virtual string getMidiPortName(int dev, unsigned index);
+    virtual bool openMidiPort(int dev, string portName);
+
+
+public:
+    CMidiDeviceRt();
+    ~CMidiDeviceRt();
+
 
 private:
 
-    CMidiDeviceBase* m_rtMidiDevice;
-    CMidiDeviceBase* m_selectedMidiDevice;
+    RtMidiOut *m_midiout;
+    RtMidiIn *m_midiin;
 
+    // 0 for input, 1 for output
+    int m_midiPorts[2];      // select which MIDI output port to open
+    std::vector<unsigned char> m_inputMessage;
+    unsigned char savedRawBytes[40]; // Raw data is used for used for a SYSTEM_EVENT
+    unsigned int rawDataIndex;
 };
 
-#endif //__MIDI_DEVICE_H__
+#endif //__MIDI_DEVICE_RT_H__

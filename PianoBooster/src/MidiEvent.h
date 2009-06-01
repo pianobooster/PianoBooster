@@ -109,16 +109,16 @@ public:
 
     ////////////////////////////////////////////////////////////////////////////////
     //@brief returns the midi note number
-    int note(){return m_note;}
-    int programme(){return m_note;}
-    int channel(){return m_channel;}
+    int note() const {return m_note;}
+    int programme() const {return m_note;}
+    int channel() const {return m_channel;}
     void setChannel(int chan){m_channel = chan;}
-    int velocity(){return m_velocity;}
-    int type(){return m_type;}
+    int velocity() const {return m_velocity;}
+    int type() const {return m_type;}
     void setType(int type){m_type = type;}
     void transpose(int amount) {m_note += amount;}
-    int data1() {return m_note;} // Meta data is stored here
-    int data2() {return m_velocity;}
+    int data1() const {return m_note;} // Meta data is stored here
+    int data2() const {return m_velocity;}
     void setDatat2(int value) {m_velocity = value;}
 
     void noteOffEvent( int deltaTime, int channel, int note, int velocity)

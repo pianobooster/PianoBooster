@@ -11,6 +11,9 @@
 
    If you make changes to the source code then please post details on the forum.
 
+   To build a debug version create a dir called "debug" and change to that dir and then
+   type "cmake -DCMAKE_BUILD_TYPE=Debug ../src"
+
 ===============================================================================================
    TO COMPILE THE SOURCE CODE IN MacOSX
 ===============================================================================================
@@ -40,6 +43,8 @@
    "C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" ..\src
 
    Once this is completed type "make".
+
+   Or alternatively you can install QtCreator and then open the CMakeList.txt
 
    If you make changes to the source code then please post details on the forum.
 

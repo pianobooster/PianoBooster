@@ -30,15 +30,28 @@
 #include "GuiTopBar.h"
 #include "GuiSidePanel.h"
 
+#define OPTION_DEBUG_SETTINGS     0
+#if OPTION_DEBUG_SETTINGS
+#define debugSettings(args)     qDebug args
+#else
+#define debugSettings(args)
+#endif
+
+
 CSettings::CSettings(QWidget *mainWindow) : QSettings(CSettings::IniFormat, CSettings::UserScope, "PianoBooster", "Piano Booster"),
                                  m_mainWindow(mainWindow)
 {
     // It is all done in the initialisation list
 
     m_advancedMode = false;
-    load();
-    save();
     m_noteNamesEnabled = value("score/noteNames", false ).toBool();
+}
+
+void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
+{
+    m_song = song;
+    m_guiSidePanel = sidePanel;
+    m_guiTopBar = topBar;
 }
 
 
@@ -48,101 +61,246 @@ void CSettings::setNoteNamesEnabled(bool value) {
 }
 
 
-void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
+// Open a document if it exists or else create it (also delete an duplicates
+QDomElement CSettings::openDomElement(QDomElement parent, const QString & elementName, const QString & attributeName)
 {
-    m_song = song;
-    m_guiSidePanel = sidePanel;
-    m_guiTopBar = topBar;
+    QDomElement wantedElement;
+
+    debugSettings(("openDomElement1 %s %s %s", qPrintable(parent.tagName()), qPrintable(elementName), qPrintable(elementName)));
+    // There should be only a single element without a name
+    // there should be lots of elemens but only one with this tag name
+
+    QDomNode n = parent.firstChild();
+    while(!n.isNull())
+    {
+        QDomElement e = n.toElement(); // try to convert the node to an element.
+        debugSettings(("openDomElement2 tagName %s %s", qPrintable(e.tagName()), qPrintable(elementName)));
+        if(!e.isNull() && e.tagName() == elementName)
+        {
+            if (attributeName.isEmpty() || e.attribute("name") == attributeName)
+            {
+                debugSettings(("openDomElement3 ragName %s %s", qPrintable(e.attribute("name")), qPrintable(attributeName)));
+
+                if (wantedElement.isNull())
+                    wantedElement = e;   // we have found a match
+                else
+                    parent.removeChild(e); // remove unwanted duplicates
+            }
+        }
+        n = n.nextSibling();
+    }
+
+    if (wantedElement.isNull())
+    {
+        // Create the element because it does not exsist
+        wantedElement = m_domDocument.createElement(elementName);
+        if (!attributeName.isEmpty() )
+            wantedElement.setAttribute("name", attributeName);
+        parent.appendChild(wantedElement);
+    }
+
+    return wantedElement;
 }
 
-void CSettings::load()
+void CSettings::loadHandSettings()
 {
-     QDomElement root = m_domDocument.createElement("pb-config");
-     m_domDocument.appendChild(root);
-
-     QDomElement book = m_domDocument.createElement("book");
-     root.appendChild(book);
-     QDomElement songs = m_domDocument.createElement("songs");
-     root.appendChild(songs);
-
-     QDomText t = m_domDocument.createTextNode("Hello World");
-     songs.appendChild(t);
+    m_domHand = openDomElement(m_domSong, "hand", getCurrentHandString());
+    m_guiTopBar->setSpeed(m_domHand.attribute("speed", "100" ).toInt()); //fixme testing only
 }
-void CSettings::save()
+
+void CSettings::saveHandSettings()
 {
+    m_domHand.setAttribute("speed", m_guiTopBar->getSpeed());
+}
+
+void CSettings::loadSongSettings()
+{
+    m_domSong = openDomElement(m_domBook, "song", m_currentSongName);
+    m_guiSidePanel->setCurrentHand(m_domSong.attribute("hand", "both" ));
+
+    loadHandSettings();
+}
+
+
+void CSettings::saveSongSettings()
+{
+    m_domSong.setAttribute("hand", getCurrentHandString());
+
+    saveHandSettings();
+}
+
+void CSettings::loadBookSettings()
+{
+    QDomElement root = m_domDocument.documentElement();
+    m_domBook = openDomElement(root, "book");
+    QString lastSong = m_domBook.attribute("lastsong");
+    if (!lastSong.isEmpty() && m_currentSongName.isEmpty())
+        m_currentSongName = lastSong;
+}
+
+
+void CSettings::saveBookSettings()
+{
+    if (!m_currentBookName.isEmpty())
+        m_domBook.setAttribute("name", m_currentBookName);
+    if (!m_currentSongName.isEmpty())
+        m_domBook.setAttribute("lastsong", m_currentSongName);
+
+    saveSongSettings();
+}
+
+
+void CSettings::loadXmlFile()
+{
+    m_domDocument.documentElement().clear();
+    m_domDocument.clear();
+    m_domBook.clear();
+    m_domSong.clear();
+    m_domHand.clear();
+
+    QFile file(m_bookPath + getCurrentBookName() + '/' + "pb.cfg");
+    if (file.open(QIODevice::ReadOnly))
+    {
+        if (!m_domDocument.setContent(&file)) {
+            ppError("Cannot setContent on XLM file");
+        }
+        file.close();
+    }
+
+    QDomElement root = m_domDocument.documentElement();
+    if (root.tagName() != "pianobooster")
+    {
+        m_domDocument.clear();
+        QDomComment comment =    m_domDocument.createComment("Piano Booster Coniguration file");
+        m_domDocument.appendChild(comment);
+        root = m_domDocument.createElement("pianobooster");
+        m_domDocument.appendChild(root);
+    }
+
+    loadBookSettings();
+}
+
+// save the xml
+void CSettings::saveXmlFile()
+{
+    saveBookSettings();
+
     const int IndentSize = 4;
 
-    QFile file("/home/louis/mydocument.xml");
+    QFile file(m_bookPath + getCurrentBookName() + '/' + "pb.cfg");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-         return;
+    {
+        ppError("Cannot save xml file %s", qPrintable(file.fileName()));
+        return;
+    }
 
     QTextStream out(&file);
     m_domDocument.save(out, IndentSize);
     file.close();
 }
 
-/* fixme work in progress
-     QDomDocument doc("mydocument");
-     QFile file("mydocument.xml");
-     if (!file.open(QIODevice::ReadOnly))
-         return;
-     if (!doc.setContent(&file)) {
-         file.close();
-         return;
-     }
-     file.close();
-
-     // print out the element names of all elements that are direct children
-     // of the outermost element.
-     QDomElement docElem = doc.documentElement();
-
-     QDomNode n = docElem.firstChild();
-     while(!n.isNull()) {
-         QDomElement e = n.toElement(); // try to convert the node to an element.
-         if(!e.isNull()) {
-             cout << qPrintable(e.tagName()) << endl; // the node really is an element.
-         }
-         n = n.nextSibling();
-     }
-
-     // Here we append a new element to the end of the document
-     QDomElement elem = doc.createElement("img");
-     elem.setAttribute("src", "myimage.png");
-     docElem.appendChild(elem);
-*/
-
-//Once doc and elem go out of scope, the whole internal tree representing the XML document is deleted.
-//To create a document using DOM use code like this:
-/*
-     QDomDocument doc("MyML");
-     QDomElement root = doc.createElement("MyML");
-     doc.appendChild(root);
-
-     QDomElement tag = doc.createElement("Greeting");
-     root.appendChild(tag);
-
-     QDomText t = doc.createTextNode("Hello World");
-     tag.appendChild(t);
-
-     QString xml = doc.toString();
-*/
-
-void CSettings::openSongFile(QString filename, bool bookListReload)
+void CSettings::openSongFile(const QString & filename)
 {
     if (!QFile::exists(filename))
     {
-        ppLogWarn( "File does not exists" + filename.toAscii());
+        ppLogWarn( "File does not exists %s", qPrintable(filename));
         return;
     }
+    QDir dirBooks;
+    QString  currentSongName;
+    if (filename.isEmpty())
+    {
+        dirBooks.setPath( QDir::homePath());
+    }
+    else
+    {
+        dirBooks.setPath(filename);
+        currentSongName = dirBooks.dirName();
+        dirBooks.cdUp();
+        m_currentBookName = dirBooks.dirName();
+        dirBooks.cdUp();
+    }
+    m_bookPath =  dirBooks.path() + '/';
 
-    setValue("CurrentSong", filename);
+    m_currentSongName = currentSongName;
+    m_guiSidePanel->loadBookList();
+}
 
-    if (bookListReload)
-        m_guiSidePanel->loadBookList();
+void CSettings::setActiveHand(whichPart_t hand)
+{
+    m_song->setActiveHand(hand);
+    loadHandSettings();
+}
 
-    m_song->loadSong(filename);
+QStringList CSettings::getSongList()
+{
+    debugSettings(("getSongList %s + %d", qPrintable(getCurrentBookName()), qPrintable(m_bookPath)));
+    QDir dirSongs = QDir(m_bookPath + getCurrentBookName());
+    dirSongs.setFilter(QDir::Files);
+    QStringList fileNames = dirSongs.entryList();
+
+
+    QStringList songNames;
+    for (int i = 0; i < fileNames.size(); i++)
+    {
+        if ( fileNames.at(i).endsWith(".mid", Qt::CaseInsensitive ) ||
+             fileNames.at(i).endsWith(".midi", Qt::CaseInsensitive ) ||
+             fileNames.at(i).endsWith(".kar", Qt::CaseInsensitive ) )
+        {
+            songNames  +=  fileNames.at(i);
+        }
+    }
+
+    return songNames;
+}
+
+QStringList CSettings::getBookList()
+{
+    QDir dirBooks( m_bookPath);
+    dirBooks.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
+    return dirBooks.entryList();
+}
+
+
+void CSettings::writeSettings()
+{
+    if (QFile::exists(getCurrentSongLongFileName() ))
+        setValue("CurrentSong", getCurrentSongLongFileName());
+    saveXmlFile();
+}
+
+void CSettings::loadSettings()
+{
+    openSongFile( value("CurrentSong").toString());
+}
+
+
+void CSettings::setCurrentSongName(const QString & name)
+{
+    if (name.isEmpty())
+        return;
+    saveSongSettings();
+    m_currentSongName = name;
+    debugSettings(("setCurrentSongName %s -- %s", qPrintable(name), qPrintable(getCurrentSongLongFileName())));
+    setValue("CurrentSong", getCurrentSongLongFileName());
+
+    m_song->loadSong(getCurrentSongLongFileName());
     m_guiTopBar->refresh(true);
     m_guiSidePanel->refresh();
     m_mainWindow->setWindowTitle("Piano Booster - " + m_song->getSongTitle());
+
+    loadSongSettings();
 }
 
+void CSettings::setCurrentBookName(const QString & name, bool clearSongName)
+{
+    if (name.isEmpty())
+        return;
+    if (!m_currentBookName.isEmpty() && m_currentBookName != name)
+        saveXmlFile();
+    m_currentBookName = name;
+    if (clearSongName)
+        m_currentSongName.clear();
+    //debugSettings("setCurrentBookName " + name.toAscii() + " -- " + getCurrentSongLongFileName().toAscii());
+    loadXmlFile();
+}

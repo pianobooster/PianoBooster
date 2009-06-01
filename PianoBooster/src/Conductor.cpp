@@ -335,11 +335,9 @@ void CConductor::outputPianoVolume()
     playMidiEvent(event); // Play the midi note or event
 
 }
-void CConductor::testWrongNoteSound(bool enable)
+void CConductor::updatePianoSounds()
 {
-    m_testWrongNoteSound = enable;
     CMidiEvent event;
-
 
     if (m_cfg_rightNoteSound>=0) // ignore if set to -1 ("None")
     {
@@ -353,7 +351,11 @@ void CConductor::testWrongNoteSound(bool enable)
     }
 }
 
-
+void CConductor::testWrongNoteSound(bool enable)
+{
+    m_testWrongNoteSound = enable;
+    updatePianoSounds();
+}
 void CConductor::playMusic(bool start)
 {
     m_playing = start;
@@ -461,8 +463,8 @@ void CConductor::setFollowSkillAdvanced(bool enable)
 void CConductor::findSplitPoint()
 {
     // find the split point
-    int lowestTreble = MIDDLE_C + 50;
-    int highestBase =  MIDDLE_C - 50;
+    int lowestTreble = MIDDLE_C + 37;
+    int highestBase =  MIDDLE_C - 37;
     CNote note;
 
     // Find where to put the split point
@@ -506,7 +508,7 @@ void CConductor::fetchNextChord()
 }
 
 
-bool CConductor::validatePianistNote(CMidiEvent& inputNote)
+bool CConductor::validatePianistNote( const CMidiEvent & inputNote)
 {
     if ( m_chordDeltaTime <= -m_cfg_playZoneEarly)
         return false;

@@ -49,21 +49,21 @@ public:
     GuiSidePanel(QWidget *parent, CSettings* settings);
 
     void init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar);
-    void openSongFile(QString filename);
-    QString getCurrentSongFileName()
-    {
-        return m_bookPath + bookCombo->currentText() + '/' + songCombo->currentText();
-    }
 
-    void refresh()
-    {
+    void refresh() {
         if (m_trackList)
         {
             m_trackList->refresh();
         }
         autoSetMuteYourPart();
     }
+
     void loadBookList();
+    void setBookName(QString bookName);
+    void setSongName(QString songName);
+    int getSongIndex() {return songCombo->currentIndex();}
+    void setSongIndex(int index){songCombo->setCurrentIndex(index);}
+    void setCurrentHand(QString hand);
 
 private slots:
     void on_songCombo_activated (int index);
@@ -110,14 +110,12 @@ private slots:
     }
 
 private:
-    void loadSong(QString filename);
     void autoSetMuteYourPart();
     bool eventFilter(QObject *obj, QEvent *event);
 
 
     CSong* m_song;
     CScore* m_score;
-    QString m_bookPath;
     CTrackList* m_trackList;
     GuiTopBar* m_topBar;
     CSettings* m_settings;

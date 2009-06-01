@@ -86,7 +86,7 @@ public:
         m_leftHandChannel = left;
         m_rightHandChannel = right;
     }
-    static void setActiveHand(whichPart_t hand){m_activeHand = hand;};
+    static void setActiveHand(whichPart_t hand){m_activeHand = hand;}
     static whichPart_t getActiveHand(){return m_activeHand;}
 
     static const int rightHandChan()       {return m_rightHandChannel;}

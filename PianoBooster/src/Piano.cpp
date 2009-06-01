@@ -114,8 +114,6 @@ void CPiano::drawPianoInputLines(CChord* chord, CColour colour, int lineLength)
     {
         int pitch = chord->getNote(i).pitch();
         stavePos.notePos(chord->getNote(i).part(), pitch);
-        if (stavePos.getStaveIndex() >= MAX_STAVE_INDEX || stavePos.getStaveIndex() <= MIN_STAVE_INDEX )
-            continue;
 
         glLineWidth (3.0);
 
@@ -207,12 +205,17 @@ void CPiano::addPianistNote(whichPart_t part, int note, bool good)
     CStavePos stavePos;
     float posY;
 
+    stavePos.notePos(part, note);
+
+    if (stavePos.getStaveIndex() >= MAX_STAVE_INDEX || stavePos.getStaveIndex() <= MIN_STAVE_INDEX )
+        return;
+
     if (good == true)
         m_goodChord.addNote(part, note);
     else
         m_badChord.addNote(part, note);
 
-    stavePos.notePos(part, note);
+
     posY = stavePos.getPosYAccidental();
     addNoteNameItem(posY, note, 0);
 }
@@ -230,7 +233,7 @@ void CPiano::removeNoteNameItem(int pitch)
         if (m_noteNameList[i].pitch == pitch)
             foundMatch = true;
     }
-    if (m_noteNameListLength>0)
+    if (m_noteNameListLength>0 && foundMatch)
         m_noteNameListLength--;
     spaceNoteNames();
 }

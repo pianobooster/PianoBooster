@@ -171,10 +171,12 @@ public:
     void testWrongNoteSound(bool enable);
 
     // -1 means no sound -2 means ignore this paramater
-    void setPianoSoundPatches(int rightSound, int wrongSound){
+    void setPianoSoundPatches(int rightSound, int wrongSound, bool update = false){
         m_cfg_rightNoteSound = rightSound;
         if ( wrongSound != -2)
             m_cfg_wrongNoteSound = wrongSound;
+        if (update)
+            updatePianoSounds();
     }
 
     void setEventBits(eventBits_t bits) { m_realTimeEventBits |= bits; } // don't change the other bits
@@ -209,7 +211,7 @@ protected:
 
     void resetWantedChord();
 
-    bool validatePianistNote(CMidiEvent& inputNote);
+    bool validatePianistNote( const CMidiEvent& inputNote);
     bool validatePianistChord();
 
     bool seekingBarNumber() { return m_bar.seekingBarNumber();}
@@ -228,6 +230,7 @@ private:
     void playTransposeEvent(CMidiEvent event);
     void outputSavedNotesOff();
     void findImminentNotesOff();
+    void updatePianoSounds();
 
     void followPlaying();
     void missedNotesColour(CColour colour);

@@ -72,6 +72,11 @@ void CTrackList::examineMidiEvent(CMidiEvent event)
             // count each note so we can guess the key signature
             if (event.note() >= 0 && event.note() < MAX_MIDI_NOTES)
                 m_noteFrequency[chan][event.note()]++;
+
+            // If we have a note and no patch then default to grand piano patch
+            if (m_midiFirstPatchChannels[chan] == -1)
+                m_midiFirstPatchChannels[chan] = GM_PIANO_PATCH;
+
         }
 
         if (event.type() == MIDI_PROGRAM_CHANGE && m_midiFirstPatchChannels[chan] == -1)
@@ -190,6 +195,12 @@ void CTrackList::refresh()
                 }
             }
             m_trackListWidget->addItem(trackname);
+            if (rowCount == 0)
+            {
+                QFont font = m_trackListWidget->item(rowCount)->font();
+                font.setBold(true);
+                m_trackListWidget->item(rowCount)->setFont(font);
+            }
             CTrackListItem trackItem;
             trackItem.midiChannel = (playThisChannel == true) ? CONVENTION_LEFT_HAND_CHANNEL : chan; // fixme
             m_trackQtList.append(trackItem);
@@ -198,6 +209,7 @@ void CTrackList::refresh()
                 m_trackListWidget->setCurrentRow(rowCount);
                 playThisChannel = false;
             }
+
             rowCount++;
         }
     }

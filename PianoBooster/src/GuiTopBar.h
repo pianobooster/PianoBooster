@@ -33,6 +33,7 @@
 #include "Song.h"
 #include "Score.h"
 #include "TrackList.h"
+#include "Settings.h"
 
 #include "ui_GuiTopBar.h"
 
@@ -41,7 +42,7 @@ class GuiTopBar : public QWidget, private Ui::GuiTopBar
     Q_OBJECT
 
 public:
-    GuiTopBar(QWidget *parent = 0);
+    GuiTopBar(QWidget *parent, CSettings* settings);
 
     void init(CSong* songObj, CTrackList* trackList);
 
@@ -75,6 +76,7 @@ private:
     void reloadKeyCombo(bool major);
 
     CSong* m_song;
+    CSettings* m_settings;
 
     bool m_atTheEndOfTheSong;
 };

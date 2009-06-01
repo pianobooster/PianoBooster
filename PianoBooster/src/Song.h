@@ -79,6 +79,8 @@ public:
 
 
     void setActiveHand(whichPart_t hand);
+    whichPart_t getActiveHand(){return CNote::getActiveHand();}
+
     void setActiveChannel(int part);
     void setPlayMode(playMode_t mode);
     CTrackList* getTrackList() {return m_trackList;}

@@ -39,9 +39,6 @@ class CSettings : public QSettings
 
 public:
     CSettings(QWidget *mainWindow);
-    void load();
-    void save();
-    void openSongFile(QString filename, bool bookListReload = false);
 
     void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
 
@@ -53,9 +50,53 @@ public:
             return true;
         return false;
     }
+
+    void openSongFile(const QString & filename);
+    QString getCurrentSongName() { return m_currentSongName; }
+    void setCurrentSongName(const QString & name);
+
+    QString getCurrentBookName() { return m_currentBookName; }
+    void setCurrentBookName(const QString & name, bool clearSongName);
+    QStringList getBookList();
+    QStringList getSongList();
+    void writeSettings();
+    void loadSettings();
+    QString getCurrentSongLongFileName()
+    {
+        return m_bookPath + getCurrentBookName() + '/' + getCurrentSongName();
+    }
+    void setActiveHand(whichPart_t hand);
+
+
+
 private:
 
-    QDomDocument m_domDocument;
+    QDomElement openDomElement(QDomElement parent, const QString & elementName, const QString & attributeName = QString());
+    void loadHandSettings();
+    void saveHandSettings();
+    void loadPartSettings();
+    void savePartSettings();
+    void loadSongSettings();
+    void saveSongSettings();
+    void loadBookSettings();
+    void saveBookSettings();
+    void loadXmlFile();
+    void saveXmlFile();
+
+    // returns either 'left' 'right' or 'both'
+    const QString getCurrentHandString()
+    {
+        if (m_song->getActiveHand() == PB_PART_left)
+            return "left";
+        else if (m_song->getActiveHand() == PB_PART_right)
+            return "right";
+        return "both";
+    }
+
+    QDomDocument m_domDocument; //  The Complete XML DOM document for one book
+    QDomElement m_domBook;      // only one book
+    QDomElement m_domSong;      // The Elements for each song
+    QDomElement m_domHand;      // The saved settings for each hand
 
     QWidget *m_mainWindow;
 
@@ -64,6 +105,9 @@ private:
     GuiTopBar* m_guiTopBar;
     bool m_noteNamesEnabled;
     bool m_advancedMode;
+    QString m_bookPath;
+    QString m_currentBookName;
+    QString m_currentSongName;
 };
 
 #endif // __SETTINGS_H__

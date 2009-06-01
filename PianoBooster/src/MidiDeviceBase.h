@@ -26,8 +26,8 @@
 */
 /*********************************************************************************/
 
-#ifndef __MIDI_DEVICE_H__
-#define __MIDI_DEVICE_H__
+#ifndef __MIDI_DEVICE_BASE_H__
+#define __MIDI_DEVICE_BASE_H__
 
 #include "Util.h"
 /*!
@@ -36,27 +36,20 @@
 
 #include "MidiEvent.h"
 
-#include "MidiDeviceBase.h"
 
-class CMidiDevice : public CMidiDeviceBase
+class CMidiDeviceBase
 {
 public:
-    CMidiDevice();
-    ~CMidiDevice();
-    void init();
+    virtual void init() = 0;
     //! add a midi event to be played immediately
-    void playMidiEvent(const CMidiEvent & event);
-    int checkMidiInput();
-    CMidiEvent readMidiInput();
+    virtual void playMidiEvent(const CMidiEvent & event) = 0;
+    virtual int checkMidiInput() = 0;
+    virtual CMidiEvent readMidiInput() = 0;
 
-    string getMidiPortName(int dev, unsigned index);
-    bool openMidiPort(int dev, string portName);
+    virtual string getMidiPortName(int dev, unsigned index) = 0;
+    virtual bool openMidiPort(int dev, string portName) = 0;
 
 private:
-
-    CMidiDeviceBase* m_rtMidiDevice;
-    CMidiDeviceBase* m_selectedMidiDevice;
-
 };
 
 #endif //__MIDI_DEVICE_H__

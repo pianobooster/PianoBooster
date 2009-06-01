@@ -82,7 +82,7 @@ private:
 
     void updateSounds (){
         m_song->setPianoSoundPatches(rightSoundCombo->currentIndex() -1,
-                                     wrongSoundCombo->currentIndex() -1);
+                                     wrongSoundCombo->currentIndex() -1, true);
     }
 
     void updateInfoText();

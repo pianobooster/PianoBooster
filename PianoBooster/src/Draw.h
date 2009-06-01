@@ -47,6 +47,19 @@
 
 class CSettings;
 
+class CScrollProperties
+{
+public:
+    CScrollProperties()
+    {
+        m_horizontal = false;
+    }
+    bool horizontal() { return m_horizontal; }
+private:
+    bool m_horizontal;
+
+};
+
 class CDraw
 {
 public:
@@ -55,7 +68,16 @@ public:
         m_settings = settings;
         m_displayHand = PB_PART_both;
         m_forceCompileRedraw = REDRAW_COUNT;
+        m_scrollProperties = &m_scrollPropertiesHorizontal;
 
+    }
+
+    void scrollVertex(float x, float y)
+    {
+        if (m_scrollProperties->horizontal())
+            glVertex2f (x,y);
+        else
+            glVertex2f (y,x);
     }
 
     void drawSymbol(CSymbol symbol, float x, float y);
@@ -86,6 +108,10 @@ private:
     void drawStaveExtentsion(CSymbol symbol, float x, int noteWidth);
     static int m_forceCompileRedraw;
     const static int m_beatMarkerHeight = 10; // The height of the beat markers in stave postions
+
+    CScrollProperties *m_scrollProperties;
+    CScrollProperties m_scrollPropertiesHorizontal;
+    CScrollProperties m_scrollPropertiesVertical;
 };
 
 #endif //__DRAW_H__
