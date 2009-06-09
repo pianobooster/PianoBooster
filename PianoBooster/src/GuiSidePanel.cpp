@@ -44,12 +44,12 @@ GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     parent->installEventFilter(this);
 }
 
-void GuiSidePanel::init(CSong* songObj, CTrackList* tracks, GuiTopBar* topBar)
+void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar)
 {
     m_song = songObj;
-    m_trackList = tracks;
+    m_trackList = trackList;
     m_topBar = topBar;
-    m_trackList->init(songObj, trackList);
+    m_trackList->init(songObj);
 
     followYouRadio->setChecked(true);
     bothHandsRadio->setChecked(true);
@@ -61,6 +61,33 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* tracks, GuiTopBar* topBar)
     pianoSlider->setMinimum(-100);
     pianoSlider->setMaximum(100);
 }
+
+void GuiSidePanel::refresh() {
+    if (m_trackList)
+    {
+        m_trackList->refresh();
+
+        trackListWidget->clear();
+
+        trackListWidget->addItems(m_trackList->getAllChannelProgramNames());
+
+
+        trackListWidget->setCurrentRow(m_trackList->getActiveItemIndex());
+
+
+                    /*
+            if (rowCount == 0)
+            {
+                QFont font = mx_trackListWidget->item(rowCount)->font();
+                font.setBold(true);
+                mx_trackListWidget->item(rowCount)->setFont(font);
+            }
+            */
+
+    }
+    autoSetMuteYourPart();
+}
+
 
 void GuiSidePanel::loadBookList()
 {

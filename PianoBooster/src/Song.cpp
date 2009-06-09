@@ -45,7 +45,6 @@ void CSong::init(CScore * scoreWin, CSettings* settings)
     setPlayMode(PB_PLAY_MODE_followYou);
     setSpeed(1.0);
     setSkill(3);
-    //CChord::setPianoRange(59,60+12);
 }
 
 void CSong::loadSong(QString filename)

@@ -50,13 +50,7 @@ public:
 
     void init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar);
 
-    void refresh() {
-        if (m_trackList)
-        {
-            m_trackList->refresh();
-        }
-        autoSetMuteYourPart();
-    }
+    void refresh();
 
     void loadBookList();
     void setBookName(QString bookName);

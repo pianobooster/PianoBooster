@@ -31,10 +31,9 @@
 #include "TrackList.h"
 #include "Song.h"
 
-void CTrackList::init(CSong* songObj, QListWidget* trackListWidget)
+void CTrackList::init(CSong* songObj)
 {
     m_song = songObj;
-    m_trackListWidget = trackListWidget;
 }
 
 void CTrackList::clear()
@@ -48,6 +47,8 @@ void CTrackList::clear()
         for (int i = 0; i < MAX_MIDI_NOTES; i++)
             m_noteFrequency[chan][i]=0;
     }
+    m_activeItemIndex = 0;
+    m_trackQtList.clear();
 }
 
 void CTrackList::currentRowChanged(int currentRow)
@@ -175,8 +176,8 @@ void CTrackList::refresh()
     bool foundPianoPart = false;
     bool playThisChannel = false;
     int rowCount = 0;
-    m_trackListWidget->clear();
     m_trackQtList.clear();
+    m_activeItemIndex = 0;
 
     for (chan = 0; chan < MAX_MIDI_CHANNELS; chan++)
     {
@@ -187,26 +188,20 @@ void CTrackList::refresh()
             {
                 if (chan == CONVENTION_LEFT_HAND_CHANNEL || chan == CONVENTION_RIGHT_HAND_CHANNEL)
                 {
-                    if (foundPianoPart == true)
-                        continue;
-                    trackname = "3+4 " + getChannelProgramName(chan);
+                    //if (foundPianoPart == true)
+                        //fixme continue;
+                    //trackname = "3+4 " + getChannelProgramName(chan);
                     foundPianoPart = true;
                     playThisChannel = true;
                 }
             }
-            m_trackListWidget->addItem(trackname);
-            if (rowCount == 0)
-            {
-                QFont font = m_trackListWidget->item(rowCount)->font();
-                font.setBold(true);
-                m_trackListWidget->item(rowCount)->setFont(font);
-            }
             CTrackListItem trackItem;
             trackItem.midiChannel = (playThisChannel == true) ? CONVENTION_LEFT_HAND_CHANNEL : chan; // fixme
+            trackItem.name = trackname;
             m_trackQtList.append(trackItem);
             if (playThisChannel == true)
             {
-                m_trackListWidget->setCurrentRow(rowCount);
+                m_activeItemIndex = rowCount;
                 playThisChannel = false;
             }
 
@@ -226,7 +221,6 @@ void CTrackList::refresh()
         CNote::setChannelHands(-1, -1);
         if (m_trackQtList.count()>0)
         {
-            m_trackListWidget->setCurrentRow(0);
             m_song->setActiveChannel(m_trackQtList[0].midiChannel);
         }
     }
@@ -246,6 +240,15 @@ void CTrackList::refresh()
             goodChan = chan;
         }
     }
+}
+
+QStringList CTrackList::getAllChannelProgramNames()
+{
+    QStringList items;
+     for (int i = 0; i < m_trackQtList.size(); ++i)
+        items += m_trackQtList.at(i).name;
+
+    return items;
 }
 
 QString CTrackList::getChannelProgramName(int chan)

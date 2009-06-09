@@ -39,7 +39,6 @@
 #define GM_PIANO_PATCH        0 // The default grand piano sound
 
 class CSong;
-class QListWidget;
 
 class CTrackListItem
 {
@@ -55,11 +54,10 @@ public:
     CTrackList()
     {
         m_song = 0;
-        m_trackListWidget = 0;
         clear();
     }
 
-    void init(CSong* songObj, QListWidget* trackListWidget);
+    void init(CSong* songObj);
 
     void refresh();
     void clear();
@@ -71,17 +69,18 @@ public:
 
     // The programme name now starts at 1 with 0 = "(none)"
     static QString getProgramName(int program);
-
+    QStringList getAllChannelProgramNames();
+    int getActiveItemIndex() { return m_activeItemIndex; }
 
 private:
     QString getChannelProgramName(int chan);
 
     CSong* m_song;
-    QListWidget* m_trackListWidget;
     QList<CTrackListItem> m_trackQtList;
     bool m_midiActiveChannels[MAX_MIDI_CHANNELS];
     int m_midiFirstPatchChannels[MAX_MIDI_CHANNELS];
     int m_noteFrequency[MAX_MIDI_CHANNELS][MAX_MIDI_NOTES];
+    int m_activeItemIndex;
 };
 
 #endif //__TRACK_LIST_H__

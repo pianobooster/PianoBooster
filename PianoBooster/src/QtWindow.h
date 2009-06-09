@@ -36,6 +36,7 @@
 #include "GuiSidePanel.h"
 #include "GuiTopBar.h"
 #include "GuiPreferencesDialog.h"
+#include "GuiSongDetailsDialog.h"
 #include "GuiLoopingPopup.h"
 #include "Settings.h"
 
@@ -78,6 +79,13 @@ private slots:
         GuiPreferencesDialog *preferencesDialog = new GuiPreferencesDialog(this);
         preferencesDialog->init(m_song, m_settings, m_glWidget);
         preferencesDialog->exec();
+    }
+
+    void showSongDetailsDialog()
+    {
+        GuiSongDetailsDialog *songDetailsDialog = new GuiSongDetailsDialog(this);
+        songDetailsDialog->init(m_song, m_settings, m_glWidget);
+        songDetailsDialog->exec();
     }
 
     void showKeyboardSetup()
@@ -130,6 +138,7 @@ private:
     QAction *m_setupKeyboardAct;
     QAction *m_toggleSidePanelAct;
     QAction *m_setupPreferencesAct;
+    QAction *m_songDetailsAct;
 
     QMenu *m_fileMenu;
     QMenu *m_viewMenu;

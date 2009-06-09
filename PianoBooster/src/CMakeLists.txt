@@ -78,6 +78,7 @@ SET( PIANOBOOSTER_SRCS
     GuiMidiSetupDialog.cpp
     GuiKeyboardSetupDialog.cpp
     GuiPreferencesDialog.cpp
+    GuiSongDetailsDialog.cpp
     GuiLoopingPopup.cpp
     GlView.cpp
     ${PB_BASE_SRCS}
@@ -105,6 +106,7 @@ SET( PIANOBOOSTER_MOC_HDRS
     GuiMidiSetupDialog.h
     GuiKeyboardSetupDialog.h
     GuiPreferencesDialog.h
+    GuiSongDetailsDialog.h
     GuiLoopingPopup.h
 )
 
@@ -115,6 +117,7 @@ SET( PIANOBOOSTER_UIS
     ./GuiMidiSetupDialog.ui
     ./GuiKeyboardSetupDialog.ui
     ./GuiPreferencesDialog.ui
+    ./GuiSongDetailsDialog.ui
     ./GuiLoopingPopup.ui
 )
 

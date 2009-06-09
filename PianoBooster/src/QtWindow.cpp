@@ -197,12 +197,12 @@ void Window::createActions()
     m_aboutAct->setStatusTip(tr("Show the application's About box"));
     connect(m_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 
-    m_setupMidiAct = new QAction(QIcon(":/images/open.png"), tr("&Midi Setup ..."), this);
+    m_setupMidiAct = new QAction(tr("&Midi Setup ..."), this);
     m_setupMidiAct->setShortcut(tr("Ctrl+S"));
     m_setupMidiAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupMidiAct, SIGNAL(triggered()), this, SLOT(showMidiSetup()));
 
-    m_setupKeyboardAct = new QAction(QIcon(":/images/open.png"), tr("&Keyboard setting ..."), this);
+    m_setupKeyboardAct = new QAction(tr("&Keyboard setting ..."), this);
     m_setupKeyboardAct->setShortcut(tr("Ctrl+K"));
     m_setupKeyboardAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
@@ -211,10 +211,13 @@ void Window::createActions()
     m_toggleSidePanelAct->setShortcut(tr("F11"));
     connect(m_toggleSidePanelAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
 
-    m_setupPreferencesAct = new QAction(QIcon(":/images/open.png"), tr("&Preferences ..."), this);
+    m_setupPreferencesAct = new QAction(tr("&Preferences ..."), this);
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
-    //m_setupPreferencesAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
+
+    m_songDetailsAct = new QAction(tr("&Song Details ..."), this);
+    m_songDetailsAct->setShortcut(tr("Ctrl+S"));
+    connect(m_songDetailsAct, SIGNAL(triggered()), this, SLOT(showSongDetailsDialog()));
 
     QAction* enableFollowTempoAct = new QAction(this);
     enableFollowTempoAct->setShortcut(tr("Shift+F1"));
@@ -236,6 +239,9 @@ void Window::createMenus()
 
     m_viewMenu = menuBar()->addMenu(tr("&View"));
     m_viewMenu->addAction(m_toggleSidePanelAct);
+
+    //m_songMenu = menuBar()->addMenu(tr("&Song"));
+    //m_songMenu->addAction(m_songDetailsAct);
 
     m_setupMenu = menuBar()->addMenu(tr("Set&up"));
     m_setupMenu->addAction(m_setupMidiAct);

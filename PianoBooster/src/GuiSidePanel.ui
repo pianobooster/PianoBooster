@@ -204,7 +204,7 @@
       <item>
        <layout class="QHBoxLayout" >
         <item>
-         <widget class="QListWidget" name="trackList" >
+         <widget class="QListWidget" name="trackListWidget" >
           <property name="sizePolicy" >
            <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
             <horstretch>0</horstretch>

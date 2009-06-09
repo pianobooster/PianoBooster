@@ -46,7 +46,7 @@ public:
     void setNoteNamesEnabled(bool value);
     void setAdvancedMode(bool value) { m_advancedMode = value;}
     bool showNoteNames(){
-        if (m_noteNamesEnabled && !m_advancedMode)
+        if (m_noteNamesEnabled )//fixme && !m_advancedMode)
             return true;
         return false;
     }
