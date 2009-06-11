@@ -66,7 +66,7 @@ private slots:
     void on_bothHandsRadio_toggled (bool checked);
     void on_leftHandRadio_toggled (bool checked);
 
-    void on_trackList_currentRowChanged(int currentRow) {
+    void on_trackListWidget_currentRowChanged(int currentRow) {
         if (m_trackList){
             m_trackList->currentRowChanged(currentRow);
             autoSetMuteYourPart();
@@ -106,6 +106,7 @@ private slots:
 private:
     void autoSetMuteYourPart();
     bool eventFilter(QObject *obj, QEvent *event);
+    void emphasizeListWidgetRow(int index);
 
 
     CSong* m_song;
