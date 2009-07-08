@@ -54,18 +54,22 @@ ENDIF(${CMAKE_SYSTEM} MATCHES "Darwin")
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
-INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR})
+INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR}
+/home/louis/build/fluidsynth-1.0.9/include/
+)
 
 # tell CMake what libraries our executable needs,
 # luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:
-LINK_LIBRARIES( ${QT_LIBRARIES} )
+LINK_LIBRARIES( ${QT_LIBRARIES}
+fluidsynth
+)
 
 
 
-SET(PB_BASE_SRCS MidiFile.cpp MidiDevice.cpp MidiDeviceRt.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
-    Chord.cpp Tempo.cpp rtmidi/RtMidi.cpp)
-SET(PB_BASE_HDR MidiFile.h MidiDevice.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
-    MidiDevice.h Chord.h Tempo.h rtmidi/RtMidi.h)
+SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
+    Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp MidiDeviceFluidSynth.cpp rtmidi/RtMidi.cpp)
+SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
+    Chord.h Tempo.h MidiDevice.h rtmidi/RtMidi.h)
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files

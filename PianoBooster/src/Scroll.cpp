@@ -74,8 +74,8 @@ bool CScroll::insertSlots()
 
     while (true)
     {
-        int headDelta = deltaAdjust(m_deltaHead) * m_noteSpacingFactor;
-        int slotDetlta = Cfg::staveEndX() - Cfg::playZoneX() - m_headSlot.getDeltaTime() * m_noteSpacingFactor - NOTE_BEHIND_GAP;
+        float headDelta = deltaAdjust(m_deltaHead) * m_noteSpacingFactor;
+        float slotDetlta = Cfg::staveEndX() - Cfg::playZoneX() - m_headSlot.getDeltaTime() * m_noteSpacingFactor - NOTE_BEHIND_GAP;
 
         if (headDelta > slotDetlta)
             break;

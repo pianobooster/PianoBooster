@@ -56,30 +56,13 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     m_latencyFix = m_song->getLatencyFix();
 
     midiInputCombo->addItem(tr("None (PC Keyboard)"));
-    while (true)
-    {
-        portName = song->getMidiPortName(0, i++).c_str();
-        if (portName.startsWith("RtMidi"))
-            continue;
 
-        if (portName.size() == 0)
-            break;
-        midiInputCombo->addItem(portName);
-    }
+    midiInputCombo->addItems(song->getMidiPortList(CMidiDevice::MIDI_INPUT));
+
 
     // Check outputs.
     midiOutputCombo->addItem(tr("None"));
-    i = 0;
-    while (true)
-    {
-        portName = song->getMidiPortName(1, i++).c_str();
-        if (portName.startsWith("RtMidi"))
-            continue;
-        if (portName.size() == 0)
-            break;
-        midiOutputCombo->addItem(portName);
-    }
-
+    midiOutputCombo->addItems(song->getMidiPortList(CMidiDevice::MIDI_OUTPUT));
     i = midiInputCombo->findText(m_settings->value("midi/input").toString());
     if (i!=-1)
         midiInputCombo->setCurrentIndex(i);
@@ -152,7 +135,7 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
 void GuiMidiSetupDialog::accept()
 {
     m_settings->setValue("midi/input", midiInputCombo->currentText());
-    m_song->openMidiPort(0,string(midiInputCombo->currentText().toAscii()));
+    m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
     if (midiInputCombo->currentText().startsWith("None"))
         CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
     else
@@ -163,7 +146,7 @@ void GuiMidiSetupDialog::accept()
     if (m_latencyChanged == false || m_midiChanged == true)
     {
         m_settings->setValue("midi/output", midiOutputCombo->currentText());
-        m_song->openMidiPort(1,string(midiOutputCombo->currentText().toAscii()));
+        m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
     }
 
     m_settings->setValue("midi/latency", m_latencyFix);

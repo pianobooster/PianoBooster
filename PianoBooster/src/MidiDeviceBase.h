@@ -28,6 +28,7 @@
 
 #ifndef __MIDI_DEVICE_BASE_H__
 #define __MIDI_DEVICE_BASE_H__
+#include <QStringList>
 
 #include "Util.h"
 /*!
@@ -46,8 +47,15 @@ public:
     virtual int checkMidiInput() = 0;
     virtual CMidiEvent readMidiInput() = 0;
 
-    virtual string getMidiPortName(int dev, unsigned index) = 0;
-    virtual bool openMidiPort(int dev, string portName) = 0;
+    typedef enum {MIDI_INPUT, MIDI_OUTPUT} midiType_t;
+    virtual QStringList getMidiPortList(midiType_t type) = 0;
+
+    virtual bool openMidiPort(midiType_t type, QString portName) = 0;
+    virtual void closeMidiPort(midiType_t type, int index) = 0;
+
+    //you should always have a virtual destructor when using virtual functions
+    virtual ~CMidiDeviceBase() {};
+
 
 private:
 };

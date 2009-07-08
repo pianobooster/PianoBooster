@@ -104,7 +104,7 @@ QDomElement CSettings::openDomElement(QDomElement parent, const QString & elemen
 
 void CSettings::loadHandSettings()
 {
-    m_domHand = openDomElement(m_domSong, "hand", getCurrentHandString());
+    m_domHand = openDomElement(m_domSong, "hand", partToHandString(m_song->getActiveHand()));
     m_guiTopBar->setSpeed(m_domHand.attribute("speed", "100" ).toInt()); //fixme testing only
 }
 
@@ -124,7 +124,7 @@ void CSettings::loadSongSettings()
 
 void CSettings::saveSongSettings()
 {
-    m_domSong.setAttribute("hand", getCurrentHandString());
+    m_domSong.setAttribute("hand", partToHandString(m_song->getActiveHand()));
 
     saveHandSettings();
 }
@@ -304,3 +304,22 @@ void CSettings::setCurrentBookName(const QString & name, bool clearSongName)
     //debugSettings("setCurrentBookName " + name.toAscii() + " -- " + getCurrentSongLongFileName().toAscii());
     loadXmlFile();
 }
+
+void CSettings::setChannelHands(int left, int right)
+{
+    CNote::setChannelHands(left, right);
+    m_domSong.setAttribute("leftHandMidiChannel", left);
+    m_domSong.setAttribute("rightHandMidiChannel", right);
+}
+
+/*
+int CSettings::rightHandMidiChan()
+{
+        m_domSong.setAttribute("leftHandMidiChannel", left);
+
+}
+
+int CSettings::leftHandMidiChan()
+{
+
+}    */

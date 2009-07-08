@@ -114,13 +114,13 @@ Window::Window()
     m_song->cfg_timingMarkersFlag = m_settings->value("score/timingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("score/stopPointMode", m_song->cfg_stopPointMode ).toInt());
 
-    m_song->openMidiPort(0, string(midiInputName.toAscii()));
+    m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
 
     m_settings->loadSettings();
 
     show();
 
-    if (m_song->openMidiPort(1,string(m_settings->value("midi/output").toString().toAscii()))==false)
+    if (m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("midi/output").toString())==false)
     {
         showMidiSetup();
     }
@@ -240,8 +240,8 @@ void Window::createMenus()
     m_viewMenu = menuBar()->addMenu(tr("&View"));
     m_viewMenu->addAction(m_toggleSidePanelAct);
 
-    //m_songMenu = menuBar()->addMenu(tr("&Song"));
-    //m_songMenu->addAction(m_songDetailsAct);
+    m_songMenu = menuBar()->addMenu(tr("&Song"));
+    m_songMenu->addAction(m_songDetailsAct);
 
     m_setupMenu = menuBar()->addMenu(tr("Set&up"));
     m_setupMenu->addAction(m_setupMidiAct);

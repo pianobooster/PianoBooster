@@ -162,6 +162,8 @@ public:
         m_pianistGoodChan = goodChan;
         m_pianistBadChan = badChan;
     }
+    bool hasPianistKeyboardChannel(int chan)   { return (m_pianistGoodChan == chan || m_pianistBadChan == chan ) ? true : false;}
+
     CRating* getRating(){return &m_rating;}
 
     // You MUST clear the time sig to 0 first before setting an new start time Sig

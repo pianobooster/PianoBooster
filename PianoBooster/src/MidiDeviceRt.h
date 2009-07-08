@@ -43,8 +43,11 @@ class CMidiDeviceRt : public CMidiDeviceBase
     virtual int checkMidiInput();
     virtual CMidiEvent readMidiInput();
 
-    virtual string getMidiPortName(int dev, unsigned index);
-    virtual bool openMidiPort(int dev, string portName);
+    virtual QStringList getMidiPortList(midiType_t type);
+
+    virtual bool openMidiPort(midiType_t type, QString portName);
+    virtual void closeMidiPort(midiType_t type, int index);
+
 
 
 public:
@@ -60,8 +63,8 @@ private:
     // 0 for input, 1 for output
     int m_midiPorts[2];      // select which MIDI output port to open
     std::vector<unsigned char> m_inputMessage;
-    unsigned char savedRawBytes[40]; // Raw data is used for used for a SYSTEM_EVENT
-    unsigned int rawDataIndex;
+    unsigned char m_savedRawBytes[40]; // Raw data is used for used for a SYSTEM_EVENT
+    unsigned int m_rawDataIndex;
 };
 
 #endif //__MIDI_DEVICE_RT_H__

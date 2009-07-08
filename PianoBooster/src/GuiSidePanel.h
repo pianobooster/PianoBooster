@@ -106,7 +106,6 @@ private slots:
 private:
     void autoSetMuteYourPart();
     bool eventFilter(QObject *obj, QEvent *event);
-    void emphasizeListWidgetRow(int index);
 
 
     CSong* m_song;

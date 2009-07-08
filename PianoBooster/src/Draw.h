@@ -105,7 +105,7 @@ private:
     void drawStaveNoteName(CSymbol symbol, float x, float y);
 
     void checkAccidental(CSymbol symbol, float x, float y);
-    void drawStaveExtentsion(CSymbol symbol, float x, int noteWidth);
+    void drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool playable);
     static int m_forceCompileRedraw;
     const static int m_beatMarkerHeight = 10; // The height of the beat markers in stave postions
 

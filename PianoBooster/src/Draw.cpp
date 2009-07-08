@@ -45,7 +45,7 @@ void CDraw::oneLine(float x1, float y1, float x2, float y2)
     //ppTrace("oneLine %f %f %f %f", x1, y1, x2, y2);
 }
 
-void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth)
+void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool playable)
 {
     int index;
     index = symbol.getStavePos().getStaveIndex();
@@ -53,6 +53,11 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth)
         return;
     index =  index & ~1; // Force index to be even
     whichPart_t hand = symbol.getStavePos().getHand();
+
+    if (playable)
+        drColour(Cfg::staveColour());
+    else
+        drColour(Cfg::staveColourDim());
 
     glLineWidth (Cfg::staveThickness());
     glBegin(GL_LINES);
@@ -75,6 +80,10 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth)
 
 void CDraw::drawNoteName(int midiNote, float x, float y, int type)
 {
+    // Ignore note that are too high
+    if (midiNote > MIDI_TOP_C + 6)
+        return;
+
     staveLookup_t item = CStavePos::midiNote2Name(midiNote);
 
     drColour(Cfg::noteNameColour());
@@ -403,6 +412,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
                 colour = Cfg::noteColourDim();
                 playable = false;
             }
+            drawStaveExtentsion(symbol, x, 16, playable);
             drColour(colour);
             glBegin(GL_POLYGON);
             glVertex2f(-7.0 + x,  2.0 + y); // 1
@@ -538,7 +548,6 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
 
     if (symbol.getType() == PB_SYMBOL_note)
     {
-        drawStaveExtentsion(symbol, x, 16);
         float pianistX = symbol.getPianistTiming();
         if ( pianistX != NOT_USED)
         {

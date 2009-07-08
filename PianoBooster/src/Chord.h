@@ -92,6 +92,8 @@ public:
     static const int rightHandChan()       {return m_rightHandChannel;}
     static const int leftHandChan()        {return m_leftHandChannel;}
     static const int bothHandsChan()       {return m_leftHandChannel;}
+    static const int getHandChannel(whichPart_t whichPart)   { return (whichPart == PB_PART_right) ? m_rightHandChannel : m_leftHandChannel;}
+    static const bool hasPianoPart(int chan)   { return (m_leftHandChannel == chan || m_rightHandChannel == chan ) ? true : false;}
 
 private:
     whichPart_t m_part;

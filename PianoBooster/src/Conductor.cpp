@@ -180,7 +180,7 @@ int CConductor::calcBoostVolume(int channel, int volume)
 
     returnVolume = volume;
     activePart = false;
-    if (m_activeChannel == CNote::bothHandsChan())
+    if (CNote::hasPianoPart(m_activeChannel))
     {
         if (m_playMode == PB_PLAY_MODE_listen) // only boost one hand in listen mode
         {
@@ -191,7 +191,7 @@ int CConductor::calcBoostVolume(int channel, int volume)
         }
         else // otherwise always boost both hands
         {
-            if (channel == CNote::leftHandChan() || channel == CNote::rightHandChan())
+            if ( CNote::hasPianoPart(channel))
                 activePart = true;
         }
     }
@@ -235,7 +235,7 @@ void CConductor::outputBoostVolume()
 
     for ( chan =0; chan <MAX_MIDI_CHANNELS; chan++ )
     {
-        if (chan == m_pianistGoodChan || chan == m_pianistBadChan)
+        if (hasPianistKeyboardChannel(chan))
             continue;
         CMidiEvent midi;
         midi.controlChangeEvent(0, chan, MIDI_MAIN_VOLUME, calcBoostVolume(chan,-1));
@@ -263,7 +263,7 @@ void CConductor::activatePianistMutePart()
     mutePart(PB_PART_all, false);
     if (m_playMode != PB_PLAY_MODE_listen && m_mutePianistPart == true)
     {
-        if (m_activeChannel == CNote::bothHandsChan())
+        if (CNote::hasPianoPart(m_activeChannel))
         {
             if (CNote::getActiveHand() == PB_PART_both || CNote::getActiveHand() == PB_PART_left)
                 mutePart(CNote::leftHandChan(), true);
@@ -827,7 +827,7 @@ void CConductor::realTimeEngine(int mSecTicks)
 
             // Is this this channel_muted
             //if (isChannelMuted(channel) == false) //fixme
-            if (channel!= m_pianistGoodChan && channel!= m_pianistBadChan)
+            if (!hasPianistKeyboardChannel(channel))
             {
                 if (getfollowState() >= PB_FOLLOW_earlyNotes &&
                         m_playMode == PB_PLAY_MODE_followYou &&

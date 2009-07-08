@@ -35,7 +35,7 @@ CMidiDeviceRt::CMidiDeviceRt()
     m_midiin = new RtMidiIn();
     m_midiPorts[0] = -1;
     m_midiPorts[1] = -1;
-    rawDataIndex = 0;
+    m_rawDataIndex = 0;
 }
 
 CMidiDeviceRt::~CMidiDeviceRt()
@@ -44,23 +44,19 @@ CMidiDeviceRt::~CMidiDeviceRt()
     delete m_midiin;
 }
 
-
-
 void CMidiDeviceRt::init()
 {
 }
 
-// dev = 0 for midi input, dev = 1 for output
-string CMidiDeviceRt::getMidiPortName(int dev, unsigned int index)
+
+QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
 {
     unsigned int nPorts;
-    string name;
+    QString name;
     RtMidi* midiDevice;
+    QStringList portNameList;
 
-    if (dev < 0 || dev >= 2)
-        return string();
-
-    if (dev == 0)
+    if (type == MIDI_INPUT)
         midiDevice = m_midiin;
     else
         midiDevice = m_midiout;
@@ -69,46 +65,64 @@ string CMidiDeviceRt::getMidiPortName(int dev, unsigned int index)
 
     for(unsigned int i=0; i< nPorts; i++)
     {
-        name = midiDevice->getPortName(i);
-        if (i == index)
-            return name;
+        name = midiDevice->getPortName(i).c_str();
+        if (name.startsWith("RtMidi"))
+            continue;
+        portNameList << name;
     }
-    return string();
+
+
+    return portNameList;
 }
 
-bool CMidiDeviceRt::openMidiPort(int dev, string portName)
+bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
 {
     unsigned int nPorts;
-    string name;
+    QString name;
     RtMidi* midiDevice;
 
-    if (dev < 0 || dev >= 2)
-        return false;
 
     if (portName.length() == 0)
         return false;
 
-    if (dev == 0)
+    int dev;
+    if (type == MIDI_INPUT)
+    {
         midiDevice = m_midiin;
+        dev = 0;
+    }
     else
+    {
         midiDevice = m_midiout;
+        dev = 1;
+    }
 
     nPorts = midiDevice->getPortCount();
 
     for(unsigned int i=0; i< nPorts; i++)
     {
-        name = midiDevice->getPortName(i);
-        if (name.compare(0,portName.length(), portName) == 0) // Test for a match
+        name = midiDevice->getPortName(i).c_str();
+        if (name == portName) // Test for a match
         {
             if (m_midiPorts[dev] >= 0)
                 midiDevice->closePort();
 
             m_midiPorts[dev] = i;
+            m_rawDataIndex = 0;
+
             midiDevice->openPort( i );
             return true;
         }
     }
     return false;
+}
+
+void CMidiDeviceRt::closeMidiPort(midiType_t type, int index)
+{
+    if (type == MIDI_INPUT)
+        m_midiin->closePort();
+    else
+        m_midiout->closePort();
 }
 
 
@@ -165,14 +179,14 @@ void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
             break;
 
         case  MIDI_PB_collateRawMidiData: //used for a SYSTEM_EVENT
-            if (rawDataIndex < arraySize(savedRawBytes))
-                savedRawBytes[rawDataIndex++] = event.data1();
+            if (m_rawDataIndex < arraySize(m_savedRawBytes))
+                m_savedRawBytes[m_rawDataIndex++] = event.data1();
             return; // Don't output any thing yet so just return
 
         case  MIDI_PB_outputRawMidiData: //used for a SYSTEM_EVENT
-            for (size_t i = 0; i < rawDataIndex; i++)
-                message.push_back( savedRawBytes[i]);
-            rawDataIndex = 0;
+            for (size_t i = 0; i < m_rawDataIndex; i++)
+                message.push_back( m_savedRawBytes[i]);
+            m_rawDataIndex = 0;
             break;
     }
 

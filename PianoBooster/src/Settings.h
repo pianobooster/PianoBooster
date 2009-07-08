@@ -67,6 +67,8 @@ public:
     }
     void setActiveHand(whichPart_t hand);
 
+    void setChannelHands(int left, int right);
+
 
 
 private:
@@ -84,11 +86,11 @@ private:
     void saveXmlFile();
 
     // returns either 'left' 'right' or 'both'
-    const QString getCurrentHandString()
+    const QString partToHandString(whichPart_t part)
     {
-        if (m_song->getActiveHand() == PB_PART_left)
+        if (part == PB_PART_left)
             return "left";
-        else if (m_song->getActiveHand() == PB_PART_right)
+        else if (part == PB_PART_right)
             return "right";
         return "both";
     }

@@ -45,7 +45,7 @@
          </widget>
         </item>
         <item row="0" column="1" >
-         <widget class="QComboBox" name="RightHandChannelCombo" >
+         <widget class="QComboBox" name="leftHandChannelCombo" >
           <property name="sizePolicy" >
            <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
             <horstretch>0</horstretch>
@@ -68,7 +68,7 @@
          </widget>
         </item>
         <item row="1" column="1" >
-         <widget class="QComboBox" name="RightHandChannelCombo_2" >
+         <widget class="QComboBox" name="rightHandChannelCombo" >
           <property name="sizePolicy" >
            <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
             <horstretch>0</horstretch>

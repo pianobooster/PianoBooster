@@ -30,10 +30,12 @@
 
 #include "TrackList.h"
 #include "Song.h"
+#include "Settings.h"
 
-void CTrackList::init(CSong* songObj)
+void CTrackList::init(CSong* songObj, CSettings* settings)
 {
     m_song = songObj;
+    m_settings = settings;
 }
 
 void CTrackList::clear()
@@ -47,7 +49,6 @@ void CTrackList::clear()
         for (int i = 0; i < MAX_MIDI_NOTES; i++)
             m_noteFrequency[chan][i]=0;
     }
-    m_activeItemIndex = 0;
     m_trackQtList.clear();
 }
 
@@ -80,13 +81,13 @@ void CTrackList::examineMidiEvent(CMidiEvent event)
 
         }
 
-        if (event.type() == MIDI_PROGRAM_CHANGE && m_midiFirstPatchChannels[chan] == -1)
+        if (event.type() == MIDI_PROGRAM_CHANGE && m_midiActiveChannels[chan] == false)
             m_midiFirstPatchChannels[chan] = event.programme();
     }
 }
 
 // Returns true if there is a piano part on channels 3 & 4
-bool CTrackList::hasPianoPart()
+bool CTrackList::pianoPartConvetionTest()
 {
     if ((m_midiFirstPatchChannels[CONVENTION_LEFT_HAND_CHANNEL] == GM_PIANO_PATCH &&
          m_midiActiveChannels[CONVENTION_LEFT_HAND_CHANNEL] == true &&
@@ -173,18 +174,15 @@ int CTrackList::guessKeySignature(int chanA, int chanB)
 void CTrackList::refresh()
 {
     int chan;
-    bool foundPianoPart = false;
-    bool playThisChannel = false;
+    bool foundPianoPart = false; // fixme
     int rowCount = 0;
     m_trackQtList.clear();
-    m_activeItemIndex = 0;
 
     for (chan = 0; chan < MAX_MIDI_CHANNELS; chan++)
     {
         if (m_midiActiveChannels[chan] == true)
         {
-            QString trackname = QString::number(chan+1) + " " + getChannelProgramName(chan);
-            if (hasPianoPart())
+            if (pianoPartConvetionTest())
             {
                 if (chan == CONVENTION_LEFT_HAND_CHANNEL || chan == CONVENTION_RIGHT_HAND_CHANNEL)
                 {
@@ -192,23 +190,16 @@ void CTrackList::refresh()
                         //fixme continue;
                     //trackname = "3+4 " + getChannelProgramName(chan);
                     foundPianoPart = true;
-                    playThisChannel = true;
                 }
             }
             CTrackListItem trackItem;
-            trackItem.midiChannel = (playThisChannel == true) ? CONVENTION_LEFT_HAND_CHANNEL : chan; // fixme
-            trackItem.name = trackname;
+            trackItem.midiChannel =  chan;
             m_trackQtList.append(trackItem);
-            if (playThisChannel == true)
-            {
-                m_activeItemIndex = rowCount;
-                playThisChannel = false;
-            }
 
             rowCount++;
         }
     }
-    if (hasPianoPart())
+    if (pianoPartConvetionTest())
     {
         CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
         m_song->setActiveChannel(CNote::bothHandsChan());
@@ -235,20 +226,100 @@ void CTrackList::refresh()
             {
                 m_song->setPianistChannels(goodChan,chan);
                 ppLogInfo("Using Pianist Channels %d + %d", goodChan +1, chan +1);
-                break;
+                return;
             }
             goodChan = chan;
         }
     }
+    // As we have not returned we have not found to empty channels to use
+    if (goodChan == -1)
+        goodChan = 15 -1;
+    m_song->setPianistChannels(goodChan,16-1);
 }
 
-QStringList CTrackList::getAllChannelProgramNames()
+int CTrackList::getActiveItemIndex()
+{
+    int chan;
+    for (int i = 0; i < m_trackQtList.size(); ++i)
+    {
+        chan = m_trackQtList.at(i).midiChannel;
+        if (chan == CNote::leftHandChan() )
+            return i;
+    }
+    return 0; // Not found so return first item on the list
+}
+
+QStringList CTrackList::getAllChannelProgramNames(bool raw)
 {
     QStringList items;
-     for (int i = 0; i < m_trackQtList.size(); ++i)
-        items += m_trackQtList.at(i).name;
+    int chan;
+    QString text;
+    QString hand;
 
+    for (int i = 0; i < m_trackQtList.size(); ++i)
+    {
+        hand.clear();
+        chan = m_trackQtList.at(i).midiChannel;
+        if (raw == false)
+        {
+            if (CNote::leftHandChan() == chan)
+                hand += "L";
+            if (CNote::rightHandChan() == chan)
+                hand += "R";
+        }
+        text = QString::number(chan+1) + hand + " " + getChannelProgramName(chan);
+        items += text;
+    }
     return items;
+}
+
+int CTrackList::getActiveHandIndex(whichPart_t whichPart)
+{
+    int index = 0;
+     for (int i = 0; i < m_trackQtList.size(); ++i)
+        if (m_trackQtList.at(i).midiChannel == CNote::getHandChannel( whichPart))
+            return index;
+
+    return index;
+}
+
+void CTrackList::setActiveHandsIndex(int leftIndex, int rightIndex)
+{
+    int leftChannel, rightChannel;
+
+    leftChannel = m_trackQtList.at(leftIndex).midiChannel;
+    rightChannel = m_trackQtList.at(rightIndex).midiChannel;
+    m_settings->setChannelHands(leftChannel,rightChannel);
+}
+
+// get the track index number of the selected hand
+int CTrackList::getHandTrackIndex(whichPart_t whichPart)
+{
+    int index = 0;
+    int midiHand = CNote::getHandChannel(whichPart);
+    for (int i = 0; i < m_trackQtList.size(); ++i)
+    {
+
+        if (m_trackQtList.at(i).midiChannel == midiHand)
+            return index;
+        index++;
+    }
+
+    return -1;
+}
+
+void CTrackList::changeListWidgetItemView( unsigned int index, QListWidgetItem* listWidgetItem )
+{
+    int chan = m_trackQtList[index].midiChannel;
+    if ( CNote::hasPianoPart( chan ))
+    {
+        QFont font = listWidgetItem->font();
+        font.setBold(true);
+        listWidgetItem->setFont(font);
+        listWidgetItem->setForeground(Qt::darkBlue);
+    }
+    else if ( m_song->hasPianistKeyboardChannel( chan ) )
+        listWidgetItem->setForeground(Qt::lightGray);
 }
 
 QString CTrackList::getChannelProgramName(int chan)

@@ -34,6 +34,7 @@
  * @brief   xxxxx.
  */
 
+
 #include "MidiEvent.h"
 
 #include "MidiDeviceBase.h"
@@ -49,14 +50,18 @@ public:
     int checkMidiInput();
     CMidiEvent readMidiInput();
 
-    string getMidiPortName(int dev, unsigned index);
-    bool openMidiPort(int dev, string portName);
+    QStringList getMidiPortList(midiType_t type);
+    bool openMidiPort(midiType_t type, QString portName);
+    void closeMidiPort(midiType_t type, int index);
+
+
 
 private:
 
     CMidiDeviceBase* m_rtMidiDevice;
-    CMidiDeviceBase* m_selectedMidiDevice;
-
+    CMidiDeviceBase* m_fluidSynthMidiDevice;
+    CMidiDeviceBase* m_selectedMidiInputDevice;
+    CMidiDeviceBase* m_selectedMidiOutputDevice;
 };
 
 #endif //__MIDI_DEVICE_H__

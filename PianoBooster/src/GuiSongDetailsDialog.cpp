@@ -36,7 +36,8 @@ GuiSongDetailsDialog::GuiSongDetailsDialog(QWidget *parent)
     m_song = 0;
     m_settings = 0;
     m_glView = 0;
-    setWindowTitle("Preferences");
+    m_trackList = 0;
+    setWindowTitle("Song Details");
 }
 
 
@@ -45,9 +46,18 @@ void GuiSongDetailsDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     m_song = song;
     m_settings = settings;
     m_glView = glView;
+    m_trackList = m_song->getTrackList();
+    leftHandChannelCombo->addItem("None");
+    leftHandChannelCombo->addItems(m_trackList->getAllChannelProgramNames(true));
+    rightHandChannelCombo->addItem("None");
+    rightHandChannelCombo->addItems(m_trackList->getAllChannelProgramNames(true));
+
+    leftHandChannelCombo->setCurrentIndex(m_trackList->getHandTrackIndex(PB_PART_left) + 1);
+    rightHandChannelCombo->setCurrentIndex(m_trackList->getHandTrackIndex(PB_PART_right) +1);
 }
 
 void GuiSongDetailsDialog::accept()
 {
+    m_trackList->setActiveHandsIndex(leftHandChannelCombo->currentIndex() -1, rightHandChannelCombo->currentIndex() -1);
     this->QDialog::accept();
 }

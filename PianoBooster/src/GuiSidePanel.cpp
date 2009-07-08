@@ -49,7 +49,7 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     m_song = songObj;
     m_trackList = trackList;
     m_topBar = topBar;
-    m_trackList->init(songObj);
+    m_trackList->init(songObj, m_settings);
 
     followYouRadio->setChecked(true);
     bothHandsRadio->setChecked(true);
@@ -74,20 +74,12 @@ void GuiSidePanel::refresh() {
 
         trackListWidget->setCurrentRow(m_trackList->getActiveItemIndex());
 
-
-                    /*
-            if (rowCount == 0)
-            {
-                QFont font = mx_trackListWidget->item(rowCount)->font();
-                font.setBold(true);
-                mx_trackListWidget->item(rowCount)->setFont(font);
-            }
-            */
+        for (int i = 0; i < trackListWidget->count(); i++)
+            m_trackList->changeListWidgetItemView(i, trackListWidget->item(i));
 
     }
     autoSetMuteYourPart();
 }
-
 
 void GuiSidePanel::loadBookList()
 {
@@ -95,7 +87,7 @@ void GuiSidePanel::loadBookList()
 
     bookCombo->clear();
 
-    for (int i = 0; i < bookNames.size(); ++i)
+    for (int i = 0; i < bookNames.size(); i++)
     {
         bookCombo->addItem( bookNames.at(i));
         if (bookNames.at(i) == m_settings->getCurrentBookName())
@@ -150,9 +142,9 @@ void GuiSidePanel::on_leftHandRadio_toggled (bool checked)
 void GuiSidePanel::autoSetMuteYourPart()
 {
     bool checked = false;
-    if (m_trackList->hasPianoPart())
+    if (m_trackList->pianoPartConvetionTest())
     {
-        if (m_song->getActiveChannel() == CNote::bothHandsChan())
+        if ( CNote::hasPianoPart(m_song->getActiveChannel()))
             checked =  true;
     }
     muteYourPartCheck->setChecked(checked);

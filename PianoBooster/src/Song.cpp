@@ -38,10 +38,12 @@ void CSong::init(CScore * scoreWin, CSettings* settings)
     this->CConductor::init(scoreWin, settings);
 
     setActiveHand(PB_PART_both);
+    /*
     if (CNote::bothHandsChan() >= 0)
         setActiveChannel(CNote::bothHandsChan());
     else
         setActiveChannel(CONVENTION_LEFT_HAND_CHANNEL); //fixme a mess
+    */
     setPlayMode(PB_PLAY_MODE_followYou);
     setSpeed(1.0);
     setSkill(3);

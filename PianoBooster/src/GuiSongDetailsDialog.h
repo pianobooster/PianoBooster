@@ -55,6 +55,7 @@ private:
     CSettings* m_settings;
     CSong* m_song;
     CGLView *m_glView;
+    CTrackList* m_trackList;
 };
 
 #endif //__GUISONGDETAILSDIALOG_H__
