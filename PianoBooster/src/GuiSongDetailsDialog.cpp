@@ -47,13 +47,47 @@ void GuiSongDetailsDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     m_settings = settings;
     m_glView = glView;
     m_trackList = m_song->getTrackList();
-    leftHandChannelCombo->addItem("None");
+    leftHandChannelCombo->addItem(tr("No channel assigned"));
     leftHandChannelCombo->addItems(m_trackList->getAllChannelProgramNames(true));
-    rightHandChannelCombo->addItem("None");
+    rightHandChannelCombo->addItem(tr("No channel assigned"));
     rightHandChannelCombo->addItems(m_trackList->getAllChannelProgramNames(true));
 
     leftHandChannelCombo->setCurrentIndex(m_trackList->getHandTrackIndex(PB_PART_left) + 1);
     rightHandChannelCombo->setCurrentIndex(m_trackList->getHandTrackIndex(PB_PART_right) +1);
+    updateSongInfoText();
+
+}
+
+
+void GuiSongDetailsDialog::updateSongInfoText()
+{
+    QString str;
+    songInfoText->clear();
+    bool activateOkButton = false;
+
+    if (leftHandChannelCombo->currentIndex() != 0 && leftHandChannelCombo->currentIndex() == rightHandChannelCombo->currentIndex())
+        songInfoText->append("<span style=\"color:red\">The left and rignt hand channels must be different</span>");
+    else if ((leftHandChannelCombo->currentIndex() == 0 && rightHandChannelCombo->currentIndex() != 0 ) ||
+             (rightHandChannelCombo->currentIndex() == 0 && leftHandChannelCombo->currentIndex() != 0 ) )
+        songInfoText->append("<span style=\"color:red\">Both left and rignt hand channels must be none to disable this feature</span>");
+    else
+    {
+        songInfoText->append("<span style=\"color:gray\">Set the MIDI Channels to be used for left and right hand piano parts:</span>");
+        activateOkButton = true;
+    }
+
+    buttonBox->button(QDialogButtonBox::Ok)->setEnabled(activateOkButton);
+}
+
+
+void GuiSongDetailsDialog::on_leftHandChannelCombo_activated (int index)
+{
+    updateSongInfoText();
+}
+
+void GuiSongDetailsDialog::on_rightHandChannelCombo_activated (int index)
+{
+    updateSongInfoText();
 }
 
 void GuiSongDetailsDialog::accept()

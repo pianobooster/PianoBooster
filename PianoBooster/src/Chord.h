@@ -81,11 +81,7 @@ public:
         return findHand(midi.note(), midi.channel(), channel, part);
     }
 
-    static void setChannelHands(int left, int right)
-    {
-        m_leftHandChannel = left;
-        m_rightHandChannel = right;
-    }
+    static void setChannelHands(int left, int right);
     static void setActiveHand(whichPart_t hand){m_activeHand = hand;}
     static whichPart_t getActiveHand(){return m_activeHand;}
 

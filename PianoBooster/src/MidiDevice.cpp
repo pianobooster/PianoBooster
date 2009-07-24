@@ -131,3 +131,44 @@ CMidiEvent CMidiDevice::readMidiInput()
 }
 
 
+int CMidiDevice::midiSettingsSetStr(QString name, QString str)
+{
+    if (m_selectedMidiOutputDevice)
+    	return m_selectedMidiOutputDevice->midiSettingsSetStr(name, str);
+    return 0;
+}
+
+int CMidiDevice::midiSettingsSetNum(QString name, double val)
+{
+    if (m_selectedMidiOutputDevice)
+    	return m_selectedMidiOutputDevice->midiSettingsSetNum(name, val);
+    return 0;
+}
+
+int CMidiDevice::midiSettingsSetInt(QString name, int val)
+{
+    if (m_selectedMidiOutputDevice)
+    	return m_selectedMidiOutputDevice->midiSettingsSetInt(name, val);
+    return 0;
+}
+
+QString CMidiDevice::midiSettingsGetStr(QString name)
+{
+    if (m_selectedMidiOutputDevice)
+    	return m_selectedMidiOutputDevice->midiSettingsGetStr(name);
+    return QString();
+}
+
+double CMidiDevice::midiSettingsGetNum(QString name)
+{
+    if (m_selectedMidiOutputDevice)
+    	return m_selectedMidiOutputDevice->midiSettingsGetNum(name);
+    return 0.0;
+}
+
+int CMidiDevice::midiSettingsGetInt(QString name)
+{
+    if (m_selectedMidiOutputDevice)
+    	return m_selectedMidiOutputDevice->midiSettingsGetInt(name);
+    return 0;
+}

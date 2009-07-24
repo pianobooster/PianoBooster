@@ -24,6 +24,23 @@
 
 */
 
+/*!
+ * The following attributes are save in the pb.cfg xml file
+ * BOOK:
+ *   name       the name of the book
+ *   lastsong   the name of the last song played so it can be restored
+ *
+ * SONG:
+ *   name
+ *   hand
+ *   leftHandMidiChannel
+ *   rightHandMidiChannel
+ *
+ * HAND:
+ *   speed
+ *
+*/
+
 #include <QTextStream>
 #include <QFile>
 #include "Settings.h"
@@ -105,7 +122,7 @@ QDomElement CSettings::openDomElement(QDomElement parent, const QString & elemen
 void CSettings::loadHandSettings()
 {
     m_domHand = openDomElement(m_domSong, "hand", partToHandString(m_song->getActiveHand()));
-    m_guiTopBar->setSpeed(m_domHand.attribute("speed", "100" ).toInt()); //fixme testing only
+    m_guiTopBar->setSpeed(m_domHand.attribute("speed", "100" ).toInt());
 }
 
 void CSettings::saveHandSettings()
@@ -117,6 +134,12 @@ void CSettings::loadSongSettings()
 {
     m_domSong = openDomElement(m_domBook, "song", m_currentSongName);
     m_guiSidePanel->setCurrentHand(m_domSong.attribute("hand", "both" ));
+
+
+    int left = m_domSong.attribute("leftHandMidiChannel", "-1").toInt();
+    int right = m_domSong.attribute("rightHandMidiChannel", "-1").toInt();
+
+    CNote::setChannelHands(left, right);
 
     loadHandSettings();
 }
@@ -285,11 +308,11 @@ void CSettings::setCurrentSongName(const QString & name)
     setValue("CurrentSong", getCurrentSongLongFileName());
 
     m_song->loadSong(getCurrentSongLongFileName());
+    loadSongSettings();
+
     m_guiTopBar->refresh(true);
     m_guiSidePanel->refresh();
     m_mainWindow->setWindowTitle("Piano Booster - " + m_song->getSongTitle());
-
-    loadSongSettings();
 }
 
 void CSettings::setCurrentBookName(const QString & name, bool clearSongName)
@@ -310,16 +333,5 @@ void CSettings::setChannelHands(int left, int right)
     CNote::setChannelHands(left, right);
     m_domSong.setAttribute("leftHandMidiChannel", left);
     m_domSong.setAttribute("rightHandMidiChannel", right);
+    m_guiSidePanel->refresh();
 }
-
-/*
-int CSettings::rightHandMidiChan()
-{
-        m_domSong.setAttribute("leftHandMidiChannel", left);
-
-}
-
-int CSettings::leftHandMidiChan()
-{
-
-}    */

@@ -5,56 +5,53 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>323</width>
-    <height>167</height>
+    <width>384</width>
+    <height>257</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" >
+  <layout class="QVBoxLayout" name="_2" >
    <item>
-    <widget class="QLabel" name="currentSongNameLabel" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Minimum" hsizetype="Preferred" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text" >
-      <string>TextLabel</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
+    <widget class="QTextEdit" name="songInfoText" />
    </item>
    <item>
     <widget class="QGroupBox" name="groupBox_2" >
      <property name="title" >
       <string> Song Details</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3" >
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>MIDI Channels for left and right hand piano parts:</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
       <item>
        <layout class="QGridLayout" name="gridLayout" >
         <item row="0" column="0" >
          <widget class="QLabel" name="label" >
           <property name="text" >
-           <string>Right Hand Channel:</string>
+           <string>Right Hand MIDI Channel:</string>
           </property>
          </widget>
         </item>
         <item row="0" column="1" >
          <widget class="QComboBox" name="leftHandChannelCombo" >
           <property name="sizePolicy" >
-           <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+           <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize" >
            <size>
-            <width>150</width>
+            <width>180</width>
             <height>0</height>
            </size>
           </property>
@@ -63,14 +60,14 @@
         <item row="1" column="0" >
          <widget class="QLabel" name="label_2" >
           <property name="text" >
-           <string>Left Hand Channel:</string>
+           <string>Left Hand MIDI Channel:</string>
           </property>
          </widget>
         </item>
         <item row="1" column="1" >
          <widget class="QComboBox" name="rightHandChannelCombo" >
           <property name="sizePolicy" >
-           <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+           <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>

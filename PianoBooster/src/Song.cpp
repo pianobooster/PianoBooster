@@ -33,7 +33,7 @@
 void CSong::init(CScore * scoreWin, CSettings* settings)
 {
 
-    CNote::setChannelHands(-1, -1);
+    CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
 
     this->CConductor::init(scoreWin, settings);
 

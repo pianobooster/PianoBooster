@@ -30,7 +30,7 @@
 #include "MidiTrack.h"
 #include "Util.h"
 
-#define OPTION_DEBUG_TRACK     1
+#define OPTION_DEBUG_TRACK     0
 #if OPTION_DEBUG_TRACK
 #define ppDEBUG_TRACK(args)     ppDebugTrack args
 #else

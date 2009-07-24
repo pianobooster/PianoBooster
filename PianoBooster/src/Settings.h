@@ -34,6 +34,7 @@
 class GuiSidePanel;
 class GuiTopBar;
 
+/// Save all the settings for the programme in the right place.
 class CSettings : public QSettings
 {
 
@@ -42,9 +43,14 @@ public:
 
     void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
 
+    /// returns true if the users wants to see the note names
     bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
+
+    /// Saves in the .ini file whether the user wants to show the note names
     void setNoteNamesEnabled(bool value);
     void setAdvancedMode(bool value) { m_advancedMode = value;}
+
+    /// returns true if the users wants to see the note names
     bool showNoteNames(){
         if (m_noteNamesEnabled )//fixme && !m_advancedMode)
             return true;
@@ -68,8 +74,6 @@ public:
     void setActiveHand(whichPart_t hand);
 
     void setChannelHands(int left, int right);
-
-
 
 private:
 

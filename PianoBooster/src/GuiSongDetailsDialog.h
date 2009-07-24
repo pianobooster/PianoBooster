@@ -50,8 +50,12 @@ public:
 
 private slots:
     void accept();
+    void on_leftHandChannelCombo_activated (int index);
+    void on_rightHandChannelCombo_activated (int index);
 
 private:
+    void updateSongInfoText();
+
     CSettings* m_settings;
     CSong* m_song;
     CGLView *m_glView;

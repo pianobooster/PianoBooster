@@ -87,6 +87,14 @@ void CChord::addNote(whichPart_t part, int note, int duration)
     m_length++;
 }
 
+void CNote::setChannelHands(int left, int right)
+{
+    m_leftHandChannel = left;
+    m_rightHandChannel = right;
+}
+
+//////////////// CChord /////////////////////
+
 bool CChord::removeNote(int note)
 {
     int i;

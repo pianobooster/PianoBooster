@@ -81,7 +81,12 @@
 
 
 
-#define MIDI_DRUM_CHANNEL           (10-1)
+#define MIDI_DRUM_CHANNEL       (10-1)
+#define MAX_MIDI_CHANNELS       16      // There are always at most 16 midi channels
+
+#define GM_PIANO_PATCH        0 // The default grand piano sound
+
+
 /*!
  * @brief   xxxxx.
  */

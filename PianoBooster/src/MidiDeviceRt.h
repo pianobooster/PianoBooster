@@ -48,7 +48,13 @@ class CMidiDeviceRt : public CMidiDeviceBase
     virtual bool openMidiPort(midiType_t type, QString portName);
     virtual void closeMidiPort(midiType_t type, int index);
 
-
+    // based on the fluid synth settings
+    virtual int     midiSettingsSetStr(QString name, QString str);
+    virtual int     midiSettingsSetNum(QString name, double val);
+    virtual int     midiSettingsSetInt(QString name, int val);
+    virtual QString midiSettingsGetStr(QString name);
+    virtual double  midiSettingsGetNum(QString name);
+    virtual int     midiSettingsGetInt(QString name);
 
 public:
     CMidiDeviceRt();

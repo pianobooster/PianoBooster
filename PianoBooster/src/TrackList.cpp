@@ -201,20 +201,20 @@ void CTrackList::refresh()
     }
     if (pianoPartConvetionTest())
     {
-        CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
+        if (CNote::bothHandsChan() != -2 ) // -2 for not set -1 for not used
+            CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
         m_song->setActiveChannel(CNote::bothHandsChan());
         ppLogInfo("Active both");
-        CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()));
     }
     else
     {
-        CStavePos::setKeySignature(guessKeySignature(-1,-1));
-        CNote::setChannelHands(-1, -1);
-        if (m_trackQtList.count()>0)
+        if (m_trackQtList.count() > 0)
         {
             m_song->setActiveChannel(m_trackQtList[0].midiChannel);
         }
     }
+
+    CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()));
 
     int goodChan = -1;
     // Find an unused channel that we can use for the keyboard
@@ -243,7 +243,7 @@ int CTrackList::getActiveItemIndex()
     for (int i = 0; i < m_trackQtList.size(); ++i)
     {
         chan = m_trackQtList.at(i).midiChannel;
-        if (chan == CNote::leftHandChan() )
+        if (chan == CNote::rightHandChan() )
             return i;
     }
     return 0; // Not found so return first item on the list
@@ -285,11 +285,15 @@ int CTrackList::getActiveHandIndex(whichPart_t whichPart)
 
 void CTrackList::setActiveHandsIndex(int leftIndex, int rightIndex)
 {
-    int leftChannel, rightChannel;
+    int leftChannel = -1;
+    int rightChannel = -1;
 
-    leftChannel = m_trackQtList.at(leftIndex).midiChannel;
-    rightChannel = m_trackQtList.at(rightIndex).midiChannel;
-    m_settings->setChannelHands(leftChannel,rightChannel);
+    if (leftIndex>=0)
+        leftChannel = m_trackQtList.at(leftIndex).midiChannel;
+    if (rightIndex>=0)
+        rightChannel = m_trackQtList.at(rightIndex).midiChannel;
+    m_settings->setChannelHands(leftChannel, rightChannel);
+    refresh();
 }
 
 // get the track index number of the selected hand

@@ -69,6 +69,14 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     i = midiOutputCombo->findText(m_settings->value("midi/output").toString());
     if (i!=-1)
         midiOutputCombo->setCurrentIndex(i);
+        
+    sampleRateCombo->addItem("44100");
+    sampleRateCombo->addItem("22050");
+    i = sampleRateCombo->findText(m_settings->value("fliudsynth/samplerate").toString());
+    if (i!=-1)
+        sampleRateCombo->setCurrentIndex(i);
+        
+    //midiSettingsSetnum
 
     updateMidiInfoText();
 }
@@ -169,6 +177,7 @@ void GuiMidiSetupDialog::accept()
             m_song->setPianoSoundPatches(previousRightSound, -2); // -2 means ignore this paramater
         }
     }
+
 
     this->QDialog::accept();
 }
