@@ -110,15 +110,15 @@ public:
     int getStaveIndex() {return m_staveIndex;}
     whichPart_t getHand() {return m_hand;}
 
-    static const float getVerticalNoteSpacing(){return verticalNoteSpacing();}
+    static float getVerticalNoteSpacing(){return verticalNoteSpacing();}
     static float getStaveCenterY(){return m_staveCenterY;}
     static void setStaveCenterY(float y) { m_staveCenterY = y; }
     static void setKeySignature(int key);
     static int getKeySignature() {return m_KeySignature;}
     static void setStaveCentralOffset(float gap) { m_staveCentralOffset = gap; }
-    static const float verticalNoteSpacing()      {return 7;}
-    static const float staveHeight()              {return verticalNoteSpacing() * 8;}
-    static const float staveCentralOffset()       {return m_staveCentralOffset;}
+    static float verticalNoteSpacing()      {return 7;}
+    static float staveHeight()              {return verticalNoteSpacing() * 8;}
+    static float staveCentralOffset()       {return m_staveCentralOffset;}
     // convert the midi note to the note name A B C D E F G
     static staveLookup_t midiNote2Name(int midiNote);
     static const staveLookup_t* getstaveLookupTable(int key);

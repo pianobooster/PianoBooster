@@ -1,6 +1,6 @@
 /*********************************************************************************/
 /*!
-@file           MidiEvent.h
+@file           MidiFile.h
 
 @brief          xxxxx.
 
@@ -33,6 +33,7 @@
 #include <fstream>
 #include "MidiEvent.h"
 #include "MidiTrack.h"
+#include "Merge.h"
 
 #define DEFAULT_PPQN        96      /* Standard value for pulse per quarter note */
 
@@ -40,7 +41,7 @@ using namespace std;
 #define MAX_TRACKS  40
 
 // Reads data from a standard MIDI file
-class CMidiFile
+class CMidiFile : public CMerge
 {
 public:
     CMidiFile()
@@ -48,12 +49,12 @@ public:
         size_t i;
         midiError(SMF_NO_ERROR);
         m_ppqn = DEFAULT_PPQN;
+        setSize(MAX_TRACKS);
         for (i = 0; i < arraySize(m_tracks); i++)
             m_tracks[i] = 0;
     }
 
     void openMidiFile(string filename);
-    CMidiEvent readMidiEvent();
     int readWord(void);
     int readHeader(void);
     void rewind();
@@ -64,17 +65,15 @@ public:
     QString getSongTitle() {return m_songTitle;}
 
     void setLogLevel(int level){CMidiTrack::setLogLevel(level);}
-
-
+    
 private:
-    void initMergedEvents();
-    int nextMergedEvent();
+   	bool checkMidiEventFromStream(int streamIdx);
+	CMidiEvent fetchMidiEventFromStream(int streamIdx);
     void midiError(midiErrors_t error) {m_midiError = error;}
     fstream m_file;
     static int m_ppqn;
     midiErrors_t m_midiError;
     CMidiTrack* m_tracks[MAX_TRACKS];
-    CMidiEvent m_mergeEvents[MAX_TRACKS];
     QString m_songTitle;
 };
 

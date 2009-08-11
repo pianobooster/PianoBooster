@@ -1,7 +1,10 @@
 # Cmake File for Piano Booster
 # for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
+SET(CMAKE_BUILD_TYPE Release)
+SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 cmake_minimum_required(VERSION 2.4)
+
 
 IF(MSVC)
     MESSAGE("GUI system is MSVC")
@@ -10,6 +13,10 @@ IF(WIN32)
     MESSAGE("GUI system is WIN32 ${CMAKE_GENERATOR}")
     SET(CMAKE_COLOR_MAKEFILE OFF)
 ENDIF(WIN32)
+
+#IF(CLEAR_HAS_VTK)
+#  ADD_DEFINITION(-DHAS_VTK)
+#IF(CLEAR_HAS_VTK)
 
 # set project's name
 PROJECT( pianobooster )
@@ -33,6 +40,10 @@ FIND_PACKAGE( Qt4 REQUIRED )
 # (QT_USE_FILE is a variable defined by FIND_PACKAGE( Qt4 ) that contains a path to CMake script)
 INCLUDE( ${QT_USE_FILE} )
 
+IF (USE_PCH)
+INCLUDE(PCHSupport.cmake)
+ENDIF(USE_PCH)
+
 
 # Add in the link libraries for each operating system
 IF(${CMAKE_SYSTEM} MATCHES "Linux")
@@ -54,14 +65,18 @@ ENDIF(${CMAKE_SYSTEM} MATCHES "Darwin")
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
-INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR}
+INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} precompile .
+${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR}
 /home/louis/build/fluidsynth-1.0.9/include/
+#C:/download/misc/ljb/fluidsynth-1.0.9/include/
+
 )
 
 # tell CMake what libraries our executable needs,
 # luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:
 LINK_LIBRARIES( ${QT_LIBRARIES}
 fluidsynth
+#C:/download/misc/ljb/fluidsynth-1.0.9/src/.libs/libfluidsynth.dll.a
 )
 
 
@@ -97,6 +112,10 @@ SET( PIANOBOOSTER_SRCS
     Rating.cpp
     Bar.cpp
     Settings.cpp
+    Merge.cpp
+    Band.cpp
+    pianobooster.rc
+#    precompile.h
 )
 
 
@@ -147,11 +166,13 @@ IF(APPLE)
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS})
 ELSE(APPLE)
-    ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
+    ADD_EXECUTABLE( pianobooster WIN32 pianobooster.rc ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
-        ${PIANOBOOSTER_UI_HDRS})
+        ${PIANOBOOSTER_UI_HDRS} )
 ENDIF(APPLE)
 
 SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 
-
+IF (USE_PCH)
+ADD_PRECOMPILED_HEADER( pianobooster ${CMAKE_CURRENT_SOURCE_DIR}/precompile/precompile.h )
+ENDIF (USE_PCH)

@@ -51,6 +51,8 @@ void CSong::init(CScore * scoreWin, CSettings* settings)
 
 void CSong::loadSong(QString filename)
 {
+	CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
+
     m_songTitle = filename;
     int index = m_songTitle.lastIndexOf("/");
     if (index >= 0)

@@ -59,54 +59,54 @@ public:
 class Cfg
 {
 public:
-    static const float staveStartX()         {return 20;}
-    static const float staveEndX()           {return m_staveEndX;}
-    static const float playZoneX()           {return scrollStartX() + ( staveEndX() - scrollStartX())* 0.4f;}
-    static const float clefX()               {return staveStartX() + 20;}
-    static const float timeSignatureX()       {return clefX() + 25;}
-    static const float keySignatureX()       {return timeSignatureX() + 25;}
-    static const float scrollStartX()        {return keySignatureX() + 64;}
-    static const float pianoX()              {return 25;}
+    static float staveStartX()         {return 20;}
+    static float staveEndX()           {return m_staveEndX;}
+    static float playZoneX()           {return scrollStartX() + ( staveEndX() - scrollStartX())* 0.4f;}
+    static float clefX()               {return staveStartX() + 20;}
+    static float timeSignatureX()       {return clefX() + 25;}
+    static float keySignatureX()       {return timeSignatureX() + 25;}
+    static float scrollStartX()        {return keySignatureX() + 64;}
+    static float pianoX()              {return 25;}
 
-    static const float staveThickness()      {return 1;}
+    static float staveThickness()      {return 1;}
 
-    static const int playZoneEarly()     {return m_playZoneEarly;}
-    static const int playZoneLate()      {return m_playZoneLate;}
-    static const int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
-    static const int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
+    static int playZoneEarly()     {return m_playZoneEarly;}
+    static int playZoneLate()      {return m_playZoneLate;}
+    static int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
+    static int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
 
 
-    static const CColour menuColour()        {return CColour(0.1, 0.6, 0.6);}
-    static const CColour menuSelectedColour(){return CColour(0.7, 0.7, 0.1);}
+    static CColour menuColour()        {return CColour(0.1, 0.6, 0.6);}
+    static CColour menuSelectedColour(){return CColour(0.7, 0.7, 0.1);}
 
 #if BLACK_BACKGROUND
-    static const CColour staveColour()           {return CColour(0.1, 0.7, 0.1);} // green
-    static const CColour staveColourDim()        {return CColour(0.15, 0.40, 0.15);} // grey
-    static const CColour noteColour()            {return CColour(0.1, 0.9, 0.1);} // green
-    static const CColour noteColourDim()         {return CColour(0.25, 0.45, 0.25);} // green
-    //static const CColour playedGoodColour()    {return CColour(0.6, 0.6, 1.0);} // grey
-    static const CColour playedGoodColour()      {return CColour(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
-    static const CColour playedBadColour()       {return CColour(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
-    static const CColour playedStoppedColour()   {return CColour(1.0, 0.8, 0.0);} // bright orange
-    static const CColour backgroundColour()      {return CColour(0.0, 0.0, 0.0);} // black
-    static const CColour barMarkerColour()       {return CColour(0.5, 0.5, 0.5);} // grey
-    static const CColour beatMarkerColour()       {return CColour(0.3, 0.3, 0.3);} // grey
-    static const CColour pianoGoodColour()      {return playedGoodColour();}
-    static const CColour pianoBadColour()       {return CColour(1.0, 0.0, 0.0);}
-    static const CColour noteNameColour()       {return CColour(1.0, 1.0, 1.0);}
+    static CColour staveColour()           {return CColour(0.1, 0.7, 0.1);} // green
+    static CColour staveColourDim()        {return CColour(0.15, 0.40, 0.15);} // grey
+    static CColour noteColour()            {return CColour(0.1, 0.9, 0.1);} // green
+    static CColour noteColourDim()         {return CColour(0.25, 0.45, 0.25);} // green
+    //static CColour playedGoodColour()    {return CColour(0.6, 0.6, 1.0);} // grey
+    static CColour playedGoodColour()      {return CColour(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
+    static CColour playedBadColour()       {return CColour(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
+    static CColour playedStoppedColour()   {return CColour(1.0, 0.8, 0.0);} // bright orange
+    static CColour backgroundColour()      {return CColour(0.0, 0.0, 0.0);} // black
+    static CColour barMarkerColour()       {return CColour(0.5, 0.5, 0.5);} // grey
+    static CColour beatMarkerColour()       {return CColour(0.3, 0.3, 0.3);} // grey
+    static CColour pianoGoodColour()      {return playedGoodColour();}
+    static CColour pianoBadColour()       {return CColour(1.0, 0.0, 0.0);}
+    static CColour noteNameColour()       {return CColour(1.0, 1.0, 1.0);}
 
 #endif
 
 #if YELLOW_BACKGROUND
-    //static const CColour staveColour()         {return CColour(0.0, 0.0, 0.0);} // black
-    //static const CColour staveColour()         {return CColour(0.0, 1.0, 0.0);} // green
-    static const CColour staveColour()         {return CColour(0.6, 0.6, 1.0);} //purple
-    static const CColour noteColour()         {return CColour(0.6, 0.6, 1.0);} //purple
-    static const CColour playedGoodColour()       {return CColour(0.6, 0.6, 1.0);} //purple
-    static const CColour playedBadColour()       {return CColour(0.7, 0.3, 0.0);} // orange
-    static const CColour playedStoppedColour()   {return CColour(1.0, 0.6, 0.0);} // orange
-    static const CColour barMarkerColour()       {return CColour(0.9, 0.9, 1.0);} // grey
-    static const CColour beatMarkerColour()       {return CColour(0.8, 0.8, 1.0);} // grey
+    //static CColour staveColour()         {return CColour(0.0, 0.0, 0.0);} // black
+    //static CColour staveColour()         {return CColour(0.0, 1.0, 0.0);} // green
+    static CColour staveColour()         {return CColour(0.6, 0.6, 1.0);} //purple
+    static CColour noteColour()         {return CColour(0.6, 0.6, 1.0);} //purple
+    static CColour playedGoodColour()       {return CColour(0.6, 0.6, 1.0);} //purple
+    static CColour playedBadColour()       {return CColour(0.7, 0.3, 0.0);} // orange
+    static CColour playedStoppedColour()   {return CColour(1.0, 0.6, 0.0);} // orange
+    static CColour barMarkerColour()       {return CColour(0.9, 0.9, 1.0);} // grey
+    static CColour beatMarkerColour()       {return CColour(0.8, 0.8, 1.0);} // grey
 
 #endif
 

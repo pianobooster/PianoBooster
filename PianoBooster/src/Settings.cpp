@@ -136,8 +136,9 @@ void CSettings::loadSongSettings()
     m_guiSidePanel->setCurrentHand(m_domSong.attribute("hand", "both" ));
 
 
-    int left = m_domSong.attribute("leftHandMidiChannel", "-1").toInt();
-    int right = m_domSong.attribute("rightHandMidiChannel", "-1").toInt();
+	// -1 means none and -2 means not set
+    int left = m_domSong.attribute("leftHandMidiChannel", "-2").toInt();
+    int right = m_domSong.attribute("rightHandMidiChannel", "-2").toInt();
 
     CNote::setChannelHands(left, right);
 

@@ -85,11 +85,11 @@ public:
     static void setActiveHand(whichPart_t hand){m_activeHand = hand;}
     static whichPart_t getActiveHand(){return m_activeHand;}
 
-    static const int rightHandChan()       {return m_rightHandChannel;}
-    static const int leftHandChan()        {return m_leftHandChannel;}
-    static const int bothHandsChan()       {return m_leftHandChannel;}
-    static const int getHandChannel(whichPart_t whichPart)   { return (whichPart == PB_PART_right) ? m_rightHandChannel : m_leftHandChannel;}
-    static const bool hasPianoPart(int chan)   { return (m_leftHandChannel == chan || m_rightHandChannel == chan ) ? true : false;}
+    static int rightHandChan()       {return m_rightHandChannel;}
+    static int leftHandChan()        {return m_leftHandChannel;}
+    static int bothHandsChan()       {return m_leftHandChannel;}
+    static int getHandChannel(whichPart_t whichPart)   { return (whichPart == PB_PART_right) ? m_rightHandChannel : m_leftHandChannel;}
+    static bool hasPianoPart(int chan)   { return (m_leftHandChannel == chan || m_rightHandChannel == chan ) ? true : false;}
 
 private:
     whichPart_t m_part;

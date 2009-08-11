@@ -142,80 +142,19 @@ void CMidiFile::rewind()
     initMergedEvents();
 }
 
-int CMidiFile::nextMergedEvent()
+bool CMidiFile::checkMidiEventFromStream(int streamIdx) 
 {
-    size_t i;
-    CMidiEvent* nearestEvent;
-    size_t nearestIndex;
-    int deltaTime;
-
-    nearestEvent = 0;
-    // find the first active slot
-    for( i = 0; i < arraySize(m_mergeEvents); i++)
-    {
-        if (m_mergeEvents[i].type() != MIDI_NONE)
-        {
-            nearestEvent = &m_mergeEvents[i];
-            nearestIndex = i;
-            break;
-        }
-    }
-    if (nearestEvent == 0)
-        return 0;
-
-    // now search the remaining active slots
-    for( i = nearestIndex + 1; i < arraySize(m_mergeEvents); i++)
-    {
-        if (m_mergeEvents[i].type() != MIDI_NONE)
-        {
-            // find the slot with the lowest delta time
-            if (m_mergeEvents[i].deltaTime() < nearestEvent->deltaTime())
-            {
-                nearestEvent = &m_mergeEvents[i];
-                nearestIndex = i;
-            }
-        }
-    }
-
-    deltaTime =  -nearestEvent->deltaTime();
-
-    // Now subtract the delta time from all the others
-    for( i = 0; i < arraySize(m_mergeEvents); i++)
-    {
-        if (i == nearestIndex)
-            continue;
-        if (m_mergeEvents[i].type() != MIDI_NONE)
-            m_mergeEvents[i].addDeltaTime( deltaTime );
-    }
-    return nearestIndex;
+	if (streamIdx < 0 || streamIdx >= MAX_TRACKS)
+	{
+		assert("streamIdx out of range");
+		return false;
+	}
+    if (m_tracks[streamIdx] != 0 && m_tracks[streamIdx]->length() > 0)
+		return true;
+	return false;
 }
 
-void  CMidiFile::initMergedEvents()
+CMidiEvent CMidiFile::fetchMidiEventFromStream(int streamIdx) 
 {
-    size_t i;
-    for( i = 0; i < arraySize(m_mergeEvents); i++)
-    {
-        m_mergeEvents[i].clear();
-        if (m_tracks[i] != 0 && m_tracks[i]->length() > 0)
-            m_mergeEvents[i] = m_tracks[i]->pop();
-    }
-
-}
-
-
-CMidiEvent CMidiFile::readMidiEvent()
-{
-    int mergeIdx;
-    CMidiEvent event;
-
-    mergeIdx = nextMergedEvent();
-    event = m_mergeEvents[mergeIdx];
-
-    m_mergeEvents[mergeIdx].clear();
-    if (m_tracks[mergeIdx] != 0 && m_tracks[mergeIdx]->length() > 0)
-        m_mergeEvents[mergeIdx] = m_tracks[mergeIdx]->pop();
-    if (event.type() == MIDI_NONE)
-        event.setType(MIDI_PB_EOF);
-    event.setDeltaTime(event.deltaTime());
-    return event;
+	return m_tracks[streamIdx]->pop();
 }

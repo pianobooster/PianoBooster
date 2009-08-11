@@ -28,7 +28,6 @@
 
 #include "GuiMidiSetupDialog.h"
 
-//#include "rtmidi/RtTimer.h"
 
 GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     : QDialog(parent)
@@ -136,7 +135,6 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
         m_latencyChanged = true;
         updateMidiInfoText();
     }
-
 }
 
 
@@ -181,3 +179,10 @@ void GuiMidiSetupDialog::accept()
 
     this->QDialog::accept();
 }
+
+
+#if SETUP_FLUIDSYNTH
+void GuiMidiSetupDialog::updateFluidInfoText()
+{
+}
+#endif

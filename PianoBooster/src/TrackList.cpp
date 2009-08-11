@@ -174,7 +174,6 @@ int CTrackList::guessKeySignature(int chanA, int chanB)
 void CTrackList::refresh()
 {
     int chan;
-    bool foundPianoPart = false; // fixme
     int rowCount = 0;
     m_trackQtList.clear();
 
@@ -182,26 +181,15 @@ void CTrackList::refresh()
     {
         if (m_midiActiveChannels[chan] == true)
         {
-            if (pianoPartConvetionTest())
-            {
-                if (chan == CONVENTION_LEFT_HAND_CHANNEL || chan == CONVENTION_RIGHT_HAND_CHANNEL)
-                {
-                    //if (foundPianoPart == true)
-                        //fixme continue;
-                    //trackname = "3+4 " + getChannelProgramName(chan);
-                    foundPianoPart = true;
-                }
-            }
-            CTrackListItem trackItem;
+           CTrackListItem trackItem;
             trackItem.midiChannel =  chan;
             m_trackQtList.append(trackItem);
-
             rowCount++;
         }
     }
     if (pianoPartConvetionTest())
     {
-        if (CNote::bothHandsChan() != -2 ) // -2 for not set -1 for not used
+        if (CNote::bothHandsChan() == -2 ) // -2 for not set -1 for not used
             CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
         m_song->setActiveChannel(CNote::bothHandsChan());
         ppLogInfo("Active both");
@@ -294,6 +282,7 @@ void CTrackList::setActiveHandsIndex(int leftIndex, int rightIndex)
         rightChannel = m_trackQtList.at(rightIndex).midiChannel;
     m_settings->setChannelHands(leftChannel, rightChannel);
     refresh();
+    m_song->rewind();
 }
 
 // get the track index number of the selected hand

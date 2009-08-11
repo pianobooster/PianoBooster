@@ -29,8 +29,8 @@
 #include "Chord.h"
 #include "Cfg.h"
 
-int CNote::m_leftHandChannel = -1;
-int CNote::m_rightHandChannel = -1;
+int CNote::m_leftHandChannel = -2;
+int CNote::m_rightHandChannel = -2;
 whichPart_t CNote::m_activeHand = PB_PART_both;
 
 int CChord::m_cfg_highestPianoNote = 127; // The highest note on the users piano keyboard;

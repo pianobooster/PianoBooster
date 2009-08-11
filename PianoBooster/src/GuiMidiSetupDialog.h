@@ -34,7 +34,7 @@
 #include "Song.h"
 #include "Settings.h"
 
-
+#define SETUP_FLUIDSYNTH 1
 
 #include "ui_GuiMidiSetupDialog.h"
 
@@ -57,6 +57,9 @@ private slots:
 private:
 
     void updateMidiInfoText();
+#if SETUP_FLUIDSYNTH
+    void updateFluidInfoText();
+#endif
     CSettings* m_settings;
     CSong* m_song;
     int m_latencyFix;
