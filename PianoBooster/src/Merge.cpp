@@ -51,6 +51,7 @@ int CMerge::nextMergedEvent()
     CMidiEvent* nearestEvent;
     int deltaTime;
 
+	nearestEvent = 0;
     // find the first active slot
     for( i = 0; i < m_mergeEvents.size(); i++)
     {

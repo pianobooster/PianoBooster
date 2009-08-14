@@ -2,21 +2,25 @@
 # for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
 SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
+SET(USE_FLUIDSYNTH OFF)
+
+# The inplace directory is mainly for windows builds 
+# SET(FLUIDSYNTH_INPLACE_DIR C:/download/misc/ljb/fluidsynth-1.0.9)
+# SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
+
+
+# Testing precompiled headers  it does not work -- leave as OFF.
+SET(USE_PCH OFF)
 
 cmake_minimum_required(VERSION 2.4)
+if(COMMAND cmake_policy)
+    cmake_policy(SET CMP0003 NEW)
+endif(COMMAND cmake_policy)
 
-
-IF(MSVC)
-    MESSAGE("GUI system is MSVC")
-ENDIF(MSVC)
 IF(WIN32)
     MESSAGE("GUI system is WIN32 ${CMAKE_GENERATOR}")
     SET(CMAKE_COLOR_MAKEFILE OFF)
 ENDIF(WIN32)
-
-#IF(CLEAR_HAS_VTK)
-#  ADD_DEFINITION(-DHAS_VTK)
-#IF(CLEAR_HAS_VTK)
 
 # set project's name
 PROJECT( pianobooster )
@@ -41,7 +45,9 @@ FIND_PACKAGE( Qt4 REQUIRED )
 INCLUDE( ${QT_USE_FILE} )
 
 IF (USE_PCH)
-INCLUDE(PCHSupport.cmake)
+INCLUDE(precompile/PCHSupport_26.cmake)
+INCLUDE_DIRECTORIES( precompile .)
+
 ENDIF(USE_PCH)
 
 
@@ -62,27 +68,38 @@ IF(${CMAKE_SYSTEM} MATCHES "Darwin")
     LINK_LIBRARIES("-framework CoreMidi -framework CoreAudio -framework CoreFoundation -framework OpenGL")
 ENDIF(${CMAKE_SYSTEM} MATCHES "Darwin")
 
+IF(USE_FLUIDSYNTH)
+    ADD_DEFINITIONS(-DPB_USE_FLUIDSYNTH)
+    MESSAGE("Building using fluidsynth")
+    SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
+    
+	IF(FLUIDSYNTH_INPLACE_DIR)
+		INCLUDE_DIRECTORIES(${FLUIDSYNTH_INPLACE_DIR}/include/)
+		IF(WIN32)
+	    	LINK_LIBRARIES( ${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a)
+	    ENDIF(WIN32)
+		IF(UNIX)
+	    	LINK_LIBRARIES(${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.so)
+	    ENDIF(UNIX)
+	ELSEIF(FLUIDSYNTH_INPLACE_DIR)
+	    LINK_LIBRARIES( fluidsynth)
+	ENDIF(FLUIDSYNTH_INPLACE_DIR)
+ENDIF(USE_FLUIDSYNTH)
+
+
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
-INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} precompile .
-${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR}
-/home/louis/build/fluidsynth-1.0.9/include/
-#C:/download/misc/ljb/fluidsynth-1.0.9/include/
-
-)
+INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} )
 
 # tell CMake what libraries our executable needs,
 # luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:
-LINK_LIBRARIES( ${QT_LIBRARIES}
-fluidsynth
-#C:/download/misc/ljb/fluidsynth-1.0.9/src/.libs/libfluidsynth.dll.a
-)
+LINK_LIBRARIES( ${QT_LIBRARIES} )
 
 
 
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
-    Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp MidiDeviceFluidSynth.cpp rtmidi/RtMidi.cpp)
+    Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp rtmidi/RtMidi.cpp ${PB_BASE_SRCS})
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h rtmidi/RtMidi.h)
 
@@ -165,11 +182,19 @@ IF(APPLE)
     ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS})
-ELSE(APPLE)
+ENDIF(APPLE)
+
+IF(UNIX)
+    ADD_EXECUTABLE( pianobooster pianobooster.rc ${PIANOBOOSTER_SRCS}
+        ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
+        ${PIANOBOOSTER_UI_HDRS} )
+ENDIF(UNIX)
+
+IF(WIN32)
     ADD_EXECUTABLE( pianobooster WIN32 pianobooster.rc ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} )
-ENDIF(APPLE)
+ENDIF(WIN32)
 
 SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 

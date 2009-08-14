@@ -1,3 +1,15 @@
+#CONFIG += USE_FLUIDSYNTH
+
+USE_FLUIDSYNTH {
+# Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compling on windows
+# You normally do not need to set it
+#FLUIDSYNTH_INPLACE_DIR = ../../fluidsynth-1.0.9
+message(building using fluidsynth)
+DEFINES += PB_USE_FLUIDSYNTH
+}
+
+#PRECOMPILED_HEADER = precompile/precompile.h
+
 HEADERS   = QtWindow.h \
             GlView.h \
             GuiTopBar.h \
@@ -37,7 +49,6 @@ SOURCES   = QtMain.cpp  \
             Tempo.cpp \
             MidiDevice.cpp \
             MidiDeviceRt.cpp \
-            MidiDeviceFluidSynth.cpp \
             rtmidi/RtMidi.cpp \
             StavePosition.cpp \
             Score.cpp \
@@ -54,20 +65,37 @@ SOURCES   = QtMain.cpp  \
 
 RC_FILE     = pianobooster.rc
 
-#INCLUDEPATH = C:/download/misc/ljb/fluidsynth-1.0.9/include/ rtmidi
-INCLUDEPATH = /home/louis/build/fluidsynth-1.0.9/include/ rtmidi
+INCLUDEPATH += rtmidi
 
-#DEFINES += __WINDOWS_MM__ _WIN32
-DEFINES += __LINUX_ALSASEQ__
+OBJECTS_DIR = tmp
 
+win32 {
+	DEFINES += __WINDOWS_MM__ _WIN32
+	LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a libwinmm
+}
 
-#LIBS += C:/download/misc/ljb/fluidsynth-1.0.9/src/.libs/libfluidsynth.dll.a libwinmm
-LIBS += -lasound /home/louis/build/fluidsynth-1.0.9/src/.libs/libfluidsynth.a 
+unix {
+	DEFINES += __LINUX_ALSASEQ__
+	LIBS += -lasound
+}
 
-#libwinmm
+USE_FLUIDSYNTH {
 
+     SOURCES   += MidiDeviceFluidSynth.cpp
 
-QT           += xml opengl
+    !isEmpty(FLUIDSYNTH_INPLACE_DIR) {
+    
+		!exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
+			 error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
+		}
+		message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
+     	INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
+     	LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a 
+
+    }
+}
+
+QT += xml opengl
 
 # install
 target.path = pianobooster

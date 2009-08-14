@@ -38,7 +38,10 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     m_latencyFix = 0;
     m_latencyChanged = false;
     m_midiChanged = false;
-
+    midiSetupTabWidget->setCurrentIndex(0);
+#if !PB_USE_FLUIDSYNTH   
+	midiSetupTabWidget->removeTab(1);
+#endif
     setWindowTitle("Midi Setup");
 }
 
@@ -181,7 +184,7 @@ void GuiMidiSetupDialog::accept()
 }
 
 
-#if SETUP_FLUIDSYNTH
+#if PB_USE_FLUIDSYNTH
 void GuiMidiSetupDialog::updateFluidInfoText()
 {
 }

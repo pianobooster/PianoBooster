@@ -73,8 +73,8 @@ void GuiSongDetailsDialog::updateSongInfoText()
     else
     {
         songInfoText->append("<span style=\"color:gray\">Set the MIDI Channels to be used for left and right hand piano parts:</span>");
-        songInfoText->append("<span style=\"color:black\">the left  hand piano part is unsing MIDI Channels 1</span>");
-        songInfoText->append("<span style=\"color:black\">the right hand piano part is unsing MIDI Channels 1</span>");
+        songInfoText->append("<span style=\"color:black\">the left  hand piano part is using MIDI Channels 1</span>");
+        songInfoText->append("<span style=\"color:black\">the right hand piano part is using MIDI Channels 1</span>");
         activateOkButton = true;
     }
 

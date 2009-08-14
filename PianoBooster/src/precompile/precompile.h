@@ -27,8 +27,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-/*
+//*
 #include "Bar.h"
+/*
 #include "Cfg.h"
 #include "Chord.h"
 #include "Conductor.h"

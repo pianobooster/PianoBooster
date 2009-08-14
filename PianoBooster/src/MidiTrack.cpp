@@ -269,8 +269,7 @@ void CMidiTrack::readMetaEvent(byte_t type)
     case METAKEYSIG:                        /* Key Signature */
         {
             data = readDataEvent(2);
-            char key = data>>8;
-            ppDEBUG_TRACK((4,"Key Signature %d %s", (int)key, ((data&0xff) ==0)?"Major":"Minor"));
+            ppDEBUG_TRACK((4,"Key Signature %d %s", (int)(data>>8), ((data&0xff) ==0)?"Major":"Minor"));
             break;
         }
 

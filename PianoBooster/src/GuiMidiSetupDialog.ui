@@ -14,7 +14,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
-    <widget class="QTabWidget" name="tabWidget" >
+    <widget class="QTabWidget" name="midiSetupTabWidget" >
      <property name="tabShape" >
       <enum>QTabWidget::Rounded</enum>
      </property>
@@ -338,8 +338,7 @@
    </item>
   </layout>
   <zorder>buttonBox</zorder>
-  <zorder>tabWidget</zorder>
-  <zorder>verticalSpacer</zorder>
+  <zorder>midiSetupTabWidget</zorder>
  </widget>
  <resources/>
  <connections>

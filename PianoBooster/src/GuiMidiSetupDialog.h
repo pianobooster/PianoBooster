@@ -34,8 +34,6 @@
 #include "Song.h"
 #include "Settings.h"
 
-#define SETUP_FLUIDSYNTH 1
-
 #include "ui_GuiMidiSetupDialog.h"
 
 class GuiMidiSetupDialog : public QDialog, private Ui::GuiMidiSettingsDialog
@@ -57,7 +55,7 @@ private slots:
 private:
 
     void updateMidiInfoText();
-#if SETUP_FLUIDSYNTH
+#if PB_USE_FLUIDSYNTH
     void updateFluidInfoText();
 #endif
     CSettings* m_settings;
