@@ -19,7 +19,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex" >
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab" >
       <attribute name="title" >
@@ -138,19 +138,19 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout" >
             <item>
-             <widget class="QListView" name="soundFontList" />
+             <widget class="QListWidget" name="soundFontList" />
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_5" >
               <item>
-               <widget class="QPushButton" name="latencyFixButton_2" >
+               <widget class="QPushButton" name="fluidAddButton" >
                 <property name="text" >
                  <string>Add</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton" >
+               <widget class="QPushButton" name="fluidRemoveButton" >
                 <property name="text" >
                  <string>Remove</string>
                 </property>
@@ -177,7 +177,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_2" >
+        <widget class="QGroupBox" name="fluidSettingsGroupBox" >
          <property name="title" >
           <string>Settings</string>
          </property>

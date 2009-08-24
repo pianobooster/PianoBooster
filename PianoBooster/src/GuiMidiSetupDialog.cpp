@@ -105,7 +105,8 @@ void GuiMidiSetupDialog::updateMidiInfoText()
         midiInfoText->append("<span style=\"color:gray\">Midi Output Device: " + midiOutputCombo->currentText() +"</span>");
 
     latencyFixLabel->setText(tr("%1 mSec").arg(m_latencyFix));
-
+    
+	updateFluidInfoText();    
 }
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
@@ -184,8 +185,40 @@ void GuiMidiSetupDialog::accept()
 }
 
 
-#if PB_USE_FLUIDSYNTH
 void GuiMidiSetupDialog::updateFluidInfoText()
 {
+    QStringList soundFontNames = m_settings->getFluidSoundFontNames();
+    soundFontList->clear();
+    for (int i=0; i < soundFontNames.count(); i++)
+    {
+        int n = soundFontNames.at(i).lastIndexOf("/");
+        soundFontList->addItem(soundFontNames.at(i).mid(n+1));
+	}
+
+
+    bool fontLoaded = (soundFontList->count() > 0) ? true : false;
+	fluidRemoveButton->setEnabled(fontLoaded);
+	
+	fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
+    fluidSettingsGroupBox->setEnabled(fontLoaded);
+    
 }
-#endif
+
+
+void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
+{
+	QString lastSoundFont;
+    QStringList sfList = m_settings->getFluidSoundFontNames();
+    if (sfList.size() > 0)
+    	lastSoundFont = sfList.last();
+
+    QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluid synth"),
+                            lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
+    if (!soundFontName.isEmpty())
+        m_settings->addFluidSoundFontName(soundFontName);
+	updateFluidInfoText();
+}
+
+void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked )
+{
+}

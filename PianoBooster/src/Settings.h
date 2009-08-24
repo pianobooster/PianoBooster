@@ -71,6 +71,18 @@ public:
     {
         return m_bookPath + getCurrentBookName() + '/' + getCurrentSongName();
     }
+    QStringList getFluidSoundFontNames()
+    {
+        return m_fluidSoundFontNames;
+    }
+    void addFluidSoundFontName(QString sfName)
+    {
+    	m_fluidSoundFontNames.append(sfName);
+    }
+    void removeFluidSoundFontName(QString sfName)
+    {
+    	m_fluidSoundFontNames.removeAll(sfName);
+    }
     void setActiveHand(whichPart_t hand);
 
     void setChannelHands(int left, int right);
@@ -114,6 +126,7 @@ private:
     QString m_bookPath;
     QString m_currentBookName;
     QString m_currentSongName;
+    QStringList m_fluidSoundFontNames;
 };
 
 #endif // __SETTINGS_H__

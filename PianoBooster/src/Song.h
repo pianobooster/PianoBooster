@@ -65,7 +65,7 @@ public:
     void init(CScore * scoreWin, CSettings* settings);
     eventBits_t task(int ticks);
     bool pcKeyPress(int key, bool down);
-    void loadSong(QString filename);
+    void loadSong(const QString &filename);
     void regenerateChordQueue();
 
     void rewind();

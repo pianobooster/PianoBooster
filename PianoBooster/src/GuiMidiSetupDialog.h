@@ -50,14 +50,14 @@ private slots:
     void on_midiInputCombo_activated (int index);
     void on_midiOutputCombo_activated (int index);
     void on_latencyFixButton_clicked ( bool checked );
-
+    void on_fluidAddButton_clicked ( bool checked );
+    void on_fluidRemoveButton_clicked ( bool checked );
+    
 
 private:
 
     void updateMidiInfoText();
-#if PB_USE_FLUIDSYNTH
     void updateFluidInfoText();
-#endif
     CSettings* m_settings;
     CSong* m_song;
     int m_latencyFix;

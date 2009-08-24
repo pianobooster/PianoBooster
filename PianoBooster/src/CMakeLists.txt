@@ -6,7 +6,7 @@ SET(USE_FLUIDSYNTH OFF)
 
 # The inplace directory is mainly for windows builds 
 # SET(FLUIDSYNTH_INPLACE_DIR C:/download/misc/ljb/fluidsynth-1.0.9)
-# SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
+SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
 
 
 # Testing precompiled headers  it does not work -- leave as OFF.
@@ -130,7 +130,7 @@ SET( PIANOBOOSTER_SRCS
     Bar.cpp
     Settings.cpp
     Merge.cpp
-    Band.cpp
+    #Band.cpp
     pianobooster.rc
 #    precompile.h
 )

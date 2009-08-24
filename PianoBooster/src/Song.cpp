@@ -49,9 +49,9 @@ void CSong::init(CScore * scoreWin, CSettings* settings)
     setSkill(3);
 }
 
-void CSong::loadSong(QString filename)
+void CSong::loadSong(const QString & filename)
 {
-	CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
+    CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
 
     m_songTitle = filename;
     int index = m_songTitle.lastIndexOf("/");

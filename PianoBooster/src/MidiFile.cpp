@@ -38,10 +38,12 @@ int CMidiFile::readWord(void)
 int CMidiFile::readHeader(void)
 {
     size_t i;
+    int c;
 
     for ( i=0; i < 4; i++)
     {
-        if (m_file.get() !="MThd"[i] )
+        c = m_file.get();
+        if (c !="MThd"[i] )
         {
             midiError(SMF_CORRUPTED_MIDI_FILE);
             return 0;
@@ -142,19 +144,19 @@ void CMidiFile::rewind()
     initMergedEvents();
 }
 
-bool CMidiFile::checkMidiEventFromStream(int streamIdx) 
+bool CMidiFile::checkMidiEventFromStream(int streamIdx)
 {
-	if (streamIdx < 0 || streamIdx >= MAX_TRACKS)
-	{
-		assert("streamIdx out of range");
-		return false;
-	}
+    if (streamIdx < 0 || streamIdx >= MAX_TRACKS)
+    {
+        assert("streamIdx out of range");
+        return false;
+    }
     if (m_tracks[streamIdx] != 0 && m_tracks[streamIdx]->length() > 0)
-		return true;
-	return false;
+        return true;
+    return false;
 }
 
-CMidiEvent CMidiFile::fetchMidiEventFromStream(int streamIdx) 
+CMidiEvent CMidiFile::fetchMidiEventFromStream(int streamIdx)
 {
-	return m_tracks[streamIdx]->pop();
+    return m_tracks[streamIdx]->pop();
 }
