@@ -180,10 +180,12 @@ public:
 
     void reset()
     {
-        m_runningDeltaTime = 0;
+        m_noteGapTime = 0;
+        m_cordSpanGapTime = 0;
         m_completeChord.clear();
         m_currentChord.clear();
         m_cfg_ChordNoteGap = CMidiFile::ppqnAdjust(Cfg::chordNoteGap());
+        m_cfg_ChordMaxLength = CMidiFile::ppqnAdjust(Cfg::chordMaxLength());
     }
 
 
@@ -197,10 +199,12 @@ public:
 
     bool findChord(CMidiEvent midi, int channel, whichPart_t part);
 private:
-    int m_runningDeltaTime;
+    int m_noteGapTime;
+    int m_cordSpanGapTime;
     CChord m_currentChord;
     CChord m_completeChord;
     int m_cfg_ChordNoteGap;
+    int m_cfg_ChordMaxLength;
 };
 
 #endif  // __CHORD_H__

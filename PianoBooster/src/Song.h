@@ -43,7 +43,7 @@ class CSong : public CConductor
 public:
     CSong()
     {
-        CStavePos::setKeySignature(0);
+        CStavePos::setKeySignature( NOT_USED, 0 );
         m_midiFile = new CMidiFile;
         m_trackList = new CTrackList;
 

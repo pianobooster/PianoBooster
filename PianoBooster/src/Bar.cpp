@@ -53,6 +53,7 @@ void CBar::setTimeSig(int top, int bottom)
         }
     }
     m_beatLength = (CMidiFile::getPulsesPerQuarterNote() *4)/ m_currentTimeSigBottom;
+    m_barLength = m_beatLength * getTimeSigTop();
 }
 
 int CBar::addDeltaTime(int ticks)

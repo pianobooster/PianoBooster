@@ -94,7 +94,7 @@ void CSlot::analyse()
 
 CSlot CNotation::nextBeatMarker()
 {
-    const int cfg_barGap = CMidiFile::getPulsesPerQuarterNote() * 30 / DEFAULT_PPQN;
+    const int cfg_barGap = CMidiFile::ppqnAdjust(30);
 
     CSlot slot;
 
@@ -140,6 +140,31 @@ int CNotation::nextMergeSlot()
     return nearestIndex;
 }
 
+accidentalModifer_t CNotation::detectSuppressedNatural(int note)
+{
+	accidentalModifer_t modifer = PB_ACCIDENTAL_MODIFER_noChange;
+
+	if (note <= 0 || note +1 >= MAX_MIDI_NOTES)
+		return modifer;
+		
+	while (m_earlyBarChangeDelta >= m_bar.getBarLength())
+	{
+		m_earlyBarChangeDelta -= m_bar.getBarLength();
+        m_earlyBarChangeCounter++;
+	}
+	//int accidental = CStavePos::getStaveAccidental(note);
+	// check if this note has occured in this bar before
+	if (m_noteState[note].getBarChange() == m_earlyBarChangeCounter)
+		modifer = PB_ACCIDENTAL_MODIFER_suppress_accidental;
+	/*
+	if (m_noteState[note + 1].getBarChange() == m_earlyBarChangeCounter)
+		modifer = PB_ACCIDENTAL_MODIFER_above;
+	if (m_noteState[note - 1].getBarChange() == m_earlyBarChangeCounter)
+		modifer = PB_ACCIDENTAL_MODIFER_below;*/
+	m_noteState[note].setBarChange(m_earlyBarChangeCounter);
+	return modifer;
+}
+
 void CNotation::findNoteSlots()
 {
     CMidiEvent midi;
@@ -154,6 +179,7 @@ void CNotation::findNoteSlots()
         midi = m_midiInputQueue->pop();
 
         m_currentDeltaTime += midi.deltaTime();
+        m_earlyBarChangeDelta += midi.deltaTime();
         if (midi.type() == MIDI_PB_chordSeparator || midi.type() == MIDI_PB_EOF)
         {
             if (m_currentSlot.length() > 0)
@@ -173,6 +199,8 @@ void CNotation::findNoteSlots()
 
         else if (midi.type() == MIDI_PB_timeSignature)
             m_bar.setTimeSig(midi.data1(), midi.data2());
+        else if (midi.type() == MIDI_PB_keySignature)
+            CStavePos::setKeySignature(midi.data1(), midi.data2());
         else if (midi.type() == MIDI_NOTE_ON)
         {
             whichPart_t hand = CNote::findHand( midi, m_displayChannel, PB_PART_both );
@@ -185,8 +213,12 @@ void CNotation::findNoteSlots()
                     symbolType = PB_SYMBOL_note;
                 CSymbol symbol(symbolType, hand, midi.note());
                 symbol.setColour(Cfg::noteColour());
+
+				// check if this note has occured in this bar before
+				symbol.setAccidentalModifer(detectSuppressedNatural(midi.note()));
+
                 if (m_currentSlot.addSymbol(symbol) == false) {
-                    ppLogWarn("[%d] Over the Max symbols limit", m_displayChannel + 1); //fix me
+                    ppLogWarn("[%d] Over the Max symbols limit", m_displayChannel + 1); //fixme
                 }
                 m_currentSlot.addDeltaTime(m_currentDeltaTime);
                 m_currentDeltaTime = 0;
@@ -195,6 +227,7 @@ void CNotation::findNoteSlots()
                     if (midi.note() < MIDI_BOTTOM_C)
                         m_currentSlot.setAv8Left(MIDI_OCTAVE);
                 }
+
             }
         }
     }
@@ -255,6 +288,8 @@ void CNotation::midiEventInsert(CMidiEvent event)
 
 void CNotation::reset()
 {
+    const int cfg_earlBarLead = CMidiFile::ppqnAdjust(8);
+	
     size_t i;
     m_currentDeltaTime = 0;
     m_midiInputQueue->clear();
@@ -263,6 +298,13 @@ void CNotation::reset()
         m_mergeSlots[i].clear();
     m_currentSlot.clear();
     m_beatPerBarCounter=0;
+    m_earlyBarChangeCounter = 0;
+    m_earlyBarChangeDelta = cfg_earlBarLead; // We want to detect the bar change early
+    
     m_bar.reset();
     m_findScrollerChord.reset();
+    for( i = 0; i < MAX_MIDI_NOTES; i++)
+    {
+		m_noteState[i].clear();
+	}
 }

@@ -58,12 +58,13 @@ void CSong::loadSong(const QString & filename)
     if (index >= 0)
         m_songTitle = m_songTitle.right( m_songTitle.length() - index - 1);
 
+    QString fn = filename;
 #ifdef _WIN32
-    filename = filename.replace('/','\\');
+     fn = fn.replace('/','\\');
 #endif
     m_midiFile->setLogLevel(3);
-    m_midiFile->openMidiFile(string(filename.toAscii()));
-    ppLogInfo("Opening song %s",  string(filename.toAscii()).c_str());
+    m_midiFile->openMidiFile(string(fn.toAscii()));
+    ppLogInfo("Opening song %s",  string(fn.toAscii()).c_str());
     transpose(0);
     midiFileInfo();
     m_midiFile->setLogLevel(99);
@@ -83,6 +84,7 @@ void CSong::midiFileInfo()
 {
     m_trackList->clear();
     setTimeSig(0,0);
+    CStavePos::setKeySignature( NOT_USED, 0 );
 
     // Read the next events to find the active channels
     CMidiEvent event;

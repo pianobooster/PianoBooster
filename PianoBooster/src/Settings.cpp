@@ -311,8 +311,8 @@ void CSettings::setCurrentSongName(const QString & name)
     m_song->loadSong(getCurrentSongLongFileName());
     loadSongSettings();
 
-    m_guiTopBar->refresh(true);
     m_guiSidePanel->refresh();
+    m_guiTopBar->refresh(true);
     m_mainWindow->setWindowTitle("Piano Booster - " + m_song->getSongTitle());
 }
 

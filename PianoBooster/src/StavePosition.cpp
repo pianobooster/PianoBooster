@@ -32,6 +32,7 @@
 
 float CStavePos::m_staveCenterY;
 int CStavePos::m_KeySignature;
+int CStavePos::m_KeySignatureMajorMinor;
 const staveLookup_t*  CStavePos::m_staveLookUpTable;
 float CStavePos::m_staveCentralOffset = (staveHeight() * 3)/2;
 
@@ -84,9 +85,12 @@ staveLookup_t CStavePos::midiNote2Name(int midiNote)
     return item;
 }
 
-void CStavePos::setKeySignature(int key)
+void CStavePos::setKeySignature(int key, int majorMinor)
 {
     m_KeySignature = key;
+    m_KeySignatureMajorMinor = majorMinor;
+    if (key == NOT_USED)
+    	key = 0;
     m_staveLookUpTable = getstaveLookupTable(key);
     CDraw::forceCompileRedraw();
 }

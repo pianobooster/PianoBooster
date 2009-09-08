@@ -202,7 +202,8 @@ void CTrackList::refresh()
         }
     }
 
-    CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()));
+	if (CStavePos::getKeySignature() == NOT_USED)
+    	CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()), 0);
 
     int goodChan = -1;
     // Find an unused channel that we can use for the keyboard

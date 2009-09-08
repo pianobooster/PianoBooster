@@ -113,7 +113,7 @@ public:
     static float getVerticalNoteSpacing(){return verticalNoteSpacing();}
     static float getStaveCenterY(){return m_staveCenterY;}
     static void setStaveCenterY(float y) { m_staveCenterY = y; }
-    static void setKeySignature(int key);
+    static void setKeySignature(int key, int majorMinor);
     static int getKeySignature() {return m_KeySignature;}
     static void setStaveCentralOffset(float gap) { m_staveCentralOffset = gap; }
     static float verticalNoteSpacing()      {return 7;}
@@ -122,6 +122,13 @@ public:
     // convert the midi note to the note name A B C D E F G
     static staveLookup_t midiNote2Name(int midiNote);
     static const staveLookup_t* getstaveLookupTable(int key);
+    
+    // do we show a sharp or a flat for this key signature
+    static int getStaveAccidental(int midiNote)
+    {
+    	return m_staveLookUpTable[midiNote%12].accidental;
+	}
+
 
 private:
     // fixme TODO This could be improved as the calculations could a done in the constructor
@@ -132,6 +139,7 @@ private:
 
 
     static int m_KeySignature;
+    static int m_KeySignatureMajorMinor;
     static const staveLookup_t*  m_staveLookUpTable;
     static float m_staveCentralOffset;
     static float m_staveCenterY;

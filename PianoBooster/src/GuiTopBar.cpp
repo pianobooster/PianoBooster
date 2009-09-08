@@ -121,7 +121,7 @@ void GuiTopBar::reloadKeyCombo(bool major)
 
 void GuiTopBar::on_keyCombo_activated(int index)
 {
-    CStavePos::setKeySignature(index - 6);
+    CStavePos::setKeySignature(index - 6, 0);
     m_song->refreshScroll();
 }
 
@@ -144,7 +144,7 @@ void GuiTopBar::on_transposeSpin_valueChanged(int value)
 
     int newValue = nextKey[(diff  + i + arraySize(nextKey)) % arraySize(nextKey) ];
 
-    CStavePos::setKeySignature( newValue );
+    CStavePos::setKeySignature( newValue, 0 );
 
     newValue += 6;
     keyCombo->setCurrentIndex(newValue);

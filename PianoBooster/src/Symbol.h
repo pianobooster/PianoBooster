@@ -52,6 +52,13 @@ typedef enum
     PB_SYMBOL_theEnd
 } musicalSymbol_t;
 
+
+typedef enum {
+	PB_ACCIDENTAL_MODIFER_noChange,
+	PB_ACCIDENTAL_MODIFER_suppress_accidental,
+	PB_ACCIDENTAL_MODIFER_force_natural
+} accidentalModifer_t;
+
 #define BEAT_MARKER_OFFSET  20 // used to ensure that beat markers are drawn under the note by drawing them early
 
 class CSymbol
@@ -125,6 +132,16 @@ public:
 
     int getNoteIndex() { return m_index; }
     int getNoteTotal() { return m_total; }
+    ////////////////////////////////////////////////////////////////////////////////
+    //! @brief          The accidental
+    //! return          0 = none, 1=sharp, -1 =flat, 2=natural.
+    int getAccidental() {
+    	return getStavePos().getAccidental();
+    }
+    
+    
+	void setAccidentalModifer(accidentalModifer_t value) {m_accidentalModifer = value;}
+	accidentalModifer_t getAccidentalModifer() {return m_accidentalModifer;}
 
 
 private:
@@ -136,11 +153,13 @@ private:
         m_midiDuration = 0;
         m_pianistTiming = NOT_USED;
         setIndex(0,0);
+        m_accidentalModifer = PB_ACCIDENTAL_MODIFER_noChange;
     }
 
     CStavePos m_stavePos;
     musicalSymbol_t m_symbolType;
     byte m_midiNote;
+    accidentalModifer_t m_accidentalModifer; // Used to suppress the second sharp in the same bar
     unsigned long m_midiDuration;
     whichPart_t m_hand;
 

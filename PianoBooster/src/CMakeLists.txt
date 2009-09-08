@@ -47,7 +47,6 @@ INCLUDE( ${QT_USE_FILE} )
 IF (USE_PCH)
 INCLUDE(precompile/PCHSupport_26.cmake)
 INCLUDE_DIRECTORIES( precompile .)
-
 ENDIF(USE_PCH)
 
 

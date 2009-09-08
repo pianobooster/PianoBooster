@@ -269,6 +269,9 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
 
     accidental = symbol.getStavePos().getAccidental();
 
+	if (symbol.getAccidentalModifer() == PB_ACCIDENTAL_MODIFER_suppress_accidental)
+		accidental = 0; // Suppress the accidental if it is the same bar
+
     if (accidental != 0)
     {
         //drColour (Cfg::lineColour());

@@ -30,7 +30,7 @@
 #include "MidiTrack.h"
 #include "Util.h"
 
-#define OPTION_DEBUG_TRACK     0
+#define OPTION_DEBUG_TRACK     1//fixme 0
 #if OPTION_DEBUG_TRACK
 #define ppDEBUG_TRACK(args)     ppDebugTrack args
 #else
@@ -199,8 +199,36 @@ void CMidiTrack::readTimeSignatureEvent()
     b4 = readByte();           /* Ignore the last bytes */
     event.metaEvent(readDelaTime(), MIDI_PB_timeSignature, timeSigNumerator, 1<<timeSigDenominator);
     m_trackEventQueue->push(event);
-    ppDEBUG_TRACK((4,"Time Signature %d/%d metronome %d quarter %d", timeSigNumerator, 1<<timeSigDenominator, b3, b4));
+    ppDEBUG_TRACK((4,"Key Signature %d/%d metronome %d quarter %d", timeSigNumerator, 1<<timeSigDenominator, b3, b4));
 }
+
+/* Key Signature */
+void CMidiTrack::readKeySignatureEvent()
+{
+    byte_t len;
+    CMidiEvent event;
+    int keySig;
+    int majorKey;
+
+    len = readVarLen();
+    if (len!=2)
+    {
+        errorFail(SMF_CORRUPTED_MIDI_FILE);
+        return;
+    }
+    keySig = static_cast<char>(readByte());  // force sign converstion The key sig 0=middle C 	
+    majorKey =readByte(); // Major or Minor
+    if (keySig >= 7 || keySig <= -7 )
+    {
+        errorFail(SMF_CORRUPTED_MIDI_FILE);
+        return;
+    }
+
+    event.metaEvent(readDelaTime(), MIDI_PB_keySignature, keySig, majorKey);
+    m_trackEventQueue->push(event);
+    ppDEBUG_TRACK((4,"Key Signature %d maj/min %d", keySig, majorKey));    
+}
+
 
 
 void CMidiTrack::readMetaEvent(byte_t type)
@@ -267,11 +295,8 @@ void CMidiTrack::readMetaEvent(byte_t type)
         break;
 
     case METAKEYSIG:                        /* Key Signature */
-        {
-            data = readDataEvent(2);
-            ppDEBUG_TRACK((4,"Key Signature %d %s", (int)(data>>8), ((data&0xff) ==0)?"Major":"Minor"));
-            break;
-        }
+    	readKeySignatureEvent();
+    	break;
 
     case METATEXT:                      /* Text Event */
         text = readTextEvent();
@@ -313,11 +338,14 @@ void CMidiTrack::readMetaEvent(byte_t type)
         ppDEBUG_TRACK((2,"MIDI Port %lu", data));
         break;
 
+    case 0x09:                          // meta type
+        text = readTextEvent();
+        ppDEBUG_TRACK((2,"fixme midi meta event 0x%02x %s", type, text.c_str()));
+        break;
     default:                          /* Unknown meta type */
         text = readTextEvent();
-        //strict_error("SM9");
-        ppDEBUG_TRACK((99,"UNKNOWN meta event 0x%02x %s", type, text.c_str()));
-        errorFail(SMF_UNKNOW_EVENT);
+        ppLogWarn("unknown midi meta event 0x%02x %s", type, text.c_str());
+        //errorFail(SMF_UNKNOW_EVENT);
         break;
     }
 }
@@ -342,7 +370,6 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
     default:
         ppDEBUG_TRACK((99,"UNKNOWN"));
         ignoreSysexEvent(data1);
-        //strict_error("SM8");
         //read_sysex_event();
         errorFail(SMF_UNKNOW_EVENT);
         break;

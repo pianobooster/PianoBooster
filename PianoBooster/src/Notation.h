@@ -128,6 +128,31 @@ private:
     int m_maxLeftEdge; // the furthest the note will appear on the left hand edge (used when removing the note)
 };
 
+// remembers the state of a running accidental
+// Don't display the accidental twice in the same bar
+class CNoteState
+{
+public:
+	CNoteState()
+	{
+		clear();
+	}
+	void clear()
+	{
+		m_barChangeCounter = 0;
+		m_accidentalState = PB_ACCIDENTAL_MODIFER_noChange;
+		m_noteLength = 0;
+	}
+	void setBarChange(int value){m_barChangeCounter = value;}
+	int getBarChange(){return m_barChangeCounter;}
+	void setAccidentalState(accidentalModifer_t value){m_accidentalState = value;}
+	accidentalModifer_t setAccidentalState(){return m_accidentalState;}
+
+private:
+	int m_barChangeCounter;
+	accidentalModifer_t m_accidentalState;
+    int m_noteLength; // Used to determine the note length
+};
 
 // Define a chord
 class CNotation
@@ -160,16 +185,21 @@ private:
     int nextMergeSlot();
     void findNoteSlots();
     CSlot nextNoteSlot();
+    accidentalModifer_t detectSuppressedNatural(int note);
+
 
     CQueue<CSlot>* m_slotQueue;             // Queue of symbol slots that have not been read yet
     CQueue<CMidiEvent>* m_midiInputQueue;   // A Queue of midi events
     CSlot m_currentSlot;
     int m_currentDeltaTime;
     int m_beatPerBarCounter;
+    int m_earlyBarChangeCounter;
+    int m_earlyBarChangeDelta; // Counts the ppqn in one bar
     CSlot m_mergeSlots[2];
     int m_displayChannel;
     CFindChord m_findScrollerChord;
     CBar m_bar;
+	CNoteState m_noteState[MAX_MIDI_NOTES];
 };
 
 #endif  // __NOTATION_H__

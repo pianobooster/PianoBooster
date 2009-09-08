@@ -168,9 +168,11 @@ bool CFindChord::findChord(CMidiEvent midi, int channel, whichPart_t part)
         return foundChord;
     }
 
-    m_runningDeltaTime += midi.deltaTime();
+    m_noteGapTime += midi.deltaTime();
 
-    if (m_runningDeltaTime >= m_cfg_ChordNoteGap && m_currentChord.length() > 0)
+	
+    if ((m_noteGapTime >= m_cfg_ChordNoteGap || m_cordSpanGapTime > m_cfg_ChordMaxLength)
+            && m_currentChord.length() > 0 )
     {
         foundChord = true;
         m_completeChord = m_currentChord;
@@ -183,8 +185,12 @@ bool CFindChord::findChord(CMidiEvent midi, int channel, whichPart_t part)
         if ( hand != PB_PART_none)
         {
             m_currentChord.addNote(hand, midi.note());
-            m_currentChord.setDeltaTime(m_runningDeltaTime + m_currentChord.getDeltaTime());
-            m_runningDeltaTime = 0;
+            m_currentChord.setDeltaTime(m_noteGapTime + m_currentChord.getDeltaTime());
+            if (m_currentChord.length() <= 1)
+            	m_cordSpanGapTime = 0;
+            else
+            	m_cordSpanGapTime += m_noteGapTime; // measure the span of the cord
+            m_noteGapTime = 0;
         }
     }
     return foundChord;

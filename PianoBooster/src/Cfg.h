@@ -74,6 +74,7 @@ public:
     static int playZoneLate()      {return m_playZoneLate;}
     static int silenceTimeOut()    {return 8000;} // the time in msec before everything goes quiet
     static int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
+    static int chordMaxLength()    {return 20;} // the max time between the start and end of a cord
 
 
     static CColour menuColour()        {return CColour(0.1, 0.6, 0.6);}

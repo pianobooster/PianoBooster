@@ -102,7 +102,7 @@ private:
         {
             m_midiError = error;
             if (m_midiError != SMF_NO_ERROR)
-                ppError("Error Fail %d", m_midiError);
+                ppError("Midi error %d", m_midiError);
         }
     }
 
@@ -152,6 +152,7 @@ private:
     void ignoreSysexEvent(byte_t data);
 
     void readTimeSignatureEvent();
+    void readKeySignatureEvent();
 
     void decodeSystemMessage( byte_t status, byte_t data1 );
 

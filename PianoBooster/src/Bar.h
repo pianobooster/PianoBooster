@@ -57,6 +57,7 @@ public:
 
     int getTimeSigTop() {return m_currentTimeSigTop;} // The Numerator
     int getBeatLength() {return m_beatLength;}
+    int getBarLength() {return m_barLength;} // in ppqn
 
     void setPlayFromBar(double bar);
     void setPlayFromBar(int bar, int beat = 0, int ticks = 0);
@@ -121,7 +122,8 @@ private:
 
 
     int m_deltaTime;
-    int m_beatLength;
+    int m_beatLength; //in ppqn ticks
+    int m_barLength; // m_beatLength * getTimeSigTop() (also in ppqn ticks)
 
     int m_startTimeSigTop; // The time Sig at the start of the piece
     int m_startTimeSigBottom;

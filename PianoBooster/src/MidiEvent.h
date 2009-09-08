@@ -53,8 +53,9 @@
 #define MIDI_PB_chordSeparator      0x0ff3  // All the notes (note on) between these counts as one chord
 #define MIDI_PB_tempo               0x0ff4
 #define MIDI_PB_timeSignature       0x0ff5
-#define MIDI_PB_collateRawMidiData  0x0ff6
-#define MIDI_PB_outputRawMidiData   0x0ff7  // Raw data is used for used for a SYSTEM_EVENT
+#define MIDI_PB_keySignature        0x0ff6
+#define MIDI_PB_collateRawMidiData  0x0ff7
+#define MIDI_PB_outputRawMidiData   0x0ff8  // Raw data is used for used for a SYSTEM_EVENT
 
 /*===================================*/
 /*                                   */
