@@ -202,7 +202,7 @@ eventBits_t CSong::task(int ticks)
             // Read the next events
             CMidiEvent event = m_midiFile->readMidiEvent();
 
-            //ppTrace("Song event delta %d type 0x%x chan %d Note %d", event.deltaTime(), event.type(), event.channel(), event.note());
+            //ppLogTrace("Song event delta %d type 0x%x chan %d Note %d", event.deltaTime(), event.type(), event.channel(), event.note());
 
             // Find the next chord
             if (m_findChord.findChord(event, getActiveChannel(), PB_PART_both) == true)

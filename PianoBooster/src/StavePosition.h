@@ -39,6 +39,8 @@ typedef  struct {
     int accidental;
 } staveLookup_t;
 
+#define NOT_USED 0x7fffffff
+
 #define MAX_STAVE_INDEX 16
 #define MIN_STAVE_INDEX -16
 
@@ -124,10 +126,23 @@ public:
     static const staveLookup_t* getstaveLookupTable(int key);
     
     // do we show a sharp or a flat for this key signature
+    // returns 0 = none, 1=sharp, -1 =flat, 2=natural (# Key) , -2=natural (b Key)
     static int getStaveAccidental(int midiNote)
     {
-    	return m_staveLookUpTable[midiNote%12].accidental;
-	}
+        return m_staveLookUpTable[midiNote%12].accidental;
+    }
+
+    // returns 0 = none, 1=above, -1 =below, (a natural is either above or below)
+    static int getStaveAccidentalDirection(int midiNote)
+    {
+        int accidentalDirection = getStaveAccidental(midiNote);
+        if (accidentalDirection == 2) // A natural so change to above
+            accidentalDirection = 1;
+        else if (accidentalDirection == -2) // A natural so change to below
+            accidentalDirection = -1;           
+            
+        return accidentalDirection;
+    }
 
 
 private:

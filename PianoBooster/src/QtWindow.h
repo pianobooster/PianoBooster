@@ -117,6 +117,9 @@ protected:
 
 private:
     void decodeCommandLine();
+    int decodeIntegerParam(QString arg, int defaultParam);
+    void decodeMidiFileArg(QString arg);
+
     void displayUsage();
     void createActions();
     void createMenus();

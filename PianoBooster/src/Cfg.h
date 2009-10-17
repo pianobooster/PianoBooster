@@ -137,7 +137,7 @@ public:
     static bool smallScreen;
     static bool quickStart;
     static bool experimentalTempo;
-    static bool experimentalSwapInterval;
+    static int experimentalSwapInterval;
 
 private:
     static float m_staveEndX;

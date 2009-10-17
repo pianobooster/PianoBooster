@@ -125,7 +125,7 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
     {
         //fluid_synth_program_select(m_synth, channel, m_soundFontId, 0, GM_PIANO_PATCH);
         fluid_synth_program_change(m_synth, channel, GM_PIANO_PATCH);
-	}
+    }
     fluid_synth_set_gain(m_synth, 0.4);
 
     return true;
@@ -176,7 +176,7 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
 
         case MIDI_CONTROL_CHANGE: //CONTROL_CHANGE:
             fluid_synth_cc(m_synth, channel, event.data1(), event.data2());
-            //ppTrace("MIDI_CONTROL_CHANGE %d %d %d", channel, event.data1(), event.data2()); //fixme
+            //ppLogTrace("MIDI_CONTROL_CHANGE %d %d %d", channel, event.data1(), event.data2()); //fixme
             break;
 
         case MIDI_PROGRAM_CHANGE: //PROGRAM_CHANGE:
@@ -228,50 +228,50 @@ CMidiEvent CMidiDeviceFluidSynth::readMidiInput()
 
 int CMidiDeviceFluidSynth::midiSettingsSetStr(QString name, QString str)
 {
-	if (!m_fluidSettings)
-		return 0;	
+    if (!m_fluidSettings)
+        return 0;
 
-	return fluid_settings_setstr(m_fluidSettings, (char *)qPrintable(name), (char *)qPrintable(str));
+    return fluid_settings_setstr(m_fluidSettings, (char *)qPrintable(name), (char *)qPrintable(str));
 }
 
 int CMidiDeviceFluidSynth::midiSettingsSetNum(QString name, double val)
 {
-	if (!m_fluidSettings)
-		return 0;
+    if (!m_fluidSettings)
+        return 0;
     return fluid_settings_setnum(m_fluidSettings, (char *)qPrintable(name), val);
 }
 
 int CMidiDeviceFluidSynth::midiSettingsSetInt(QString name, int val)
 {
-	if (!m_fluidSettings)
-		return 0;
-			
+    if (!m_fluidSettings)
+        return 0;
+
     return fluid_settings_setint(m_fluidSettings, (char *)qPrintable(name), val);
 }
 
 QString CMidiDeviceFluidSynth::midiSettingsGetStr(QString name)
 {
-	char buffer[200];
-	if (!m_fluidSettings)
-		return QString();
-	//fluid_settings_getstr(m_fluidSettings, (char *)qPrintable(name), buffer );	
-	return QString( buffer );
+    char buffer[200];
+    if (!m_fluidSettings)
+        return QString();
+    //fluid_settings_getstr(m_fluidSettings, (char *)qPrintable(name), buffer );
+    return QString( buffer );
 }
 
 double CMidiDeviceFluidSynth::midiSettingsGetNum(QString name)
 {
-	if (!m_fluidSettings)
-		return 0.0;
-	double val;
+    if (!m_fluidSettings)
+        return 0.0;
+    double val;
     fluid_settings_getnum(m_fluidSettings, (char *)qPrintable(name), &val);
     return val;
 }
 
 int CMidiDeviceFluidSynth::midiSettingsGetInt(QString name)
 {
-	if (!m_fluidSettings)
-		return 0;
-	int val = 0;
+    if (!m_fluidSettings)
+        return 0;
+    int val = 0;
     fluid_settings_getint(m_fluidSettings, (char *)qPrintable(name),&val);
     return val;
 }

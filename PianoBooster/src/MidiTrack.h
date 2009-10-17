@@ -87,6 +87,7 @@ public:
     dword_t init();
     void decodeTrack();
     bool failed() { return (m_midiError != SMF_NO_ERROR) ? true : false;}
+    midiErrors_t getMidiError() { return m_midiError;}
 
     int length() {return m_trackEventQueue->length();}
     CMidiEvent pop() {return m_trackEventQueue->pop();}
@@ -102,7 +103,7 @@ private:
         {
             m_midiError = error;
             if (m_midiError != SMF_NO_ERROR)
-                ppError("Midi error %d", m_midiError);
+                ppLogError("Midi error %d", m_midiError);
         }
     }
 

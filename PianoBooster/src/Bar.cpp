@@ -30,7 +30,7 @@
 
 #define OPTION_DEBUG_BAR     0
 #if OPTION_DEBUG_BAR
-#define ppDEBUG_BAR(args)     ppDebug args
+#define ppDEBUG_BAR(args)     ppLogDebug args
 #else
 #define ppDEBUG_BAR(args)
 #endif

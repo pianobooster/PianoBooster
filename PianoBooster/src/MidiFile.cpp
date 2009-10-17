@@ -20,6 +20,8 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <QMessageBox>
+
 #include "MidiFile.h"
 
 int CMidiFile::m_ppqn = DEFAULT_PPQN;
@@ -87,11 +89,15 @@ void CMidiFile::openMidiFile(string filename)
     m_file.open(filename.c_str(), ios_base::in | ios_base::binary);
     if (m_file.fail() == true)
     {
-        ppError("Cannot open \"%s\"", filename.c_str());
+        QMessageBox::warning(0, "Midi File Error",
+                 "Cannot open \"" + QString(filename.c_str()) + "\"");
         midiError(SMF_CANNOT_OPEN_FILE);
         return;
     }
     rewind();
+    if (getMidiError() != SMF_NO_ERROR)
+        QMessageBox::warning(0, "Midi File Error",
+                 "Midi file\"" + QString(filename.c_str()) + "\" is corrupted");
 }
 
 void CMidiFile::rewind()
@@ -110,13 +116,13 @@ void CMidiFile::rewind()
     if (ntrks == 0)
     {
         midiError(SMF_CORRUPTED_MIDI_FILE);
-        ppError("Zero tracks in SMF file");
+        ppLogError("Zero tracks in SMF file");
         return;
     }
     if (ntrks > arraySize(m_tracks))
     {
         midiError(SMF_ERROR_TOO_MANY_TRACK);
-        ppError("Too many tracks in SMF file");
+        ppLogError("Too many tracks in SMF file");
         return;
     }
     for (trk = 0; trk < arraySize(m_tracks); trk++)
@@ -134,8 +140,11 @@ void CMidiFile::rewind()
         trackLength = m_tracks[trk]->init();
         m_tracks[trk]->decodeTrack();
         if (m_tracks[trk]->failed())
-            break;
+        {
+            midiError(m_tracks[trk]->getMidiError());
 
+            break;
+        }
         //now move onto the next track
         filePos += trackLength;
         m_file.seekg (filePos, ios::beg);

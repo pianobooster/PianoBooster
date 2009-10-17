@@ -42,7 +42,7 @@ void CDraw::oneLine(float x1, float y1, float x2, float y2)
     glVertex2f ((x1),(y1));
     glVertex2f ((x2),(y2));
     glEnd();
-    //ppTrace("oneLine %f %f %f %f", x1, y1, x2, y2);
+    //ppLogTrace("oneLine %f %f %f %f", x1, y1, x2, y2);
 }
 
 void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool playable)
@@ -269,8 +269,17 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
 
     accidental = symbol.getStavePos().getAccidental();
 
-	if (symbol.getAccidentalModifer() == PB_ACCIDENTAL_MODIFER_suppress_accidental)
-		accidental = 0; // Suppress the accidental if it is the same bar
+
+    if (symbol.getAccidentalModifer() == PB_ACCIDENTAL_MODIFER_suppress)
+        accidental = 0; // Suppress the accidental if it is the same bar
+
+    if (symbol.getAccidentalModifer() == PB_ACCIDENTAL_MODIFER_force)
+    {
+        // Force the display of an accidental including naturals if it is the same bar
+        accidental = CStavePos::midiNote2Name(symbol.getNote()).accidental;
+        if (accidental == 0)
+            accidental = 2;
+    }
 
     if (accidental != 0)
     {
@@ -409,7 +418,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
           break;
 
         case PB_SYMBOL_note:
-            //ppTrace("PB_SYMBOL_note x %f y %f", x, y);
+            //ppLogTrace("PB_SYMBOL_note x %f y %f", x, y);
             if (!CChord::isNotePlayable(symbol.getNote(), 0))
             {
                 colour = Cfg::noteColourDim();

@@ -72,17 +72,17 @@ IF(USE_FLUIDSYNTH)
     MESSAGE("Building using fluidsynth")
     SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
     
-	IF(FLUIDSYNTH_INPLACE_DIR)
-		INCLUDE_DIRECTORIES(${FLUIDSYNTH_INPLACE_DIR}/include/)
-		IF(WIN32)
-	    	LINK_LIBRARIES( ${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a)
-	    ENDIF(WIN32)
-		IF(UNIX)
-	    	LINK_LIBRARIES(${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.so)
-	    ENDIF(UNIX)
-	ELSEIF(FLUIDSYNTH_INPLACE_DIR)
-	    LINK_LIBRARIES( fluidsynth)
-	ENDIF(FLUIDSYNTH_INPLACE_DIR)
+    IF(FLUIDSYNTH_INPLACE_DIR)
+        INCLUDE_DIRECTORIES(${FLUIDSYNTH_INPLACE_DIR}/include/)
+        IF(WIN32)
+            LINK_LIBRARIES( ${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a)
+        ENDIF(WIN32)
+        IF(UNIX)
+            LINK_LIBRARIES(${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.so)
+        ENDIF(UNIX)
+    ELSEIF(FLUIDSYNTH_INPLACE_DIR)
+        LINK_LIBRARIES( fluidsynth)
+    ENDIF(FLUIDSYNTH_INPLACE_DIR)
 ENDIF(USE_FLUIDSYNTH)
 
 
@@ -200,3 +200,20 @@ SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 IF (USE_PCH)
 ADD_PRECOMPILED_HEADER( pianobooster ${CMAKE_CURRENT_SOURCE_DIR}/precompile/precompile.h )
 ENDIF (USE_PCH)
+
+
+INSTALL( FILES pianobooster.desktop DESTINATION share/applications )
+INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
+#INSTALL( index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en  SUBDIR kmidimon )
+
+#INSTALL( FILES standards.ins  DESTINATION ${DATA_INSTALL_DIR}/pianobooster
+
+INSTALL ( FILES images/pianobooster.png DESTINATION  share/pixmaps )
+
+
+#/usr/games/pianobooster
+#/usr/share/pixmaps/pianobooster.png
+#/usr/share/applications/pianobooster.desktop
+#/usr/share/doc/pianobooster/changelog.gz
+#/usr/share/doc/pianobooster/copyright
+

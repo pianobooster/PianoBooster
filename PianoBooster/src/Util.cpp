@@ -93,7 +93,7 @@ void ppLogWarn(const char *msg, ...)
     fputc('\n', stdout);
 }
 
-void ppTrace(const char *msg, ...)
+void ppLogTrace(const char *msg, ...)
 {
     va_list ap;
 
@@ -106,7 +106,7 @@ void ppTrace(const char *msg, ...)
 }
 
 
-void ppDebug( const char *msg, ...)
+void ppLogDebug( const char *msg, ...)
 {
     va_list ap;
 
@@ -117,11 +117,11 @@ void ppDebug( const char *msg, ...)
     fputc('\n', stdout);
 }
 
-void ppError(const char *msg, ...)
+void ppLogError(const char *msg, ...)
 {
     va_list ap;
 
-    fputs("Error: ", stdout);
+    fputs("ERROR: ", stdout);
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
     va_end(ap);

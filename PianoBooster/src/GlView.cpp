@@ -53,7 +53,7 @@ CGLView::CGLView(Window* parent, CSettings* settings)
     m_score = new CScore(m_settings);
     m_midiTicks = 0;
     m_scrollTicks = 0;
-    m_cfg_openGlOptimise = false;
+    m_cfg_openGlOptimise = true;
 }
 
 CGLView::~CGLView()

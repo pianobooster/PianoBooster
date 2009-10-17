@@ -30,6 +30,15 @@
 #include "Notation.h"
 #include "Cfg.h"
 
+
+#define OPTION_DEBUG_NOTATION     0
+#if OPTION_DEBUG_NOTATION
+#define ppDEBUG_NOTATION(args)     ppLogDebug  args
+#else
+#define ppDEBUG_NOTATION(args)
+#endif
+
+
 #define MERGESLOT_NOTE_INDEX        0
 #define MERGESLOT_BEATMARK_INDEX    1
 
@@ -90,6 +99,8 @@ void CSlot::analyse()
     }
 }
 
+bool CNotation::m_cfg_displayCourtesyAccidentals = false;
+
 ///////////////////////////////////////////////////////////////////////////
 
 CSlot CNotation::nextBeatMarker()
@@ -142,27 +153,52 @@ int CNotation::nextMergeSlot()
 
 accidentalModifer_t CNotation::detectSuppressedNatural(int note)
 {
-	accidentalModifer_t modifer = PB_ACCIDENTAL_MODIFER_noChange;
+    if (note <= 0 || note +1 >= MAX_MIDI_NOTES)
+        return PB_ACCIDENTAL_MODIFER_noChange;
 
-	if (note <= 0 || note +1 >= MAX_MIDI_NOTES)
-		return modifer;
-		
-	while (m_earlyBarChangeDelta >= m_bar.getBarLength())
-	{
-		m_earlyBarChangeDelta -= m_bar.getBarLength();
+    accidentalModifer_t modifer = PB_ACCIDENTAL_MODIFER_noChange;
+
+    while (m_earlyBarChangeDelta >= m_bar.getBarLength())
+    {
+        m_earlyBarChangeDelta -= m_bar.getBarLength();
         m_earlyBarChangeCounter++;
-	}
-	//int accidental = CStavePos::getStaveAccidental(note);
-	// check if this note has occured in this bar before
-	if (m_noteState[note].getBarChange() == m_earlyBarChangeCounter)
-		modifer = PB_ACCIDENTAL_MODIFER_suppress_accidental;
-	/*
-	if (m_noteState[note + 1].getBarChange() == m_earlyBarChangeCounter)
-		modifer = PB_ACCIDENTAL_MODIFER_above;
-	if (m_noteState[note - 1].getBarChange() == m_earlyBarChangeCounter)
-		modifer = PB_ACCIDENTAL_MODIFER_below;*/
-	m_noteState[note].setBarChange(m_earlyBarChangeCounter);
-	return modifer;
+    }
+
+    CNoteState * pNoteState = &m_noteState[note];
+    CNoteState * pBackLink = pNoteState->getBackLink();
+
+    int direction = -CStavePos::getStaveAccidentalDirection(note);
+    ppDEBUG_NOTATION(("Note %d %d %d", note, direction, pBackLink));
+    // check if this note has occured in this bar before
+    if (pNoteState->getBarChange() == m_earlyBarChangeCounter)
+    {
+        if (pBackLink)
+        {
+            ppDEBUG_NOTATION(("Force %d", note));
+            modifer = PB_ACCIDENTAL_MODIFER_force;
+        }
+        else if (direction != 0 && m_cfg_displayCourtesyAccidentals == false)
+        {
+            ppDEBUG_NOTATION(("Supress %d %d", note, direction));
+            modifer = PB_ACCIDENTAL_MODIFER_suppress;
+        }
+    }
+
+    if (direction != 0)
+    {
+        // we are display a accidental so force the note above (or below) to display
+        m_noteState[note + direction].setBackLink(pNoteState); // point back to this note
+        m_noteState[note + direction].setBarChange(m_earlyBarChangeCounter);
+        ppDEBUG_NOTATION(("setting backlink %d %d", note + direction, direction));
+    }
+    if (pBackLink)
+    {
+        pNoteState->setBackLink(0);
+        pBackLink->setBarChange(-1); // this prevents further suppression on the origianl note
+    }
+
+    pNoteState->setBarChange(m_earlyBarChangeCounter);
+    return modifer;
 }
 
 void CNotation::findNoteSlots()
@@ -214,8 +250,8 @@ void CNotation::findNoteSlots()
                 CSymbol symbol(symbolType, hand, midi.note());
                 symbol.setColour(Cfg::noteColour());
 
-				// check if this note has occured in this bar before
-				symbol.setAccidentalModifer(detectSuppressedNatural(midi.note()));
+                // check if this note has occured in this bar before
+                symbol.setAccidentalModifer(detectSuppressedNatural(midi.note()));
 
                 if (m_currentSlot.addSymbol(symbol) == false) {
                     ppLogWarn("[%d] Over the Max symbols limit", m_displayChannel + 1); //fixme
@@ -289,7 +325,7 @@ void CNotation::midiEventInsert(CMidiEvent event)
 void CNotation::reset()
 {
     const int cfg_earlBarLead = CMidiFile::ppqnAdjust(8);
-	
+
     size_t i;
     m_currentDeltaTime = 0;
     m_midiInputQueue->clear();
@@ -300,11 +336,11 @@ void CNotation::reset()
     m_beatPerBarCounter=0;
     m_earlyBarChangeCounter = 0;
     m_earlyBarChangeDelta = cfg_earlBarLead; // We want to detect the bar change early
-    
+
     m_bar.reset();
     m_findScrollerChord.reset();
     for( i = 0; i < MAX_MIDI_NOTES; i++)
     {
-		m_noteState[i].clear();
-	}
+        m_noteState[i].clear();
+    }
 }

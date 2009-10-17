@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
                  "This system does not support OpenGL which is needed to run Piano Booster.");
         return -1;
     }
+
     Window window;
     window.show();
     return app.exec();

@@ -56,7 +56,7 @@ void CStavePos::notePos(whichPart_t hand, int midiNote)
 
     m_staveIndex += (midiNote/semitonesInAnOctive)*notesInAnOctive - notesInAnOctive*5 ;
     m_accidental = lookUpItem->accidental;
-    //ppTrace("chan %d Note %2d - %2d (%d %d %d),\n", midiNote, m_staveIndex, m_accidental,
+    //ppLogTrace("chan %d Note %2d - %2d (%d %d %d),\n", midiNote, m_staveIndex, m_accidental,
         //index%semitonesInAnOctive, lookUpItem->pianoNote, (midiNote/semitonesInAnOctive)*notesInAnOctive);
 }
 
@@ -90,7 +90,7 @@ void CStavePos::setKeySignature(int key, int majorMinor)
     m_KeySignature = key;
     m_KeySignatureMajorMinor = majorMinor;
     if (key == NOT_USED)
-    	key = 0;
+        key = 0;
     m_staveLookUpTable = getstaveLookupTable(key);
     CDraw::forceCompileRedraw();
 }

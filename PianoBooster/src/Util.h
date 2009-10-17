@@ -45,7 +45,7 @@ typedef unsigned char byte;
 
 #define arraySize(a) (sizeof(a)/sizeof(a[0]))     /* Returns (at compile time) the number of elements in an array */
 
-#define ppDEBUG(args)     ppDebug args
+#define ppDEBUG(args)     ppLogDebug args
 
 
 
@@ -58,12 +58,12 @@ typedef enum
 } logLevel_t;
 
 void fatal(const char *msg, ...);
-void ppTrace(const char *msg, ...);
-void ppDebug(const char *msg, ...);
-void ppError(const char *msg, ...);
+void ppLogTrace(const char *msg, ...);
+void ppLogDebug(const char *msg, ...);
 void ppLog(logLevel_t level, const char *msg, ...);
 void ppLogInfo(const char *msg, ...);
 void ppLogWarn(const char *msg, ...);
+void ppLogError(const char *msg, ...);
 void ppTiming(const char *msg, ...);
 
 #define SPEED_ADJUST_FACTOR     1000

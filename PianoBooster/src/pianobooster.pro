@@ -70,13 +70,13 @@ INCLUDEPATH += rtmidi
 OBJECTS_DIR = tmp
 
 win32 {
-	DEFINES += __WINDOWS_MM__ _WIN32
-	LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a libwinmm
+  DEFINES += __WINDOWS_MM__ _WIN32
+  LIBS += libwinmm
 }
 
 unix {
-	DEFINES += __LINUX_ALSASEQ__
-	LIBS += -lasound
+  DEFINES += __LINUX_ALSASEQ__
+  LIBS += -lasound
 }
 
 USE_FLUIDSYNTH {
@@ -84,13 +84,14 @@ USE_FLUIDSYNTH {
      SOURCES   += MidiDeviceFluidSynth.cpp
 
     !isEmpty(FLUIDSYNTH_INPLACE_DIR) {
-    
-		!exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
-			 error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
-		}
-		message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
-     	INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
-     	LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a 
+
+    !exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
+       error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
+    }
+    message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
+      INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
+      win32:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a
+      unix:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a
 
     }
 }

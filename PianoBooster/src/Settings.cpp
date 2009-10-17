@@ -61,7 +61,8 @@ CSettings::CSettings(QWidget *mainWindow) : QSettings(CSettings::IniFormat, CSet
     // It is all done in the initialisation list
 
     m_advancedMode = false;
-    m_noteNamesEnabled = value("score/noteNames", false ).toBool();
+    m_noteNamesEnabled = value("score/noteNames", true ).toBool();
+    CNotation::setCourtesyAccidentals(value("score/courtesyAccidentals", false ).toBool());
 }
 
 void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
@@ -77,6 +78,10 @@ void CSettings::setNoteNamesEnabled(bool value) {
     setValue("score/noteNames", value );
 }
 
+void CSettings::setCourtesyAccidentals(bool value) {
+    CNotation::setCourtesyAccidentals(value);
+    setValue("score/courtesyAccidentals", value );
+}
 
 // Open a document if it exists or else create it (also delete an duplicates
 QDomElement CSettings::openDomElement(QDomElement parent, const QString & elementName, const QString & attributeName)
@@ -136,7 +141,7 @@ void CSettings::loadSongSettings()
     m_guiSidePanel->setCurrentHand(m_domSong.attribute("hand", "both" ));
 
 
-	// -1 means none and -2 means not set
+    // -1 means none and -2 means not set
     int left = m_domSong.attribute("leftHandMidiChannel", "-2").toInt();
     int right = m_domSong.attribute("rightHandMidiChannel", "-2").toInt();
 
@@ -186,7 +191,7 @@ void CSettings::loadXmlFile()
     if (file.open(QIODevice::ReadOnly))
     {
         if (!m_domDocument.setContent(&file)) {
-            ppError("Cannot setContent on XLM file");
+            ppLogError("Cannot setContent on XLM file");
         }
         file.close();
     }
@@ -214,7 +219,7 @@ void CSettings::saveXmlFile()
     QFile file(m_bookPath + getCurrentBookName() + '/' + "pb.cfg");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        ppError("Cannot save xml file %s", qPrintable(file.fileName()));
+        ppLogError("Cannot save xml file %s", qPrintable(file.fileName()));
         return;
     }
 

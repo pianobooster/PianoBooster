@@ -30,16 +30,6 @@
 
 Window::Window()
 {
-    decodeCommandLine();
-
-    if (Cfg::experimentalSwapInterval)
-    {
-        QGLFormat fmt;
-        fmt.setSwapInterval(100);
-        int value = fmt.swapInterval();
-        ppLogInfo("Open GL Swap Interval %d", value);
-        QGLFormat::setDefaultFormat(fmt);
-    }
 
 
     QCoreApplication::setOrganizationName("PianoBooster");
@@ -48,6 +38,18 @@ Window::Window()
     m_settings = new CSettings(this);
     setWindowIcon(QIcon(":/images/Logo32x32.png"));
     setWindowTitle(tr("Piano Booster"));
+
+    decodeCommandLine();
+
+    if (Cfg::experimentalSwapInterval != -1)
+    {
+        QGLFormat fmt;
+        fmt.setSwapInterval(Cfg::experimentalSwapInterval);
+        int value = fmt.swapInterval();
+        ppLogInfo("Open GL Swap Interval %d", value);
+        QGLFormat::setDefaultFormat(fmt);
+    }
+
 
     m_glWidget = new CGLView(this, m_settings);
 
@@ -70,13 +72,6 @@ Window::Window()
 
     m_song->init(m_score, m_settings);
     m_glWidget->init();
-
-    /* fixme
-     // Set up gl display format
-    QGLFormat format = m_glWidget->format();
-    format.setSwapInterval(100);
-    m_glWidget->setFormat(format);
-    */
 
     m_sidePanel->init(m_song, m_song->getTrackList(), m_topBar);
     m_topBar->init(m_song, m_song->getTrackList());
@@ -143,30 +138,78 @@ void Window::displayUsage()
     fprintf(stderr, "       -v: Displays version number and then exits\n");
 }
 
+int Window::decodeIntegerParam(QString arg, int defaultParam)
+{
+    int n = arg.lastIndexOf('=');
+    if (n == -1 || (n + 1) >= arg.size())
+        return defaultParam;
+    bool ok;
+    int value = arg.mid(n+1).toInt(&ok);
+    if (ok)
+        return value;
+    return defaultParam;
+}
+
+void Window::decodeMidiFileArg(QString arg)
+{
+
+    QFileInfo fileInfo(arg);
+
+    if (fileInfo.exists())
+    {
+        bool vaildMidiFile = true;
+        QFile file(fileInfo.absoluteFilePath());
+        if (!file.open(QIODevice::ReadOnly))
+            vaildMidiFile = false;
+        else
+        {
+            QByteArray bytes = file.read(4);
+            for (int i = 0; i < 4; i++)
+            {
+                if (bytes[i] !="MThd"[i] )
+                    vaildMidiFile = false;
+            }
+            file.close();
+        }
+        if (vaildMidiFile ==  true)
+            m_settings->setValue("CurrentSong", fileInfo.absoluteFilePath());
+        else
+            ppLogError("Not a valid MIDI file \"%s\"\n", qPrintable(fileInfo.absoluteFilePath()) );
+    }
+    else
+    {
+        ppLogError("Cannot Open \"%s\"\n", qPrintable(fileInfo.absoluteFilePath()) );
+        exit(0);
+    }
+}
+
 void Window::decodeCommandLine()
 {
+    bool hasMidiFile = false;
     QStringList argList = QCoreApplication::arguments();
+    QString arg;
     for (int i = 0; i < argList.size(); ++i)
     {
-        if (argList.at(i).startsWith("-"))
+        arg = argList[i];
+        if (arg.startsWith("-"))
         {
-            if (argList.at(i).startsWith("-d"))
+            if (arg.startsWith("-d"))
                 Cfg::logLevel++;
-            else if (argList.at(i).startsWith("-s"))
+            else if (arg.startsWith("-s"))
                 Cfg::smallScreen = true;
-            else if (argList.at(i).startsWith("-q"))
+            else if (arg.startsWith("-q"))
                 Cfg::quickStart = true;
-            else if (argList.at(i).startsWith("-X1"))
+            else if (arg.startsWith("-X1"))
                 Cfg::experimentalTempo = true;
-            else if (argList.at(i).startsWith("-X2"))
-                Cfg::experimentalSwapInterval = true;
+            else if (arg.startsWith("-Xswap"))
+                Cfg::experimentalSwapInterval = decodeIntegerParam(arg, 100);
 
-            else if (argList.at(i).startsWith("-h") || argList.at(i).startsWith("-?") ||argList.at(i).startsWith("--help"))
+            else if (arg.startsWith("-h") || arg.startsWith("-?") ||arg.startsWith("--help"))
             {
                 displayUsage();
                 exit(0);
             }
-            else if (argList.at(i).startsWith("-v"))
+            else if (arg.startsWith("-v"))
             {
                 fprintf(stderr, "pianobooster Version " PB_VERSION"\n");
                 exit(0);
@@ -176,6 +219,14 @@ void Window::decodeCommandLine()
                 fprintf(stderr, "ERROR: Unknown arguments \n");
                 displayUsage();
                 exit(0);
+            }
+        }
+        else {
+            if ( hasMidiFile == false && i > 0)
+            {
+                hasMidiFile = true;
+                decodeMidiFileArg(arg);
+
             }
         }
     }

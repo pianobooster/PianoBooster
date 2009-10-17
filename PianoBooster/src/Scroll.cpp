@@ -51,7 +51,7 @@ void CScroll::compileSlot(CSlotDisplayList info)
     for (i=0; i < info.length(); i++)
     {
         stavePos.notePos(info.getSymbol(i).getHand(), info.getSymbol(i).getNote());
-        //ppTrace ("compileSlot len %d id %2d next %2d time %2d type %2d note %2d", info.length(), info.m_displayListId,
+        //ppLogTrace ("compileSlot len %d id %2d next %2d time %2d type %2d note %2d", info.length(), info.m_displayListId,
         //info.m_nextDisplayListId, info.getDeltaTime(), info.getSymbol(i).getType(), info.getSymbol(i).getNote());
 
         drawSymbol(info.getSymbol(i), 0.0, stavePos.getPosYRelative()); // we add this  back when drawing this symbol
@@ -134,7 +134,7 @@ void CScroll::removeSlots()
 
         m_deltaTail += info.getDeltaTime() * SPEED_ADJUST_FACTOR;
 
-        //ppTrace("Remove slot id %2d time %2d type %2d note %2d", info.m_displayListId, info.getDeltaTime(), info.getSymbol(0).getType(), info.getSymbol(0).getNote());
+        //ppLogTrace("Remove slot id %2d time %2d type %2d note %2d", info.m_displayListId, info.getDeltaTime(), info.getSymbol(0).getType(), info.getSymbol(0).getNote());
 
         if (info.m_displayListId)
             glDeleteLists( info.m_displayListId, 1);

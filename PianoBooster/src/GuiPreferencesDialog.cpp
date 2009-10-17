@@ -48,6 +48,7 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     videoOptimiseCheck->setChecked(m_glView->m_cfg_openGlOptimise);
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
+    courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
     followStopPointCombo->addItem("Automatic (Recommended)");
     followStopPointCombo->addItem("On the Beat");
     followStopPointCombo->addItem("After the Beat");
@@ -61,8 +62,10 @@ void GuiPreferencesDialog::accept()
     m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
     m_settings->setValue("score/timingMarkers", m_song->cfg_timingMarkersFlag );
     m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
+    m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("score/stopPointMode", m_song->cfg_stopPointMode );
+    m_song->refreshScroll();
 
     this->QDialog::accept();
 }

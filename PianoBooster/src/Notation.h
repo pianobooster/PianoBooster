@@ -133,25 +133,30 @@ private:
 class CNoteState
 {
 public:
-	CNoteState()
-	{
-		clear();
-	}
-	void clear()
-	{
-		m_barChangeCounter = 0;
-		m_accidentalState = PB_ACCIDENTAL_MODIFER_noChange;
-		m_noteLength = 0;
-	}
-	void setBarChange(int value){m_barChangeCounter = value;}
-	int getBarChange(){return m_barChangeCounter;}
-	void setAccidentalState(accidentalModifer_t value){m_accidentalState = value;}
-	accidentalModifer_t setAccidentalState(){return m_accidentalState;}
+    CNoteState()
+    {
+        clear();
+    }
+    void clear()
+    {
+        m_barChangeCounter = -1;
+        m_accidentalState = PB_ACCIDENTAL_MODIFER_noChange;
+        m_noteLength = 0;
+        m_backLink = 0;
+    }
+    void setBarChange(int value){m_barChangeCounter = value;}
+    int getBarChange(){return m_barChangeCounter;}
+    void setAccidentalState(accidentalModifer_t value){m_accidentalState = value;}
+    accidentalModifer_t getAccidentalState(){return m_accidentalState;}
+    void setBackLink(CNoteState * link){m_backLink = link;}
+    CNoteState * getBackLink(){return m_backLink;}
+    
 
 private:
-	int m_barChangeCounter;
-	accidentalModifer_t m_accidentalState;
+    int m_barChangeCounter;
+    accidentalModifer_t m_accidentalState;
     int m_noteLength; // Used to determine the note length
+    CNoteState* m_backLink;
 };
 
 // Define a chord
@@ -178,7 +183,11 @@ public:
     CSlot nextSlot();
     void midiEventInsert(CMidiEvent event);
 
-    int midiEventSpace() { return m_midiInputQueue->space();};
+    int midiEventSpace() { return m_midiInputQueue->space();}
+    
+    static void setCourtesyAccidentals(bool setting){m_cfg_displayCourtesyAccidentals = setting;}
+    static bool displayCourtesyAccidentals(){return m_cfg_displayCourtesyAccidentals; }
+
 
 private:
     CSlot nextBeatMarker();
@@ -199,7 +208,8 @@ private:
     int m_displayChannel;
     CFindChord m_findScrollerChord;
     CBar m_bar;
-	CNoteState m_noteState[MAX_MIDI_NOTES];
+    CNoteState m_noteState[MAX_MIDI_NOTES];
+    static bool m_cfg_displayCourtesyAccidentals;
 };
 
 #endif  // __NOTATION_H__

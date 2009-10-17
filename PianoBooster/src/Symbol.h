@@ -33,7 +33,6 @@
 #include "Cfg.h"
 #include "StavePosition.h"
 
-#define NOT_USED 0x7fffffff
 
 typedef enum
 {
@@ -54,9 +53,9 @@ typedef enum
 
 
 typedef enum {
-	PB_ACCIDENTAL_MODIFER_noChange,
-	PB_ACCIDENTAL_MODIFER_suppress_accidental,
-	PB_ACCIDENTAL_MODIFER_force_natural
+    PB_ACCIDENTAL_MODIFER_noChange,
+    PB_ACCIDENTAL_MODIFER_suppress,
+    PB_ACCIDENTAL_MODIFER_force // force a natural/accidental to be played
 } accidentalModifer_t;
 
 #define BEAT_MARKER_OFFSET  20 // used to ensure that beat markers are drawn under the note by drawing them early
@@ -136,12 +135,12 @@ public:
     //! @brief          The accidental
     //! return          0 = none, 1=sharp, -1 =flat, 2=natural.
     int getAccidental() {
-    	return getStavePos().getAccidental();
+        return getStavePos().getAccidental();
     }
     
     
-	void setAccidentalModifer(accidentalModifer_t value) {m_accidentalModifer = value;}
-	accidentalModifer_t getAccidentalModifer() {return m_accidentalModifer;}
+    void setAccidentalModifer(accidentalModifer_t value) {m_accidentalModifer = value;}
+    accidentalModifer_t getAccidentalModifer() {return m_accidentalModifer;}
 
 
 private:

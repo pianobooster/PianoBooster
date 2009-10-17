@@ -30,6 +30,7 @@
 #include <QSettings>
 #include <QDomDocument>
 #include "Song.h"
+#include "Notation.h"
 
 class GuiSidePanel;
 class GuiTopBar;
@@ -45,9 +46,11 @@ public:
 
     /// returns true if the users wants to see the note names
     bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
+    bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
 
     /// Saves in the .ini file whether the user wants to show the note names
-    void setNoteNamesEnabled(bool value);
+	void setNoteNamesEnabled(bool value);
+	void setCourtesyAccidentals(bool value);
     void setAdvancedMode(bool value) { m_advancedMode = value;}
 
     /// returns true if the users wants to see the note names

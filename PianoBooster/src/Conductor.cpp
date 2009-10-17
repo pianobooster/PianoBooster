@@ -28,7 +28,7 @@
 
 #define OPTION_DEBUG_CONDUCTOR     0
 #if OPTION_DEBUG_CONDUCTOR
-#define ppDEBUG_CONDUCTOR(args)     ppDebug args
+#define ppDEBUG_CONDUCTOR(args)     ppLogDebug args
 #else
 #define ppDEBUG_CONDUCTOR(args)
 #endif
@@ -818,7 +818,7 @@ void CConductor::realTimeEngine(int mSecTicks)
         else if (type == MIDI_PB_timeSignature)
         {
             m_bar.setTimeSig(m_nextMidiEvent.data1(), m_nextMidiEvent.data2());
-            ppDebug("Midi Time Signature %d/%d", m_nextMidiEvent.data1(),m_nextMidiEvent.data2());
+            ppLogDebug("Midi Time Signature %d/%d", m_nextMidiEvent.data1(),m_nextMidiEvent.data2());
 
         }
         else if ( type != MIDI_NONE )   // this marks the end of the piece of music
@@ -845,7 +845,7 @@ void CConductor::realTimeEngine(int mSecTicks)
                         if (m_savedNoteOffQueue->space()>0)
                             m_savedNoteOffQueue->push(m_nextMidiEvent);
                         else
-                            ppDebug("Warning the m_savedNoteOffQueue is full");
+                            ppLogDebug("Warning the m_savedNoteOffQueue is full");
                     }
                 }
                 else

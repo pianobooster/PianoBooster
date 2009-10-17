@@ -65,6 +65,7 @@ public:
     QString getSongTitle() {return m_songTitle;}
 
     void setLogLevel(int level){CMidiTrack::setLogLevel(level);}
+    midiErrors_t getMidiError() { return m_midiError;}
     
 private:
    	bool checkMidiEventFromStream(int streamIdx);
