@@ -516,8 +516,6 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
 
         case PB_SYMBOL_barMarker:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
-            glEnable (GL_LINE_STIPPLE);
-            glLineStipple (1, 0xcccc);  /*  dashed  */
             glLineWidth (5.0);
             drColour(Cfg::barMarkerColour());
             oneLine(x, CStavePos(PB_PART_right, m_beatMarkerHeight).getPosYRelative(), x, CStavePos(PB_PART_left, -m_beatMarkerHeight).getPosYRelative());
@@ -526,8 +524,6 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
 
         case PB_SYMBOL_beatMarker:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
-            glEnable (GL_LINE_STIPPLE);
-            glLineStipple (1, 0xcccc);  /*  dashed  */
             glLineWidth (4.0);
             drColour(Cfg::beatMarkerColour());
             oneLine(x, CStavePos(PB_PART_right, m_beatMarkerHeight).getPosYRelative(), x, CStavePos(PB_PART_left, -m_beatMarkerHeight).getPosYRelative());

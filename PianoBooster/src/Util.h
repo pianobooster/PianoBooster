@@ -31,6 +31,8 @@
 
 #include <assert.h>
 #include <string>
+#include <QString>
+
 using namespace std;
 
 #define MAX_MIDI_CHANNELS   16
@@ -68,5 +70,10 @@ void ppTiming(const char *msg, ...);
 
 #define SPEED_ADJUST_FACTOR     1000
 #define deltaAdjust(delta) ((delta)/SPEED_ADJUST_FACTOR )
+
+void benchMarkInit();
+void benchMark(unsigned int id, QString message);
+void benchMarkResults();
+
 
 #endif //__UTIL_H__

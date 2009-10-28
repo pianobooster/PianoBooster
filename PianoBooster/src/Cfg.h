@@ -29,6 +29,18 @@
 #ifndef __CFG_H__
 #define __CFG_H__
 
+#define OPTION_BENCHMARK_TEST     0
+#if OPTION_BENCHMARK_TEST
+#define BENCHMARK_INIT()     	benchMarkInit()
+#define BENCHMARK(id,mesg)     	benchMark(id,mesg)
+#define BENCHMARK_RESULTS()     benchMarkResults()
+#else
+#define BENCHMARK_INIT()
+#define BENCHMARK(id,mesg)
+#define BENCHMARK_RESULTS()
+#endif
+
+
 class CColour
 {
 public:
@@ -51,8 +63,6 @@ public:
     }
 };
 
-#define YELLOW_BACKGROUND   0
-#define BLACK_BACKGROUND    1
 /*!
  * @brief   Contains all the configuration Information.
  */
@@ -80,7 +90,7 @@ public:
     static CColour menuColour()        {return CColour(0.1, 0.6, 0.6);}
     static CColour menuSelectedColour(){return CColour(0.7, 0.7, 0.1);}
 
-#if BLACK_BACKGROUND
+
     static CColour staveColour()           {return CColour(0.1, 0.7, 0.1);} // green
     static CColour staveColourDim()        {return CColour(0.15, 0.40, 0.15);} // grey
     static CColour noteColour()            {return CColour(0.1, 0.9, 0.1);} // green
@@ -90,27 +100,11 @@ public:
     static CColour playedBadColour()       {return CColour(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
     static CColour playedStoppedColour()   {return CColour(1.0, 0.8, 0.0);} // bright orange
     static CColour backgroundColour()      {return CColour(0.0, 0.0, 0.0);} // black
-    static CColour barMarkerColour()       {return CColour(0.5, 0.5, 0.5);} // grey
-    static CColour beatMarkerColour()       {return CColour(0.3, 0.3, 0.3);} // grey
+    static CColour barMarkerColour()       {return CColour(0.3, 0.25, 0.25);} // grey
+    static CColour beatMarkerColour()      {return CColour(0.25, 0.2, 0.2);} // grey
     static CColour pianoGoodColour()      {return playedGoodColour();}
     static CColour pianoBadColour()       {return CColour(1.0, 0.0, 0.0);}
     static CColour noteNameColour()       {return CColour(1.0, 1.0, 1.0);}
-
-#endif
-
-#if YELLOW_BACKGROUND
-    //static CColour staveColour()         {return CColour(0.0, 0.0, 0.0);} // black
-    //static CColour staveColour()         {return CColour(0.0, 1.0, 0.0);} // green
-    static CColour staveColour()         {return CColour(0.6, 0.6, 1.0);} //purple
-    static CColour noteColour()         {return CColour(0.6, 0.6, 1.0);} //purple
-    static CColour playedGoodColour()       {return CColour(0.6, 0.6, 1.0);} //purple
-    static CColour playedBadColour()       {return CColour(0.7, 0.3, 0.0);} // orange
-    static CColour playedStoppedColour()   {return CColour(1.0, 0.6, 0.0);} // orange
-    static CColour barMarkerColour()       {return CColour(0.9, 0.9, 1.0);} // grey
-    static CColour beatMarkerColour()       {return CColour(0.8, 0.8, 1.0);} // grey
-
-#endif
-
 
     static void setStaveEndX(float x)
     {

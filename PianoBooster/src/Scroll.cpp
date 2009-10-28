@@ -165,8 +165,12 @@ void CScroll::drawScrollingSymbols(bool show)
     glPushMatrix();
     glTranslatef (Cfg::playZoneX() + deltaAdjust(m_deltaTail) * m_noteSpacingFactor, CStavePos::getStaveCenterY(), 0.0);
 
+	BENCHMARK(5, "glTranslatef");
+
     if (m_scrollQueue->length() > 0)
         glCallList (m_scrollQueue->indexPtr(0)->m_displayListId);
+    BENCHMARK(6, "glCallList");
+
     glPopMatrix();
 }
 

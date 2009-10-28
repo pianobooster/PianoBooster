@@ -52,8 +52,15 @@ ENDIF(USE_PCH)
 
 # Add in the link libraries for each operating system
 IF(${CMAKE_SYSTEM} MATCHES "Linux")
-    ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
-    LINK_LIBRARIES (asound)
+    FIND_PACKAGE(PkgConfig REQUIRED)
+    PKG_CHECK_MODULES(ALSA REQUIRED alsa>=1.0)
+    IF(ALSA_FOUND)
+		ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
+		LINK_LIBRARIES (asound)
+    ELSE(ALSA_FOUND)
+        MESSAGE(FATAL_ERROR "Please install the 'libasound2-dev' package and then try again")
+    ENDIF(ALSA_FOUND)
+	
 ENDIF(${CMAKE_SYSTEM} MATCHES "Linux")
 
 IF(${CMAKE_SYSTEM} MATCHES "Windows")

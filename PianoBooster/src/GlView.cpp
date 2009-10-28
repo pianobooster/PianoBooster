@@ -54,6 +54,7 @@ CGLView::CGLView(Window* parent, CSettings* settings)
     m_midiTicks = 0;
     m_scrollTicks = 0;
     m_cfg_openGlOptimise = true;
+    BENCHMARK_INIT();
 }
 
 CGLView::~CGLView()
@@ -82,6 +83,8 @@ void CGLView::initializeGL()
 
 void CGLView::paintGL()
 {
+	BENCHMARK(2, "enter");
+
     if (m_fullRedrawFlag)
         m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
 
@@ -94,9 +97,12 @@ void CGLView::paintGL()
     drawAccurracyBar();
 
     drawBarNumber();
+	BENCHMARK(3, "drawBarNumber");
 
     m_score->drawScore();
+	BENCHMARK(4, "drawScore");
     m_score->drawScroll(m_forcefullRedraw);
+	//BENCHMARK(5, "drawScroll");
 
     drawTimeSignature();
 
@@ -104,7 +110,8 @@ void CGLView::paintGL()
     m_midiTicks += m_realtime.restart();
 
     if (m_forcefullRedraw) m_forcefullRedraw--;
-
+	BENCHMARK(7, "exit");
+    BENCHMARK_RESULTS();
 }
 
 void CGLView::drawTimeSignature()
@@ -323,7 +330,7 @@ void CGLView::init()
     setFocusPolicy(Qt::ClickFocus);
 
     // todo increase the tick time for Midi handling
-    m_timer.start(12, this ); // was 5
+    m_timer.start(12, this ); // fixme was 12 was 5
     m_realtime.start();
 
     //startMediaTimer(12, this );
@@ -331,6 +338,7 @@ void CGLView::init()
 
 void CGLView::timerEvent(QTimerEvent *event)
 {
+	BENCHMARK(0, "timer enter");
     eventBits_t eventBits;
     if (event->timerId() == m_timer.timerId())
     {
@@ -361,13 +369,15 @@ void CGLView::timerEvent(QTimerEvent *event)
 
         // if m_fullRedrawFlag is true it will redraw the entire GL window
         //if (m_scrollTicks>= 12)
-            glDraw();
+            //glDraw();
+			update();
         m_fullRedrawFlag = true;
     }
     else
     {
         QWidget::timerEvent(event);
     }
+    BENCHMARK(1, "timer exit");
 }
 
 void CGLView::mediaTimerEvent(int ticks)
