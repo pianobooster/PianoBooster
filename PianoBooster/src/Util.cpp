@@ -143,7 +143,6 @@ void ppTiming(const char *msg, ...)
 
 
 static QTime s_benchMarkTime;
-//static int frameTime;
 static int s_previousTime;
 static int s_previousFrameTime;
 
@@ -203,13 +202,16 @@ void benchMark(unsigned int id, QString message)
 		
 }
 
-void printResult(benchData_t *pBench)
+void printResult(int i, benchData_t *pBench)
 {
 	if (pBench->deltaCount == 0)
 		return;
-	fputs("Bench: ", stdout);
-	fprintf(stdout, "min %2d, avg %2d, max %2d %s\n",   pBench->minDelta,
-													pBench->deltaTotal/pBench->deltaCount,
+	if (i>=0) 
+		fprintf(stdout, "Bench%2d: ", i);
+	else
+		fputs("Bench  : ", stdout);
+	fprintf(stdout, "min %2d, avg %4.3f, max %2d %s\n",   pBench->minDelta,
+													static_cast<double>(pBench->deltaTotal)/pBench->deltaCount,
 													pBench->maxDelta,
 													qPrintable(pBench->msg));
 	benchMarkReset(pBench);
@@ -226,7 +228,7 @@ void benchMarkResults()
 	s_counter = 0;
 	for (unsigned int i=0; i <  arraySize( s_benchData ); i++) 
 	{
-		printResult(&s_benchData[i]);
+		printResult(i, &s_benchData[i]);
 	}
-	printResult(&s_frameRate);
+	printResult(-1, &s_frameRate);
 }

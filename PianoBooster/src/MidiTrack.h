@@ -58,23 +58,11 @@ typedef unsigned long dword_t;
 class CMidiTrack
 {
 public:
-    CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
-    {
-        m_trackEventQueue = new CQueue<CMidiEvent>(100000); // todo reload data on the fly
-        rewind();
-    }
+    CMidiTrack(fstream& file, int no);
 
     ~CMidiTrack()
     {
         delete m_trackEventQueue;
-    }
-
-    void rewind()
-    {
-        m_savedRunningStatus = 0;
-        m_trackLength = 0;
-        m_deltaTime = 0;
-        errorFail(SMF_NO_ERROR);
     }
 
     int readDelaTime()
@@ -84,7 +72,7 @@ public:
         return deltaTime;
     }
 
-    dword_t init();
+    dword_t getTrackLength() {return m_trackLength;}
     void decodeTrack();
     bool failed() { return (m_midiError != SMF_NO_ERROR) ? true : false;}
     midiErrors_t getMidiError() { return m_midiError;}
@@ -113,12 +101,12 @@ private:
     {
         int c;
 
-        if (m_trackLength != 0 )
+        if (m_trackLengthCounter != 0 )
         {
             c = m_file.get();
             if (m_file.fail() == true)
                 errorFail(SMF_END_OF_FILE);
-            m_trackLength--;
+            m_trackLengthCounter--;
         }
         else
             c = 0;
@@ -162,6 +150,7 @@ private:
 
     streampos m_filePos;
     dword_t m_trackLength;
+    dword_t m_trackLengthCounter;
     CQueue<CMidiEvent>* m_trackEventQueue;
     int m_savedRunningStatus;
     int m_deltaTime;

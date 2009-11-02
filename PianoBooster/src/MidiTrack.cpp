@@ -40,6 +40,36 @@
 
 int CMidiTrack::m_logLevel;
 
+CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
+{
+	m_trackEventQueue = 0;
+	m_savedRunningStatus = 0;
+	m_trackLengthCounter = 0;
+	m_deltaTime = 0;
+	errorFail(SMF_NO_ERROR);
+    int i;
+
+    m_trackName.clear();
+    m_trackLengthCounter = 8;
+    for ( i=0; i < 4; i++)
+    {
+        if (m_file.get() !="MTrk"[i] )
+        {
+            ppLogError("No valid Midi tracks");
+            errorFail(SMF_CORRUPTED_MIDI_FILE);
+            return;
+        }
+    }
+    m_trackLengthCounter = readDWord();
+    ppDEBUG_TRACK((9, "Track Length %d", m_trackLengthCounter));
+
+    m_filePos = m_file.tellg();
+    m_trackLength = m_trackLengthCounter + 8; // 4 bytes for the "MTrk" + 4 bytes for the track length
+	m_trackEventQueue = new CQueue<CMidiEvent>(m_trackLength/3); // The minimum bytes per event is 3
+}
+
+
+
 void CMidiTrack::ppDebugTrack(int level, const char *msg, ...)
 {
     va_list ap;
@@ -47,35 +77,13 @@ void CMidiTrack::ppDebugTrack(int level, const char *msg, ...)
     if (level <m_logLevel)
         return;
 
-    fprintf(stdout, "Track %d length %5lu: ", m_trackNumber , m_trackLength);
+    fprintf(stdout, "Track %d length %5lu: ", m_trackNumber , m_trackLengthCounter);
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
     va_end(ap);
     fputc('\n', stdout);
 }
 
-
-dword_t CMidiTrack::init()
-{
-    int i;
-
-    m_trackName.clear();
-    m_trackLength = 8;
-    for ( i=0; i < 4; i++)
-    {
-        if (m_file.get() !="MTrk"[i] )
-        {
-            ppLogError("No valid Midi tracks");
-            errorFail(SMF_CORRUPTED_MIDI_FILE);
-            return 0;
-        }
-    }
-    m_trackLength = readDWord();
-    ppDEBUG_TRACK((9, "Track Length %d", m_trackLength));
-
-    m_filePos = m_file.tellg();
-    return m_trackLength + 8; // 4 bytes for the "MTrk" + 4 bytes for the track length
-}
 
 dword_t CMidiTrack::readVarLen()
 {
@@ -475,7 +483,7 @@ void CMidiTrack::decodeTrack()
     m_file.seekg(m_filePos, ios::beg);
     while (true)
     {
-        if (m_trackLength== 0)
+        if (m_trackLengthCounter== 0)
             break;
         if (m_trackEventQueue->space() <= 1)
         {

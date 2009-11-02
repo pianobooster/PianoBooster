@@ -137,7 +137,7 @@ void CMidiFile::rewind()
     for (trk = 0; trk < ntrks; trk++)
     {
         m_tracks[trk] = new CMidiTrack(m_file, trk);
-        trackLength = m_tracks[trk]->init();
+        trackLength = m_tracks[trk]->getTrackLength();
         m_tracks[trk]->decodeTrack();
         if (m_tracks[trk]->failed())
         {

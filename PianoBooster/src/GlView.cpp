@@ -91,29 +91,30 @@ void CGLView::paintGL()
     if (m_forcefullRedraw) // clear the screen only if we are doing a full redraw
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
-	BENCHMARK(8, "glLoadIdentity");
+	//BENCHMARK(3, "glLoadIdentity");
 	
     drawDisplayText();
-	BENCHMARK(9, "drawDisplayText");
+	BENCHMARK(4, "drawDisplayText");
 
     drawAccurracyBar();
-	BENCHMARK(10, "drawAccurracyBar");
+	BENCHMARK(5, "drawAccurracyBar");
 
     drawBarNumber();
-	BENCHMARK(3, "drawBarNumber");
+	BENCHMARK(6, "drawBarNumber");
 
-    m_score->drawScore();
-	BENCHMARK(4, "drawScore");
+	if (m_forcefullRedraw)
+		m_score->drawScore();
+	
     m_score->drawScroll(m_forcefullRedraw);
-	//BENCHMARK(5, "drawScroll");
+	BENCHMARK(10, "drawScroll");
 
     drawTimeSignature();
 
-    m_scrollTicks = 0;
-    m_midiTicks += m_realtime.restart();
+    //m_scrollTicks = 0;
+    //m_midiTicks += m_realtime.restart();
 
     if (m_forcefullRedraw) m_forcefullRedraw--;
-	BENCHMARK(7, "exit");
+	BENCHMARK(11, "exit");
     BENCHMARK_RESULTS();
 }
 
@@ -122,6 +123,9 @@ void CGLView::drawTimeSignature()
     if (Cfg::quickStart)
         return;
 
+    if (m_forcefullRedraw == 0)
+        return;
+        
     float x,y;
     int topNumber, bottomNumber;
 
@@ -365,7 +369,7 @@ void CGLView::timerEvent(QTimerEvent *event)
         int ticks;
         ticks = m_realtime.restart();
         m_midiTicks += ticks;
-        m_scrollTicks += ticks;
+        //m_scrollTicks += ticks;
         eventBits = m_song->task(m_midiTicks);
         m_midiTicks = 0;
 
@@ -388,7 +392,7 @@ void CGLView::timerEvent(QTimerEvent *event)
             m_fullRedrawFlag = true;
 
         // if m_fullRedrawFlag is true it will redraw the entire GL window
-        //if (m_scrollTicks>= 12)
+        //if (m_scrollTicks>= 12) //FIXME
          glDraw();
 		//update();
 		m_fullRedrawFlag = true;
@@ -397,7 +401,7 @@ void CGLView::timerEvent(QTimerEvent *event)
     {
         QWidget::timerEvent(event);
     }
-    BENCHMARK(1, "timer exit");
+    BENCHMARK(19, "timer exit");
 }
 
 void CGLView::mediaTimerEvent(int ticks)
