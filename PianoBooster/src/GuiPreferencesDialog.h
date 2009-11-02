@@ -46,6 +46,8 @@ class GuiPreferencesDialog : public QDialog, private Ui::GuiPreferencesDialog
 
 public:
     GuiPreferencesDialog(QWidget *parent = 0);
+    ~GuiPreferencesDialog();
+    
     void init(CSong* song, CSettings* settings, CGLView* glView);
 
 private slots:

@@ -28,7 +28,7 @@
 #include "QtWindow.h"
 #include "ReleaseNote.txt"
 
-Window::Window()
+QtWindow::QtWindow()
 {
 
 
@@ -100,9 +100,9 @@ Window::Window()
 
 
 #ifdef _WIN32
-    m_glWidget->m_cfg_openGlOptimise = false; // don't default to true on windows
+    m_glWidget->m_cfg_openGlOptimise = true; // don't default to true on windows
 #else
-    m_glWidget->m_cfg_openGlOptimise = false; // changed to default to false on platforms
+    m_glWidget->m_cfg_openGlOptimise = true; // changed to default to false on platforms
 #endif
 
     m_glWidget->m_cfg_openGlOptimise = m_settings->value("display/openGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
@@ -121,16 +121,16 @@ Window::Window()
     }
 }
 
-Window::~Window()
+QtWindow::~QtWindow()
 {
     delete m_settings;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 //! @brief               Displays the usage
-void Window::displayUsage()
+void QtWindow::displayUsage()
 {
-    fprintf(stderr, "Usage: pianobooster [flags]\n");
+    fprintf(stderr, "Usage: pianobooster [flags] [midifile]\n");
     fprintf(stderr, "       -d: Increase the debug level\n");
     fprintf(stderr, "       -s: Small screen display\n");
     fprintf(stderr, "       -q: Quick start\n");
@@ -138,7 +138,7 @@ void Window::displayUsage()
     fprintf(stderr, "       -v: Displays version number and then exits\n");
 }
 
-int Window::decodeIntegerParam(QString arg, int defaultParam)
+int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
 {
     int n = arg.lastIndexOf('=');
     if (n == -1 || (n + 1) >= arg.size())
@@ -150,12 +150,27 @@ int Window::decodeIntegerParam(QString arg, int defaultParam)
     return defaultParam;
 }
 
-void Window::decodeMidiFileArg(QString arg)
+void QtWindow::decodeMidiFileArg(QString arg)
 {
 
     QFileInfo fileInfo(arg);
 
-    if (fileInfo.exists())
+    if (!fileInfo.exists() )
+    {
+        QMessageBox::warning(0, "PianoBooster Midi File Error",
+                 "Cannot Open\"" + fileInfo.absoluteFilePath() + "\"");
+        exit(1);
+    }
+        else if ( !(fileInfo.fileName().endsWith(".mid", Qt::CaseInsensitive ) ||
+             fileInfo.fileName().endsWith(".midi", Qt::CaseInsensitive ) ||
+             fileInfo.fileName().endsWith(".kar", Qt::CaseInsensitive )) )
+
+	{
+        QMessageBox::warning(0, "PianoBooster Midi File Error",
+                 "Not a Midi File \"" + fileInfo.fileName() + "\"");
+        exit(1);
+	}
+    else
     {
         bool vaildMidiFile = true;
         QFile file(fileInfo.absoluteFilePath());
@@ -174,16 +189,15 @@ void Window::decodeMidiFileArg(QString arg)
         if (vaildMidiFile ==  true)
             m_settings->setValue("CurrentSong", fileInfo.absoluteFilePath());
         else
-            ppLogError("Not a valid MIDI file \"%s\"\n", qPrintable(fileInfo.absoluteFilePath()) );
-    }
-    else
-    {
-        ppLogError("Cannot Open \"%s\"\n", qPrintable(fileInfo.absoluteFilePath()) );
-        exit(0);
+        {
+            QMessageBox::warning(0, "PianoBooster Midi File Error",
+                 "Not a valid MIDI file \"" + fileInfo.absoluteFilePath() + "\"");
+			exit(1);
+		}
     }
 }
 
-void Window::decodeCommandLine()
+void QtWindow::decodeCommandLine()
 {
     bool hasMidiFile = false;
     QStringList argList = QCoreApplication::arguments();
@@ -232,7 +246,7 @@ void Window::decodeCommandLine()
     }
 }
 
-void Window::createActions()
+void QtWindow::createActions()
 {
     m_openAct = new QAction(QIcon(":/images/open.png"), tr("&Open..."), this);
     m_openAct->setShortcut(tr("Ctrl+O"));
@@ -281,7 +295,7 @@ void Window::createActions()
     addAction(disableFollowTempoAct);
 }
 
-void Window::createMenus()
+void QtWindow::createMenus()
 {
     m_fileMenu = menuBar()->addMenu(tr("&File"));
     m_fileMenu->addAction(m_openAct);
@@ -303,7 +317,7 @@ void Window::createMenus()
     m_helpMenu->addAction(m_aboutAct);
 }
 
-void Window::about()
+void QtWindow::about()
 {
     QMessageBox about(this);
     about.setWindowTitle (tr("About"));
@@ -323,17 +337,19 @@ void Window::about()
     about.exec();
 }
 
-void Window::open()
+void QtWindow::open()
 {
+	m_glWidget->fastUpdateRate(false);
     QString currentSong = m_settings->getCurrentSongLongFileName();
-
+	
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
-                            currentSong, tr("Midi Files (*.mid *.midi *.kar)"));
+                            currentSong, tr("Midi Files (*.mid *.MID *.midi *.kar *.KAR)"));
     if (!fileName.isEmpty())
         m_settings->openSongFile(fileName);
+	m_glWidget->fastUpdateRate(true);
 }
 
-void Window::readSettings()
+void QtWindow::readSettings()
 {
     QPoint pos = m_settings->value("window/pos", QPoint(25, 25)).toPoint();
     QSize size = m_settings->value("window/size", QSize(800, 600)).toSize();
@@ -341,14 +357,14 @@ void Window::readSettings()
     move(pos);
 }
 
-void Window::writeSettings()
+void QtWindow::writeSettings()
 {
     m_settings->setValue("window/pos", pos());
     m_settings->setValue("window/size", size());
     m_settings->writeSettings();
 }
 
-void Window::closeEvent(QCloseEvent *event)
+void QtWindow::closeEvent(QCloseEvent *event)
 {
     if (m_song->playingMusic())
     {
@@ -359,7 +375,7 @@ void Window::closeEvent(QCloseEvent *event)
 }
 
 
-void Window::keyPressEvent ( QKeyEvent * event )
+void QtWindow::keyPressEvent ( QKeyEvent * event )
 {
     if (event->text().length() == 0)
         return;
@@ -374,7 +390,7 @@ void Window::keyPressEvent ( QKeyEvent * event )
     m_song->pcKeyPress( c, true);
 }
 
-void Window::keyReleaseEvent ( QKeyEvent * event )
+void QtWindow::keyReleaseEvent ( QKeyEvent * event )
 {
     if (event->isAutoRepeat() == true)
         return;
@@ -386,3 +402,8 @@ void Window::keyReleaseEvent ( QKeyEvent * event )
     m_song->pcKeyPress( c, false);
 }
 
+void QtWindow::fastUpdateRate(bool fullSpeed)
+{
+	if (m_glWidget)
+		m_glWidget->fastUpdateRate(fullSpeed);
+}

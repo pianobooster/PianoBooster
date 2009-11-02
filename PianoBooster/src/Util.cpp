@@ -158,7 +158,7 @@ typedef struct
 	
 } benchData_t;
 
-benchData_t s_benchData[10];
+benchData_t s_benchData[20];
 benchData_t s_frameRate;
 
 void benchMarkReset(benchData_t *pBench)
@@ -221,7 +221,7 @@ void benchMarkResults()
 	
 	static int s_counter;
 	s_counter++;
-	if (s_counter < 50)
+	if (s_counter < 200)
 		return;
 	s_counter = 0;
 	for (unsigned int i=0; i <  arraySize( s_benchData ); i++) 

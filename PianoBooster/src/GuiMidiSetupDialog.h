@@ -42,6 +42,7 @@ class GuiMidiSetupDialog : public QDialog, private Ui::GuiMidiSettingsDialog
 
 public:
     GuiMidiSetupDialog(QWidget *parent = 0);
+    ~GuiMidiSetupDialog();
 
     void init(CSong* song, CSettings* settings);
 

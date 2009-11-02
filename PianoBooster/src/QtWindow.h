@@ -49,13 +49,13 @@ class QMenu;
 class QSlider;
 class QPushButton;
 
-class Window : public QMainWindow
+class QtWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Window();
-    ~Window();
+    QtWindow();
+    ~QtWindow();
 
     void songEventUpdated(int eventBits)
     {
@@ -63,36 +63,46 @@ public:
             m_topBar->setPlayButtonState(false, true);
     }
 
+    void fastUpdateRate(bool fullSpeed);
+
 private slots:
     void open();
     void about();
 
     void showMidiSetup()
     {
-        GuiMidiSetupDialog *midiSetupDialog = new GuiMidiSetupDialog(this);
-        midiSetupDialog->init(m_song, m_settings);
-        midiSetupDialog->exec();
+		fastUpdateRate(false);
+        GuiMidiSetupDialog midiSetupDialog(this);
+        midiSetupDialog.init(m_song, m_settings);
+        midiSetupDialog.exec();
+        fastUpdateRate(true);
     }
 
     void showPreferencesDialog()
     {
-        GuiPreferencesDialog *preferencesDialog = new GuiPreferencesDialog(this);
-        preferencesDialog->init(m_song, m_settings, m_glWidget);
-        preferencesDialog->exec();
+		fastUpdateRate(false);
+        GuiPreferencesDialog preferencesDialog(this);
+        preferencesDialog.init(m_song, m_settings, m_glWidget);
+        preferencesDialog.exec();
+        fastUpdateRate(true);
     }
 
     void showSongDetailsDialog()
     {
-        GuiSongDetailsDialog *songDetailsDialog = new GuiSongDetailsDialog(this);
-        songDetailsDialog->init(m_song, m_settings, m_glWidget);
-        songDetailsDialog->exec();
+		fastUpdateRate(false);
+        GuiSongDetailsDialog songDetailsDialog(this);
+        songDetailsDialog.init(m_song, m_settings, m_glWidget);
+        songDetailsDialog.exec();
+        fastUpdateRate(true);
     }
 
     void showKeyboardSetup()
     {
-        GuiKeyboardSetupDialog *keyboardSetup = new GuiKeyboardSetupDialog(this);
-        keyboardSetup->init(m_song, m_settings);
-        keyboardSetup->exec();
+		fastUpdateRate(false);
+        GuiKeyboardSetupDialog keyboardSetup(this);
+        keyboardSetup.init(m_song, m_settings);
+        keyboardSetup.exec();
+        fastUpdateRate(true);
     }
 
     void toggleSidePanel()

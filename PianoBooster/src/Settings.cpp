@@ -46,6 +46,7 @@
 #include "Settings.h"
 #include "GuiTopBar.h"
 #include "GuiSidePanel.h"
+#include "QtWindow.h"
 
 #define OPTION_DEBUG_SETTINGS     0
 #if OPTION_DEBUG_SETTINGS
@@ -55,7 +56,7 @@
 #endif
 
 
-CSettings::CSettings(QWidget *mainWindow) : QSettings(CSettings::IniFormat, CSettings::UserScope, "PianoBooster", "Piano Booster"),
+CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSettings::UserScope, "PianoBooster", "Piano Booster"),
                                  m_mainWindow(mainWindow)
 {
     // It is all done in the initialisation list
@@ -341,3 +342,10 @@ void CSettings::setChannelHands(int left, int right)
     m_domSong.setAttribute("rightHandMidiChannel", right);
     m_guiSidePanel->refresh();
 }
+
+void CSettings::fastUpdateRate(bool fullSpeed)
+{
+	if (m_mainWindow)
+		m_mainWindow->fastUpdateRate(fullSpeed);
+}
+

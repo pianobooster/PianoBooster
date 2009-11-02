@@ -39,12 +39,20 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     setWindowTitle("Preferences");
 }
 
+GuiPreferencesDialog::~GuiPreferencesDialog()
+{
+	if( m_settings )
+		m_settings->fastUpdateRate(true);
+}
+
 
 void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glView)
 {
     m_song = song;
     m_settings = settings;
     m_glView = glView;
+    m_settings->fastUpdateRate(false);
+
     videoOptimiseCheck->setChecked(m_glView->m_cfg_openGlOptimise);
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());

@@ -36,7 +36,7 @@
 #include "Cfg.h"
 #include "Draw.h"
 
-CGLView::CGLView(Window* parent, CSettings* settings)
+CGLView::CGLView(QtWindow* parent, CSettings* settings)
     : QGLWidget(parent)
 {
     m_qtWindow = parent;
@@ -91,10 +91,13 @@ void CGLView::paintGL()
     if (m_forcefullRedraw) // clear the screen only if we are doing a full redraw
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
-
+	BENCHMARK(8, "glLoadIdentity");
+	
     drawDisplayText();
+	BENCHMARK(9, "drawDisplayText");
 
     drawAccurracyBar();
+	BENCHMARK(10, "drawAccurracyBar");
 
     drawBarNumber();
 	BENCHMARK(3, "drawBarNumber");
@@ -332,12 +335,29 @@ void CGLView::init()
     // todo increase the tick time for Midi handling
     m_timer.start(12, this ); // fixme was 12 was 5
     m_realtime.start();
+    
+    fastUpdateRate(true);
 
     //startMediaTimer(12, this );
 }
 
+static bool s_fullSpeed;
+static int s_holdOff;
+void CGLView::fastUpdateRate(bool fullSpeed)
+{
+	s_fullSpeed = fullSpeed;
+}
+
 void CGLView::timerEvent(QTimerEvent *event)
 {
+	if ( s_fullSpeed == false)
+	{
+		s_holdOff++;
+		if ( s_holdOff < 4)
+			return;
+		s_holdOff = 0;
+	}
+	
 	BENCHMARK(0, "timer enter");
     eventBits_t eventBits;
     if (event->timerId() == m_timer.timerId())
@@ -369,9 +389,9 @@ void CGLView::timerEvent(QTimerEvent *event)
 
         // if m_fullRedrawFlag is true it will redraw the entire GL window
         //if (m_scrollTicks>= 12)
-            //glDraw();
-			update();
-        m_fullRedrawFlag = true;
+         glDraw();
+		//update();
+		m_fullRedrawFlag = true;
     }
     else
     {

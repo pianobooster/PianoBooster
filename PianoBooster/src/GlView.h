@@ -42,7 +42,7 @@ class CGLView : public QGLWidget//, RtTimer
     Q_OBJECT
 
 public:
-    CGLView(Window *parent, CSettings* settings);
+    CGLView(QtWindow *parent, CSettings* settings);
     ~CGLView();
 
     QSize minimumSizeHint() const;
@@ -51,6 +51,7 @@ public:
     CScore* getScoreObject() {return m_score;}
     void init();
     bool m_cfg_openGlOptimise;
+    void fastUpdateRate(bool fullSpeed);
 
 protected:
     void timerEvent(QTimerEvent *event);
@@ -69,7 +70,7 @@ private:
     void drawBarNumber();
 
     QColor m_backgroundColour;
-    Window* m_qtWindow;  // The parent Window
+    QtWindow* m_qtWindow;  // The parent Window
     CSettings* m_settings;
     CSong* m_song;
     CScore* m_score;

@@ -34,13 +34,14 @@
 
 class GuiSidePanel;
 class GuiTopBar;
+class QtWindow;
 
 /// Save all the settings for the programme in the right place.
 class CSettings : public QSettings
 {
 
 public:
-    CSettings(QWidget *mainWindow);
+    CSettings(QtWindow *mainWindow);
 
     void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
 
@@ -90,6 +91,8 @@ public:
 
     void setChannelHands(int left, int right);
 
+    void fastUpdateRate(bool fullSpeed);
+
 private:
 
     QDomElement openDomElement(QDomElement parent, const QString & elementName, const QString & attributeName = QString());
@@ -119,7 +122,7 @@ private:
     QDomElement m_domSong;      // The Elements for each song
     QDomElement m_domHand;      // The saved settings for each hand
 
-    QWidget *m_mainWindow;
+    QtWindow *m_mainWindow;
 
     CSong* m_song;
     GuiSidePanel* m_guiSidePanel;
