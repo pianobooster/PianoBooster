@@ -192,7 +192,7 @@ void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
 
     m_midiout->sendMessage( &message );
 
-    //event.printDetails(); // usefull for debuging
+    //event.printDetails(); // useful for debugging
 }
 
 
@@ -261,30 +261,30 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
 
 int CMidiDeviceRt::midiSettingsSetStr(QString name, QString str)
 {
-	return 0;
+    return 0;
 }
 
 int CMidiDeviceRt::midiSettingsSetNum(QString name, double val)
 {
-	return 0;
+    return 0;
 }
 
 int CMidiDeviceRt::midiSettingsSetInt(QString name, int val)
 {
-	return 0;	
+    return 0;
 }
 
 QString CMidiDeviceRt::midiSettingsGetStr(QString name)
 {
-	return QString();
+    return QString();
 }
 
 double CMidiDeviceRt::midiSettingsGetNum(QString name)
 {
-	return 0.0;
+    return 0.0;
 }
 
 int CMidiDeviceRt::midiSettingsGetInt(QString namel)
 {
-	return 0;	
+    return 0;
 }

@@ -2,7 +2,7 @@
 /*!
 @file           Tempo.h
 
-@brief          Tries to automatically calulate the tempo.
+@brief          Tries to automatically calculate the tempo.
 
 @author         L. J. Barman
 
@@ -31,6 +31,7 @@
 
 #include "MidiEvent.h"
 #include "MidiFile.h"
+#include "Chord.h"
 
 
 // Define a chord
@@ -39,8 +40,12 @@ class CTempo
 public:
     CTempo()
     {
+        m_savedwantedChord = 0;
         reset();
     }
+    void setSavedwantedChord(CChord * savedwantedChord) { m_savedwantedChord = savedwantedChord; }
+
+
     void reset()
     {
         m_midiTempo = 1000000 * 120 / 60;// 120 beats per minute is the default
@@ -72,8 +77,8 @@ public:
     void insertPlayingTicks(int ticks)
     {
         m_jumpAheadDelta -= ticks;
-            if (m_jumpAheadDelta < CMidiFile::ppqnAdjust(-10)*SPEED_ADJUST_FACTOR)
-                m_jumpAheadDelta = CMidiFile::ppqnAdjust(-10)*SPEED_ADJUST_FACTOR;
+        if (m_jumpAheadDelta < CMidiFile::ppqnAdjust(-10)*SPEED_ADJUST_FACTOR)
+            m_jumpAheadDelta = CMidiFile::ppqnAdjust(-10)*SPEED_ADJUST_FACTOR;
     }
 
     void removePlayingTicks(int ticks)
@@ -87,30 +92,8 @@ public:
     }
 
 
-    void adjustTempo(int * ticks)
-    {
-        if (m_jumpAheadDelta && m_cfg_maxJumpAhead)
-        {
-            if (m_jumpAheadDelta > 0)
-                *ticks += m_jumpAheadDelta;
+    void adjustTempo(int * ticks);
 
-            // Automatially adjust the speed
-            /*
-            if (m_cfg_maxJumpAhead)
-            {
-                int savedChordDelta = m_savedwantedChord.getDeltaTime();
-                if (savedChordDelta > CMidiFile::ppqnAdjust(48) * SPEED_ADJUST_FACTOR)
-                    savedChordDelta = CMidiFile::ppqnAdjust(48) * SPEED_ADJUST_FACTOR;
-                m_userSpeed += m_jumpAheadDelta * (savedChordDelta /20000000.0);
-                if (m_userSpeed> 2.0) m_userSpeed = 2.0;
-                if (m_userSpeed < 0.2) m_userSpeed = 0.2;
-                printf("%03.0f  \r",m_userSpeed *100);
-                fflush(stdout);
-            }
-            */
-            m_jumpAheadDelta = 0;
-        }
-    }
 
     static void enableFollowTempo(bool enable);
 
@@ -121,6 +104,8 @@ private:
     int m_jumpAheadDelta;
     static int m_cfg_maxJumpAhead;
     static int m_cfg_followTempoAmount;
+    CChord *m_savedwantedChord; // A copy of the wanted chord complete with both left and right parts
+
 
 };
 

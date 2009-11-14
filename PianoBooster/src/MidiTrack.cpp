@@ -42,11 +42,11 @@ int CMidiTrack::m_logLevel;
 
 CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
 {
-	m_trackEventQueue = 0;
-	m_savedRunningStatus = 0;
-	m_trackLengthCounter = 0;
-	m_deltaTime = 0;
-	errorFail(SMF_NO_ERROR);
+    m_trackEventQueue = 0;
+    m_savedRunningStatus = 0;
+    m_trackLengthCounter = 0;
+    m_deltaTime = 0;
+    errorFail(SMF_NO_ERROR);
     int i;
 
     m_trackName.clear();
@@ -65,7 +65,7 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
 
     m_filePos = m_file.tellg();
     m_trackLength = m_trackLengthCounter + 8; // 4 bytes for the "MTrk" + 4 bytes for the track length
-	m_trackEventQueue = new CQueue<CMidiEvent>(m_trackLength/3); // The minimum bytes per event is 3
+    m_trackEventQueue = new CQueue<CMidiEvent>(m_trackLength/3); // The minimum bytes per event is 3
 }
 
 
@@ -225,7 +225,7 @@ void CMidiTrack::readKeySignatureEvent()
         errorFail(SMF_CORRUPTED_MIDI_FILE);
         return;
     }
-    keySig = static_cast<char>(readByte());  // force sign converstion The key sig 0=middle C
+    keySig = static_cast<char>(readByte());  // force sign conversion The key sig 0=middle C
     majorKey =readByte(); // Major or Minor
     if (keySig >= 7 || keySig <= -7 )
     {

@@ -68,6 +68,8 @@ private:
     void drawTimeSignature();
     void drawAccurracyBar();
     void drawBarNumber();
+    void updateMidiTask();
+
 
     QColor m_backgroundColour;
     QtWindow* m_qtWindow;  // The parent Window
@@ -76,8 +78,7 @@ private:
     CScore* m_score;
     QBasicTimer m_timer;
     QTime m_realtime;
-    int m_midiTicks;
-    int m_scrollTicks;
+    int m_displayUpdateTicks;
     CRating* m_rating;
     QFont m_timeSigFont;
     QFont m_timeRatingFont;
@@ -86,6 +87,7 @@ private:
     int m_forceRatingRedraw;
     int m_forceBarRedraw;
     int m_titleHeight;
+    eventBits_t m_eventBits;
 };
 
 #endif // __GLVIEW_H__

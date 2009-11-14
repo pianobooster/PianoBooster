@@ -2,7 +2,7 @@
 /*!
 @file           Tempo.cpp
 
-@brief          Tries to automatically calulate the tempo.
+@brief          Tries to automatically calculate the tempo.
 
 @author         L. J. Barman
 
@@ -37,8 +37,8 @@ void CTempo::enableFollowTempo(bool enable)
 {
     if (enable)
     {
-        //m_cfg_maxJumpAhead = 1;
-        //m_cfg_followTempoAmount = 1;
+        m_cfg_maxJumpAhead = 1;
+        m_cfg_followTempoAmount = 1;
     }
     else
     {
@@ -46,5 +46,30 @@ void CTempo::enableFollowTempo(bool enable)
         m_cfg_followTempoAmount = 0;
     }
 }
+
+void CTempo::adjustTempo(int * ticks)
+{
+    if (m_jumpAheadDelta && m_cfg_maxJumpAhead && m_savedwantedChord)
+    {
+        if (m_jumpAheadDelta > 0)
+            *ticks += m_jumpAheadDelta;
+
+        // Automatically adjust the speed
+
+        int savedChordDelta = m_savedwantedChord->getDeltaTime(); // fixme not used
+        if (savedChordDelta > CMidiFile::ppqnAdjust(10048) * SPEED_ADJUST_FACTOR)
+            savedChordDelta = CMidiFile::ppqnAdjust(10048) * SPEED_ADJUST_FACTOR;
+        //m_userSpeed += m_jumpAheadDelta * (savedChordDelta /20000000.0);
+        m_userSpeed = m_userSpeed + m_userSpeed * m_jumpAheadDelta * 0.00002;
+        if (m_userSpeed> 2.0) m_userSpeed = 2.0;
+        if (m_userSpeed < 0.2) m_userSpeed = 0.2;
+        printf("%03.0f  %5d\r",m_userSpeed *100, m_jumpAheadDelta );
+        fflush(stdout);
+
+        m_jumpAheadDelta = 0;
+    }
+}
+
+
 
 

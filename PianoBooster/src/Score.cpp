@@ -84,11 +84,14 @@ void CScore::drawScroll(bool refresh)
             drawSymbol(CSymbol(PB_SYMBOL_playingZone,  CStavePos(PB_PART_both, 0)), Cfg::playZoneX());
             drawStaves(Cfg::scrollStartX(), Cfg::staveEndX());
         glEndList ();
+                // decrement the compile count until is reaches zero
+        forceCompileRedraw(0);
+
     }
     else
         glCallList(m_stavesDisplayListId);
 
-    drawScrollingSymbols();
+    drawScrollingSymbols(true);
     m_piano->drawPianoInput();
 }
 
@@ -107,9 +110,6 @@ void CScore::drawScore()
             drawKeySignature(CStavePos::getKeySignature());
             drawStaves(Cfg::staveStartX(), Cfg::scrollStartX());
         glEndList ();
-
-        forceCompileRedraw(getCompileRedrawCount() - 1);
-
     }
     else
         glCallList(m_scoreDisplayListId);

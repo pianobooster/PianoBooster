@@ -507,10 +507,10 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
 
         case PB_SYMBOL_barLine:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
-            glLineWidth (3.0);
-            drColour ((m_displayHand == PB_PART_left) ? Cfg::noteColourDim() : Cfg::noteColour());
+            glLineWidth (4.0);
+            drColour ((m_displayHand == PB_PART_left) ? Cfg::staveColourDim() : Cfg::staveColour());
             oneLine(x, CStavePos(PB_PART_right, 4).getPosYRelative(), x, CStavePos(PB_PART_right, -4).getPosYRelative());
-            drColour ((m_displayHand == PB_PART_right) ? Cfg::noteColourDim() : Cfg::noteColour());
+            drColour ((m_displayHand == PB_PART_right) ? Cfg::staveColourDim() : Cfg::staveColour());
             oneLine(x, CStavePos(PB_PART_left, 4).getPosYRelative(), x, CStavePos(PB_PART_left, -4).getPosYRelative());
             break;
 
@@ -550,7 +550,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
             break;
 
        default:
-            ppDEBUG(("ERROR drawSymbol unhandle symbol\n"));
+            ppDEBUG(("ERROR drawSymbol unhandled symbol\n"));
             break;
     }
 

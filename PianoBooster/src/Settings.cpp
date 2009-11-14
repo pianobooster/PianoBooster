@@ -127,6 +127,8 @@ QDomElement CSettings::openDomElement(QDomElement parent, const QString & elemen
 
 void CSettings::loadHandSettings()
 {
+    if (m_domSong.isNull())
+        return;
     m_domHand = openDomElement(m_domSong, "hand", partToHandString(m_song->getActiveHand()));
     m_guiTopBar->setSpeed(m_domHand.attribute("speed", "100" ).toInt());
 }
@@ -201,7 +203,7 @@ void CSettings::loadXmlFile()
     if (root.tagName() != "pianobooster")
     {
         m_domDocument.clear();
-        QDomComment comment =    m_domDocument.createComment("Piano Booster Coniguration file");
+        QDomComment comment =    m_domDocument.createComment("Piano Booster Configuration file");
         m_domDocument.appendChild(comment);
         root = m_domDocument.createElement("pianobooster");
         m_domDocument.appendChild(root);
@@ -264,7 +266,7 @@ void CSettings::setActiveHand(whichPart_t hand)
 
 QStringList CSettings::getSongList()
 {
-    debugSettings(("getSongList %s + %d", qPrintable(getCurrentBookName()), qPrintable(m_bookPath)));
+    debugSettings(("getSongList %s + %s", qPrintable(getCurrentBookName()), qPrintable(m_bookPath)));
     QDir dirSongs = QDir(m_bookPath + getCurrentBookName());
     dirSongs.setFilter(QDir::Files);
     QStringList fileNames = dirSongs.entryList();
@@ -345,7 +347,7 @@ void CSettings::setChannelHands(int left, int right)
 
 void CSettings::fastUpdateRate(bool fullSpeed)
 {
-	if (m_mainWindow)
-		m_mainWindow->fastUpdateRate(fullSpeed);
+    if (m_mainWindow)
+        m_mainWindow->fastUpdateRate(fullSpeed);
 }
 

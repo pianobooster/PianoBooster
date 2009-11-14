@@ -51,9 +51,9 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
 
     m_song = new CSong();
     m_score = new CScore(m_settings);
-    m_midiTicks = 0;
-    m_scrollTicks = 0;
+    m_displayUpdateTicks = 0;
     m_cfg_openGlOptimise = true;
+    m_eventBits = 0;
     BENCHMARK_INIT();
 }
 
@@ -83,7 +83,9 @@ void CGLView::initializeGL()
 
 void CGLView::paintGL()
 {
-	BENCHMARK(2, "enter");
+    BENCHMARK(2, "enter");
+
+    m_displayUpdateTicks = 0;
 
     if (m_fullRedrawFlag)
         m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
@@ -91,30 +93,29 @@ void CGLView::paintGL()
     if (m_forcefullRedraw) // clear the screen only if we are doing a full redraw
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
-	//BENCHMARK(3, "glLoadIdentity");
-	
+    //BENCHMARK(3, "glLoadIdentity");
+
     drawDisplayText();
-	BENCHMARK(4, "drawDisplayText");
+    BENCHMARK(4, "drawDisplayText");
 
     drawAccurracyBar();
-	BENCHMARK(5, "drawAccurracyBar");
+    BENCHMARK(5, "drawAccurracyBar");
 
     drawBarNumber();
-	BENCHMARK(6, "drawBarNumber");
+    BENCHMARK(6, "drawBarNumber");
 
-	if (m_forcefullRedraw)
-		m_score->drawScore();
-	
-    m_score->drawScroll(m_forcefullRedraw);
-	BENCHMARK(10, "drawScroll");
+    if (m_forcefullRedraw)
+        m_score->drawScore();
 
     drawTimeSignature();
 
-    //m_scrollTicks = 0;
-    //m_midiTicks += m_realtime.restart();
+    updateMidiTask();
+    m_score->drawScroll(m_forcefullRedraw);
+    BENCHMARK(10, "drawScroll");
+
 
     if (m_forcefullRedraw) m_forcefullRedraw--;
-	BENCHMARK(11, "exit");
+    BENCHMARK(11, "exit");
     BENCHMARK_RESULTS();
 }
 
@@ -125,7 +126,7 @@ void CGLView::drawTimeSignature()
 
     if (m_forcefullRedraw == 0)
         return;
-        
+
     float x,y;
     int topNumber, bottomNumber;
 
@@ -286,7 +287,6 @@ void CGLView::resizeGL(int width, int height)
     Cfg::setStaveEndX(sizeX - staveEndGap);
     CStavePos::setStaveCentralOffset(staveGap/2);
     CDraw::forceCompileRedraw();
-
 }
 
 void CGLView::mousePressEvent(QMouseEvent *event)
@@ -337,70 +337,73 @@ void CGLView::init()
     setFocusPolicy(Qt::ClickFocus);
 
     // todo increase the tick time for Midi handling
-    m_timer.start(12, this ); // fixme was 12 was 5
+    m_timer.start(4, this ); // fixme was 12 was 5
     m_realtime.start();
-    
+
     fastUpdateRate(true);
 
     //startMediaTimer(12, this );
 }
 
-static bool s_fullSpeed;
-static int s_holdOff;
+static int s_updateRate; //fixme
 void CGLView::fastUpdateRate(bool fullSpeed)
 {
-	s_fullSpeed = fullSpeed;
+    if (fullSpeed)
+        s_updateRate = 12;//12;
+    else
+        s_updateRate = 12 * 4;
+}
+
+void CGLView::updateMidiTask()
+{
+    int ticks;
+    ticks = m_realtime.restart();
+    m_displayUpdateTicks += ticks;
+    m_eventBits |= m_song->task(ticks);
 }
 
 void CGLView::timerEvent(QTimerEvent *event)
 {
-	if ( s_fullSpeed == false)
-	{
-		s_holdOff++;
-		if ( s_holdOff < 4)
-			return;
-		s_holdOff = 0;
-	}
-	
-	BENCHMARK(0, "timer enter");
-    eventBits_t eventBits;
-    if (event->timerId() == m_timer.timerId())
+    BENCHMARK(0, "timer enter");
+    if (event->timerId() != m_timer.timerId())
     {
-        int ticks;
-        ticks = m_realtime.restart();
-        m_midiTicks += ticks;
-        //m_scrollTicks += ticks;
-        eventBits = m_song->task(m_midiTicks);
-        m_midiTicks = 0;
-
-        if (eventBits != 0)
-        {
-            if ((eventBits & EVENT_BITS_UptoBarReached) != 0)
-                m_song->playFromStartBar();
-            if ((eventBits & EVENT_BITS_forceFullRedraw) != 0)
-                m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
-            if ((eventBits & EVENT_BITS_forceRatingRedraw) != 0)
-                m_forceRatingRedraw = REDRAW_COUNT;
-            if ((eventBits & EVENT_BITS_newBarNumber) != 0)
-                m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT; // fixme this did not work so redraw everything
-
-            m_qtWindow->songEventUpdated(eventBits);
-        }
-        if(m_cfg_openGlOptimise)
-            m_fullRedrawFlag = false;
-        else
-            m_fullRedrawFlag = true;
-
-        // if m_fullRedrawFlag is true it will redraw the entire GL window
-        //if (m_scrollTicks>= 12) //FIXME
-         glDraw();
-		//update();
-		m_fullRedrawFlag = true;
+         QWidget::timerEvent(event);
+         return;
     }
+
+
+    updateMidiTask();
+    BENCHMARK(1, "m_song task");
+
+//ppLogTrace("xxx 1 %d, %d", m_displayUpdateTicks, s_updateRate);
+    if (m_displayUpdateTicks < s_updateRate)
+        return;
+//ppLogTrace("xxx 2 %d, %d", m_displayUpdateTicks, s_updateRate);
+
+    m_displayUpdateTicks = 0;
+
+    if (m_eventBits != 0)
+    {
+        if ((m_eventBits & EVENT_BITS_UptoBarReached) != 0)
+            m_song->playFromStartBar();
+        if ((m_eventBits & EVENT_BITS_forceFullRedraw) != 0)
+            m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
+        if ((m_eventBits & EVENT_BITS_forceRatingRedraw) != 0)
+            m_forceRatingRedraw = REDRAW_COUNT;
+        if ((m_eventBits & EVENT_BITS_newBarNumber) != 0)
+            m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT; // fixme this did not work so redraw everything
+
+        m_qtWindow->songEventUpdated(m_eventBits);
+        m_eventBits = 0;
+    }
+    if(m_cfg_openGlOptimise)
+        m_fullRedrawFlag = false;
     else
-    {
-        QWidget::timerEvent(event);
-    }
+        m_fullRedrawFlag = true;
+
+    glDraw();
+    //update();
+    m_fullRedrawFlag = true;
     BENCHMARK(19, "timer exit");
 }
 

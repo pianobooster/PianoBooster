@@ -207,7 +207,7 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
             break;
     }
 
-    //event.printDetails(); // usefull for debuging
+    //event.printDetails(); // useful for debugging
 }
 
 

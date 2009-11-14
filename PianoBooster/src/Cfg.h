@@ -31,8 +31,8 @@
 
 #define OPTION_BENCHMARK_TEST     0
 #if OPTION_BENCHMARK_TEST
-#define BENCHMARK_INIT()     	benchMarkInit()
-#define BENCHMARK(id,mesg)     	benchMark(id,mesg)
+#define BENCHMARK_INIT()        benchMarkInit()
+#define BENCHMARK(id,mesg)      benchMark(id,mesg)
 #define BENCHMARK_RESULTS()     benchMarkResults()
 #else
 #define BENCHMARK_INIT()

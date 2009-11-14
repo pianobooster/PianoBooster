@@ -68,6 +68,7 @@ CConductor::CConductor()
     setPianistChannels(1-1,2-1);
     cfg_timingMarkersFlag = false;
     cfg_stopPointMode = PB_STOP_POINT_MODE_automatic;
+    m_tempo.setSavedwantedChord(&m_savedwantedChord);
 
     for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
     {
@@ -203,7 +204,7 @@ int CConductor::calcBoostVolume(int channel, int volume)
     if (channel == m_activeChannel)
         activePart= true;
 
-    //if (channel == 5)  activePart= true; // for debuging
+    //if (channel == 5)  activePart= true; // for debugging
 
     if (activePart)
     {
@@ -325,7 +326,7 @@ void CConductor::outputPianoVolume()
 {
     CMidiEvent event;
     int volume = 127;
-    // if piano volume is between -100 and 0 reduce the volume accordangly
+    // if piano volume is between -100 and 0 reduce the volume accordingly
     if (m_pianoVolume < 0)
         volume = (volume * (100 + m_pianoVolume)) / 100;
 
@@ -356,6 +357,7 @@ void CConductor::testWrongNoteSound(bool enable)
     m_testWrongNoteSound = enable;
     updatePianoSounds();
 }
+
 void CConductor::playMusic(bool start)
 {
     m_playing = start;
@@ -432,7 +434,7 @@ void CConductor::resetWantedChord()
     m_followState = PB_FOLLOW_searching;
 }
 
-// switch modes if we are playing well enough (ie don't slow down if we are playing late)
+// switch modes if we are playing well enough (i.e. don't slow down if we are playing late)
 void CConductor::setFollowSkillAdvanced(bool enable)
 {
     m_settings-> setAdvancedMode(enable);
@@ -447,7 +449,7 @@ void CConductor::setFollowSkillAdvanced(bool enable)
     if (getLatencyFix() > 0)
     {
         // behave differently if we are using the latency fix
-        m_cfg_earlyNotesPoint = m_cfg_imminentNotesOffPoint; //disable the earily notes
+        m_cfg_earlyNotesPoint = m_cfg_imminentNotesOffPoint; //disable the early notes
     }
 
     if (cfg_stopPointMode == PB_STOP_POINT_MODE_onTheBeat)
@@ -746,11 +748,11 @@ void CConductor::realTimeEngine(int mSecTicks)
             }
         }
 
+        m_tempo.insertPlayingTicks(ticks);
+
 
         if (m_pianistTiming > m_cfg_playZoneLate)
         {
-            m_tempo.insertPlayingTicks(ticks);
-
             if (m_followPlayingTimeOut == false)
             {
                 m_followPlayingTimeOut = true;

@@ -31,7 +31,7 @@
 
 #include <assert.h>
 
-// A Queue  Circular buffer also also call a FIFO a First In First Out buffer
+// A Queue or circular buffer also also call a FIFO a First In First Out buffer
 // different threads could be running each end of the queue
 
 //

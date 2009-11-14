@@ -172,7 +172,7 @@ void GuiTopBar::setPlayButtonState(bool checked, bool atTheEnd)
     {
         playButton->setIcon(QIcon(":/images/play.png"));
         playButton->setToolTip("Start and stop playing music");
-        playFromStartButton->setToolTip("Playing music from the begining");
+        playFromStartButton->setToolTip("Playing music from the beginning");
     }
 }
 
@@ -236,7 +236,7 @@ void GuiTopBar::on_loopingBarsPopupButton_clicked(bool clicked)
     QPoint pos = mapToGlobal(loopingBarsPopupButton->pos()) ;
 
     pos.ry() += loopingBarsPopupButton->height() + 2;
-    pos.rx() += -5; // Tweak the possition slightly
+    pos.rx() += -5; // Tweak the position slightly
     GuiLoopingPopup *loopingPopup = new GuiLoopingPopup(loopingBarsPopupButton);
     loopingPopup->init(m_song);
     loopingPopup->move (pos);

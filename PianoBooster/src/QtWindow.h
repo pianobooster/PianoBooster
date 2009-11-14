@@ -68,10 +68,11 @@ public:
 private slots:
     void open();
     void about();
+    void keyboardShortcuts();
 
     void showMidiSetup()
     {
-		fastUpdateRate(false);
+        fastUpdateRate(false);
         GuiMidiSetupDialog midiSetupDialog(this);
         midiSetupDialog.init(m_song, m_settings);
         midiSetupDialog.exec();
@@ -80,7 +81,7 @@ private slots:
 
     void showPreferencesDialog()
     {
-		fastUpdateRate(false);
+        fastUpdateRate(false);
         GuiPreferencesDialog preferencesDialog(this);
         preferencesDialog.init(m_song, m_settings, m_glWidget);
         preferencesDialog.exec();
@@ -89,7 +90,7 @@ private slots:
 
     void showSongDetailsDialog()
     {
-		fastUpdateRate(false);
+        fastUpdateRate(false);
         GuiSongDetailsDialog songDetailsDialog(this);
         songDetailsDialog.init(m_song, m_settings, m_glWidget);
         songDetailsDialog.exec();
@@ -98,7 +99,7 @@ private slots:
 
     void showKeyboardSetup()
     {
-		fastUpdateRate(false);
+        fastUpdateRate(false);
         GuiKeyboardSetupDialog keyboardSetup(this);
         keyboardSetup.init(m_song, m_settings);
         keyboardSetup.exec();
@@ -112,7 +113,7 @@ private slots:
 
     void enableFollowTempo()
     {
-        CTempo::enableFollowTempo(true);
+        CTempo::enableFollowTempo(Cfg::experimentalTempo);
     }
     void disableFollowTempo()
     {
@@ -146,6 +147,7 @@ private:
     QAction *m_openAct;
     QAction *m_exitAct;
     QAction *m_aboutAct;
+    QAction *m_shortcutAct;
     QAction *m_songPlayAct;
     QAction *m_setupMidiAct;
     QAction *m_setupKeyboardAct;

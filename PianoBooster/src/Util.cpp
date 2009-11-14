@@ -139,7 +139,7 @@ void ppTiming(const char *msg, ...)
     fputc('\n', stdout);
 }
 
-//////////////////////   BENCH MARK //////////
+////////////////////// BENCH MARK //////////////////////
 
 
 static QTime s_benchMarkTime;
@@ -148,13 +148,15 @@ static int s_previousFrameTime;
 
 typedef struct
 {
-	int time;
-	QString msg;
-	int deltaTotal;
-	int deltaCount;
-	int maxDelta;
-	int minDelta;
-	
+    int time;
+    QString msg;
+    int deltaTotal;
+    int deltaCount;
+    int maxDelta;
+    int minDelta;
+    int frameRatePrevious;
+    int frameRateCurrent;
+
 } benchData_t;
 
 benchData_t s_benchData[20];
@@ -162,73 +164,74 @@ benchData_t s_frameRate;
 
 void benchMarkReset(benchData_t *pBench)
 {
-	pBench->deltaTotal = 0;
-	pBench->deltaCount = 0;
-	pBench->maxDelta = 0;
-	pBench->minDelta = 9999999;
+    pBench->deltaTotal = 0;
+    pBench->deltaCount = 0;
+    pBench->maxDelta = 0;
+    pBench->minDelta = 9999999;
+    pBench->frameRatePrevious = pBench->frameRateCurrent;
 }
 
 
 void benchMarkInit()
 {
-	s_benchMarkTime.start();
-	s_previousTime = 0;
-	s_previousFrameTime = 0;
+    s_benchMarkTime.start();
+    s_previousTime = 0;
+    s_previousFrameTime = 0;
 
-	for (unsigned int i=0; i <  arraySize( s_benchData ); i++) 
-		benchMarkReset(&s_benchData[i]);
-	benchMarkReset(&s_frameRate);
-	s_frameRate.msg = " *** Frame Rate ***";
+    for (unsigned int i=0; i <  arraySize( s_benchData ); i++)
+        benchMarkReset(&s_benchData[i]);
+    benchMarkReset(&s_frameRate);
+    s_frameRate.msg = " *** Frame Rate ***";
 }
 
 int benchMarkUpdate(benchData_t *pBench,  int previousTime)
 {
-	int time = s_benchMarkTime.elapsed();
-	int delta = time - previousTime;
-	pBench->deltaTotal += delta;
-	pBench->deltaCount++;
-	pBench->maxDelta = qMax(pBench->maxDelta, delta);
-	pBench->minDelta = qMin(pBench->minDelta, delta);
-	return time;
+    int time = s_benchMarkTime.elapsed();
+    int delta = time - previousTime;
+    pBench->deltaTotal += delta;
+    pBench->deltaCount++;
+    pBench->frameRateCurrent = time;
+    pBench->maxDelta = qMax(pBench->maxDelta, delta);
+    pBench->minDelta = qMin(pBench->minDelta, delta);
+    return time;
 }
 
 void benchMark(unsigned int id, QString message)
 {
-	if (id >= arraySize(s_benchData))
-		return;
-	if (s_benchData[id].msg.size() == 0 )
-		s_benchData[id].msg = message;
-	s_previousTime = benchMarkUpdate(&s_benchData[id], s_previousTime);
-		
+    if (id >= arraySize(s_benchData))
+        return;
+    if (s_benchData[id].msg.size() == 0 )
+        s_benchData[id].msg = message;
+    s_previousTime = benchMarkUpdate(&s_benchData[id], s_previousTime);
+
 }
 
 void printResult(int i, benchData_t *pBench)
 {
-	if (pBench->deltaCount == 0)
-		return;
-	if (i>=0) 
-		fprintf(stdout, "Bench%2d: ", i);
-	else
-		fputs("Bench  : ", stdout);
-	fprintf(stdout, "min %2d, avg %4.3f, max %2d %s\n",   pBench->minDelta,
-													static_cast<double>(pBench->deltaTotal)/pBench->deltaCount,
-													pBench->maxDelta,
-													qPrintable(pBench->msg));
-	benchMarkReset(pBench);
+    if (pBench->deltaCount == 0)
+        return;
+    if (i>=0)
+        fprintf(stdout, "Bench%2d: ", i);
+    else
+        fputs("Bench  : ", stdout);
+    fprintf(stdout, "ct %4d, min %2d, avg %4.3f, max %2d frame %4.3f %s\n",  pBench->deltaCount,  pBench->minDelta,
+                    static_cast<double>(pBench->deltaTotal)/pBench->deltaCount,
+                    pBench->maxDelta,
+                    (static_cast<double>(pBench->frameRateCurrent - pBench->frameRatePrevious))/pBench->deltaCount,
+                    qPrintable(pBench->msg));
+    benchMarkReset(pBench);
 }
 
 void benchMarkResults()
 {
-	s_previousFrameTime = benchMarkUpdate(&s_frameRate, s_previousFrameTime);
-	
-	static int s_counter;
-	s_counter++;
-	if (s_counter < 200)
-		return;
-	s_counter = 0;
-	for (unsigned int i=0; i <  arraySize( s_benchData ); i++) 
-	{
-		printResult(i, &s_benchData[i]);
-	}
-	printResult(-1, &s_frameRate);
+    int ticks;
+    ticks = s_benchMarkTime.elapsed();
+
+    if ( (ticks - s_previousFrameTime) < 5000)
+        return;
+    s_previousFrameTime = ticks;
+    for (unsigned int i=0; i <  arraySize( s_benchData ); i++)
+    {
+        printResult(i, &s_benchData[i]);
+    }
 }

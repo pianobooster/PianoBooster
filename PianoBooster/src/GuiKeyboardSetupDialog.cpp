@@ -38,7 +38,7 @@ GuiKeyboardSetupDialog::GuiKeyboardSetupDialog(QWidget *parent)
 {
     m_song = 0;
     setupUi(this);
-    setWindowTitle("Piano Keyboard Settings");
+    setWindowTitle(tr("Piano Keyboard Settings"));
 }
 
 void GuiKeyboardSetupDialog::init(CSong* song, CSettings* settings)
@@ -102,10 +102,10 @@ void GuiKeyboardSetupDialog::updateInfoText()
     if (!lowestNoteEdit->isEnabled())
         str.sprintf("<span style=\"color:black\">You can use the PC keyboard instead of a MIDI keyboard; 'x' is middle C.</span>");
     else if (noteRange > 0)
-        str.sprintf("<span style=\"color:black\">Your keyboard range is <b>octives %d</b> and <b>semitones %d</b>; 60 is middle C.</span>",
+        str.sprintf("<span style=\"color:black\">Your keyboard range is <b>octaves %d</b> and <b>semitones %d</b>; 60 is middle C.</span>",
             noteRange/MIDI_OCTAVE, noteRange%MIDI_OCTAVE);
     else
-        str.sprintf("<span style=\"color:red\">Opps, you have <b>0 notes</b> on your keyboard!</span>");
+        str.sprintf("<span style=\"color:red\">Oops, you have <b>0 notes</b> on your keyboard!</span>");
 
     keyboardInfoText->append(str);
 }

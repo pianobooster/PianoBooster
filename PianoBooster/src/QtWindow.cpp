@@ -28,6 +28,23 @@
 #include "QtWindow.h"
 #include "ReleaseNote.txt"
 
+#include <sched.h>
+
+/* sets the process to "policy" policy at given priority */
+static int set_realtime_priority(int policy, int prio)
+{
+    struct sched_param schp;
+    memset(&schp, 0, sizeof(schp));
+
+    schp.sched_priority = prio;
+    if (sched_setscheduler(0, policy, &schp) != 0) {
+        perror("sched_setscheduler");
+        return -1;
+    }
+    return 0;
+}
+
+
 QtWindow::QtWindow()
 {
 
@@ -50,6 +67,9 @@ QtWindow::QtWindow()
         QGLFormat::setDefaultFormat(fmt);
     }
 
+
+    int rt_prio = sched_get_priority_max(SCHED_FIFO);
+    set_realtime_priority(SCHED_FIFO, rt_prio);
 
     m_glWidget = new CGLView(this, m_settings);
 
@@ -165,11 +185,11 @@ void QtWindow::decodeMidiFileArg(QString arg)
              fileInfo.fileName().endsWith(".midi", Qt::CaseInsensitive ) ||
              fileInfo.fileName().endsWith(".kar", Qt::CaseInsensitive )) )
 
-	{
+    {
         QMessageBox::warning(0, "PianoBooster Midi File Error",
                  "Not a Midi File \"" + fileInfo.fileName() + "\"");
         exit(1);
-	}
+    }
     else
     {
         bool vaildMidiFile = true;
@@ -192,8 +212,8 @@ void QtWindow::decodeMidiFileArg(QString arg)
         {
             QMessageBox::warning(0, "PianoBooster Midi File Error",
                  "Not a valid MIDI file \"" + fileInfo.absoluteFilePath() + "\"");
-			exit(1);
-		}
+            exit(1);
+        }
     }
 }
 
@@ -262,6 +282,10 @@ void QtWindow::createActions()
     m_aboutAct->setStatusTip(tr("Show the application's About box"));
     connect(m_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 
+    m_shortcutAct = new QAction(tr("&Keyboard shortcuts"), this);
+    m_shortcutAct->setStatusTip(tr("The PC Keyboard shortcut keys"));
+    connect(m_shortcutAct, SIGNAL(triggered()), this, SLOT(keyboardShortcuts()));
+
     m_setupMidiAct = new QAction(tr("&Midi Setup ..."), this);
     m_setupMidiAct->setShortcut(tr("Ctrl+S"));
     m_setupMidiAct->setStatusTip(tr("Setup the Midi input an output"));
@@ -314,14 +338,15 @@ void QtWindow::createMenus()
     m_setupMenu->addAction(m_setupPreferencesAct);
 
     m_helpMenu = menuBar()->addMenu(tr("&Help"));
+    m_helpMenu->addAction(m_shortcutAct);
     m_helpMenu->addAction(m_aboutAct);
 }
 
 void QtWindow::about()
 {
-    QMessageBox about(this);
-    about.setWindowTitle (tr("About"));
-    about.setText(
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle (tr("About"));
+    msgBox.setText(
             tr(
                 "<b>PainoBooster - Version " PB_VERSION "</b> <br><br>"
                 "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
@@ -333,20 +358,62 @@ void QtWindow::about()
                 "This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
                 "Copyright(c) 2003-2007 Gary P. Scavone"
                 ));
-    about.setMinimumWidth(600);
-    about.exec();
+    msgBox.setMinimumWidth(600);
+    msgBox.exec();
 }
+
+void QtWindow::keyboardShortcuts()
+{
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle (tr("PC Keyboard Short Cuts"));
+    QString msg =
+            tr(
+                "<h2><center>Key board short cuts</center></h2>"
+                "<table width='100%'  border='1' cellspacing='0' cellpadding='1' >"
+                );
+
+    msg += tr(
+                "<tr>"
+                "<th>row 1, cell 1</th>"
+                "<th>row 1, cell 2</th>"
+                "</tr>"
+                "<tr>"
+                "<td>row 1, cell 1</td>"
+                "<td>row 1, cell 2</td>"
+                "</tr>"
+                "<tr>"
+                "<td>row 2, cell 1</td>"
+                "<td>row 2, cell 2</td>"
+                "</tr>"
+            );
+    msg += tr(
+                "</table>"
+                "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
+                "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
+                "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
+                "This program is made available "
+                "under the terms of the GNU General Public License version 3 as published by "
+                "the Free Software Foundation.<br><br>"
+                "This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
+                "Copyright(c) 2003-2007 Gary P. Scavone"
+                );
+    msgBox.setText(msg);
+
+    msgBox.setMinimumWidth(600);
+    msgBox.exec();
+}
+
 
 void QtWindow::open()
 {
-	m_glWidget->fastUpdateRate(false);
+    m_glWidget->fastUpdateRate(false);
     QString currentSong = m_settings->getCurrentSongLongFileName();
-	
+
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
                             currentSong, tr("Midi Files (*.mid *.MID *.midi *.kar *.KAR)"));
     if (!fileName.isEmpty())
         m_settings->openSongFile(fileName);
-	m_glWidget->fastUpdateRate(true);
+    m_glWidget->fastUpdateRate(true);
 }
 
 void QtWindow::readSettings()
@@ -404,6 +471,6 @@ void QtWindow::keyReleaseEvent ( QKeyEvent * event )
 
 void QtWindow::fastUpdateRate(bool fullSpeed)
 {
-	if (m_glWidget)
-		m_glWidget->fastUpdateRate(fullSpeed);
+    if (m_glWidget)
+        m_glWidget->fastUpdateRate(fullSpeed);
 }

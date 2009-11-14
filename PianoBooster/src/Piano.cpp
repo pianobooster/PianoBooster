@@ -67,7 +67,7 @@ void CPiano::spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex)
 
     lastY = m_noteNameList[midPoint].posY;
 
-    // Search from the middle upwads
+    // Search from the middle upwards
     for (i = midPoint + 1; i < static_cast<int>(topIndex); i++)
     {
         gap =  m_noteNameList[i].posY - lastY;
@@ -169,7 +169,7 @@ void CPiano::spaceNoteNames()
     if (foundBunch == true)
         spaceNoteBunch(bottomIndex -1, topIndex +1);
 
-    // finally try again incase moveing things have created a fresh bunch
+    // finally try again in case moving things have created a fresh bunch
     spaceNoteBunch(0, m_noteNameListLength);
 }
 
@@ -190,7 +190,7 @@ void CPiano::addNoteNameItem(float posY, int pitch, int type)
     {
         if (m_noteNameList[i].pitch <= pitch)
             break;
-        // move the previous entry up one possition
+        // move the previous entry up one position
         m_noteNameList[i+1] = m_noteNameList[i];
     }
     if (m_noteNameList[i].pitch == pitch)
@@ -238,7 +238,7 @@ void CPiano::removeNoteNameItem(int pitch)
     spaceNoteNames();
 }
 
-// retruns true only if the note is in the bad note list
+// returns true only if the note is in the bad note list
 bool CPiano::removePianistNote(int note)
 {
     removeNoteNameItem( note);

@@ -43,7 +43,8 @@
 
 #include "Symbol.h"
 
-#define REDRAW_COUNT 2 // There are two buffers so redraw twice
+//#define REDRAW_COUNT 2 // There are two buffers so redraw twice
+#define REDRAW_COUNT 1 // FIXME There are two buffers so redraw twice
 
 class CSettings;
 
@@ -67,7 +68,7 @@ public:
     {
         m_settings = settings;
         m_displayHand = PB_PART_both;
-        m_forceCompileRedraw = REDRAW_COUNT;
+        m_forceCompileRedraw = 1;
         m_scrollProperties = &m_scrollPropertiesHorizontal;
 
     }
@@ -85,11 +86,11 @@ public:
     static void setDisplayHand(whichPart_t hand)
     {
         m_displayHand = hand;
-        m_forceCompileRedraw = REDRAW_COUNT;
+        m_forceCompileRedraw = 1;
     }
     static whichPart_t getDisplayHand()    {return m_displayHand;}
     static void drColour(CColour colour) { glColor3f(colour.red, colour.green, colour.blue);}
-    static void forceCompileRedraw(int value = REDRAW_COUNT) {    m_forceCompileRedraw = value; }
+    static void forceCompileRedraw(int value = 1) {    m_forceCompileRedraw = value; }
 
 protected:
     static whichPart_t m_displayHand;
@@ -107,7 +108,7 @@ private:
     void checkAccidental(CSymbol symbol, float x, float y);
     void drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool playable);
     static int m_forceCompileRedraw;
-    const static int m_beatMarkerHeight = 10; // The height of the beat markers in stave postions
+    const static int m_beatMarkerHeight = 10; // The height of the beat markers in the stave positions
 
     CScrollProperties *m_scrollProperties;
     CScrollProperties m_scrollPropertiesHorizontal;

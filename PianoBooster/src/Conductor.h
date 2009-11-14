@@ -172,7 +172,7 @@ public:
     void getTimeSig(int *top, int *bottom) {m_bar.getTimeSig(top, bottom);}
     void testWrongNoteSound(bool enable);
 
-    // -1 means no sound -2 means ignore this paramater
+    // -1 means no sound -2 means ignore this parameter
     void setPianoSoundPatches(int rightSound, int wrongSound, bool update = false){
         m_cfg_rightNoteSound = rightSound;
         if ( wrongSound != -2)
@@ -272,13 +272,15 @@ private:
     CSettings* m_settings;
     CPiano* m_piano;
 
-    CTempo m_tempo;
     CBar m_bar;
     int m_leadLagAdjust; // Synchronise the sound the the video
     int m_silenceTimeOut; // used to create silence if the student stops for toooo long
     CChord m_wantedChord;  // The chord the pianist needs to play
     CChord m_savedwantedChord; // A copy of the wanted chord complete with both left and right parts
     CChord m_goodPlayedNotes;  // The good notes the pianist plays
+    CTempo m_tempo;
+
+
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef
     bool m_followSkillAdvanced;
     int m_lastSound;

@@ -1,7 +1,7 @@
 #CONFIG += USE_FLUIDSYNTH
 
 USE_FLUIDSYNTH {
-# Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compling on windows
+# Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
 # You normally do not need to set it
 #FLUIDSYNTH_INPLACE_DIR = ../../fluidsynth-1.0.9
 message(building using fluidsynth)

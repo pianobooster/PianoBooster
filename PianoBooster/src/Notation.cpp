@@ -169,7 +169,7 @@ accidentalModifer_t CNotation::detectSuppressedNatural(int note)
 
     int direction = -CStavePos::getStaveAccidentalDirection(note);
     ppDEBUG_NOTATION(("Note %d %d %d", note, direction, pBackLink));
-    // check if this note has occured in this bar before
+    // check if this note has occurred in this bar before
     if (pNoteState->getBarChange() == m_earlyBarChangeCounter)
     {
         if (pBackLink)
@@ -179,7 +179,7 @@ accidentalModifer_t CNotation::detectSuppressedNatural(int note)
         }
         else if (direction != 0 && m_cfg_displayCourtesyAccidentals == false)
         {
-            ppDEBUG_NOTATION(("Supress %d %d", note, direction));
+            ppDEBUG_NOTATION(("Suppress %d %d", note, direction));
             modifer = PB_ACCIDENTAL_MODIFER_suppress;
         }
     }
@@ -194,7 +194,7 @@ accidentalModifer_t CNotation::detectSuppressedNatural(int note)
     if (pBackLink)
     {
         pNoteState->setBackLink(0);
-        pBackLink->setBarChange(-1); // this prevents further suppression on the origianl note
+        pBackLink->setBarChange(-1); // this prevents further suppression on the original note
     }
 
     pNoteState->setBarChange(m_earlyBarChangeCounter);
@@ -250,7 +250,7 @@ void CNotation::findNoteSlots()
                 CSymbol symbol(symbolType, hand, midi.note());
                 symbol.setColour(Cfg::noteColour());
 
-                // check if this note has occured in this bar before
+                // check if this note has occurred in this bar before
                 symbol.setAccidentalModifer(detectSuppressedNatural(midi.note()));
 
                 if (m_currentSlot.addSymbol(symbol) == false) {

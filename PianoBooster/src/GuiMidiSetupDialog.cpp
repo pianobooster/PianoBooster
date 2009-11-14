@@ -39,16 +39,16 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     m_latencyChanged = false;
     m_midiChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
-#if !PB_USE_FLUIDSYNTH   
-	midiSetupTabWidget->removeTab(1);
+#if !PB_USE_FLUIDSYNTH
+    midiSetupTabWidget->removeTab(1);
 #endif
     setWindowTitle("Midi Setup");
 }
 
 GuiMidiSetupDialog::~GuiMidiSetupDialog() // Fixme
 {
-	if( m_settings )
-		m_settings->fastUpdateRate(true);
+    if( m_settings )
+        m_settings->fastUpdateRate(true);
 }
 
 
@@ -57,8 +57,8 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 {
     m_song = song;
     m_settings = settings;
-	m_settings->fastUpdateRate(false);
-		
+    m_settings->fastUpdateRate(false);
+
     // Check inputs.
     QString portName;
     int i = 0;
@@ -79,13 +79,13 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     i = midiOutputCombo->findText(m_settings->value("midi/output").toString());
     if (i!=-1)
         midiOutputCombo->setCurrentIndex(i);
-        
+
     sampleRateCombo->addItem("44100");
     sampleRateCombo->addItem("22050");
     i = sampleRateCombo->findText(m_settings->value("fliudsynth/samplerate").toString());
     if (i!=-1)
         sampleRateCombo->setCurrentIndex(i);
-        
+
     //midiSettingsSetnum
 
     updateMidiInfoText();
@@ -113,8 +113,8 @@ void GuiMidiSetupDialog::updateMidiInfoText()
         midiInfoText->append("<span style=\"color:gray\">Midi Output Device: " + midiOutputCombo->currentText() +"</span>");
 
     latencyFixLabel->setText(tr("%1 mSec").arg(m_latencyFix));
-    
-	updateFluidInfoText();    
+
+    updateFluidInfoText();
 }
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
@@ -178,13 +178,13 @@ void GuiMidiSetupDialog::accept()
             m_settings->setValue("Keyboard/RightSoundPrevious", rightSound); // Save the current right sound
             // Mute the Piano if we are using the latency fix;
             m_settings->setValue("Keyboard/RightSound", 0);
-            m_song->setPianoSoundPatches( -1, -2); // -1 means no sound and -2 means ignore this paramater
+            m_song->setPianoSoundPatches( -1, -2); // -1 means no sound and -2 means ignore this parameter
         }
         else
         {
             int previousRightSound = m_settings->value("Keyboard/RightSoundPrevious", Cfg::defaultRightPatch()).toInt();
             m_settings->setValue("Keyboard/RightSound", previousRightSound);
-            m_song->setPianoSoundPatches(previousRightSound, -2); // -2 means ignore this paramater
+            m_song->setPianoSoundPatches(previousRightSound, -2); // -2 means ignore this parameter
         }
     }
 
@@ -201,30 +201,30 @@ void GuiMidiSetupDialog::updateFluidInfoText()
     {
         int n = soundFontNames.at(i).lastIndexOf("/");
         soundFontList->addItem(soundFontNames.at(i).mid(n+1));
-	}
+    }
 
 
     bool fontLoaded = (soundFontList->count() > 0) ? true : false;
-	fluidRemoveButton->setEnabled(fontLoaded);
-	
-	fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
+    fluidRemoveButton->setEnabled(fontLoaded);
+
+    fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
     fluidSettingsGroupBox->setEnabled(fontLoaded);
-    
+
 }
 
 
 void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
 {
-	QString lastSoundFont;
+    QString lastSoundFont;
     QStringList sfList = m_settings->getFluidSoundFontNames();
     if (sfList.size() > 0)
-    	lastSoundFont = sfList.last();
+        lastSoundFont = sfList.last();
 
     QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluid synth"),
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
     if (!soundFontName.isEmpty())
         m_settings->addFluidSoundFontName(soundFontName);
-	updateFluidInfoText();
+    updateFluidInfoText();
 }
 
 void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked )

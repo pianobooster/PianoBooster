@@ -102,7 +102,7 @@ public:
 
     bool seekingBarNumber() { return m_seekingBarNumber;}
 
-    // get and reset the curent bar event bits
+    // get and reset the current bar event bits
     eventBits_t readEventBits() {
         eventBits_t bits = m_eventBits;
         m_eventBits = 0;
