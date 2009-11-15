@@ -138,6 +138,7 @@ SET( PIANOBOOSTER_SRCS
     Merge.cpp
     #Band.cpp
     pianobooster.rc
+    pianobooster.ico
 #    precompile.h
 )
 

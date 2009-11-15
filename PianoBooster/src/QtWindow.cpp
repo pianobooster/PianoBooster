@@ -28,6 +28,13 @@
 #include "QtWindow.h"
 #include "ReleaseNote.txt"
 
+#ifdef __linux__
+#ifndef USE_REALTIME_PRIORITY
+#define USE_REALTIME_PRIORITY 1
+#endif
+#endif
+
+#if USE_REALTIME_PRIORITY
 #include <sched.h>
 
 /* sets the process to "policy" policy at given priority */
@@ -43,6 +50,7 @@ static int set_realtime_priority(int policy, int prio)
     }
     return 0;
 }
+#endif
 
 
 QtWindow::QtWindow()
@@ -68,9 +76,10 @@ QtWindow::QtWindow()
     }
 
 
+#if USE_REALTIME_PRIORITY
     int rt_prio = sched_get_priority_max(SCHED_FIFO);
     set_realtime_priority(SCHED_FIFO, rt_prio);
-
+#endif
     m_glWidget = new CGLView(this, m_settings);
 
     m_song = m_glWidget->getSongObject();

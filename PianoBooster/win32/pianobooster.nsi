@@ -74,7 +74,7 @@ Section "Dummy Section" SecDummy
 
     ; Put file there
     File FilesForRelease\pianobooster.exe
-    File FilesForRelease\libfluidsynth-1.dll
+    #File FilesForRelease\libfluidsynth-1.dll
     File FilesForRelease\QtCore4.dll
     File FilesForRelease\QtGui4.dll
     File FilesForRelease\QtXml4.dll
@@ -82,9 +82,9 @@ Section "Dummy Section" SecDummy
 
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc
-    File README.txt
-    File license.txt
-    File gplv3.txt
+    File ..\README.txt
+    File ..\license.txt
+    File ..\gplv3.txt
 
     SetOutPath $INSTDIR
 
@@ -126,7 +126,7 @@ Section "Uninstall"
     ; Remove files and uninstaller
     Delete $INSTDIR\pianobooster.exe
     Delete $INSTDIR\mingwm10.dll
-    Delete $INSTDIR\libfluidsynth-1.dll
+    #Delete $INSTDIR\libfluidsynth-1.dll
     Delete $INSTDIR\QtCore4.dll
     Delete $INSTDIR\QtGui4.dll
     Delete $INSTDIR\QtXml4.dll
