@@ -92,7 +92,7 @@ private slots:
     {
         fastUpdateRate(false);
         GuiSongDetailsDialog songDetailsDialog(this);
-        songDetailsDialog.init(m_song, m_settings, m_glWidget);
+        songDetailsDialog.init(m_song, m_settings);
         songDetailsDialog.exec();
         fastUpdateRate(true);
     }
@@ -120,6 +120,9 @@ private slots:
         CTempo::enableFollowTempo(false);
     }
 
+    void slotRightHand()  {  m_sidePanel->setActiveHand(PB_PART_right); }
+    void slotBothHands()  {  m_sidePanel->setActiveHand(PB_PART_both); }
+    void slotLeftHand()  {  m_sidePanel->setActiveHand(PB_PART_left); }
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -130,6 +133,7 @@ private:
     void decodeCommandLine();
     int decodeIntegerParam(QString arg, int defaultParam);
     void decodeMidiFileArg(QString arg);
+    QString displayShortCut(QString code, QString description);
 
     void displayUsage();
     void createActions();

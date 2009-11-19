@@ -118,14 +118,14 @@ QtWindow::QtWindow()
     m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", Cfg::defaultRightPatch()).toInt() - 1,
                                  m_settings->value("Keyboard/WrongSound", Cfg::defaultWrongPatch()).toInt() - 1, true);
 
-    QString midiInputName = m_settings->value("midi/input").toString();
+    QString midiInputName = m_settings->value("Midi/Input").toString();
     if (midiInputName.startsWith("None"))
         CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
     else
-        CChord::setPianoRange(m_settings->value("Keyboard/lowestNote", 0).toInt(),
-                          m_settings->value("Keyboard/highestNote", 127).toInt());
+        CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
+                          m_settings->value("Keyboard/HighestNote", 127).toInt());
 
-    m_song->setLatencyFix(m_settings->value("midi/latency", 0).toInt());
+    m_song->setLatencyFix(m_settings->value("Midi/Latency", 0).toInt());
 
 
 #ifdef _WIN32
@@ -134,20 +134,16 @@ QtWindow::QtWindow()
     m_glWidget->m_cfg_openGlOptimise = true; // changed to default to false on platforms
 #endif
 
-    m_glWidget->m_cfg_openGlOptimise = m_settings->value("display/openGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
-    m_song->cfg_timingMarkersFlag = m_settings->value("score/timingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
-    m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("score/stopPointMode", m_song->cfg_stopPointMode ).toInt());
+    m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
+    m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
+    m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
 
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
+    m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("midi/output").toString());
 
     m_settings->loadSettings();
 
     show();
-
-    if (m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("midi/output").toString())==false)
-    {
-        showMidiSetup();
-    }
 }
 
 QtWindow::~QtWindow()
@@ -269,7 +265,6 @@ void QtWindow::decodeCommandLine()
             {
                 hasMidiFile = true;
                 decodeMidiFileArg(arg);
-
             }
         }
     }
@@ -317,15 +312,30 @@ void QtWindow::createActions()
     m_songDetailsAct->setShortcut(tr("Ctrl+S"));
     connect(m_songDetailsAct, SIGNAL(triggered()), this, SLOT(showSongDetailsDialog()));
 
-    QAction* enableFollowTempoAct = new QAction(this);
-    enableFollowTempoAct->setShortcut(tr("Shift+F1"));
-    connect(enableFollowTempoAct, SIGNAL(triggered()), this, SLOT(enableFollowTempo()));
-    addAction(enableFollowTempoAct);
+    QAction* act = new QAction(this);
+    act->setShortcut(tr("Shift+F1"));
+    connect(act, SIGNAL(triggered()), this, SLOT(enableFollowTempo()));
+    addAction(act);
 
-    QAction* disableFollowTempoAct = new QAction(this);
-    disableFollowTempoAct->setShortcut(tr("Alt+F1"));
-    connect(disableFollowTempoAct, SIGNAL(triggered()), this, SLOT(disableFollowTempo()));
-    addAction(disableFollowTempoAct);
+    act = new QAction(this);
+    act->setShortcut(tr("Alt+F1"));
+    connect(act, SIGNAL(triggered()), this, SLOT(disableFollowTempo()));
+    addAction(act);
+
+    act = new QAction(this);
+    act->setShortcut(m_settings->value("ShortCuts/RightHand").toString());
+    connect(act, SIGNAL(triggered()), this, SLOT(slotRightHand()));
+    addAction(act);
+
+    act = new QAction(this);
+    act->setShortcut(m_settings->value("ShortCuts/BothHands").toString());
+    connect(act, SIGNAL(triggered()), this, SLOT(slotBothHands()));
+    addAction(act);
+
+    act = new QAction(this);
+    act->setShortcut(m_settings->value("ShortCuts/LeftHand").toString());
+    connect(act, SIGNAL(triggered()), this, SLOT(slotLeftHand()));
+    addAction(act);
 }
 
 void QtWindow::createMenus()
@@ -371,6 +381,16 @@ void QtWindow::about()
     msgBox.exec();
 }
 
+QString QtWindow::displayShortCut(QString key, QString description)
+{
+    QString str = QString("<tr>"
+                "<td>%1</td>"
+                "<td>%2</td>"
+                "</tr>").arg( description ).arg( m_settings->value("ShortCuts/" + key).toString());
+    return str;
+
+}
+
 void QtWindow::keyboardShortcuts()
 {
     QMessageBox msgBox(this);
@@ -378,33 +398,21 @@ void QtWindow::keyboardShortcuts()
     QString msg =
             tr(
                 "<h2><center>Key board short cuts</center></h2>"
-                "<table width='100%'  border='1' cellspacing='0' cellpadding='1' >"
+                "<p>The following PC keyboard shortcuts have been defined</p>"
+                "<center><table  border='1' cellspacing='0' cellpadding='10' >"
                 );
 
     msg += tr(
                 "<tr>"
-                "<th>row 1, cell 1</th>"
-                "<th>row 1, cell 2</th>"
-                "</tr>"
-                "<tr>"
-                "<td>row 1, cell 1</td>"
-                "<td>row 1, cell 2</td>"
-                "</tr>"
-                "<tr>"
-                "<td>row 2, cell 1</td>"
-                "<td>row 2, cell 2</td>"
+                "<th>Action</th>"
+                "<th>Key</th>"
                 "</tr>"
             );
+    msg += displayShortCut("RightHand","Choose the right hand");
+    msg += displayShortCut("BothHands","Choose both hands");
+    msg += displayShortCut("LeftHand","Choose the left Hand");
     msg += tr(
-                "</table>"
-                "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
-                "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
-                "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
-                "This program is made available "
-                "under the terms of the GNU General Public License version 3 as published by "
-                "the Free Software Foundation.<br><br>"
-                "This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
-                "Copyright(c) 2003-2007 Gary P. Scavone"
+                "</table> </center><br>"
                 );
     msgBox.setText(msg);
 
@@ -427,16 +435,16 @@ void QtWindow::open()
 
 void QtWindow::readSettings()
 {
-    QPoint pos = m_settings->value("window/pos", QPoint(25, 25)).toPoint();
-    QSize size = m_settings->value("window/size", QSize(800, 600)).toSize();
+    QPoint pos = m_settings->value("Window/Pos", QPoint(25, 25)).toPoint();
+    QSize size = m_settings->value("Window/Size", QSize(800, 600)).toSize();
     resize(size);
     move(pos);
 }
 
 void QtWindow::writeSettings()
 {
-    m_settings->setValue("window/pos", pos());
-    m_settings->setValue("window/size", size());
+    m_settings->setValue("Window/Pos", pos());
+    m_settings->setValue("Window/Size", size());
     m_settings->writeSettings();
 }
 

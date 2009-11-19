@@ -65,10 +65,10 @@ void GuiKeyboardSetupDialog::init(CSong* song, CSettings* settings)
     rightSoundCombo->setCurrentIndex(program);
     program = m_settings->value("Keyboard/WrongSound", Cfg::defaultWrongPatch()).toInt();
     wrongSoundCombo->setCurrentIndex(program);
-    int lowestNote = m_settings->value("Keyboard/lowestNote", "0").toInt();
-    int highestNote = m_settings->value("Keyboard/highestNote", "127").toInt();
+    int lowestNote = m_settings->value("Keyboard/LowestNote", "0").toInt();
+    int highestNote = m_settings->value("Keyboard/HighestNote", "127").toInt();
 
-    QString midiInputName = m_settings->value("midi/input").toString();
+    QString midiInputName = m_settings->value("Midi/I/nput").toString();
     if (midiInputName.startsWith("None", Qt::CaseInsensitive))
     {
         lowestNote = PC_KEY_LOWEST_NOTE;
@@ -147,8 +147,8 @@ void GuiKeyboardSetupDialog::accept()
     CChord::setPianoRange(lowestNote, highestNote);
     if (lowestNoteEdit->isEnabled())
     {
-        m_settings->setValue("Keyboard/lowestNote", lowestNote);
-        m_settings->setValue("Keyboard/highestNote", highestNote);
+        m_settings->setValue("Keyboard/LowestNote", lowestNote);
+        m_settings->setValue("Keyboard/HighestNote", highestNote);
     }
     m_song->testWrongNoteSound(false);
     m_song->regenerateChordQueue();

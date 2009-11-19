@@ -569,6 +569,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 // count the good notes so that the live percentage looks OK
                 m_rating.totalNotes(m_wantedChord.length());
                 m_rating.calculateAccuracy();
+                m_settings->pianistActive();
                 if (m_rating.isAccuracyGood() || m_playMode == PB_PLAY_MODE_playAlong)
                     setFollowSkillAdvanced(true); // change the skill level only when they are good enough
                 else

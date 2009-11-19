@@ -32,6 +32,7 @@
 #include "GuiTopBar.h"
 #include "TrackList.h"
 
+
 GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     : QWidget(parent), m_parent(parent)
 {
@@ -41,7 +42,6 @@ GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     m_topBar = 0;
     m_settings = settings;
     setupUi(this);
-    parent->installEventFilter(this);
 }
 
 void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar)
@@ -60,6 +60,21 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     boostSlider->setMaximum(100);
     pianoSlider->setMinimum(-100);
     pianoSlider->setMaximum(100);
+
+    QAction* act;
+    act = new QAction("Set as Right Hand Part", this);
+    trackListWidget->addAction(act);
+    connect(act, SIGNAL(triggered()), this, SLOT(setTrackRightHandPart()));
+
+    act = new QAction("Set as Left Hand Part", this);
+    trackListWidget->addAction(act);
+    connect(act, SIGNAL(triggered()), this, SLOT(setTrackLeftHandPart()));
+
+    act = new QAction("Reset Both Parts", this);
+    trackListWidget->addAction(act);
+    connect(act, SIGNAL(triggered()), this, SLOT(clearTrackPart()));
+
+    trackListWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
 }
 
 void GuiSidePanel::refresh() {
@@ -179,32 +194,5 @@ void GuiSidePanel::setCurrentHand(QString hand)
     else
         bothHandsRadio->setChecked(true);
     //on_bothHandsRadio_toggled
-}
-
-bool GuiSidePanel::eventFilter(QObject *obj, QEvent *event)
-{
-    if (event->type() == QEvent::KeyPress) {
-        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-        if (keyEvent->key()==Qt::Key_PageUp) {
-            if (bothHandsRadio->isChecked()==true) {
-                   rightHandRadio->setChecked(true);
-            } else if (leftHandRadio->isChecked()==true) {
-                bothHandsRadio->setChecked(true);
-            }
-            return true;
-        } else if (keyEvent->key()==Qt::Key_PageDown) {
-            if (bothHandsRadio->isChecked()==true) {
-                   leftHandRadio->setChecked(true);
-            } else if (rightHandRadio->isChecked()==true) {
-                bothHandsRadio->setChecked(true);
-            }
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        // it's not a key event, lets do standard event processing
-        return QObject::eventFilter(obj, event);
-    }
 }
 

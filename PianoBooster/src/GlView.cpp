@@ -158,7 +158,7 @@ void CGLView::drawTimeSignature()
 
 void CGLView::drawAccurracyBar()
 {
-    if (m_song->getPlayMode() == PB_PLAY_MODE_listen)
+    if (m_song->getPlayMode() == PB_PLAY_MODE_listen || !m_settings->getWarningMessage().isEmpty())
         return;
 
     if (m_forceRatingRedraw == 0)
@@ -208,8 +208,16 @@ void CGLView::drawDisplayText()
     if (m_forcefullRedraw == 0)
         return;
 
-    glColor3f(1.0,1.0,1.0);
     int y = Cfg::getAppHeight() - 14;
+
+    if (!m_settings->getWarningMessage().isEmpty())
+    {
+        glColor3f(1.0,0.0,0.0);
+        renderText(30, y-10, 0, m_settings->getWarningMessage(), m_timeRatingFont);
+        return;
+    }
+
+    glColor3f(1.0,1.0,1.0);
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen)
         renderText(30, y-4,0 ,"Accuracy:", m_timeRatingFont);
@@ -218,6 +226,7 @@ void CGLView::drawDisplayText()
         return;
 
     y = Cfg::getAppHeight() - m_titleHeight;
+
     renderText(30, y+6, 0,"Song: " + m_song->getSongTitle(), m_timeRatingFont);
     /*
     char buffer[100];
@@ -336,7 +345,7 @@ void CGLView::init()
 
     setFocusPolicy(Qt::ClickFocus);
 
-    // todo increase the tick time for Midi handling
+    // increased the tick time for Midi handling
     m_timer.start(4, this ); // fixme was 12 was 5
     m_realtime.start();
 

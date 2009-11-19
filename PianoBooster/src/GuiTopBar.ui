@@ -68,7 +68,7 @@
         </size>
        </property>
        <property name="shortcut">
-        <string>Home</string>
+        <string>Space</string>
        </property>
        <property name="checkable">
         <bool>false</bool>
@@ -94,7 +94,7 @@
         </size>
        </property>
        <property name="shortcut">
-        <string>Space</string>
+        <string>P</string>
        </property>
        <property name="checkable">
         <bool>false</bool>

@@ -35,17 +35,15 @@ GuiSongDetailsDialog::GuiSongDetailsDialog(QWidget *parent)
     setupUi(this);
     m_song = 0;
     m_settings = 0;
-    m_glView = 0;
     m_trackList = 0;
     setWindowTitle("Song Details");
 }
 
 
-void GuiSongDetailsDialog::init(CSong* song, CSettings* settings, CGLView * glView)
+void GuiSongDetailsDialog::init(CSong* song, CSettings* settings)
 {
     m_song = song;
     m_settings = settings;
-    m_glView = glView;
     m_trackList = m_song->getTrackList();
     leftHandChannelCombo->addItem(tr("No channel assigned"));
     leftHandChannelCombo->addItems(m_trackList->getAllChannelProgramNames(true));

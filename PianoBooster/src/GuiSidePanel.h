@@ -36,7 +36,6 @@
 #include "TrackList.h"
 #include "Settings.h"
 
-
 #include "ui_GuiSidePanel.h"
 
 class GuiTopBar;
@@ -58,6 +57,13 @@ public:
     int getSongIndex() {return songCombo->currentIndex();}
     void setSongIndex(int index){songCombo->setCurrentIndex(index);}
     void setCurrentHand(QString hand);
+
+    void setActiveHand(whichPart_t hand)
+    {
+        if (hand == PB_PART_right) rightHandRadio->setChecked(true);
+        if (hand == PB_PART_both)  bothHandsRadio->setChecked(true);
+        if (hand == PB_PART_left)  leftHandRadio->setChecked(true);
+    }
 
 private slots:
     void on_songCombo_activated (int index);
@@ -103,10 +109,28 @@ private slots:
         if (m_song) m_song->mutePianistPart(checked);
     }
 
+    void setTrackRightHandPart() {
+        int row = trackListWidget->currentRow();
+        m_trackList->setActiveHandsIndex(m_trackList->getHandTrackIndex(PB_PART_left), row);
+        trackListWidget->setCurrentRow(row);
+    }
+
+    void setTrackLeftHandPart() {
+        int row = trackListWidget->currentRow();
+        m_trackList->setActiveHandsIndex(row, m_trackList->getHandTrackIndex(PB_PART_right));
+        trackListWidget->setCurrentRow(row);
+    }
+
+
+    void clearTrackPart() {
+        int row = trackListWidget->currentRow();
+        m_trackList->setActiveHandsIndex( -1, -1);
+        trackListWidget->setCurrentRow(row);
+    }
+
+
 private:
     void autoSetMuteYourPart();
-    bool eventFilter(QObject *obj, QEvent *event);
-
 
     CSong* m_song;
     CScore* m_score;

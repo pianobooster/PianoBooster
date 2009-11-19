@@ -26,9 +26,9 @@
 */
 /*********************************************************************************/
 
-#include <fstream>
 #include "Song.h"
 #include "Score.h"
+
 
 void CSong::init(CScore * scoreWin, CSettings* settings)
 {

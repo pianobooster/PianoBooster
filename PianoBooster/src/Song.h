@@ -92,6 +92,7 @@ public:
 private:
     void midiFileInfo();
 
+
     CMidiFile * m_midiFile;
     CFindChord m_findChord;
     bool m_reachedMidiEof;

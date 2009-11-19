@@ -41,8 +41,8 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
 
 GuiPreferencesDialog::~GuiPreferencesDialog()
 {
-	if( m_settings )
-		m_settings->fastUpdateRate(true);
+    if( m_settings )
+        m_settings->fastUpdateRate(true);
 }
 
 
@@ -66,13 +66,13 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
 void GuiPreferencesDialog::accept()
 {
     m_glView->m_cfg_openGlOptimise = videoOptimiseCheck->isChecked();
-    m_settings->setValue("display/openGlOptimise", m_glView->m_cfg_openGlOptimise );
+    m_settings->setValue("Display/OpenGlOptimise", m_glView->m_cfg_openGlOptimise );
     m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
-    m_settings->setValue("score/timingMarkers", m_song->cfg_timingMarkersFlag );
+    m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
     m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
     m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
-    m_settings->setValue("score/stopPointMode", m_song->cfg_stopPointMode );
+    m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
     m_song->refreshScroll();
 
     this->QDialog::accept();

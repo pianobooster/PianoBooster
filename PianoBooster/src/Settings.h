@@ -50,8 +50,8 @@ public:
     bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
 
     /// Saves in the .ini file whether the user wants to show the note names
-	void setNoteNamesEnabled(bool value);
-	void setCourtesyAccidentals(bool value);
+    void setNoteNamesEnabled(bool value);
+    void setCourtesyAccidentals(bool value);
     void setAdvancedMode(bool value) { m_advancedMode = value;}
 
     /// returns true if the users wants to see the note names
@@ -73,6 +73,8 @@ public:
     void loadSettings();
     QString getCurrentSongLongFileName()
     {
+        if (getCurrentSongName().isEmpty())
+            return QString();
         return m_bookPath + getCurrentBookName() + '/' + getCurrentSongName();
     }
     QStringList getFluidSoundFontNames()
@@ -81,17 +83,20 @@ public:
     }
     void addFluidSoundFontName(QString sfName)
     {
-    	m_fluidSoundFontNames.append(sfName);
+        m_fluidSoundFontNames.append(sfName);
     }
     void removeFluidSoundFontName(QString sfName)
     {
-    	m_fluidSoundFontNames.removeAll(sfName);
+        m_fluidSoundFontNames.removeAll(sfName);
     }
+    void pianistActive() { m_pianistActive = true;}
     void setActiveHand(whichPart_t hand);
 
     void setChannelHands(int left, int right);
 
     void fastUpdateRate(bool fullSpeed);
+    QString getWarningMessage() {return m_warningMessage;}
+    void updateWarningMessages();
 
 private:
 
@@ -106,6 +111,8 @@ private:
     void saveBookSettings();
     void loadXmlFile();
     void saveXmlFile();
+    void setDefaultValue(const QString & key, const QVariant & value );
+
 
     // returns either 'left' 'right' or 'both'
     const QString partToHandString(whichPart_t part)
@@ -132,7 +139,9 @@ private:
     QString m_bookPath;
     QString m_currentBookName;
     QString m_currentSongName;
+    QString m_warningMessage;
     QStringList m_fluidSoundFontNames;
+    bool m_pianistActive;
 };
 
 #endif // __SETTINGS_H__

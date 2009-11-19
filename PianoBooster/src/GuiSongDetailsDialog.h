@@ -46,7 +46,7 @@ class GuiSongDetailsDialog : public QDialog, private Ui::GuiSongDetailsDialog
 
 public:
     GuiSongDetailsDialog(QWidget *parent = 0);
-    void init(CSong* song, CSettings* settings, CGLView* glView);
+    void init(CSong* song, CSettings* settings);
 
 private slots:
     void accept();
@@ -58,7 +58,6 @@ private:
 
     CSettings* m_settings;
     CSong* m_song;
-    CGLView *m_glView;
     CTrackList* m_trackList;
 };
 

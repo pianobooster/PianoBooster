@@ -202,6 +202,7 @@ public:
 
 protected:
     CScore* m_scoreWin;
+    CSettings* m_settings;
 
     CQueue<CMidiEvent>* m_songEventQueue;
     CQueue<CChord>* m_wantedChordQueue;
@@ -269,7 +270,6 @@ private:
     }
     void setFollowSkillAdvanced(bool enable);
 
-    CSettings* m_settings;
     CPiano* m_piano;
 
     CBar m_bar;

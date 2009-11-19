@@ -49,6 +49,7 @@ public:
     void playMidiEvent(const CMidiEvent & event);
     int checkMidiInput();
     CMidiEvent readMidiInput();
+    bool validMidiOutput() { return m_validOutput; }
 
     QStringList getMidiPortList(midiType_t type);
     bool openMidiPort(midiType_t type, QString portName);
@@ -64,11 +65,12 @@ public:
 private:
 
     CMidiDeviceBase* m_rtMidiDevice;
-#if PB_USE_FLUIDSYNTH   
+#if PB_USE_FLUIDSYNTH
     CMidiDeviceBase* m_fluidSynthMidiDevice;
 #endif
     CMidiDeviceBase* m_selectedMidiInputDevice;
     CMidiDeviceBase* m_selectedMidiOutputDevice;
+    bool m_validOutput;
 };
 
 #endif //__MIDI_DEVICE_H__

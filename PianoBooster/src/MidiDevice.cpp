@@ -43,6 +43,7 @@ CMidiDevice::CMidiDevice()
 #endif
     m_selectedMidiInputDevice = m_rtMidiDevice;
     m_selectedMidiOutputDevice = m_rtMidiDevice;
+    m_validOutput = false;
 }
 
 CMidiDevice::~CMidiDevice()
@@ -84,18 +85,20 @@ bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
     }
     else
     {
+        m_validOutput = false;
 
         //m_selectedMidiOutputDevice->closeMidiPort(type, portName);
         if ( m_rtMidiDevice->openMidiPort(type, portName) )
         {
             m_selectedMidiOutputDevice = m_rtMidiDevice;
+            m_validOutput = true;
             return true;
         }
 #if PB_USE_FLUIDSYNTH
         if ( m_fluidSynthMidiDevice->openMidiPort(type, portName) )
         {
-
             m_selectedMidiOutputDevice = m_fluidSynthMidiDevice;
+            m_validOutput = true;
             return true;
         }
 #endif

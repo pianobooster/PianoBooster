@@ -47,6 +47,8 @@
 #include "GuiTopBar.h"
 #include "GuiSidePanel.h"
 #include "QtWindow.h"
+#include "ReleaseNote.txt"
+
 
 #define OPTION_DEBUG_SETTINGS     0
 #if OPTION_DEBUG_SETTINGS
@@ -62,26 +64,42 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     // It is all done in the initialisation list
 
     m_advancedMode = false;
-    m_noteNamesEnabled = value("score/noteNames", true ).toBool();
-    CNotation::setCourtesyAccidentals(value("score/courtesyAccidentals", false ).toBool());
+    m_pianistActive = false;
+    m_noteNamesEnabled = value("Score/NoteNames", true ).toBool();
+    CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
 }
+
+void CSettings::setDefaultValue(const QString & key, const QVariant & value )
+{
+    if (contains(key)) // Do not change the value if it already set
+        return;
+
+    setValue(key, value);
+}
+
 
 void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
 {
     m_song = song;
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
+
+    // Set defualt values
+    setValue("PianoBooster/Version",PB_VERSION);
+    setDefaultValue("ShortCuts/LeftHand", "F2");
+    setDefaultValue("ShortCuts/BothHands","F3");
+    setDefaultValue("ShortCuts/RightHand","F4");
 }
 
 
 void CSettings::setNoteNamesEnabled(bool value) {
     m_noteNamesEnabled = value;
-    setValue("score/noteNames", value );
+    setValue("Score/NoteNames", value );
 }
 
 void CSettings::setCourtesyAccidentals(bool value) {
     CNotation::setCourtesyAccidentals(value);
-    setValue("score/courtesyAccidentals", value );
+    setValue("Score/CourtesyAccidentals", value );
 }
 
 // Open a document if it exists or else create it (also delete an duplicates
@@ -130,24 +148,24 @@ void CSettings::loadHandSettings()
     if (m_domSong.isNull())
         return;
     m_domHand = openDomElement(m_domSong, "hand", partToHandString(m_song->getActiveHand()));
-    m_guiTopBar->setSpeed(m_domHand.attribute("speed", "100" ).toInt());
+    //m_guiTopBar->setSpeed(m_domHand.attribute("speed", "100" ).toInt());
 }
 
 void CSettings::saveHandSettings()
 {
-    m_domHand.setAttribute("speed", m_guiTopBar->getSpeed());
+    //m_domHand.setAttribute("speed", m_guiTopBar->getSpeed());
 }
 
 void CSettings::loadSongSettings()
 {
     m_domSong = openDomElement(m_domBook, "song", m_currentSongName);
     m_guiSidePanel->setCurrentHand(m_domSong.attribute("hand", "both" ));
+    m_guiTopBar->setSpeed(m_domSong.attribute("speed", "100" ).toInt());
 
 
     // -1 means none and -2 means not set
     int left = m_domSong.attribute("leftHandMidiChannel", "-2").toInt();
     int right = m_domSong.attribute("rightHandMidiChannel", "-2").toInt();
-
     CNote::setChannelHands(left, right);
 
     loadHandSettings();
@@ -157,6 +175,7 @@ void CSettings::loadSongSettings()
 void CSettings::saveSongSettings()
 {
     m_domSong.setAttribute("hand", partToHandString(m_song->getActiveHand()));
+    m_domSong.setAttribute("speed", m_guiTopBar->getSpeed());
 
     saveHandSettings();
 }
@@ -220,6 +239,13 @@ void CSettings::saveXmlFile()
     const int IndentSize = 4;
 
     QFile file(m_bookPath + getCurrentBookName() + '/' + "pb.cfg");
+
+    // don't save the config file unless the user really is using the system
+    if (m_pianistActive == false && file.exists() == false)
+        return;
+
+    m_pianistActive = false;
+
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         ppLogError("Cannot save xml file %s", qPrintable(file.fileName()));
@@ -256,10 +282,12 @@ void CSettings::openSongFile(const QString & filename)
 
     m_currentSongName = currentSongName;
     m_guiSidePanel->loadBookList();
+    updateWarningMessages();
 }
 
 void CSettings::setActiveHand(whichPart_t hand)
 {
+    saveHandSettings();
     m_song->setActiveHand(hand);
     loadHandSettings();
 }
@@ -296,6 +324,7 @@ QStringList CSettings::getBookList()
 
 void CSettings::writeSettings()
 {
+
     if (QFile::exists(getCurrentSongLongFileName() ))
         setValue("CurrentSong", getCurrentSongLongFileName());
     saveXmlFile();
@@ -303,7 +332,12 @@ void CSettings::writeSettings()
 
 void CSettings::loadSettings()
 {
-    openSongFile( value("CurrentSong").toString());
+    QString songName = value("CurrentSong").toString();
+    if (!songName.isEmpty())
+        openSongFile( songName );
+
+    updateWarningMessages();
+
 }
 
 
@@ -330,10 +364,11 @@ void CSettings::setCurrentBookName(const QString & name, bool clearSongName)
         return;
     if (!m_currentBookName.isEmpty() && m_currentBookName != name)
         saveXmlFile();
+
     m_currentBookName = name;
     if (clearSongName)
         m_currentSongName.clear();
-    //debugSettings("setCurrentBookName " + name.toAscii() + " -- " + getCurrentSongLongFileName().toAscii());
+    debugSettings(("setCurrentBookName %s --- %s ", qPrintable(name), qPrintable(getCurrentSongLongFileName())));
     loadXmlFile();
 }
 
@@ -349,5 +384,15 @@ void CSettings::fastUpdateRate(bool fullSpeed)
 {
     if (m_mainWindow)
         m_mainWindow->fastUpdateRate(fullSpeed);
+}
+
+void CSettings::updateWarningMessages()
+{
+    if (!m_song->validMidiOutput())
+        m_warningMessage = tr("NO MIDI OUTPUT DEVICE: Use menu Setup/Midi Setup ...");
+    else if (m_currentSongName.isEmpty())
+        m_warningMessage = tr("NO MIDI FILE LOADED: Use menu File/Open ...");
+    else
+        m_warningMessage.clear();
 }
 

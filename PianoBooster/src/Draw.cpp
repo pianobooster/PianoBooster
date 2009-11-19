@@ -617,8 +617,11 @@ void CDraw::drawKeySignature(int key)
     CStavePos pos;
     size_t i;
 
+    if (key == NOT_USED)
+        return;
+
     i = 0;
-    while (key != 0)
+    while (key != 0 )
     {
         if (key > 0)
         {
