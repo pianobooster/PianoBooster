@@ -120,9 +120,12 @@ public:
     void transpose(int amount)
     {
         if (m_symbolType == PB_SYMBOL_note)
+        {
             m_midiNote += amount;
-        m_stavePos.notePos(m_hand, m_midiNote); // The save position has now moved
+            m_stavePos.notePos(m_hand, m_midiNote); // The save position has now moved
+        }
     }
+
     void setIndex(int index, int total)
     {
         m_index = index;
@@ -137,8 +140,8 @@ public:
     int getAccidental() {
         return getStavePos().getAccidental();
     }
-    
-    
+
+
     void setAccidentalModifer(accidentalModifer_t value) {m_accidentalModifer = value;}
     accidentalModifer_t getAccidentalModifer() {return m_accidentalModifer;}
 

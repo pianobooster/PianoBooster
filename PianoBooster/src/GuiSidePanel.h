@@ -65,6 +65,16 @@ public:
         if (hand == PB_PART_left)  leftHandRadio->setChecked(true);
     }
 
+    void nextSong(int amount)
+    {
+        int n = songCombo->currentIndex() + amount;
+        if (n < 0 || n >= songCombo->count())
+            return;
+
+        songCombo->setCurrentIndex(n);
+        on_songCombo_activated(n);
+    }
+
 private slots:
     void on_songCombo_activated (int index);
     void on_bookCombo_activated (int index);
@@ -111,14 +121,20 @@ private slots:
 
     void setTrackRightHandPart() {
         int row = trackListWidget->currentRow();
-        m_trackList->setActiveHandsIndex(m_trackList->getHandTrackIndex(PB_PART_left), row);
+        int otherRow = m_trackList->getHandTrackIndex(PB_PART_left);
+        if (otherRow == row) otherRow = -1;
+        m_trackList->setActiveHandsIndex(otherRow, row);
         trackListWidget->setCurrentRow(row);
+        m_song->refreshScroll();
     }
 
     void setTrackLeftHandPart() {
         int row = trackListWidget->currentRow();
-        m_trackList->setActiveHandsIndex(row, m_trackList->getHandTrackIndex(PB_PART_right));
+        int otherRow = m_trackList->getHandTrackIndex(PB_PART_right);
+        if (otherRow == row) otherRow = -1;
+        m_trackList->setActiveHandsIndex(row, otherRow);
         trackListWidget->setCurrentRow(row);
+        m_song->refreshScroll();
     }
 
 
@@ -126,6 +142,7 @@ private slots:
         int row = trackListWidget->currentRow();
         m_trackList->setActiveHandsIndex( -1, -1);
         trackListWidget->setCurrentRow(row);
+        m_song->refreshScroll();
     }
 
 

@@ -67,6 +67,8 @@ public:
 
 private slots:
     void open();
+    void help();
+    void website();
     void about();
     void keyboardShortcuts();
 
@@ -120,9 +122,26 @@ private slots:
         CTempo::enableFollowTempo(false);
     }
 
-    void slotRightHand()  {  m_sidePanel->setActiveHand(PB_PART_right); }
-    void slotBothHands()  {  m_sidePanel->setActiveHand(PB_PART_both); }
-    void slotLeftHand()  {  m_sidePanel->setActiveHand(PB_PART_left); }
+    void on_rightHand()  {  m_sidePanel->setActiveHand(PB_PART_right); }
+    void on_bothHands()  {  m_sidePanel->setActiveHand(PB_PART_both); }
+    void on_leftHand()   {  m_sidePanel->setActiveHand(PB_PART_left); }
+    void on_playFromStart()   {  m_topBar->on_playFromStartButton_clicked(true); }
+    void on_playPause()   {  m_topBar->on_playButton_clicked(true); }
+    void on_faster()   {
+        float speed = m_song->getSpeed() + 0.05;
+        m_song->setSpeed(speed);
+        speed = m_song->getSpeed();
+        m_topBar->setSpeed(speed*100 + 0.5);
+    }
+    void on_slower()   {
+        float speed = m_song->getSpeed() - 0.05;
+        m_song->setSpeed(speed);
+        speed = m_song->getSpeed();
+        m_topBar->setSpeed(speed*100 + 0.5);
+    }
+    void on_nextSong()   {  m_sidePanel->nextSong(+1); }
+    void on_previousSong()   {  m_sidePanel->nextSong(-1); }
+
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -134,6 +153,8 @@ private:
     int decodeIntegerParam(QString arg, int defaultParam);
     void decodeMidiFileArg(QString arg);
     QString displayShortCut(QString code, QString description);
+    void addShortcutAction(const QString & key, const char * method);
+
 
     void displayUsage();
     void createActions();

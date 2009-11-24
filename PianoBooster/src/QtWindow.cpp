@@ -30,7 +30,7 @@
 
 #ifdef __linux__
 #ifndef USE_REALTIME_PRIORITY
-#define USE_REALTIME_PRIORITY 1
+#define USE_REALTIME_PRIORITY 0
 #endif
 #endif
 
@@ -55,8 +55,6 @@ static int set_realtime_priority(int policy, int prio)
 
 QtWindow::QtWindow()
 {
-
-
     QCoreApplication::setOrganizationName("PianoBooster");
     QCoreApplication::setOrganizationDomain("pianobooster.sourceforge.net/");
     QCoreApplication::setApplicationName("Piano Booster");
@@ -80,6 +78,7 @@ QtWindow::QtWindow()
     int rt_prio = sched_get_priority_max(SCHED_FIFO);
     set_realtime_priority(SCHED_FIFO, rt_prio);
 #endif
+
     m_glWidget = new CGLView(this, m_settings);
 
     m_song = m_glWidget->getSongObject();
@@ -270,6 +269,14 @@ void QtWindow::decodeCommandLine()
     }
 }
 
+void QtWindow::addShortcutAction(const QString & key, const char * method)
+{
+    QAction* act = new QAction(this);
+    act->setShortcut(m_settings->value(key).toString());
+    connect(act, SIGNAL(triggered()), this, method);
+    addAction(act);
+}
+
 void QtWindow::createActions()
 {
     m_openAct = new QAction(QIcon(":/images/open.png"), tr("&Open..."), this);
@@ -286,7 +293,7 @@ void QtWindow::createActions()
     m_aboutAct->setStatusTip(tr("Show the application's About box"));
     connect(m_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 
-    m_shortcutAct = new QAction(tr("&Keyboard shortcuts"), this);
+    m_shortcutAct = new QAction(tr("&PC Shortcut Keys"), this);
     m_shortcutAct->setStatusTip(tr("The PC Keyboard shortcut keys"));
     connect(m_shortcutAct, SIGNAL(triggered()), this, SLOT(keyboardShortcuts()));
 
@@ -295,12 +302,12 @@ void QtWindow::createActions()
     m_setupMidiAct->setStatusTip(tr("Setup the Midi input an output"));
     connect(m_setupMidiAct, SIGNAL(triggered()), this, SLOT(showMidiSetup()));
 
-    m_setupKeyboardAct = new QAction(tr("&Keyboard setting ..."), this);
+    m_setupKeyboardAct = new QAction(tr("Piano &Keyboard Setting ..."), this);
     m_setupKeyboardAct->setShortcut(tr("Ctrl+K"));
-    m_setupKeyboardAct->setStatusTip(tr("Setup the Midi input an output"));
+    m_setupKeyboardAct->setStatusTip(tr("Change the piano keybaord settings"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
 
-    m_toggleSidePanelAct = new QAction(tr("&Show/Hide the side panel"), this);
+    m_toggleSidePanelAct = new QAction(tr("&Show/Hide the Side Panel"), this);
     m_toggleSidePanelAct->setShortcut(tr("F11"));
     connect(m_toggleSidePanelAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
 
@@ -322,20 +329,15 @@ void QtWindow::createActions()
     connect(act, SIGNAL(triggered()), this, SLOT(disableFollowTempo()));
     addAction(act);
 
-    act = new QAction(this);
-    act->setShortcut(m_settings->value("ShortCuts/RightHand").toString());
-    connect(act, SIGNAL(triggered()), this, SLOT(slotRightHand()));
-    addAction(act);
-
-    act = new QAction(this);
-    act->setShortcut(m_settings->value("ShortCuts/BothHands").toString());
-    connect(act, SIGNAL(triggered()), this, SLOT(slotBothHands()));
-    addAction(act);
-
-    act = new QAction(this);
-    act->setShortcut(m_settings->value("ShortCuts/LeftHand").toString());
-    connect(act, SIGNAL(triggered()), this, SLOT(slotLeftHand()));
-    addAction(act);
+    addShortcutAction("ShortCuts/RightHand",        SLOT(on_rightHand()));
+    addShortcutAction("ShortCuts/BothHands",        SLOT(on_bothHands()));
+    addShortcutAction("ShortCuts/LeftHand",         SLOT(on_leftHand()));
+    addShortcutAction("ShortCuts/PlayFromStart",    SLOT(on_playFromStart()));
+    addShortcutAction("ShortCuts/PlayPause",        SLOT(on_playPause()));
+    addShortcutAction("ShortCuts/Faster",           SLOT(on_faster()));
+    addShortcutAction("ShortCuts/Slower",           SLOT(on_slower()));
+    addShortcutAction("ShortCuts/NextSong",         SLOT(on_nextSong()));
+    addShortcutAction("ShortCuts/PreviousSong",     SLOT(on_previousSong()));
 }
 
 void QtWindow::createMenus()
@@ -357,8 +359,82 @@ void QtWindow::createMenus()
     m_setupMenu->addAction(m_setupPreferencesAct);
 
     m_helpMenu = menuBar()->addMenu(tr("&Help"));
+
+    QAction* act;
+    act = new QAction(tr("&Help"), this);
+    connect(act, SIGNAL(triggered()), this, SLOT(help()));
+    m_helpMenu->addAction(act);
+
+    act = new QAction(tr("&Website"), this);
+    connect(act, SIGNAL(triggered()), this, SLOT(website()));
+    m_helpMenu->addAction(act);
+
     m_helpMenu->addAction(m_shortcutAct);
     m_helpMenu->addAction(m_aboutAct);
+}
+void QtWindow::website()
+{
+    QDesktopServices::openUrl(QUrl("http://pianobooster.sourceforge.net"));
+}
+
+void QtWindow::help()
+{
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle (tr("About"));
+    msgBox.setText(
+            tr(
+   "<h3>GETTING STARTED</h3>"
+
+
+   "<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. (If you "
+   "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
+   "middle C).</p>"
+
+   "<p>To hear the music you will need a <b>General Midi compatible sound synthesizer</b>. "
+   "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows XP can be used "
+   "but it introduces an unacceptable delay (latency).</p>"
+
+
+   "<p>PianoBooster does not come with any <b>MIDI Files</b> and so you will need get them from the net. "
+   " <b>Midi files</b> preferably with right and left piano "
+   "parts on channels 4 and 3. See the <a href=\"http://pianobooster.sourceforge.net/\" >"
+   "<b>PianoBosster FAQ</b></a> for where to get MIDI files"
+
+   "<h3>Setting UP</h3>"
+
+
+   "Select the MIDI input and MIDI "
+   "output interfaces that you are using from the <i>Setup/Midi Setup</i> menu"
+
+   "Next user <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file "
+   "using File/Open from the Piano Booster menu. Now choose the skill level, if you want to "
+   "<h3>More Information</h3>"
+   "<p>Please visit the piano booster website, PianoBooster FAQ and the user forum for more help </p>"
+ /*  just listen to the midi music  -- select 'listen', to play along with a midi keyboard with
+   the music following your playing -- select 'follow you'. Finally click on the Play icon to
+   start.
+
+   It is recommended that you shut down all other programs whilst running Piano Booster so that
+   the scrolling notes move smoothly across the screen.
+
+
+===============================================================================================
+   LICENSE
+===============================================================================================
+
+   Piano Booster is fully copyrighted by the author and all rights are reserved.
+   PianoBooster is free software (Open Source software): you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by the Free Software
+   Foundation, either version 3 of the License, or (at your option) any later version.
+
+   PianoBooster is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+   without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+   See the GNU General Public License in the file "gplv3.txt" or from the web site
+   <http://www.gnu.org/licenses/>.
+*/
+                ));
+    msgBox.setMinimumWidth(600);
+    msgBox.exec();
 }
 
 void QtWindow::about()
@@ -386,7 +462,7 @@ QString QtWindow::displayShortCut(QString key, QString description)
     QString str = QString("<tr>"
                 "<td>%1</td>"
                 "<td>%2</td>"
-                "</tr>").arg( description ).arg( m_settings->value("ShortCuts/" + key).toString());
+                "</tr>").arg( description ).arg( m_settings->value(key).toString());
     return str;
 
 }
@@ -397,9 +473,9 @@ void QtWindow::keyboardShortcuts()
     msgBox.setWindowTitle (tr("PC Keyboard Short Cuts"));
     QString msg =
             tr(
-                "<h2><center>Key board short cuts</center></h2>"
-                "<p>The following PC keyboard shortcuts have been defined</p>"
-                "<center><table  border='1' cellspacing='0' cellpadding='10' >"
+                "<h2><center>Keyboard short cuts</center></h2>"
+                "<p>The following PC keyboard short cuts have been defined.</p>"
+                "<center><table  border='1' cellspacing='0' cellpadding='4' >"
                 );
 
     msg += tr(
@@ -408,10 +484,18 @@ void QtWindow::keyboardShortcuts()
                 "<th>Key</th>"
                 "</tr>"
             );
-    msg += displayShortCut("RightHand","Choose the right hand");
-    msg += displayShortCut("BothHands","Choose both hands");
-    msg += displayShortCut("LeftHand","Choose the left Hand");
+    msg += displayShortCut("ShortCuts/RightHand","Choose the right hand");
+    msg += displayShortCut("ShortCuts/BothHands","Choose both hands");
+    msg += displayShortCut("ShortCuts/LeftHand","Choose the left Hand");
+    msg += displayShortCut("ShortCuts/PlayFromStart","Start from the beginning");
+    msg += displayShortCut("ShortCuts/PlayPause","Play Pause Toggle");
+    msg += displayShortCut("ShortCuts/Faster","Increase the speed by 5%");
+    msg += displayShortCut("ShortCuts/Slower","Increase the speed by 5%");
+    msg += displayShortCut("ShortCuts/NextSong","Change to the Next Song");
+    msg += displayShortCut("ShortCuts/PreviousSong","Change to the Previous Song");
+
     msg += tr(
+                "<tr><td>Fake Piano keys</td><td>X is middle C</td></tr>"
                 "</table> </center><br>"
                 );
     msgBox.setText(msg);
@@ -425,6 +509,9 @@ void QtWindow::open()
 {
     m_glWidget->fastUpdateRate(false);
     QString currentSong = m_settings->getCurrentSongLongFileName();
+
+    if (currentSong.isEmpty())
+        currentSong = QDir::homePath();
 
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
                             currentSong, tr("Midi Files (*.mid *.MID *.midi *.kar *.KAR)"));

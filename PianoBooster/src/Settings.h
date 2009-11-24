@@ -56,9 +56,7 @@ public:
 
     /// returns true if the users wants to see the note names
     bool showNoteNames(){
-        if (m_noteNamesEnabled )//fixme && !m_advancedMode)
-            return true;
-        return false;
+        return m_noteNamesEnabled;
     }
 
     void openSongFile(const QString & filename);

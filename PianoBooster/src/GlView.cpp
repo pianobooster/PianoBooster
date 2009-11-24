@@ -339,14 +339,14 @@ void CGLView::init()
 
     if (!Cfg::quickStart)
     {
-        renderText(10,10,"~", m_timeRatingFont); //fixme this is a work around for a QT bug.
-        renderText(10,10,"~", m_timeSigFont); //this is a work around for a QT bug.
+        renderText(10,10,QString("~"), m_timeRatingFont); //fixme this is a work around for a QT bug.
+        renderText(10,10,QString("~"), m_timeSigFont); //this is a work around for a QT bug.
     }
 
     setFocusPolicy(Qt::ClickFocus);
 
     // increased the tick time for Midi handling
-    m_timer.start(4, this ); // fixme was 12 was 5
+    m_timer.start(4, this ); // was 12
     m_realtime.start();
 
     fastUpdateRate(true);

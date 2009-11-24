@@ -202,8 +202,8 @@ void CTrackList::refresh()
         }
     }
 
-	if (CStavePos::getKeySignature() == NOT_USED)
-    	CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()), 0);
+    if (CStavePos::getKeySignature() == NOT_USED)
+        CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()), 0);
 
     int goodChan = -1;
     // Find an unused channel that we can use for the keyboard
@@ -308,7 +308,8 @@ void CTrackList::changeListWidgetItemView( unsigned int index, QListWidgetItem* 
     if ( CNote::hasPianoPart( chan ))
     {
         QFont font = listWidgetItem->font();
-        font.setBold(true);
+        if (CNote::rightHandChan() >= 0 && CNote::leftHandChan() >= 0 )
+            font.setBold(true);
         listWidgetItem->setFont(font);
         listWidgetItem->setForeground(Qt::darkBlue);
     }

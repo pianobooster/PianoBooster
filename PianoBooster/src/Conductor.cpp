@@ -68,6 +68,7 @@ CConductor::CConductor()
     setPianistChannels(1-1,2-1);
     cfg_timingMarkersFlag = false;
     cfg_stopPointMode = PB_STOP_POINT_MODE_automatic;
+    setPianoSoundPatches(1-1, 7-1); // 6-1
     m_tempo.setSavedwantedChord(&m_savedwantedChord);
 
     for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
@@ -437,14 +438,10 @@ void CConductor::resetWantedChord()
 // switch modes if we are playing well enough (i.e. don't slow down if we are playing late)
 void CConductor::setFollowSkillAdvanced(bool enable)
 {
+    if (m_settings==0 || m_scoreWin == 0)
+        return;
+
     m_settings-> setAdvancedMode(enable);
-
-    static bool oldShowingNoteNames = false; // fixme FIX
-
-    bool showingNoteNames  = m_settings->showNoteNames();
-    if ( oldShowingNoteNames != showingNoteNames && showingNoteNames == true)
-       m_scoreWin->refreshScroll(); // force a redraw to show the note names;
-    oldShowingNoteNames = showingNoteNames;
 
     if (getLatencyFix() > 0)
     {
@@ -896,6 +893,7 @@ void CConductor::rewind()
     if (m_piano)
         m_piano->clear();
     resetWantedChord();
+    setFollowSkillAdvanced(false);
 
     m_cfg_earlyNotesPoint = CMidiFile::ppqnAdjust(15); // was 10 playZoneEarly
     m_cfg_stopPointBeginner = CMidiFile::ppqnAdjust(-0); //was -3; // stop just after the beat
@@ -929,7 +927,6 @@ void CConductor::init(CScore * scoreWin, CSettings* settings)
         m_piano = m_scoreWin->getPianoObject();
     }
 
-    setPianoSoundPatches(1-1, 7-1); // 6-1
 
     rewind();
 }

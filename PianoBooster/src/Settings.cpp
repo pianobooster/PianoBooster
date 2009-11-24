@@ -89,6 +89,12 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
     setDefaultValue("ShortCuts/LeftHand", "F2");
     setDefaultValue("ShortCuts/BothHands","F3");
     setDefaultValue("ShortCuts/RightHand","F4");
+    setDefaultValue("ShortCuts/PlayFromStart","space");
+    setDefaultValue("ShortCuts/PlayPause","P");
+    setDefaultValue("ShortCuts/Faster","=");
+    setDefaultValue("ShortCuts/Slower","-");
+    setDefaultValue("ShortCuts/NextSong","]");
+    setDefaultValue("ShortCuts/PreviousSong","[");
 }
 
 

@@ -46,7 +46,8 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
     m_savedRunningStatus = 0;
     m_trackLengthCounter = 0;
     m_deltaTime = 0;
-    errorFail(SMF_NO_ERROR);
+    midiFailReset();
+
     int i;
 
     m_trackName.clear();
@@ -369,9 +370,8 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
     case MIDI_SYSEXEVENT:    /* System exclusive Transmitted */
     case 0xf7:  /* System exclusive Not transmitted */
         ppDEBUG_TRACK((2,"SYSEXEVENT xx"));
-        //read_sysex_event(); // fixme was
-        ignoreSysexEvent(data1);
         /*ignore_sysex_event();*/
+        ignoreSysexEvent(data1);
         break;
 
     case METAEVENT:
@@ -381,7 +381,6 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
     default:
         ppDEBUG_TRACK((99,"UNKNOWN"));
         ignoreSysexEvent(data1);
-        //read_sysex_event();
         errorFail(SMF_UNKNOW_EVENT);
         break;
     }

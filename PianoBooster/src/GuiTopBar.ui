@@ -67,9 +67,6 @@
          <height>24</height>
         </size>
        </property>
-       <property name="shortcut">
-        <string>Space</string>
-       </property>
        <property name="checkable">
         <bool>false</bool>
        </property>
@@ -92,9 +89,6 @@
          <width>24</width>
          <height>24</height>
         </size>
-       </property>
-       <property name="shortcut">
-        <string>P</string>
        </property>
        <property name="checkable">
         <bool>false</bool>

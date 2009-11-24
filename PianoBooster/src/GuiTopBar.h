@@ -53,9 +53,11 @@ public:
     void setSpeed(int value){ speedSpin->setValue(value); }
     int getSpeed(){return speedSpin->value();}
 
-private slots:
-    void on_playButton_clicked(bool clicked);
+public slots:
     void on_playFromStartButton_clicked(bool clicked);
+    void on_playButton_clicked(bool clicked);
+
+private slots:
     void on_speedSpin_valueChanged(int speed);
     void on_startBarSpin_valueChanged(double bar);
 

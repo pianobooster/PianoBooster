@@ -43,10 +43,6 @@ whichPart_t CNote::findHand(int midiNote, int midiChannel, int whichChannel, whi
     if (midiChannel != whichChannel)
     {
         // if channel both check then allow the left hand channel
-        //if (whichChannel != CNote::bothHandsChan() || midiChannel != CNote::rightHandChan())
-        //    return PB_PART_none;
-    //fixme static const bool hasxPianoPart(int chan)   { return (m_leftHandChannel == chan || m_rightHandChannel == chan ) ? true : false;}
-
         if (CNote::hasPianoPart(whichChannel) == false || CNote::hasPianoPart(midiChannel) == false) //fixme
             return PB_PART_none;
     }
@@ -170,7 +166,7 @@ bool CFindChord::findChord(CMidiEvent midi, int channel, whichPart_t part)
 
     m_noteGapTime += midi.deltaTime();
 
-	
+
     if ((m_noteGapTime >= m_cfg_ChordNoteGap || m_cordSpanGapTime > m_cfg_ChordMaxLength)
             && m_currentChord.length() > 0 )
     {
@@ -187,9 +183,9 @@ bool CFindChord::findChord(CMidiEvent midi, int channel, whichPart_t part)
             m_currentChord.addNote(hand, midi.note());
             m_currentChord.setDeltaTime(m_noteGapTime + m_currentChord.getDeltaTime());
             if (m_currentChord.length() <= 1)
-            	m_cordSpanGapTime = 0;
+                m_cordSpanGapTime = 0;
             else
-            	m_cordSpanGapTime += m_noteGapTime; // measure the span of the cord
+                m_cordSpanGapTime += m_noteGapTime; // measure the span of the cord
             m_noteGapTime = 0;
         }
     }

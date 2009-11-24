@@ -9,9 +9,11 @@ message(building using fluidsynth)
 DEFINES += PB_USE_FLUIDSYNTH
 }
 
-#PRECOMPILED_HEADER = precompile/precompile.h
+CONFIG += precompile_header
+PRECOMPILED_HEADER = precompile/precompile.h
 
-HEADERS   = QtWindow.h \
+HEADERS   = precompile/precompile.h \
+            QtWindow.h \
             GlView.h \
             GuiTopBar.h \
             GuiSidePanel.h \

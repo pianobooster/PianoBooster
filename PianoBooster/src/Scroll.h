@@ -44,6 +44,8 @@ public:
     CScroll(int id, CSettings* settings) : CDraw(settings)
     {
         m_id = id;
+        m_symbolID = 0;
+
         m_notation = new CNotation();
         m_scrollQueue = new CQueue<CSlotDisplayList>(QUEUE_LENGTH);
         reset();
@@ -63,7 +65,10 @@ public:
     void transpose(int transpose);
     void refresh();
     void setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming);
-    void setChannel(int chan)    {m_notation->setChannel( chan );}
+    void setChannel(int chan)
+    {
+        m_notation->setChannel( chan );
+    }
 
     //! add a midi event to be analysed and displayed on the score
     void midiEventInsert(CMidiEvent event) { m_notation->midiEventInsert(event);}

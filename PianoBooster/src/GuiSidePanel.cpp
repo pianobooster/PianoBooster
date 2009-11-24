@@ -53,8 +53,6 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
 
     followYouRadio->setChecked(true);
     bothHandsRadio->setChecked(true);
-    ppLogTrace("left %d ",leftHandRadio->isChecked()); // fixme
-    ppLogTrace("both %d ",bothHandsRadio->isChecked());
 
     boostSlider->setMinimum(-100);
     boostSlider->setMaximum(100);

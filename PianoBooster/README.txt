@@ -41,11 +41,6 @@
    INSTRUCTIONS
 ===============================================================================================
 
-   First unzip the PianoBooster.zip file (7Zip is a free program that will unzip this file).
-   There is no installer. To start PianoBooster on Windows click on the "pianobooster.exe".
-   To start PianoBooster on Linux click on the "pianobooster" executable, ensure that the
-   executable bit is set.
-
    Once the Piano Booster application starts up you must first setup the midi input and midi
    output interface from the Setup menu. Next open a midi file ".mid" or a karaoke ".kar" file
    using File/Open from the Piano Booster menu. Now choose the skill level, if you want to

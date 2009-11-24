@@ -150,7 +150,7 @@ public:
     accidentalModifer_t getAccidentalState(){return m_accidentalState;}
     void setBackLink(CNoteState * link){m_backLink = link;}
     CNoteState * getBackLink(){return m_backLink;}
-    
+
 
 private:
     int m_barChangeCounter;
@@ -184,7 +184,7 @@ public:
     void midiEventInsert(CMidiEvent event);
 
     int midiEventSpace() { return m_midiInputQueue->space();}
-    
+
     static void setCourtesyAccidentals(bool setting){m_cfg_displayCourtesyAccidentals = setting;}
     static bool displayCourtesyAccidentals(){return m_cfg_displayCourtesyAccidentals; }
 

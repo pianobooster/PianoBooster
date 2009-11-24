@@ -1,3 +1,6 @@
+#if defined __cplusplus
+
+
 //#include <GL/gl.h>
 //#include <GL/glu.h>
 //#include <OpenGL/gl.h>
@@ -19,7 +22,7 @@
 #include <QtOpenGL>
 #include <assert.h>
 #include <cstring>
-#include <fluidsynth.h>
+//#include <fluidsynth.h>
 #include <fstream>
 #include <math.h>
 #include <sstream>
@@ -28,7 +31,7 @@
 #include <stdlib.h>
 #include <string>
 //*
-#include "Bar.h"
+//#include "Bar.h"
 /*
 #include "Cfg.h"
 #include "Chord.h"
@@ -75,3 +78,4 @@
 //#include "rtmidi/RtTimer.h"
 */
 
+#endif

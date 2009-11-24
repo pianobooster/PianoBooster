@@ -4,7 +4,7 @@ SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 SET(USE_FLUIDSYNTH OFF)
 
-# The inplace directory is mainly for windows builds 
+# The inplace directory is mainly for windows builds
 # SET(FLUIDSYNTH_INPLACE_DIR C:/download/misc/ljb/fluidsynth-1.0.9)
 SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
 
@@ -52,15 +52,15 @@ ENDIF(USE_PCH)
 
 # Add in the link libraries for each operating system
 IF(${CMAKE_SYSTEM} MATCHES "Linux")
-    FIND_PACKAGE(PkgConfig REQUIRED)
-    PKG_CHECK_MODULES(ALSA REQUIRED alsa>=1.0)
-    IF(ALSA_FOUND)
-		ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
-		LINK_LIBRARIES (asound)
-    ELSE(ALSA_FOUND)
-        MESSAGE(FATAL_ERROR "Please install the 'libasound2-dev' package and then try again")
-    ENDIF(ALSA_FOUND)
-	
+    #FIND_PACKAGE(PkgConfig REQUIRED)
+    #PKG_CHECK_MODULES(ALSA REQUIRED alsa>=1.0)
+    #IF(ALSA_FOUND)
+        ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
+        LINK_LIBRARIES (asound)
+    #ELSE(ALSA_FOUND)
+    #    MESSAGE(FATAL_ERROR "Please install the 'libasound2-dev' package and then try again")
+    #ENDIF(ALSA_FOUND)
+
 ENDIF(${CMAKE_SYSTEM} MATCHES "Linux")
 
 IF(${CMAKE_SYSTEM} MATCHES "Windows")
@@ -78,7 +78,7 @@ IF(USE_FLUIDSYNTH)
     ADD_DEFINITIONS(-DPB_USE_FLUIDSYNTH)
     MESSAGE("Building using fluidsynth")
     SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
-    
+
     IF(FLUIDSYNTH_INPLACE_DIR)
         INCLUDE_DIRECTORIES(${FLUIDSYNTH_INPLACE_DIR}/include/)
         IF(WIN32)

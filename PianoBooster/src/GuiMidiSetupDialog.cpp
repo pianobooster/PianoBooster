@@ -45,14 +45,6 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     setWindowTitle("Midi Setup");
 }
 
-GuiMidiSetupDialog::~GuiMidiSetupDialog() // Fixme
-{
-    if( m_settings )
-        m_settings->fastUpdateRate(true);
-}
-
-
-
 void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 {
     m_song = song;

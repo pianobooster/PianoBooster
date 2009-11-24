@@ -94,6 +94,8 @@ private:
                 ppLogError("Midi error %d", m_midiError);
         }
     }
+    void midiFailReset() { m_midiError = SMF_NO_ERROR;}
+
 
     void ppDebugTrack(int level, const char *msg, ...);
 

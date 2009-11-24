@@ -42,7 +42,6 @@ class GuiMidiSetupDialog : public QDialog, private Ui::GuiMidiSettingsDialog
 
 public:
     GuiMidiSetupDialog(QWidget *parent = 0);
-    ~GuiMidiSetupDialog();
 
     void init(CSong* song, CSettings* settings);
 
@@ -53,7 +52,7 @@ private slots:
     void on_latencyFixButton_clicked ( bool checked );
     void on_fluidAddButton_clicked ( bool checked );
     void on_fluidRemoveButton_clicked ( bool checked );
-    
+
 
 private:
 

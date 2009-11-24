@@ -49,13 +49,14 @@ public:
 
     ~CQueue()
     {
-        delete m_buffer;
+        delete [] m_buffer;
     }
 
     void clear()
     {
         m_count = m_head = m_tail=0;
     }
+
     void push(TYPE c)
     {
         if (!space())

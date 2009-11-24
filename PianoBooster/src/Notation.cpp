@@ -263,7 +263,6 @@ void CNotation::findNoteSlots()
                     if (midi.note() < MIDI_BOTTOM_C)
                         m_currentSlot.setAv8Left(MIDI_OCTAVE);
                 }
-
             }
         }
     }

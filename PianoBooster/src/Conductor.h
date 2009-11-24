@@ -308,7 +308,6 @@ private:
     int m_skill;
     bool m_mutePianistPart;
     int m_latencyFix;     // Try to fix the latency (put the time in msec, 0 disables it)
-
 };
 
 #endif //__CONDUCTOR_H__
