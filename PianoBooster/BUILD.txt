@@ -2,18 +2,18 @@
    TO COMPILE THE SOURCE CODE IN LINUX
 ===============================================================================================
 
-   Ensure that the following packages 'cmake', 'libqt4-dev', 'libasound2-dev' and 
+   Ensure that the following packages 'cmake', 'libqt4-dev', 'libasound2-dev' and
    'build-essential" are installed .
 
    In the PianoBooster directory type "cd build" to change to the "build" directory
-   then type "cmake ../src", followed by "make".
-
-   There is no installer yet (the command "make install" has not been tested)
-
-   If you make changes to the source code then please post details on the forum.
+   then type "cmake ../src", followed by "make". Finally as root type "make install".
 
    To build a debug version create a dir called "debug" and change to that dir and then
    type "cmake -DCMAKE_BUILD_TYPE=Debug ../src"
+
+   (Alternatively you can use qmake followed by make in the src directory.)
+
+   If you make changes to the source code then please post details on the forum.
 
 ===============================================================================================
    TO COMPILE THE SOURCE CODE IN MacOSX
@@ -45,7 +45,7 @@
 
    Once this is completed type "make".
 
-   Or alternatively you can install QtCreator and then open the CMakeList.txt
+   Or alternatively you can install QtCreator and then open the painobooster.pro
 
    If you make changes to the source code then please post details on the forum.
 

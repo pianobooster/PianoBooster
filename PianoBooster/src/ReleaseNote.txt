@@ -1,12 +1,35 @@
-/*
-v0.5.0: (28 November 2008)
-- first release
+#define PB_VERSION "0.6.4.rc"
 
-v0.5.1: (1 January 2009)
-- fixed the windows file open bug
-- changed the default wrong note sound to Harpsichord
-- changed the wrong note sound to use a separate midi channel.
-- on Windows removed the dos console
+/*
+v0.6.4rc: (24 November 2009)
+- Added note names for beginners (to be used with a piano note name cut-out.)
+- Added assignable left and right midi channels.
+- Improved the MIDI timing accuracy.
+- Greatly reduced the memory footprint.
+- Reduced the CPU load.
+- Reduced the screen flicker (recommend setting screen refresh rate to 60Hz
+     and for Intel Graphic chips updating the drivers).
+- Added keyboard shortcuts. These are - speed up/down, play from start,
+     play/pause, next previous song, left right both hands.
+- Remembers the song settings in a configuration file called "pb.cfg".
+     These are the midi channels, speed, left right or both hands.
+- Now works well Ubuntu 9.10 and Intel graphic chips.
+    (Those with Ubuntu 9.04 and Intel should upgrade to 9.10 and this version)
+- Fixed various startup issues.
+- Now correctly displays repeated accidentals in one bar..
+- Added the option to display courtesy accidentals.
+- Added a simple help page.
+- Added an installer for windows.
+- Make install now works for Linux.
+
+v0.6.2: (01 April 2009)
+- added "<None>" as instrument sound.
+- when setting a latency fix of >0 the instrument is automatically set to 'None'
+- turn all the sound off when exiting the program.
+- Added looping to continually play between to bars.
+- Added the option to change the follow mode stop point.
+- Automatically switches the follow mode stop point if you are playing well enough.
+- Added a logo to the source tree in "images/logo64x64.png"
 
 v0.6.1: (11 March 2009)
 - Added a play from bar (so you can start from playing any bar)
@@ -24,36 +47,17 @@ v0.6.1: (11 March 2009)
 - Added "timing markers" which show when the pianist pressed the note.
 - Changed the build so that it now works on the Mac (thanks to Christian)
 
-v0.6.2: (01 April 2009)
-- added "<None>" as instrument sound.
-- when setting a latency fix of >0 the instrument is automatically set to 'None'
-- turn all the sound off when exiting the program.
-- Added looping to continually play between to bars.
-- Added the option to change the follow mode stop point.
-- Automatically switches the follow mode stop point if you are playing well enough.
-- Added a logo to the source tree in "images/logo64x64.png"
+v0.5.1: (1 January 2009)
+- fixed the windows file open bug
+- changed the default wrong note sound to Harpsichord
+- changed the wrong note sound to use a separate midi channel.
+- on Windows removed the dos console
 
-v0.6.4rc: (24 November 2009)
-- Added note names for beginners (to be used with a piano note name cut-out.)
-- Added assignable left and right midi channels.
-- Improved the MIDI timing accuracy.
-- Greatly reduced the memory footprint.
-- Reduced the CPU load.
-- Reduced the screen flicker (recommend setting screen refresh rate to 60Hz
-     and for Intel Graphic chips updating the drivers).
-- Added keyboard shortcuts. These are - speed up/down, play from start,
-     play/pause, next previous song, left right both hands,
-- Remembers the song settings in a configuration file called "pb.cfg".
-     These are the midi channels, speed, left right or both hands
-- Now works well well Ubuntu 9.10 and Intel graphic chips.
-    (Those with Ubuntu 9.04 and Intel should upgrade to 9.10 and this version)
-- Fixed various startup issues.
-- Now correctly displays repeated accidentals in one bar..
-- Added the option to display courtesy accidentals.
-- Added a simple help page.
-- Added an installer for windows.
-- Make install now works for Linux.
+v0.5.0: (28 November 2008)
+- first release
+
+
 */
 
-#define PB_VERSION "0.6.4.rc"
+
 

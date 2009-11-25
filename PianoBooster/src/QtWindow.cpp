@@ -380,15 +380,15 @@ void QtWindow::website()
 void QtWindow::help()
 {
     QMessageBox msgBox(this);
-    msgBox.setWindowTitle (tr("About"));
+    msgBox.setWindowTitle (tr("PianoBooster Help"));
     msgBox.setText(
             tr(
-   "<h3>GETTING STARTED</h3>"
+   "<h3>Getting Started</h3>"
 
 
-   "<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. (If you "
+   "<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
    "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
-   "middle C).</p>"
+   "middle C.</p>"
 
    "<p>To hear the music you will need a <b>General Midi compatible sound synthesizer</b>. "
    "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows XP can be used "
@@ -396,51 +396,36 @@ void QtWindow::help()
 
 
    "<p>PianoBooster does not come with any <b>MIDI Files</b> and so you will need get them from the net. "
-   " <b>Midi files</b> preferably with right and left piano "
-   "parts on channels 4 and 3. See the <a href=\"http://pianobooster.sourceforge.net/\" >"
-   "<b>PianoBosster FAQ</b></a> for where to get MIDI files"
+   "See the <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>PianoBosster FAQ</b></a> "
+   "for where to get MIDI files. "
+   "PianoBooster works best with MIDI files that have separate left and right piano parts "
+   "using MIDI channels 3 and 4."
 
-   "<h3>Setting UP</h3>"
+   "<h3>Setting Up</h3>"
 
 
-   "Select the MIDI input and MIDI "
-   "output interfaces that you are using from the <i>Setup/Midi Setup</i> menu"
+   "<p>First use the menu <i>Setup/Midi Setup</i> and in the dialog box select the MIDI input and MIDI "
+   "output interfaces that match your hardware. "
 
-   "Next user <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file "
-   "using File/Open from the Piano Booster menu. Now choose the skill level, if you want to "
+   "Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
+   "Now select whether you want to just <i>listen</i> to the music or "
+   "<i>play along</i> on the piano keyboard from the <i>skill</i> level on the side panel. Finally when "
+   "your are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music."
    "<h3>More Information</h3>"
-   "<p>Please visit the piano booster website, PianoBooster FAQ and the user forum for more help </p>"
- /*  just listen to the midi music  -- select 'listen', to play along with a midi keyboard with
-   the music following your playing -- select 'follow you'. Finally click on the Play icon to
-   start.
+   "<p>For more help please visit the PianoBooster "
+   "<a href=\"http://pianobooster.sourceforge.net/\" ><b>website</b></a>, "
+   "the PianoBooster <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>FAQ</b></a> "
+   "and the <a href=\"http://n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>. "
 
-   It is recommended that you shut down all other programs whilst running Piano Booster so that
-   the scrolling notes move smoothly across the screen.
-
-
-===============================================================================================
-   LICENSE
-===============================================================================================
-
-   Piano Booster is fully copyrighted by the author and all rights are reserved.
-   PianoBooster is free software (Open Source software): you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by the Free Software
-   Foundation, either version 3 of the License, or (at your option) any later version.
-
-   PianoBooster is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-   without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-   See the GNU General Public License in the file "gplv3.txt" or from the web site
-   <http://www.gnu.org/licenses/>.
-*/
                 ));
-    msgBox.setMinimumWidth(600);
+    msgBox.setMinimumWidth(800);
     msgBox.exec();
 }
 
 void QtWindow::about()
 {
     QMessageBox msgBox(this);
-    msgBox.setWindowTitle (tr("About"));
+    msgBox.setWindowTitle (tr("About Piano Booster"));
     msgBox.setText(
             tr(
                 "<b>PainoBooster - Version " PB_VERSION "</b> <br><br>"

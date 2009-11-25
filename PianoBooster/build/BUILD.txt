@@ -2,14 +2,35 @@
    TO COMPILE THE SOURCE CODE IN LINUX
 ===============================================================================================
 
-   Ensure that the following packages are installed cmake', 'libqt4-dev', 'libasound2-dev'.
+   Ensure that the following packages 'cmake', 'libqt4-dev', 'libasound2-dev' and
+   'build-essential" are installed .
 
    In the PianoBooster directory type "cd build" to change to the "build" directory
-   then type "cmake ../src", followed by "make".
+   then type "cmake ../src", followed by "make". Finally as root type "make install".
 
-   There is no installer yet (the command "make install" has not been tested)
+   To build a debug version create a dir called "debug" and change to that dir and then
+   type "cmake -DCMAKE_BUILD_TYPE=Debug ../src"
 
-   Please notify the author if you make any changes to the Piano Booster source code.
+   (Alternatively you can use qmake followed by make in the src directory.)
+
+   If you make changes to the source code then please post details on the forum.
+
+===============================================================================================
+   TO COMPILE THE SOURCE CODE IN MacOSX
+===============================================================================================
+
+   Install latest XCode (from Apple Developer Connection, free registration required)
+
+   Install CMake and QT libraries (either from source or via Fink or MacPorts)
+
+   Generate XCode project file, via 'cmake -G Xcode ../src'
+
+   Open the project file in XCode, set whatever options you like (universal or single architecture,
+   debug or release etc.) and compile
+
+   To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0)
+
+   If you make changes to the source code then please post details on the forum.
 
 ===============================================================================================
    TO COMPILE THE SOURCE CODE IN WINDOWS
@@ -24,7 +45,10 @@
 
    Once this is completed type "make".
 
-   Please notify the author if you make any changes to the Piano Booster source code.
+   Or alternatively you can install QtCreator and then open the painobooster.pro
+
+   If you make changes to the source code then please post details on the forum.
+
 
 ===============================================================================================
    LICENSE

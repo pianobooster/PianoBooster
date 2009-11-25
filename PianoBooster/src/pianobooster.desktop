@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Piano Booster
+Comment=A MIDI file player that teaches you how to play the piano
+GenericName=Piano Teacher
+Exec=pianobooster
+Icon=pianobooster
+Terminal=false
+Type=Application
+Categories=Music;Education;
+
