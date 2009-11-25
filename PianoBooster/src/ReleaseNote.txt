@@ -51,8 +51,9 @@ v0.6.4rc: (24 November 2009)
 - Now correctly displays repeated accidentals in one bar..
 - Added the option to display courtesy accidentals.
 - Added a simple help page.
-
+- Added an installer for windows.
+- Make install now works for Linux.
 */
 
-#define PB_VERSION "0.6.3.svn"
+#define PB_VERSION "0.6.4.rc"
 
