@@ -79,6 +79,7 @@ Section "Dummy Section" SecDummy
     File FilesForRelease\QtGui4.dll
     File FilesForRelease\QtXml4.dll
     File FilesForRelease\QtOpenGL4.dll
+    File FilesForRelease\mingwm10.dll
 
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc
@@ -131,6 +132,7 @@ Section "Uninstall"
     Delete $INSTDIR\QtGui4.dll
     Delete $INSTDIR\QtXml4.dll
     Delete $INSTDIR\QtOpenGL4.dll
+    Delete $INSTDIR\mingwm10.dll
     Delete $INSTDIR\doc\README.txt
     Delete $INSTDIR\doc\license.txt
     Delete $INSTDIR\doc\gplv3.txt
