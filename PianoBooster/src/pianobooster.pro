@@ -1,5 +1,5 @@
 #CONFIG += USE_FLUIDSYNTH
-#CONFIG += release
+CONFIG += release
 
 USE_FLUIDSYNTH {
 # Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
@@ -100,6 +100,10 @@ USE_FLUIDSYNTH {
 }
 
 QT += xml opengl
+
+# enable the console window
+#QT+=testlib
+
 
 # install
 target.path = pianobooster
