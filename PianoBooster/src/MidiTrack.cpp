@@ -352,7 +352,7 @@ void CMidiTrack::readMetaEvent(byte_t type)
 
     case 0x09:                          // meta type
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"fixme midi meta event 0x%02x %s", type, text.c_str()));
+        ppDEBUG_TRACK((2,"midi meta event 0x%02x %s", type, text.c_str()));
         break;
     default:                          /* Unknown meta type */
         text = readTextEvent();

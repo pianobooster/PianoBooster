@@ -106,18 +106,6 @@ void CSong::rewind()
     forceScoreRedraw();
 }
 
-/* Fixme
-void CSong::setPlayFromBar(double bar)
-{
-    this->CConductor::setPlayFromBar(bar);
-    if (playingMusic())
-    {
-        // go back to the start if music is already playing
-        rewind();
-        playMusic(true);
-    }
-}*/
-
 void CSong::setActiveHand(whichPart_t hand)
 {
     if (hand < PB_PART_both)
