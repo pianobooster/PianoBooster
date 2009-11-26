@@ -492,7 +492,6 @@ void QtWindow::keyboardShortcuts()
 
 void QtWindow::open()
 {
-    m_glWidget->fastUpdateRate(false);
     QString currentSong = m_settings->getCurrentSongLongFileName();
 
     if (currentSong.isEmpty())
@@ -502,7 +501,6 @@ void QtWindow::open()
                             currentSong, tr("Midi Files (*.mid *.MID *.midi *.kar *.KAR)"));
     if (!fileName.isEmpty())
         m_settings->openSongFile(fileName);
-    m_glWidget->fastUpdateRate(true);
 }
 
 void QtWindow::readSettings()
@@ -558,8 +556,3 @@ void QtWindow::keyReleaseEvent ( QKeyEvent * event )
     m_song->pcKeyPress( c, false);
 }
 
-void QtWindow::fastUpdateRate(bool fullSpeed)
-{
-    if (m_glWidget)
-        m_glWidget->fastUpdateRate(fullSpeed);
-}

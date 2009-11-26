@@ -55,12 +55,8 @@ void CTempo::adjustTempo(int * ticks)
             *ticks += m_jumpAheadDelta;
 
         // Automatically adjust the speed
-
-        int savedChordDelta = m_savedwantedChord->getDeltaTime(); // fixme not used
-        if (savedChordDelta > CMidiFile::ppqnAdjust(10048) * SPEED_ADJUST_FACTOR)
-            savedChordDelta = CMidiFile::ppqnAdjust(10048) * SPEED_ADJUST_FACTOR;
-        //m_userSpeed += m_jumpAheadDelta * (savedChordDelta /20000000.0);
         m_userSpeed = m_userSpeed + m_userSpeed * m_jumpAheadDelta * 0.00002;
+
         if (m_userSpeed> 2.0) m_userSpeed = 2.0;
         if (m_userSpeed < 0.2) m_userSpeed = 0.2;
         printf("%03.0f  %5d\r",m_userSpeed *100, m_jumpAheadDelta );

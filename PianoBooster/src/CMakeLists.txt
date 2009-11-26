@@ -214,14 +214,8 @@ INSTALL( FILES pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
 #INSTALL( index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en  SUBDIR kmidimon )
 
-#INSTALL( FILES standards.ins  DESTINATION ${DATA_INSTALL_DIR}/pianobooster
+INSTALL( FILES ../README.txt  DESTINATION share/doc/pianobooster )
 
-INSTALL ( FILES images/pianobooster.png DESTINATION  share/pixmaps )
+INSTALL ( FILES images/pianobooster.png DESTINATION share/pixmaps )
 
-
-#/usr/games/pianobooster
-#/usr/share/pixmaps/pianobooster.png
-#/usr/share/applications/pianobooster.desktop
-#/usr/share/doc/pianobooster/changelog.gz
-#/usr/share/doc/pianobooster/copyright
 

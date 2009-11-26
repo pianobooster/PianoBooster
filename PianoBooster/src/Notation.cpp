@@ -254,7 +254,7 @@ void CNotation::findNoteSlots()
                 symbol.setAccidentalModifer(detectSuppressedNatural(midi.note()));
 
                 if (m_currentSlot.addSymbol(symbol) == false) {
-                    ppLogWarn("[%d] Over the Max symbols limit", m_displayChannel + 1); //fixme
+                    ppLogWarn("[%d] Over the Max symbols limit", m_displayChannel + 1);
                 }
                 m_currentSlot.addDeltaTime(m_currentDeltaTime);
                 m_currentDeltaTime = 0;

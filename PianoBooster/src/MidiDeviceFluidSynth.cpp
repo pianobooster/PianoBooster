@@ -176,7 +176,7 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
 
         case MIDI_CONTROL_CHANGE: //CONTROL_CHANGE:
             fluid_synth_cc(m_synth, channel, event.data1(), event.data2());
-            //ppLogTrace("MIDI_CONTROL_CHANGE %d %d %d", channel, event.data1(), event.data2()); //fixme
+            //ppLogTrace("MIDI_CONTROL_CHANGE %d %d %d", channel, event.data1(), event.data2());
             break;
 
         case MIDI_PROGRAM_CHANGE: //PROGRAM_CHANGE:

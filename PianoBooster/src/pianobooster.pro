@@ -105,9 +105,23 @@ QT += xml opengl
 #QT+=testlib
 
 
-# install
-target.path = pianobooster
-sources.files = $$SOURCES $$HEADERS $$RESOURCES $$FORMS *.pro images
-sources.path = pianobooster
-INSTALLS += target sources
 
+
+
+unix {
+
+   isEmpty( PREFIX ) { PREFIX = /usr/local }
+
+   target.path = $$PREFIX/bin
+
+   desktop.path = $$PREFIX/share/applications
+   desktop.files = pianobooster.desktop
+
+   pixmaps.path = $$PREFIX/share/pixmaps
+   pixmaps.files = images/pianobooster.png
+
+   docs.path = $$PREFIX/share/doc/pianobooster
+   docs.files = ../README.txt
+
+   INSTALLS += target desktop pixmaps docs
+}

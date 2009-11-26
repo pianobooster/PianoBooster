@@ -63,8 +63,6 @@ public:
             m_topBar->setPlayButtonState(false, true);
     }
 
-    void fastUpdateRate(bool fullSpeed);
-
 private slots:
     void open();
     void help();
@@ -74,38 +72,30 @@ private slots:
 
     void showMidiSetup()
     {
-        fastUpdateRate(false);
         GuiMidiSetupDialog midiSetupDialog(this);
         midiSetupDialog.init(m_song, m_settings);
         midiSetupDialog.exec();
-        fastUpdateRate(true);
     }
 
     void showPreferencesDialog()
     {
-        fastUpdateRate(false);
         GuiPreferencesDialog preferencesDialog(this);
         preferencesDialog.init(m_song, m_settings, m_glWidget);
         preferencesDialog.exec();
-        fastUpdateRate(true);
     }
 
     void showSongDetailsDialog()
     {
-        fastUpdateRate(false);
         GuiSongDetailsDialog songDetailsDialog(this);
         songDetailsDialog.init(m_song, m_settings);
         songDetailsDialog.exec();
-        fastUpdateRate(true);
     }
 
     void showKeyboardSetup()
     {
-        fastUpdateRate(false);
         GuiKeyboardSetupDialog keyboardSetup(this);
         keyboardSetup.init(m_song, m_settings);
         keyboardSetup.exec();
-        fastUpdateRate(true);
     }
 
     void toggleSidePanel()

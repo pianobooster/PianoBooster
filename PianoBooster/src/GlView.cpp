@@ -36,6 +36,11 @@
 #include "Cfg.h"
 #include "Draw.h"
 
+// This defines the PB Open GL frame per seconds.
+// Try to make sure this runs a bit faster than the screen refresh rate of 60z (or 16.6 msec)
+#define SCREEN_FRAME_RATE 12 // That 12 msec or 83.3 frames per second
+
+
 CGLView::CGLView(QtWindow* parent, CSettings* settings)
     : QGLWidget(parent)
 {
@@ -349,18 +354,7 @@ void CGLView::init()
     m_timer.start(4, this ); // was 12
     m_realtime.start();
 
-    fastUpdateRate(true);
-
     //startMediaTimer(12, this );
-}
-
-static int s_updateRate; //fixme
-void CGLView::fastUpdateRate(bool fullSpeed)
-{
-    if (fullSpeed)
-        s_updateRate = 12;//12;
-    else
-        s_updateRate = 12 * 4;
 }
 
 void CGLView::updateMidiTask()
@@ -384,10 +378,8 @@ void CGLView::timerEvent(QTimerEvent *event)
     updateMidiTask();
     BENCHMARK(1, "m_song task");
 
-//ppLogTrace("xxx 1 %d, %d", m_displayUpdateTicks, s_updateRate);
-    if (m_displayUpdateTicks < s_updateRate)
+    if (m_displayUpdateTicks < SCREEN_FRAME_RATE)
         return;
-//ppLogTrace("xxx 2 %d, %d", m_displayUpdateTicks, s_updateRate);
 
     m_displayUpdateTicks = 0;
 

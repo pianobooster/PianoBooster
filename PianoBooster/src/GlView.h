@@ -51,7 +51,6 @@ public:
     CScore* getScoreObject() {return m_score;}
     void init();
     bool m_cfg_openGlOptimise;
-    void fastUpdateRate(bool fullSpeed);
 
 protected:
     void timerEvent(QTimerEvent *event);

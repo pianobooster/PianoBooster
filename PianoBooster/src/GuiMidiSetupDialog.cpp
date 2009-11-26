@@ -49,7 +49,6 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 {
     m_song = song;
     m_settings = settings;
-    m_settings->fastUpdateRate(false);
 
     // Check inputs.
     QString portName;

@@ -42,8 +42,8 @@ whichPart_t CNote::findHand(int midiNote, int midiChannel, int whichChannel, whi
     // exit if it is not for this channel
     if (midiChannel != whichChannel)
     {
-        // if channel both check then allow the left hand channel
-        if (CNote::hasPianoPart(whichChannel) == false || CNote::hasPianoPart(midiChannel) == false) //fixme
+        // return none if this is not being used with the other hand.
+        if (CNote::hasPianoPart(whichChannel) == false || CNote::hasPianoPart(midiChannel) == false)
             return PB_PART_none;
     }
 

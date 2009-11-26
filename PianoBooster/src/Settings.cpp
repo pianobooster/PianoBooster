@@ -386,12 +386,6 @@ void CSettings::setChannelHands(int left, int right)
     m_guiSidePanel->refresh();
 }
 
-void CSettings::fastUpdateRate(bool fullSpeed)
-{
-    if (m_mainWindow)
-        m_mainWindow->fastUpdateRate(fullSpeed);
-}
-
 void CSettings::updateWarningMessages()
 {
     if (!m_song->validMidiOutput())
