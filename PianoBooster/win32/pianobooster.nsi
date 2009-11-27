@@ -83,9 +83,9 @@ Section "Dummy Section" SecDummy
 
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc
-    File ..\README.txt
-    File ..\license.txt
-    File ..\gplv3.txt
+    File FilesForRelease\README.txt
+    File FilesForRelease\license.txt
+    File FilesForRelease\gplv3.txt
 
     SetOutPath $INSTDIR
 

@@ -697,7 +697,7 @@ void CConductor::findImminentNotesOff()
 
     while (deltaAdjust(m_playingDeltaTime) + aheadDelta   > m_cfg_imminentNotesOffPoint)
     {
-        if (event.type() == MIDI_NOTE_OFF )// fixme && isChannelMuted(event.channel()) == false)
+        if (event.type() == MIDI_NOTE_OFF )
             m_savedNoteOffQueue->push(event);
         if ( i >= m_songEventQueue->length())
             break;
@@ -826,7 +826,6 @@ void CConductor::realTimeEngine(int mSecTicks)
             int channel = m_nextMidiEvent.channel();
 
             // Is this this channel_muted
-            //if (isChannelMuted(channel) == false) //fixme
             if (!hasPianistKeyboardChannel(channel))
             {
                 if (getfollowState() >= PB_FOLLOW_earlyNotes &&
@@ -834,7 +833,7 @@ void CConductor::realTimeEngine(int mSecTicks)
                         !seekingBarNumber() &&
                         m_followSkillAdvanced == false)
                 {
-                    // Save up the notes until the pianist press the right key
+                    // Save up the notes until the pianist presses the right key
                     if (m_savedNoteQueue->space()>0)
                         m_savedNoteQueue->push(m_nextMidiEvent);
                     else

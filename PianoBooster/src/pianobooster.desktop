@@ -7,4 +7,4 @@ Icon=pianobooster
 Terminal=false
 Type=Application
 Categories=Music;Education;
-
+MimeType=audio/midi;

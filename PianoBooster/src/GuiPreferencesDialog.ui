@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>GuiPreferencesDialog</class>
- <widget class="QDialog" name="GuiPreferencesDialog" >
-  <property name="geometry" >
+ <widget class="QDialog" name="GuiPreferencesDialog">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,60 +10,57 @@
     <height>267</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" >
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <widget class="QGroupBox" name="groupBox_2" >
-     <property name="title" >
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
       <string>Score Settings</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3" >
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <layout class="QGridLayout" name="gridLayout" >
-        <item row="2" column="0" >
-         <widget class="QCheckBox" name="timingMarkersCheck" >
-          <property name="sizePolicy" >
-           <sizepolicy vsizetype="Fixed" hsizetype="Maximum" >
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="timingMarkersCheck">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Timing Markers</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="0" >
-         <widget class="QLabel" name="label" >
-          <property name="text" >
+        <item row="3" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
            <string>Follow stop point:</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1" >
-         <widget class="QComboBox" name="followStopPointCombo" >
-          <property name="sizePolicy" >
-           <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+        <item row="3" column="1">
+         <widget class="QComboBox" name="followStopPointCombo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="minimumSize" >
-           <size>
-            <width>100</width>
-            <height>0</height>
-           </size>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContents</enum>
           </property>
          </widget>
         </item>
-        <item row="2" column="1" >
-         <spacer name="horizontalSpacer" >
-          <property name="orientation" >
+        <item row="2" column="1">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeHint" stdset="0" >
+          <property name="sizeHint" stdset="0">
            <size>
             <width>40</width>
             <height>20</height>
@@ -70,19 +68,19 @@
           </property>
          </spacer>
         </item>
-        <item row="0" column="0" >
-         <widget class="QCheckBox" name="showNoteNamesCheck" >
-          <property name="text" >
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="showNoteNamesCheck">
+          <property name="text">
            <string>Show Note Names</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="1" >
-         <spacer name="horizontalSpacer_2" >
-          <property name="orientation" >
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeHint" stdset="0" >
+          <property name="sizeHint" stdset="0">
            <size>
             <width>40</width>
             <height>20</height>
@@ -90,9 +88,9 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="0" >
-         <widget class="QCheckBox" name="courtesyAccidentalsCheck" >
-          <property name="text" >
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="courtesyAccidentalsCheck">
+          <property name="text">
            <string>Courtesy Accidentals</string>
           </property>
          </widget>
@@ -103,14 +101,14 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox" >
-     <property name="title" >
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
       <string>Video  Settings</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout" >
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QCheckBox" name="videoOptimiseCheck" >
-        <property name="text" >
+       <widget class="QCheckBox" name="videoOptimiseCheck">
+        <property name="text">
          <string>Video optimisation</string>
         </property>
        </widget>
@@ -119,11 +117,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox" >
-     <property name="orientation" >
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="standardButtons" >
+     <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
@@ -138,11 +136,11 @@
    <receiver>GuiPreferencesDialog</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>248</x>
      <y>254</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>157</x>
      <y>274</y>
     </hint>
@@ -154,11 +152,11 @@
    <receiver>GuiPreferencesDialog</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>316</x>
      <y>260</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
     </hint>

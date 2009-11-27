@@ -1,7 +1,7 @@
-#define PB_VERSION "0.6.4.rc"
+#define PB_VERSION "0.6.4"
 
 /*
-v0.6.4rc: (24 November 2009)
+v0.6.4: (27 November 2009)
 - Added note names for beginners (to be used with a piano note name cut-out.)
 - Added assignable left and right midi channels.
 - Improved the MIDI timing accuracy.

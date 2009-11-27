@@ -380,7 +380,7 @@ void QtWindow::website()
 void QtWindow::help()
 {
     QMessageBox msgBox(this);
-    msgBox.setWindowTitle (tr("PianoBooster Help"));
+    msgBox.setWindowTitle (tr("Piano Booster Help"));
     msgBox.setText(
             tr(
    "<h3>Getting Started</h3>"
@@ -390,13 +390,13 @@ void QtWindow::help()
    "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
    "middle C.</p>"
 
-   "<p>To hear the music you will need a <b>General Midi compatible sound synthesizer</b>. "
-   "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows XP can be used "
+   "<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
+   "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
    "but it introduces an unacceptable delay (latency).</p>"
 
 
-   "<p>PianoBooster does not come with any <b>MIDI Files</b> and so you will need get them from the net. "
-   "See the <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>PianoBosster FAQ</b></a> "
+   "<p>PianoBooster does not come with any <b>MIDI Files</b> and so you will need to get them from the net. "
+   "See the <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>PianoBooster FAQ</b></a> "
    "for where to get MIDI files. "
    "PianoBooster works best with MIDI files that have separate left and right piano parts "
    "using MIDI channels 3 and 4."
@@ -404,13 +404,18 @@ void QtWindow::help()
    "<h3>Setting Up</h3>"
 
 
-   "<p>First use the menu <i>Setup/Midi Setup</i> and in the dialog box select the MIDI input and MIDI "
+   "<p>First use the <i>Setup/Midi Setup</i> menu and in the dialog box select the MIDI input and MIDI "
    "output interfaces that match your hardware. "
 
    "Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
    "Now select whether you want to just <i>listen</i> to the music or "
-   "<i>play along</i> on the piano keyboard from the <i>skill</i> level on the side panel. Finally when "
-   "your are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music."
+   "<i>play along</i> on the piano keyboard by setting the <i>skill</i> level on the side panel. Finally when "
+   "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music."
+
+   "<h3>Hints on Playing the Piano</h3>"
+   "<p>For hints on how to play the piano see: "
+   "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>Piano Hints</b></a></p>"
+
    "<h3>More Information</h3>"
    "<p>For more help please visit the PianoBooster "
    "<a href=\"http://pianobooster.sourceforge.net/\" ><b>website</b></a>, "
@@ -418,7 +423,7 @@ void QtWindow::help()
    "and the <a href=\"http://n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>. "
 
                 ));
-    msgBox.setMinimumWidth(800);
+    msgBox.setMinimumWidth(600);
     msgBox.exec();
 }
 

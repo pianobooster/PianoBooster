@@ -155,11 +155,8 @@ void GuiSidePanel::on_leftHandRadio_toggled (bool checked)
 void GuiSidePanel::autoSetMuteYourPart()
 {
     bool checked = false;
-    if (m_trackList->pianoPartConvetionTest()) //fixme
-    {
-        if ( CNote::hasPianoPart(m_song->getActiveChannel()))
-            checked =  true;
-    }
+    if ( CNote::hasPianoPart(m_song->getActiveChannel()))
+        checked =  true;
     muteYourPartCheck->setChecked(checked);
     m_song->mutePianistPart(checked);
 }
