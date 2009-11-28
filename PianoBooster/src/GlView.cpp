@@ -218,7 +218,7 @@ void CGLView::drawDisplayText()
     if (!m_settings->getWarningMessage().isEmpty())
     {
         glColor3f(1.0,0.0,0.0);
-        renderText(30, y-10, 0, m_settings->getWarningMessage(), m_timeRatingFont);
+        renderText(30, y-4, 0, m_settings->getWarningMessage(), m_timeRatingFont);
         return;
     }
 
@@ -272,7 +272,7 @@ void CGLView::resizeGL(int width, int height)
     int space = height - (heightAboveStave + heightBelowStave + minTitleHeight + minStaveGap);
     //m_titleHeight = qBound(minTitleHeight, minTitleHeight + space/2, 70);
     // staveGap = qBound(minStaveGap, minStaveGap+ space/2, static_cast<int>(CStavePos::staveHeight() * 3));
-    if (Cfg::smallScreen)
+    if (height < 450)  // So it works on an eeepc 701 (for Trev)
     {
         staveGap = minStaveGap;
         m_titleHeight = minTitleHeight;

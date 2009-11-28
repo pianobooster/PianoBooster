@@ -1,7 +1,7 @@
 #define PB_VERSION "0.6.4"
 
 /*
-v0.6.4: (27 November 2009)
+v0.6.4: (28 November 2009)
 - Added note names for beginners (to be used with a piano note name cut-out.)
 - Added assignable left and right midi channels.
 - Improved the MIDI timing accuracy.
@@ -21,6 +21,7 @@ v0.6.4: (27 November 2009)
 - Added a simple help page.
 - Added an installer for windows.
 - Make install now works for Linux.
+- Now works with small screens eg an EEE-701 (for Trev)
 
 v0.6.2: (01 April 2009)
 - added "<None>" as instrument sound.

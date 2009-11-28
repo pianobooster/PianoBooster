@@ -33,7 +33,6 @@
 
 float Cfg::m_staveEndX;
 int Cfg::logLevel = 1;
-bool Cfg::smallScreen = false;
 bool Cfg::quickStart = false;
 int Cfg::m_appX;
 int Cfg::m_appY;

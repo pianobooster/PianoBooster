@@ -156,7 +156,6 @@ void QtWindow::displayUsage()
 {
     fprintf(stderr, "Usage: pianobooster [flags] [midifile]\n");
     fprintf(stderr, "       -d: Increase the debug level\n");
-    fprintf(stderr, "       -s: Small screen display\n");
     fprintf(stderr, "       -q: Quick start\n");
     fprintf(stderr, "       -h: --help: Displays this help message\n");
     fprintf(stderr, "       -v: Displays version number and then exits\n");
@@ -188,7 +187,6 @@ void QtWindow::decodeMidiFileArg(QString arg)
         else if ( !(fileInfo.fileName().endsWith(".mid", Qt::CaseInsensitive ) ||
              fileInfo.fileName().endsWith(".midi", Qt::CaseInsensitive ) ||
              fileInfo.fileName().endsWith(".kar", Qt::CaseInsensitive )) )
-
     {
         QMessageBox::warning(0, "PianoBooster Midi File Error",
                  "Not a Midi File \"" + fileInfo.fileName() + "\"");
@@ -233,8 +231,6 @@ void QtWindow::decodeCommandLine()
         {
             if (arg.startsWith("-d"))
                 Cfg::logLevel++;
-            else if (arg.startsWith("-s"))
-                Cfg::smallScreen = true;
             else if (arg.startsWith("-q"))
                 Cfg::quickStart = true;
             else if (arg.startsWith("-X1"))
@@ -477,7 +473,7 @@ void QtWindow::keyboardShortcuts()
     msg += displayShortCut("ShortCuts/RightHand","Choose the right hand");
     msg += displayShortCut("ShortCuts/BothHands","Choose both hands");
     msg += displayShortCut("ShortCuts/LeftHand","Choose the left Hand");
-    msg += displayShortCut("ShortCuts/PlayFromStart","Start from the beginning");
+    msg += displayShortCut("ShortCuts/PlayFromStart","Play from start toggle");
     msg += displayShortCut("ShortCuts/PlayPause","Play Pause Toggle");
     msg += displayShortCut("ShortCuts/Faster","Increase the speed by 5%");
     msg += displayShortCut("ShortCuts/Slower","Increase the speed by 5%");

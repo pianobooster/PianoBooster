@@ -115,19 +115,25 @@ private slots:
     void on_rightHand()  {  m_sidePanel->setActiveHand(PB_PART_right); }
     void on_bothHands()  {  m_sidePanel->setActiveHand(PB_PART_both); }
     void on_leftHand()   {  m_sidePanel->setActiveHand(PB_PART_left); }
-    void on_playFromStart()   {  m_topBar->on_playFromStartButton_clicked(true); }
+    void on_playFromStart()   {
+        if(m_song->playingMusic())
+            m_topBar->on_playButton_clicked(true); // Stop the music first if playing
+        else
+            m_topBar->on_playFromStartButton_clicked(true);
+    }
+
     void on_playPause()   {  m_topBar->on_playButton_clicked(true); }
     void on_faster()   {
-        float speed = m_song->getSpeed() + 0.05;
+        float speed = m_song->getSpeed() + 0.04;
         m_song->setSpeed(speed);
         speed = m_song->getSpeed();
-        m_topBar->setSpeed(speed*100 + 0.5);
+        m_topBar->setSpeed(static_cast<int>(speed*100 + 0.5));
     }
     void on_slower()   {
-        float speed = m_song->getSpeed() - 0.05;
+        float speed = m_song->getSpeed() - 0.04;
         m_song->setSpeed(speed);
         speed = m_song->getSpeed();
-        m_topBar->setSpeed(speed*100 + 0.5);
+        m_topBar->setSpeed(static_cast<int>(speed*100 + 0.5));
     }
     void on_nextSong()   {  m_sidePanel->nextSong(+1); }
     void on_previousSong()   {  m_sidePanel->nextSong(-1); }
