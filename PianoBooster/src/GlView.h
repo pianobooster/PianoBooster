@@ -50,7 +50,7 @@ public:
     CSong* getSongObject() {return m_song;}
     CScore* getScoreObject() {return m_score;}
     void init();
-    bool m_cfg_openGlOptimise;
+    int m_cfg_openGlOptimise;
 
 protected:
     void timerEvent(QTimerEvent *event);

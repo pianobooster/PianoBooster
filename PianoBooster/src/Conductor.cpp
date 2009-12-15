@@ -46,6 +46,7 @@ CConductor::CConductor()
     int i;
 
     m_scoreWin = 0;
+    m_settings = 0;
     m_piano = 0;
 
     m_songEventQueue = new CQueue<CMidiEvent>(1000);
@@ -537,6 +538,9 @@ bool CConductor::validatePianistChord()
 void CConductor::pianistInput(CMidiEvent inputNote)
 {
     bool goodSound = true;
+
+    // inputNote.transpose(+12); fixme
+
 
     if (m_testWrongNoteSound)
         goodSound = false;

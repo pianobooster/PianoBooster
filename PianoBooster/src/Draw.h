@@ -43,7 +43,6 @@
 
 #include "Symbol.h"
 
-#define REDRAW_COUNT 1 // there are two gl buffers but redrawing once is best (set 2 with buggy gl drivers)
 
 class CSettings;
 

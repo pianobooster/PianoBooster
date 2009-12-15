@@ -1,26 +1,29 @@
-#define PB_VERSION "0.6.4"
+#define PB_VERSION "0.6.5.svn"
 
 /*
+
+v0.6.5.svn: (29 November 2009)
+
 v0.6.4: (28 November 2009)
-- Added note names for beginners (to be used with a piano note name cut-out.)
+- Added note names for beginners (to be used with a piano key note labels)
 - Added assignable left and right midi channels.
-- Improved the MIDI timing accuracy.
+- Improved MIDI timing accuracy.
 - Greatly reduced the memory footprint.
 - Reduced the CPU load.
-- Reduced the screen flicker (recommend setting screen refresh rate to 60Hz
+- Reduced the screen flicker (recommend setting the screen refresh rate to 60Hz
      and for Intel Graphic chips updating the drivers).
-- Added keyboard shortcuts. These are - speed up/down, play from start,
+- Added keyboard short-cuts. These are - speed up/down, play from start,
      play/pause, next previous song, left right both hands.
 - Remembers the song settings in a configuration file called "pb.cfg".
-     These are the midi channels, speed, left right or both hands.
+     these are the midi channels, speed, left right or both hands.
 - Now works well Ubuntu 9.10 and Intel graphic chips.
     (Those with Ubuntu 9.04 and Intel should upgrade to 9.10 and this version)
-- Fixed various startup issues.
-- Now correctly displays repeated accidentals in one bar..
+- Fixed various start up issues.
+- Now correctly notates repeated accidentals that occur in a single bar.
 - Added the option to display courtesy accidentals.
 - Added a simple help page.
 - Added an installer for windows.
-- Make install now works for Linux.
+- 'make install' now works on Linux.
 - Now works with small screens eg an EEE-701 (for Trev)
 
 v0.6.2: (01 April 2009)

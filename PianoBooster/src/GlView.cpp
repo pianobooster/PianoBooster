@@ -40,6 +40,8 @@
 // Try to make sure this runs a bit faster than the screen refresh rate of 60z (or 16.6 msec)
 #define SCREEN_FRAME_RATE 12 // That 12 msec or 83.3 frames per second
 
+#define REDRAW_COUNT ((m_cfg_openGlOptimise >= 2) ? 1 : 2) // there are two gl buffers but redrawing once is best (set 2 with buggy gl drivers)
+
 
 CGLView::CGLView(QtWindow* parent, CSettings* settings)
     : QGLWidget(parent)
@@ -57,7 +59,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_song = new CSong();
     m_score = new CScore(m_settings);
     m_displayUpdateTicks = 0;
-    m_cfg_openGlOptimise = true;
+    m_cfg_openGlOptimise = 0; // This if Full optimisation
     m_eventBits = 0;
     BENCHMARK_INIT();
 }
@@ -397,10 +399,11 @@ void CGLView::timerEvent(QTimerEvent *event)
         m_qtWindow->songEventUpdated(m_eventBits);
         m_eventBits = 0;
     }
-    if(m_cfg_openGlOptimise)
-        m_fullRedrawFlag = false;
-    else
+
+    if( m_cfg_openGlOptimise == 0 ) // zero is no GlOptimise
         m_fullRedrawFlag = true;
+    else
+        m_fullRedrawFlag = false;
 
     glDraw();
     //update();

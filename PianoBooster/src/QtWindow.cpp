@@ -128,12 +128,15 @@ QtWindow::QtWindow()
 
 
 #ifdef _WIN32
-    m_glWidget->m_cfg_openGlOptimise = true; // don't default to true on windows
+    m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
 #else
-    m_glWidget->m_cfg_openGlOptimise = true; // changed to default to false on platforms
+    m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
 #endif
 
-    m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toBool();
+    if  (m_settings->value("Display/OpenGlOptimise").toString() == "true") // this used to be true for backward compatability
+        m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
+    else
+        m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toInt();
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
 

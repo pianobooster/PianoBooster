@@ -37,6 +37,12 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     m_settings = 0;
     m_glView = 0;
     setWindowTitle("Preferences");
+    followStopPointCombo->addItem("Automatic (Recommended)");
+    followStopPointCombo->addItem("On the Beat");
+    followStopPointCombo->addItem("After the Beat");
+    videoOptimiseCombo->addItem("Full (Recommended)");
+    videoOptimiseCombo->addItem("Medium");
+    videoOptimiseCombo->addItem("None");
 }
 
 
@@ -46,19 +52,20 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     m_settings = settings;
     m_glView = glView;
 
-    videoOptimiseCheck->setChecked(m_glView->m_cfg_openGlOptimise);
+
+    int index = videoOptimiseCombo->count() - (m_glView->m_cfg_openGlOptimise + 1);
+    if (index < 0 || index >= videoOptimiseCombo->count())
+        index = 0;
+    videoOptimiseCombo->setCurrentIndex(index);
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
     courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
-    followStopPointCombo->addItem("Automatic (Recommended)");
-    followStopPointCombo->addItem("On the Beat");
-    followStopPointCombo->addItem("After the Beat");
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
 }
 
 void GuiPreferencesDialog::accept()
 {
-    m_glView->m_cfg_openGlOptimise = videoOptimiseCheck->isChecked();
+    m_glView->m_cfg_openGlOptimise = videoOptimiseCombo->count() - (videoOptimiseCombo->currentIndex() + 1 );
     m_settings->setValue("Display/OpenGlOptimise", m_glView->m_cfg_openGlOptimise );
     m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
     m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
