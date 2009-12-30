@@ -2,7 +2,7 @@
 #rename to makemusic.bat to run on windows
 
 # create the output dir if does not exist
-[ -a output ] || mkdir "output"
+[ -a PianoBoosterMusic ] || mkdir "PianoBoosterMusic"
 
 
 # from abc plus
@@ -10,4 +10,4 @@ echo make music with $1
 abc2midi $1.abc -o ${1}.solo.mid -RS
 
 # from Musical MIDI Accompaniment
-mma $1.mma -f output/${1}.mid
+mma $1.mma -f PianoBoosterMusic/${1}.mid

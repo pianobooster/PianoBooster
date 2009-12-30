@@ -42,8 +42,8 @@ End
 /// we adjust the MMA internal pointer to get it in the
 /// the correct position.
 Beatadjust 2
-midiInc file=GreensleevesSimple.solo.mid Solo-Right=4 Solo-Left=3  Volume=80
-//midiInc file=GreensleevesSimple.solo.mid Solo-Right=4 Solo-Left=3  Volume=80 stripsilence=off
+midiInc file=Greensleeves.solo.mid Solo-Right=4 Solo-Left=3  Volume=80
+//midiInc file=Greensleeves.solo.mid Solo-Right=4 Solo-Left=3  Volume=80 stripsilence=off
 BeatAdjust -2   // reset beat pointer. Important!
 
 Groove CountryWaltz

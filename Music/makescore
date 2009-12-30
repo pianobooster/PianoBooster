@@ -2,11 +2,11 @@
 #rename to makemusic.bat to run on windows
 
 # create the output dir if does not exist
-[ -a output ] || mkdir "output"
+[ -a PianoBoosterMusic ] || mkdir "PianoBoosterMusic"
 
 # from abc plus
-abcm2ps -s 0.9 -c $1.abc -O output/$1.ps
+abcm2ps -s 0.9 -c $1.abc -O PianoBoosterMusic/$1.ps
 
 # from imagemagick
-convert -density 120x120 output/$1.ps output/$1.png
+convert -density 120x120 PianoBoosterMusic/$1.ps PianoBoosterMusic/$1.png
 
