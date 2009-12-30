@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SONGS="
+  SkipToMyLoo
+  Greensleeves
+  ScarboroughFair
+"
+
+# bash for loop
+for s in $SONGS; do
+    ./makemusic $s
+    ./makescore $s
+done

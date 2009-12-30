@@ -1,0 +1,17 @@
+X: 1
+T: Scarborough Fair
+M: 3/4
+L: 1/4
+Q:1/4=30
+K:C
+V:1
+V: RH1 clef=treble
+%%MIDI channel 4
+%%MIDI program 1 4
+%%MIDI gchordoff
+%
+[V: RH1] |: D2D | A2A | E3/2F/E | D3 | zAc |
+[V: RH1]    d2c | ABG | A3- | Azd | d2d |
+[V: RH1]    c2A | AGF | E/C/-C2 |-C3 |
+[V: RH1]    D2A | G2F | EDC | D3- | D3 :|
+%%MIDI program 25
