@@ -1,6 +1,11 @@
 #CONFIG += USE_FLUIDSYNTH
 CONFIG += release
 
+TRANSLATIONS = translations/pianobooster_jp_JP.ts \
+               translations/pianobooster_cn_CN.ts \
+               translations/pianobooster_es_ES.ts \
+
+
 USE_FLUIDSYNTH {
 # Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
 # You normally do not need to set it
