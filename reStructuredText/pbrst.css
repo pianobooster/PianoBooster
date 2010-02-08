@@ -1,0 +1,50 @@
+
+@import url(html4css1.css);
+@import url(ref.css);
+
+
+pre.literal-block {
+    background-color:#F0F0F0;
+    border:1px dashed black;
+    color:inherit;
+    font-family:courier,courier new,monospace;
+    font-size:12px;
+    line-height:100%;
+    margin-bottom:4px;
+    margin-top:4px;
+    overflow:auto;
+    padding:5px;
+    padding-top:15px;
+    padding-bottom:15px;
+    white-space:normal;
+    width:98%;
+    margin-left: 0 ;
+    margin-right: 0 ;
+}
+
+h1 a.toc-backref, h2 a.toc-backref, h3 a.toc-backref, h4 a.toc-backref   {
+  color: #6e7e97;
+}
+
+h1 a.toc-backref  {
+    font-size: 20px;
+    color: #ff0000;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+.contents  ul{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.topic-title a{
+    color: black;
+
+}
+
+
+
