@@ -1,13 +1,125 @@
-#!/bin/bash
-#rename to makemusic.bat to run on windows
+#!/usr/bin/env python
+import os
+import sys
 
-# create the output dir if does not exist
-[ -a PianoBoosterMusic ] || mkdir "PianoBoosterMusic"
+class songDetails:
 
 
-# from abc plus
-echo make music with $1
-abc2midi $1.abc -o ${1}.solo.mid -RS
+    def createMusic(self, no):    # create music
 
-# from Musical MIDI Accompaniment
-mma $1.mma -f PianoBoosterMusic/${1}.mid
+        self.nName = "%02d-%s"%(no, self.name)
+
+        inputFile = self.name
+        if os.path.isfile(inputFile + "Mid.abc"):
+            inputFile += "Mid"
+            print "inputFile " + inputFile
+
+        # http://moinejf.free.fr/ (abcplus.sourceforge.net)
+        cmd = "abc2midi %s.abc -o %s.solo.mid -RS" % (inputFile, self.name)
+        print cmd
+        if os.system(cmd) != 0:
+            return False
+
+        # http://mellowood.ca/mma/
+        cmd = "/home/louis/active/src/mma/mma-current/mma.py  %s.mma -f MusicFiles/%s.mid" % (self.name, self.nName)
+        print cmd
+        if os.system(cmd) != 0:
+            return False
+
+        inputFile = self.name
+        if os.path.isfile(inputFile + "Ps.abc"):
+            inputFile += "Ps"
+            print "inputFile " + inputFile
+
+        # http://abc.sourceforge.net/ (abcplus.sourceforge.net)
+        cmd = "abcm2ps -s 0.8 -c %s.abc -O MusicFiles/%s.ps" % (inputFile, self.name)
+        print cmd
+        if os.system(cmd) != 0:
+            return False
+
+        # http://www.ghostscript.com/ - ps2pdf is part of ghostscript
+        cmd = "ps2pdf  MusicFiles/%s.ps MusicFiles/%s.pdf" % ( self.name, self.nName)
+        print cmd
+        if os.system(cmd) != 0:
+            return False
+        os.remove("MusicFiles/%s.ps" % self.name)
+
+
+        cmd = "abcm2ps -E -s 1.0 -c %s.abc -O MusicFiles/%s.ps" % (inputFile, self.name)
+        print cmd
+        if os.system(cmd) != 0:
+            return False
+
+
+
+
+        # from imagemagick
+        cmd = "convert -density 90x90 -alpha off MusicFiles/%s001.eps MusicFiles/%s.png" % (self.name, self.nName)
+        print cmd
+        if os.system(cmd) != 0:
+            return False
+
+        os.remove("MusicFiles/%s001.eps" % self.name)
+
+        os.system("cp {0}.abc MusicSource".format(self.name))
+        os.system("cp {0}.mma MusicSource".format(self.name))
+
+        f = open( 'music.html', 'a')
+        str = """
+  <p></p>
+
+  <p class="image">
+      <img hspace="10" src="MusicFiles/{1}.png" alt="Piano Music - {0}">
+      Piano Music - {0} <br><br>
+      Download the MIDI file <a href="MusicFiles/{1}.mid"> {1}.mid </a>
+      and the pdf <a href="MusicFiles/{1}.pdf">{1}.pdf </a> <br>
+      (This music was generated from the  <a href="MusicSource/{0}.abc">{0}.abc </a>
+      and the MMA file  <a href="MusicSource/{0}.mma">{0}.mma </a> ) <br>
+  </p>
+""".format(self.name,  self.nName)
+
+        f.write(str)
+        f.close()
+
+
+        return True
+
+def addSong(songs, name):
+    details = songDetails()
+    details.name = name
+    songs.append(details)
+
+
+def runMain(argv):
+
+    if len(argv) > 1:
+        outputDir = "MusicFiles"
+
+        if not os.path.isdir(outputDir):
+            os.mkdir(outputDir)
+        if not os.path.isdir("MusicSource"):
+            os.mkdir("MusicSource")
+
+        os.remove("music.html")
+        os.system("cp music.html.start music.html")
+
+
+        songs=[]
+        addSong(songs, "SkipToMyLoo")
+        addSong(songs, "FrereJacques")
+        addSong(songs, "ScarboroughFair")
+        addSong(songs, "Greensleeves")
+        addSong(songs, "AmazingGrace")
+
+        for n,song in enumerate(songs):
+            result = song.createMusic( n + 1 )
+            if not result:
+                break
+        os.system("cat music.html.end >>music.html")
+
+
+    else:
+        print "usage: makescore args"
+
+if __name__ == "__main__":
+    runMain(sys.argv)

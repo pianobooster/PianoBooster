@@ -4,10 +4,12 @@ SONGS="
   SkipToMyLoo
   Greensleeves
   ScarboroughFair
+  FrereJacques
+  AmazingGrace
 "
 
 # bash for loop
 for s in $SONGS; do
-    ./makemusic $s
-    ./makescore $s
+    ./makemusic2 $s
+    #./makescore $s
 done

@@ -9,13 +9,16 @@ Begin Solo-Left
 End
 
 Tempo 87
+Groove Metronome3
+z
+
 Groove countrywaltz2
 
 Beatadjust 2
-midiInc file=AmazingGracePiano.mid Solo-Right=4 Solo-Left=3 Volume=80
+midiInc file=AmazingGraceMid.solo.mid Solo-Right=4 Solo-Left=3 Volume=80
 Beatadjust -2
 
-1 z!
+1 z
 
 Repeat
 
