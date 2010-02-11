@@ -227,14 +227,14 @@ void CGLView::drawDisplayText()
     glColor3f(1.0,1.0,1.0);
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen)
-        renderText(30, y-4,0 ,"Accuracy:", m_timeRatingFont);
+        renderText(30, y-4,0 ,tr("Accuracy:"), m_timeRatingFont);
 
     if (m_titleHeight < 45 )
         return;
 
     y = Cfg::getAppHeight() - m_titleHeight;
 
-    renderText(30, y+6, 0,"Song: " + m_song->getSongTitle(), m_timeRatingFont);
+    renderText(30, y+6, 0,tr("Song: ") + m_song->getSongTitle(), m_timeRatingFont);
     /*
     char buffer[100];
     sprintf(buffer, "Notes %d wrong %d Late %d Score %4.1f%%",
@@ -257,7 +257,7 @@ void CGLView::drawBarNumber()
     //CDraw::drColour (Cfg::noteColourDim());
     //glRectf(x+30+10, y-2, x + 80, y + 16);
     glColor3f(1.0,1.0,1.0);
-    renderText(x, y, 0,"Bar: " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
+    renderText(x, y, 0, tr("Bar: ") + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
 
 void CGLView::resizeGL(int width, int height)

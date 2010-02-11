@@ -23,19 +23,31 @@
 
 #include <QtOpenGL>
 #include "QtWindow.h"
- 
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    
+
+     QString locale = QLocale::system().name();
+     printf("locale = %s\n", qPrintable(locale));
+
+     QTranslator translator;
+     translator.load(QString("pianobooster_") + locale);
+
+     app.installTranslator(&translator);
+
+
+
     if (!QGLFormat::hasOpenGL()) {
-        QMessageBox::information(0, "OpenGL support",
-                 "This system does not support OpenGL which is needed to run Piano Booster.");
+        QMessageBox::information(0, tr("OpenGL support"),
+                 tr("This system does not support OpenGL which is needed to run Piano Booster."));
         return -1;
     }
 
+
+
     QtWindow window;
-    
+
     window.show();
     return app.exec();
 }

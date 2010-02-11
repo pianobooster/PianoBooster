@@ -89,15 +89,15 @@ void CMidiFile::openMidiFile(string filename)
     m_file.open(filename.c_str(), ios_base::in | ios_base::binary);
     if (m_file.fail() == true)
     {
-        QMessageBox::warning(0, "Midi File Error",
-                 "Cannot open \"" + QString(filename.c_str()) + "\"");
+        QMessageBox::warning(0, tr("Midi File Error"),
+                 tr("Cannot open \"" + QString(filename.c_str()) + "\""));
         midiError(SMF_CANNOT_OPEN_FILE);
         return;
     }
     rewind();
     if (getMidiError() != SMF_NO_ERROR)
-        QMessageBox::warning(0, "Midi File Error",
-                 "Midi file\"" + QString(filename.c_str()) + "\" is corrupted");
+        QMessageBox::warning(0, tr("Midi File Error"),
+                 tr("Midi file\"" + QString(filename.c_str()) + "\" is corrupted"));
 }
 
 void CMidiFile::rewind()
