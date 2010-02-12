@@ -47,7 +47,8 @@ int main(int argc, char *argv[])
 
      QTranslator translator;
      if (!translator.load(QSTR_APPNAME + QString("_") + locale , localeDirectory))
-        translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
+        if (!translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath()  + "/translations/"))
+            translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
 
      app.installTranslator(&translator);
 
