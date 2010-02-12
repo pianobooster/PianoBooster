@@ -26,21 +26,36 @@
 
 int main(int argc, char *argv[])
 {
+    const QString QSTR_APPNAME("pianobooster");
+
     QApplication app(argc, argv);
 
      QString locale = QLocale::system().name();
      printf("locale = %s\n", qPrintable(locale));
 
+    QString localeDirectory =
+#ifdef Q_OS_WIN32
+        QApplication::applicationDirPath() + "/translations/";
+#endif
+#ifdef Q_OS_LINUX
+        QApplication::applicationDirPath() + "/../share/QSTR_APPNAME/translations/";
+#endif
+#ifdef Q_OS_DARWIN
+        QApplication::applicationDirPath() + "/../Resources/";
+#endif
+
+
      QTranslator translator;
-     translator.load(QString("pianobooster_") + locale);
+     if (!translator.load(QSTR_APPNAME + QString("_") + locale , localeDirectory))
+        translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
 
      app.installTranslator(&translator);
 
 
 
     if (!QGLFormat::hasOpenGL()) {
-        QMessageBox::information(0, tr("OpenGL support"),
-                 tr("This system does not support OpenGL which is needed to run Piano Booster."));
+        QMessageBox::information(0, QMessageBox::tr("OpenGL support"),
+                 QMessageBox::tr("This system does not support OpenGL which is needed to run Piano Booster."));
         return -1;
     }
 
