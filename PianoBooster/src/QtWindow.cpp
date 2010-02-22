@@ -473,15 +473,15 @@ void QtWindow::keyboardShortcuts()
                 "<th>Key</th>"
                 "</tr>"
             );
-    msg += displayShortCut("ShortCuts/RightHand","Choose the right hand");
-    msg += displayShortCut("ShortCuts/BothHands","Choose both hands");
-    msg += displayShortCut("ShortCuts/LeftHand","Choose the left Hand");
-    msg += displayShortCut("ShortCuts/PlayFromStart","Play from start toggle");
-    msg += displayShortCut("ShortCuts/PlayPause","Play Pause Toggle");
-    msg += displayShortCut("ShortCuts/Faster","Increase the speed by 5%");
-    msg += displayShortCut("ShortCuts/Slower","Increase the speed by 5%");
-    msg += displayShortCut("ShortCuts/NextSong","Change to the Next Song");
-    msg += displayShortCut("ShortCuts/PreviousSong","Change to the Previous Song");
+    msg += displayShortCut("ShortCuts/RightHand", tr("Choose the right hand"));
+    msg += displayShortCut("ShortCuts/BothHands", tr("Choose both hands"));
+    msg += displayShortCut("ShortCuts/LeftHand", tr("Choose the left Hand"));
+    msg += displayShortCut("ShortCuts/PlayFromStart", tr("Play from start toggle"));
+    msg += displayShortCut("ShortCuts/PlayPause", tr("Play Pause Toggle"));
+    msg += displayShortCut("ShortCuts/Faster",  tr("Increase the speed by 5%"));
+    msg += displayShortCut("ShortCuts/Slower", tr("Increase the speed by 5%"));
+    msg += displayShortCut("ShortCuts/NextSong", tr("Change to the Next Song"));
+    msg += displayShortCut("ShortCuts/PreviousSong", tr("Change to the Previous Song"));
 
     msg += tr(
                 "<tr><td>Fake Piano keys</td><td>X is middle C</td></tr>"

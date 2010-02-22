@@ -218,7 +218,7 @@ INSTALL( FILES ../README.txt  DESTINATION share/pianobooster/doc/ )
 
 INSTALL ( FILES images/pianobooster.png DESTINATION share/pixmaps )
 
-INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm  DESTINATION share/pianobooster/translations/ )
+#INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm  DESTINATION share/pianobooster/translations/ )
 
 
 
