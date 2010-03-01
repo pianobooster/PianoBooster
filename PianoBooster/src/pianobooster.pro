@@ -4,6 +4,7 @@ CONFIG += release
 TRANSLATIONS = ../translations/pianobooster_ja_JP.ts \
                ../translations/pianobooster_cn_CN.ts \
                ../translations/pianobooster_es_ES.ts \
+               ../translations/pianobooster_blank.ts \
 
 
 USE_FLUIDSYNTH {

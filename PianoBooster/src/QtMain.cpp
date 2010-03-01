@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
         QApplication::applicationDirPath() + "/../share/QSTR_APPNAME/translations/";
 #endif
 #ifdef Q_OS_DARWIN
-        QApplication::applicationDirPath() + "/../Resources/";
+        QApplication::applicationDirPath() + "/../Resources/translations/";
 #endif
 
 

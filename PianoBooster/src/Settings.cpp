@@ -83,18 +83,6 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
     m_song = song;
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
-
-    // Set defualt values
-    setValue("PianoBooster/Version",PB_VERSION);
-    setDefaultValue("ShortCuts/LeftHand", "F2");
-    setDefaultValue("ShortCuts/BothHands","F3");
-    setDefaultValue("ShortCuts/RightHand","F4");
-    setDefaultValue("ShortCuts/PlayFromStart","space");
-    setDefaultValue("ShortCuts/PlayPause","P");
-    setDefaultValue("ShortCuts/Faster","=");
-    setDefaultValue("ShortCuts/Slower","-");
-    setDefaultValue("ShortCuts/NextSong","]");
-    setDefaultValue("ShortCuts/PreviousSong","[");
 }
 
 
@@ -338,6 +326,54 @@ void CSettings::writeSettings()
 
 void CSettings::loadSettings()
 {
+    // Set default values
+
+/*
+    if (value("PianoBooster/Version").toString() != PB_VERSION)
+    {
+        QString resourceDir;
+#ifdef Q_OS_WIN32
+        resourceDir = QApplication::applicationDirPath() + "/music/";
+#endif
+#ifdef Q_OS_LINUX
+        resourceDir = QApplication::applicationDirPath() + "/../share/QSTR_APPNAME/music/";
+#endif
+#ifdef Q_OS_DARWIN
+        resourceDir = QApplication::applicationDirPath() + "/../Resources/music";
+#endif
+        QDir srcMusicDir(resourceDir);
+        srcMusicDir.setFilter(QDir::Files);
+        QStringList fileNames = srcMusicDir.entryList();
+        const QString MUSIC_DIR_NAME("MidiFiles");
+
+        QDir destMusicDir(QDir::homePath() + "/" + MUSIC_DIR_NAME);
+        if (!destMusicDir.exists())
+        {
+            QDir home(QDir::homePath());
+            home.mkdir(MUSIC_DIR_NAME);
+        }
+
+
+        for (int i = 0; i < fileNames.size(); i++)
+        {
+            if ( fileNames.at(i).endsWith(".mid", Qt::CaseInsensitive ) )
+            {
+                QFile::copy(fileNames.at(i), destMusicDir.path());
+
+            }
+        }
+    }
+*/
+    setValue("PianoBooster/Version",PB_VERSION);
+    setDefaultValue("ShortCuts/LeftHand", "F2");
+    setDefaultValue("ShortCuts/BothHands","F3");
+    setDefaultValue("ShortCuts/RightHand","F4");
+    setDefaultValue("ShortCuts/PlayFromStart","space");
+    setDefaultValue("ShortCuts/PlayPause","P");
+    setDefaultValue("ShortCuts/Faster","=");
+    setDefaultValue("ShortCuts/Slower","-");
+    setDefaultValue("ShortCuts/NextSong","]");
+    setDefaultValue("ShortCuts/PreviousSong","[");
     QString songName = value("CurrentSong").toString();
     if (!songName.isEmpty())
         openSongFile( songName );
