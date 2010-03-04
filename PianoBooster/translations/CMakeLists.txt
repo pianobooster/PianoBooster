@@ -1,5 +1,5 @@
 SET( TRANSLATIONS_FILES
-     pianobooster_ja_JP.ts
+     pianobooster_ja.ts
      pianobooster_es.ts
 )
 
