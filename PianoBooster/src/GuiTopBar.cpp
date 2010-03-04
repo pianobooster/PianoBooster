@@ -52,8 +52,8 @@ GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
     transposeSpin->setMaximum(12);
     transposeSpin->setMinimum(-12);
 
-    majorCombo->addItem("Major");
-    majorCombo->addItem("Minor");
+    majorCombo->addItem(tr("Major"));
+    majorCombo->addItem(tr("Minor"));
     setMaximumHeight(30);
     setMaximumSize(QSize(16777215, 30));
 }
@@ -171,8 +171,8 @@ void GuiTopBar::setPlayButtonState(bool checked, bool atTheEnd)
     else
     {
         playButton->setIcon(QIcon(":/images/play.png"));
-        playButton->setToolTip("Start and stop playing music");
-        playFromStartButton->setToolTip("Playing music from the beginning");
+        playButton->setToolTip(tr("Start and stop playing music"));
+        playFromStartButton->setToolTip(tr("Playing music from the beginning"));
     }
 }
 

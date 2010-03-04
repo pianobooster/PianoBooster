@@ -42,7 +42,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
 #if !PB_USE_FLUIDSYNTH
     midiSetupTabWidget->removeTab(1);
 #endif
-    setWindowTitle("Midi Setup");
+    setWindowTitle(tr("Midi Setup"));
 }
 
 void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
@@ -88,20 +88,20 @@ void GuiMidiSetupDialog::updateMidiInfoText()
     midiInfoText->clear();
 
     if (midiInputCombo->currentIndex() == 0)
-        midiInfoText->append("<span style=\"color:black\">If you don't have a MIDI keyboard you can use the PC keyboard; 'X' is middle C.</span>");
+        midiInfoText->append("<span style=\"color:black\">" + tr("If you don't have a MIDI keyboard you can use the PC keyboard; 'X' is middle C.</span>"));
     else if (midiInputCombo->currentText().startsWith("Midi Through", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">The use of Midi Through is not recommended!</span>");
     else
-        midiInfoText->append("<span style=\"color:gray\">Midi Input Device: " + midiInputCombo->currentText() +"</span>");
+        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Input Device: " )+ midiInputCombo->currentText() +"</span>");
 
-    if (midiOutputCombo->currentText() == "None")
-        midiInfoText->append("<span style=\"color:red\">No Sound Output Device selected; Choose a Midi Output Device </span>");
+    if (midiOutputCombo->currentText() == tr("None"))
+        midiInfoText->append("<span style=\"color:red\">" + tr("No Sound Output Device selected; Choose a Midi Output Device") + "</span>");
     else if (midiOutputCombo->currentText().startsWith("Midi Through", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:#FF6600\">The use of Midi Through is not recommended!</span>");
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
     else if (midiOutputCombo->currentText().startsWith("Microsoft GS Wavetable SW Synth", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:black\">Note: the Microsoft SW Synth introduces an unwanted delay!</span>");
+        midiInfoText->append("<span style=\"color:black\">" + tr("Note: the Microsoft SW Synth introduces an unwanted delay!") + "</span>");
     else
-        midiInfoText->append("<span style=\"color:gray\">Midi Output Device: " + midiOutputCombo->currentText() +"</span>");
+        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device: ") + midiOutputCombo->currentText() +"</span>");
 
     latencyFixLabel->setText(tr("%1 mSec").arg(m_latencyFix));
 
@@ -145,7 +145,7 @@ void GuiMidiSetupDialog::accept()
 {
     m_settings->setValue("Midi/Input", midiInputCombo->currentText());
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
-    if (midiInputCombo->currentText().startsWith("None"))
+    if (midiInputCombo->currentText().startsWith(tr("None")))
         CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
     else
         CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),

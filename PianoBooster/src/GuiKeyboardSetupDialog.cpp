@@ -68,8 +68,8 @@ void GuiKeyboardSetupDialog::init(CSong* song, CSettings* settings)
     int lowestNote = m_settings->value("Keyboard/LowestNote", "0").toInt();
     int highestNote = m_settings->value("Keyboard/HighestNote", "127").toInt();
 
-    QString midiInputName = m_settings->value("Midi/I/nput").toString();
-    if (midiInputName.startsWith("None", Qt::CaseInsensitive))
+    QString midiInputName = m_settings->value("Midi/Input").toString();
+    if (midiInputName.startsWith(tr("None"), Qt::CaseInsensitive))
     {
         lowestNote = PC_KEY_LOWEST_NOTE;
         highestNote = PC_KEY_HIGHEST_NOTE;
@@ -98,14 +98,13 @@ void GuiKeyboardSetupDialog::updateInfoText()
     lowestNoteEdit->setText(QString().setNum(lowestNote));
     highestNoteEdit->setText(QString().setNum(highestNote));
     int noteRange = highestNote - lowestNote;
-    keyboardInfoText->append("<span style=\"color:black\">Choose the right and wrong sound for your playing.</span>");
+    keyboardInfoText->append("<span style=\"color:black\">" + tr("Choose the right and wrong sound for your playing.") + "</span>");
     if (!lowestNoteEdit->isEnabled())
-        str.sprintf("<span style=\"color:black\">You can use the PC keyboard instead of a MIDI keyboard; 'x' is middle C.</span>");
+        str = "<span style=\"color:black\">" + tr("You can use the PC keyboard instead of a MIDI keyboard; 'x' is middle C.") + "</span>";
     else if (noteRange > 0)
-        str.sprintf("<span style=\"color:black\">Your keyboard range is <b>octaves %d</b> and <b>semitones %d</b>; 60 is middle C.</span>",
-            noteRange/MIDI_OCTAVE, noteRange%MIDI_OCTAVE);
+        str = "<span style=\"color:black\">" + QString(tr("Your keyboard range is <b>octaves %1</b> and <b>semitones %2</b>; 60 is middle C.")).arg(noteRange/MIDI_OCTAVE).arg(noteRange%MIDI_OCTAVE) + "</span>";
     else
-        str.sprintf("<span style=\"color:red\">Oops, you have <b>0 notes</b> on your keyboard!</span>");
+        str = "<span style=\"color:red\">" + tr("Oops, you have <b>0 notes</b> on your keyboard!") + "</span>";
 
     keyboardInfoText->append(str);
 }

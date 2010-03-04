@@ -342,7 +342,7 @@ void CConductor::updatePianoSounds()
 {
     CMidiEvent event;
 
-    if (m_cfg_rightNoteSound>=0) // ignore if set to -1 ("None")
+    if (m_cfg_rightNoteSound>=0) // ignore if set to -1 (tr("None"))
     {
         event.programChangeEvent(0, m_pianistGoodChan, m_cfg_rightNoteSound);
         playMidiEvent( event );

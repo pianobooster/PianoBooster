@@ -36,13 +36,13 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     m_song = 0;
     m_settings = 0;
     m_glView = 0;
-    setWindowTitle("Preferences");
-    followStopPointCombo->addItem("Automatic (Recommended)");
-    followStopPointCombo->addItem("On the Beat");
-    followStopPointCombo->addItem("After the Beat");
-    videoOptimiseCombo->addItem("Full (Recommended)");
-    videoOptimiseCombo->addItem("Medium");
-    videoOptimiseCombo->addItem("None");
+    setWindowTitle(tr("Preferences"));
+    followStopPointCombo->addItem(tr("Automatic (Recommended)"));
+    followStopPointCombo->addItem(tr("On the Beat"));
+    followStopPointCombo->addItem(tr("After the Beat"));
+    videoOptimiseCombo->addItem(tr("Full (Recommended)"));
+    videoOptimiseCombo->addItem(tr("Medium"));
+    videoOptimiseCombo->addItem(tr("None"));
 }
 
 

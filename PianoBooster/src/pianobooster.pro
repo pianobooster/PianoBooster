@@ -1,9 +1,8 @@
 #CONFIG += USE_FLUIDSYNTH
 CONFIG += release
 
-TRANSLATIONS = ../translations/pianobooster_ja_JP.ts \
-               ../translations/pianobooster_cn_CN.ts \
-               ../translations/pianobooster_es_ES.ts \
+TRANSLATIONS = ../translations/pianobooster_ja.ts \
+               ../translations/pianobooster_es.ts \
                ../translations/pianobooster_blank.ts \
 
 

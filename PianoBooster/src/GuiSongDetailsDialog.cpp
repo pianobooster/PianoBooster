@@ -36,7 +36,7 @@ GuiSongDetailsDialog::GuiSongDetailsDialog(QWidget *parent)
     m_song = 0;
     m_settings = 0;
     m_trackList = 0;
-    setWindowTitle("Song Details");
+    setWindowTitle(tr("Song Details"));
 }
 
 
@@ -64,15 +64,15 @@ void GuiSongDetailsDialog::updateSongInfoText()
     bool activateOkButton = false;
 
     if (leftHandChannelCombo->currentIndex() != 0 && leftHandChannelCombo->currentIndex() == rightHandChannelCombo->currentIndex())
-        songInfoText->append("<span style=\"color:red\">The left and rignt hand channels must be different</span>");
+        songInfoText->append("<span style=\"color:red\">" + tr("The left and right hand channels must be different") + "</span>");
     else if ((leftHandChannelCombo->currentIndex() == 0 && rightHandChannelCombo->currentIndex() != 0 ) ||
              (rightHandChannelCombo->currentIndex() == 0 && leftHandChannelCombo->currentIndex() != 0 ) )
-        songInfoText->append("<span style=\"color:red\">Both left and rignt hand channels must be none to disable this feature</span>");
+        songInfoText->append("<span style=\"color:red\">" + tr("Both left and right hand channels must be none to disable this feature") + "</span>");
     else
     {
-        songInfoText->append("<span style=\"color:gray\">Set the MIDI Channels to be used for left and right hand piano parts:</span>");
-        songInfoText->append("<span style=\"color:black\">the left  hand piano part is using MIDI Channels 1</span>");
-        songInfoText->append("<span style=\"color:black\">the right hand piano part is using MIDI Channels 1</span>");
+        songInfoText->append("<span style=\"color:gray\">" + tr("Set the MIDI Channels to be used for left and right hand piano parts:") + "</span>");
+        songInfoText->append("<span style=\"color:black\">" + tr("the left  hand piano part is using MIDI Channels 1") + "</span>");
+        songInfoText->append("<span style=\"color:black\">" + tr("the right hand piano part is using MIDI Channels 1") + "</span>");
         activateOkButton = true;
     }
 

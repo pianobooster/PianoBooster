@@ -60,15 +60,15 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     pianoSlider->setMaximum(100);
 
     QAction* act;
-    act = new QAction("Set as Right Hand Part", this);
+    act = new QAction(tr("Set as Right Hand Part"), this);
     trackListWidget->addAction(act);
     connect(act, SIGNAL(triggered()), this, SLOT(setTrackRightHandPart()));
 
-    act = new QAction("Set as Left Hand Part", this);
+    act = new QAction(tr("Set as Left Hand Part"), this);
     trackListWidget->addAction(act);
     connect(act, SIGNAL(triggered()), this, SLOT(setTrackLeftHandPart()));
 
-    act = new QAction("Reset Both Parts", this);
+    act = new QAction(tr("Reset Both Parts"), this);
     trackListWidget->addAction(act);
     connect(act, SIGNAL(triggered()), this, SLOT(clearTrackPart()));
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="es_ES">
+<!DOCTYPE TS><TS version="1.1" language="es_ES">
 <context>
     <name>CGLView</name>
     <message>
@@ -22,12 +21,12 @@
 <context>
     <name>CSettings</name>
     <message>
-        <location filename="../src/Settings.cpp" line="392"/>
+        <location filename="../src/Settings.cpp" line="428"/>
         <source>NO MIDI OUTPUT DEVICE: Use menu Setup/Midi Setup ...</source>
         <translation>SIN DISPOSITIVO MIDI: Use el menu Ajustes/Ajustes Midi ...</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="394"/>
+        <location filename="../src/Settings.cpp" line="430"/>
         <source>NO MIDI FILE LOADED: Use menu File/Open ...</source>
         <translation></translation>
     </message>
@@ -162,7 +161,6 @@
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translatorcomment>Guitarra Acústica</translatorcomment>
         <translation>Guitarra Española</translation>
     </message>
     <message>
@@ -704,25 +702,21 @@
         <translation>Notas Correctas</translation>
     </message>
     <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="140"/>
         <source>sound:</source>
         <translation>sonido:</translation>
     </message>
     <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="163"/>
         <source>volume:</source>
         <translation>volumen:</translation>
     </message>
     <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="89"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="172"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
         <translation>Test</translation>
@@ -743,13 +737,11 @@
         <translation>Nota más Baja:</translation>
     </message>
     <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
         <translation>Número de notas entre 0 y 127</translation>
     </message>
     <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="239"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="275"/>
         <source>000; </source>
         <translation>000; </translation>
@@ -763,6 +755,31 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
         <translation>Reinicializar</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
+        <source>None</source>
+        <translation type="unfinished">Ninguno</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
+        <source>Choose the right and wrong sound for your playing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
+        <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
+        <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
+        <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -780,7 +797,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
         <source>Repeat Bar is disabled</source>
-        <translation>Repetir Compaser está desactivado</translation>
+        <translation>Repetir Compases está desactivado</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
@@ -914,7 +931,7 @@
         <translation>Ninguno (Teclado PC)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
         <source>None</source>
         <translation>Ninguno</translation>
     </message>
@@ -929,7 +946,7 @@
         <translation>Introduzca un valor para la modificación de latencia en miliseg</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="133"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation>La modificación de latencia funciona mediante el avance de la música que &lt;br&gt;estas interpretando para contrarrestar el retraso en la generación del sonido &lt;br&gt;&lt;br&gt;Necesitarás un piano&lt;b&gt; con altavoces&lt;/b&gt;que estén &lt;b&gt;activados&lt;/b&gt;&lt;br&gt;&lt;br&gt;Introduzca el tiempo en milisegundos para el retraso (1.000 ms = 1 seg) &lt;br&gt; (Para Microsoft GS Wavetable SW Synth pruebe con un valor de 150) &lt;br&gt; Si usted no está seguro, use el valor 0.</translation>
     </message>
@@ -942,6 +959,41 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="216"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>Archivos SoundFonts2 (*.sf2)</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
+        <source>Midi Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
+        <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.&lt;/span&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
+        <source>Midi Input Device: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
+        <source>No Sound Output Device selected; Choose a Midi Output Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
+        <source>The use of Midi Through is not recommended!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
+        <source>Note: the Microsoft SW Synth introduces an unwanted delay!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="104"/>
+        <source>Midi Output Device: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -986,6 +1038,41 @@
         <source>Video optimisation:</source>
         <translation>Optimización del Video:</translation>
     </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="39"/>
+        <source>Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="40"/>
+        <source>Automatic (Recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="41"/>
+        <source>On the Beat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
+        <source>After the Beat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
+        <source>Full (Recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
+        <source>Medium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
+        <source>None</source>
+        <translation type="unfinished">Ninguno</translation>
+    </message>
 </context>
 <context>
     <name>GuiSidePanel</name>
@@ -1002,7 +1089,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="65"/>
         <source>Song:</source>
-        <translation>Canción:</translation>
+        <translation>Canción: </translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="107"/>
@@ -1037,7 +1124,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Both</source>
-        <translation>Ambos</translation>
+        <translation>Ambas</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
@@ -1067,13 +1154,27 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="252"/>
         <source>Mute your part when playing</source>
-        <translation>Silenciar tu parte cuando toques</translation>
+        <translation>Silenciar tu parte al tocar</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.cpp" line="63"/>
+        <source>Set as Right Hand Part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.cpp" line="67"/>
+        <source>Set as Left Hand Part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.cpp" line="71"/>
+        <source>Reset Both Parts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GuiSongDetailsDialog</name>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="48"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="50"/>
         <source>No channel assigned</source>
         <translation>Sin canal asignado</translation>
@@ -1086,7 +1187,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
         <source> Song Details</source>
-        <translation>Información sobre la Canción</translation>
+        <translation> Detalles de la Canción</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
@@ -1102,6 +1203,36 @@
         <location filename="../src/GuiSongDetailsDialog.ui" line="64"/>
         <source>Left Hand MIDI Channel:</source>
         <translation>Canal Midi Mano Izquierda:</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="39"/>
+        <source>Song Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
+        <source>The left and right hand channels must be different</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
+        <source>Both left and right hand channels must be none to disable this feature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
+        <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
+        <source>the left  hand piano part is using MIDI Channels 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
+        <source>the right hand piano part is using MIDI Channels 1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1139,18 +1270,32 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation>Compas Inicial:</translation>
+        <translation>Compás Inicial:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation>Guardar este Numero de Compás</translation>
+        <translation>Guardar este Número de Compás</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiTopBar.cpp" line="55"/>
+        <source>Major</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiTopBar.cpp" line="56"/>
+        <source>Minor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiTopBar.cpp" line="175"/>
+        <source>Playing music from the beginning</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QMessageBox</name>
     <message>
-        <location filename="../src/MidiFile.cpp" line="92"/>
         <location filename="../src/MidiFile.cpp" line="99"/>
         <source>Midi File Error</source>
         <translation>Error en Archivo Midi</translation>
@@ -1212,8 +1357,6 @@
         <translation>Piano Midi</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="186"/>
-        <location filename="../src/QtWindow.cpp" line="194"/>
         <location filename="../src/QtWindow.cpp" line="218"/>
         <source>PianoBooster Midi File Error</source>
         <translation>Piano Booster Archivo Midi Error</translation>
@@ -1241,7 +1384,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="282"/>
         <source>Ctrl+O</source>
-        <translation>Ctrl+A</translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="283"/>
@@ -1251,7 +1394,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="286"/>
         <source>E&amp;xit</source>
-        <translation>&amp;Salida</translation>
+        <translation>&amp;Salir</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="287"/>
@@ -1276,7 +1419,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="295"/>
         <source>&amp;PC Shortcut Keys</source>
-        <translation>&amp;PC Atajos de Teclado</translation>
+        <translation>&amp;Atajos de Teclado del PC</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="296"/>
@@ -1289,10 +1432,9 @@
         <translation>Configuración &amp;Midi...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="300"/>
         <location filename="../src/QtWindow.cpp" line="318"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+M</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="301"/>
@@ -1307,7 +1449,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="305"/>
         <source>Ctrl+K</source>
-        <translation>Ctrl+T</translation>
+        <translation>Ctrl+K</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="306"/>
@@ -1367,10 +1509,9 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Set&amp;up</source>
-        <translation>Aj&amp;ustes</translation>
+        <translation>Config&amp;uración</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="360"/>
         <location filename="../src/QtWindow.cpp" line="363"/>
         <source>&amp;Help</source>
         <translation>A&amp;yuda</translation>
@@ -1378,7 +1519,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="367"/>
         <source>&amp;Website</source>
-        <translation>&amp;Website</translation>
+        <translation>&amp;Web</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
@@ -1386,9 +1527,9 @@
         <translation>Ayuda de Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="384"/>
+        <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency).&lt;/p&gt;&lt;p&gt;PianoBooster does not come with any &lt;b&gt;MIDI Files&lt;/b&gt; and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
-        <translation>&lt;h3&gt;Como Empezar&lt;/h3&gt;&lt;p&gt;Necesitaras un &lt;b&gt;teclado musical MIDI &lt;/b&gt; y un &lt;b&gt;conector MIDI &lt;/b&gt; para el PC.De no tener un teclado musical MIDI, puedes utilizar Piano Booster con el teclado del PC, siendo &apos;X&quot; el C o Do.&lt;/p&gt;&lt;p&gt;Para escuchar la múscia necesitarás un &lt;b&gt;General Midi synthetizador de sonido&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthetizador&quot; que viene con Windows puede ser usado pero introduce un inaceptable retraso en la música.&lt;/p&gt;&lt;p&gt;PianoBooster no viene con ningún &lt;b&gt;archivo MIDI Files&lt;/b&gt;así que tendrás que obtenerlo de Internet. Mira &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; para saber donde encontarlos. PianoBooster funciona mejor con archivos MIDI que tienen partes separadas para mano izquierda y derecha y usan los canales 3 y 4 del MIDI.&lt;h3&gt;Como Configurar:&lt;/h3&gt;&lt;p&gt;Primero ve al menu &lt;i&gt;Configuración/ConfiguraciónMidi&lt;/i&gt; y selecciona la Entrada de MIDI y la Salida del MIDI según el hardware del que dispongas. Luegot  ve a &lt;i&gt;Archivo/Abrir&lt;/i&gt; para abrir un archivo MIDI con extensión &quot;.mid&quot; o un arhivo de karaoke &quot;.kar&quot; . Ahora selecciona cualquiera que quieras &lt;i&gt;escuchar&lt;/i&gt;la música o &lt;i&gt;acompañar&lt;/i&gt; con el teclado al  piano  seleccionando un &lt;i&gt;modo&lt;/i&gt; en el panel lateral. Finalmente cuando estés listo pulsa en el &lt;i&gt;icon de empezar&lt;/i&gt; (o presiona la &lt;i&gt;barra espaciadora&lt;/i&gt;)para hacer andar la música.&lt;h3&gt;Sugerencias sobre como tocar el Piano&lt;/h3&gt;&lt;p&gt;Para sugerencias sobre como tocar el piano vea: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Sugerencias&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Más Información&lt;/h3&gt;&lt;p&gt;Para una mejor ayuda por favor visite la  PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;web&lt;/b&gt;&lt;/a&gt;, el  PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; y el &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;foro de usuarios&lt;/b&gt;&lt;/a&gt;. </translation>
+        <translation>&lt;h3&gt;Como Empezar&lt;/h3&gt;&lt;p&gt;Necesitaras un &lt;b&gt;teclado musical MIDI &lt;/b&gt; y un &lt;b&gt;conector MIDI &lt;/b&gt; para el PC.De no tener un teclado musical MIDI, puedes utilizar Piano Booster con el teclado del PC, siendo &apos;X&quot; el C o Do Central.&lt;/p&gt;&lt;p&gt;Para escuchar la múscia necesitarás un &lt;b&gt;General Midi synthetizador de sonido&lt;/b&gt;. El &quot;Microsoft GS Wavetable software synthetizador&quot; que viene con Windows puede ser usado pero introduce un inaceptable retraso en la música.&lt;/p&gt;&lt;p&gt;PianoBooster no viene con ningún &lt;b&gt;archivo MIDI &lt;/b&gt;así que tendrás que obtenerlo de Internet. Mira &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; para saber donde encontarlos. PianoBooster funciona mejor con archivos MIDI que tienen partes separadas para mano izquierda y derecha y usan los canales 3 y 4 del MIDI.&lt;h3&gt;Como Configurar:&lt;/h3&gt;&lt;p&gt;Primero ve al menu &lt;i&gt;Configuración/ConfiguraciónMidi&lt;/i&gt; y selecciona la Entrada de MIDI y la Salida del MIDI según el hardware del que dispongas. Luego  ve a &lt;i&gt;Archivo/Abrir&lt;/i&gt; para abrir un archivo MIDI con extensión &quot;.mid&quot; o un arhivo de karaoke &quot;.kar&quot; . Ahora selecciona el &lt;i&gt;Modo&lt;/i&gt; que deseas en el Panel Lateral (&lt;i&gt;Escuchar&lt;/i&gt; la música,  &lt;i&gt;Sígueme&lt;/i&gt; o Acompañamiento&lt;/i&gt;). Finalmente cuando estés listo pulsa en el &lt;i&gt;icono de empezar&lt;/i&gt; (o pulsa la &lt;i&gt;barra espaciadora&lt;/i&gt;) para hacer andar la música.&lt;h3&gt;Sugerencias sobre como tocar el Piano&lt;/h3&gt;&lt;p&gt;Para sugerencias sobre como tocar el piano vea: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Sugerencias&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Más Información&lt;/h3&gt;&lt;p&gt;Para una mejor ayuda por favor visite la  PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;web&lt;/b&gt;&lt;/a&gt;, el  PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; y el &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;foro de usuarios&lt;/b&gt;&lt;/a&gt;. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="432"/>
@@ -1396,7 +1537,7 @@
         <translation>Sobre Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="434"/>
+        <location filename="../src/QtWindow.cpp" line="435"/>
         <source>&lt;b&gt;PainoBooster - Version </source>
         <translation>&lt;b&gt;PainoBooster - Version </translation>
     </message>
@@ -1406,12 +1547,12 @@
         <translation>Atajos del Teclado del PC</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="464"/>
+        <location filename="../src/QtWindow.cpp" line="468"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation>&lt;h2&gt;&lt;center&gt;Atajos del Teclado&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;SE han definido los siguientes atajos del teclado&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Atajos del Teclado&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Se han definido los siguientes atajos del teclado&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="470"/>
+        <location filename="../src/QtWindow.cpp" line="475"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation>&lt;tr&gt;&lt;th&gt;Acción&lt;/th&gt;&lt;th&gt;Tecla&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
@@ -1423,7 +1564,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="477"/>
         <source>Choose both hands</source>
-        <translation>Selecionar ambas manos</translation>
+        <translation>Seleccionar ambas manos</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="478"/>
@@ -1441,7 +1582,6 @@
         <translation>Tocar Pausar Alternar</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="481"/>
         <location filename="../src/QtWindow.cpp" line="482"/>
         <source>Increase the speed by 5%</source>
         <translation>Aumentar la velocidad un 5%</translation>
@@ -1457,7 +1597,7 @@
         <translation>Ir a la Canción Anterior</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="486"/>
+        <location filename="../src/QtWindow.cpp" line="489"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation>&lt;tr&gt;&lt;td&gt;Teclas del Piano Simuladas&lt;/td&gt;&lt;td&gt;X es el C central&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
@@ -1470,6 +1610,11 @@
         <location filename="../src/QtWindow.cpp" line="505"/>
         <source>Midi Files (*.mid *.MID *.midi *.kar *.KAR)</source>
         <translation>Archivos Midi (*.mid *.MID *.midi *.kar *.KAR)</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="121"/>
+        <source>None</source>
+        <translation type="unfinished">Ninguno</translation>
     </message>
 </context>
 </TS>
