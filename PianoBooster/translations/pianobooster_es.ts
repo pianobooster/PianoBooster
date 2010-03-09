@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="es_ES">
+<!DOCTYPE TS>
+<TS version="2.0" language="es_ES">
 <context>
     <name>CGLView</name>
     <message>
@@ -23,12 +24,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="428"/>
         <source>NO MIDI OUTPUT DEVICE: Use menu Setup/Midi Setup ...</source>
-        <translation>SIN DISPOSITIVO MIDI: Use el menu Ajustes/Ajustes Midi ...</translation>
+        <translation>SIN DISPOSITIVO MIDI: Use el menú Ajustes/Ajustes Midi ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="430"/>
         <source>NO MIDI FILE LOADED: Use menu File/Open ...</source>
-        <translation></translation>
+        <translation>SIN ARCHVIO MIDI CARGAGO: Use el menú Archivo/Abrir ...</translation>
     </message>
 </context>
 <context>
@@ -694,7 +695,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation>Ajustes de tu Teclado Musical</translation>
+        <translation>Configuración de tu Teclado Musical</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
@@ -759,27 +760,27 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">Ninguno</translation>
+        <translation>Ninguno</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona el sonido para las notas correctas y erróneas cuando toques.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puedes utilizar el teclado del PC en vez de un telcado MIDI; &apos;x&apos; es el C Central.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>El rango de tu teclado es &lt;b&gt;octavas %1&lt;/b&gt; y &lt;b&gt;semitonos %2&lt;/b&gt;; 60 es el C Central.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaya, tiene&lt;b&gt;0 notas&lt;/b&gt; en su teclado!</translation>
     </message>
 </context>
 <context>
@@ -948,7 +949,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="133"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation>La modificación de latencia funciona mediante el avance de la música que &lt;br&gt;estas interpretando para contrarrestar el retraso en la generación del sonido &lt;br&gt;&lt;br&gt;Necesitarás un piano&lt;b&gt; con altavoces&lt;/b&gt;que estén &lt;b&gt;activados&lt;/b&gt;&lt;br&gt;&lt;br&gt;Introduzca el tiempo en milisegundos para el retraso (1.000 ms = 1 seg) &lt;br&gt; (Para Microsoft GS Wavetable SW Synth pruebe con un valor de 150) &lt;br&gt; Si usted no está seguro, use el valor 0.</translation>
+        <translation>La modificación de latencia funciona mediante el avance de la música que &lt;br&gt;estas interpretando para contrarrestar el retraso en la generación del sonido &lt;br&gt;&lt;br&gt;Necesitarás un piano&lt;b&gt; con altavoces&lt;/b&gt; que estén &lt;b&gt;activados&lt;/b&gt;&lt;br&gt;&lt;br&gt;Introduzca el tiempo en milisegundos para el retraso (1.000 ms = 1 seg) &lt;br&gt; (Para Microsoft GS Wavetable SW Synth pruebe con un valor de 150) &lt;br&gt; Si usted no está seguro, use el valor 0.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="215"/>
@@ -963,37 +964,37 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
         <source>Midi Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración Midi</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Si no tiene un Teclado Midi puede utilizar el teclado del PC; &apos;X&apos; es el C central.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
         <source>Midi Input Device: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo de Entrada Midi: </translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin Dispositivo de Salida Seleccionado; Seleccione un Dispositivo de Salida MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
         <source>The use of Midi Through is not recommended!</source>
-        <translation type="unfinished"></translation>
+        <translation>El uso a través del Midi no es recomendable!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
         <source>Note: the Microsoft SW Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Microsoft SW Synth produce un indeseado retraso!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="104"/>
         <source>Midi Output Device: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo de Salida Midi:</translation>
     </message>
 </context>
 <context>
@@ -1031,7 +1032,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="121"/>
         <source>Video  Settings</source>
-        <translation>Ajustes de Video</translation>
+        <translation>Configuración de Video</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="132"/>
@@ -1041,37 +1042,37 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="39"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferencias</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="40"/>
         <source>Automatic (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Automático (Recomendado)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="41"/>
         <source>On the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>En el Compás</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>After the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>Después del Compás</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Full (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Máxima (Recomendado)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Media</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>None</source>
-        <translation type="unfinished">Ninguno</translation>
+        <translation>Ninguna</translation>
     </message>
 </context>
 <context>
@@ -1159,17 +1160,17 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="63"/>
         <source>Set as Right Hand Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar para Mano Derecha </translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="67"/>
         <source>Set as Left Hand Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar para Mano Izquierda</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
         <source>Reset Both Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Reinicilizar Ambas Partes</translation>
     </message>
 </context>
 <context>
@@ -1207,32 +1208,32 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="39"/>
         <source>Song Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detalles de la Canción</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
         <source>The left and right hand channels must be different</source>
-        <translation type="unfinished"></translation>
+        <translation>Los canales de la mano derecha e izquierda deben ser diferentes</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambos canales izquierdo y derecho no deben desactivar esta función</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar los Canales MIDI usados por  la mano izquierda y derecha en las partes de piano:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"></translation>
+        <translation>La parte para la mano izquierda está usando el Canal MIDI 1</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"></translation>
+        <translation>La parte para la mano derecha está usando el Canal MIDI 1</translation>
     </message>
 </context>
 <context>
@@ -1280,17 +1281,17 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
         <source>Major</source>
-        <translation type="unfinished"></translation>
+        <translation>Mayor</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="56"/>
         <source>Minor</source>
-        <translation type="unfinished"></translation>
+        <translation>Menor</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
         <source>Playing music from the beginning</source>
-        <translation type="unfinished"></translation>
+        <translation>Tocar desde el principio</translation>
     </message>
 </context>
 <context>
@@ -1323,7 +1324,7 @@
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation>Su sistema no soporta OpenGl  sin el cual no se puede utilizar Piano Booster.</translation>
+        <translation>Su sistema no soporta OpenGL sin el cual no se puede utilizar Piano Booster.</translation>
     </message>
 </context>
 <context>
@@ -1539,7 +1540,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="435"/>
         <source>&lt;b&gt;PainoBooster - Version </source>
-        <translation>&lt;b&gt;PainoBooster - Version </translation>
+        <translation>&lt;b&gt;PainoBooster - Versión </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="462"/>
@@ -1614,7 +1615,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="121"/>
         <source>None</source>
-        <translation type="unfinished">Ninguno</translation>
+        <translation>Ninguno</translation>
     </message>
 </context>
 </TS>
