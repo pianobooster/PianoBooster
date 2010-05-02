@@ -43,6 +43,9 @@ public:
     CScore(CSettings* settings);
 
     ~CScore();
+    
+    void init();
+
 
 
     //! add a midi event to be analysed and displayed on the score

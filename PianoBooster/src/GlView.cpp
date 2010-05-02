@@ -351,6 +351,8 @@ void CGLView::init()
     }
 
     setFocusPolicy(Qt::ClickFocus);
+    
+    m_score->init();
 
     // increased the tick time for Midi handling
     m_timer.start(4, this ); // was 12

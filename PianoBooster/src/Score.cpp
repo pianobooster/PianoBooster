@@ -44,6 +44,10 @@ CScore::CScore(CSettings* settings) : CDraw(settings)
     }
 
     m_activeScroll = 0;
+}
+
+void CScore::init() {
+    m_activeScroll = 0;
     m_scroll[m_activeScroll]->showScroll(true);
     m_scoreDisplayListId = 0;//glGenLists (1);
     m_stavesDisplayListId = glGenLists (1);
