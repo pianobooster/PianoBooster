@@ -49,7 +49,6 @@ public:
     QSize sizeHint() const;
     CSong* getSongObject() {return m_song;}
     CScore* getScoreObject() {return m_score;}
-    void init();
     int m_cfg_openGlOptimise;
 
 protected:
