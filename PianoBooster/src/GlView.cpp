@@ -312,8 +312,6 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 
 void CGLView::initializeGL()
 {
-    qglClearColor(m_backgroundColour.dark());
-
     CColour colour = Cfg::backgroundColour();
     glClearColor (colour.red, colour.green, colour.blue, 0.0);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);

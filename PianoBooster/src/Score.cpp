@@ -46,13 +46,6 @@ CScore::CScore(CSettings* settings) : CDraw(settings)
     m_activeScroll = 0;
 }
 
-void CScore::init() {
-    m_activeScroll = 0;
-    m_scroll[m_activeScroll]->showScroll(true);
-    m_scoreDisplayListId = 0;//glGenLists (1);
-    m_stavesDisplayListId = glGenLists (1);
-}
-
 CScore::~CScore()
 {
     delete m_piano;
@@ -67,6 +60,14 @@ CScore::~CScore()
     if (m_stavesDisplayListId != 0)
         glDeleteLists(m_stavesDisplayListId, 1);
     m_stavesDisplayListId = 0;
+}
+
+void CScore::init() 
+{
+    m_activeScroll = 0;
+    m_scroll[m_activeScroll]->showScroll(true);
+    m_scoreDisplayListId = 0;//glGenLists (1);
+    m_stavesDisplayListId = glGenLists (1);
 }
 
 void CScore::drawScroll(bool refresh)

@@ -46,8 +46,6 @@ public:
     
     void init();
 
-
-
     //! add a midi event to be analysed and displayed on the score
     void midiEventInsert(CMidiEvent event)
     {   size_t i;
