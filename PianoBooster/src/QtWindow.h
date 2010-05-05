@@ -48,6 +48,7 @@ class QMenu;
 
 class QSlider;
 class QPushButton;
+class QTextBrowser;
 
 class QtWindow : public QMainWindow
 {
@@ -62,6 +63,8 @@ public:
         if ((eventBits & EVENT_BITS_playingStopped) != 0)
             m_topBar->setPlayButtonState(false, true);
     }
+
+    void loadTutorHtml(const QUrl & name);
 
 private slots:
     void open();
@@ -138,7 +141,6 @@ private slots:
     void on_nextSong()   {  m_sidePanel->nextSong(+1); }
     void on_previousSong()   {  m_sidePanel->nextSong(-1); }
 
-
 protected:
     void closeEvent(QCloseEvent *event);
     void keyPressEvent ( QKeyEvent * event );
@@ -162,6 +164,7 @@ private:
 
     GuiSidePanel *m_sidePanel;
     GuiTopBar *m_topBar;
+    QTextBrowser *m_tutorWindow;
 
 
     CGLView *m_glWidget;

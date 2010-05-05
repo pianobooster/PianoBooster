@@ -40,6 +40,7 @@ int Cfg::m_appWidth;
 int Cfg::m_appHeight;
 bool Cfg::experimentalTempo = false;
 int Cfg::experimentalSwapInterval = -1;
+bool Cfg::enableTutor = false;
 
 const int Cfg::m_playZoneEarly = 25; // Was 25
 const int Cfg::m_playZoneLate = 25;

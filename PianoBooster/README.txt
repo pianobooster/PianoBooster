@@ -73,5 +73,6 @@
 ===============================================================================================
 
    As part of GNU General Public License the source code for PianoBooster is available from
-   the Source Forge site  <http://pianobooster.sourceforge.net/>
+   the Source Forge site  <http://pianobooster.sourceforge.net/>/ See the BUILD.txt for
+   instructions on how to build the source code.
 

@@ -26,7 +26,6 @@
 
 int main(int argc, char *argv[])
 {
-    const QString QSTR_APPNAME("pianobooster");
 
     QApplication app(argc, argv);
 
@@ -38,7 +37,7 @@ int main(int argc, char *argv[])
         QApplication::applicationDirPath() + "/translations/";
 #endif
 #ifdef Q_OS_LINUX
-        QApplication::applicationDirPath() + "/../share/QSTR_APPNAME/translations/";
+        QApplication::applicationDirPath() + "/../share/" + QSTR_APPNAME + "/translations/";
 #endif
 #ifdef Q_OS_DARWIN
         QApplication::applicationDirPath() + "/../Resources/translations/";

@@ -78,7 +78,7 @@ void CMidiTrack::ppDebugTrack(int level, const char *msg, ...)
     if (level <m_logLevel)
         return;
 
-    fprintf(stdout, "Track %d length %5lu: ", m_trackNumber , m_trackLengthCounter);
+    fprintf(stdout, "Dbug: Track %d length %5lu: ", m_trackNumber , m_trackLengthCounter);
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);
     va_end(ap);

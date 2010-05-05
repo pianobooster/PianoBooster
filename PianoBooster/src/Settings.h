@@ -32,6 +32,8 @@
 #include "Song.h"
 #include "Notation.h"
 
+#define QSTR_APPNAME "pianobooster"
+
 class GuiSidePanel;
 class GuiTopBar;
 class QtWindow;
@@ -59,6 +61,7 @@ public:
         return m_noteNamesEnabled;
     }
 
+    void updateTutorPage();
     void openSongFile(const QString & filename);
     QString getCurrentSongName() { return m_currentSongName; }
     void setCurrentSongName(const QString & name);

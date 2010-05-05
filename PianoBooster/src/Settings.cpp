@@ -251,11 +251,50 @@ void CSettings::saveXmlFile()
     file.close();
 }
 
+void CSettings::updateTutorPage()
+{
+    QFileInfo fileInfo(getCurrentSongLongFileName());
+    const char* EXTN = ".html";
+
+    QString fileBase = fileInfo.path() + "/info/" + fileInfo.completeBaseName() + "_";
+
+    QString locale = QLocale::system().name();
+
+    if (Cfg::enableTutor)
+    {
+        if (QFile::exists(fileBase + locale + EXTN))
+        {
+            m_mainWindow->loadTutorHtml(fileBase + locale + EXTN);
+            return;
+        }
+        int n = locale.indexOf("_");
+
+        if (n > 0)
+        {
+            locale = locale.left(n);
+            if (QFile::exists(fileBase + locale + EXTN))
+            {
+                m_mainWindow->loadTutorHtml(fileBase + locale + EXTN);
+                return;
+            }
+        }
+
+        locale = "en";
+        if (QFile::exists(fileBase + locale + EXTN))
+        {
+            m_mainWindow->loadTutorHtml(fileBase + locale + EXTN);
+            return;
+        }
+    }
+    m_mainWindow->loadTutorHtml(QString());
+
+}
+
 void CSettings::openSongFile(const QString & filename)
 {
     if (!QFile::exists(filename))
     {
-        ppLogWarn( "File does not exists %s", qPrintable(filename));
+        ppLogError( "File does not exists %s", qPrintable(filename));
         return;
     }
     QDir dirBooks;
@@ -328,42 +367,98 @@ void CSettings::loadSettings()
 {
     // Set default values
 
-/*
-    if (value("PianoBooster/Version").toString() != PB_VERSION)
+    const int MUSIC_RELEASE = 1;
+
+
+    if (value("PianoBooster/MusicRelease", 0).toInt() < MUSIC_RELEASE)
     {
+        QDir destMusicDir;
         QString resourceDir;
-#ifdef Q_OS_WIN32
         resourceDir = QApplication::applicationDirPath() + "/music/";
-#endif
+
+        destMusicDir.setPath(QDir::homePath() );
+
+        if (!QFile::exists(resourceDir))
+        {
 #ifdef Q_OS_LINUX
-        resourceDir = QApplication::applicationDirPath() + "/../share/QSTR_APPNAME/music/";
+            resourceDir = QApplication::applicationDirPath() + "/../share/" + QSTR_APPNAME + "/music/";
 #endif
 #ifdef Q_OS_DARWIN
-        resourceDir = QApplication::applicationDirPath() + "/../Resources/music";
+            resourceDir = QApplication::applicationDirPath() + "/../Resources/music";
 #endif
-        QDir srcMusicDir(resourceDir);
-        srcMusicDir.setFilter(QDir::Files);
-        QStringList fileNames = srcMusicDir.entryList();
-        const QString MUSIC_DIR_NAME("MidiFiles");
-
-        QDir destMusicDir(QDir::homePath() + "/" + MUSIC_DIR_NAME);
-        if (!destMusicDir.exists())
-        {
-            QDir home(QDir::homePath());
-            home.mkdir(MUSIC_DIR_NAME);
         }
+
+
+        QFileInfo zipFile(resourceDir + "BoosterMusicBooks.zip");
+        const QString MUSIC_DIR_NAME("Music");
+        ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
+
+        if (zipFile.exists() )
+        {
+            ppLogTrace("xx2");
+            if (!QDir(destMusicDir.path() + "/" + MUSIC_DIR_NAME).exists())
+            {
+                destMusicDir.mkdir(MUSIC_DIR_NAME);
+            }
+            destMusicDir.setPath(destMusicDir.path() + "/" + MUSIC_DIR_NAME);
+
+
+            QProcess unzip;
+            unzip.start("unzip", QStringList() << "-o" << zipFile.filePath() << "-d" << destMusicDir.path() );
+            ppLogInfo(qPrintable("running unzip -o " + zipFile.filePath() + " -d " + destMusicDir.path()) );
+            char buf[1024];
+            while (true)
+            {
+                qint64 lineLength = unzip.readLine(buf, sizeof(buf));
+                if (lineLength <= 0)
+                    break;
+                ppLogInfo(buf);
+                     // the line is available in buf
+            }
+
+
+            if (unzip.waitForFinished())
+            {
+                setCurrentSongName(destMusicDir.path() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster/01-ClairDeLaLune.mid");
+                setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
+            }
+            else
+            {
+                 ppLogError("unzip failed");
+            }
+
+        }
+
+        /*
+        srcMusicDir.setPath(resourceDir); // FIXME
+        srcMusicDir.setFilter(QDir::Files);
+        QFileInfoList fileNames = srcMusicDir.entryInfoList();
+        const QString MUSIC_DIR_NAME("PianoBoosterBooks");
+
+        QDir des(QDir::homePath() + "/" + MUSIC_DIR_NAME);
+        if (!QDir(destMusicDir.path() + "/" + MUSIC_DIR_NAME).exists())
+        {
+            destMusicDir.mkdir(MUSIC_DIR_NAME);
+        }
+        destMusicDir.setPath(destMusicDir.path() + "/" + MUSIC_DIR_NAME);
 
 
         for (int i = 0; i < fileNames.size(); i++)
         {
-            if ( fileNames.at(i).endsWith(".mid", Qt::CaseInsensitive ) )
+            if ( fileNames.at(i).fileName().endsWith(".mid", Qt::CaseInsensitive ) )
             {
-                QFile::copy(fileNames.at(i), destMusicDir.path());
+                //QFileInfo destFile(destMusicDir, QFileInfo(fileNames.at(i)).fileName());
+
+                QFile::copy(fileNames.at(i).filePath(), destMusicDir.path() + "/" + fileNames.at(i).fileName());
+                if (i==2)
+                    openSongFile(  destMusicDir.path() + "/" + fileNames.at(i).fileName() );
 
             }
         }
+        */
     }
-*/
+
+
     setValue("PianoBooster/Version",PB_VERSION);
     setDefaultValue("ShortCuts/LeftHand", "F2");
     setDefaultValue("ShortCuts/BothHands","F3");
@@ -398,6 +493,7 @@ void CSettings::setCurrentSongName(const QString & name)
     m_guiSidePanel->refresh();
     m_guiTopBar->refresh(true);
     m_mainWindow->setWindowTitle("Piano Booster - " + m_song->getSongTitle());
+    updateTutorPage();
 }
 
 void CSettings::setCurrentBookName(const QString & name, bool clearSongName)
@@ -425,9 +521,9 @@ void CSettings::setChannelHands(int left, int right)
 void CSettings::updateWarningMessages()
 {
     if (!m_song->validMidiOutput())
-        m_warningMessage = tr("NO MIDI OUTPUT DEVICE: Use menu Setup/Midi Setup ...");
+        m_warningMessage = tr("ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...");
     else if (m_currentSongName.isEmpty())
-        m_warningMessage = tr("NO MIDI FILE LOADED: Use menu File/Open ...");
+        m_warningMessage = tr("ERROR NO MIDI FILE: To fix this use menu File/Open ...");
     else
         m_warningMessage.clear();
 }

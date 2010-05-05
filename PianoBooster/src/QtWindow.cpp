@@ -80,6 +80,7 @@ QtWindow::QtWindow()
 #endif
 
     m_glWidget = new CGLView(this, m_settings);
+    m_glWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     m_song = m_glWidget->getSongObject();
     m_score = m_glWidget->getScoreObject();
@@ -90,12 +91,15 @@ QtWindow::QtWindow()
 
     m_sidePanel = new GuiSidePanel(this, m_settings);
     m_topBar = new GuiTopBar(this, m_settings);
+    m_tutorWindow = new QTextBrowser(this);
+    m_tutorWindow->hide();
 
     m_settings->init(m_song, m_sidePanel, m_topBar);
 
     mainLayout->addWidget(m_sidePanel);
     columnLayout->addWidget(m_topBar);
     columnLayout->addWidget(m_glWidget);
+    columnLayout->addWidget(m_tutorWindow);
     mainLayout->addLayout(columnLayout);
 
     m_song->init(m_score, m_settings);
@@ -237,6 +241,8 @@ void QtWindow::decodeCommandLine()
                 Cfg::quickStart = true;
             else if (arg.startsWith("-X1"))
                 Cfg::experimentalTempo = true;
+            else if (arg.startsWith("-x"))
+                Cfg::enableTutor = true;
             else if (arg.startsWith("-Xswap"))
                 Cfg::experimentalSwapInterval = decodeIntegerParam(arg, 100);
 
@@ -495,13 +501,16 @@ void QtWindow::keyboardShortcuts()
 
 void QtWindow::open()
 {
-    QString currentSong = m_settings->getCurrentSongLongFileName();
+    QFileInfo currentSong = m_settings->getCurrentSongLongFileName();
 
-    if (currentSong.isEmpty())
-        currentSong = QDir::homePath();
+    QString dir;
+    if (currentSong.isFile())
+        dir = currentSong.path();
+    else
+        dir = QDir::homePath();
 
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
-                            currentSong, tr("Midi Files (*.mid *.MID *.midi *.kar *.KAR)"));
+                            dir, tr("Midi Files") + " (*.mid *.MID *.midi *.kar *.KAR)");
     if (!fileName.isEmpty())
         m_settings->openSongFile(fileName);
 }
@@ -557,5 +566,22 @@ void QtWindow::keyReleaseEvent ( QKeyEvent * event )
 
     int c = event->text().toAscii().at(0);
     m_song->pcKeyPress( c, false);
+}
+
+void QtWindow::loadTutorHtml(const QUrl & name)
+{
+    if (name.isEmpty())
+    {
+        m_tutorWindow->hide();
+        m_tutorWindow->clear();
+    }
+    else
+    {
+        m_tutorWindow->setSource(name);
+        //fixme m_tutorWindow->setMaximumHeight(30);
+        m_tutorWindow->show();
+
+    }
+
 }
 

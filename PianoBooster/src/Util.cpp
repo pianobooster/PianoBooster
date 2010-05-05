@@ -110,6 +110,9 @@ void ppLogDebug( const char *msg, ...)
 {
     va_list ap;
 
+    if (Cfg::logLevel  <  2)
+        return;
+
     fputs("Debug: ", stdout);
     va_start(ap, msg);
     vfprintf(stdout, msg, ap);

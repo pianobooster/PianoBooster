@@ -75,7 +75,7 @@ int CBar::addDeltaTime(int ticks)
         {
             m_barCounter++;
             m_beatCounter=0;
-            ppLogWarn("Bar number %d", m_barCounter);
+            ppLogDebug("Bar number %d", m_barCounter);
             m_eventBits |= EVENT_BITS_newBarNumber;
         }
     }

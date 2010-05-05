@@ -370,6 +370,7 @@ void CConductor::playMusic(bool start)
         activatePianistMutePart();
 
         testWrongNoteSound(false);
+        outputBoostVolume();
         if (seekingBarNumber())
             resetWantedChord();
 

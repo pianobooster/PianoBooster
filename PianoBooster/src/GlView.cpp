@@ -75,12 +75,12 @@ CGLView::~CGLView()
 
 QSize CGLView::minimumSizeHint() const
 {
-    return QSize(50, 50);
+    return QSize(200, 200);
 }
 
 QSize CGLView::sizeHint() const
 {
-    return QSize(200, 400); //fixme this does not work
+    return QSize(200, 800); //fixme this does not work
 }
 
 void CGLView::paintGL()
@@ -214,7 +214,7 @@ void CGLView::drawDisplayText()
 
     if (!m_settings->getWarningMessage().isEmpty())
     {
-        glColor3f(1.0,0.0,0.0);
+        glColor3f(1.0,0.2,0.0);
         renderText(30, y-4, 0, m_settings->getWarningMessage(), m_timeRatingFont);
         return;
     }
@@ -348,7 +348,7 @@ void CGLView::initializeGL()
     }
 
     setFocusPolicy(Qt::ClickFocus);
-    
+
     m_score->init();
 
     // increased the tick time for Midi handling
