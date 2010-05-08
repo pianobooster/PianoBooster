@@ -106,9 +106,6 @@ QtWindow::QtWindow()
 
     m_sidePanel->init(m_song, m_song->getTrackList(), m_topBar);
     m_topBar->init(m_song, m_song->getTrackList());
-    createActions();
-    createMenus();
-    readSettings();
 
     QWidget *centralWin = new QWidget();
     centralWin->setLayout(mainLayout);
@@ -147,6 +144,10 @@ QtWindow::QtWindow()
     m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("midi/output").toString());
 
     m_settings->loadSettings();
+
+    createActions();
+    createMenus();
+    readSettings();
 
     show();
 }
@@ -311,9 +312,17 @@ void QtWindow::createActions()
     m_setupKeyboardAct->setStatusTip(tr("Change the piano keybaord settings"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
 
-    m_toggleSidePanelAct = new QAction(tr("&Show/Hide the Side Panel"), this);
-    m_toggleSidePanelAct->setShortcut(tr("F11"));
-    connect(m_toggleSidePanelAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
+    m_fullScreenStateAct = new QAction(tr("&Fullscreen"), this);
+    m_fullScreenStateAct->setShortcut(tr("F11"));
+    m_fullScreenStateAct->setCheckable(true);
+    connect(m_fullScreenStateAct, SIGNAL(triggered()), this, SLOT(onFullScreenStateAct()));
+
+    m_sidePanelStateAct = new QAction(tr("&Show the Side Panel"), this);
+    m_sidePanelStateAct->setShortcut(tr("F12"));
+    m_sidePanelStateAct->setCheckable(true);
+    m_sidePanelStateAct->setChecked(true);
+    connect(m_sidePanelStateAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
+
 
     m_setupPreferencesAct = new QAction(tr("&Preferences ..."), this);
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
@@ -352,7 +361,8 @@ void QtWindow::createMenus()
     m_fileMenu->addAction(m_exitAct);
 
     m_viewMenu = menuBar()->addMenu(tr("&View"));
-    m_viewMenu->addAction(m_toggleSidePanelAct);
+    m_viewMenu->addAction(m_sidePanelStateAct);
+    m_viewMenu->addAction(m_fullScreenStateAct);
 
     m_songMenu = menuBar()->addMenu(tr("&Song"));
     m_songMenu->addAction(m_songDetailsAct);

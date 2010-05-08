@@ -97,7 +97,7 @@ class songDetails:
 
         os.remove("{0}001.eps".format(tempName ))
 
-        os.system("cp \"{0}.abc\" {1}.abc".format(srcName, webName))
+        os.system("cp \"{0}.abc\" {1}.abc".format(abcMidiName, webName))
         os.system("cp \"{0}.mma\" {1}.mma".format(srcName, webName))
         os.system("cp \"{0}.pdf\" {1}.pdf".format(outputName, webName))
         os.system("cp \"{0}.mid\" {1}.mid".format(outputName, webName))
@@ -141,62 +141,64 @@ def addSong(songs, directory, index, name):
 
 def runMain(argv):
 
-    if len(argv) > 1:
-        outputRootDir = "Output"
-        zipFileName = "BoosterMusicBooks"
-        MUSIC_RELEASE = "1"
-        outputDir = outputRootDir + '/' + zipFileName + MUSIC_RELEASE
-        webDir = outputRootDir + '/' + "MusicWeb"
-        tempDir = outputRootDir + '/' + "Temp"
+    if len(argv) > 3:
+        print "usage: makescore args"
+        return
 
-        if not os.path.isdir("Output"):
-            os.mkdir("Output")
-        if not os.path.isdir(outputDir):
-            os.mkdir(outputDir)
-        if not os.path.isdir(webDir):
-            os.mkdir(webDir)
-        if not os.path.isdir(tempDir):
-            os.mkdir(tempDir)
+    outputRootDir = "Output"
+    zipFileName = "BoosterMusicBooks"
+    MUSIC_RELEASE = "1"
+    outputDir = outputRootDir + '/' + zipFileName + MUSIC_RELEASE
+    webDir = outputRootDir + '/' + "MusicWeb"
+    tempDir = outputRootDir + '/' + "Temp"
 
-        musicHtmlPage = webDir + "/music.html"
-        #musicHtmlPage = "music.html"
-        if os.path.isfile(musicHtmlPage):
-            os.remove(musicHtmlPage)
-        os.system("cp music.html.start {0}".format(webDir + "/" +  "Beginner" + ".html"))
-        os.system("cp music.html.start {0}".format(webDir + "/" +  "Booster" + ".html"))
+    if not os.path.isdir("Output"):
+        os.mkdir("Output")
+    if not os.path.isdir(outputDir):
+        os.mkdir(outputDir)
+    if not os.path.isdir(webDir):
+        os.mkdir(webDir)
+    if not os.path.isdir(tempDir):
+        os.mkdir(tempDir)
+
+    musicHtmlPage = webDir + "/music.html"
+    #musicHtmlPage = "music.html"
+    if os.path.isfile(musicHtmlPage):
+        os.remove(musicHtmlPage)
+    os.system("cp music.html.start {0}".format(webDir + "/" +  "Beginner" + ".html"))
+    os.system("cp music.html.start {0}".format(webDir + "/" +  "Booster" + ".html"))
 
 
-        songs=[]
-        addSong(songs, "Beginner", 1, "ChordOfCMajor")
-        addSong(songs, "Booster",  1, "ClairDeLaLune")
-        addSong(songs, "Booster",  2, "LavendersBlue")
-        addSong(songs, "Booster",  3, "SkipToMyLoo")
-        addSong(songs, "Booster",  4, "FrereJacques")
-        addSong(songs, "Booster",  5, "ScarboroughFair")
-        addSong(songs, "Booster",  6, "Greensleeves")
-        addSong(songs, "Booster",  7, "AmazingGrace")
+    songs=[]
+    addSong(songs, "Beginner Course", 1, "ChordOfCMajor")
+    addSong(songs, "Booster Music",   1, "ClairDeLaLune")
+    addSong(songs, "Booster Music",   2, "LavendersBlue")
+    addSong(songs, "Booster Music",   3, "SkipToMyLoo")
+    addSong(songs, "Booster Music",   4, "FrereJacques")
+    addSong(songs, "Booster Music",   5, "ScarboroughFair")
+    addSong(songs, "Booster Music",   6, "Greensleeves")
+    addSong(songs, "Booster Music",   7, "AmazingGrace")
 
-        result = False
-        for n,song in enumerate(songs):
-            result = song.createMusic(outputDir, webDir, tempDir)
-            if not result:
-                break
+    result = False
+    for n,song in enumerate(songs):
+        result = song.createMusic(outputDir, webDir, tempDir)
+        if not result:
+            break
 
-        if result:
-            os.system("cat music.html.end >>{0}".format(webDir + "/" +  "Beginner" + ".html"))
-            os.system("cat music.html.end >>{0}".format(webDir + "/" +  "Booster" + ".html"))
+    if result:
+        os.system("cat music.html.end >>{0}".format(webDir + "/" +  "Beginner" + ".html"))
+        os.system("cat music.html.end >>{0}".format(webDir + "/" +  "Booster" + ".html"))
 
-            #cmd = "gzip \"{0}\" >\"{1}.zip\"" .format(outputDir, outputDir )
+        if os.path.isfile("{0}/{1}.zip".format(outputRootDir, zipFileName )):
             os.remove("{0}/{1}.zip".format(outputRootDir, zipFileName ))
 
-            cmd = "cd {0};zip -r {1}.zip \"{2}\" " .format(outputRootDir, zipFileName, zipFileName + MUSIC_RELEASE )
-            print cmd
-            if os.system(cmd) != 0:
-                return False
+        #cmd = "gzip \"{0}\" >\"{1}.zip\"" .format(outputDir, outputDir )
+        cmd = "cd {0};zip -r {1}.zip \"{2}\" " .format(outputRootDir, zipFileName, zipFileName + MUSIC_RELEASE )
+        print cmd
+        if os.system(cmd) != 0:
+            return False
 
 
-    else:
-        print "usage: makescore args"
 
 if __name__ == "__main__":
     runMain(sys.argv)

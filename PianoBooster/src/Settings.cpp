@@ -363,102 +363,11 @@ void CSettings::writeSettings()
     saveXmlFile();
 }
 
+
 void CSettings::loadSettings()
 {
+    unzipBootserMusicBooks();
     // Set default values
-
-    const int MUSIC_RELEASE = 1;
-
-
-    if (value("PianoBooster/MusicRelease", 0).toInt() < MUSIC_RELEASE)
-    {
-        QDir destMusicDir;
-        QString resourceDir;
-        resourceDir = QApplication::applicationDirPath() + "/music/";
-
-        destMusicDir.setPath(QDir::homePath() );
-
-        if (!QFile::exists(resourceDir))
-        {
-#ifdef Q_OS_LINUX
-            resourceDir = QApplication::applicationDirPath() + "/../share/" + QSTR_APPNAME + "/music/";
-#endif
-#ifdef Q_OS_DARWIN
-            resourceDir = QApplication::applicationDirPath() + "/../Resources/music";
-#endif
-        }
-
-
-        QFileInfo zipFile(resourceDir + "BoosterMusicBooks.zip");
-        const QString MUSIC_DIR_NAME("Music");
-        ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
-
-        if (zipFile.exists() )
-        {
-            ppLogTrace("xx2");
-            if (!QDir(destMusicDir.path() + "/" + MUSIC_DIR_NAME).exists())
-            {
-                destMusicDir.mkdir(MUSIC_DIR_NAME);
-            }
-            destMusicDir.setPath(destMusicDir.path() + "/" + MUSIC_DIR_NAME);
-
-
-            QProcess unzip;
-            unzip.start("unzip", QStringList() << "-o" << zipFile.filePath() << "-d" << destMusicDir.path() );
-            ppLogInfo(qPrintable("running unzip -o " + zipFile.filePath() + " -d " + destMusicDir.path()) );
-            char buf[1024];
-            while (true)
-            {
-                qint64 lineLength = unzip.readLine(buf, sizeof(buf));
-                if (lineLength <= 0)
-                    break;
-                ppLogInfo(buf);
-                     // the line is available in buf
-            }
-
-
-            if (unzip.waitForFinished())
-            {
-                setCurrentSongName(destMusicDir.path() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster/01-ClairDeLaLune.mid");
-                setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
-            }
-            else
-            {
-                 ppLogError("unzip failed");
-            }
-
-        }
-
-        /*
-        srcMusicDir.setPath(resourceDir); // FIXME
-        srcMusicDir.setFilter(QDir::Files);
-        QFileInfoList fileNames = srcMusicDir.entryInfoList();
-        const QString MUSIC_DIR_NAME("PianoBoosterBooks");
-
-        QDir des(QDir::homePath() + "/" + MUSIC_DIR_NAME);
-        if (!QDir(destMusicDir.path() + "/" + MUSIC_DIR_NAME).exists())
-        {
-            destMusicDir.mkdir(MUSIC_DIR_NAME);
-        }
-        destMusicDir.setPath(destMusicDir.path() + "/" + MUSIC_DIR_NAME);
-
-
-        for (int i = 0; i < fileNames.size(); i++)
-        {
-            if ( fileNames.at(i).fileName().endsWith(".mid", Qt::CaseInsensitive ) )
-            {
-                //QFileInfo destFile(destMusicDir, QFileInfo(fileNames.at(i)).fileName());
-
-                QFile::copy(fileNames.at(i).filePath(), destMusicDir.path() + "/" + fileNames.at(i).fileName());
-                if (i==2)
-                    openSongFile(  destMusicDir.path() + "/" + fileNames.at(i).fileName() );
-
-            }
-        }
-        */
-    }
-
-
     setValue("PianoBooster/Version",PB_VERSION);
     setDefaultValue("ShortCuts/LeftHand", "F2");
     setDefaultValue("ShortCuts/BothHands","F3");
@@ -477,6 +386,83 @@ void CSettings::loadSettings()
 
 }
 
+void CSettings::unzipBootserMusicBooks()
+{
+    // Set default values
+
+    const int MUSIC_RELEASE = 1;
+    const QString ZIPFILENAME("BoosterMusicBooks.zip");
+
+
+    if (value("PianoBooster/MusicRelease", 0).toInt() < MUSIC_RELEASE)
+    {
+        QString resourceDir = QApplication::applicationDirPath() + "/../music/";
+
+        ppLogTrace("resourceDir1 %s", qPrintable(resourceDir));
+
+        if (!QFile::exists(resourceDir + ZIPFILENAME))
+            resourceDir = QApplication::applicationDirPath() + "/../../music/";
+        ppLogTrace("resourceDir2 %s", qPrintable(resourceDir));
+
+        if (!QFile::exists(resourceDir + ZIPFILENAME))
+        {
+#ifdef Q_OS_LINUX
+            resourceDir = QApplication::applicationDirPath() + "/../share/" + QSTR_APPNAME + "/music/";
+#endif
+#ifdef Q_OS_DARWIN
+            resourceDir = QApplication::applicationDirPath() + "/../Resources/music/";
+#endif
+        }
+
+        ppLogInfo(qPrintable("applicationDirPath=" + QApplication::applicationDirPath()));
+        ppLogTrace("resourceDir3 %s", qPrintable(resourceDir));
+
+
+        QFileInfo zipFile(resourceDir +  ZIPFILENAME);
+        ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
+
+        const QString MUSIC_DIR_NAME("Music");
+        QDir destMusicDir;
+        destMusicDir.setPath(QDir::homePath() );
+
+        if (!zipFile.exists() )
+        {
+            ppLogError(qPrintable("Cannot find " + ZIPFILENAME));
+            return;
+        }
+
+        if (!QDir(destMusicDir.path() + "/" + MUSIC_DIR_NAME).exists())
+        {
+            destMusicDir.mkdir(MUSIC_DIR_NAME);
+        }
+        destMusicDir.setPath(destMusicDir.path() + "/" + MUSIC_DIR_NAME);
+
+
+        QProcess unzip;
+        unzip.start("unzip", QStringList() << "-o" << zipFile.filePath() << "-d" << destMusicDir.path() );
+        ppLogInfo(qPrintable("running unzip -o " + zipFile.filePath() + " -d " + destMusicDir.path()) );
+        char buf[1024];
+        while (true)
+        {
+            qint64 lineLength = unzip.readLine(buf, sizeof(buf));
+            if (lineLength <= 0)
+                break;
+            ppLogInfo(buf);
+                 // the line is available in buf
+        }
+
+
+        if (unzip.waitForFinished())
+        {
+            setCurrentSongName(destMusicDir.path() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster Music/01-ClairDeLaLune.mid");
+            setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
+        }
+        else
+        {
+             ppLogError("unzip failed");
+        }
+    }
+}
 
 void CSettings::setCurrentSongName(const QString & name)
 {

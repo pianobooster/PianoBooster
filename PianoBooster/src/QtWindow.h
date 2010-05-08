@@ -103,7 +103,14 @@ private slots:
 
     void toggleSidePanel()
     {
-        m_sidePanel->setVisible(!m_sidePanel->isVisible());
+        m_sidePanel->setVisible(m_sidePanelStateAct->isChecked());
+    }
+
+    void onFullScreenStateAct () {
+        if (m_fullScreenStateAct->isChecked())
+            showFullScreen();
+        else
+            showNormal();
     }
 
     void enableFollowTempo()
@@ -175,7 +182,8 @@ private:
     QAction *m_songPlayAct;
     QAction *m_setupMidiAct;
     QAction *m_setupKeyboardAct;
-    QAction *m_toggleSidePanelAct;
+    QAction *m_sidePanelStateAct;
+    QAction *m_fullScreenStateAct;
     QAction *m_setupPreferencesAct;
     QAction *m_songDetailsAct;
 
