@@ -51,8 +51,13 @@ public:
     bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
     bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
 
+
+    bool isTutorPagesEnabled() { return m_tutorPagesEnabled; }
+
     /// Saves in the .ini file whether the user wants to show the note names
     void setNoteNamesEnabled(bool value);
+    void setTutorPagesEnabled(bool value);
+
     void setCourtesyAccidentals(bool value);
     void setAdvancedMode(bool value) { m_advancedMode = value;}
 
@@ -137,6 +142,7 @@ private:
     GuiSidePanel* m_guiSidePanel;
     GuiTopBar* m_guiTopBar;
     bool m_noteNamesEnabled;
+    bool m_tutorPagesEnabled;
     bool m_advancedMode;
     QString m_bookPath;
     QString m_currentBookName;

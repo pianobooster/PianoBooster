@@ -1,3 +1,9 @@
+// Musical MIDI Accompaniment file for the Piano Booster project
+// For more information see:  www.pianobooster.sourceforge.net
+// Creative Commons license
+
+MidiTName Chord of C Major
+
 SeqClear
 SeqSize 1
 Time 4
@@ -7,9 +13,6 @@ Begin Plectrum-Guitar
     Voice       NylonGuitar
     Octave      4
     Volume      m
-//  Tuning      e-- a-- d- g- b- e   // A guitar
-//  Tuning      g-- d- a- e          // A four string tenor Banjo
-//  Capo        0                    // The fret number of the capo
     Sequence { \
             1.0    0       - 100   -   -  90   -; \
             1.5    0       -   -   -  90   -   -; \

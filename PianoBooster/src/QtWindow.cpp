@@ -242,8 +242,6 @@ void QtWindow::decodeCommandLine()
                 Cfg::quickStart = true;
             else if (arg.startsWith("-X1"))
                 Cfg::experimentalTempo = true;
-            else if (arg.startsWith("-x"))
-                Cfg::enableTutor = true;
             else if (arg.startsWith("-Xswap"))
                 Cfg::experimentalSwapInterval = decodeIntegerParam(arg, 100);
 
@@ -351,14 +349,30 @@ void QtWindow::createActions()
     addShortcutAction("ShortCuts/Slower",           SLOT(on_slower()));
     addShortcutAction("ShortCuts/NextSong",         SLOT(on_nextSong()));
     addShortcutAction("ShortCuts/PreviousSong",     SLOT(on_previousSong()));
+    addShortcutAction("ShortCuts/NextBook",         SLOT(on_nextBook()));
+    addShortcutAction("ShortCuts/PreviousBook",     SLOT(on_previousBook()));
+
+
+     for (int i = 0; i < MAX_RECENT_FILES; ++i) {
+         m_recentFileActs[i] = new QAction(this);
+         m_recentFileActs[i]->setVisible(false);
+         connect(m_recentFileActs[i], SIGNAL(triggered()),
+                 this, SLOT(openRecentFile()));
+     }
+
+
 }
 
 void QtWindow::createMenus()
 {
     m_fileMenu = menuBar()->addMenu(tr("&File"));
     m_fileMenu->addAction(m_openAct);
+    m_separatorAct = m_fileMenu->addSeparator();
+    for (int i = 0; i < MAX_RECENT_FILES; ++i)
+       m_fileMenu->addAction(m_recentFileActs[i]);
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_exitAct);
+    updateRecentFileActions();
 
     m_viewMenu = menuBar()->addMenu(tr("&View"));
     m_viewMenu->addAction(m_sidePanelStateAct);
@@ -386,6 +400,54 @@ void QtWindow::createMenus()
     m_helpMenu->addAction(m_shortcutAct);
     m_helpMenu->addAction(m_aboutAct);
 }
+void QtWindow::openRecentFile()
+ {
+     QAction *action = qobject_cast<QAction *>(sender());
+     if (action)
+         m_settings->openSongFile(action->data().toString());
+ }
+
+
+void QtWindow::updateRecentFileActions()
+{
+    QStringList files = m_settings->value("RecentFileList").toStringList();
+
+    int numRecentFiles = qMin(files.size(), (int)MAX_RECENT_FILES);
+
+    for (int i = 0; i < numRecentFiles; ++i) {
+        QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
+        m_recentFileActs[i]->setText(text);
+        m_recentFileActs[i]->setData(files[i]);
+        m_recentFileActs[i]->setVisible(true);
+    }
+    for (int j = numRecentFiles; j < MAX_RECENT_FILES; ++j)
+        m_recentFileActs[j]->setVisible(false);
+
+    m_separatorAct->setVisible(numRecentFiles > 0);
+}
+
+QString QtWindow::strippedName(const QString &fullFileName)
+{
+    return QFileInfo(fullFileName).fileName();
+}
+
+void QtWindow::setCurrentFile(const QString &fileName)
+{
+
+    setWindowFilePath(fileName);
+
+    QStringList files = m_settings->value("RecentFileList").toStringList();
+    files.removeAll(fileName);
+    files.prepend(fileName);
+    while (files.size() > MAX_RECENT_FILES)
+        files.removeLast();
+
+    m_settings->setValue("RecentFileList", files);
+
+    updateRecentFileActions();
+
+}
+
 void QtWindow::website()
 {
     QDesktopServices::openUrl(QUrl("http://pianobooster.sourceforge.net"));
@@ -497,6 +559,8 @@ void QtWindow::keyboardShortcuts()
     msg += displayShortCut("ShortCuts/Slower", tr("Increase the speed by 5%"));
     msg += displayShortCut("ShortCuts/NextSong", tr("Change to the Next Song"));
     msg += displayShortCut("ShortCuts/PreviousSong", tr("Change to the Previous Song"));
+    msg += displayShortCut("ShortCuts/NextBook", tr("Change to the Next Book"));
+    msg += displayShortCut("ShortCuts/PreviousBook", tr("Change to the Previous Book"));
 
     msg += tr(
                 "<tr><td>Fake Piano keys</td><td>X is middle C</td></tr>"
@@ -521,8 +585,11 @@ void QtWindow::open()
 
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
                             dir, tr("Midi Files") + " (*.mid *.MID *.midi *.kar *.KAR)");
-    if (!fileName.isEmpty())
+    if (!fileName.isEmpty()) {
+
         m_settings->openSongFile(fileName);
+        setCurrentFile(fileName);
+    }
 }
 
 void QtWindow::readSettings()
@@ -588,7 +655,7 @@ void QtWindow::loadTutorHtml(const QUrl & name)
     else
     {
         m_tutorWindow->setSource(name);
-        //fixme m_tutorWindow->setMaximumHeight(30);
+        m_tutorWindow->setFixedHeight(100);
         m_tutorWindow->show();
 
     }

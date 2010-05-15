@@ -72,6 +72,7 @@ private slots:
     void website();
     void about();
     void keyboardShortcuts();
+    void openRecentFile();
 
     void showMidiSetup()
     {
@@ -147,6 +148,8 @@ private slots:
     }
     void on_nextSong()   {  m_sidePanel->nextSong(+1); }
     void on_previousSong()   {  m_sidePanel->nextSong(-1); }
+    void on_nextBook()   {  m_sidePanel->nextBook(+1); }
+    void on_previousBook()   {  m_sidePanel->nextBook(-1); }
 
 protected:
     void closeEvent(QCloseEvent *event);
@@ -159,7 +162,9 @@ private:
     void decodeMidiFileArg(QString arg);
     QString displayShortCut(QString code, QString description);
     void addShortcutAction(const QString & key, const char * method);
-
+    void updateRecentFileActions();
+    QString strippedName(const QString &fullFileName);
+    void setCurrentFile(const QString &fileName);
 
     void displayUsage();
     void createActions();
@@ -195,6 +200,11 @@ private:
 
     CSong* m_song;
     CScore* m_score;
+    QAction *m_separatorAct;
+
+    enum { MAX_RECENT_FILES = 10 };
+    QAction *m_recentFileActs[MAX_RECENT_FILES];
+
 };
 
 #endif // __QT_WINDOW_H__

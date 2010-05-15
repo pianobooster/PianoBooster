@@ -75,6 +75,16 @@ public:
         on_songCombo_activated(n);
     }
 
+    void nextBook(int amount)
+    {
+        int n = bookCombo->currentIndex() + amount;
+        if (n < 0 || n >= bookCombo->count())
+            return;
+
+        bookCombo->setCurrentIndex(n);
+        on_bookCombo_activated(n);
+    }
+
 private slots:
     void on_songCombo_activated (int index);
     void on_bookCombo_activated (int index);

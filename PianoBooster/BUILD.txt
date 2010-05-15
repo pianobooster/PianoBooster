@@ -3,9 +3,9 @@
 ===============================================================================================
 
    Ensure that the following packages 'cmake', 'libqt4-dev', 'libasound2-dev' and
-   'build-essential" are installed .
+   'build-essential" are installed.
 
-   then type "cmake .", followed by "make". Finally as root type "make install".
+   Then type "cmake .", followed by "make". Finally as root type "make install".
    (The pianobooster binary executable is now the "build" subdirectory)
 
    To build a debug version create a dir called "debug" and change to that dir and then

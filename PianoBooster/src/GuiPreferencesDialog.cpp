@@ -60,7 +60,9 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
     courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
+    showHelpPagesCheck->setChecked(m_settings->isTutorPagesEnabled());
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
+    showHelpPagesCheck->setChecked(m_settings->isNoteNamesEnabled());
 }
 
 void GuiPreferencesDialog::accept()
@@ -71,6 +73,7 @@ void GuiPreferencesDialog::accept()
     m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
     m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
     m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
+    m_settings->setTutorPagesEnabled( showHelpPagesCheck->isChecked());
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
     m_song->refreshScroll();

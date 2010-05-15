@@ -130,7 +130,6 @@ public:
     static int logLevel;
     static bool quickStart;
     static bool experimentalTempo;
-    static bool enableTutor;
     static int experimentalSwapInterval;
 
 private:

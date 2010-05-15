@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>284</width>
-    <height>266</height>
+    <width>339</width>
+    <height>331</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,10 +19,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <property name="sizeConstraint">
-    <enum>QLayout::SetMinimumSize</enum>
-   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
@@ -101,6 +98,29 @@
          <widget class="QCheckBox" name="courtesyAccidentalsCheck">
           <property name="text">
            <string>Courtesy Accidentals</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Music Course</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="verticalSpacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="showHelpPagesCheck">
+          <property name="text">
+           <string>Show Tutor Help Pages</string>
           </property>
          </widget>
         </item>

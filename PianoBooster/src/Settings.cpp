@@ -66,6 +66,7 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_advancedMode = false;
     m_pianistActive = false;
     m_noteNamesEnabled = value("Score/NoteNames", true ).toBool();
+    m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
 }
 
@@ -90,6 +91,13 @@ void CSettings::setNoteNamesEnabled(bool value) {
     m_noteNamesEnabled = value;
     setValue("Score/NoteNames", value );
 }
+
+void CSettings::setTutorPagesEnabled(bool value) {
+    m_tutorPagesEnabled = value;
+    setValue("Tutor/TutorPages", value );
+    updateTutorPage();
+}
+
 
 void CSettings::setCourtesyAccidentals(bool value) {
     CNotation::setCourtesyAccidentals(value);
@@ -256,11 +264,11 @@ void CSettings::updateTutorPage()
     QFileInfo fileInfo(getCurrentSongLongFileName());
     const char* EXTN = ".html";
 
-    QString fileBase = fileInfo.path() + "/info/" + fileInfo.completeBaseName() + "_";
+    QString fileBase = fileInfo.path() + "/InfoPages/" + fileInfo.completeBaseName() + "_";
 
     QString locale = QLocale::system().name();
 
-    if (Cfg::enableTutor)
+    if (m_tutorPagesEnabled)
     {
         if (QFile::exists(fileBase + locale + EXTN))
         {
@@ -378,11 +386,14 @@ void CSettings::loadSettings()
     setDefaultValue("ShortCuts/Slower","-");
     setDefaultValue("ShortCuts/NextSong","]");
     setDefaultValue("ShortCuts/PreviousSong","[");
+    setDefaultValue("ShortCuts/NextBook","{");
+    setDefaultValue("ShortCuts/PreviousBook","}");
     QString songName = value("CurrentSong").toString();
     if (!songName.isEmpty())
         openSongFile( songName );
 
     updateWarningMessages();
+    updateTutorPage();
 
 }
 
