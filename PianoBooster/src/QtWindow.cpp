@@ -431,6 +431,7 @@ QString QtWindow::strippedName(const QString &fullFileName)
     return QFileInfo(fullFileName).fileName();
 }
 
+// Just used for the RecentFileList
 void QtWindow::setCurrentFile(const QString &fileName)
 {
 

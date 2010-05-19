@@ -65,6 +65,7 @@ public:
     }
 
     void loadTutorHtml(const QString & name);
+    void setCurrentFile(const QString &fileName);
 
 private slots:
     void open();
@@ -164,7 +165,6 @@ private:
     void addShortcutAction(const QString & key, const char * method);
     void updateRecentFileActions();
     QString strippedName(const QString &fullFileName);
-    void setCurrentFile(const QString &fileName);
 
     void displayUsage();
     void createActions();

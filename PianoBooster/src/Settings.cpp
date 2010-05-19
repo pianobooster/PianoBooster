@@ -443,7 +443,6 @@ void CSettings::unzipBootserMusicBooks()
 		QSettings settings(QSettings::UserScope, "Microsoft", "Windows");
 		settings.beginGroup("CurrentVersion/Explorer/Shell Folders");
 		destMusicDir.setPath(QDir::fromNativeSeparators(settings.value("Personal").toString()));
-		setValue("PianoBooster/destMusicDir1", QDir::fromNativeSeparators(settings.value("Personal").toString()));
 #else
         const QString MUSIC_DIR_NAME("Music");
 		destMusicDir.setPath(QDir::homePath() );
@@ -454,7 +453,6 @@ void CSettings::unzipBootserMusicBooks()
             destMusicDir.mkdir(MUSIC_DIR_NAME);
         }
         destMusicDir.setPath(destMusicDir.absolutePath() + "/" + MUSIC_DIR_NAME);
-		setValue("PianoBooster/destMusicDir2", QDir::fromNativeSeparators(settings.value("Personal").toString()));
 
 #ifndef _WIN32
 
@@ -487,7 +485,9 @@ void CSettings::unzipBootserMusicBooks()
              return;
         }
 #endif       
-		openSongFile(destMusicDir.absolutePath() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster Music/01-ClairDeLaLune.mid");
+		QString fileName(destMusicDir.absolutePath() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster Music/01-ClairDeLaLune.mid");
+		openSongFile(fileName);
+		m_mainWindow->setCurrentFile(fileName);
 		setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
     }
 }

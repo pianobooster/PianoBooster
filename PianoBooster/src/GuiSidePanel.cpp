@@ -188,6 +188,5 @@ void GuiSidePanel::setCurrentHand(QString hand)
         rightHandRadio->setChecked(true);
     else
         bothHandsRadio->setChecked(true);
-    //on_bothHandsRadio_toggled
 }
 
