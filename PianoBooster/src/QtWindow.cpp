@@ -645,7 +645,7 @@ void QtWindow::keyReleaseEvent ( QKeyEvent * event )
     m_song->pcKeyPress( c, false);
 }
 
-void QtWindow::loadTutorHtml(const QUrl & name)
+void QtWindow::loadTutorHtml(const QString & name)
 {
     if (name.isEmpty())
     {
@@ -654,7 +654,7 @@ void QtWindow::loadTutorHtml(const QUrl & name)
     }
     else
     {
-        m_tutorWindow->setSource(name);
+        m_tutorWindow->setSource(QUrl("file:///" + name));
         m_tutorWindow->setFixedHeight(100);
         m_tutorWindow->show();
 

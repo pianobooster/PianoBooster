@@ -50,7 +50,7 @@ public:
     void reset()
     {
         // 120 beats per minute is the default
-        setMidiTempo(( 60 * MICRO_SECOND ) / 120 );
+        setMidiTempo(static_cast<int>(( 60 * MICRO_SECOND ) / 120 ));
         m_jumpAheadDelta = 0;
     }
 

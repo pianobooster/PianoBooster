@@ -64,7 +64,7 @@ public:
             m_topBar->setPlayButtonState(false, true);
     }
 
-    void loadTutorHtml(const QUrl & name);
+    void loadTutorHtml(const QString & name);
 
 private slots:
     void open();

@@ -264,15 +264,17 @@ void CSettings::updateTutorPage()
     QFileInfo fileInfo(getCurrentSongLongFileName());
     const char* EXTN = ".html";
 
-    QString fileBase = fileInfo.path() + "/InfoPages/" + fileInfo.completeBaseName() + "_";
+    QString fileBase = fileInfo.absolutePath() + "/InfoPages/" + fileInfo.completeBaseName() + "_";
 
     QString locale = QLocale::system().name();
 
     if (m_tutorPagesEnabled)
     {
-        if (QFile::exists(fileBase + locale + EXTN))
+		QFileInfo tutorFile;
+ 		tutorFile.setFile(fileBase + locale + EXTN);
+        if (tutorFile.exists())
         {
-            m_mainWindow->loadTutorHtml(fileBase + locale + EXTN);
+            m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
             return;
         }
         int n = locale.indexOf("_");
@@ -280,17 +282,19 @@ void CSettings::updateTutorPage()
         if (n > 0)
         {
             locale = locale.left(n);
-            if (QFile::exists(fileBase + locale + EXTN))
+ 			tutorFile.setFile(fileBase + locale + EXTN);
+            if (tutorFile.exists())
             {
-                m_mainWindow->loadTutorHtml(fileBase + locale + EXTN);
+                m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
                 return;
             }
         }
 
         locale = "en";
-        if (QFile::exists(fileBase + locale + EXTN))
+ 		tutorFile.setFile(fileBase + locale + EXTN);
+        if (tutorFile.exists())
         {
-            m_mainWindow->loadTutorHtml(fileBase + locale + EXTN);
+            m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
             return;
         }
     }
@@ -431,22 +435,36 @@ void CSettings::unzipBootserMusicBooks()
 
         QFileInfo zipFile(resourceDir +  ZIPFILENAME);
         ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
-
+        
+		QDir destMusicDir;
+		
+#ifdef _WIN32
+        const QString MUSIC_DIR_NAME("My Music");
+		QSettings settings(QSettings::UserScope, "Microsoft", "Windows");
+		settings.beginGroup("CurrentVersion/Explorer/Shell Folders");
+		destMusicDir.setPath(QDir::fromNativeSeparators(settings.value("Personal").toString()));
+		setValue("PianoBooster/destMusicDir1", QDir::fromNativeSeparators(settings.value("Personal").toString()));
+#else
         const QString MUSIC_DIR_NAME("Music");
-        QDir destMusicDir;
-        destMusicDir.setPath(QDir::homePath() );
+		destMusicDir.setPath(QDir::homePath() );
+#endif
+         
+        if (!QDir(destMusicDir.absolutePath() + "/" + MUSIC_DIR_NAME).exists())
+        {
+            destMusicDir.mkdir(MUSIC_DIR_NAME);
+        }
+        destMusicDir.setPath(destMusicDir.absolutePath() + "/" + MUSIC_DIR_NAME);
+		setValue("PianoBooster/destMusicDir2", QDir::fromNativeSeparators(settings.value("Personal").toString()));
 
+#ifndef _WIN32
+
+		// on windows the the installer does the unzipping
         if (!zipFile.exists() )
         {
             ppLogError(qPrintable("Cannot find " + ZIPFILENAME));
             return;
         }
 
-        if (!QDir(destMusicDir.path() + "/" + MUSIC_DIR_NAME).exists())
-        {
-            destMusicDir.mkdir(MUSIC_DIR_NAME);
-        }
-        destMusicDir.setPath(destMusicDir.path() + "/" + MUSIC_DIR_NAME);
 
 
         QProcess unzip;
@@ -463,15 +481,14 @@ void CSettings::unzipBootserMusicBooks()
         }
 
 
-        if (unzip.waitForFinished())
-        {
-            setCurrentSongName(destMusicDir.path() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster Music/01-ClairDeLaLune.mid");
-            setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
-        }
-        else
+        if (!unzip.waitForFinished())
         {
              ppLogError("unzip failed");
+             return;
         }
+#endif       
+		openSongFile(destMusicDir.absolutePath() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster Music/01-ClairDeLaLune.mid");
+		setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
     }
 }
 

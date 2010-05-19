@@ -68,7 +68,7 @@
 ;--------------------------------
 ;Installer Sections
 
-Section "Dummy Section" SecDummy
+Section "Install Section"
 
     SetOutPath "$INSTDIR"
 
@@ -86,6 +86,10 @@ Section "Dummy Section" SecDummy
     File FilesForRelease\README.txt
     File FilesForRelease\license.txt
     File FilesForRelease\gplv3.txt
+
+    CreateDirectory "$DOCUMENTS\My Music"
+    SetOutPath "$DOCUMENTS\My Music"
+    File /r FilesForRelease\BoosterMusicBooks1
 
     SetOutPath $INSTDIR
 
