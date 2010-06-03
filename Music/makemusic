@@ -146,8 +146,12 @@ def runMain(argv):
         return
 
     doSingleSong = ""
+    doSingleNumber = -1
+
     if len(argv) == 2:
-        doSingleSong = argv[1]
+        #doSingleSong = argv[1]
+        doSingleNumber = int(argv[1])
+        #doSingleNumber = 7
 
     outputRootDir = "Output"
     zipFileName = "BoosterMusicBooks"
@@ -175,11 +179,11 @@ def runMain(argv):
 
     songs=[]
 
-    #addSong(songs, "Beginner Course", 1, "StartWithMiddleC")
+    addSong(songs, "Beginner Course", 1, "StartWithMiddleC")
     addSong(songs, "Beginner Course", 2, "ChordOfCMajor")
-    #addSong(songs, "Beginner Course", 3, "UpAndDown")
-    #addSong(songs, "Beginner Course", 4, "ClairDeLaLune")
-    #addSong(songs, "Beginner Course", 5, "LeftHandFMajorChord")
+    addSong(songs, "Beginner Course", 3, "UpAndDown")
+    addSong(songs, "Beginner Course", 4, "ClairDeLaLune")
+    addSong(songs, "Beginner Course", 5, "LeftHandFMajorChord")
     addSong(songs, "Booster Music",   1, "ClairDeLaLune")
     addSong(songs, "Booster Music",   2, "LavendersBlue")
     addSong(songs, "Booster Music",   3, "SkipToMyLoo")
@@ -194,6 +198,9 @@ def runMain(argv):
         if len(doSingleSong) > 0:
             if doSingleSong != song.name:
                 continue
+        if doSingleNumber != -1 and  doSingleNumber != n:
+            continue
+
         found = True
         result = song.createMusic(outputDir, webDir, tempDir)
         if not result:
@@ -201,11 +208,11 @@ def runMain(argv):
 
     if found == False:
         for n,song in enumerate(songs):
-            print "{0} ".format(song.name)
+            print "{0} {1}".format(n, song.name)
         return
 
 
-    if result and len(doSingleSong) == 0:
+    if result and len(doSingleSong) == 0 and doSingleNumber == -1:
         os.system("cat music.html.end >>\"{0}\"".format(webDir + "/" +  "Beginner Course" + ".html"))
         os.system("cat music.html.end >>\"{0}\"".format(webDir + "/" +  "Booster Music" + ".html"))
 

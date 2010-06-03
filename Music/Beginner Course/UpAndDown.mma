@@ -2,7 +2,7 @@
 // For more information see:  www.pianobooster.sourceforge.net
 // Creative Commons license
 
-MidiTName Chord of C Major
+MidiTName Up And Down
 
 SeqClear
 SeqSize 1
@@ -17,14 +17,14 @@ Begin Plectrum-Guitar
 //  Tuning      g-- d- a- e          // A four string tenor Banjo
 //  Capo        0                    // The fret number of the capo
     Sequence { \
-            1.0    0   5:100 2:80;  // On the 1st beat pluck strings 5 + 2
-            1.5    0   3:80;        // pluck string number 3 with a velocity of 80
-            2.0    0   4:90  2:80;  // The 2nd beat of the bar pluck strings 4 + 2
-            2.5    0   3:80;
-            3.0    0   1:80;
-            3.5    0   2:80;
-            4.0    0   3:80;
-            4.5    0   4:80;
+            1.0    0       - 100   -   -  90   -; \
+            1.5    0       -   -   -  90   -   -; \
+            2.0    0       -   -   90  -  90   -; \
+            2.5    0       -   -   -  90   -   -; \
+            3.0    0       -   -   -   -   -  90; \
+            3.5    0       -   -   -   -  90   -; \
+            4.0    0       -   -   -   90  -   -; \
+            4.5    0       -   -   90  -   -   -; \
     }
 End
 
@@ -52,10 +52,10 @@ Begin Plectrum-Guitar
     Octave      4
     Volume      m
     Sequence { \
-            1.0   +5      80;
-            2.0   +5      80;
-            3.0   +5      80;
-            4.0   +5      80;
+            1.0   +5      80  80  80  80  80  80; \
+            2.0   +5      80  80  80  80  80  80; \
+            3.0   +5      80  80  80  80  80  80; \
+            4.0   +5      80  80  80  80  80  80; \
    }
 End
 
@@ -64,6 +64,7 @@ Begin Drum-HH
     Tone ClosedHiHat
     Sequence {1 4 90; 2 4 90; 3 4 90; 4 4 90}
 End
+
 
 
 DefGroove PlectrumStrum
@@ -84,7 +85,7 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=ChordOfCMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=UpAndDown.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
 
 Groove PlectrumFingerPicking
 C

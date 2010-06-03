@@ -51,7 +51,6 @@ public:
     bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
     bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
 
-
     bool isTutorPagesEnabled() { return m_tutorPagesEnabled; }
 
     /// Saves in the .ini file whether the user wants to show the note names

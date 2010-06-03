@@ -2,7 +2,7 @@
 // For more information see:  www.pianobooster.sourceforge.net
 // Creative Commons license
 
-MidiTName Chord of C Major
+MidiTName Start With Middle C
 
 SeqClear
 SeqSize 1
@@ -66,6 +66,7 @@ Begin Drum-HH
 End
 
 
+
 DefGroove PlectrumStrum
 
 Begin Solo-Right
@@ -84,21 +85,24 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=ChordOfCMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=StartWithMiddleC.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
 
+Groove PlectrumStrum
+C:12
 Groove PlectrumFingerPicking
-C
-Am:5
-G:8
-Am:5
+C:12
+Groove PlectrumStrum
+F:12
+Groove PlectrumFingerPicking
+F:12
 Groove PlectrumStrum
 C
 Groove PlectrumFingerPicking
 C
-Am:5
-G:8
-Am:5
 Groove PlectrumStrum
-C
+F
+Groove PlectrumFingerPicking
+F
+Groove PlectrumStrum
 C z! z! z!
 

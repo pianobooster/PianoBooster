@@ -118,7 +118,7 @@
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QCheckBox" name="showHelpPagesCheck">
+         <widget class="QCheckBox" name="showTutorPagesCheck">
           <property name="text">
            <string>Show Tutor Help Pages</string>
           </property>

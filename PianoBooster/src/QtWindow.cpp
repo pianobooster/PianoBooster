@@ -127,16 +127,21 @@ QtWindow::QtWindow()
     m_song->setLatencyFix(m_settings->value("Midi/Latency", 0).toInt());
 
 
-#ifdef _WIN32
+#ifdef Q_OS_LINUX
     m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
 #else
-    m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
+    m_glWidget->m_cfg_openGlOptimise = 1; //  1 is full GlOptimise
 #endif
 
     if  (m_settings->value("Display/OpenGlOptimise").toString() == "true") // this used to be true for backward compatability
-        m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
-    else
-        m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toInt();
+        m_settings->setValue("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise );
+    if  (m_settings->value("Display/OpenGlOptimise").toString() == "false") // this used to be boolean for backward compatability
+    {
+        m_glWidget->m_cfg_openGlOptimise = 0;
+        m_settings->setValue("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise );
+    }
+
+    m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toInt();
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
 
@@ -656,7 +661,7 @@ void QtWindow::loadTutorHtml(const QString & name)
     else
     {
         m_tutorWindow->setSource(QUrl("file:///" + name));
-        m_tutorWindow->setFixedHeight(100);
+        m_tutorWindow->setFixedHeight(104);
         m_tutorWindow->show();
 
     }

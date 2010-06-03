@@ -59,7 +59,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_song = new CSong();
     m_score = new CScore(m_settings);
     m_displayUpdateTicks = 0;
-    m_cfg_openGlOptimise = 0; // This if Full optimisation
+    m_cfg_openGlOptimise = 0; // zero is no GlOptimise
     m_eventBits = 0;
     BENCHMARK_INIT();
 }

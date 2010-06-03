@@ -2,7 +2,7 @@
 // For more information see:  www.pianobooster.sourceforge.net
 // Creative Commons license
 
-MidiTName Chord of C Major
+MidiTName Left Hand F Major Chord
 
 SeqClear
 SeqSize 1
@@ -66,6 +66,7 @@ Begin Drum-HH
 End
 
 
+
 DefGroove PlectrumStrum
 
 Begin Solo-Right
@@ -84,21 +85,21 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=ChordOfCMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=LeftHandFMajorChord.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
 
 Groove PlectrumFingerPicking
-C
-Am:5
-G:8
-Am:5
+F
+Dm:5
+C:8
+Dm:5
 Groove PlectrumStrum
-C
+F
 Groove PlectrumFingerPicking
-C
-Am:5
-G:8
-Am:5
+F
+Dm:5
+C:8
+Dm:5
 Groove PlectrumStrum
-C
-C z! z! z!
+F
+F z! z! z!
 
