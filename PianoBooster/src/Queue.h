@@ -57,20 +57,25 @@ public:
         m_count = m_head = m_tail=0;
     }
 
-    void push(TYPE c)
+    // pushes the item into the queue and returns a pointer to the item in the buffer
+    TYPE* push(TYPE c)
     {
         if (!space())
         {
             assert(false);
-            return;
+            return 0;
         }
-        m_buffer[m_head++] = c;
+        TYPE* itemPtr = &m_buffer[m_head];
+        m_buffer[m_head] = c;
+        m_head++;
         if (m_head >= m_size)
             m_head = 0;
 
         // This must be last if a different thread is using pop()
         m_count++;
+        return itemPtr;
     }
+
     TYPE pop()
     {
         TYPE c;
@@ -88,6 +93,7 @@ public:
         return c;
     }
 
+    // returns a pointer to the item starting at the end of the queue
     TYPE * indexPtr(int index)
     {
         int offset;

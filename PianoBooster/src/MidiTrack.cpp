@@ -46,7 +46,13 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
     m_savedRunningStatus = 0;
     m_trackLengthCounter = 0;
     m_deltaTime = 0;
+    m_currentTime = 0;
     midiFailReset();
+
+    for ( int chan = 0; chan <MAX_MIDI_CHANNELS; chan++ )
+    {
+        m_noteOnEventPtr[chan] = 0;
+    }
 
     int i;
 
@@ -386,6 +392,23 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
     }
 }
 
+void CMidiTrack::noteOffEvent(CMidiEvent &event, int deltaTime, int channel, int pitch, int velocity)
+{
+    CMidiEvent* noteOnEventPtr = m_noteOnEventPtr[channel][pitch];
+    if (noteOnEventPtr == 0)
+        return;
+
+    m_noteOnEventPtr[channel][pitch] = 0;
+    int duration = m_currentTime - noteOnEventPtr->getDuration();
+    ppLogDebug ("NOTE OFF chan %d pitch %d  currentTime %d Duration %d", channel + 1, pitch, m_currentTime, duration);
+    noteOnEventPtr->setDuration(duration);
+
+
+    event.noteOffEvent(deltaTime, channel, pitch, velocity);
+
+    m_trackEventQueue->push(event);
+    ppDEBUG_TRACK((1,"Chan %d Note off", channel + 1));
+}
 
 void CMidiTrack::decodeMidiEvent()
 {
@@ -394,7 +417,9 @@ void CMidiTrack::decodeMidiEvent()
     byte_t status, data1, data2;
     int channel;
 
-    m_deltaTime += readVarLen();
+    int deltaTicks = readVarLen();
+    m_deltaTime += deltaTicks;
+    m_currentTime += deltaTicks;
 
     c = readByte();
     if ((c & 0x80) == 0 )
@@ -407,6 +432,10 @@ void CMidiTrack::decodeMidiEvent()
         status = c;
         m_savedRunningStatus = status;
         data1=readByte();
+        if ((data1 & 0x80) != 0) {
+            errorFail(SMF_CORRUPTED_MIDI_FILE);
+            return;
+        }
     }
 
     channel = status & 0x0f;
@@ -415,9 +444,7 @@ void CMidiTrack::decodeMidiEvent()
     {
     case MIDI_NOTE_OFF:              /* Note off */
         data2 = readByte();
-        event.noteOffEvent(readDelaTime(), channel, data1, data2);
-        m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((1,"Chan %d Note off", channel + 1));
+        noteOffEvent(event, readDelaTime(), channel, data1, data2);
         break;
 
     case MIDI_NOTE_ON:             /* Note on */
@@ -426,13 +453,24 @@ void CMidiTrack::decodeMidiEvent()
         {
             event.noteOnEvent(readDelaTime(), channel, data1, data2);
             ppDEBUG_TRACK((1,"Chan %d note on %d",channel + 1, data1));
+
+            if (m_noteOnEventPtr[channel] == 0)
+            {
+                m_noteOnEventPtr[channel] = new CMidiEvent*[MAX_MIDI_NOTES];
+                for (int pitch = 0; pitch < MAX_MIDI_NOTES; pitch++)
+                    m_noteOnEventPtr[channel][pitch] = 0;
+            }
+            event.setDuration(m_currentTime); // Set the duration to the current time for now
+            //ppLogDebug ("NOTE ON  pitch %d m_currentTime %d event->getDuration() %d", data1, m_currentTime, event.getDuration());
+
+            CMidiEvent* eventPtr = m_trackEventQueue->push(event);
+            // Save a reference to the note on event
+            m_noteOnEventPtr[channel] [data1]  = eventPtr;
         }
         else
         {
-            event.noteOffEvent(readDelaTime(),channel, data1, 0);
-            ppDEBUG_TRACK((1,"Chan %d note OFF %d",channel + 1, data1));
+            noteOffEvent(event, readDelaTime(), channel, data1, 0);
         }
-        m_trackEventQueue->push(event);
         break;
 
     case MIDI_NOTE_PRESSURE :              /* Key pressure After touch (POLY_AFTERTOUCH)  3 bytes */

@@ -107,6 +107,7 @@ public:
         m_channel = 0;
         m_note = 0;
         m_velocity = 0;
+        m_duration = 0;
     }
 
     int deltaTime(){return m_deltaTime;}
@@ -226,6 +227,15 @@ public:
         m_velocity = 0;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
+    //@brief set the midi note duration
+    void setDuration(int duration) {m_duration = duration;}
+
+    ////////////////////////////////////////////////////////////////////////////////
+    //@brief how long the midi note was played for
+    long getDuration(){return m_duration;}
+
+
     void printDetails()
     {
         ppTiming("chan %2d type %2X note %3d", channel(), type(), note() );
@@ -237,6 +247,7 @@ private:
     int m_channel;
     int m_note;
     int m_velocity;
+    int m_duration;
 };
 
 

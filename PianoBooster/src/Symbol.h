@@ -37,7 +37,6 @@
 typedef enum
 {
     PB_SYMBOL_none,
-    PB_SYMBOL_note,
     PB_SYMBOL_drum,
     PB_SYMBOL_gClef, // The Treble Clef
     PB_SYMBOL_fClef, // The Base Clef
@@ -48,7 +47,18 @@ typedef enum
     PB_SYMBOL_barMarker,
     PB_SYMBOL_beatMarker,
     PB_SYMBOL_playingZone,
-    PB_SYMBOL_theEnd
+    PB_SYMBOL_theEndMarker,
+
+
+    PB_SYMBOL_noteType,             // ONLY ADD NOTES BELOW THIS MAKER
+    PB_SYMBOL_doublewholenote,      // Breve / Double whole note
+    PB_SYMBOL_wholenote,            // Semibreve / Whole note
+    PB_SYMBOL_halfnote,             // Minim / Half note
+    PB_SYMBOL_quarternote,          // Crotchet / Quarter note
+    PB_SYMBOL_eighthnote,           // Quaver / Eighth note
+    PB_SYMBOL_sixteenthnote,        // Semiquaver / Sixteenth note
+    PB_SYMBOL_thirtysecondnote,     // Demisemiquaver / Thirty-second note
+
 } musicalSymbol_t;
 
 
@@ -66,13 +76,13 @@ public:
 
     ////////////////////////////////////////////////////////////////////////////////
     //@brief constructors
-    CSymbol(musicalSymbol_t type, whichPart_t hand, int midiNote, int midiDuration = 0)
+    CSymbol(musicalSymbol_t type, whichPart_t hand, int midiNote)
     {
         init();
         m_symbolType = type;
         m_midiNote = midiNote;
         m_hand = hand;
-        m_midiDuration = midiDuration;
+        m_midiDuration = 0;
         m_stavePos.notePos(hand, midiNote);
     }
 
@@ -97,8 +107,17 @@ public:
     musicalSymbol_t getType(){return m_symbolType;}
 
     ////////////////////////////////////////////////////////////////////////////////
-    //@brief how long is the note
+    //@brief how long the midi note was played for
     int getMidiDuration(){return m_midiDuration;}
+
+    ////////////////////////////////////////////////////////////////////////////////
+    //@brief set the midi note duration
+    void setMidiDuration(int midiDuration) {m_midiDuration = midiDuration;}
+
+    ////////////////////////////////////////////////////////////////////////////////
+    //@brief set the note score length
+    //@param lengthModifer 0 for normal, 1 for doted rhythm etc
+    void setNoteLength(musicalSymbol_t type,  int lengthModifer ) {m_symbolType = type;}
 
     ////////////////////////////////////////////////////////////////////////////////
     //@brief returns the midi note number
@@ -119,7 +138,7 @@ public:
 
     void transpose(int amount)
     {
-        if (m_symbolType == PB_SYMBOL_note)
+        if (m_symbolType >= PB_SYMBOL_noteType)
         {
             m_midiNote += amount;
             m_stavePos.notePos(m_hand, m_midiNote); // The save position has now moved
@@ -162,7 +181,7 @@ private:
     musicalSymbol_t m_symbolType;
     byte m_midiNote;
     accidentalModifer_t m_accidentalModifer; // Used to suppress the second sharp in the same bar
-    unsigned long m_midiDuration;
+    int m_midiDuration;
     whichPart_t m_hand;
 
     CColour m_colour;

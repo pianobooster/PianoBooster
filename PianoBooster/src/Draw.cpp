@@ -29,6 +29,7 @@
 #include "Draw.h"
 #include "Cfg.h"
 #include "Settings.h"
+#include "Notation.h"
 
 typedef unsigned int guint;
 typedef unsigned char guint8;
@@ -293,7 +294,58 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
     }
 }
 
-void CDraw::drawSymbol(CSymbol symbol, float x, float y)
+
+bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour colour, bool playable)
+{
+    //ppLogTrace("PB_SYMBOL_noteType x %f y %f", x, y);
+    if (!CChord::isNotePlayable(symbol->getNote(), 0))
+    {
+        colour = Cfg::noteColourDim();
+        playable = false;
+    }
+    drawStaveExtentsion(*symbol, x, 16, playable);
+    drColour(colour);
+    if (symbol->getType() == PB_SYMBOL_quarternote)
+    {
+        glBegin(GL_POLYGON);
+            glVertex2f(-7.0 + x,  2.0 + y); // 1
+            glVertex2f(-5.0 + x,  4.0 + y); // 2
+            glVertex2f(-1.0 + x,  6.0 + y); // 3
+            glVertex2f( 4.0 + x,  6.0 + y); // 4
+            glVertex2f( 7.0 + x,  4.0 + y); // 5
+            glVertex2f( 7.0 + x,  1.0 + y); // 6
+            glVertex2f( 6.0 + x, -2.0 + y); // 7
+            glVertex2f( 4.0 + x, -4.0 + y); // 8
+            glVertex2f( 0.0 + x, -6.0 + y); // 9
+            glVertex2f(-4.0 + x, -6.0 + y); // 10
+            glVertex2f(-8.0 + x, -3.0 + y); // 11
+            glVertex2f(-8.0 + x, -0.0 + y); // 12
+        glEnd();
+   }
+    else
+    {
+        glLineWidth(2.0);
+        glBegin(GL_LINE_STRIP);
+            glVertex2f(-7.0 + x,  2.0 + y); // 1
+            glVertex2f(-5.0 + x,  4.0 + y); // 2
+            glVertex2f(-1.0 + x,  6.0 + y); // 3
+            glVertex2f( 4.0 + x,  6.0 + y); // 4
+            glVertex2f( 7.0 + x,  4.0 + y); // 5
+            glVertex2f( 7.0 + x,  1.0 + y); // 6
+            glVertex2f( 6.0 + x, -2.0 + y); // 7
+            glVertex2f( 4.0 + x, -4.0 + y); // 8
+            glVertex2f( 0.0 + x, -6.0 + y); // 9
+            glVertex2f(-4.0 + x, -6.0 + y); // 10
+            glVertex2f(-8.0 + x, -3.0 + y); // 11
+            glVertex2f(-8.0 + x, -0.0 + y); // 12
+        glEnd();
+    }
+    checkAccidental(*symbol, x, y);
+
+    return playable;
+}
+
+void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
 {
     CColour colour = symbol.getColour();
     bool playable = true;
@@ -417,8 +469,8 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
 
           break;
 
-        case PB_SYMBOL_note:
-            //ppLogTrace("PB_SYMBOL_note x %f y %f", x, y);
+        case PB_SYMBOL_noteType:
+            //ppLogTrace("PB_SYMBOL_noteType x %f y %f", x, y);
             if (!CChord::isNotePlayable(symbol.getNote(), 0))
             {
                 colour = Cfg::noteColourDim();
@@ -427,18 +479,18 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
             drawStaveExtentsion(symbol, x, 16, playable);
             drColour(colour);
             glBegin(GL_POLYGON);
-            glVertex2f(-7.0 + x,  2.0 + y); // 1
-            glVertex2f(-5.0 + x,  4.0 + y); // 2
-            glVertex2f(-1.0 + x,  6.0 + y); // 3
-            glVertex2f( 4.0 + x,  6.0 + y); // 4
-            glVertex2f( 7.0 + x,  4.0 + y); // 5
-            glVertex2f( 7.0 + x,  1.0 + y); // 6
-            glVertex2f( 6.0 + x, -2.0 + y); // 7
-            glVertex2f( 4.0 + x, -4.0 + y); // 8
-            glVertex2f( 0.0 + x, -6.0 + y); // 9
-            glVertex2f(-4.0 + x, -6.0 + y); // 10
-            glVertex2f(-8.0 + x, -3.0 + y); // 11
-            glVertex2f(-8.0 + x, -0.0 + y); // 12
+                glVertex2f(-7.0 + x,  2.0 + y); // 1
+                glVertex2f(-5.0 + x,  4.0 + y); // 2
+                glVertex2f(-1.0 + x,  6.0 + y); // 3
+                glVertex2f( 4.0 + x,  6.0 + y); // 4
+                glVertex2f( 7.0 + x,  4.0 + y); // 5
+                glVertex2f( 7.0 + x,  1.0 + y); // 6
+                glVertex2f( 6.0 + x, -2.0 + y); // 7
+                glVertex2f( 4.0 + x, -4.0 + y); // 8
+                glVertex2f( 0.0 + x, -6.0 + y); // 9
+                glVertex2f(-4.0 + x, -6.0 + y); // 10
+                glVertex2f(-8.0 + x, -3.0 + y); // 11
+                glVertex2f(-8.0 + x, -0.0 + y); // 12
             glEnd();
             checkAccidental(symbol, x, y);
             break;
@@ -449,10 +501,10 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
             drColour(colour);
             glLineWidth (3.0);
             glBegin(GL_LINES);
-            glVertex2f( 5.0 + x,-5.0 + y);
-            glVertex2f(-5.0 + x, 5.0 + y);
-            glVertex2f(-5.0 + x,-5.0 + y);
-            glVertex2f( 5.0 + x, 5.0 + y);
+                glVertex2f( 5.0 + x,-5.0 + y);
+                glVertex2f(-5.0 + x, 5.0 + y);
+                glVertex2f(-5.0 + x,-5.0 + y);
+                glVertex2f( 5.0 + x, 5.0 + y);
             glEnd();
             checkAccidental(symbol, x, y);
             break;
@@ -460,31 +512,31 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
         case PB_SYMBOL_sharp:
             glLineWidth (2.0);
             glBegin(GL_LINES);
-            glVertex2f(-2.0 + x, -14.0 + y);
-            glVertex2f(-2.0 + x,  14.0 + y);
+                glVertex2f(-2.0 + x, -14.0 + y);
+                glVertex2f(-2.0 + x,  14.0 + y);
 
-            glVertex2f( 2.0 + x, -13.0 + y);
-            glVertex2f( 2.0 + x,  15.0 + y);
+                glVertex2f( 2.0 + x, -13.0 + y);
+                glVertex2f( 2.0 + x,  15.0 + y);
 
-            glVertex2f(-5.0 + x,   4.0 + y);
-            glVertex2f( 5.0 + x,   7.0 + y);
+                glVertex2f(-5.0 + x,   4.0 + y);
+                glVertex2f( 5.0 + x,   7.0 + y);
 
-            glVertex2f(-5.0 + x,  -6.0 + y);
-            glVertex2f( 5.0 + x,  -3.0 + y);
+                glVertex2f(-5.0 + x,  -6.0 + y);
+                glVertex2f( 5.0 + x,  -3.0 + y);
             glEnd();
             break;
 
          case PB_SYMBOL_flat:
             glLineWidth (2.0);
             glBegin(GL_LINE_STRIP);
-            glVertex2f(-4.0 + x, 17.0 + y);  // 1
-            glVertex2f(-4.0 + x, -6.0 + y);  // 2
-            glVertex2f( 2.0 + x, -2.0 + y);  // 3
-            glVertex2f( 5.0 + x,  2.0 + y);  // 4
-            glVertex2f( 5.0 + x,  4.0 + y);  // 5
-            glVertex2f( 3.0 + x,  5.0 + y);  // 6
-            glVertex2f( 0.0 + x,  5.0 + y);  // 7
-            glVertex2f(-4.0 + x,  2.0 + y);  // 8
+                glVertex2f(-4.0 + x, 17.0 + y);  // 1
+                glVertex2f(-4.0 + x, -6.0 + y);  // 2
+                glVertex2f( 2.0 + x, -2.0 + y);  // 3
+                glVertex2f( 5.0 + x,  2.0 + y);  // 4
+                glVertex2f( 5.0 + x,  4.0 + y);  // 5
+                glVertex2f( 3.0 + x,  5.0 + y);  // 6
+                glVertex2f( 0.0 + x,  5.0 + y);  // 7
+                glVertex2f(-4.0 + x,  2.0 + y);  // 8
             glEnd();
             break;
 
@@ -550,11 +602,15 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
             break;
 
        default:
-            ppDEBUG(("ERROR drawSymbol unhandled symbol\n"));
+
+            if (symbol.getType() >= PB_SYMBOL_noteType)
+                playable = drawNote(&symbol, x, y, slot, colour, playable);
+            else
+                ppDEBUG(("ERROR drawSymbol unhandled symbol\n"));
             break;
     }
 
-    if (symbol.getType() == PB_SYMBOL_note)
+    if (symbol.getType() >= PB_SYMBOL_noteType)
     {
         float pianistX = symbol.getPianistTiming();
         if ( pianistX != NOT_USED)
@@ -577,6 +633,23 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y)
 void CDraw::drawSymbol(CSymbol symbol, float x)
 {
     drawSymbol(symbol, x, symbol.getStavePos().getPosY());
+}
+
+
+
+void CDraw::drawSlot(CSlot* slot)
+{
+    int i;
+    CStavePos stavePos;
+    int av8Left = slot->getAv8Left();
+    for (int i=0; i < slot->length(); i++)
+    {
+        stavePos.notePos(slot->getSymbol(i).getHand(), slot->getSymbol(i).getNote());
+        //ppLogTrace ("compileSlot len %d id %2d next %2d time %2d type %2d note %2d", slot->length(), slot->m_displayListId,
+        //slot->m_nextDisplayListId, slot->getDeltaTime(), slot->getSymbol(i).getType(), slot->getSymbol(i).getNote());
+
+        drawSymbol(slot->getSymbol(i), 0.0, stavePos.getPosYRelative()); // we add this  back when drawing this symbol
+    }
 }
 
 

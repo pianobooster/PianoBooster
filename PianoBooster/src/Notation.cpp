@@ -79,7 +79,7 @@ void CSlot::analyse()
 
     for (i = 0; i < m_length; i++)
     {
-        if (m_symbols[i].getType() == PB_SYMBOL_note)
+        if (m_symbols[i].getType() >= PB_SYMBOL_noteType)
         {
             if (m_symbols[i].getHand() == PB_PART_right)
                 rightTotal++;
@@ -89,7 +89,7 @@ void CSlot::analyse()
     }
     for (i = 0; i < m_length; i++)
     {
-        if (m_symbols[i].getType() == PB_SYMBOL_note)
+        if (m_symbols[i].getType() >= PB_SYMBOL_noteType)
         {
             if (m_symbols[i].getHand() == PB_PART_right)
                 m_symbols[i].setIndex(rightIndex++, rightTotal);
@@ -201,6 +201,30 @@ accidentalModifer_t CNotation::detectSuppressedNatural(int note)
     return modifer;
 }
 
+void CNotation::calculateScoreNoteLength()
+{
+    if (!Cfg::experimentalNoteLength)
+        return;
+
+    CSlot* slot = m_slotQueue->indexPtr(0);
+    for (int i = 0; i < slot->length(); i++)
+    {
+        CSymbol* symbol = slot->getSymbolPtr(i);
+
+        if (symbol-> getType() != PB_SYMBOL_noteType)
+            break;
+
+        // you may get better results assuming all the notes are legato
+        // ie assume that this note ends at the exact time the following note starts.
+        long midiDuration = symbol->getMidiDuration();
+
+        if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN + 10))
+            symbol->setNoteLength(PB_SYMBOL_quarternote, 99);
+        else
+            symbol->setNoteLength(PB_SYMBOL_halfnote, 123);
+    }
+}
+
 void CNotation::findNoteSlots()
 {
     CMidiEvent midi;
@@ -227,7 +251,7 @@ void CNotation::findNoteSlots()
             }
             if (midi.type() == MIDI_PB_EOF)
             {
-                slot.setSymbol(0, CSymbol( PB_SYMBOL_theEnd, PB_PART_both, 0 ));
+                slot.setSymbol(0, CSymbol( PB_SYMBOL_theEndMarker, PB_PART_both, 0 ));
                 m_slotQueue->push(slot);
             }
             break;
@@ -246,9 +270,10 @@ void CNotation::findNoteSlots()
                 if (midi.channel() == MIDI_DRUM_CHANNEL)
                     symbolType = PB_SYMBOL_drum;
                 else
-                    symbolType = PB_SYMBOL_note;
+                    symbolType = PB_SYMBOL_noteType;
                 CSymbol symbol(symbolType, hand, midi.note());
                 symbol.setColour(Cfg::noteColour());
+                symbol.setMidiDuration(midi.getDuration());
 
                 // check if this note has occurred in this bar before
                 symbol.setAccidentalModifer(detectSuppressedNatural(midi.note()));
@@ -275,7 +300,10 @@ CSlot CNotation::nextNoteSlot()
         findNoteSlots();
 
     if (m_slotQueue->length() > 0)
+    {
+        calculateScoreNoteLength();
         return m_slotQueue->pop();
+    }
     else
         return CSlot(); // this is an empty slot which means end of file
 }
@@ -296,7 +324,7 @@ CSlot CNotation::nextSlot()
             -CMidiFile::getPulsesPerQuarterNote() * BEAT_MARKER_OFFSET / DEFAULT_PPQN);
     }
 
-    if (m_mergeSlots[0].getSymbolType(0) == PB_SYMBOL_theEnd)
+    if (m_mergeSlots[0].getSymbolType(0) == PB_SYMBOL_theEndMarker)
         return m_mergeSlots[0];
 
     mergeIdx = nextMergeSlot();

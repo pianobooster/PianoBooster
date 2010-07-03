@@ -37,7 +37,6 @@
 
 void CScroll::compileSlot(CSlotDisplayList info)
 {
-    int i;
 
     if (m_show == false || info.m_displayListId == 0)
         return;
@@ -46,6 +45,9 @@ void CScroll::compileSlot(CSlotDisplayList info)
     glTranslatef (info.getDeltaTime() * m_noteSpacingFactor, 0.0, 0.0); /*  move position  */
 
     info.transpose(m_transpose);
+    drawSlot(&info);
+    int i;
+   /*
     CStavePos stavePos;
     int av8Left = info.getAv8Left();
     for (i=0; i < info.length(); i++)
@@ -56,6 +58,7 @@ void CScroll::compileSlot(CSlotDisplayList info)
 
         drawSymbol(info.getSymbol(i), 0.0, stavePos.getPosYRelative()); // we add this  back when drawing this symbol
     }
+    */
     glCallList (info.m_nextDisplayListId);    /* Automatically draw the next slot even if it is not there yet */
     glEndList ();
 }
@@ -69,7 +72,7 @@ bool CScroll::insertSlots()
 
     if (m_headSlot.length() == 0)
         m_headSlot = m_notation->nextSlot();
-    if (m_headSlot.length() == 0 || m_headSlot.getSymbolType(0) == PB_SYMBOL_theEnd) // this means we have reached the end of the file
+    if (m_headSlot.length() == 0 || m_headSlot.getSymbolType(0) == PB_SYMBOL_theEndMarker) // this means we have reached the end of the file
         return false;
 
     while (true)
@@ -102,7 +105,7 @@ bool CScroll::insertSlots()
         m_symbolID  = nextListId;
 
         m_headSlot = m_notation->nextSlot();
-        if (m_headSlot.length() == 0 || m_headSlot.getSymbolType(0) == PB_SYMBOL_theEnd) // this means we have reached the end of the file
+        if (m_headSlot.length() == 0 || m_headSlot.getSymbolType(0) == PB_SYMBOL_theEndMarker) // this means we have reached the end of the file
             return false;
     }
     return true;
@@ -187,7 +190,7 @@ bool CScroll::validPianistChord(int index)
     CSlot* pSlot = m_scrollQueue->indexPtr(index);
 
     assert(pSlot->length()!=0);
-    if (pSlot->getSymbol(0).getType() == PB_SYMBOL_note)
+    if (pSlot->getSymbol(0).getType() >= PB_SYMBOL_noteType)
     {
         if (m_displayHand == PB_PART_both)
             return true;

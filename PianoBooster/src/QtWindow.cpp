@@ -169,6 +169,7 @@ void QtWindow::displayUsage()
     fprintf(stderr, "Usage: pianobooster [flags] [midifile]\n");
     fprintf(stderr, "       -d: Increase the debug level\n");
     fprintf(stderr, "       -q: Quick start\n");
+    fprintf(stderr, "       -L: Displays the note length (experimental)\n");
     fprintf(stderr, "       -h: --help: Displays this help message\n");
     fprintf(stderr, "       -v: Displays version number and then exits\n");
 }
@@ -245,6 +246,8 @@ void QtWindow::decodeCommandLine()
                 Cfg::logLevel++;
             else if (arg.startsWith("-q"))
                 Cfg::quickStart = true;
+            else if (arg.startsWith("-L"))
+                Cfg::experimentalNoteLength = true;
             else if (arg.startsWith("-X1"))
                 Cfg::experimentalTempo = true;
             else if (arg.startsWith("-Xswap"))

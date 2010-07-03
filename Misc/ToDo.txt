@@ -2,10 +2,6 @@ Piano Booster To Do tasks (in no particular order)
 
 ======== EASY ========
 
-+ Add keyboard shortcuts. (Owen)
-- Help for keyboard short cuts.
-- Add assignable Left and Right hand midi channels.
-- Save the setting per song (e.g. remember the current speed settings)
 - changing the piano sound to use the same sound as on the part.
 - [Bug] fix patches when all 16 channels are being used (mute parts 15 + 16)
 - add a tempo display in BPM.
@@ -54,7 +50,14 @@ Piano Booster To Do tasks (in no particular order)
 - Writing a music teaching course
 
 
-====== NOTE ======
+======== COMPLETE ========
+
+Add keyboard shortcuts. (Owen)
+Help for keyboard short cuts.
+Add assignable Left and Right hand midi channels.
+Save the setting per song (e.g. remember the current speed settings)
+
+======== NOTE========
 
 Note: changed the '-' to a '+' when the task has been started.
 

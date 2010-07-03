@@ -57,6 +57,7 @@ public:
     }
 
     CSymbol getSymbol(int index) {return m_symbols[index];}
+    CSymbol* getSymbolPtr(int index) {return &m_symbols[index];}
     musicalSymbol_t getSymbolType(int index) {return m_symbols[index].getType();}
     int length() {return m_length;}
     void setDeltaTime(int delta) {m_deltaTime = delta;}
@@ -195,12 +196,13 @@ private:
     void findNoteSlots();
     CSlot nextNoteSlot();
     accidentalModifer_t detectSuppressedNatural(int note);
+    void calculateScoreNoteLength();
 
 
     CQueue<CSlot>* m_slotQueue;             // Queue of symbol slots that have not been read yet
     CQueue<CMidiEvent>* m_midiInputQueue;   // A Queue of midi events
     CSlot m_currentSlot;
-    int m_currentDeltaTime;
+    int m_currentDeltaTime;        // time difference between this and the previous slot
     int m_beatPerBarCounter;
     int m_earlyBarChangeCounter;
     int m_earlyBarChangeDelta; // Counts the ppqn in one bar

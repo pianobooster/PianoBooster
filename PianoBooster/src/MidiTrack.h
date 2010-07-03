@@ -63,6 +63,10 @@ public:
     ~CMidiTrack()
     {
         delete m_trackEventQueue;
+        for ( int chan =0; chan <MAX_MIDI_CHANNELS; chan++ )
+        {
+            delete [] m_noteOnEventPtr[chan];
+        }
     }
 
     int readDelaTime()
@@ -146,6 +150,8 @@ private:
     void readKeySignatureEvent();
 
     void decodeSystemMessage( byte_t status, byte_t data1 );
+    void noteOffEvent(CMidiEvent &event,  int deltaTime, int channel, int pitch, int velocity);
+
 
     fstream& m_file;
     int m_trackNumber;
@@ -156,9 +162,11 @@ private:
     CQueue<CMidiEvent>* m_trackEventQueue;
     int m_savedRunningStatus;
     int m_deltaTime;
+    int m_currentTime;      // The current time (all the delta times added up)
     midiErrors_t m_midiError;
     QString m_trackName;
     static int m_logLevel;
+    CMidiEvent** m_noteOnEventPtr[MAX_MIDI_CHANNELS];
 };
 
 #endif // __MIDITRACK_H__
