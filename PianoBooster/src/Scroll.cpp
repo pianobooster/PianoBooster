@@ -190,7 +190,7 @@ bool CScroll::validPianistChord(int index)
     CSlot* pSlot = m_scrollQueue->indexPtr(index);
 
     assert(pSlot->length()!=0);
-    if (pSlot->getSymbol(0).getType() >= PB_SYMBOL_noteType)
+    if (pSlot->getSymbol(0).getType() >= PB_SYMBOL_noteHead)
     {
         if (m_displayHand == PB_PART_both)
             return true;

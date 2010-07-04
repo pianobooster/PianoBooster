@@ -39,7 +39,7 @@ int Cfg::m_appY;
 int Cfg::m_appWidth;
 int Cfg::m_appHeight;
 bool Cfg::experimentalTempo = false;
-bool Cfg::experimentalNoteLength = false;
+bool Cfg::experimentalNoteLength = true;
 
 int Cfg::experimentalSwapInterval = -1;
 

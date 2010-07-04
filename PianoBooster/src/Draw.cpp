@@ -297,7 +297,10 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
 
 bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour colour, bool playable)
 {
-    //ppLogTrace("PB_SYMBOL_noteType x %f y %f", x, y);
+    const float stemLength  = 34.0;
+    const float noteWidth  = 6.0;
+
+    //ppLogTrace("PB_SYMBOL_noteHead x %f y %f", x, y);
     if (!CChord::isNotePlayable(symbol->getNote(), 0))
     {
         colour = Cfg::noteColourDim();
@@ -305,7 +308,44 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour col
     }
     drawStaveExtentsion(*symbol, x, 16, playable);
     drColour(colour);
-    if (symbol->getType() == PB_SYMBOL_quarternote)
+    bool solidNoteHead = false;
+    bool showNoteStem = false;
+    int stemFlagCount = 0;
+
+    if (symbol->getType() <= PB_SYMBOL_semiquaver)
+        stemFlagCount = 2;
+    else if (symbol->getType() <= PB_SYMBOL_quaver)
+        stemFlagCount = 1;
+
+
+    if (symbol->getType() <= PB_SYMBOL_crotchet)
+        solidNoteHead = true;
+
+    if (symbol->getType() <= PB_SYMBOL_minim)
+        showNoteStem = true;
+
+    if (showNoteStem)
+    {
+        glLineWidth(2.0);
+        glBegin(GL_LINE_STRIP);
+            glVertex2f(noteWidth + x,  0.0 + y); // 1
+            glVertex2f(noteWidth + x, stemLength + y); // 2
+        glEnd();
+    }
+
+    int offset = stemLength;
+    while (stemFlagCount>0)
+    {
+
+        glLineWidth(2.0);
+        glBegin(GL_LINE_STRIP);
+            glVertex2f(noteWidth + x, offset  + y); // 1
+            glVertex2f(noteWidth + 10 + x, offset - 20 + y); // 2
+        glEnd();
+        offset -= 8;
+        stemFlagCount--;
+    }
+    if (solidNoteHead)
     {
         glBegin(GL_POLYGON);
             glVertex2f(-7.0 + x,  2.0 + y); // 1
@@ -469,8 +509,8 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
 
           break;
 
-        case PB_SYMBOL_noteType:
-            //ppLogTrace("PB_SYMBOL_noteType x %f y %f", x, y);
+        case PB_SYMBOL_noteHead:
+            //ppLogTrace("PB_SYMBOL_noteHead x %f y %f", x, y);
             if (!CChord::isNotePlayable(symbol.getNote(), 0))
             {
                 colour = Cfg::noteColourDim();
@@ -603,14 +643,14 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
 
        default:
 
-            if (symbol.getType() >= PB_SYMBOL_noteType)
+            if (symbol.getType() >= PB_SYMBOL_noteHead)
                 playable = drawNote(&symbol, x, y, slot, colour, playable);
             else
                 ppDEBUG(("ERROR drawSymbol unhandled symbol\n"));
             break;
     }
 
-    if (symbol.getType() >= PB_SYMBOL_noteType)
+    if (symbol.getType() >= PB_SYMBOL_noteHead)
     {
         float pianistX = symbol.getPianistTiming();
         if ( pianistX != NOT_USED)
@@ -639,7 +679,6 @@ void CDraw::drawSymbol(CSymbol symbol, float x)
 
 void CDraw::drawSlot(CSlot* slot)
 {
-    int i;
     CStavePos stavePos;
     int av8Left = slot->getAv8Left();
     for (int i=0; i < slot->length(); i++)

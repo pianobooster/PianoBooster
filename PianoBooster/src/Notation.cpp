@@ -79,7 +79,7 @@ void CSlot::analyse()
 
     for (i = 0; i < m_length; i++)
     {
-        if (m_symbols[i].getType() >= PB_SYMBOL_noteType)
+        if (m_symbols[i].getType() >= PB_SYMBOL_noteHead)
         {
             if (m_symbols[i].getHand() == PB_PART_right)
                 rightTotal++;
@@ -89,7 +89,7 @@ void CSlot::analyse()
     }
     for (i = 0; i < m_length; i++)
     {
-        if (m_symbols[i].getType() >= PB_SYMBOL_noteType)
+        if (m_symbols[i].getType() >= PB_SYMBOL_noteHead)
         {
             if (m_symbols[i].getHand() == PB_PART_right)
                 m_symbols[i].setIndex(rightIndex++, rightTotal);
@@ -211,17 +211,23 @@ void CNotation::calculateScoreNoteLength()
     {
         CSymbol* symbol = slot->getSymbolPtr(i);
 
-        if (symbol-> getType() != PB_SYMBOL_noteType)
+        if (symbol-> getType() != PB_SYMBOL_noteHead)
             break;
 
         // you may get better results assuming all the notes are legato
         // ie assume that this note ends at the exact time the following note starts.
         long midiDuration = symbol->getMidiDuration();
 
-        if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN + 10))
-            symbol->setNoteLength(PB_SYMBOL_quarternote, 99);
+        if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN/4 + 10))
+            symbol->setNoteLength(PB_SYMBOL_semiquaver, 99);
+        if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN/2 + 10))
+            symbol->setNoteLength(PB_SYMBOL_quaver, 99);
+        else if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN + 10))
+            symbol->setNoteLength(PB_SYMBOL_crotchet, 99);
+        else if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN*2 + 10))
+            symbol->setNoteLength(PB_SYMBOL_minim, 99);
         else
-            symbol->setNoteLength(PB_SYMBOL_halfnote, 123);
+            symbol->setNoteLength(PB_SYMBOL_semibreve, 123);
     }
 }
 
@@ -270,7 +276,7 @@ void CNotation::findNoteSlots()
                 if (midi.channel() == MIDI_DRUM_CHANNEL)
                     symbolType = PB_SYMBOL_drum;
                 else
-                    symbolType = PB_SYMBOL_noteType;
+                    symbolType = PB_SYMBOL_noteHead;
                 CSymbol symbol(symbolType, hand, midi.note());
                 symbol.setColour(Cfg::noteColour());
                 symbol.setMidiDuration(midi.getDuration());

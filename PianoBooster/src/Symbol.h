@@ -50,14 +50,14 @@ typedef enum
     PB_SYMBOL_theEndMarker,
 
 
-    PB_SYMBOL_noteType,             // ONLY ADD NOTES BELOW THIS MAKER
-    PB_SYMBOL_doublewholenote,      // Breve / Double whole note
-    PB_SYMBOL_wholenote,            // Semibreve / Whole note
-    PB_SYMBOL_halfnote,             // Minim / Half note
-    PB_SYMBOL_quarternote,          // Crotchet / Quarter note
-    PB_SYMBOL_eighthnote,           // Quaver / Eighth note
-    PB_SYMBOL_sixteenthnote,        // Semiquaver / Sixteenth note
-    PB_SYMBOL_thirtysecondnote,     // Demisemiquaver / Thirty-second note
+    PB_SYMBOL_noteHead,             // ONLY ADD NOTES BELOW THIS MAKER
+    PB_SYMBOL_demisemiquaver,       // Demisemiquaver / Thirty-second note
+    PB_SYMBOL_semiquaver,           // Semiquaver / Sixteenth note
+    PB_SYMBOL_quaver,               // Quaver / Eighth note
+    PB_SYMBOL_crotchet,             // Crotchet / Quarter note
+    PB_SYMBOL_minim,                // Minim / Half note
+    PB_SYMBOL_semibreve,            // Semibreve / Whole note
+    PB_SYMBOL_breve,                // Breve / Double whole note
 
 } musicalSymbol_t;
 
@@ -138,7 +138,7 @@ public:
 
     void transpose(int amount)
     {
-        if (m_symbolType >= PB_SYMBOL_noteType)
+        if (m_symbolType >= PB_SYMBOL_noteHead)
         {
             m_midiNote += amount;
             m_stavePos.notePos(m_hand, m_midiNote); // The save position has now moved
