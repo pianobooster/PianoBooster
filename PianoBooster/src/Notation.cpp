@@ -201,6 +201,18 @@ accidentalModifer_t CNotation::detectSuppressedNatural(int note)
     return modifer;
 }
 
+int CNotation::cfg_param[NOTATE_MAX_PARAMS];
+
+void CNotation::setupNotationParamaters()
+{
+    cfg_param[NOTATE_semiquaverBoundary] = CMidiFile::ppqnAdjust(DEFAULT_PPQN/4 + 10);
+    cfg_param[NOTATE_quaverBoundary]     = CMidiFile::ppqnAdjust(DEFAULT_PPQN/2 + 10);
+    cfg_param[NOTATE_crotchetBoundary]   = CMidiFile::ppqnAdjust(DEFAULT_PPQN + 10);
+    cfg_param[NOTATE_minimBoundary]      = CMidiFile::ppqnAdjust(DEFAULT_PPQN*2 + 10);
+    cfg_param[NOTATE_semibreveBoundary]  = CMidiFile::ppqnAdjust(DEFAULT_PPQN*4 + 10);
+}
+
+
 void CNotation::calculateScoreNoteLength()
 {
     if (!Cfg::experimentalNoteLength)
@@ -218,13 +230,13 @@ void CNotation::calculateScoreNoteLength()
         // ie assume that this note ends at the exact time the following note starts.
         long midiDuration = symbol->getMidiDuration();
 
-        if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN/4 + 10))
+        if (midiDuration < cfg_param[NOTATE_semiquaverBoundary] )
             symbol->setNoteLength(PB_SYMBOL_semiquaver, 99);
-        if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN/2 + 10))
+        if (midiDuration < cfg_param[NOTATE_quaverBoundary] )
             symbol->setNoteLength(PB_SYMBOL_quaver, 99);
-        else if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN + 10))
+        else if (midiDuration < cfg_param[NOTATE_crotchetBoundary] )
             symbol->setNoteLength(PB_SYMBOL_crotchet, 99);
-        else if (midiDuration < CMidiFile::ppqnAdjust(DEFAULT_PPQN*2 + 10))
+        else if (midiDuration < cfg_param[NOTATE_minimBoundary] )
             symbol->setNoteLength(PB_SYMBOL_minim, 99);
         else
             symbol->setNoteLength(PB_SYMBOL_semibreve, 123);
@@ -376,4 +388,5 @@ void CNotation::reset()
     {
         m_noteState[i].clear();
     }
+    setupNotationParamaters();
 }
