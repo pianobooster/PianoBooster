@@ -73,6 +73,10 @@ QtWindow::QtWindow()
         QGLFormat::setDefaultFormat(fmt);
     }
 
+    for (int i = 0; i < MAX_RECENT_FILES; ++i)
+         m_recentFileActs[i] = 0;
+    m_separatorAct = 0;
+
 
 #if USE_REALTIME_PRIORITY
     int rt_prio = sched_get_priority_max(SCHED_FIFO);
@@ -415,23 +419,31 @@ void QtWindow::openRecentFile()
          m_settings->openSongFile(action->data().toString());
  }
 
-
+// load the recent file list from the config file into the file menu
 void QtWindow::updateRecentFileActions()
 {
+
     QStringList files = m_settings->value("RecentFileList").toStringList();
 
     int numRecentFiles = qMin(files.size(), (int)MAX_RECENT_FILES);
 
     for (int i = 0; i < numRecentFiles; ++i) {
         QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
+        if (m_recentFileActs[i] == 0)
+            break;
         m_recentFileActs[i]->setText(text);
         m_recentFileActs[i]->setData(files[i]);
         m_recentFileActs[i]->setVisible(true);
     }
-    for (int j = numRecentFiles; j < MAX_RECENT_FILES; ++j)
-        m_recentFileActs[j]->setVisible(false);
 
-    m_separatorAct->setVisible(numRecentFiles > 0);
+    for (int j = numRecentFiles; j < MAX_RECENT_FILES; ++j) {
+        if (m_recentFileActs[j] == 0)
+            break;
+        m_recentFileActs[j]->setVisible(false);
+    }
+
+    if (m_separatorAct)
+        m_separatorAct->setVisible(numRecentFiles > 0);
 }
 
 QString QtWindow::strippedName(const QString &fullFileName)
