@@ -132,6 +132,8 @@ public:
     static bool experimentalTempo;
     static bool experimentalNoteLength;
     static int experimentalSwapInterval;
+    static bool useLogFile;
+    static bool midiInputDump;
 
 private:
     static float m_staveEndX;

@@ -31,6 +31,8 @@
 #include <QStringList>
 
 #include "Util.h"
+#include "Cfg.h"
+
 /*!
  * @brief   xxxxx.
  */
@@ -52,7 +54,7 @@ public:
 
     virtual bool openMidiPort(midiType_t type, QString portName) = 0;
     virtual void closeMidiPort(midiType_t type, int index) = 0;
-    
+
     // based on the fluid synth settings
     virtual int     midiSettingsSetStr(QString name, QString str) = 0;
     virtual int     midiSettingsSetNum(QString name, double val) = 0;

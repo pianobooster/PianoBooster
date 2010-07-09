@@ -40,6 +40,8 @@ int Cfg::m_appWidth;
 int Cfg::m_appHeight;
 bool Cfg::experimentalTempo = false;
 bool Cfg::experimentalNoteLength = false;
+bool Cfg::useLogFile = false;
+bool Cfg::midiInputDump = false;
 
 int Cfg::experimentalSwapInterval = -1;
 

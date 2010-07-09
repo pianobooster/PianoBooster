@@ -39,15 +39,40 @@
 
 static QTime s_realtime;
 
+static  FILE * logInfoFile = 0;
+static  FILE * logErrorFile = 0;
+
+static void openLogFile() {
+    if (logInfoFile != 0)
+        return;
+
+    if (Cfg::useLogFile)
+    {
+        logInfoFile = fopen ("bp.log","w");
+        logErrorFile = logInfoFile;
+        if (logErrorFile == 0)
+        {
+            fputs("FATAL: cannot open the logfile", stderr);
+            exit(EXIT_FAILURE);
+        }
+    }
+    else
+    {
+        logInfoFile = stdout;
+        logErrorFile = stderr;
+    }
+}
+
 /* prints an error message to stderr, and dies */
 void fatal(const char *msg, ...)
 {
     va_list ap;
-
+    openLogFile();
+    fputs("FATAL: ", logErrorFile);
     va_start(ap, msg);
-    vfprintf(stderr, msg, ap);
+    vfprintf(logErrorFile, msg, ap);
     va_end(ap);
-    fputc('\n', stderr);
+    fputc('\n', logErrorFile);
     exit(EXIT_FAILURE);
 }
 
@@ -57,11 +82,13 @@ void ppLog(logLevel_t level, const char *msg, ...)
     if (Cfg::logLevel  < level)
         return;
 
+    openLogFile();
     va_start(ap, msg);
-    vfprintf(stdout, msg, ap);
+    vfprintf(logInfoFile, msg, ap);
     va_end(ap);
-    fputc('\n', stdout);
+    fputc('\n', logInfoFile);
 }
+
 void ppLogInfo(const char *msg, ...)
 {
     va_list ap;
@@ -70,12 +97,13 @@ void ppLogInfo(const char *msg, ...)
     if (Cfg::logLevel  <  1)
         return;
 
-    fputs("Info: ", stdout);
+    openLogFile();
+    fputs("Info: ", logInfoFile);
 
     va_start(ap, msg);
-    vfprintf(stdout, msg, ap);
+    vfprintf(logInfoFile, msg, ap);
     va_end(ap);
-    fputc('\n', stdout);
+    fputc('\n', logInfoFile);
 }
 
 void ppLogWarn(const char *msg, ...)
@@ -85,24 +113,26 @@ void ppLogWarn(const char *msg, ...)
     if (Cfg::logLevel  <  2)
         return;
 
-    fputs("Warn: ", stdout);
+    openLogFile();
+    fputs("Warn: ", logInfoFile);
 
     va_start(ap, msg);
-    vfprintf(stdout, msg, ap);
+    vfprintf(logInfoFile, msg, ap);
     va_end(ap);
-    fputc('\n', stdout);
+    fputc('\n', logInfoFile);
 }
 
 void ppLogTrace(const char *msg, ...)
 {
     va_list ap;
 
-    fputs("Trace: ", stdout);
+    openLogFile();
+    fputs("Trace: ", logInfoFile);
 
     va_start(ap, msg);
-    vfprintf(stdout, msg, ap);
+    vfprintf(logInfoFile, msg, ap);
     va_end(ap);
-    fputc('\n', stdout);
+    fputc('\n', logInfoFile);
 }
 
 
@@ -113,33 +143,36 @@ void ppLogDebug( const char *msg, ...)
     if (Cfg::logLevel  <  2)
         return;
 
-    fputs("Debug: ", stdout);
+    openLogFile();
+    fputs("Debug: ", logInfoFile);
     va_start(ap, msg);
-    vfprintf(stdout, msg, ap);
+    vfprintf(logInfoFile, msg, ap);
     va_end(ap);
-    fputc('\n', stdout);
+    fputc('\n', logInfoFile);
 }
 
 void ppLogError(const char *msg, ...)
 {
     va_list ap;
 
-    fputs("ERROR: ", stdout);
+    openLogFile();
+    fputs("ERROR: ", logErrorFile);
     va_start(ap, msg);
-    vfprintf(stdout, msg, ap);
+    vfprintf(logErrorFile, msg, ap);
     va_end(ap);
-    fputc('\n', stdout);
+    fputc('\n', logErrorFile);
 }
 
 void ppTiming(const char *msg, ...)
 {
     va_list ap;
 
+    openLogFile();
     va_start(ap, msg);
-    fprintf(stdout, "T %4d " , s_realtime.restart() );
-    vfprintf(stdout, msg, ap);
+    fprintf(logInfoFile, "T %4d " , s_realtime.restart() );
+    vfprintf(logInfoFile, msg, ap);
     va_end(ap);
-    fputc('\n', stdout);
+    fputc('\n', logInfoFile);
 }
 
 ////////////////////// BENCH MARK //////////////////////
@@ -213,11 +246,13 @@ void printResult(int i, benchData_t *pBench)
 {
     if (pBench->deltaCount == 0)
         return;
+
+    openLogFile();
     if (i>=0)
-        fprintf(stdout, "Bench%2d: ", i);
+        fprintf(logInfoFile, "Bench%2d: ", i);
     else
-        fputs("Bench  : ", stdout);
-    fprintf(stdout, "ct %4d, min %2d, avg %4.3f, max %2d frame %4.3f %s\n",  pBench->deltaCount,  pBench->minDelta,
+        fputs("Bench  : ", logInfoFile);
+    fprintf(logInfoFile, "ct %4d, min %2d, avg %4.3f, max %2d frame %4.3f %s\n",  pBench->deltaCount,  pBench->minDelta,
                     static_cast<double>(pBench->deltaTotal)/pBench->deltaCount,
                     pBench->maxDelta,
                     (static_cast<double>(pBench->frameRateCurrent - pBench->frameRatePrevious))/pBench->deltaCount,

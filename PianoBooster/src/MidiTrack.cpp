@@ -400,7 +400,7 @@ void CMidiTrack::noteOffEvent(CMidiEvent &event, int deltaTime, int channel, int
 
     m_noteOnEventPtr[channel][pitch] = 0;
     int duration = m_currentTime - noteOnEventPtr->getDuration();
-    ppLogDebug ("NOTE OFF chan %d pitch %d  currentTime %d Duration %d", channel + 1, pitch, m_currentTime, duration);
+    //ppLogDebug ("NOTE OFF chan %d pitch %d  currentTime %d Duration %d", channel + 1, pitch, m_currentTime, duration);
     noteOnEventPtr->setDuration(duration);
 
 

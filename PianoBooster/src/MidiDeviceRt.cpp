@@ -212,6 +212,15 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
     unsigned int channel;
 
 
+    if (Cfg::midiInputDump)
+    {
+        QString str;
+
+        for (unsigned int i = 0; i < m_inputMessage.size(); i++)
+            str += " 0x" + QString::number(m_inputMessage[i], 16) + ',';
+        ppLogInfo("midi input %s", qPrintable(str));
+    }
+
     channel = m_inputMessage[0] & 0x0f;
     switch (m_inputMessage[0] & 0xf0 )
     {

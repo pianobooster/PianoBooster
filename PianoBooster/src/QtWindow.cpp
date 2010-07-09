@@ -176,6 +176,9 @@ void QtWindow::displayUsage()
     fprintf(stderr, "       -L: Displays the note length (experimental)\n");
     fprintf(stderr, "       -h: --help: Displays this help message\n");
     fprintf(stderr, "       -v: Displays version number and then exits\n");
+    fprintf(stderr, "       --log: write debug info to the \"pb.log\" log file\n");
+    fprintf(stderr, "       --midi-input-dump: Displays the midi input in hex\n");
+
 }
 
 int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
@@ -252,6 +255,11 @@ void QtWindow::decodeCommandLine()
                 Cfg::quickStart = true;
             else if (arg.startsWith("-L"))
                 Cfg::experimentalNoteLength = true;
+            else if (arg.startsWith("--log"))
+                Cfg::useLogFile = true;
+            else if (arg.startsWith("--midi-input-dump"))
+                Cfg::midiInputDump = true;
+
             else if (arg.startsWith("-X1"))
                 Cfg::experimentalTempo = true;
             else if (arg.startsWith("-Xswap"))
