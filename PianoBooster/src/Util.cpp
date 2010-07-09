@@ -42,24 +42,50 @@ static QTime s_realtime;
 static  FILE * logInfoFile = 0;
 static  FILE * logErrorFile = 0;
 
+static bool logsOpened = false;
+
 static void openLogFile() {
-    if (logInfoFile != 0)
+    if (logsOpened == true)
         return;
 
     if (Cfg::useLogFile)
     {
-        logInfoFile = fopen ("bp.log","w");
+        logInfoFile = fopen ("pb.log","w");
         logErrorFile = logInfoFile;
         if (logErrorFile == 0)
         {
             fputs("FATAL: cannot open the logfile", stderr);
             exit(EXIT_FAILURE);
         }
+        else
+        {
+            logsOpened = true;
+        }
     }
     else
     {
         logInfoFile = stdout;
         logErrorFile = stderr;
+    }
+}
+
+
+static void flushLogs()
+{
+    if (logInfoFile != stdout && logsOpened)
+    {
+        fflush(logInfoFile);
+        // logErrorFile is the same as logInfoFile
+    }
+}
+
+void closeLogs()
+{
+    if (logInfoFile != stdout)
+    {
+        fclose(logInfoFile);
+        logInfoFile = stdout;
+        logErrorFile = stdout;
     }
 }
 
@@ -87,6 +113,7 @@ void ppLog(logLevel_t level, const char *msg, ...)
     vfprintf(logInfoFile, msg, ap);
     va_end(ap);
     fputc('\n', logInfoFile);
+    flushLogs();
 }
 
 void ppLogInfo(const char *msg, ...)
@@ -104,6 +131,7 @@ void ppLogInfo(const char *msg, ...)
     vfprintf(logInfoFile, msg, ap);
     va_end(ap);
     fputc('\n', logInfoFile);
+    flushLogs();
 }
 
 void ppLogWarn(const char *msg, ...)
@@ -120,6 +148,7 @@ void ppLogWarn(const char *msg, ...)
     vfprintf(logInfoFile, msg, ap);
     va_end(ap);
     fputc('\n', logInfoFile);
+    flushLogs();
 }
 
 void ppLogTrace(const char *msg, ...)
@@ -133,6 +162,7 @@ void ppLogTrace(const char *msg, ...)
     vfprintf(logInfoFile, msg, ap);
     va_end(ap);
     fputc('\n', logInfoFile);
+    flushLogs();
 }
 
 
@@ -149,6 +179,7 @@ void ppLogDebug( const char *msg, ...)
     vfprintf(logInfoFile, msg, ap);
     va_end(ap);
     fputc('\n', logInfoFile);
+    flushLogs();
 }
 
 void ppLogError(const char *msg, ...)
@@ -161,6 +192,7 @@ void ppLogError(const char *msg, ...)
     vfprintf(logErrorFile, msg, ap);
     va_end(ap);
     fputc('\n', logErrorFile);
+    flushLogs();
 }
 
 void ppTiming(const char *msg, ...)
@@ -173,6 +205,7 @@ void ppTiming(const char *msg, ...)
     vfprintf(logInfoFile, msg, ap);
     va_end(ap);
     fputc('\n', logInfoFile);
+    flushLogs();
 }
 
 ////////////////////// BENCH MARK //////////////////////
@@ -258,6 +291,7 @@ void printResult(int i, benchData_t *pBench)
                     (static_cast<double>(pBench->frameRateCurrent - pBench->frameRatePrevious))/pBench->deltaCount,
                     qPrintable(pBench->msg));
     benchMarkReset(pBench);
+    flushLogs();
 }
 
 void benchMarkResults()

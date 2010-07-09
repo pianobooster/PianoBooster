@@ -64,6 +64,9 @@ int main(int argc, char *argv[])
     QtWindow window;
 
     window.show();
-    return app.exec();
+
+    int value = app.exec();
+    closeLogs();
+    return value;
 }
 
