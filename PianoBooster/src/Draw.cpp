@@ -298,7 +298,7 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
 bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour colour, bool playable)
 {
     const float stemLength  = 34.0;
-    const float noteWidth  = 6.0;
+    float noteWidth  = 6.0;
 
     //ppLogTrace("PB_SYMBOL_noteHead x %f y %f", x, y);
     if (!CChord::isNotePlayable(symbol->getNote(), 0))
@@ -326,6 +326,8 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour col
 
     if (showNoteStem)
     {
+        if (!solidNoteHead)
+            noteWidth += 1.0;
         glLineWidth(2.0);
         glBegin(GL_LINE_STRIP);
             glVertex2f(noteWidth + x,  0.0 + y); // 1
@@ -340,11 +342,12 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour col
         glLineWidth(2.0);
         glBegin(GL_LINE_STRIP);
             glVertex2f(noteWidth + x, offset  + y); // 1
-            glVertex2f(noteWidth + 10 + x, offset - 20 + y); // 2
+            glVertex2f(noteWidth + 8 + x, offset - 16 + y); // 2
         glEnd();
         offset -= 8;
         stemFlagCount--;
     }
+
     if (solidNoteHead)
     {
         glBegin(GL_POLYGON);
@@ -361,7 +364,7 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour col
             glVertex2f(-8.0 + x, -3.0 + y); // 11
             glVertex2f(-8.0 + x, -0.0 + y); // 12
         glEnd();
-   }
+    }
     else
     {
         glLineWidth(2.0);
@@ -380,6 +383,7 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour col
             glVertex2f(-8.0 + x, -0.0 + y); // 12
         glEnd();
     }
+
     checkAccidental(*symbol, x, y);
 
     return playable;
@@ -532,6 +536,18 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                 glVertex2f(-8.0 + x, -3.0 + y); // 11
                 glVertex2f(-8.0 + x, -0.0 + y); // 12
             glEnd();
+
+            /*
+            // shows the MIDI Duration (but not very useful)
+            glLineWidth(4.0);
+            drColour(CColour(0.3, 0.4, 0.4));
+            glBegin(GL_LINE_STRIP);
+                glVertex2f(x,  y);
+                glVertex2f(x + CMidiFile::ppqnAdjust(symbol.getMidiDuration()) * HORIZONTAL_SPACING_FACTOR, y);
+            glEnd();
+            drColour(colour);
+            */
+
             checkAccidental(symbol, x, y);
             break;
 

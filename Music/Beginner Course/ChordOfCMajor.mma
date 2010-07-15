@@ -16,7 +16,7 @@ Begin Plectrum-Guitar
 //  Tuning      e-- a-- d- g- b- e   // A guitar
 //  Tuning      g-- d- a- e          // A four string tenor Banjo
 //  Capo        0                    // The fret number of the capo
-    Sequence { \
+    Sequence {
             1.0    0   5:100 2:80;  // On the 1st beat pluck strings 5 + 2
             1.5    0   3:80;        // pluck string number 3 with a velocity of 80
             2.0    0   4:90  2:80;  // The 2nd beat of the bar pluck strings 4 + 2
@@ -27,7 +27,6 @@ Begin Plectrum-Guitar
             4.5    0   4:80;
     }
 End
-
 
 Begin Drum-HH
     Tone ClosedHiHat
