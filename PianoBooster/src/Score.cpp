@@ -36,14 +36,15 @@ CScore::CScore(CSettings* settings) : CDraw(settings)
     size_t i;
     m_piano = new CPiano(settings);
     m_rating = 0;
-    m_activeScroll = -1;
     for (i=0; i< arraySize(m_scroll); i++)
     {
         m_scroll[i] = new CScroll(i, settings);
         m_scroll[i]->setChannel(i);
     }
 
-    m_activeScroll = 0;
+    m_activeScroll = -1;
+    m_stavesDisplayListId = 0;
+    m_scoreDisplayListId = 0;//glGenLists (1);
 }
 
 CScore::~CScore()
@@ -62,12 +63,8 @@ CScore::~CScore()
     m_stavesDisplayListId = 0;
 }
 
-void CScore::init() 
+void CScore::init()
 {
-    m_activeScroll = 0;
-    m_scroll[m_activeScroll]->showScroll(true);
-    m_scoreDisplayListId = 0;//glGenLists (1);
-    m_stavesDisplayListId = glGenLists (1);
 }
 
 void CScore::drawScroll(bool refresh)
@@ -80,10 +77,11 @@ void CScore::drawScroll(bool refresh)
         glRectf(Cfg::scrollStartX(), topY, Cfg::getAppWidth(), bottomY);
     }
 
+    if (m_stavesDisplayListId == 0)
+        m_stavesDisplayListId = glGenLists (1);
+
     if (getCompileRedrawCount())
     {
-        if (m_stavesDisplayListId == 0)
-            m_stavesDisplayListId = glGenLists (1);
 
         glNewList (m_stavesDisplayListId, GL_COMPILE_AND_EXECUTE);
             drawSymbol(CSymbol(PB_SYMBOL_playingZone,  CStavePos(PB_PART_both, 0)), Cfg::playZoneX());

@@ -58,6 +58,8 @@ public:
     QtWindow();
     ~QtWindow();
 
+    void init();
+
     void songEventUpdated(int eventBits)
     {
         if ((eventBits & EVENT_BITS_playingStopped) != 0)

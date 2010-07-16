@@ -308,8 +308,6 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 {
 }
 
-
-
 void CGLView::initializeGL()
 {
     CColour colour = Cfg::backgroundColour();
@@ -348,8 +346,12 @@ void CGLView::initializeGL()
     }
 
     setFocusPolicy(Qt::ClickFocus);
+    m_qtWindow->init();
 
     m_score->init();
+
+    m_song->regenerateChordQueue();
+
 
     // increased the tick time for Midi handling
     m_timer.start(4, this ); // was 12
