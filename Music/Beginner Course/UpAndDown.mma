@@ -16,15 +16,15 @@ Begin Plectrum-Guitar
 //  Tuning      e-- a-- d- g- b- e   // A guitar
 //  Tuning      g-- d- a- e          // A four string tenor Banjo
 //  Capo        0                    // The fret number of the capo
-    Sequence { \
-            1.0    0       - 100   -   -  90   -; \
-            1.5    0       -   -   -  90   -   -; \
-            2.0    0       -   -   90  -  90   -; \
-            2.5    0       -   -   -  90   -   -; \
-            3.0    0       -   -   -   -   -  90; \
-            3.5    0       -   -   -   -  90   -; \
-            4.0    0       -   -   -   90  -   -; \
-            4.5    0       -   -   90  -   -   -; \
+    Sequence {
+            1.0    0   5:100 2:80;  // On the 1st beat pluck strings 5 + 2
+            1.5    0   3:80;        // pluck string number 3 with a velocity of 80
+            2.0    0   4:90  2:80;  // The 2nd beat of the bar pluck strings 4 + 2
+            2.5    0   3:80;
+            3.0    0   1:80;
+            3.5    0   2:80;
+            4.0    0   3:80;
+            4.5    0   4:80;
     }
 End
 
@@ -51,11 +51,11 @@ Begin Plectrum-Guitar
     Voice       NylonGuitar
     Octave      4
     Volume      m
-    Sequence { \
-            1.0   +5      80  80  80  80  80  80; \
-            2.0   +5      80  80  80  80  80  80; \
-            3.0   +5      80  80  80  80  80  80; \
-            4.0   +5      80  80  80  80  80  80; \
+    Sequence {
+            1.0   +5      80;
+            2.0   +5      80;
+            3.0   +5      80;
+            4.0   +5      80;
    }
 End
 
@@ -85,21 +85,26 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=UpAndDown.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=UpAndDown.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
 
 Groove PlectrumFingerPicking
-C
-Am:5
+C C Am:5 Am:5
 G:8
-Am:5
+G:8 G:8 Am:5 Am:5
+C
 Groove PlectrumStrum
 C
 Groove PlectrumFingerPicking
-C
-Am:5
+C C Am:5 Am:5
 G:8
-Am:5
+G:8 G:8 Am:5 Am:5
+C
 Groove PlectrumStrum
 C
+Groove PlectrumFingerPicking
+C C Am:5 Am:5
+G:8 G:8 Am:5 Am:5
+C
+Groove PlectrumStrum
 C z! z! z!
 

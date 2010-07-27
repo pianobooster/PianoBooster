@@ -2,7 +2,7 @@
 // For more information see:  www.pianobooster.sourceforge.net
 // Creative Commons license
 
-MidiTName Left Hand F Major Chord
+MidiTName Chord of F Major
 
 SeqClear
 SeqSize 1
@@ -85,7 +85,7 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=LeftHandFMajorChord.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=ChordOfFMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
 
 Groove PlectrumFingerPicking
 F

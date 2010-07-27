@@ -150,7 +150,7 @@ def runMain(argv):
 
     if len(argv) == 2:
         #doSingleSong = argv[1]
-        doSingleNumber = int(argv[1])
+        doSingleNumber = int(argv[1]) - 1
         #doSingleNumber = 7
 
     outputRootDir = "Output"
@@ -183,8 +183,8 @@ def runMain(argv):
     addSong(songs, "Beginner Course", 2, "ChordOfCMajor")
     addSong(songs, "Beginner Course", 3, "UpAndDown")
     addSong(songs, "Beginner Course", 4, "ClairDeLaLune")
-    addSong(songs, "Beginner Course", 5, "LeftHandFMajorChord")
-    addSong(songs, "Beginner Course", 6, "LeftHandUpAndDown")
+    addSong(songs, "Beginner Course", 5, "ChordOfFMajor")
+    addSong(songs, "Beginner Course", 6, "DownAndUp")
     addSong(songs, "Booster Music",   1, "ClairDeLaLune")
     addSong(songs, "Booster Music",   2, "LavendersBlue")
     addSong(songs, "Booster Music",   3, "SkipToMyLoo")

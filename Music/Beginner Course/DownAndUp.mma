@@ -2,7 +2,7 @@
 // For more information see:  www.pianobooster.sourceforge.net
 // Creative Commons license
 
-MidiTName Easy Clair De La Lune
+MidiTName Down And Up (Left Hand)
 
 SeqClear
 SeqSize 1
@@ -85,28 +85,28 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=ClairDeLaLune.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
+midiInc file=DownAndUp.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+
 
 Groove PlectrumFingerPicking
-//Groove PlectrumStrum
-C / / G
-C / G7 /
-Am / G7 /
+C C Am Am
+F
+F F Am Am
 C
-
-C / / G
-C / G7 /
-Am / G7 /
+Groove PlectrumStrum
 C
-
-Dm
+Groove PlectrumFingerPicking
+C C Am Am
+F
+F F Am Am
 C
-Em / Dm /
+Groove PlectrumStrum
 C
-
-C / / G
-C / G7 /
-Am / G7 /
+Groove PlectrumFingerPicking
+C C Am:5 Am:5
+F:8 F:8 Am:5 Am:5
 C
-
+Groove PlectrumStrum
 C z! z! z!
+
+

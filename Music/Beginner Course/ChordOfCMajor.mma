@@ -10,7 +10,8 @@ Time 4
 Timesig 4 4
 
 Begin Plectrum-Guitar
-    Voice       NylonGuitar
+//    Voice       NylonGuitar
+    Voice       SteelGuitar
     Octave      4
     Volume      m
 //  Tuning      e-- a-- d- g- b- e   // A guitar
@@ -33,9 +34,24 @@ Begin Drum-HH
     Sequence {1 4 80; 2 4 90; 3 4 90; 4 4 90}
 End
 
-
+Begin Bass-Simple
+    Volume      m
+    Voice AcousticBass
+    Sequence {1 2 1 100; 3 2 1 100; }
+End
 
 DefGroove PlectrumFingerPicking
+
+
+Begin Bass-String
+    Volume      m
+    Octave      6
+    Voice SlowStrings
+    Sequence {1 1 1 70; }
+End
+
+
+DefGroove PlectrumFingerPickingWithStrings
 
 
 
@@ -47,7 +63,7 @@ Timesig 4 4
 
 
 Begin Plectrum-Guitar
-    Voice       NylonGuitar
+    Voice       SteelGuitar
     Octave      4
     Volume      m
     Sequence { \
@@ -64,8 +80,24 @@ Begin Drum-HH
     Sequence {1 4 90; 2 4 90; 3 4 90; 4 4 90}
 End
 
+Begin Bass-Simple
+    Volume      m
+    Voice AcousticBass
+    Sequence {1 2 1 100; 3 2 1 100; }
+End
 
 DefGroove PlectrumStrum
+
+
+Begin Bass-String
+    Volume      m
+    Octave      6
+    Voice SlowStrings
+    Sequence {1 1 1 70; }
+End
+
+DefGroove PlectrumStrumWithStrings
+
 
 Begin Solo-Right
     Voice Piano1
@@ -83,7 +115,7 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=ChordOfCMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=ChordOfCMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
 
 Groove PlectrumFingerPicking
 C
@@ -92,12 +124,12 @@ G:8
 Am:5
 Groove PlectrumStrum
 C
-Groove PlectrumFingerPicking
+Groove PlectrumFingerPickingWithStrings
 C
 Am:5
 G:8
 Am:5
-Groove PlectrumStrum
+Groove PlectrumStrumWithStrings
 C
 C z! z! z!
 
