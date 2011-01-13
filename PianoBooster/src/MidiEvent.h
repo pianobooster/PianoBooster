@@ -82,9 +82,6 @@
 
 
 
-#define MIDI_DRUM_CHANNEL       (10-1)
-#define MAX_MIDI_CHANNELS       16      // There are always at most 16 midi channels
-
 #define GM_PIANO_PATCH        0 // The default grand piano sound
 
 
@@ -117,10 +114,12 @@ public:
     ////////////////////////////////////////////////////////////////////////////////
     //@brief returns the midi note number
     int note() const {return m_note;}
+    void setNote(int note){m_note = note;}
     int programme() const {return m_note;}
     int channel() const {return m_channel;}
     void setChannel(int chan){m_channel = chan;}
     int velocity() const {return m_velocity;}
+    void setVelocity(int value) {m_velocity = value;}
     int type() const {return m_type;}
     void setType(int type){m_type = type;}
     void transpose(int amount) {m_note += amount;}

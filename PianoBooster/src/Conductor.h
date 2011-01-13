@@ -50,11 +50,19 @@ typedef enum {
 
 enum {
     PB_PLAY_MODE_listen,
+    PB_PLAY_MODE_rhythmTapping,
     PB_PLAY_MODE_followYou,
     PB_PLAY_MODE_playAlong
 };
 
 typedef int playMode_t;
+
+typedef enum {
+    PB_RHYTHM_TAP_drumsOnly,
+    PB_RHYTHM_TAP_mellodyOnly,
+    PB_RHYTHM_TAP_drumsAndMellody
+} rhythmTapping_t;
+
 
 typedef enum {
     PB_STOP_POINT_MODE_automatic,
@@ -123,16 +131,9 @@ public:
     }
 
     void pianistInput(CMidiEvent inputNote);
-    void setPlayMode(playMode_t mode)
-    {
-        m_playMode = mode;
-        if (m_playMode < 0 ) m_playMode = 0;
-        if (m_playMode > 2 ) m_playMode = 2;
-        if ( m_playMode == PB_PLAY_MODE_listen )
-            resetWantedChord();
-        activatePianistMutePart();
-        outputBoostVolume();
-    }
+    void expandPianistInput(CMidiEvent inputNote);
+
+    void setPlayMode(playMode_t mode);
 
     int getBoostVolume() {return m_boostVolume;}
     void boostVolume(int boostVolume)
@@ -198,6 +199,7 @@ public:
 
     bool cfg_timingMarkersFlag;
     stopPointMode_t cfg_stopPointMode;
+    rhythmTapping_t cfg_rhythmTapping;
 
 
 protected:
@@ -213,6 +215,8 @@ protected:
     void activatePianistMutePart();
 
     void resetWantedChord();
+    void playWantedChord (CChord chord, CMidiEvent inputNote);
+
 
     bool validatePianistNote( const CMidiEvent& inputNote);
     bool validatePianistChord();
@@ -276,7 +280,7 @@ private:
     int m_leadLagAdjust; // Synchronise the sound the the video
     int m_silenceTimeOut; // used to create silence if the student stops for toooo long
     CChord m_wantedChord;  // The chord the pianist needs to play
-    CChord m_savedwantedChord; // A copy of the wanted chord complete with both left and right parts
+    CChord m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts
     CChord m_goodPlayedNotes;  // The good notes the pianist plays
     CTempo m_tempo;
 
@@ -295,6 +299,9 @@ private:
     int m_cfg_imminentNotesOffPoint;
     int m_cfg_playZoneEarly; // when playing along
     int m_cfg_playZoneLate;
+
+    int m_cfg_rhythmTapLeftHandDrumSound;
+    int m_cfg_rhythmTapRightHandDrumSound;
 
     int m_pianistTiming;  //measure whether the pianist is playing early or late
     bool m_followPlayingTimeOut;  // O dear, the student is too slow

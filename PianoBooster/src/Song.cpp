@@ -256,7 +256,7 @@ bool CSong::pcKeyPress(int key, bool down)
     const int cfg_pcKeyVolume = 64;
     const int cfg_pcKeyChannel = 1-1;
 
-    if (key == '\t') // the tab key on the PC fakes good notes
+    if (key == 't') // the tab key on the PC fakes good notes
     {
 
         if (down)
@@ -267,7 +267,7 @@ bool CSong::pcKeyPress(int key, bool down)
                 midi.noteOnEvent(0, cfg_pcKeyChannel, m_fakeChord.getNote(i).pitch() + getTranspose(), cfg_pcKeyVolume);
             else
                 midi.noteOffEvent(0, cfg_pcKeyChannel, m_fakeChord.getNote(i).pitch() + getTranspose(), cfg_pcKeyVolume);
-            pianistInput(midi);
+            expandPianistInput(midi);
         }
         return true;
     }
@@ -281,7 +281,7 @@ bool CSong::pcKeyPress(int key, bool down)
             else
                 midi.noteOffEvent(0, cfg_pcKeyChannel, pcNoteLookup[j].note, cfg_pcKeyVolume);
 
-            pianistInput(midi);
+            expandPianistInput(midi);
             return true;
         }
     }

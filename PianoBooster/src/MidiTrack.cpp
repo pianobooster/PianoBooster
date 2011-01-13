@@ -394,6 +394,8 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
 
 void CMidiTrack::noteOffEvent(CMidiEvent &event, int deltaTime, int channel, int pitch, int velocity)
 {
+    createNoteEventPtr(channel);
+
     CMidiEvent* noteOnEventPtr = m_noteOnEventPtr[channel][pitch];
 
     if (noteOnEventPtr)
@@ -459,17 +461,13 @@ void CMidiTrack::decodeMidiEvent()
             event.noteOnEvent(readDelaTime(), channel, data1, data2);
             ppDEBUG_TRACK((1,"Chan %d note on %d",channel + 1, data1));
 
-            if (m_noteOnEventPtr[channel] == 0)
-            {
-                m_noteOnEventPtr[channel] = new CMidiEvent*[MAX_MIDI_NOTES];
-                for (int pitch = 0; pitch < MAX_MIDI_NOTES; pitch++)
-                    m_noteOnEventPtr[channel][pitch] = 0;
-            }
             event.setDuration(m_currentTime); // Set the duration to the current time for now
             //ppLogDebug ("NOTE ON  pitch %d m_currentTime %d event->getDuration() %d", data1, m_currentTime, event.getDuration());
 
             CMidiEvent* eventPtr = m_trackEventQueue->push(event);
+
             // Save a reference to the note on event
+            createNoteEventPtr(channel);
             m_noteOnEventPtr[channel] [data1]  = eventPtr;
         }
         else

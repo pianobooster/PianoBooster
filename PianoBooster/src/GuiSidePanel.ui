@@ -114,10 +114,17 @@
           </property>
          </widget>
         </item>
+         <item>
+          <widget class="QRadioButton" name="rhythmTapRadio">
+           <property name="text">
+            <string>Rhythm Tap</string>
+           </property>
+          </widget>
+         </item>
         <item>
          <widget class="QRadioButton" name="followYouRadio" >
           <property name="text" >
-           <string>Follow you</string>
+           <string>Follow You</string>
           </property>
          </widget>
         </item>
@@ -195,12 +202,43 @@
      </item>
     </layout>
    </item>
+
+
+      <item>
+       <layout class="QHBoxLayout" >
+        <item>
+         <widget class="QLabel" name="label2" >
+          <property name="text" >
+           <string>Rhythm Tapping with:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="rhythmTappingCombo" >
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+
+
    <item>
     <widget class="QGroupBox" name="groupBox_3" >
      <property name="title" >
       <string>Parts</string>
      </property>
      <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QCheckBox" name="muteYourPartCheck" >
+        <property name="toolTip" >
+         <string>Mute the currently selected part</string>
+        </property>
+        <property name="text" >
+         <string>Mute your part when playing</string>
+        </property>
+       </widget>
+      </item>
+
       <item>
        <layout class="QHBoxLayout" >
         <item>
@@ -243,19 +281,24 @@
         </item>
        </layout>
       </item>
-      <item>
-       <widget class="QCheckBox" name="muteYourPartCheck" >
-        <property name="toolTip" >
-         <string>Mute the currently selected part</string>
-        </property>
-        <property name="text" >
-         <string>Mute your part when playing</string>
-        </property>
-       </widget>
-      </item>
+
      </layout>
     </widget>
    </item>
+
+<!--
+      <item>
+       <widget class="QCheckBox" name="metronomeCheck" >
+        <property name="toolTip" >
+         <string>Turn the metronome on or off</string>
+        </property>
+        <property name="text" >
+         <string>Metronome</string>
+        </property>
+       </widget>
+      </item>
+-->
+
    <item>
     <spacer>
      <property name="orientation" >

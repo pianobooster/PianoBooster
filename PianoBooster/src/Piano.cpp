@@ -110,25 +110,38 @@ void CPiano::drawPianoInputLines(CChord* chord, CColour colour, int lineLength)
 
     CStavePos stavePos;
 
+
     for ( i = 0; i < chord->length(); i++)
     {
-        int pitch = chord->getNote(i).pitch();
-        stavePos.notePos(chord->getNote(i).part(), pitch);
-
-        glLineWidth (3.0);
-
-        if (stavePos.getAccidental() != 0)
+        if (!m_rhythmTapping)
         {
-            glEnable (GL_LINE_STIPPLE);
-            glLineStipple (1, 0x0f0f);  /*  dashed  */
+            int pitch = chord->getNote(i).pitch();
+            stavePos.notePos(chord->getNote(i).part(), pitch);
+
             glLineWidth (3.0);
+
+            if (stavePos.getAccidental() != 0)
+            {
+                glEnable (GL_LINE_STIPPLE);
+                glLineStipple (1, 0x0f0f);  /*  dashed  */
+                glLineWidth (3.0);
+            }
+
+            float posY;
+            posY = stavePos.getPosYAccidental();
+
+            oneLine(Cfg::playZoneX() - lineLength, posY, Cfg::playZoneX(), posY);
+            glDisable (GL_LINE_STIPPLE);
         }
-
-        float posY;
-        posY = stavePos.getPosYAccidental();
-
-        oneLine(Cfg::playZoneX() - lineLength, posY, Cfg::playZoneX(), posY);
-        glDisable (GL_LINE_STIPPLE);
+        else
+        {
+            // draw a vertical line instead
+            whichPart_t hand  = chord->getNote(i).part();
+            CStavePos top = CStavePos(hand, 6);
+            CStavePos bottom = CStavePos(hand, -6);
+            glLineWidth (3.0);
+            oneLine(Cfg::playZoneX(), top.getPosY(), Cfg::playZoneX(), bottom.getPosY());
+        }
     }
 }
 
@@ -200,10 +213,15 @@ void CPiano::addNoteNameItem(float posY, int pitch, int type)
     spaceNoteNames();
 }
 
-void CPiano::addPianistNote(whichPart_t part, int note, bool good)
+void CPiano::addPianistNote(whichPart_t part, CMidiEvent midiNote, bool good)
 {
     CStavePos stavePos;
     float posY;
+
+    if ( midiNote.velocity() == -1 )
+        return;
+
+    int note = midiNote.note();
 
     stavePos.notePos(part, note);
 
@@ -267,6 +285,8 @@ void CPiano::clear()
     m_goodChord.clear();
     m_badChord.clear();
     noteNameListClear();
+    for (unsigned int i = 0; i < arraySize(m_savedChordLookUp); i++)
+        m_savedChordLookUp[i].pitchKey = 0;
 }
 
 void CPiano::drawPianoInput()
@@ -283,3 +303,49 @@ void CPiano::drawPianoInput()
     if (showNoteName)
         drawPianoInputNoteNames();
 }
+
+void CPiano::addSavedChord(CMidiEvent midiNote, CChord chord)
+{
+    int key = midiNote.note();
+
+    for (unsigned int i = 0; i < arraySize(m_savedChordLookUp); i++)
+    {
+        if (midiNote.type() == MIDI_NOTE_ON)
+        {
+            if (m_savedChordLookUp[i].pitchKey == 0 )
+            {
+                m_savedChordLookUp[i].pitchKey = key;
+                m_savedChordLookUp[i].savedNoteOffChord = chord;
+
+                return;
+            }
+        }
+        else if (midiNote.type() == MIDI_NOTE_OFF)
+        {
+            if (m_savedChordLookUp[i].pitchKey == key )
+            {
+                m_savedChordLookUp[i].pitchKey = 0;
+                return;
+            }
+        }
+    }
+    m_savedChordLookUp[0].savedNoteOffChord = chord;
+}
+
+CChord CPiano::removeSavedChord(int key)
+{
+    unsigned int i;
+    for (i = 0; i < arraySize(m_savedChordLookUp); i++)
+    {
+        if (m_savedChordLookUp[i].pitchKey == key )
+        {
+            m_savedChordLookUp[i].pitchKey = 0;
+            return m_savedChordLookUp[i].savedNoteOffChord;
+        }
+    }
+    i--;
+    m_savedChordLookUp[i].savedNoteOffChord.clear();
+    return m_savedChordLookUp[i].savedNoteOffChord;
+
+}
+

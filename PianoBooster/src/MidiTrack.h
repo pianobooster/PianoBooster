@@ -153,6 +153,16 @@ private:
     void noteOffEvent(CMidiEvent &event,  int deltaTime, int channel, int pitch, int velocity);
 
 
+    void createNoteEventPtr(int channel)
+    {
+        if (m_noteOnEventPtr[channel] == 0)
+        {
+            m_noteOnEventPtr[channel] = new CMidiEvent*[MAX_MIDI_NOTES];
+            for (int pitch = 0; pitch < MAX_MIDI_NOTES; pitch++)
+                m_noteOnEventPtr[channel][pitch] = 0;
+        }
+    }
+
     fstream& m_file;
     int m_trackNumber;
 

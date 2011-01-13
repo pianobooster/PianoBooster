@@ -41,10 +41,10 @@ class CTempo
 public:
     CTempo()
     {
-        m_savedwantedChord = 0;
+        m_savedWantedChord = 0;
         reset();
     }
-    void setSavedwantedChord(CChord * savedwantedChord) { m_savedwantedChord = savedwantedChord; }
+    void setSavedWantedChord(CChord * savedWantedChord) { m_savedWantedChord = savedWantedChord; }
 
 
     void reset()
@@ -107,7 +107,7 @@ private:
     int m_jumpAheadDelta;
     static int m_cfg_maxJumpAhead;
     static int m_cfg_followTempoAmount;
-    CChord *m_savedwantedChord; // A copy of the wanted chord complete with both left and right parts
+    CChord *m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts
 
 
 };

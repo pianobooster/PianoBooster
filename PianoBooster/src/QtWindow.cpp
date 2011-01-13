@@ -148,6 +148,8 @@ QtWindow::QtWindow()
     m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toInt();
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
+    m_song->cfg_rhythmTapping = static_cast<rhythmTapping_t> (m_settings->value("Score/RtyhemTappingMode", m_song->cfg_rhythmTapping ).toInt());
+
 
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
     m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("midi/output").toString());

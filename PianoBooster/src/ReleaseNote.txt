@@ -1,8 +1,9 @@
-#define PB_VERSION "0.6.5.svn.1"
+#define PB_VERSION "0.6.5.svn.2"
 
 /*
 
-v0.6.5.svn: (29 November 2009)
+v0.6.5.svn: (29 November 2010)
+- Added rhythm tapping for beginners
 
 v0.6.4: (28 November 2009)
 - Added note names for beginners (to be used with a piano key note labels)

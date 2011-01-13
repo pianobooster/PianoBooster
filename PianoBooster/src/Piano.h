@@ -41,6 +41,11 @@ typedef struct {
         int pitch;
 } noteNameItem_t;
 
+typedef struct {
+        int pitchKey;       // This used to fined the Saved note off;
+        CChord savedNoteOffChord;
+} savedNoteOffChord_t;
+
 
 class CPiano : protected CDraw
 {
@@ -52,12 +57,20 @@ public:
 
     void drawPianoInput();
 
-    void addPianistNote(whichPart_t part, int note, bool good);
+    void addPianistNote(whichPart_t part, CMidiEvent midiNote, bool good);
     bool removePianistNote(int note);
 
     int pianistAllNotesDown(); // Counts the number of notes the pianist has down
     int pianistBadNotesDown();
     void clear();
+
+    void addSavedChord(CMidiEvent midiNote, CChord chord);
+    CChord removeSavedChord(int key);
+
+    CChord getGoodChord() { return m_goodChord; }
+    CChord getBadChord() { return m_badChord; }
+
+    void setRhythmTapping(bool state) { m_rhythmTapping = state; }
 
 private:
     void spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex);
@@ -69,10 +82,12 @@ private:
     void noteNameListClear();
 
     noteNameItem_t  m_noteNameList[20];
+    savedNoteOffChord_t m_savedChordLookUp[20];
     unsigned int m_noteNameListLength;
 
     CChord m_goodChord;  // The coloured note lines that appear on the score when the pianist plays
     CChord m_badChord;
+    bool m_rhythmTapping;
 };
 
 #endif //__PIANO_H__

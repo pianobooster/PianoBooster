@@ -35,13 +35,14 @@
 
 using namespace std;
 
-#define MAX_MIDI_CHANNELS   16
-#define MIDDLE_C            60
-#define MIDI_OCTAVE         12
-#define MIDI_BOTTOM_C       (MIDDLE_C - MIDI_OCTAVE*2)
-#define MIDI_TOP_C          (MIDDLE_C + MIDI_OCTAVE*2)
+#define MAX_MIDI_CHANNELS       16      // There are always at most 16 midi channels
+#define MIDDLE_C                60
+#define MIDI_OCTAVE             12
+#define MIDI_BOTTOM_C           (MIDDLE_C - MIDI_OCTAVE*2)
+#define MIDI_TOP_C              (MIDDLE_C + MIDI_OCTAVE*2)
+#define MIDI_DRUM_CHANNEL       (10-1)
 
-#define MAX_MIDI_NOTES      128
+#define MAX_MIDI_NOTES          128
 
 typedef unsigned char byte;
 

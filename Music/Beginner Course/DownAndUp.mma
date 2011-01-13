@@ -4,70 +4,47 @@
 
 MidiTName Down And Up (Left Hand)
 
+Include Booster44Lib
+//Groove countrywaltz
+
 SeqClear
-SeqSize 1
-Time 4
-Timesig 4 4
+    SeqSize 4
+    Time 4
+    Timesig 4 4
 
-Begin Plectrum-Guitar
-    Voice       NylonGuitar
-    Octave      4
-    Volume      m
-//  Tuning      e-- a-- d- g- b- e   // A guitar
-//  Tuning      g-- d- a- e          // A four string tenor Banjo
-//  Capo        0                    // The fret number of the capo
-    Sequence {
-            1.0    0   5:100 2:80;  // On the 1st beat pluck strings 5 + 2
-            1.5    0   3:80;        // pluck string number 3 with a velocity of 80
-            2.0    0   4:90  2:80;  // The 2nd beat of the bar pluck strings 4 + 2
-            2.5    0   3:80;
-            3.0    0   1:80;
-            3.5    0   2:80;
-            4.0    0   3:80;
-            4.5    0   4:80;
-    }
-End
+    Plectrum-Pick7  Groove BoosterLib44
+    Bass-GentleDotted Groove BoosterLib44
+    Bass-GentleDotted Volume p
+    Drum-RCymbal2         Groove BoosterLib44
 
 
-Begin Drum-HH
-    Tone ClosedHiHat
-    Sequence {1 4 80; 2 4 90; 3 4 90; 4 4 90}
-End
-
-
-
-DefGroove PlectrumFingerPicking
-
-
+DefGroove First
 
 
 SeqClear
-SeqSize 1
-Time 4
-Timesig 4 4
+    SeqSize 4
+    Time 4
+    Timesig 4 4
 
+    Plectrum-UpUp  Groove BoosterLib44
+    Drum-RCymbal2         Groove BoosterLib44
+    Bass-GentleDotted Groove BoosterLib44
+    //Bass Octave 4
+    //Bass Voice PickedBass
+    //Arpeggio  Groove CountryWaltz1
 
-Begin Plectrum-Guitar
-    Voice       NylonGuitar
-    Octave      4
-    Volume      m
-    Sequence {
-            1.0   +5      80;
-            2.0   +5      80;
-            3.0   +5      80;
-            4.0   +5      80;
-   }
+DefGroove Second
+
+    Bass-SimpleStrings  Groove BoosterLib44
+
+DefGroove SecondSustain
+
+Begin Solo-SlowStrings
+    Voice SlowStrings
+    Volume mp
 End
 
-
-Begin Drum-HH
-    Tone ClosedHiHat
-    Sequence {1 4 90; 2 4 90; 3 4 90; 4 4 90}
-End
-
-
-
-DefGroove PlectrumStrum
+AutoSoloTracks Solo-SlowStrings
 
 Begin Solo-Right
     Voice Piano1
@@ -79,34 +56,30 @@ Begin Solo-Left
 End
 
 
-Tempo 90
+Tempo 80
 Timesig 4 4
 
-Groove Metronome4
+Groove CountIn
 
 z
-midiInc file=DownAndUp.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+Groove First
 
+midiInc file=DownAndUp.solo.mid Solo-Left=3 Solo-Right=4  Volume=80
 
-Groove PlectrumFingerPicking
-C C Am Am
-F
-F F Am Am
-C
-Groove PlectrumStrum
-C
-Groove PlectrumFingerPicking
-C C Am Am
-F
-F F Am Am
-C
-Groove PlectrumStrum
-C
-Groove PlectrumFingerPicking
-C C Am:5 Am:5
-F:8 F:8 Am:5 Am:5
-C
-Groove PlectrumStrum
-C z! z! z!
+    C C Am Am
+    F
+    F F Am Am
+    C
+Groove Second
+    C
+    C C Am Am
+    F
+    F F Am Am
+    C
+    C                           {1c++;}
+    C C Am:5 Am:5               {4c++;4b+;4a+;4g+;}
+    F:8 F:8 Am:5 Am:5           {4f+;4g+;4a+;4b+;}
+    C                           {1+2c++;}
+    C z! z! z!
 
 

@@ -115,7 +115,7 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=ChordOfCMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
+midiInc file=ChordOfCMajor.solo.mid Solo-Left=3 Solo-Right=4  Volume=70
 
 Groove PlectrumFingerPicking
 C

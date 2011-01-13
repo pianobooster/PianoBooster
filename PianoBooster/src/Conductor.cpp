@@ -69,8 +69,12 @@ CConductor::CConductor()
     setPianistChannels(1-1,2-1);
     cfg_timingMarkersFlag = false;
     cfg_stopPointMode = PB_STOP_POINT_MODE_automatic;
+    cfg_rhythmTapping = PB_RHYTHM_TAP_drumsOnly;
+    m_cfg_rhythmTapRightHandDrumSound = 40;
+    m_cfg_rhythmTapLeftHandDrumSound = 41;
+
     setPianoSoundPatches(1-1, 7-1); // 6-1
-    m_tempo.setSavedwantedChord(&m_savedwantedChord);
+    m_tempo.setSavedWantedChord(&m_savedWantedChord);
 
     for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
     {
@@ -291,7 +295,7 @@ void CConductor::setActiveHand(whichPart_t hand)
     CNote::setActiveHand(hand);
     activatePianistMutePart();
     outputBoostVolume();
-    m_wantedChord = m_savedwantedChord;
+    m_wantedChord = m_savedWantedChord;
 
     if (m_wantedChord.trimOutOfRangeNotes(m_transpose)==0)
         fetchNextChord();
@@ -300,9 +304,9 @@ void CConductor::setActiveHand(whichPart_t hand)
     int i;
 
     // Reset the note colours
-    for(i = 0; i < m_savedwantedChord.length(); i++)
+    for(i = 0; i < m_savedWantedChord.length(); i++)
     {
-        note = m_savedwantedChord.getNote(i).pitch();
+        note = m_savedWantedChord.getNote(i).pitch();
         m_scoreWin->setPlayedNoteColour(note, Cfg::noteColour(), m_chordDeltaTime);
     }
     for(i = 0; i < m_wantedChord.length(); i++)
@@ -313,6 +317,17 @@ void CConductor::setActiveHand(whichPart_t hand)
     findSplitPoint();
     forceScoreRedraw();
 }
+
+void CConductor::setPlayMode(playMode_t mode)
+{
+    m_playMode = mode;
+    if ( m_playMode == PB_PLAY_MODE_listen )
+        resetWantedChord();
+    activatePianistMutePart();
+    outputBoostVolume();
+    m_piano->setRhythmTapping(m_playMode == PB_PLAY_MODE_rhythmTapping);
+}
+
 
 void CConductor::setActiveChannel(int channel)
 {
@@ -336,8 +351,8 @@ void CConductor::outputPianoVolume()
     playMidiEvent(event); // Play the midi note or event
     event.controlChangeEvent(0, m_pianistBadChan, MIDI_MAIN_VOLUME, volume);
     playMidiEvent(event); // Play the midi note or event
-
 }
+
 void CConductor::updatePianoSounds()
 {
     CMidiEvent event;
@@ -455,6 +470,8 @@ void CConductor::setFollowSkillAdvanced(bool enable)
         enable = false;
     if (cfg_stopPointMode == PB_STOP_POINT_MODE_afterTheBeat)
         enable = true;
+    if (m_playMode == PB_PLAY_MODE_rhythmTapping)
+        enable = true;
 
     m_followSkillAdvanced = enable;
     m_stopPoint = (enable) ? m_cfg_stopPointAdvanced: m_cfg_stopPointBeginner ;
@@ -497,8 +514,9 @@ void CConductor::fetchNextChord()
             m_pianistSplitPoint = MIDDLE_C;
             return;
         }
+
         m_wantedChord = m_wantedChordQueue->pop();
-        m_savedwantedChord = m_wantedChord;
+        m_savedWantedChord = m_wantedChord;
         m_chordDeltaTime -= m_wantedChord.getDeltaTime() * SPEED_ADJUST_FACTOR;
         m_pianistTiming = m_chordDeltaTime;
     }
@@ -515,6 +533,17 @@ bool CConductor::validatePianistNote( const CMidiEvent & inputNote)
         return false;
 
     return m_wantedChord.searchChord(inputNote.note(), m_transpose);
+}
+
+void CConductor::playWantedChord (CChord chord, CMidiEvent inputNote)
+{
+    int pitch;
+    for(int i = 0; i < chord.length(); i++)
+    {
+        pitch = chord.getNote(i).pitch();
+        inputNote.setNote(pitch);
+        playMidiEvent(inputNote);
+    }
 }
 
 bool CConductor::validatePianistChord()
@@ -536,6 +565,70 @@ bool CConductor::validatePianistChord()
     return false;
 }
 
+/**
+ * Add in the extra notes in rhythm practice
+ */
+void CConductor::expandPianistInput(CMidiEvent inputNote)
+{
+    if (m_playMode == PB_PLAY_MODE_rhythmTapping)
+    {
+        CChord chord;
+        int i;
+        CMidiEvent newNote = inputNote;
+        if (inputNote.type() == MIDI_NOTE_ON || inputNote.type() == MIDI_NOTE_OFF)
+        {
+            chord = m_wantedChord;
+            CChord chordForOneHand;
+            int notesFound = 0;
+
+
+            if (inputNote.type() == MIDI_NOTE_OFF)
+            {
+                chord = m_piano->removeSavedChord(inputNote.note());
+                for(i = 0; i < chord.length(); i++)
+                {
+                    inputNote.setNote( chord.getNote(i).pitch());
+                    pianistInput(inputNote);
+                }
+
+                // We have already played and removed this chord
+                if (chord.length() > 0)
+                    return;
+            }
+
+            whichPart_t targetPart = (inputNote.note() >= MIDDLE_C) ? PB_PART_right : PB_PART_left;
+            for(i = 0; i < chord.length(); i++)
+            {
+                if (chord.getNote(i).part() == targetPart  && playingMusic())
+                {
+                    newNote.setNote(chord.getNote(i).pitch());
+                    if ( notesFound >= 1 && cfg_rhythmTapping == PB_RHYTHM_TAP_drumsOnly)
+                        newNote.setVelocity(-1);
+                    else
+                        chordForOneHand.addNote(targetPart, chord.getNote(i).pitch());
+                    pianistInput(newNote);
+                    notesFound++;
+                }
+            }
+            if (notesFound > 0)
+                m_piano->addSavedChord(inputNote, chordForOneHand);
+            else
+            {
+                inputNote.setChannel(MIDI_DRUM_CHANNEL);
+                pianistInput(inputNote);
+            }
+        }
+        else
+        {
+            pianistInput(inputNote);
+        }
+    }
+    else
+    {
+        pianistInput(inputNote);
+    }
+}
+
 void CConductor::pianistInput(CMidiEvent inputNote)
 {
     bool goodSound = true;
@@ -546,20 +639,29 @@ void CConductor::pianistInput(CMidiEvent inputNote)
     if (m_testWrongNoteSound)
         goodSound = false;
 
+    whichPart_t hand;
+    hand = (inputNote.note() >= m_pianistSplitPoint)? PB_PART_right : PB_PART_left;
+
+    // for rhythm tapping
+    if ( inputNote.channel() == MIDI_DRUM_CHANNEL)
+        hand = (inputNote.note() >= MIDDLE_C) ? PB_PART_right : PB_PART_left;
+
+
     if (inputNote.type() == MIDI_NOTE_ON)
     {
-        whichPart_t hand;
-        hand = (inputNote.note() >= m_pianistSplitPoint)? PB_PART_right : PB_PART_left;
 
         if ( validatePianistNote(inputNote) == true)
         {
             m_goodPlayedNotes.addNote(hand, inputNote.note());
-            m_piano->addPianistNote(hand, inputNote.note(),true);
-            int pianistTiming = ( cfg_timingMarkersFlag && m_followSkillAdvanced) ?  m_pianistTiming : NOT_USED;
+            m_piano->addPianistNote(hand, inputNote,true);
+            int pianistTiming;
+            if  ( ( cfg_timingMarkersFlag && m_followSkillAdvanced ) || m_playMode == PB_PLAY_MODE_rhythmTapping )
+                pianistTiming = m_pianistTiming;
+            else
+                pianistTiming = NOT_USED;
             m_scoreWin->setPlayedNoteColour(inputNote.note(),
                         (!m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
                         m_chordDeltaTime, pianistTiming);
-
 
             if (validatePianistChord() == true)
             {
@@ -585,11 +687,11 @@ void CConductor::pianistInput(CMidiEvent inputNote)
             {
                 goodSound = false;
 
-                m_piano->addPianistNote(hand, inputNote.note(), false);
+                m_piano->addPianistNote(hand, inputNote, false);
                 m_rating.wrongNotes(1);
             }
             else
-                m_piano->addPianistNote(hand, inputNote.note(), true);
+                m_piano->addPianistNote(hand, inputNote, true);
         }
     }
     else if (inputNote.type() == MIDI_NOTE_OFF)
@@ -606,18 +708,48 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         outputSavedNotesOff();
     }
 
+    if ( inputNote.velocity() == -1 )
+        return;
 
     if (goodSound == true || m_cfg_wrongNoteSound < 0)
     {
         if (m_cfg_rightNoteSound >= 0) // don't play anything if the sound is set to -1 (none)
         {
-            inputNote.setChannel(m_pianistGoodChan);
-            playMidiEvent( inputNote );
+            bool playDrumBeat = false;
+            if ( inputNote.channel() != MIDI_DRUM_CHANNEL)
+            {
+                if (cfg_rhythmTapping != PB_RHYTHM_TAP_drumsOnly || m_playMode != PB_PLAY_MODE_rhythmTapping)
+                {
+                    inputNote.setChannel(m_pianistGoodChan);
+                    playMidiEvent( inputNote );
+                }
+            }
+            else
+            {
+                playDrumBeat = true;
+            }
+
+            if (cfg_rhythmTapping != PB_RHYTHM_TAP_mellodyOnly && m_playMode == PB_PLAY_MODE_rhythmTapping)
+                playDrumBeat = true;
+
+            if (playDrumBeat)
+            {
+                inputNote.setChannel(MIDI_DRUM_CHANNEL);
+                ppLogTrace("note %d", inputNote.note());
+                inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
+                playMidiEvent( inputNote );
+            }
         }
     }
     else
     {
         inputNote.setChannel(m_pianistBadChan);
+        if (m_playMode == PB_PLAY_MODE_rhythmTapping)
+        {
+            inputNote.setChannel(MIDI_DRUM_CHANNEL);
+            ppLogTrace("note %d", inputNote.note());
+            inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
+        }
         playMidiEvent( inputNote );
     }
 
@@ -661,7 +793,7 @@ void CConductor::followPlaying()
         if (deltaAdjust(m_chordDeltaTime) > -m_stopPoint )
             fetchNextChord();
     }
-    else if ( m_playMode == PB_PLAY_MODE_followYou)
+    else if ( m_playMode == PB_PLAY_MODE_followYou ||  m_playMode == PB_PLAY_MODE_rhythmTapping )
     {
         if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
             m_followState = PB_FOLLOW_earlyNotes;
@@ -737,7 +869,7 @@ void CConductor::realTimeEngine(int mSecTicks)
         m_pianistTiming += ticks;
 
     while (checkMidiInput() > 0)
-        pianistInput(readMidiInput());
+        expandPianistInput(readMidiInput());
 
     if (getfollowState() == PB_FOLLOW_waiting )
     {
@@ -834,7 +966,7 @@ void CConductor::realTimeEngine(int mSecTicks)
             if (!hasPianistKeyboardChannel(channel))
             {
                 if (getfollowState() >= PB_FOLLOW_earlyNotes &&
-                        m_playMode == PB_PLAY_MODE_followYou &&
+                        (m_playMode == PB_PLAY_MODE_followYou || m_playMode == PB_PLAY_MODE_rhythmTapping) &&
                         !seekingBarNumber() &&
                         m_followSkillAdvanced == false)
                 {

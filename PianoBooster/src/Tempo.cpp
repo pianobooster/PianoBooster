@@ -49,7 +49,7 @@ void CTempo::enableFollowTempo(bool enable)
 
 void CTempo::adjustTempo(int * ticks)
 {
-    if (m_jumpAheadDelta && m_cfg_maxJumpAhead && m_savedwantedChord)
+    if (m_jumpAheadDelta && m_cfg_maxJumpAhead && m_savedWantedChord)
     {
         if (m_jumpAheadDelta > 0)
             *ticks += m_jumpAheadDelta;
