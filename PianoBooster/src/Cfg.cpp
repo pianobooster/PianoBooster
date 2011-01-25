@@ -42,6 +42,7 @@ bool Cfg::experimentalTempo = false;
 bool Cfg::experimentalNoteLength = false;
 bool Cfg::useLogFile = false;
 bool Cfg::midiInputDump = false;
+bool Cfg::keyboardLights = false;
 
 int Cfg::experimentalSwapInterval = -1;
 

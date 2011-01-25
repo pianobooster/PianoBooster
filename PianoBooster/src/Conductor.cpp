@@ -499,12 +499,36 @@ void CConductor::findSplitPoint()
     m_pianistSplitPoint = ((lowestTreble + highestBase) /2 ) + m_transpose;
 }
 
+void CConductor::turnOnKeyboardLights(bool on)
+{
+    int note;
+    int i;
+    CMidiEvent event;
+    const int KEY_LIGHTS_CHANNEL = 1-1; // Channel 1 (really a zero)
+
+    // exit if not enable
+    if (!Cfg::keyboardLights)
+        return;
+
+    for(i = 0; i < m_wantedChord.length(); i++)
+    {
+        note = m_wantedChord.getNote(i).pitch();
+        if (on == true)
+            event.noteOnEvent(0, KEY_LIGHTS_CHANNEL, note, 1);
+        else
+            event.noteOffEvent(0, KEY_LIGHTS_CHANNEL, note, 1);
+       playMidiEvent( event );
+    }
+}
+
+
 void CConductor::fetchNextChord()
 {
     m_followState = PB_FOLLOW_searching;
     m_followPlayingTimeOut = false;
 
     outputSavedNotes();
+    turnOnKeyboardLights(false);
 
     do // Remove notes or chords that are out of our range
     {
@@ -524,6 +548,8 @@ void CConductor::fetchNextChord()
 
     // now find the split point
     findSplitPoint();
+    turnOnKeyboardLights(true);
+
 }
 
 

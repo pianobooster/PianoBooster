@@ -245,7 +245,7 @@ private:
     int calcBoostVolume(int chan, int volume);
 
     void addDeltaTime(int ticks);
-
+    void turnOnKeyboardLights(bool on);
 
     int m_playingDeltaTime;
     int m_chordDeltaTime;

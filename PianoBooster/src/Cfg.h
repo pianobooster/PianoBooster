@@ -134,14 +134,13 @@ public:
     static int experimentalSwapInterval;
     static bool useLogFile;
     static bool midiInputDump;
+    static bool keyboardLights;
 
 private:
     static float m_staveEndX;
     static int m_appX, m_appY, m_appWidth, m_appHeight;
     static const int m_playZoneEarly;
     static const int m_playZoneLate;
-
-
 };
 
 #endif //__CFG_H__

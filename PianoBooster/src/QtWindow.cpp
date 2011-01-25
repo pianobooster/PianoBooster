@@ -184,6 +184,7 @@ void QtWindow::displayUsage()
     fprintf(stderr, "       -v: Displays version number and then exits\n");
     fprintf(stderr, "       --log: write debug info to the \"pb.log\" log file\n");
     fprintf(stderr, "       --midi-input-dump: Displays the midi input in hex\n");
+    fprintf(stderr, "       --lights: Turnss on the keyboard lights\n");
 
 }
 
@@ -270,6 +271,9 @@ void QtWindow::decodeCommandLine()
                 Cfg::experimentalTempo = true;
             else if (arg.startsWith("-Xswap"))
                 Cfg::experimentalSwapInterval = decodeIntegerParam(arg, 100);
+
+            else if (arg.startsWith("--lights"))
+                Cfg::keyboardLights = true;
 
             else if (arg.startsWith("-h") || arg.startsWith("-?") ||arg.startsWith("--help"))
             {
