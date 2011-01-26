@@ -80,6 +80,7 @@ CConductor::CConductor()
     {
         m_muteChannels[i] = false;
     }
+    reset();
     rewind();
     testWrongNoteSound(false);
 }
@@ -91,6 +92,18 @@ CConductor::~CConductor()
     delete m_savedNoteQueue;
     delete m_savedNoteOffQueue;
 }
+
+void CConductor::reset()
+{
+    int i;
+    for ( i = 0; i < MAX_MIDI_TRACKS; i++)
+    {
+        mapTrack2Channel(i,   i);
+        if (i >= MAX_MIDI_CHANNELS)
+            mapTrack2Channel(i, -1);
+    }
+}
+
 
 //! add a midi event to be analysed and displayed on the score
 void CConductor::midiEventInsert(CMidiEvent event)
@@ -113,10 +126,10 @@ void CConductor::channelSoundOff(int channel)
 
     CMidiEvent midi;
     midi.controlChangeEvent(0, channel, MIDI_ALL_NOTES_OFF, 0);
-    playMidiEvent(midi);
+    playTrackEvent(midi);
     // remove the sustain pedal as well
     midi.controlChangeEvent(0, channel, MIDI_SUSTAIN, 0);
-    playMidiEvent(midi);
+    playTrackEvent(midi);
 }
 
 void CConductor::allSoundOff()
@@ -140,7 +153,7 @@ void CConductor::resetAllChannels()
     for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
     {
         midi.controlChangeEvent(0, channel, MIDI_RESET_ALL_CONTROLLERS, 0);
-        playMidiEvent(midi);
+        playTrackEvent(midi);
     }
 }
 
@@ -246,7 +259,7 @@ void CConductor::outputBoostVolume()
             continue;
         CMidiEvent midi;
         midi.controlChangeEvent(0, chan, MIDI_MAIN_VOLUME, calcBoostVolume(chan,-1));
-        playMidiEvent(midi);
+        playTrackEvent(midi);
     }
     outputPianoVolume();
 }
@@ -348,9 +361,9 @@ void CConductor::outputPianoVolume()
         volume = (volume * (100 + m_pianoVolume)) / 100;
 
     event.controlChangeEvent(0, m_pianistGoodChan, MIDI_MAIN_VOLUME, volume);
-    playMidiEvent(event); // Play the midi note or event
+    playTrackEvent(event); // Play the midi note or event
     event.controlChangeEvent(0, m_pianistBadChan, MIDI_MAIN_VOLUME, volume);
-    playMidiEvent(event); // Play the midi note or event
+    playTrackEvent(event); // Play the midi note or event
 }
 
 void CConductor::updatePianoSounds()
@@ -360,12 +373,12 @@ void CConductor::updatePianoSounds()
     if (m_cfg_rightNoteSound>=0) // ignore if set to -1 (tr("None"))
     {
         event.programChangeEvent(0, m_pianistGoodChan, m_cfg_rightNoteSound);
-        playMidiEvent( event );
+        playTrackEvent( event );
     }
     if (m_cfg_wrongNoteSound>=0)
     {
         event.programChangeEvent(0, m_pianistBadChan, m_cfg_wrongNoteSound);
-        playMidiEvent( event );
+        playTrackEvent( event );
     }
 }
 
@@ -395,12 +408,23 @@ void CConductor::playMusic(bool start)
         for (size_t i = 0; i < arraySize(gsModeEnterData); i++)
         {
             event.collateRawByte(0, gsModeEnterData[i]);
-            playMidiEvent(event);
+            playTrackEvent(event);
         }
         event.outputCollatedRawBytes(0);
-        playMidiEvent(event);
+        playTrackEvent(event);
         */
     }
+}
+
+// This will allow us to map midi tracks onto midi channels
+void CConductor::playTrackEvent(CMidiEvent event)
+{
+    int track = event.channel();
+    int chan = m_track2ChannelLookUp[track];
+    if (chan == -1)
+        return;
+    event.setChannel(chan);
+    playMidiEvent(event);
 }
 
 void CConductor::playTransposeEvent(CMidiEvent event)
@@ -419,11 +443,11 @@ void CConductor::playTransposeEvent(CMidiEvent event)
 
     // Don't output note on if we are seeking to bar
     if (!seekingBarNumber())
-        playMidiEvent(event); // Play the midi note or event
+        playTrackEvent(event); // Play the midi note or event
     else
     {
         if (event.type() == MIDI_PROGRAM_CHANGE || event.type() == MIDI_CONTROL_CHANGE)
-            playMidiEvent(event); // Play the midi note or event
+            playTrackEvent(event); // Play the midi note or event
     }
 }
 
@@ -504,20 +528,19 @@ void CConductor::turnOnKeyboardLights(bool on)
     int note;
     int i;
     CMidiEvent event;
-    const int KEY_LIGHTS_CHANNEL = 1-1; // Channel 1 (really a zero)
 
     // exit if not enable
-    if (!Cfg::keyboardLights)
+    if (Cfg::keyboardLightsChan == -1)
         return;
 
     for(i = 0; i < m_wantedChord.length(); i++)
     {
         note = m_wantedChord.getNote(i).pitch();
         if (on == true)
-            event.noteOnEvent(0, KEY_LIGHTS_CHANNEL, note, 1);
+            event.noteOnEvent(0, Cfg::keyboardLightsChan, note, 1);
         else
-            event.noteOffEvent(0, KEY_LIGHTS_CHANNEL, note, 1);
-       playMidiEvent( event );
+            event.noteOffEvent(0, Cfg::keyboardLightsChan, note, 1);
+       playTrackEvent( event );
     }
 }
 
@@ -568,7 +591,7 @@ void CConductor::playWantedChord (CChord chord, CMidiEvent inputNote)
     {
         pitch = chord.getNote(i).pitch();
         inputNote.setNote(pitch);
-        playMidiEvent(inputNote);
+        playTrackEvent(inputNote);
     }
 }
 
@@ -747,7 +770,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 if (cfg_rhythmTapping != PB_RHYTHM_TAP_drumsOnly || m_playMode != PB_PLAY_MODE_rhythmTapping)
                 {
                     inputNote.setChannel(m_pianistGoodChan);
-                    playMidiEvent( inputNote );
+                    playTrackEvent( inputNote );
                 }
             }
             else
@@ -763,7 +786,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 inputNote.setChannel(MIDI_DRUM_CHANNEL);
                 ppLogTrace("note %d", inputNote.note());
                 inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
-                playMidiEvent( inputNote );
+                playTrackEvent( inputNote );
             }
         }
     }
@@ -776,7 +799,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
             ppLogTrace("note %d", inputNote.note());
             inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
         }
-        playMidiEvent( inputNote );
+        playTrackEvent( inputNote );
     }
 
 
@@ -790,7 +813,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
         CMidiEvent midiSound;
         midiSound.programChangeEvent(0,inputNote.channel(),pianoSound);
-        playMidiEvent( midiSound );
+        playTrackEvent( midiSound );
     }
     */
 

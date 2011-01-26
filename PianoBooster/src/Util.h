@@ -44,6 +44,7 @@ using namespace std;
 
 #define MAX_MIDI_NOTES          128
 
+#define MAX_MIDI_TRACKS         32      // This will allow us to map midi track on to midi channels
 typedef unsigned char byte;
 
 #define arraySize(a) (sizeof(a)/sizeof(a[0]))     /* Returns (at compile time) the number of elements in an array */

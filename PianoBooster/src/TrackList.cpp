@@ -171,6 +171,23 @@ int CTrackList::guessKeySignature(int chanA, int chanB)
     return keySignature;
 }
 
+// Find an unused channel
+int CTrackList::findFreeChannel(int startChannel)
+{
+    int chan;
+    for (chan = startChannel; chan < MAX_MIDI_CHANNELS; chan++)
+    {
+        if (chan == Cfg::keyboardLightsChan)
+            continue;
+        if (chan == MIDI_DRUM_CHANNEL)
+            continue;
+        if (m_midiActiveChannels[chan] == false)
+            return chan;
+    }
+    return -1;      // Not found
+
+}
+
 void CTrackList::refresh()
 {
     int chan;
@@ -205,25 +222,21 @@ void CTrackList::refresh()
     if (CStavePos::getKeySignature() == NOT_USED)
         CStavePos::setKeySignature(guessKeySignature(CNote::rightHandChan(),CNote::leftHandChan()), 0);
 
-    int goodChan = -1;
     // Find an unused channel that we can use for the keyboard
-    for (chan = 0; chan < MAX_MIDI_CHANNELS; chan++)
+    m_song->reset();
+    int goodChan = findFreeChannel(0);
+    int badChan = findFreeChannel(goodChan + 1);
+    int spareChan = findFreeChannel(badChan  +1 );
+    if (badChan == -1)
     {
-        if (m_midiActiveChannels[chan] == false)
-        {
-            if (goodChan != -1)
-            {
-                m_song->setPianistChannels(goodChan,chan);
-                ppLogInfo("Using Pianist Channels %d + %d", goodChan +1, chan +1);
-                return;
-            }
-            goodChan = chan;
-        }
-    }
-    // As we have not returned we have not found to empty channels to use
-    if (goodChan == -1)
+        // As we have not found two we have not found to empty channels to use
         goodChan = 15 -1;
-    m_song->setPianistChannels(goodChan,16-1);
+        badChan  = 16-1;
+    }
+    m_song->setPianistChannels(goodChan,badChan);
+    ppLogInfo("Using Pianist Channels %d + %d", goodChan +1, badChan +1);
+    if (Cfg::keyboardLightsChan != -1 && spareChan != -1)
+        m_song->mapTrack2Channel(Cfg::keyboardLightsChan,  spareChan);
 }
 
 int CTrackList::getActiveItemIndex()

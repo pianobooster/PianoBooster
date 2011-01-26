@@ -273,7 +273,7 @@ void QtWindow::decodeCommandLine()
                 Cfg::experimentalSwapInterval = decodeIntegerParam(arg, 100);
 
             else if (arg.startsWith("--lights"))
-                Cfg::keyboardLights = true;
+                Cfg::keyboardLightsChan = 1-1;  // Channel 1 (really a zero)
 
             else if (arg.startsWith("-h") || arg.startsWith("-?") ||arg.startsWith("--help"))
             {

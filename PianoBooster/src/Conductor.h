@@ -97,10 +97,12 @@ public:
 
     void rewind();
 
+    //! rest the conductor between each song
+    void reset();
+
     void realTimeEngine(int mSecTicks);
     void playMusic(bool start);
     bool playingMusic() {return m_playing;}
-
 
     float getSpeed() {return m_tempo.getSpeed();}
     void setSpeed(float speed)
@@ -196,6 +198,10 @@ public:
     double getLoopingBars(){ return m_bar.getLoopingBars();}
 
     void mutePianistPart(bool state);
+    void mapTrack2Channel(int trackNumber, int channelNumber)
+    {
+        m_track2ChannelLookUp[trackNumber] = channelNumber;
+    }
 
     bool cfg_timingMarkersFlag;
     stopPointMode_t cfg_stopPointMode;
@@ -225,6 +231,7 @@ protected:
 
 
 
+
 private:
     void allSoundOff();
     void resetAllChannels();
@@ -235,6 +242,7 @@ private:
     void findSplitPoint();
     void fetchNextChord();
     void playTransposeEvent(CMidiEvent event);
+    void playTrackEvent(CMidiEvent event);
     void outputSavedNotesOff();
     void findImminentNotesOff();
     void updatePianoSounds();
@@ -315,6 +323,7 @@ private:
     int m_skill;
     bool m_mutePianistPart;
     int m_latencyFix;     // Try to fix the latency (put the time in msec, 0 disables it)
+    int m_track2ChannelLookUp[MAX_MIDI_TRACKS];
 };
 
 #endif //__CONDUCTOR_H__

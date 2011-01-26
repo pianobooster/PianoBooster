@@ -134,7 +134,7 @@ public:
     static int experimentalSwapInterval;
     static bool useLogFile;
     static bool midiInputDump;
-    static bool keyboardLights;
+    static int keyboardLightsChan;
 
 private:
     static float m_staveEndX;

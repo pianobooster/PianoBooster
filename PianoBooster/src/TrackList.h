@@ -64,6 +64,10 @@ public:
     void refresh();
     void clear();
 
+    // Find an unused channel
+    int findFreeChannel(int startChannel);
+
+
     void currentRowChanged(int currentRow);
     void examineMidiEvent(CMidiEvent event);
     bool pianoPartConvetionTest();
@@ -74,7 +78,7 @@ public:
     QStringList getAllChannelProgramNames(bool raw=false);
     int getActiveItemIndex();
     int getActiveHandIndex(whichPart_t whichPart);
-    
+
     // set the midi channels to use for the left and right hand piano parts
     void setActiveHandsIndex(int leftIndex, int rightIndex);
 

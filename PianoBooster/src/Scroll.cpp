@@ -46,8 +46,8 @@ void CScroll::compileSlot(CSlotDisplayList info)
 
     info.transpose(m_transpose);
     drawSlot(&info);
+    /*
     int i;
-   /*
     CStavePos stavePos;
     int av8Left = info.getAv8Left();
     for (i=0; i < info.length(); i++)

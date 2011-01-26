@@ -116,7 +116,7 @@ public:
     int note() const {return m_note;}
     void setNote(int note){m_note = note;}
     int programme() const {return m_note;}
-    int channel() const {return m_channel;}
+    int channel() const {return m_channel;} // can also contain the track number
     void setChannel(int chan){m_channel = chan;}
     int velocity() const {return m_velocity;}
     void setVelocity(int value) {m_velocity = value;}
