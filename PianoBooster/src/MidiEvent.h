@@ -235,10 +235,18 @@ public:
     long getDuration(){return m_duration;}
 
 
-    void printDetails()
+    void printDetails() const
     {
-        ppTiming("chan %2d type %2X note %3d", channel(), type(), note() );
-    }
+        if (type() == MIDI_NOTE_ON) {
+            ppTiming("chan %2d NOTE ON  note %3d vel %3d", channel(), note(), velocity() );
+        }
+        else if (type() == MIDI_NOTE_OFF) {
+            ppTiming("chan %2d NOTE OFF note %3d vel %3d", channel(), note(), velocity() );
+        }
+        else {
+             ppTiming("chan %2d type %2X data1 %3d data2 %3d", channel(), type(), note(), velocity() );
+        }
+   }
 
 private:
     int m_type;

@@ -540,7 +540,7 @@ void CConductor::turnOnKeyboardLights(bool on)
             event.noteOnEvent(0, Cfg::keyboardLightsChan, note, 1);
         else
             event.noteOffEvent(0, Cfg::keyboardLightsChan, note, 1);
-       playTrackEvent( event );
+       playMidiEvent( event ); // don't use the track  settings
     }
 }
 

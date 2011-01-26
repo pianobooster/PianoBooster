@@ -2,8 +2,9 @@
 
 /*
 
-v0.6.5.svn: (29 November 2010)
+v0.6.5.svn.2: (26 January 2011)
 - Added rhythm tapping for beginners
+- Added key lights for Yamaha EZ-200, Casio LK 220, LK-300 TV, LK-43 etc.
 
 v0.6.4: (28 November 2009)
 - Added note names for beginners (to be used with a piano key note labels)
