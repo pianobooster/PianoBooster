@@ -229,6 +229,9 @@ protected:
 
     bool seekingBarNumber() { return m_bar.seekingBarNumber();}
 
+    int track2Channel(int track) {return m_track2ChannelLookUp[track];}
+
+
 
 
 
@@ -239,6 +242,8 @@ private:
     void outputPianoVolume();
 
     void channelSoundOff(int channel);
+    void trackSoundOff(int trackNumber);
+
     void findSplitPoint();
     void fetchNextChord();
     void playTransposeEvent(CMidiEvent event);

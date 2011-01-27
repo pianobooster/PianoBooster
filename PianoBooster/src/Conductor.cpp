@@ -126,10 +126,15 @@ void CConductor::channelSoundOff(int channel)
 
     CMidiEvent midi;
     midi.controlChangeEvent(0, channel, MIDI_ALL_NOTES_OFF, 0);
-    playTrackEvent(midi);
+    playMidiEvent(midi);
     // remove the sustain pedal as well
     midi.controlChangeEvent(0, channel, MIDI_SUSTAIN, 0);
-    playTrackEvent(midi);
+    playMidiEvent(midi);
+}
+
+void CConductor::trackSoundOff(int trackNumber)
+{
+        channelSoundOff( track2Channel( trackNumber ));
 }
 
 void CConductor::allSoundOff()
@@ -153,7 +158,7 @@ void CConductor::resetAllChannels()
     for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
     {
         midi.controlChangeEvent(0, channel, MIDI_RESET_ALL_CONTROLLERS, 0);
-        playTrackEvent(midi);
+        playMidiEvent(midi);
     }
 }
 
@@ -164,7 +169,7 @@ void CConductor::muteChannel(int channel, bool state)
 
     m_muteChannels[ channel] = state;
     if (state == true)
-        channelSoundOff(channel); // fixme this is called too often
+        trackSoundOff(channel); // fixme this is called too often
 }
 
 void CConductor::mutePart(int part, bool state)
@@ -184,7 +189,7 @@ void CConductor::mutePart(int part, bool state)
     }
 
     if (state == true)
-        channelSoundOff(channel);
+        trackSoundOff(channel);
 }
 
 /* calculate the new solo_volume */
@@ -417,10 +422,11 @@ void CConductor::playMusic(bool start)
 }
 
 // This will allow us to map midi tracks onto midi channels
+// tacks will eventually allow for more than the 16 midi channels (eg with two mid devices)
 void CConductor::playTrackEvent(CMidiEvent event)
 {
     int track = event.channel();
-    int chan = m_track2ChannelLookUp[track];
+    int chan = track2Channel(track);
     if (chan == -1)
         return;
     event.setChannel(chan);
