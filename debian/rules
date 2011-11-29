@@ -57,7 +57,7 @@ binary-arch: install
 	dh_installdocs
 	dh_installexamples
 	dh_install
-#	dh_installmenu
+	dh_installmenu
 #	dh_installmime
 	dh_installman
 	dh_link

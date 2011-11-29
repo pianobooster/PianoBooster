@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Piano Booster
+Comment=Learn the piano just by playing a game
+Icon=pianobooster
+Exec=pianobooster
+Terminal=false
+MimeType=audio/x-karaoke;audio/x-midi;audio/midi;
+Categories=Audio;AudioVideo;Midi;Player;Education;Qt
