@@ -1,0 +1,72 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+BUILD_TREE=$(CURDIR)/build-tree
+
+config: config-stamp
+config-stamp: 
+	dh_testdir
+	[ ! -d debian/patches ] || $(MAKE) -f /usr/share/quilt/quilt.make patch
+	# Perform an out-of-tree build to keep a clean source tree
+	mkdir $(BUILD_TREE)
+	cd $(BUILD_TREE); cmake $(CURDIR)/src/ \
+		--debug-output \
+		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+		-DCMAKE_INSTALL_PREFIX:STRING="/usr" \
+		-DCMAKE_C_FLAGS:STRING="$(CFLAGS)" \
+		-DBUILD_STATIC:BOOL=ON \
+		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-Wl,-z,defs -Wl,--as-needed -Wl,--no-undefined" \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,-z,defs -Wl,--as-needed -Wl,--no-undefined" \
+		-DCMAKE_INSTALL_RPATH:STRING="/usr/lib/games/pianobooster"
+	touch $@
+
+build: build-stamp
+build-stamp: config
+	dh_testdir
+	cd $(BUILD_TREE); $(MAKE)
+	touch $@
+
+clean: 
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp config-stamp
+	rm -fr $(BUILD_TREE)
+	[ ! -d debian/patches ] || $(MAKE) -f /usr/share/quilt/quilt.make unpatch
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+
+# Build architecture-independent files here.
+binary-indep: install
+
+# Build architecture-dependent files here.
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installexamples
+	dh_install
+#	dh_installmenu
+#	dh_installmime
+	dh_installman
+	dh_link
+	dh_strip --dbg-package=pianobooster-dbg
+	dh_compress
+	dh_fixperms
+#	dh_makeshlibs
+	[ ! -e /usr/bin/dh_buildinfo ] || dh_buildinfo
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: config build clean binary-indep binary-arch binary install 

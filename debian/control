@@ -1,0 +1,33 @@
+Source: pianobooster
+Section: games
+Priority: optional
+Maintainer: Miriam Ruiz <little_miry@yahoo.es>
+Build-Depends: debhelper (>= 7), cmake, dh-buildinfo,
+ qt4-qmake, libqt4-dev, libqt4-opengl-dev,
+ mesa-common-dev, libglu1-mesa-dev, libasound2-dev
+Standards-Version: 3.9.2
+Homepage: http://pianobooster.sourceforge.net/
+
+Package: pianobooster
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: pianobooster-dbg (= ${binary:Version})
+Description: a new way to learn the piano just by playing a game
+ Piano Booster is a new way to learn the piano just by playing a game. 
+ It takes elements of the game Guitar Hero but now it uses a real piano
+ keyboard and the game has been turned sideways so the notes scroll along
+ a musical stave. So instead of pressing buttons on a fake guitar you end
+ up learning to play a real musical instrument: the piano.
+
+Package: pianobooster-dbg
+Architecture: any
+Section: debug
+Depends: pianobooster (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: a new way to learn the piano just by playing a game - debug
+ Piano Booster is a new way to learn the piano just by playing a game. 
+ It takes elements of the game Guitar Hero but now it uses a real piano
+ keyboard and the game has been turned sideways so the notes scroll along
+ a musical stave. So instead of pressing buttons on a fake guitar you end
+ up learning to play a real musical instrument: the piano.
+ .
+ This package contains the debugging symbols.
