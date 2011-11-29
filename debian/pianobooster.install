@@ -1,1 +1,3 @@
 build-tree/pianobooster usr/games/
+debian/*.png usr/share/pixmaps/
+debian/*.xpm usr/share/pixmaps/
