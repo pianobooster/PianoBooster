@@ -12,6 +12,10 @@ manager.
 To start the fluidsynth sound generator copy and paste the following command
 line:
 
+fluidsynth /usr/share/sounds/sf2/FluidR3_GM.sf2
+
+Piano Booster FAQ suggests this line instead:
+
 fluidsynth -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
 
 If you have a fast machine, you can leave out the flags '-C 0 -R 0 -r 22050'
@@ -24,7 +28,7 @@ The flags '-o audio.alsa.device=plughw:0' bypasses the Pulse Audio layer
 which might cause a lot of latency delay, but unfortunately these flags
 may also bypass the desktop volume controls.
 
-For more information on running fluidsynth with low latency see this page.
+For more information on running fluidsynth with low latency see this page:
 
 http://fluidsynth.resonance.org/trac/wiki/LowLatency
 
@@ -33,6 +37,9 @@ On PianoBooster set the Setup/Midi Setup/Midi Output Device: to "FLUID Synth (fs
 If you get problems with unsteady playback or the audio cutting out then try
 closing all other programs, turning off your wireless network and unplug any
 network cable.
+
+You might prefer to use qsynth as GUI interface to fluidsynth for easy setting
+of Reverbs, chorus effects, etc
 
 -----------------------
 
