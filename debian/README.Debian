@@ -38,6 +38,9 @@ If you get problems with unsteady playback or the audio cutting out then try
 closing all other programs, turning off your wireless network and unplug any
 network cable.
 
+If you get an error, make sure to have snd-seq-midi kernel module loaded in your
+system (sudo modprobe snd-seq-midi).
+
 You might prefer to use qsynth as GUI interface to fluidsynth for easy setting
 of Reverbs, chorus effects, etc
 
