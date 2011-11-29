@@ -1,5 +1,5 @@
-pianobooster (0.6.4b-1) UNRELEASED; urgency=low
+pianobooster (0.6.4-1) UNRELEASED; urgency=low
 
-  * Initial release.
+  * Initial release. Closes: #650398
 
  -- Miriam Ruiz <little_miry@yahoo.es>  Tue, 29 Nov 2011 15:41:19 +0100
