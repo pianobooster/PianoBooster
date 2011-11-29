@@ -7,23 +7,30 @@ Build-Depends: debhelper (>= 7), cmake, dh-buildinfo, quilt,
  mesa-common-dev, libglu1-mesa-dev, libasound2-dev
 Standards-Version: 3.9.2
 Homepage: http://pianobooster.sourceforge.net/
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/pianobooster/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/pianobooster/?op=log
 
 Package: pianobooster
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: pianobooster-dbg (= ${binary:Version})
-Description: a new way to learn the piano just by playing a game
+Description: learn the piano just by playing a game
  Piano Booster is a new way to learn the piano just by playing a game. 
  It takes elements of the game Guitar Hero but now it uses a real piano
  keyboard and the game has been turned sideways so the notes scroll along
  a musical stave. So instead of pressing buttons on a fake guitar you end
  up learning to play a real musical instrument: the piano.
+ .
+ To run Piano Booster you need a MIDI Piano Keyboard and a MIDI interface
+ for the PC. If you don't have a MIDI keyboard you can still try out
+ PianoBooster, using the PC keyboard ('x' is middle C), but a MIDI piano
+ is really recommended).
 
 Package: pianobooster-dbg
 Architecture: any
 Section: debug
 Depends: pianobooster (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: a new way to learn the piano just by playing a game - debug
+Description: learn the piano just by playing a game - debug
  Piano Booster is a new way to learn the piano just by playing a game. 
  It takes elements of the game Guitar Hero but now it uses a real piano
  keyboard and the game has been turned sideways so the notes scroll along
