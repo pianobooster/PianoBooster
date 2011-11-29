@@ -29,6 +29,7 @@ Description: learn the piano just by playing a game
 Package: pianobooster-dbg
 Architecture: any
 Section: debug
+Priority: extra
 Depends: pianobooster (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: learn the piano just by playing a game - debug
  Piano Booster is a new way to learn the piano just by playing a game. 
