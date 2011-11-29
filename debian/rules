@@ -28,6 +28,10 @@ build-stamp: config
 	cd $(BUILD_TREE); $(MAKE)
 	touch $@
 
+build-indep:
+
+build-arch: build
+
 clean: 
 	dh_testdir
 	dh_testroot
@@ -43,7 +47,7 @@ install: build
 	dh_installdirs
 
 # Build architecture-independent files here.
-binary-indep: install
+binary-indep:
 
 # Build architecture-dependent files here.
 binary-arch: install
@@ -69,4 +73,4 @@ binary-arch: install
 	dh_builddeb
 
 binary: binary-indep binary-arch
-.PHONY: config build clean binary-indep binary-arch binary install 
+.PHONY: config build build-indep build-arch clean binary-indep binary-arch binary install 
