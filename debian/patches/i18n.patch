@@ -54,6 +54,31 @@
                  "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
                  "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
                  "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
+@@ -470,15 +470,15 @@
+                 "<th>Key</th>"
+                 "</tr>"
+             );
+-    msg += displayShortCut("ShortCuts/RightHand","Choose the right hand");
+-    msg += displayShortCut("ShortCuts/BothHands","Choose both hands");
+-    msg += displayShortCut("ShortCuts/LeftHand","Choose the left Hand");
+-    msg += displayShortCut("ShortCuts/PlayFromStart","Play from start toggle");
+-    msg += displayShortCut("ShortCuts/PlayPause","Play Pause Toggle");
+-    msg += displayShortCut("ShortCuts/Faster","Increase the speed by 5%");
+-    msg += displayShortCut("ShortCuts/Slower","Increase the speed by 5%");
+-    msg += displayShortCut("ShortCuts/NextSong","Change to the Next Song");
+-    msg += displayShortCut("ShortCuts/PreviousSong","Change to the Previous Song");
++    msg += displayShortCut("ShortCuts/RightHand", tr("Choose the right hand"));
++    msg += displayShortCut("ShortCuts/BothHands", tr("Choose both hands"));
++    msg += displayShortCut("ShortCuts/LeftHand", tr("Choose the left Hand"));
++    msg += displayShortCut("ShortCuts/PlayFromStart", tr("Play from start toggle"));
++    msg += displayShortCut("ShortCuts/PlayPause", tr("Play Pause Toggle"));
++    msg += displayShortCut("ShortCuts/Faster", tr("Increase the speed by 5%"));
++    msg += displayShortCut("ShortCuts/Slower", tr("Increase the speed by 5%"));
++    msg += displayShortCut("ShortCuts/NextSong", tr("Change to the Next Song"));
++    msg += displayShortCut("ShortCuts/PreviousSong", tr("Change to the Previous Song"));
+ 
+     msg += tr(
+                 "<tr><td>Fake Piano keys</td><td>X is middle C</td></tr>"
 --- pianobooster-src-0.6.4.orig/src/pianobooster.pro
 +++ pianobooster-src-0.6.4/src/pianobooster.pro
 @@ -68,6 +68,8 @@
@@ -67,9 +92,24 @@
  OBJECTS_DIR = tmp
 --- /dev/null
 +++ pianobooster-src-0.6.4/src/pianobooster_es.ts
-@@ -0,0 +1,592 @@
+@@ -0,0 +1,715 @@
 +<!DOCTYPE TS>
 +<TS>
++  <context>
++    <name>CGLView</name>
++    <message>
++      <source>Accuracy:</source>
++      <translation>Precisión:</translation>
++    </message>
++    <message>
++      <source>Song: </source>
++      <translation>Canción: </translation>
++    </message>
++    <message>
++      <source>Bar: </source>
++      <translation>Barra: </translation>
++    </message>
++  </context>
 +  <context>
 +    <name>CSettings</name>
 +    <message>
@@ -79,6 +119,10 @@
 +    <message>
 +      <source>NO MIDI FILE LOADED: Use menu File/Open ...</source>
 +      <translation>NO SE HA CARGADO UN ARCHIVO MIDI: Use Archivo/Abrir ...</translation>
++    </message>
++    <message>
++      <source>space</source>
++      <translation>espacio</translation>
 +    </message>
 +  </context>
 +  <context>
@@ -149,7 +193,7 @@
 +    </message>
 +    <message>
 +      <source>&lt;span style=&quot;color:black&quot;>You can use the PC keyboard instead of a MIDI keyboard; 'x' is middle C.&lt;/span></source>
-+      <translation>&lt;span style=&quot;color:black&quot;>Puede usar el teclado del PC en lugar de un teclado MIDI; 'x' es el do (\&quot;C\&quot;) central.&lt;/span></translation>
++      <translation>&lt;span style=&quot;color:black&quot;>Puede usar el teclado del PC en lugar de un teclado MIDI; 'x' es el do ('C') central.&lt;/span></translation>
 +    </message>
 +    <message>
 +      <source>&lt;span style=&quot;color:red&quot;>Oops, you have &lt;b>0 notes&lt;/b> on your keyboard!&lt;/span></source>
@@ -157,7 +201,7 @@
 +    </message>
 +    <message>
 +      <source>&lt;span style=&quot;color:black&quot;>Your keyboard range is &lt;b>octaves %1&lt;/b> and &lt;b>semitones %2&lt;/b>; 60 is middle C.&lt;/span></source>
-+      <translation>&lt;span style=&quot;color:black&quot;>El rengo de su teclado es de &lt;b>%1 octavas&lt;/b> y &lt;b>%2 semitonos&lt;/b>; 60 es el do (\&quot;C\&quot;) central.&lt;/span></translation>
++      <translation>&lt;span style=&quot;color:black&quot;>El rengo de su teclado es de &lt;b>%1 octavas&lt;/b> y &lt;b>%2 semitonos&lt;/b>; 60 es el do ('C') central.&lt;/span></translation>
 +    </message>
 +  </context>
 +  <context>
@@ -380,11 +424,11 @@
 +    </message>
 +    <message>
 +      <source>Follow you</source>
-+      <translation>Ir siguiendo</translation>
++      <translation>Seguir</translation>
 +    </message>
 +    <message>
 +      <source>Play Along</source>
-+      <translation>Acompañar</translation>
++      <translation>Acompañ.</translation>
 +    </message>
 +    <message>
 +      <source>Hands</source>
@@ -392,15 +436,15 @@
 +    </message>
 +    <message>
 +      <source>Right</source>
-+      <translation>Derecha</translation>
++      <translation>Der.</translation>
 +    </message>
 +    <message>
 +      <source>Both</source>
-+      <translation>Ambas</translation>
++      <translation>Amb.</translation>
 +    </message>
 +    <message>
 +      <source>Left</source>
-+      <translation>Izquierda</translation>
++      <translation>Izq.</translation>
 +    </message>
 +    <message>
 +      <source>Adjust the volume of your piano</source>
@@ -420,7 +464,7 @@
 +    </message>
 +    <message>
 +      <source>Mute your part when playing</source>
-+      <translation>Enmudecer la parte que está siendo tocada</translation>
++      <translation>Enmudecer parte tocada</translation>
 +    </message>
 +  </context>
 +  <context>
@@ -470,7 +514,7 @@
 +    </message>
 +    <message>
 +      <source>Key:</source>
-+      <translation>Clave:</translation>
++      <translation>Armadura:</translation>
 +    </message>
 +    <message>
 +      <source>Transpose:</source>
@@ -483,6 +527,78 @@
 +    <message>
 +      <source>Save this Bar Number</source>
 +      <translation>Guardar este número de barra</translation>
++    </message>
++    <message>
++      <source>Major</source>
++      <translation>Mayor</translation>
++    </message>
++    <message>
++      <source>Minor</source>
++      <translation>Menor</translation>
++    </message>
++    <message>
++      <source>Gb</source>
++      <translation>Gb (Sol♭)</translation>
++    </message>
++    <message>
++      <source>Db</source>
++      <translation>Db (Re♭)</translation>
++    </message>
++    <message>
++      <source>Ab</source>
++      <translation>Ab (La♭)</translation>
++    </message>
++    <message>
++      <source>Eb</source>
++      <translation>Eb (Mi♭)</translation>
++    </message>
++    <message>
++      <source>Bb</source>
++      <translation>Bb (Sí♭)</translation>
++    </message>
++    <message>
++      <source>F </source>
++      <translation>F (Fa)</translation>
++    </message>
++    <message>
++      <source>C </source>
++      <translation>C (Do)</translation>
++    </message>
++    <message>
++      <source>G </source>
++      <translation>G (Sol)</translation>
++    </message>
++    <message>
++      <source>D </source>
++      <translation>D (Re)</translation>
++    </message>
++    <message>
++      <source>A </source>
++      <translation>A (La)</translation>
++    </message>
++    <message>
++      <source>E </source>
++      <translation>E (Mi)</translation>
++    </message>
++    <message>
++      <source>B </source>
++      <translation>B (Sí)</translation>
++    </message>
++    <message>
++      <source>F#</source>
++      <translation>F# (Fa#)</translation>
++    </message>
++    <message>
++      <source>G#</source>
++      <translation>G# (Sol#)</translation>
++    </message>
++    <message>
++      <source>C#</source>
++      <translation>C# (Do#)</translation>
++    </message>
++    <message>
++      <source>D#</source>
++      <translation>D# (Re#)</translation>
 +    </message>
 +  </context>
 +  <context>
@@ -624,7 +740,7 @@
 +    </message>
 +    <message>
 +      <source>&lt;h3>Getting Started&lt;/h3>&lt;p>You need a &lt;b>MIDI Piano Keyboard &lt;/b> and a &lt;b>MIDI interface&lt;/b> for the PC. If you don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is middle C.&lt;/p>&lt;p>To hear the music you will need a &lt;b>General Midi sound synthesizer&lt;/b>. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency).&lt;/p>&lt;p>PianoBooster does not come with any &lt;b>MIDI Files&lt;/b> and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; >&lt;b>PianoBooster FAQ&lt;/b>&lt;/a> for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3>Setting Up&lt;/h3>&lt;p>First use the &lt;i>Setup/Midi Setup&lt;/i> menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i>File/Open&lt;/i> to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i>listen&lt;/i> to the music or &lt;i>play along&lt;/i> on the piano keyboard by setting the &lt;i>skill&lt;/i> level on the side panel. Finally when you are ready click the &lt;i>play icon&lt;/i> (or press the &lt;i>space bar&lt;/i>) to roll the music.&lt;h3>Hints on Playing the Piano&lt;/h3>&lt;p>For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; >&lt;b>Piano Hints&lt;/b>&lt;/a>&lt;/p>&lt;h3>More Information&lt;/h3>&lt;p>For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; >&lt;b>website&lt;/b>&lt;/a>, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; >&lt;b>FAQ&lt;/b>&lt;/a> and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; >&lt;b>user forum&lt;/b>&lt;/a>. </source>
-+      <translation type="unfinished" />
++      <translation>&lt;h3>Comenzando&lt;/h3>&lt;p>Es necesario un &lt;b>teclado musical MIDI&lt;/b> y un &lt;b>interfaz MIDI&lt;/b> para el PC. Si no se dispone de un teclado MIDI, es posible usar PianoBooster utilizando el teclado del PC keyboard, 'X' es el do ('C') central.&lt;/p>&lt;p>Para escuchar la música, es necesario un &lt;b>sintetizador MIDI&lt;/b>. En Windows se puede usar el &quot;Microsoft GS Wavetable software synthesizer&quot;, pero &amp;eacute;ste introduce una latencia inaceptable. En Linux se puede usar FluidSynth o Timidity.&lt;/p>&lt;p>PianoBooster no viene con ning&amp;uacute;n &lt;b>archivo MIDI&lt;/b> por lo que estos deberán ser descargados desde la red, o de cualquier otra fuente. Vaya a &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; >&lt;b>PianoBooster FAQ&lt;/b>&lt;/a> para accedee a algunos de los sitios desde los que se pueden descargar. PianoBooster funciona mejor con archivos MIDI que tienen separadas las partes del piano ejecutadas por la mano derecha y la izquierda usando los canales MIDI 3 y 4.&lt;h3>Configuraci&amp;oacute;n&lt;/h3>&lt;p>Use el men&amp;uacute; &lt;i>Configuraci&amp;oacute;n/Configuraci&amp;oacute;n MIDI&lt;/i> y seleccione la entrada y salida MIDI correspondientes a su arquitectura. A continuaci&amp;oacute;n use &lt;i>Archivo/Abrir&lt;/i> para abrir un archivo MIDI (&quot;.mid&quot;) o de karaoke (&quot;.kar&quot;). Seleccione si desea simplemente &lt;i>escuchar&lt;/i> la m&amp;uacute;sica o si desea &lt;i>tocarla&lt;/i> en el teclado musical, seleccionando el &lt;i>nivel&lt;/i> en el panel lateral. Finalmente, pulse el icono de &lt;i>comenzar a tocar&lt;/i> (o la &lt;i>barra espaciadora&lt;/i>) para que la canci&amp;oacute;n comience.&lt;h3>Consejos para tocar el teclado musical&lt;/h3>&lt;p>Para consejos sobre como tocar el teclado musical, vea: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; >&lt;b>Piano Hints&lt;/b>&lt;/a>&lt;/p>&lt;h3>M&amp;aacute;s informaci&amp;oacute;n&lt;/h3>&lt;p>Para saber m&amp;aacute;s, visite la &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; >&lt;b>p&amp;aacute;gina web de PianoBooster website&lt;/b>&lt;/a>, la p&amp;aacute;gina de &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; >&lt;b>preguntas frecuentes (FAQ)&lt;/b>&lt;/a> y el &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; >&lt;b>foro de apoyo&lt;/b>&lt;/a>. </translation>
 +    </message>
 +    <message>
 +      <source>About Piano Booster</source>
@@ -648,7 +764,7 @@
 +    </message>
 +    <message>
 +      <source>&lt;tr>&lt;td>Fake Piano keys&lt;/td>&lt;td>X is middle C&lt;/td>&lt;/tr>&lt;/table> &lt;/center>&lt;br></source>
-+      <translation>&lt;tr>&lt;td>Teclas de piano simuladas&lt;/td>&lt;td>X es el do (\&quot;C\&quot;) central&lt;/td>&lt;/tr>&lt;/table> &lt;/center>&lt;br></translation>
++      <translation>&lt;tr>&lt;td>Teclas de piano simuladas&lt;/td>&lt;td>X es el do ('C') central&lt;/td>&lt;/tr>&lt;/table> &lt;/center>&lt;br></translation>
 +    </message>
 +    <message>
 +      <source>Open Midi File</source>
@@ -657,6 +773,38 @@
 +    <message>
 +      <source>Midi Files (*.mid *.MID *.midi *.kar *.KAR)</source>
 +      <translation>Archivos MIDI (*.mid *.MID *.midi *.kar *.KAR)</translation>
++    </message>
++    <message>
++      <source>Choose the right hand</source>
++      <translation>Elegir la mano derecha</translation>
++    </message>
++    <message>
++      <source>Choose both hands</source>
++      <translation>Elegir ambas manos</translation>
++    </message>
++    <message>
++      <source>Choose the left Hand</source>
++      <translation>Elegir la mano izquierda</translation>
++    </message>
++    <message>
++      <source>Play from start toggle</source>
++      <translation>Reproducir desde el principio</translation>
++    </message>
++    <message>
++      <source>Play Pause Toggle</source>
++      <translation>Reproducir / Parar</translation>
++    </message>
++    <message>
++      <source>Increase the speed by 5%</source>
++      <translation>Aumentar la velocidad en 5%</translation>
++    </message>
++    <message>
++      <source>Change to the Next Song</source>
++      <translation>Cambiar a la canci&amp;oacute;n siguiente</translation>
++    </message>
++    <message>
++      <source>Change to the Previous Song</source>
++      <translation>Cambiar a la canci&amp;oacute;n anterior</translation>
 +    </message>
 +  </context>
 +</TS>
@@ -738,3 +886,117 @@
      followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
  }
  
+--- pianobooster-src-0.6.4.orig/src/GlView.cpp
++++ pianobooster-src-0.6.4/src/GlView.cpp
+@@ -225,14 +225,14 @@
+     glColor3f(1.0,1.0,1.0);
+ 
+     if (m_song->getPlayMode() != PB_PLAY_MODE_listen)
+-        renderText(30, y-4,0 ,"Accuracy:", m_timeRatingFont);
++        renderText(30, y-4, 0, tr("Accuracy:"), m_timeRatingFont);
+ 
+     if (m_titleHeight < 45 )
+         return;
+ 
+     y = Cfg::getAppHeight() - m_titleHeight;
+ 
+-    renderText(30, y+6, 0,"Song: " + m_song->getSongTitle(), m_timeRatingFont);
++    renderText(30, y+6, 0, tr("Song: ") + m_song->getSongTitle(), m_timeRatingFont);
+     /*
+     char buffer[100];
+     sprintf(buffer, "Notes %d wrong %d Late %d Score %4.1f%%",
+@@ -255,7 +255,7 @@
+     //CDraw::drColour (Cfg::noteColourDim());
+     //glRectf(x+30+10, y-2, x + 80, y + 16);
+     glColor3f(1.0,1.0,1.0);
+-    renderText(x, y, 0,"Bar: " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
++    renderText(x, y, 0, tr("Bar: ") + QString::number(m_song->getBarNumber()), m_timeRatingFont);
+ }
+ 
+ void CGLView::resizeGL(int width, int height)
+--- pianobooster-src-0.6.4.orig/src/GuiTopBar.cpp
++++ pianobooster-src-0.6.4/src/GuiTopBar.cpp
+@@ -52,8 +52,8 @@
+     transposeSpin->setMaximum(12);
+     transposeSpin->setMinimum(-12);
+ 
+-    majorCombo->addItem("Major");
+-    majorCombo->addItem("Minor");
++    majorCombo->addItem(tr("Major"));
++    majorCombo->addItem(tr("Minor"));
+     setMaximumHeight(30);
+     setMaximumSize(QSize(16777215, 30));
+ }
+@@ -86,35 +86,35 @@
+     keyCombo->clear();
+     if (major)
+     {
+-        keyCombo->addItem("Gb"); // -6
+-        keyCombo->addItem("Db"); // -5
+-        keyCombo->addItem("Ab"); // -4
+-        keyCombo->addItem("Eb"); // -3
+-        keyCombo->addItem("Bb"); // -2
+-        keyCombo->addItem("F "); // -1
+-        keyCombo->addItem("C");  // 0
+-        keyCombo->addItem("G "); // 1
+-        keyCombo->addItem("D "); // 2
+-        keyCombo->addItem("A "); // 3
+-        keyCombo->addItem("E "); // 4
+-        keyCombo->addItem("B "); // 5
+-        keyCombo->addItem("F#"); // 6
++        keyCombo->addItem(tr("Gb")); // -6
++        keyCombo->addItem(tr("Db")); // -5
++        keyCombo->addItem(tr("Ab")); // -4
++        keyCombo->addItem(tr("Eb")); // -3
++        keyCombo->addItem(tr("Bb")); // -2
++        keyCombo->addItem(tr("F ")); // -1
++        keyCombo->addItem(tr("C "));  // 0
++        keyCombo->addItem(tr("G ")); // 1
++        keyCombo->addItem(tr("D ")); // 2
++        keyCombo->addItem(tr("A ")); // 3
++        keyCombo->addItem(tr("E ")); // 4
++        keyCombo->addItem(tr("B ")); // 5
++        keyCombo->addItem(tr("F#")); // 6
+     }
+     else
+     {
+-        keyCombo->addItem("Eb");
+-        keyCombo->addItem("Bb");
+-        keyCombo->addItem("F");
+-        keyCombo->addItem("C");
+-        keyCombo->addItem("G");
+-        keyCombo->addItem("D ");
+-        keyCombo->addItem("A");
+-        keyCombo->addItem("E ");
+-        keyCombo->addItem("B ");
+-        keyCombo->addItem("F#");
+-        keyCombo->addItem("G#");
+-        keyCombo->addItem("C#");
+-        keyCombo->addItem("D#");
++        keyCombo->addItem(tr("Eb"));
++        keyCombo->addItem(tr("Bb"));
++        keyCombo->addItem(tr("F "));
++        keyCombo->addItem(tr("C "));
++        keyCombo->addItem(tr("G "));
++        keyCombo->addItem(tr("D "));
++        keyCombo->addItem(tr("A "));
++        keyCombo->addItem(tr("E "));
++        keyCombo->addItem(tr("B "));
++        keyCombo->addItem(tr("F#"));
++        keyCombo->addItem(tr("G#"));
++        keyCombo->addItem(tr("C#"));
++        keyCombo->addItem(tr("D#"));
+     }
+     refresh(false);
+ }
+--- pianobooster-src-0.6.4.orig/src/Settings.cpp
++++ pianobooster-src-0.6.4/src/Settings.cpp
+@@ -89,7 +89,7 @@
+     setDefaultValue("ShortCuts/LeftHand", "F2");
+     setDefaultValue("ShortCuts/BothHands","F3");
+     setDefaultValue("ShortCuts/RightHand","F4");
+-    setDefaultValue("ShortCuts/PlayFromStart","space");
++    setDefaultValue("ShortCuts/PlayFromStart",tr("space"));
+     setDefaultValue("ShortCuts/PlayPause","P");
+     setDefaultValue("ShortCuts/Faster","=");
+     setDefaultValue("ShortCuts/Slower","-");
