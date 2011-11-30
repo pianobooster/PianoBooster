@@ -4,6 +4,7 @@ pianobooster (0.6.4-2) UNRELEASED; urgency=low
   * Added support for translations: i18n.patch
   * Added Spanish translation
   * Fixed desktop file
+  * Set the Games Team as Maintainer
 
  -- Miriam Ruiz <little_miry@yahoo.es>  Wed, 30 Nov 2011 08:02:42 +0100
 

@@ -1,7 +1,8 @@
 Source: pianobooster
 Section: games
 Priority: optional
-Maintainer: Miriam Ruiz <little_miry@yahoo.es>
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Miriam Ruiz <little_miry@yahoo.es>
 Build-Depends: debhelper (>= 7), cmake, dh-buildinfo, quilt,
  qt4-qmake, libqt4-dev, libqt4-opengl-dev,
  mesa-common-dev, libglu1-mesa-dev, libasound2-dev
