@@ -1,3 +1,12 @@
+pianobooster (0.6.4-2) UNRELEASED; urgency=low
+
+  [ Miriam Ruiz ]
+  * Added support for translations: i18n.patch
+  * Added Spanish translation
+  * Fixed desktop file
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Wed, 30 Nov 2011 08:02:42 +0100
+
 pianobooster (0.6.4-1) unstable; urgency=low
 
   * Initial release. Closes: #650398

@@ -9,6 +9,7 @@ config: config-stamp
 config-stamp: 
 	dh_testdir
 	[ ! -d debian/patches ] || $(MAKE) -f /usr/share/quilt/quilt.make patch
+	
 	# Perform an out-of-tree build to keep a clean source tree
 	mkdir $(BUILD_TREE)
 	cd $(BUILD_TREE); cmake $(CURDIR)/src/ \
@@ -26,6 +27,7 @@ build: build-stamp
 build-stamp: config
 	dh_testdir
 	cd $(BUILD_TREE); $(MAKE)
+	cd src && lrelease *.ts
 	touch $@
 
 build-indep:
@@ -35,8 +37,9 @@ build-arch: build
 clean: 
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp config-stamp
-	rm -fr $(BUILD_TREE)
+	rm -fv build-stamp config-stamp
+	rm -fvr $(BUILD_TREE)
+	rm -fv src/*.qm
 	[ ! -d debian/patches ] || $(MAKE) -f /usr/share/quilt/quilt.make unpatch
 	dh_clean 
 
@@ -71,6 +74,13 @@ binary-arch: install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+
+refresh-tr:
+	dh_testdir
+	-quilt push -a
+	
+	# Update translations
+	cd $(CURDIR)/src/ && lupdate -verbose pianobooster.pro
 
 binary: binary-indep binary-arch
 .PHONY: config build build-indep build-arch clean binary-indep binary-arch binary install 
