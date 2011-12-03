@@ -1,3 +1,11 @@
+pianobooster (0.6.4-3) UNRELEASED; urgency=low
+
+  [ Miriam Ruiz ]
+  * Added Galician translation and improved Spanish one
+    Thanks to Miguel Bouzada
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Sat, 03 Dec 2011 17:27:22 +0100
+
 pianobooster (0.6.4-2) unstable; urgency=low
 
   [ Miriam Ruiz ]
