@@ -1,4 +1,4 @@
-pianobooster (0.6.4-2) UNRELEASED; urgency=low
+pianobooster (0.6.4-2) unstable; urgency=low
 
   [ Miriam Ruiz ]
   * Added support for translations: i18n.patch
