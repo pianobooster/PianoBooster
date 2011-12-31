@@ -71,6 +71,9 @@ private:
     std::vector<unsigned char> m_inputMessage;
     unsigned char m_savedRawBytes[40]; // Raw data is used for used for a SYSTEM_EVENT
     unsigned int m_rawDataIndex;
+
+    // kotechnology added function to create indexed string. Format: "1 - Example"
+    QString addIndexToString(QString name, int index);
 };
 
 #endif //__MIDI_DEVICE_RT_H__

@@ -89,16 +89,16 @@ void GuiMidiSetupDialog::updateMidiInfoText()
 
     if (midiInputCombo->currentIndex() == 0)
         midiInfoText->append("<span style=\"color:black\">" + tr("If you don't have a MIDI keyboard you can use the PC keyboard; 'X' is middle C.</span>"));
-    else if (midiInputCombo->currentText().startsWith("Midi Through", Qt::CaseInsensitive))
+    else if (midiInputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">The use of Midi Through is not recommended!</span>");
     else
         midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Input Device: " )+ midiInputCombo->currentText() +"</span>");
 
     if (midiOutputCombo->currentText() == tr("None"))
         midiInfoText->append("<span style=\"color:red\">" + tr("No Sound Output Device selected; Choose a Midi Output Device") + "</span>");
-    else if (midiOutputCombo->currentText().startsWith("Midi Through", Qt::CaseInsensitive))
+    else if (midiOutputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
-    else if (midiOutputCombo->currentText().startsWith("Microsoft GS Wavetable SW Synth", Qt::CaseInsensitive))
+    else if (midiOutputCombo->currentText().contains("Microsoft GS Wavetable SW Synth", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:black\">" + tr("Note: the Microsoft SW Synth introduces an unwanted delay!") + "</span>");
     else
         midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device: ") + midiOutputCombo->currentText() +"</span>");

@@ -48,7 +48,15 @@ void CMidiDeviceRt::init()
 {
 }
 
-
+QString CMidiDeviceRt::addIndexToString(QString name, int index)
+{
+    QString ret;
+    QString idx;
+    idx.setNum(index);
+    idx.append(" - ");
+    ret = idx + name;
+    return ret;
+}
 QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
 {
     unsigned int nPorts;
@@ -65,10 +73,13 @@ QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
 
     for(unsigned int i=0; i< nPorts; i++)
     {
-        name = midiDevice->getPortName(i).c_str();
-        if (name.startsWith("RtMidi"))
+        // kotechnology creating indexed string from the post name
+        name = addIndexToString(midiDevice->getPortName(i).c_str(),i);
+        if (name.contains("RtMidi Output Client"))
             continue;
-        portNameList << name;
+        if (name.contains("RtMidi Input Client"))
+            continue;
+         portNameList << name;
     }
 
 
@@ -101,7 +112,8 @@ bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
 
     for(unsigned int i=0; i< nPorts; i++)
     {
-        name = midiDevice->getPortName(i).c_str();
+        // kotechnology creating indexed string from the post name
+        name = addIndexToString(midiDevice->getPortName(i).c_str(),i);
         if (name == portName) // Test for a match
         {
             if (m_midiPorts[dev] >= 0)

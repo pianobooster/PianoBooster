@@ -623,7 +623,7 @@ void QtWindow::open()
         dir = QDir::homePath();
 
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
-                            dir, tr("Midi Files") + " (*.mid *.MID *.midi *.kar *.KAR)");
+                            dir, tr("Midi Files") + " (*.mid *.MID *.midi *.MIDI *.kar *.KAR)");
     if (!fileName.isEmpty()) {
 
         m_settings->openSongFile(fileName);
