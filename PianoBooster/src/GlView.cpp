@@ -354,7 +354,9 @@ void CGLView::initializeGL()
 
 
     // increased the tick time for Midi handling
-    m_timer.start(4, this ); // was 12
+
+    m_timer.start(Cfg::tickRate, this );
+
     m_realtime.start();
 
     //startMediaTimer(12, this );

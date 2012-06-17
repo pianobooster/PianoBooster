@@ -106,6 +106,16 @@ public:
     static CColour pianoBadColour()       {return CColour(1.0, 0.0, 0.0);}
     static CColour noteNameColour()       {return CColour(1.0, 1.0, 1.0);}
 
+    static void setDefaults() {
+    #ifdef _WIN32
+         tickRate = 12;
+    #else
+          tickRate = 4; // was 12
+    #endif
+    }
+
+
+
     static void setStaveEndX(float x)
     {
          m_staveEndX = x;
@@ -132,6 +142,7 @@ public:
     static bool experimentalTempo;
     static bool experimentalNoteLength;
     static int experimentalSwapInterval;
+    static int tickRate;
     static bool useLogFile;
     static bool midiInputDump;
     static int keyboardLightsChan;

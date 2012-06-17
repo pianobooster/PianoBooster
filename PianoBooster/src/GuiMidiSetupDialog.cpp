@@ -84,7 +84,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
 void GuiMidiSetupDialog::updateMidiInfoText()
 {
-    QString str;
+
     midiInfoText->clear();
 
     if (midiInputCombo->currentIndex() == 0)
@@ -98,8 +98,9 @@ void GuiMidiSetupDialog::updateMidiInfoText()
         midiInfoText->append("<span style=\"color:red\">" + tr("No Sound Output Device selected; Choose a Midi Output Device") + "</span>");
     else if (midiOutputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
-    else if (midiOutputCombo->currentText().contains("Microsoft GS Wavetable SW Synth", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:black\">" + tr("Note: the Microsoft SW Synth introduces an unwanted delay!") + "</span>");
+    else if (midiOutputCombo->currentText().contains("Microsoft GS Wavetable", Qt::CaseInsensitive))
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.\n")
+                              + tr("(Try a latancy fix of 150msc)") + "</span>");
     else
         midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device: ") + midiOutputCombo->currentText() +"</span>");
 
@@ -143,20 +144,21 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
 
 void GuiMidiSetupDialog::accept()
 {
-    m_settings->setValue("Midi/Input", midiInputCombo->currentText());
-    m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
-    if (midiInputCombo->currentText().startsWith(tr("None")))
-        CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
-    else
-        CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
-                          m_settings->value("Keyboard/HighestNote", 127).toInt());
-
-
-    if (m_latencyChanged == false || m_midiChanged == true)
+    if (m_midiChanged)
     {
-        m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
+
+        m_settings->setValue("Midi/Input", midiInputCombo->currentText());
+        m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
+        if (midiInputCombo->currentText().startsWith(tr("None")))
+            CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
+        else
+            CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
+                              m_settings->value("Keyboard/HighestNote", 127).toInt());
+
+         m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
         m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
         m_settings->updateWarningMessages();
+        m_midiChanged = false;
     }
 
     m_settings->setValue("Midi/Latency", m_latencyFix);
@@ -178,6 +180,7 @@ void GuiMidiSetupDialog::accept()
             m_settings->setValue("Keyboard/RightSound", previousRightSound);
             m_song->setPianoSoundPatches(previousRightSound, -2); // -2 means ignore this parameter
         }
+        m_latencyChanged = false;
     }
 
 

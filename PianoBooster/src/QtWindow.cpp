@@ -62,6 +62,8 @@ QtWindow::QtWindow()
     setWindowIcon(QIcon(":/images/Logo32x32.png"));
     setWindowTitle(tr("Piano Booster"));
 
+    Cfg::setDefaults();
+
     decodeCommandLine();
 
     if (Cfg::experimentalSwapInterval != -1)
@@ -177,15 +179,16 @@ QtWindow::~QtWindow()
 void QtWindow::displayUsage()
 {
     fprintf(stderr, "Usage: pianobooster [flags] [midifile]\n");
-    fprintf(stderr, "       -d: Increase the debug level\n");
-    fprintf(stderr, "       -q: Quick start\n");
-    fprintf(stderr, "       -L: Displays the note length (experimental)\n");
-    fprintf(stderr, "       -h: --help: Displays this help message\n");
-    fprintf(stderr, "       -v: Displays version number and then exits\n");
-    fprintf(stderr, "       --log: write debug info to the \"pb.log\" log file\n");
-    fprintf(stderr, "       --midi-input-dump: Displays the midi input in hex\n");
-    fprintf(stderr, "       --lights: Turnss on the keyboard lights\n");
-
+    fprintf(stderr, "  -d, --debug             Increase the debug level.\n");
+    fprintf(stderr, "  -q, --quick-start       Quick start.\n");
+    fprintf(stderr, "      --Xnote-length      Displays the note length (experimental)\n");
+    fprintf(stderr, "      --Xtick-rate=RATE   Adjust the tick rate in mSec (experimental).\n");
+    fprintf(stderr, "                          default 4 (12 windows).\n");
+    fprintf(stderr, "  -h, --help              Displays this help message.\n");
+    fprintf(stderr, "  -v, --version           Displays version number and then exits.\n");
+    fprintf(stderr, "  -l   --log              Write debug info to the \"pb.log\" log file.\n");
+    fprintf(stderr, "       --midi-input-dump  Displays the midi input in hex.\n");
+    fprintf(stderr, "       --lights:          Turns on the keyboard lights.\n");
 }
 
 int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
@@ -198,6 +201,25 @@ int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
     if (ok)
         return value;
     return defaultParam;
+}
+
+bool QtWindow::validateIntegerParam(QString arg)
+{
+    int n = arg.lastIndexOf('=');
+    if (n == -1 || (n + 1) >= arg.size())
+        return false;
+    bool ok;
+    arg.mid(n+1).toInt(&ok);
+     return ok;
+}
+bool QtWindow::validateIntegerParamWithMessage(QString arg)
+{
+    bool ok = validateIntegerParam(arg);
+    if (!ok) {
+        fprintf(stderr, "ERROR: Invalid paramater to a command line argument \"%s\".\n", qPrintable(arg));
+        exit(0);
+    }
+     return ok;
 }
 
 void QtWindow::decodeMidiFileArg(QString arg)
@@ -256,13 +278,17 @@ void QtWindow::decodeCommandLine()
         arg = argList[i];
         if (arg.startsWith("-"))
         {
-            if (arg.startsWith("-d"))
+            if (arg.startsWith("-d") || arg.startsWith("--debug"))
                 Cfg::logLevel++;
-            else if (arg.startsWith("-q"))
+            else if (arg.startsWith("-q") || arg.startsWith("--quick-start"))
                 Cfg::quickStart = true;
-            else if (arg.startsWith("-L"))
+            else if (arg.startsWith("--Xnote-length"))
                 Cfg::experimentalNoteLength = true;
-            else if (arg.startsWith("--log"))
+            else if (arg.startsWith("--Xtick-rate")) {
+                if (validateIntegerParamWithMessage(arg)) {
+                    Cfg::tickRate = decodeIntegerParam(arg, 12);
+                }
+            } else if (arg.startsWith("-l") || arg.startsWith("--log"))
                 Cfg::useLogFile = true;
             else if (arg.startsWith("--midi-input-dump"))
                 Cfg::midiInputDump = true;
@@ -275,19 +301,19 @@ void QtWindow::decodeCommandLine()
             else if (arg.startsWith("--lights"))
                 Cfg::keyboardLightsChan = 1-1;  // Channel 1 (really a zero)
 
-            else if (arg.startsWith("-h") || arg.startsWith("-?") ||arg.startsWith("--help"))
+            else if (arg.startsWith("-h") || arg.startsWith("-?") || arg.startsWith("--help"))
             {
                 displayUsage();
                 exit(0);
             }
-            else if (arg.startsWith("-v"))
+            else if (arg.startsWith("-v") || arg.startsWith("--version"))
             {
                 fprintf(stderr, "pianobooster Version " PB_VERSION"\n");
                 exit(0);
             }
             else
             {
-                fprintf(stderr, "ERROR: Unknown arguments \n");
+                fprintf(stderr, "ERROR: Unknown arguments.\n");
                 displayUsage();
                 exit(0);
             }

@@ -380,7 +380,7 @@ void CSettings::loadSettings()
 {
     unzipBootserMusicBooks();
     // Set default values
-    setValue("PianoBooster/Version",PB_VERSION);
+    setValue("PianoBooster/Version", PB_VERSION);
     setDefaultValue("ShortCuts/LeftHand", "F2");
     setDefaultValue("ShortCuts/BothHands","F3");
     setDefaultValue("ShortCuts/RightHand","F4");

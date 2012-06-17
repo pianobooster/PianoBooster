@@ -1,5 +1,6 @@
 #CONFIG += USE_FLUIDSYNTH
 CONFIG += release
+#CONFIG += console
 
 TRANSLATIONS = ../translations/pianobooster_ja.ts \
                ../translations/pianobooster_es.ts \

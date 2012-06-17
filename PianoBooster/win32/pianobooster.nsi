@@ -80,6 +80,7 @@ Section "Install Section"
     File FilesForRelease\QtXml4.dll
     File FilesForRelease\QtOpenGL4.dll
     File FilesForRelease\mingwm10.dll
+    File FilesForRelease\libgcc_s_dw2-1.dll
 
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc

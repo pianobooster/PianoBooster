@@ -162,6 +162,8 @@ protected:
 private:
     void decodeCommandLine();
     int decodeIntegerParam(QString arg, int defaultParam);
+    bool validateIntegerParam(QString arg);
+    bool validateIntegerParamWithMessage(QString arg);
     void decodeMidiFileArg(QString arg);
     QString displayShortCut(QString code, QString description);
     void addShortcutAction(const QString & key, const char * method);
