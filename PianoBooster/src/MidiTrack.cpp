@@ -234,7 +234,7 @@ void CMidiTrack::readKeySignatureEvent()
     }
     keySig = static_cast<char>(readByte());  // force sign conversion The key sig 0=middle C
     majorKey =readByte(); // Major or Minor
-    if (keySig >= 7 || keySig <= -7 )
+    if (keySig > 7 || keySig < -7 )
     {
         errorFail(SMF_CORRUPTED_MIDI_FILE);
         return;
