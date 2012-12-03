@@ -3,6 +3,12 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
+CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
+LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+LDFLAGS2:=-Wl,-z,defs  -Wl,-as-needed -Wl,--no-undefined
+
 BUILD_TREE=$(CURDIR)/build-tree
 
 config: config-stamp
@@ -14,16 +20,17 @@ config-stamp:
 	mkdir $(BUILD_TREE)
 	cd $(BUILD_TREE); cmake $(CURDIR)/src/ \
 		--debug-output \
+		-DCMAKE_BUILD_TYPE=Debug \
 		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
 		-DCMAKE_INSTALL_PREFIX:STRING="/usr" \
-		-DCMAKE_C_FLAGS:STRING="$(CFLAGS)" \
+		-DCMAKE_C_FLAGS:STRING="$(CFLAGS) $(CPPFLAGS)" \
+		-DCMAKE_CXX_FLAGS:STRING="$(CXXFLAGS) $(CPPFLAGS)" \
 		-DBUILD_STATIC:BOOL=ON \
-		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-Wl,-z,defs -Wl,--as-needed -Wl,--no-undefined" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,-z,defs -Wl,--as-needed -Wl,--no-undefined" \
+		-DCMAKE_SHARED_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)" \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)" \
 		-DCMAKE_INSTALL_RPATH:STRING="/usr/lib/games/pianobooster"
 	touch $@
 
-build: build-stamp
 build-stamp: config
 	dh_testdir
 	cd $(BUILD_TREE); $(MAKE)
@@ -32,7 +39,9 @@ build-stamp: config
 
 build-indep:
 
-build-arch: build
+build-arch: build-stamp
+
+build: build-arch build-indep
 
 clean: 
 	dh_testdir
