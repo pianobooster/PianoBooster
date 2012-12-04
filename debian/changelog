@@ -17,6 +17,14 @@ pianobooster (0.6.4b-1) UNRELEASED; urgency=low
 
  -- Miriam Ruiz <miriam@debian.org>  Tue, 04 Dec 2012 00:44:18 +0100
 
+pianobooster (0.6.4-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "ftbfs with GCC-4.7": add patch to set linker flag -mwindows only on
+    Windows. (Closes: #667322)
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 23 May 2012 18:13:25 +0200
+
 pianobooster (0.6.4-3) unstable; urgency=low
 
   [ Miriam Ruiz ]
