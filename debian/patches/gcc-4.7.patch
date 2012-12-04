@@ -5,8 +5,10 @@ Forwarded: no
 Author: gregor herrmann <gregoa@debian.org>
 Last-Update: 2012-05-23
 
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
+Index: pianobooster-src-0.6.4b/src/CMakeLists.txt
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/CMakeLists.txt	2012-12-04 09:44:04.589136742 +0100
++++ pianobooster-src-0.6.4b/src/CMakeLists.txt	2012-12-04 09:45:28.829137661 +0100
 @@ -201,9 +201,9 @@
      ADD_EXECUTABLE( pianobooster WIN32 pianobooster.rc ${PIANOBOOSTER_SRCS}
          ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}

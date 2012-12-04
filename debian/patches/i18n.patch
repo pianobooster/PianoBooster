@@ -1,5 +1,7 @@
---- pianobooster-src-0.6.4.orig/src/QtMain.cpp
-+++ pianobooster-src-0.6.4/src/QtMain.cpp
+Index: pianobooster-src-0.6.4b/src/QtMain.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/QtMain.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/QtMain.cpp	2012-12-04 09:45:24.929137618 +0100
 @@ -20,6 +20,7 @@
  ****************************************************************************/
  
@@ -34,9 +36,11 @@
          return -1;
      }
  
---- pianobooster-src-0.6.4.orig/src/QtWindow.cpp
-+++ pianobooster-src-0.6.4/src/QtWindow.cpp
-@@ -300,7 +300,7 @@
+Index: pianobooster-src-0.6.4b/src/QtWindow.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/QtWindow.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/QtWindow.cpp	2012-12-04 09:45:24.933137618 +0100
+@@ -299,7 +299,7 @@
  
      m_setupKeyboardAct = new QAction(tr("Piano &Keyboard Setting ..."), this);
      m_setupKeyboardAct->setShortcut(tr("Ctrl+K"));
@@ -45,7 +49,7 @@
      connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
  
      m_toggleSidePanelAct = new QAction(tr("&Show/Hide the Side Panel"), this);
-@@ -388,7 +388,8 @@
+@@ -387,7 +387,8 @@
  
     "<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
     "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
@@ -55,7 +59,7 @@
  
  
     "<p>PianoBooster does not come with any <b>MIDI Files</b> and so you will need to get them from the net. "
-@@ -429,7 +430,7 @@
+@@ -428,7 +429,7 @@
      msgBox.setWindowTitle (tr("About Piano Booster"));
      msgBox.setText(
              tr(
@@ -64,7 +68,7 @@
                  "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
                  "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
                  "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
-@@ -470,15 +471,15 @@
+@@ -469,15 +470,15 @@
                  "<th>Key</th>"
                  "</tr>"
              );
@@ -89,8 +93,10 @@
  
      msg += tr(
                  "<tr><td>Fake Piano keys</td><td>X is middle C</td></tr>"
---- pianobooster-src-0.6.4.orig/src/pianobooster.pro
-+++ pianobooster-src-0.6.4/src/pianobooster.pro
+Index: pianobooster-src-0.6.4b/src/pianobooster.pro
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/pianobooster.pro	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/pianobooster.pro	2012-12-04 09:45:24.937137618 +0100
 @@ -68,6 +68,8 @@
  
  RC_FILE     = pianobooster.rc
@@ -100,8 +106,10 @@
  INCLUDEPATH += rtmidi
  
  OBJECTS_DIR = tmp
---- /dev/null
-+++ pianobooster-src-0.6.4/src/pianobooster_es.ts
+Index: pianobooster-src-0.6.4b/src/pianobooster_es.ts
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ pianobooster-src-0.6.4b/src/pianobooster_es.ts	2012-12-04 09:45:24.937137618 +0100
 @@ -0,0 +1,763 @@
 +<?xml version="1.0" encoding="utf-8"?>
 +<!DOCTYPE TS>
@@ -866,8 +874,10 @@
 +    </message>
 +</context>
 +</TS>
---- pianobooster-src-0.6.4.orig/src/GuiKeyboardSetupDialog.cpp
-+++ pianobooster-src-0.6.4/src/GuiKeyboardSetupDialog.cpp
+Index: pianobooster-src-0.6.4b/src/GuiKeyboardSetupDialog.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiKeyboardSetupDialog.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiKeyboardSetupDialog.cpp	2012-12-04 09:45:24.937137618 +0100
 @@ -98,14 +98,13 @@
      lowestNoteEdit->setText(QString().setNum(lowestNote));
      highestNoteEdit->setText(QString().setNum(highestNote));
@@ -887,8 +897,10 @@
  
      keyboardInfoText->append(str);
  }
---- pianobooster-src-0.6.4.orig/src/GuiMidiSetupDialog.ui
-+++ pianobooster-src-0.6.4/src/GuiMidiSetupDialog.ui
+Index: pianobooster-src-0.6.4b/src/GuiMidiSetupDialog.ui
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiMidiSetupDialog.ui	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiMidiSetupDialog.ui	2012-12-04 09:45:24.937137618 +0100
 @@ -246,7 +246,7 @@
              <item row="1" column="0" >
               <widget class="QLabel" name="label_3" >
@@ -898,8 +910,10 @@
                </property>
                <property name="alignment" >
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
---- pianobooster-src-0.6.4.orig/src/GuiPreferencesDialog.ui
-+++ pianobooster-src-0.6.4/src/GuiPreferencesDialog.ui
+Index: pianobooster-src-0.6.4b/src/GuiPreferencesDialog.ui
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiPreferencesDialog.ui	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiPreferencesDialog.ui	2012-12-04 09:45:24.937137618 +0100
 @@ -103,7 +103,7 @@
     <item>
      <widget class="QGroupBox" name="groupBox">
@@ -909,8 +923,10 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
---- pianobooster-src-0.6.4.orig/src/GuiSongDetailsDialog.ui
-+++ pianobooster-src-0.6.4/src/GuiSongDetailsDialog.ui
+Index: pianobooster-src-0.6.4b/src/GuiSongDetailsDialog.ui
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiSongDetailsDialog.ui	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiSongDetailsDialog.ui	2012-12-04 09:45:24.937137618 +0100
 @@ -20,7 +20,7 @@
     <item>
      <widget class="QGroupBox" name="groupBox_2">
@@ -920,8 +936,10 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
---- pianobooster-src-0.6.4.orig/src/GuiPreferencesDialog.cpp
-+++ pianobooster-src-0.6.4/src/GuiPreferencesDialog.cpp
+Index: pianobooster-src-0.6.4b/src/GuiPreferencesDialog.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiPreferencesDialog.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiPreferencesDialog.cpp	2012-12-04 09:45:24.937137618 +0100
 @@ -36,7 +36,7 @@
      m_song = 0;
      m_settings = 0;
@@ -944,9 +962,11 @@
      followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
  }
  
---- pianobooster-src-0.6.4.orig/src/GlView.cpp
-+++ pianobooster-src-0.6.4/src/GlView.cpp
-@@ -225,14 +225,14 @@
+Index: pianobooster-src-0.6.4b/src/GlView.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GlView.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GlView.cpp	2012-12-04 09:45:24.941137618 +0100
+@@ -220,14 +220,14 @@
      glColor3f(1.0,1.0,1.0);
  
      if (m_song->getPlayMode() != PB_PLAY_MODE_listen)
@@ -963,7 +983,7 @@
      /*
      char buffer[100];
      sprintf(buffer, "Notes %d wrong %d Late %d Score %4.1f%%",
-@@ -255,7 +255,7 @@
+@@ -250,7 +250,7 @@
      //CDraw::drColour (Cfg::noteColourDim());
      //glRectf(x+30+10, y-2, x + 80, y + 16);
      glColor3f(1.0,1.0,1.0);
@@ -972,8 +992,10 @@
  }
  
  void CGLView::resizeGL(int width, int height)
---- pianobooster-src-0.6.4.orig/src/GuiTopBar.cpp
-+++ pianobooster-src-0.6.4/src/GuiTopBar.cpp
+Index: pianobooster-src-0.6.4b/src/GuiTopBar.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiTopBar.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiTopBar.cpp	2012-12-04 09:45:24.941137618 +0100
 @@ -52,8 +52,8 @@
      transposeSpin->setMaximum(12);
      transposeSpin->setMinimum(-12);
@@ -1058,8 +1080,10 @@
      }
  }
  
---- pianobooster-src-0.6.4.orig/src/Settings.cpp
-+++ pianobooster-src-0.6.4/src/Settings.cpp
+Index: pianobooster-src-0.6.4b/src/Settings.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/Settings.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/Settings.cpp	2012-12-04 09:45:24.941137618 +0100
 @@ -89,7 +89,7 @@
      setDefaultValue("ShortCuts/LeftHand", "F2");
      setDefaultValue("ShortCuts/BothHands","F3");
@@ -1081,8 +1105,10 @@
      else
          m_warningMessage.clear();
  }
---- pianobooster-src-0.6.4.orig/src/GuiSongDetailsDialog.cpp
-+++ pianobooster-src-0.6.4/src/GuiSongDetailsDialog.cpp
+Index: pianobooster-src-0.6.4b/src/GuiSongDetailsDialog.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiSongDetailsDialog.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiSongDetailsDialog.cpp	2012-12-04 09:45:24.941137618 +0100
 @@ -36,7 +36,7 @@
      m_song = 0;
      m_settings = 0;
@@ -1113,8 +1139,10 @@
          activateOkButton = true;
      }
  
---- pianobooster-src-0.6.4.orig/src/GuiSidePanel.cpp
-+++ pianobooster-src-0.6.4/src/GuiSidePanel.cpp
+Index: pianobooster-src-0.6.4b/src/GuiSidePanel.cpp
+===================================================================
+--- pianobooster-src-0.6.4b.orig/src/GuiSidePanel.cpp	2012-12-04 09:44:04.981136746 +0100
++++ pianobooster-src-0.6.4b/src/GuiSidePanel.cpp	2012-12-04 09:45:24.941137618 +0100
 @@ -60,15 +60,15 @@
      pianoSlider->setMaximum(100);
  
@@ -1134,8 +1162,10 @@
      trackListWidget->addAction(act);
      connect(act, SIGNAL(triggered()), this, SLOT(clearTrackPart()));
  
---- /dev/null
-+++ pianobooster-src-0.6.4/src/pianobooster_gl.ts
+Index: pianobooster-src-0.6.4b/src/pianobooster_gl.ts
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ pianobooster-src-0.6.4b/src/pianobooster_gl.ts	2012-12-04 09:45:24.941137618 +0100
 @@ -0,0 +1,955 @@
 +<?xml version="1.0" encoding="utf-8"?>
 +<!DOCTYPE TS>
