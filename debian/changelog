@@ -4,6 +4,7 @@ pianobooster (0.6.4b-1) UNRELEASED; urgency=low
   * New upstream release
   * Upgraded Standards-Version from 3.9.2 to 3.9.3
   * Upgraded debian/compat to 9.
+  * Added patch: linker_opts.patch
   * Modified debian/rules to use fortified libc functions.
     See: http://wiki.debian.org/Hardening
   * Changed my email address in debian/control to miriam@debian.org
