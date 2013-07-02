@@ -14,8 +14,6 @@ BUILD_TREE=$(CURDIR)/build-tree
 config: config-stamp
 config-stamp: 
 	dh_testdir
-	[ ! -d debian/patches ] || $(MAKE) -f /usr/share/quilt/quilt.make patch
-	
 	# Perform an out-of-tree build to keep a clean source tree
 	mkdir $(BUILD_TREE)
 	cd $(BUILD_TREE); cmake $(CURDIR)/src/ \
@@ -27,8 +25,7 @@ config-stamp:
 		-DCMAKE_CXX_FLAGS:STRING="$(CXXFLAGS) $(CPPFLAGS)" \
 		-DBUILD_STATIC:BOOL=ON \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)" \
-		-DCMAKE_INSTALL_RPATH:STRING="/usr/lib/games/pianobooster"
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)"
 	touch $@
 
 build-stamp: config
@@ -49,7 +46,6 @@ clean:
 	rm -fv build-stamp config-stamp
 	rm -fvr $(BUILD_TREE)
 	rm -fv src/*.qm
-	[ ! -d debian/patches ] || $(MAKE) -f /usr/share/quilt/quilt.make unpatch
 	dh_clean 
 
 install: build
@@ -86,8 +82,6 @@ binary-arch: install
 
 refresh-tr:
 	dh_testdir
-	-quilt push -a
-	
 	# Update translations
 	cd $(CURDIR)/src/ && lupdate -verbose pianobooster.pro
 

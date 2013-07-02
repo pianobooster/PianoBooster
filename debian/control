@@ -3,13 +3,13 @@ Section: games
 Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Uploaders: Miriam Ruiz <miriam@debian.org>
-Build-Depends: debhelper (>= 9), cmake, dh-buildinfo, quilt,
+Build-Depends: debhelper (>= 9), cmake, dh-buildinfo,
  qt4-qmake, libqt4-dev, libqt4-opengl-dev,
  mesa-common-dev, libglu1-mesa-dev, libasound2-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://pianobooster.sourceforge.net/
-Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/pianobooster/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/pianobooster/?op=log
+Vcs-Svn: svn://anonscm.debian.org/pkg-games/packages/trunk/pianobooster/
+Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-games/packages/trunk/pianobooster/
 
 Package: pianobooster
 Architecture: any
@@ -32,7 +32,7 @@ Package: pianobooster-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: pianobooster (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: pianobooster (= ${binary:Version}), ${misc:Depends}
 Description: learn the piano just by playing a game - debug
  Piano Booster is a new way to learn the piano just by playing a game. 
  It takes elements of the game Guitar Hero but now it uses a real piano

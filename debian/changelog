@@ -1,3 +1,21 @@
+pianobooster (0.6.4b-2) unstable; urgency=low
+
+  * Team upload.
+  * Bump Standards-Version to 3.9.4, no changes.
+  * Use canonical VCS-URI.
+  * Remove quilt from Build-Depends because source format 3.0 uses quilt by
+    default.
+  * Remove superfluous substvar ${shlibs:Depends} from performous-dbg.
+  * Add link-pthread-and-GL-explicitly.patch and fix FTBFS by linking the
+    missing libraries in CMakelist.txt explicitly. (Closes: #713691)
+  * Fix lintian error and do not set the library RPATH in debian/rules anymore.
+    Use the normal library search path instead.
+  * Update debian/copyright to copyright format 1.0. Fix spelling mistakes.
+  * pianobooster.desktop: Add keywords.
+  * Update debian/watch.
+
+ -- Markus Koschany <apo@gambaru.de>  Tue, 02 Jul 2013 16:53:50 +0200
+
 pianobooster (0.6.4b-1) unstable; urgency=low
 
   [ Miriam Ruiz ]

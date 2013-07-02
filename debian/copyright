@@ -1,16 +1,17 @@
-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
-Upstream-Source: http://sourceforge.net/projects/pianobooster/
-Upstream-Maintainer: Louis J. Barman <louisjb@users.sourceforge.net>
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: http://sourceforge.net/projects/pianobooster/
+Upstream-Contact: Louis J. Barman <louisjb@users.sourceforge.net>
+Upstream-Name: Piano Booster
 Debianized-By: Miriam Ruiz <little_miry@yahoo.es>
 Debianized-Date: Wed, 04 Mar 2009 02:22:56 +0100
 
 Files: *
 Copyright: Copyright (c) 2008-2009, L. J. Barman
-Licence: GPL-3+
+License: GPL-3+
 
 Files: src/rtmidi/RtMidi.cpp
 Copyright: Copyright (c) 2003-2011, Gary P. Scavone
-Licence:
+License:
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
@@ -36,16 +37,13 @@ Licence:
 
 Files: debian/*
 Copyright: Copyright (C) 2009, Miriam Ruiz <little_miry@yahoo.es>
-Licence: GPL-3+
+License: GPL-3+
 
-Licence: GPL-3+
+License: GPL-3+
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
+ the Free Software Foundation; either version 3 of the License, or
  (at your option) any later version.
- .
- On Debian systems, the complete text of the latest version of the GNU
- General Public License can be found in `/usr/share/common-licenses/GPL'.
  .
  The complete text of version 3 of the GNU General Public License can be
  found in `/usr/share/common-licenses/GPL-3'.

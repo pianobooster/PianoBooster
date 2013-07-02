@@ -4,5 +4,5 @@
 
 version=3
 
-opts="versionmangle=s/(.*)([A-Za-z])$/$1~$2/" \
-	http://sf.net/pianobooster/pianobooster-src-(.*)\.tar\.gz
+opts="versionmangle=s/(.*)([A-Za-z])$/$1$2/" \
+http://sf.net/pianobooster/pianobooster-src-(.*)\.tar\.gz
