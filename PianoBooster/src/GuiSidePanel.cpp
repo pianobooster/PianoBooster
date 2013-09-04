@@ -167,7 +167,7 @@ void GuiSidePanel::autoSetMuteYourPart()
         checked =  true;
     if (m_song->getPlayMode() == PB_PLAY_MODE_rhythmTapping)
     {
-        if ((m_song->cfg_rhythmTapping == PB_RHYTHM_TAP_drumsOnly))
+        if (m_song->cfg_rhythmTapping == PB_RHYTHM_TAP_drumsOnly)
             checked = false;
     }
 

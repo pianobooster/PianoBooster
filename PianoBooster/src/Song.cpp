@@ -30,12 +30,12 @@
 #include "Score.h"
 
 
-void CSong::init(CScore * scoreWin, CSettings* settings)
+void CSong::init2(CScore * scoreWin, CSettings* settings)
 {
 
     CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
 
-    this->CConductor::init(scoreWin, settings);
+    this->CConductor::init2(scoreWin, settings);
 
     setActiveHand(PB_PART_both);
     setPlayMode(PB_PLAY_MODE_followYou);

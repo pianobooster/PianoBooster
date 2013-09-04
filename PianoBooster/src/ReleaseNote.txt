@@ -1,4 +1,4 @@
-#define PB_VERSION "0.6.6.svn.31-7-12"
+#define PB_VERSION "0.6.7.svn.30-08-13"
 
 /*
 

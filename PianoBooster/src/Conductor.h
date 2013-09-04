@@ -80,7 +80,7 @@ public:
     CConductor();
     ~CConductor();
 
-    void init(CScore * scoreWin, CSettings* settings);
+    void init2(CScore * scoreWin, CSettings* settings);
 
 
     //! add a midi event to be analysed and played

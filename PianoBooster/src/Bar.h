@@ -135,8 +135,6 @@ private:
     double m_playFromBar;
     double m_playUptoBar;
     double m_loopingBars;
-    int m_playFromBeat;
-    int m_playFromTicks;
     bool m_seekingBarNumber;
     bool m_flushTicks;
     eventBits_t m_eventBits;

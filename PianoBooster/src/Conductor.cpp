@@ -1097,7 +1097,7 @@ void CConductor::rewind()
     m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate()) * SPEED_ADJUST_FACTOR;
 }
 
-void CConductor::init(CScore * scoreWin, CSettings* settings)
+void CConductor::init2(CScore * scoreWin, CSettings* settings)
 {
     int channel;
 
