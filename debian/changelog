@@ -1,3 +1,11 @@
+pianobooster (0.6.4.0-1) UNRELEASED; urgency=medium
+
+  * New Upstream Release.
+  * Added build dependency: qt4-linguist-tools
+  * Upgraded Standards-Version from 3.9.4 to 3.9.6
+
+ -- Miriam Ruiz <miriam@debian.org>  Fri, 27 Nov 2015 00:35:47 +0100
+
 pianobooster (0.6.4b-2) unstable; urgency=low
 
   * Team upload.
