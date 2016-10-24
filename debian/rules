@@ -31,7 +31,7 @@ config-stamp:
 build-stamp: config
 	dh_testdir
 	cd $(BUILD_TREE); $(MAKE)
-	cd src && lrelease-qt4 *.ts
+	cd src && lrelease-qt4 *.pro
 	touch $@
 
 build-indep:
@@ -45,7 +45,7 @@ clean:
 	dh_testroot
 	rm -fv build-stamp config-stamp
 	rm -fvr $(BUILD_TREE)
-	rm -fv src/*.qm
+	rm -fv translations/*.qm
 	dh_clean 
 
 install: build
@@ -84,4 +84,4 @@ refresh-tr:
 	cd $(CURDIR)/src/ && lupdate -verbose pianobooster.pro
 
 binary: binary-indep binary-arch
-.PHONY: config build build-indep build-arch clean binary-indep binary-arch binary install 
+.PHONY: config build build-indep build-arch clean binary-indep binary-arch binary install

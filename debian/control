@@ -2,11 +2,11 @@ Source: pianobooster
 Section: games
 Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Uploaders: Miriam Ruiz <miriam@debian.org>
+Uploaders: Miriam Ruiz <miriam@debian.org>, Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>
 Build-Depends: debhelper (>= 9), cmake, dh-buildinfo,
  qt4-qmake, libqt4-dev, libqt4-opengl-dev, qt4-linguist-tools,
  mesa-common-dev, libglu1-mesa-dev, libasound2-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: http://pianobooster.sourceforge.net/
 Vcs-Svn: svn://anonscm.debian.org/pkg-games/packages/trunk/pianobooster/
 Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-games/packages/trunk/pianobooster/

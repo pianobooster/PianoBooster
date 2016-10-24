@@ -1,7 +1,7 @@
-Index: pianobooster-src-0.6.4b/src/rtmidi/RtError.h
+Index: pianobooster-src-0.6.7~svn156/src/rtmidi/RtError.h
 ===================================================================
---- pianobooster-src-0.6.4b.orig/src/rtmidi/RtError.h	2012-12-04 09:44:05.321136750 +0100
-+++ pianobooster-src-0.6.4b/src/rtmidi/RtError.h	2012-12-04 09:45:23.497137602 +0100
+--- pianobooster-src-0.6.7~svn156.orig/src/rtmidi/RtError.h
++++ pianobooster-src-0.6.7~svn156/src/rtmidi/RtError.h
 @@ -12,12 +12,13 @@
  #ifndef RTERROR_H
  #define RTERROR_H
@@ -18,7 +18,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtError.h
    //! Defined RtError types.
    enum Type {
      WARNING,           /*!< A non-critical error. */
-@@ -25,36 +26,35 @@
+@@ -25,36 +26,35 @@ public:
      UNSPECIFIED,       /*!< The default, unspecified error type. */
      NO_DEVICES_FOUND,  /*!< No devices found on system. */
      INVALID_DEVICE,    /*!< An invalid device ID was specified. */
@@ -68,15 +68,15 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtError.h
  };
  
  #endif
-Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
+Index: pianobooster-src-0.6.7~svn156/src/rtmidi/RtMidi.cpp
 ===================================================================
---- pianobooster-src-0.6.4b.orig/src/rtmidi/RtMidi.cpp	2012-12-04 09:44:05.321136750 +0100
-+++ pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp	2012-12-04 09:45:23.501137602 +0100
+--- pianobooster-src-0.6.7~svn156.orig/src/rtmidi/RtMidi.cpp
++++ pianobooster-src-0.6.7~svn156/src/rtmidi/RtMidi.cpp
 @@ -8,7 +8,7 @@
      RtMidi WWW site: http://music.mcgill.ca/~gary/rtmidi/
  
      RtMidi: realtime MIDI i/o C++ classes
--    Copyright (c) 2003-2009 Gary P. Scavone
+-    Copyright (c) 2003-2010 Gary P. Scavone
 +    Copyright (c) 2003-2011 Gary P. Scavone
  
      Permission is hereby granted, free of charge, to any person
@@ -85,12 +85,12 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  */
  /**********************************************************************/
  
--// RtMidi: Version 1.0.8
+-// RtMidi: Version 1.0.11
 +// RtMidi: Version 1.0.15
  
  #include "RtMidi.h"
  #include <sstream>
-@@ -69,9 +69,14 @@
+@@ -69,9 +69,14 @@ void RtMidi :: error( RtError::Type type
  //  Common RtMidiIn Definitions
  //*********************************************************************//
  
@@ -106,7 +106,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  void RtMidiIn :: setCallback( RtMidiCallback callback, void *userData )
-@@ -106,11 +111,6 @@
+@@ -106,11 +111,6 @@ void RtMidiIn :: cancelCallback()
    inputData_.usingCallback = false;
  }
  
@@ -118,7 +118,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  void RtMidiIn :: ignoreTypes( bool midiSysex, bool midiTime, bool midiSense )
  {
    inputData_.ignoreFlags = 0;
-@@ -129,13 +129,16 @@
+@@ -129,13 +129,16 @@ double RtMidiIn :: getMessage( std::vect
      return 0.0;
    }
  
@@ -139,24 +139,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  
    return deltaTime;
  }
-@@ -155,7 +158,7 @@
- //*********************************************************************//
- 
- // API information found at:
--//   - http://developer. apple .com/audio/pdf/coreaudio.pdf 
-+//   - http://developer.apple.com/audio/pdf/coreaudio.pdf 
- 
- #if defined(__MACOSX_CORE__)
- 
-@@ -166,6 +169,7 @@
- // OS-X CoreMIDI header files.
- #include <CoreMIDI/CoreMIDI.h>
- #include <CoreAudio/HostTime.h>
-+#include <CoreServices/CoreServices.h>
- 
- // A structure to hold variables related to the CoreMIDI API
- // implementation.
-@@ -175,6 +179,7 @@
+@@ -176,6 +179,7 @@ struct CoreMidiData {
    MIDIEndpointRef endpoint;
    MIDIEndpointRef destinationId;
    unsigned long long lastTime;
@@ -164,7 +147,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  };
  
  //*********************************************************************//
-@@ -215,18 +220,25 @@
+@@ -216,11 +220,18 @@ void midiInputCallback( const MIDIPacket
        data->firstMessage = false;
      else {
        time = packet->timeStamp;
@@ -183,15 +166,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  
      iByte = 0;
      if ( continueSysex ) {
-       // We have a continuing, segmented sysex message.
-       if ( !( data->ignoreFlags & 0x01 ) ) {
-         // If we're not ignoring sysex messages, copy the entire packet.
--        for ( unsigned int j=0; j<nBytes; j++ )
-+        for ( unsigned int j=0; j<nBytes; ++j )
-           message.bytes.push_back( packet->data[j] );
-       }
-       continueSysex = packet->data[nBytes-1] != 0xF7;
-@@ -239,8 +251,12 @@
+@@ -240,8 +251,12 @@ void midiInputCallback( const MIDIPacket
          }
          else {
            // As long as we haven't reached our queue size limit, push the message.
@@ -206,7 +181,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
            else
              std::cerr << "\nRtMidiIn: message queue limit reached!!\n\n";
          }
-@@ -264,26 +280,24 @@
+@@ -265,26 +280,24 @@ void midiInputCallback( const MIDIPacket
              iByte = nBytes;
            }
            else size = nBytes - iByte;
@@ -246,7 +221,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
            // A MIDI active sensing message and we're ignoring it.
            size = 0;
            iByte += 1;
-@@ -301,8 +315,12 @@
+@@ -302,8 +315,12 @@ void midiInputCallback( const MIDIPacket
              }
              else {
                // As long as we haven't reached our queue size limit, push the message.
@@ -261,16 +236,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
                else
                  std::cerr << "\nRtMidiIn: message queue limit reached!!\n\n";
              }
-@@ -368,7 +386,7 @@
- 
-   // Get the desired input source identifier.
-   MIDIEndpointRef endpoint = MIDIGetSource( portNumber );
--  if ( endpoint == NULL ) {
-+  if ( endpoint == 0 ) {
-     MIDIPortDispose( port );
-     MIDIClientDispose( data->client );
-     errorString_ = "RtMidiIn::openPort: error getting MIDI input source reference.";
-@@ -427,6 +445,9 @@
+@@ -428,6 +445,9 @@ RtMidiIn :: ~RtMidiIn()
    MIDIClientDispose( data->client );
    if ( data->endpoint ) MIDIEndpointDispose( data->endpoint );
    delete data;
@@ -280,138 +246,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  unsigned int RtMidiIn :: getPortCount()
-@@ -434,6 +455,130 @@
-   return MIDIGetNumberOfSources();
- }
- 
-+// This function was submitted by Douglas Casey Tucker and apparently
-+// derived largely from PortMidi.
-+CFStringRef EndpointName( MIDIEndpointRef endpoint, bool isExternal )
-+{
-+  CFMutableStringRef result = CFStringCreateMutable( NULL, 0 );
-+  CFStringRef str;
-+
-+  // Begin with the endpoint's name.
-+  str = NULL;
-+  MIDIObjectGetStringProperty( endpoint, kMIDIPropertyName, &str );
-+  if ( str != NULL ) {
-+    CFStringAppend( result, str );
-+    CFRelease( str );
-+  }
-+
-+  MIDIEntityRef entity = NULL;
-+  MIDIEndpointGetEntity( endpoint, &entity );
-+  if ( entity == 0 )
-+    // probably virtual
-+    return result;
-+
-+  if ( CFStringGetLength( result ) == 0 ) {
-+    // endpoint name has zero length -- try the entity
-+    str = NULL;
-+    MIDIObjectGetStringProperty( entity, kMIDIPropertyName, &str );
-+    if ( str != NULL ) {
-+      CFStringAppend( result, str );
-+      CFRelease( str );
-+    }
-+  }
-+  // now consider the device's name
-+  MIDIDeviceRef device = 0;
-+  MIDIEntityGetDevice( entity, &device );
-+  if ( device == 0 )
-+    return result;
-+
-+  str = NULL;
-+  MIDIObjectGetStringProperty( device, kMIDIPropertyName, &str );
-+  if ( CFStringGetLength( result ) == 0 ) {
-+      CFRelease( result );
-+      return str;
-+  }
-+  if ( str != NULL ) {
-+    // if an external device has only one entity, throw away
-+    // the endpoint name and just use the device name
-+    if ( isExternal && MIDIDeviceGetNumberOfEntities( device ) < 2 ) {
-+      CFRelease( result );
-+      return str;
-+    } else {
-+      if ( CFStringGetLength( str ) == 0 ) {
-+        CFRelease( str );
-+        return result;
-+      }
-+      // does the entity name already start with the device name?
-+      // (some drivers do this though they shouldn't)
-+      // if so, do not prepend
-+        if ( CFStringCompareWithOptions( result, /* endpoint name */
-+             str /* device name */,
-+             CFRangeMake(0, CFStringGetLength( str ) ), 0 ) != kCFCompareEqualTo ) {
-+        // prepend the device name to the entity name
-+        if ( CFStringGetLength( result ) > 0 )
-+          CFStringInsert( result, 0, CFSTR(" ") );
-+        CFStringInsert( result, 0, str );
-+      }
-+      CFRelease( str );
-+    }
-+  }
-+  return result;
-+}
-+
-+// This function was submitted by Douglas Casey Tucker and apparently
-+// derived largely from PortMidi.
-+static CFStringRef ConnectedEndpointName( MIDIEndpointRef endpoint )
-+{
-+  CFMutableStringRef result = CFStringCreateMutable( NULL, 0 );
-+  CFStringRef str;
-+  OSStatus err;
-+  int i;
-+
-+  // Does the endpoint have connections?
-+  CFDataRef connections = NULL;
-+  int nConnected = 0;
-+  bool anyStrings = false;
-+  err = MIDIObjectGetDataProperty( endpoint, kMIDIPropertyConnectionUniqueID, &connections );
-+  if ( connections != NULL ) {
-+    // It has connections, follow them
-+    // Concatenate the names of all connected devices
-+    nConnected = CFDataGetLength( connections ) / sizeof(MIDIUniqueID);
-+    if ( nConnected ) {
-+      const SInt32 *pid = (const SInt32 *)(CFDataGetBytePtr(connections));
-+      for ( i=0; i<nConnected; ++i, ++pid ) {
-+        MIDIUniqueID id = EndianS32_BtoN( *pid );
-+        MIDIObjectRef connObject;
-+        MIDIObjectType connObjectType;
-+        err = MIDIObjectFindByUniqueID( id, &connObject, &connObjectType );
-+        if ( err == noErr ) {
-+          if ( connObjectType == kMIDIObjectType_ExternalSource  ||
-+              connObjectType == kMIDIObjectType_ExternalDestination ) {
-+            // Connected to an external device's endpoint (10.3 and later).
-+            str = EndpointName( (MIDIEndpointRef)(connObject), true );
-+          } else {
-+            // Connected to an external device (10.2) (or something else, catch-
-+            str = NULL;
-+            MIDIObjectGetStringProperty( connObject, kMIDIPropertyName, &str );
-+          }
-+          if ( str != NULL ) {
-+            if ( anyStrings )
-+              CFStringAppend( result, CFSTR(", ") );
-+            else anyStrings = true;
-+            CFStringAppend( result, str );
-+            CFRelease( str );
-+          }
-+        }
-+      }
-+    }
-+    CFRelease( connections );
-+  }
-+  if ( anyStrings )
-+    return result;
-+
-+  // Here, either the endpoint had no connections, or we failed to obtain names 
-+  return EndpointName( endpoint, false );
-+}
-+
- std::string RtMidiIn :: getPortName( unsigned int portNumber )
- {
-   CFStringRef nameRef;
-@@ -441,18 +586,21 @@
+@@ -566,21 +586,21 @@ std::string RtMidiIn :: getPortName( uns
    std::ostringstream ost;
    char name[128];
  
@@ -426,9 +261,11 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    }
 -  portRef = MIDIGetSource( portNumber );
  
--  MIDIObjectGetStringProperty( portRef, kMIDIPropertyName, &nameRef );
 +  portRef = MIDIGetSource( portNumber );
-+  nameRef = ConnectedEndpointName(portRef);
+   nameRef = ConnectedEndpointName(portRef);
+-  //MIDIObjectGetStringProperty( portRef, kMIDIPropertyName, &nameRef );
+-  // modified by D. Casey Tucker 2009-03-10
+-
    CFStringGetCString( nameRef, name, sizeof(name), 0);
    CFRelease( nameRef );
 -  std::string stringName = name;
@@ -438,7 +275,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  //*********************************************************************//
-@@ -472,18 +620,21 @@
+@@ -600,19 +620,21 @@ std::string RtMidiOut :: getPortName( un
    std::ostringstream ost;
    char name[128];
  
@@ -453,9 +290,9 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    }
 -  portRef = MIDIGetDestination( portNumber );
  
--  MIDIObjectGetStringProperty( portRef, kMIDIPropertyName, &nameRef );
 +  portRef = MIDIGetDestination( portNumber );
-+  nameRef = ConnectedEndpointName(portRef);
+   nameRef = ConnectedEndpointName(portRef);
+-  //MIDIObjectGetStringProperty( portRef, kMIDIPropertyName, &nameRef );
    CFStringGetCString( nameRef, name, sizeof(name), 0);
    CFRelease( nameRef );
 -  std::string stringName = name;
@@ -465,16 +302,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  void RtMidiOut :: initialize( const std::string& clientName )
-@@ -537,7 +688,7 @@
- 
-   // Get the desired output port identifier.
-   MIDIEndpointRef destination = MIDIGetDestination( portNumber );
--  if ( destination == NULL ) {
-+  if ( destination == 0 ) {
-     MIDIPortDispose( port );
-     MIDIClientDispose( data->client );
-     errorString_ = "RtMidiOut::openPort: error getting MIDI output destination reference.";
-@@ -595,11 +746,19 @@
+@@ -724,11 +746,19 @@ RtMidiOut :: ~RtMidiOut()
    delete data;
  }
  
@@ -497,7 +325,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    unsigned int nBytes = message->size();
    if ( nBytes == 0 ) {
      errorString_ = "RtMidiOut::sendMessage: no data in message argument!";      
-@@ -607,51 +766,71 @@
+@@ -736,51 +766,71 @@ void RtMidiOut :: sendMessage( std::vect
      return;
    }
  
@@ -509,10 +337,9 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
 -
 -  unsigned int packetBytes, bytesLeft = nBytes;
 -  unsigned int messageIndex = 0;
--  MIDITimeStamp timeStamp = 0;
 +  //  unsigned int packetBytes, bytesLeft = nBytes;
 +  //  unsigned int messageIndex = 0;
-+  MIDITimeStamp timeStamp = AudioGetCurrentHostTime();
+   MIDITimeStamp timeStamp = AudioGetCurrentHostTime();
    CoreMidiData *data = static_cast<CoreMidiData *> (apiData_);
 +  OSStatus result;
  
@@ -606,18 +433,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  #endif  // __MACOSX_CORE__
-@@ -672,6 +851,10 @@
- // Thanks to Pedro Lopez-Cabanillas for help with the ALSA sequencer
- // time stamps and other assorted fixes!!!
- 
-+// If you don't need timestamping for incoming MIDI events, define the
-+// preprocessor definition AVOID_TIMESTAMPING to save resources
-+// associated with the ALSA sequencer queues.
-+
- #include <pthread.h>
- #include <sys/time.h>
- 
-@@ -707,6 +890,7 @@
+@@ -840,6 +890,7 @@ extern "C" void *alsaMidiHandler( void *
    long nBytes;
    unsigned long long time, lastTime;
    bool continueSysex = false;
@@ -625,7 +441,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    RtMidiIn::MidiMessage message;
  
    snd_seq_event_t *ev;
-@@ -748,9 +932,9 @@
+@@ -881,9 +932,9 @@ extern "C" void *alsaMidiHandler( void *
  
      // This is a bit weird, but we now have to decode an ALSA MIDI
      // event (back) into MIDI bytes.  We'll ignore non-MIDI types.
@@ -637,22 +453,17 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
      switch ( ev->type ) {
  
  		case SND_SEQ_EVENT_PORT_SUBSCRIBED:
-@@ -762,23 +946,25 @@
- 		case SND_SEQ_EVENT_PORT_UNSUBSCRIBED:
+@@ -896,21 +947,24 @@ extern "C" void *alsaMidiHandler( void *
  #if defined(__RTMIDI_DEBUG__)
        std::cerr << "RtMidiIn::alsaMidiHandler: port connection has closed!\n";
--      // FIXME: this is called for all unsubscribe events, even ones
--      //not related to this particular connection.  As it stands, I
--      //see no data provided in the "source" and "dest" fields so
--      //there is nothing we can do about this at this time.
--      // std::cout << "sender = " << ev->source.client << ", dest = " << ev->dest.port << std::endl;
-+      std::cout << "sender = " << (int) ev->data.connect.sender.client << ":"
+       std::cout << "sender = " << (int) ev->data.connect.sender.client << ":"
+-                               << (int) ev->data.connect.sender.port
 +                << (int) ev->data.connect.sender.port
-+                << ", dest = " << (int) ev->data.connect.dest.client << ":"
+                 << ", dest = " << (int) ev->data.connect.dest.client << ":"
+-                               << (int) ev->data.connect.dest.port
 +                << (int) ev->data.connect.dest.port
-+                << std::endl;
+                 << std::endl;
  #endif
--      //data->doInput = false;
        break;
  
      case SND_SEQ_EVENT_QFRAME: // MIDI time code
@@ -672,7 +483,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  
  		case SND_SEQ_EVENT_SYSEX:
        if ( (data->ignoreFlags & 0x01) ) break;
-@@ -794,48 +980,53 @@
+@@ -926,48 +980,53 @@ extern "C" void *alsaMidiHandler( void *
        }
  
      default:
@@ -762,7 +573,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
      if ( message.bytes.size() == 0 ) continue;
  
      if ( data->usingCallback && !continueSysex ) {
-@@ -844,8 +1035,12 @@
+@@ -976,8 +1035,12 @@ extern "C" void *alsaMidiHandler( void *
      }
      else {
        // As long as we haven't reached our queue size limit, push the message.
@@ -777,95 +588,8 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
        else
          std::cerr << "\nRtMidiIn: message queue limit reached!!\n\n";
      }
-@@ -878,6 +1073,7 @@
-   inputData_.apiData = (void *) data;
- 
-   // Create the input queue
-+#ifndef AVOID_TIMESTAMPING
-   data->queue_id = snd_seq_alloc_named_queue(seq, "RtMidi Queue");
-   // Set arbitrary tempo (mm=100) and resolution (240)
-   snd_seq_queue_tempo_t *qtempo;
-@@ -886,6 +1082,7 @@
-   snd_seq_queue_tempo_set_ppq(qtempo, 240);
-   snd_seq_set_queue_tempo(data->seq, data->queue_id, qtempo);
-   snd_seq_drain_output(data->seq);
-+#endif
- }
- 
- // This function is used to count or get the pinfo structure for a given port number.
-@@ -909,7 +1106,7 @@
-       unsigned int caps = snd_seq_port_info_get_capability( pinfo );
-       if ( ( caps & type ) != type ) continue;
-       if ( count == portNumber ) return 1;
--      count++;
-+      ++count;
- 		}
- 	}
- 
-@@ -957,9 +1154,11 @@
-                                 SND_SEQ_PORT_TYPE_MIDI_GENERIC |
-                                 SND_SEQ_PORT_TYPE_APPLICATION );
-     snd_seq_port_info_set_midi_channels(pinfo, 16);
-+#ifndef AVOID_TIMESTAMPING
-     snd_seq_port_info_set_timestamping(pinfo, 1);
-     snd_seq_port_info_set_timestamp_real(pinfo, 1);    
-     snd_seq_port_info_set_timestamp_queue(pinfo, data->queue_id);
-+#endif
-     snd_seq_port_info_set_name(pinfo,  portName.c_str() );
-     data->vport = snd_seq_create_port(data->seq, pinfo);
-   
-@@ -982,8 +1181,10 @@
- 
-   if ( inputData_.doInput == false ) {
-     // Start the input queue
-+#ifndef AVOID_TIMESTAMPING
-     snd_seq_start_queue( data->seq, data->queue_id, NULL );
-     snd_seq_drain_output( data->seq );
-+#endif
-     // Start our MIDI input thread.
-     pthread_attr_t attr;
-     pthread_attr_init(&attr);
-@@ -1018,9 +1219,11 @@
- 				SND_SEQ_PORT_TYPE_MIDI_GENERIC |
- 				SND_SEQ_PORT_TYPE_APPLICATION );
-     snd_seq_port_info_set_midi_channels(pinfo, 16);
-+#ifndef AVOID_TIMESTAMPING
-     snd_seq_port_info_set_timestamping(pinfo, 1);
-     snd_seq_port_info_set_timestamp_real(pinfo, 1);    
-     snd_seq_port_info_set_timestamp_queue(pinfo, data->queue_id);
-+#endif
-     snd_seq_port_info_set_name(pinfo, portName.c_str());
-     data->vport = snd_seq_create_port(data->seq, pinfo);
- 
-@@ -1032,8 +1235,10 @@
- 
-   if ( inputData_.doInput == false ) {
-     // Start the input queue
-+#ifndef AVOID_TIMESTAMPING
-     snd_seq_start_queue( data->seq, data->queue_id, NULL );
-     snd_seq_drain_output( data->seq );
-+#endif
-     // Start our MIDI input thread.
-     pthread_attr_t attr;
-     pthread_attr_init(&attr);
-@@ -1060,8 +1265,10 @@
-     snd_seq_unsubscribe_port( data->seq, data->subscription );
-     snd_seq_port_subscribe_free( data->subscription );
-     // Stop the input queue
-+#ifndef AVOID_TIMESTAMPING
-     snd_seq_stop_queue( data->seq, data->queue_id, NULL );
-     snd_seq_drain_output( data->seq );
-+#endif
-     connected_ = false;
-   }
- }
-@@ -1080,9 +1287,14 @@
- 
-   // Cleanup.
-   if ( data->vport >= 0 ) snd_seq_delete_port( data->seq, data->vport );
-+#ifndef AVOID_TIMESTAMPING
-   snd_seq_free_queue( data->seq, data->queue_id );
-+#endif
+@@ -1229,6 +1292,9 @@ RtMidiIn :: ~RtMidiIn()
+ #endif
    snd_seq_close( data->seq );
    delete data;
 +
@@ -874,7 +598,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  unsigned int RtMidiIn :: getPortCount()
-@@ -1101,6 +1313,7 @@
+@@ -1247,6 +1313,7 @@ std::string RtMidiIn :: getPortName( uns
    snd_seq_client_info_alloca( &cinfo );
    snd_seq_port_info_alloca( &pinfo );
  
@@ -882,7 +606,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    AlsaMidiData *data = static_cast<AlsaMidiData *> (apiData_);
    if ( portInfo( data->seq, pinfo, SND_SEQ_PORT_CAP_READ|SND_SEQ_PORT_CAP_SUBS_READ, (int) portNumber ) ) {
      int cnum = snd_seq_port_info_get_client( pinfo );
-@@ -1109,14 +1322,15 @@
+@@ -1255,14 +1322,15 @@ std::string RtMidiIn :: getPortName( uns
      os << snd_seq_client_info_get_name( cinfo );
      os << ":";
      os << snd_seq_port_info_get_port( pinfo );
@@ -901,7 +625,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  //*********************************************************************//
-@@ -1140,6 +1354,7 @@
+@@ -1286,6 +1354,7 @@ std::string RtMidiOut :: getPortName( un
    snd_seq_client_info_alloca( &cinfo );
    snd_seq_port_info_alloca( &pinfo );
  
@@ -909,7 +633,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    AlsaMidiData *data = static_cast<AlsaMidiData *> (apiData_);
    if ( portInfo( data->seq, pinfo, SND_SEQ_PORT_CAP_WRITE|SND_SEQ_PORT_CAP_SUBS_WRITE, (int) portNumber ) ) {
      int cnum = snd_seq_port_info_get_client(pinfo);
-@@ -1148,14 +1363,15 @@
+@@ -1294,14 +1363,15 @@ std::string RtMidiOut :: getPortName( un
      os << snd_seq_client_info_get_name(cinfo);
      os << ":";
      os << snd_seq_port_info_get_port(pinfo);
@@ -928,7 +652,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  void RtMidiOut :: initialize( const std::string& clientName )
-@@ -1226,7 +1442,7 @@
+@@ -1372,7 +1442,7 @@ void RtMidiOut :: openPort( unsigned int
    if ( data->vport < 0 ) {
      data->vport = snd_seq_create_simple_port( data->seq, portName.c_str(),
                                                SND_SEQ_PORT_CAP_READ|SND_SEQ_PORT_CAP_SUBS_READ,
@@ -937,7 +661,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
      if ( data->vport < 0 ) {
        errorString_ = "RtMidiOut::openPort: ALSA error creating output port.";
        error( RtError::DRIVER_ERROR );
-@@ -1265,7 +1481,7 @@
+@@ -1411,7 +1481,7 @@ void RtMidiOut :: openVirtualPort( std::
    if ( data->vport < 0 ) {
      data->vport = snd_seq_create_simple_port( data->seq, portName.c_str(),
                                                SND_SEQ_PORT_CAP_READ|SND_SEQ_PORT_CAP_SUBS_READ,
@@ -946,25 +670,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  
      if ( data->vport < 0 ) {
        errorString_ = "RtMidiOut::openVirtualPort: ALSA error creating virtual port.";
-@@ -1313,7 +1529,7 @@
-   snd_seq_ev_set_source(&ev, data->vport);
-   snd_seq_ev_set_subs(&ev);
-   snd_seq_ev_set_direct(&ev);
--  for ( unsigned int i=0; i<nBytes; i++ ) data->buffer[i] = message->at(i);
-+  for ( unsigned int i=0; i<nBytes; ++i ) data->buffer[i] = message->at(i);
-   result = snd_midi_event_encode( data->coder, data->buffer, (long)nBytes, &ev );
-   if ( result < (int)nBytes ) {
-     errorString_ = "RtMidiOut::sendMessage: event parsing error!";
-@@ -1419,7 +1635,7 @@
-         if ( continueSysex ) {
-           // We have a continuing, segmented sysex message.  Append
-           // the new bytes to our existing message.
--          for ( int i=0; i<event.msglen; i++ )
-+          for ( int i=0; i<event.msglen; ++i )
-             message.bytes.push_back( event.sysexmsg[i] );
-           if ( event.sysexmsg[event.msglen-1] == 0xF7 ) continueSysex = false;
-           if ( !continueSysex ) {
-@@ -1430,8 +1646,12 @@
+@@ -1576,8 +1646,12 @@ extern "C" void *irixMidiHandler( void *
              }
              else {
                // As long as we haven't reached our queue size limit, push the message.
@@ -979,7 +685,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
                else
                  std::cerr << "\nRtMidiIn: message queue limit reached!!\n\n";
              }
-@@ -1445,12 +1665,11 @@
+@@ -1591,12 +1665,11 @@ extern "C" void *irixMidiHandler( void *
      else if ( status < 0xC0 ) size = 3;
      else if ( status < 0xE0 ) size = 2;
      else if ( status < 0xF0 ) size = 3;
@@ -995,7 +701,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
      else if ( status == 0xF3 ) size = 2;
      else if ( status == 0xF8 ) {
        if ( !(data->ignoreFlags & 0x02) ) {
-@@ -1474,8 +1693,12 @@
+@@ -1620,8 +1693,12 @@ extern "C" void *irixMidiHandler( void *
        }
        else {
          // As long as we haven't reached our queue size limit, push the message.
@@ -1010,7 +716,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
          else
            std::cerr << "\nRtMidiIn: message queue limit reached!!\n\n";
        }
-@@ -1576,6 +1799,9 @@
+@@ -1722,6 +1799,9 @@ RtMidiIn :: ~RtMidiIn()
    // Cleanup.
    IrixMidiData *data = static_cast<IrixMidiData *> (apiData_);
    delete data;
@@ -1020,7 +726,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  unsigned int RtMidiIn :: getPortCount()
-@@ -1589,14 +1815,17 @@
+@@ -1735,14 +1815,17 @@ std::string RtMidiIn :: getPortName( uns
  {
    int nPorts = mdInit();
  
@@ -1040,7 +746,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    return stringName;
  }
  
-@@ -1616,14 +1845,17 @@
+@@ -1762,14 +1845,17 @@ std::string RtMidiOut :: getPortName( un
  {
    int nPorts = mdInit();
  
@@ -1060,42 +766,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    return stringName;
  }
  
-@@ -1713,11 +1945,11 @@
-     event.msg[0] = 0xF0;
-     event.msglen = nBytes;
-     buffer = (char *) malloc( nBytes );
--    for ( int i=0; i<nBytes; i++ ) buffer[i] = message->at(i);
-+    for ( int i=0; i<nBytes; ++i ) buffer[i] = message->at(i);
-     event.sysexmsg = buffer;
-   }
-   else {
--    for ( int i=0; i<nBytes; i++ )
-+    for ( int i=0; i<nBytes; ++i )
-       event.msg[i] = message->at(i);
-   }
- 
-@@ -1752,6 +1984,9 @@
- #include <windows.h>
- #include <mmsystem.h>
- 
-+#define  RT_SYSEX_BUFFER_SIZE 1024
-+#define  RT_SYSEX_BUFFER_COUNT 4
-+
- // A structure to hold variables related to the CoreMIDI API
- // implementation.
- struct WinMidiData {
-@@ -1759,23 +1994,21 @@
-   HMIDIOUT outHandle;  // Handle to Midi Output Device
-   DWORD lastTime;
-   RtMidiIn::MidiMessage message;
--  LPMIDIHDR sysexBuffer;
-+  LPMIDIHDR sysexBuffer[RT_SYSEX_BUFFER_COUNT];
- };
- 
--#define  RT_SYSEX_BUFFER_SIZE 1024
--
- //*********************************************************************//
- //  API: Windows MM
+@@ -1916,10 +2002,10 @@ struct WinMidiData {
  //  Class Definitions: RtMidiIn
  //*********************************************************************//
  
@@ -1108,12 +779,8 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
 +                                        DWORD_PTR midiMessage,
                                          DWORD timestamp )
  {
--  if ( inputStatus != MIM_DATA && inputStatus != MIM_LONGDATA ) return;
-+  if ( inputStatus != MIM_DATA && inputStatus != MIM_LONGDATA && inputStatus != MIM_LONGERROR ) return;
- 
-   //RtMidiIn::RtMidiInData *data = static_cast<RtMidiIn::RtMidiInData *> (instancePtr);
-   RtMidiIn::RtMidiInData *data = (RtMidiIn::RtMidiInData *)instancePtr;
-@@ -1798,11 +2031,11 @@
+   if ( inputStatus != MIM_DATA && inputStatus != MIM_LONGDATA && inputStatus != MIM_LONGERROR ) return;
+@@ -1945,11 +2031,11 @@ static void CALLBACK midiInputCallback(
      if ( status < 0xC0 ) nBytes = 3;
      else if ( status < 0xE0 ) nBytes = 2;
      else if ( status < 0xF0 ) nBytes = 3;
@@ -1129,38 +796,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
      else if ( status == 0xF3 ) nBytes = 2;
      else if ( status == 0xF8 && (data->ignoreFlags & 0x02) ) {
        // A MIDI timing tick message and we're ignoring it.
-@@ -1815,13 +2048,13 @@
- 
-     // Copy bytes to our MIDI message.
-     unsigned char *ptr = (unsigned char *) &midiMessage;
--    for ( int i=0; i<nBytes; i++ ) apiData->message.bytes.push_back( *ptr++ );
-+    for ( int i=0; i<nBytes; ++i ) apiData->message.bytes.push_back( *ptr++ );
-   }
--  else { // Sysex message ( MIM_LONGDATA )
-+  else { // Sysex message ( MIM_LONGDATA or MIM_LONGERROR )
-     MIDIHDR *sysex = ( MIDIHDR *) midiMessage; 
--    if ( !( data->ignoreFlags & 0x01 ) ) {  
-+    if ( !( data->ignoreFlags & 0x01 ) && inputStatus != MIM_LONGERROR ) {  
-       // Sysex message and we're not ignoring it
--      for ( int i=0; i<(int)sysex->dwBytesRecorded; i++ )
-+      for ( int i=0; i<(int)sysex->dwBytesRecorded; ++i )
-         apiData->message.bytes.push_back( sysex->lpData[i] );
-     }
- 
-@@ -1833,9 +2066,9 @@
-     // buffer when an application closes and in this case, we should
-     // avoid requeueing it, else the computer suddenly reboots after
-     // one or two minutes.
--    if ( apiData->sysexBuffer->dwBytesRecorded > 0 ) {
--      //if ( sysex->dwBytesRecorded > 0 ) {
--      MMRESULT result = midiInAddBuffer( apiData->inHandle, apiData->sysexBuffer, sizeof(MIDIHDR) );
-+	if ( apiData->sysexBuffer[sysex->dwUser]->dwBytesRecorded > 0 ) {
-+    //if ( sysex->dwBytesRecorded > 0 ) {
-+      MMRESULT result = midiInAddBuffer( apiData->inHandle, apiData->sysexBuffer[sysex->dwUser], sizeof(MIDIHDR) );
-       if ( result != MMSYSERR_NOERROR )
-         std::cerr << "\nRtMidiIn::midiInputCallback: error sending sysex to Midi device!!\n\n";
- 
-@@ -1850,8 +2083,12 @@
+@@ -1997,8 +2083,12 @@ static void CALLBACK midiInputCallback(
    }
    else {
      // As long as we haven't reached our queue size limit, push the message.
@@ -1175,7 +811,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
      else
        std::cerr << "\nRtMidiIn: message queue limit reached!!\n\n";
    }
-@@ -1901,33 +2138,36 @@
+@@ -2048,8 +2138,8 @@ void RtMidiIn :: openPort( unsigned int
    WinMidiData *data = static_cast<WinMidiData *> (apiData_);
    MMRESULT result = midiInOpen( &data->inHandle,
                                  portNumber,
@@ -1186,75 +822,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
                                  CALLBACK_FUNCTION );
    if ( result != MMSYSERR_NOERROR ) {
      errorString_ = "RtMidiIn::openPort: error creating Windows MM MIDI input port.";
-     error( RtError::DRIVER_ERROR );
-   }
- 
--  // Allocate and init the sysex buffer.
--  data->sysexBuffer = (MIDIHDR*) new char[ sizeof(MIDIHDR) ];
--  data->sysexBuffer->lpData = new char[ RT_SYSEX_BUFFER_SIZE ];
--  data->sysexBuffer->dwBufferLength = RT_SYSEX_BUFFER_SIZE;
--  data->sysexBuffer->dwFlags = 0;
-+  // Allocate and init the sysex buffers.
-+  for ( int i=0; i<RT_SYSEX_BUFFER_COUNT; ++i ) {
-+    data->sysexBuffer[i] = (MIDIHDR*) new char[ sizeof(MIDIHDR) ];
-+    data->sysexBuffer[i]->lpData = new char[ RT_SYSEX_BUFFER_SIZE ];
-+    data->sysexBuffer[i]->dwBufferLength = RT_SYSEX_BUFFER_SIZE;
-+    data->sysexBuffer[i]->dwUser = i; // We use the dwUser parameter as buffer indicator
-+    data->sysexBuffer[i]->dwFlags = 0;
- 
--  result = midiInPrepareHeader( data->inHandle, data->sysexBuffer, sizeof(MIDIHDR) );
--  if ( result != MMSYSERR_NOERROR ) {
--    midiInClose( data->inHandle );
--    errorString_ = "RtMidiIn::openPort: error starting Windows MM MIDI input port (PrepareHeader).";
--    error( RtError::DRIVER_ERROR );
--  }
-+    result = midiInPrepareHeader( data->inHandle, data->sysexBuffer[i], sizeof(MIDIHDR) );
-+    if ( result != MMSYSERR_NOERROR ) {
-+      midiInClose( data->inHandle );
-+      errorString_ = "RtMidiIn::openPort: error starting Windows MM MIDI input port (PrepareHeader).";
-+      error( RtError::DRIVER_ERROR );
-+    }
- 
--  // Register the buffer.
--  result = midiInAddBuffer( data->inHandle, data->sysexBuffer, sizeof(MIDIHDR) );
--  if ( result != MMSYSERR_NOERROR ) {
--    midiInClose( data->inHandle );
--    errorString_ = "RtMidiIn::openPort: error starting Windows MM MIDI input port (AddBuffer).";
--    error( RtError::DRIVER_ERROR );
-+    // Register the buffer.
-+    result = midiInAddBuffer( data->inHandle, data->sysexBuffer[i], sizeof(MIDIHDR) );
-+    if ( result != MMSYSERR_NOERROR ) {
-+      midiInClose( data->inHandle );
-+      errorString_ = "RtMidiIn::openPort: error starting Windows MM MIDI input port (AddBuffer).";
-+      error( RtError::DRIVER_ERROR );
-+    }
-   }
- 
-   result = midiInStart( data->inHandle );
-@@ -1954,13 +2194,15 @@
-     midiInReset( data->inHandle );
-     midiInStop( data->inHandle );
- 
--    int result = midiInUnprepareHeader(data->inHandle, data->sysexBuffer, sizeof(MIDIHDR));
--    delete [] data->sysexBuffer->lpData;
--    delete [] data->sysexBuffer;
--    if ( result != MMSYSERR_NOERROR ) {
--      midiInClose( data->inHandle );
--      errorString_ = "RtMidiIn::openPort: error closing Windows MM MIDI input port (midiInUnprepareHeader).";
--      error( RtError::DRIVER_ERROR );
-+    for ( int i=0; i<RT_SYSEX_BUFFER_COUNT; ++i ) {
-+      int result = midiInUnprepareHeader(data->inHandle, data->sysexBuffer[i], sizeof(MIDIHDR));
-+      delete [] data->sysexBuffer[i]->lpData;
-+      delete [] data->sysexBuffer[i];
-+      if ( result != MMSYSERR_NOERROR ) {
-+        midiInClose( data->inHandle );
-+        errorString_ = "RtMidiIn::openPort: error closing Windows MM MIDI input port (midiInUnprepareHeader).";
-+        error( RtError::DRIVER_ERROR );
-+      }
-     }
- 
-     midiInClose( data->inHandle );
-@@ -1976,6 +2218,9 @@
+@@ -2128,6 +2218,9 @@ RtMidiIn :: ~RtMidiIn()
    // Cleanup.
    WinMidiData *data = static_cast<WinMidiData *> (apiData_);
    delete data;
@@ -1264,7 +832,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
  }
  
  unsigned int RtMidiIn :: getPortCount()
-@@ -1985,25 +2230,28 @@
+@@ -2137,25 +2230,28 @@ unsigned int RtMidiIn :: getPortCount()
  
  std::string RtMidiIn :: getPortName( unsigned int portNumber )
  {
@@ -1287,7 +855,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
 -  // UNICODE (thanks to Eduardo Coutinho!).
 -  //std::string stringName = std::string( deviceCaps.szPname );
 -  char nameString[MAXPNAMELEN];
--  for( int i=0; i<MAXPNAMELEN; i++ )
+-  for( int i=0; i<MAXPNAMELEN; ++i )
 -    nameString[i] = (char)( deviceCaps.szPname[i] );
 +#if defined( UNICODE ) || defined( _UNICODE )
 +  int length = WideCharToMultiByte(CP_UTF8, 0, deviceCaps.szPname, -1, NULL, 0, NULL, NULL);
@@ -1301,7 +869,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    return stringName;
  }
  
-@@ -2019,25 +2267,28 @@
+@@ -2171,25 +2267,28 @@ unsigned int RtMidiOut :: getPortCount()
  
  std::string RtMidiOut :: getPortName( unsigned int portNumber )
  {
@@ -1324,7 +892,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
 -  // UNICODE (thanks to Eduardo Coutinho!).
 -  //std::string stringName = std::string( deviceCaps.szPname );
 -  char nameString[MAXPNAMELEN];
--  for( int i=0; i<MAXPNAMELEN; i++ )
+-  for( int i=0; i<MAXPNAMELEN; ++i )
 -    nameString[i] = (char)( deviceCaps.szPname[i] );
 +#if defined( UNICODE ) || defined( _UNICODE )
 +  int length = WideCharToMultiByte(CP_UTF8, 0, deviceCaps.szPname, -1, NULL, 0, NULL, NULL);
@@ -1338,7 +906,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    return stringName;
  }
  
-@@ -2120,7 +2371,7 @@
+@@ -2272,7 +2371,7 @@ RtMidiOut :: ~RtMidiOut()
  
  void RtMidiOut :: sendMessage( std::vector<unsigned char> *message )
  {
@@ -1347,28 +915,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
    if ( nBytes == 0 ) {
      errorString_ = "RtMidiOut::sendMessage: message argument is empty!";
      error( RtError::WARNING );
-@@ -2139,7 +2390,7 @@
-     }
- 
-     // Copy data to buffer.
--    for ( unsigned int i=0; i<nBytes; i++ ) buffer[i] = message->at(i);
-+    for ( unsigned int i=0; i<nBytes; ++i ) buffer[i] = message->at(i);
- 
-     // Create and prepare MIDIHDR structure.
-     MIDIHDR sysex;
-@@ -2178,9 +2429,9 @@
-     // Pack MIDI bytes into double word.
-     DWORD packet;
-     unsigned char *ptr = (unsigned char *) &packet;
--    for ( unsigned int i=0; i<nBytes; i++ ) {
-+    for ( unsigned int i=0; i<nBytes; ++i ) {
-       *ptr = message->at(i);
--      ptr++;
-+      ++ptr;
-     }
- 
-     // Send the message immediately.
-@@ -2193,3 +2444,371 @@
+@@ -2345,3 +2444,371 @@ void RtMidiOut :: sendMessage( std::vect
  }
  
  #endif  // __WINDOWS_MM__
@@ -1740,15 +1287,15 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.cpp
 +}
 +
 +#endif  // __LINUX_JACK__
-Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h
+Index: pianobooster-src-0.6.7~svn156/src/rtmidi/RtMidi.h
 ===================================================================
---- pianobooster-src-0.6.4b.orig/src/rtmidi/RtMidi.h	2012-12-04 09:44:05.321136750 +0100
-+++ pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h	2012-12-04 09:45:23.501137602 +0100
+--- pianobooster-src-0.6.7~svn156.orig/src/rtmidi/RtMidi.h
++++ pianobooster-src-0.6.7~svn156/src/rtmidi/RtMidi.h
 @@ -8,7 +8,7 @@
      RtMidi WWW site: http://music.mcgill.ca/~gary/rtmidi/
  
      RtMidi: realtime MIDI i/o C++ classes
--    Copyright (c) 2003-2009 Gary P. Scavone
+-    Copyright (c) 2003-2010 Gary P. Scavone
 +    Copyright (c) 2003-2011 Gary P. Scavone
  
      Permission is hereby granted, free of charge, to any person
@@ -1757,12 +1304,12 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h
  */
  /**********************************************************************/
  
--// RtMidi: Version 1.0.8
+-// RtMidi: Version 1.0.11
 +// RtMidi: Version 1.0.15
  
  #ifndef RTMIDI_H
  #define RTMIDI_H
-@@ -96,7 +96,6 @@
+@@ -96,7 +96,6 @@ class RtMidi
  /**********************************************************************/
  
  #include <vector>
@@ -1770,7 +1317,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h
  
  class RtMidiIn : public RtMidi
  {
-@@ -105,11 +104,15 @@
+@@ -105,11 +104,15 @@ class RtMidiIn : public RtMidi
    //! User callback function type definition.
    typedef void (*RtMidiCallback)( double timeStamp, std::vector<unsigned char> *message, void *userData);
  
@@ -1789,7 +1336,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h
  
    //! If a MIDI connection is still open, it will be closed by the destructor.
    ~RtMidiIn();
-@@ -154,20 +157,13 @@
+@@ -154,20 +157,13 @@ class RtMidiIn : public RtMidi
  
    //! Return a string identifier for the specified MIDI input port number.
    /*!
@@ -1812,7 +1359,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h
        during message input because of their relative high data rates.
        MIDI sysex messages are ignored by default as well.  Variable
        values of "true" imply that the respective message type will be
-@@ -193,15 +189,26 @@
+@@ -193,15 +189,26 @@ class RtMidiIn : public RtMidi
  
      // Default constructor.
      MidiMessage()
@@ -1842,7 +1389,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h
      unsigned char ignoreFlags;
      bool doInput;
      bool firstMessage;
-@@ -213,7 +220,7 @@
+@@ -213,7 +220,7 @@ class RtMidiIn : public RtMidi
  
      // Default constructor.
      RtMidiInData()
@@ -1851,7 +1398,7 @@ Index: pianobooster-src-0.6.4b/src/rtmidi/RtMidi.h
          apiData(0), usingCallback(false), userCallback(0), userData(0),
          continueSysex(false) {}
    };
-@@ -280,7 +287,7 @@
+@@ -280,7 +287,7 @@ class RtMidiOut : public RtMidi
  
    //! Return a string identifier for the specified MIDI port type and number.
    /*!

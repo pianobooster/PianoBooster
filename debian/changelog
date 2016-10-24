@@ -1,3 +1,26 @@
+pianobooster (0.6.7~svn156-1) UNRELEASED; urgency=medium
+
+  [ Miriam Ruiz ]
+  * Adapted changes for Debian
+  * Refreshed patches
+  * Added typos.patch and i18n.patch
+  * Upgraded Standards-Version from 3.9.6 to 3.9.8
+  * Added Daniel Gimpelevich to Uploaders
+
+ -- Miriam Ruiz <miriam@debian.org>  Mon, 24 Oct 2016 22:55:05 +0200
+
+pianobooster (0.6.7~svn156-0ppa2~trusty) trusty; urgency=medium
+
+  * New Upstream Release.
+  * Dropped link-pthread-and-GL-explicitly.patch, merged upstream
+  * Dropped i18n.patch pending rebase
+  * Reflected upstream i18n in debian/rules and debian/pianobooster.install
+  * Rebased rtmidi-1.0.15.patch
+  * Updated manpage
+  * Added paths.patch and armel.patch
+
+ -- Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>  Sat, 23 Oct 2016 04:19:54 -0700
+
 pianobooster (0.6.4.0-1) UNRELEASED; urgency=medium
 
   * New Upstream Release.

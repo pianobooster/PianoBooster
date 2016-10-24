@@ -23,17 +23,32 @@ Piano Booster is piano teaching software that can provide piano lessons for begi
 [\fIflags\fR] [\fImidifile\fR]
 .SH "OPTIONS"
 .TP
-\-d
+.B \-d, \-\-debug
 Increase the debug level
 .TP
-\-q
-Quick start
-.TP
-\-h, \-\-help
+.B \-h, \-\-help
 Display a help message
 .TP
-\-v
+.B \-\-lights
+Turn on the keyboard lights
+.TP
+.B \-l, \-\-log
+Write debug info to the "pb.log" log file
+.TP
+.B \-\-midi\-input\-dump
+Display the midi input in hex
+.TP
+.B \-q, \-\-quick\-start
+Quick start
+.TP
+.B \-v, \-\-version
 Display the version number and exit
+.TP
+.B \-\-Xnote\-length (EXPERIMENTAL)
+Display the note length
+.TP
+.BI \-\-Xtick\-rate= RATE " (EXPERIMENTAL)"
+Adjust the tick rate in mSec, the default being 4 (12 windows)
 .SH "USAGE"
 Piano Booster is a fun way of playing along with a musical accompaniment and at the same time learning the basics of reading musical notation. The difference between playing along to a CD or a standard midi file is that Piano Booster listens and follows what you are playing on a midi piano keyboard. 
 
@@ -69,4 +84,4 @@ Timing markers show whether you are playing ahead or behind of the beat. They ap
 .SH "SEE ALSO"
 You can find more about the game on its homepage: http://pianobooster.sourceforge.net/
 .SH "AUTHOR"
-The game has been written by Louis J. Barman <louisjb@users.sourceforge.net>. This manual page was written by Miriam Ruiz <little_miry@yahoo.es> for the Debian project.
+The game has been written by Louis J. Barman <louisjb@users.sourceforge.net>. This manual page was written by Miriam Ruiz <miriam@debian.org> for the Debian project.

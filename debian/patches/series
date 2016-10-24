@@ -1,4 +1,6 @@
 rtmidi-1.0.15.patch
-i18n.patch
 gcc-4.7.patch
-link-pthread-and-GL-explicitly.patch
+paths.patch
+armel.patch
+typos.patch
+i18n.patch
