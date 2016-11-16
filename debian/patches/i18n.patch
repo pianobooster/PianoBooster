@@ -3580,7 +3580,7 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
 -        <location filename="../src/Settings.cpp" line="430"/>
          <source>NO MIDI FILE LOADED: Use menu File/Open ...</source>
 -        <translation>SIN ARCHVIO MIDI CARGAGO: Use el menú Archivo/Abrir ...</translation>
-+        <translation>SIN ARCHVIO MIDI CARGADO: Use el menú Archivo/Abrir ...</translation>
++        <translation>SIN ARCHIVO MIDI CARGADO: Use el menú Archivo/Abrir ...</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/Settings.cpp" line="387"/>
@@ -3590,12 +3590,12 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
 +    <message>
 +        <location filename="../src/Settings.cpp" line="538"/>
 +        <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-+        <translation>ERROR SIN SONIDO: Para solucionarlo ve a Configuración/Configuración Midi ...</translation>
++        <translation>ERROR - SIN SONIDO: Para solucionarlo ve a Configuración/Configuración Midi ...</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/Settings.cpp" line="540"/>
 +        <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-+        <translation>ERROR SIN ARCHIVO MIDI: Para solucionarlo ve a Archivo/Abrir ...</translation>
++        <translation>ERROR - SIN ARCHIVO MIDI: Para solucionarlo ve a Archivo/Abrir ...</translation>
      </message>
  </context>
  <context>
@@ -4520,12 +4520,12 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
 -        <location filename="../src/GuiPreferencesDialog.ui" line="121"/>
 +        <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
 +        <source>Music Course</source>
-+        <translation type="unfinished"></translation>
++        <translation>Curso de música</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiPreferencesDialog.ui" line="123"/>
 +        <source>Show Tutor Help Pages</source>
-+        <translation type="unfinished"></translation>
++        <translation>Páginas de ayuda del tutorial</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
@@ -4544,13 +4544,15 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
      <message>
 -        <location filename="../src/GuiSidePanel.ui" line="120"/>
          <source>Follow you</source>
-         <translation>Sígueme</translation>
+-        <translation>Sígueme</translation>
++        <translation>Sigue</translation>
      </message>
      <message>
 -        <location filename="../src/GuiSidePanel.ui" line="127"/>
 +        <location filename="../src/GuiSidePanel.ui" line="134"/>
          <source>Play Along</source>
-         <translation>Acompañamiento</translation>
+-        <translation>Acompañamiento</translation>
++        <translation>Acompaña</translation>
      </message>
      <message>
 -        <location filename="../src/GuiSidePanel.ui" line="143"/>
@@ -4562,19 +4564,22 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
 -        <location filename="../src/GuiSidePanel.ui" line="151"/>
 +        <location filename="../src/GuiSidePanel.ui" line="158"/>
          <source>Right</source>
-         <translation>Derecha</translation>
+-        <translation>Derecha</translation>
++        <translation>Der</translation>
      </message>
      <message>
 -        <location filename="../src/GuiSidePanel.ui" line="158"/>
 +        <location filename="../src/GuiSidePanel.ui" line="165"/>
          <source>Both</source>
-         <translation>Ambas</translation>
+-        <translation>Ambas</translation>
++        <translation>Amb</translation>
      </message>
      <message>
 -        <location filename="../src/GuiSidePanel.ui" line="165"/>
 +        <location filename="../src/GuiSidePanel.ui" line="172"/>
          <source>Left</source>
-         <translation>Izquierda</translation>
+-        <translation>Izquierda</translation>
++        <translation>Izq</translation>
      </message>
      <message>
 -        <location filename="../src/GuiSidePanel.ui" line="180"/>
@@ -4609,12 +4614,12 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
 -        <location filename="../src/GuiSidePanel.ui" line="252"/>
 +        <location filename="../src/GuiSidePanel.ui" line="120"/>
 +        <source>Rhythm Tap</source>
-+        <translation>Tap rítmico</translation>
++        <translation>Tap rítm.</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiSidePanel.ui" line="127"/>
 +        <source>Follow You</source>
-+        <translation type="unfinished"></translation>
++        <translation>Sigue</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiSidePanel.ui" line="237"/>
@@ -4691,104 +4696,104 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
      <message>
 +        <location filename="../src/GuiTopBar.cpp" line="89"/>
 +        <source>Gb</source>
-+        <translation type="unfinished"></translation>
++        <translation>Solb</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="90"/>
 +        <source>Db</source>
-+        <translation type="unfinished"></translation>
++        <translation>Reb</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="91"/>
 +        <source>Ab</source>
-+        <translation type="unfinished"></translation>
++        <translation>Lab</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="92"/>
 +        <location filename="../src/GuiTopBar.cpp" line="105"/>
 +        <source>Eb</source>
-+        <translation type="unfinished"></translation>
++        <translation>Mib</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="93"/>
 +        <location filename="../src/GuiTopBar.cpp" line="106"/>
 +        <source>Bb</source>
-+        <translation type="unfinished"></translation>
++        <translation>Sib</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="94"/>
 +        <source>F </source>
-+        <translation type="unfinished"></translation>
++        <translation>Fa</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="95"/>
 +        <location filename="../src/GuiTopBar.cpp" line="108"/>
 +        <source>C</source>
-+        <translation type="unfinished"></translation>
++        <translation>Do</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="96"/>
 +        <source>G </source>
-+        <translation type="unfinished"></translation>
++        <translation>Sol</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="97"/>
 +        <location filename="../src/GuiTopBar.cpp" line="110"/>
 +        <source>D </source>
-+        <translation type="unfinished"></translation>
++        <translation>Re</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="98"/>
 +        <source>A </source>
-+        <translation type="unfinished"></translation>
++        <translation>La</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="99"/>
 +        <location filename="../src/GuiTopBar.cpp" line="112"/>
 +        <source>E </source>
-+        <translation type="unfinished"></translation>
++        <translation>Mi</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="100"/>
 +        <location filename="../src/GuiTopBar.cpp" line="113"/>
 +        <source>B </source>
-+        <translation type="unfinished"></translation>
++        <translation>Si</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="101"/>
 +        <location filename="../src/GuiTopBar.cpp" line="114"/>
 +        <source>F#</source>
-+        <translation type="unfinished"></translation>
++        <translation>Fa#</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="107"/>
 +        <source>F</source>
-+        <translation type="unfinished"></translation>
++        <translation>Fa</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="109"/>
 +        <source>G</source>
-+        <translation type="unfinished"></translation>
++        <translation>Sol</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="111"/>
 +        <source>A</source>
-+        <translation type="unfinished"></translation>
++        <translation>La</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="115"/>
 +        <source>G#</source>
-+        <translation type="unfinished"></translation>
++        <translation>Sol#</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="116"/>
 +        <source>C#</source>
-+        <translation type="unfinished"></translation>
++        <translation>Do#</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/GuiTopBar.cpp" line="117"/>
 +        <source>D#</source>
-+        <translation type="unfinished"></translation>
++        <translation>Re#</translation>
 +    </message>
 +    <message>
          <location filename="../src/GuiTopBar.cpp" line="175"/>
@@ -4979,7 +4984,7 @@ Index: pianobooster-src-0.6.7~svn156/translations/pianobooster_es.ts
 -        <location filename="../src/QtWindow.cpp" line="310"/>
 +        <location filename="../src/QtWindow.cpp" line="369"/>
 +        <source>&amp;Fullscreen</source>
-+        <translation type="unfinished"></translation>
++        <translation>Pantalla Completa (&amp;F)</translation>
 +    </message>
 +    <message>
 +        <location filename="../src/QtWindow.cpp" line="370"/>
