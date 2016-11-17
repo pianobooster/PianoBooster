@@ -1,4 +1,4 @@
-pianobooster (0.6.7~svn156-1) UNRELEASED; urgency=medium
+pianobooster (0.6.7~svn156-1) unstable; urgency=medium
 
   [ Miriam Ruiz ]
   * Adapted changes for Debian
@@ -7,7 +7,7 @@ pianobooster (0.6.7~svn156-1) UNRELEASED; urgency=medium
   * Upgraded Standards-Version from 3.9.6 to 3.9.8
   * Added Daniel Gimpelevich to Uploaders
 
- -- Miriam Ruiz <miriam@debian.org>  Mon, 24 Oct 2016 22:55:05 +0200
+ -- Miriam Ruiz <miriam@debian.org>  Thu, 17 Nov 2016 01:08:17 +0100
 
 pianobooster (0.6.7~svn156-0ppa2~trusty) trusty; urgency=medium
 
