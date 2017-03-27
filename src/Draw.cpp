@@ -566,6 +566,55 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                 playable = false;
             }
             drawStaveExtentsion(symbol, x, 16, playable);
+#if 1
+	    // See forum post at link below from PianoBooster forum user Kory.
+	    // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html
+	    // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html#a7572676
+            if (colour == Cfg::noteColour()) //KORY added
+            {
+                int note = symbol.getNote() % MIDI_OCTAVE;
+                switch (note)
+                {
+                    case 0: //note::PitchLabel::C:
+                        colour = CColour(1.0, 0.0, 0.0); //Red
+                      break;
+                    case 1: //note::PitchLabel::CS:
+                        colour = CColour(1.0, 0.25, 0.0); //Red
+                      break;
+                    case 2: //note::PitchLabel::D:
+                        colour = CColour(1.0, 0.5, 0.0); //Orange
+                      break;
+                    case 3: //note::PitchLabel::DS:
+                        colour = CColour(1.0, 0.75, 0.0); //Orange
+                      break;
+                    case 4: //note::PitchLabel::E:
+                        colour = CColour(1.0, 1.0, 0.0); //Yellow
+                      break;
+                    case 5: //note::PitchLabel::F:
+                        colour = CColour(0.0, 1.0, 0.0); //Green
+                      break;
+                    case 6: //note::PitchLabel::FS:
+                        colour = CColour(0.0, 0.5, 0.5); //Green
+                      break;
+                    case 7: //note::PitchLabel::G:
+                        colour = CColour(0.0, 0.0, 1.0); //Blue
+                      break;
+                    case 8: //note::PitchLabel::GS:
+                        colour = CColour(0.290, 0.0, 0.903); //Blue
+                      break;
+                    case 9: //note::PitchLabel::A:
+                        colour = CColour(0.580, 0.0, 0.827); //Dark Violet #9400D3
+                      break;
+                    case 10: //note::PitchLabel::AS:
+                        colour = CColour(0.790, 0.0, 0.903); //Dark Violet #9400D3
+                      break;
+                    case 11: //note::PitchLabel::B:
+                        colour = CColour(1.0, 0.0, 1.0); //Magenta
+                      break;
+                }
+            }
+
+#endif
             drColour(colour);
             glBegin(GL_POLYGON);
                 glVertex2f(-7.0 + x,  2.0 + y); // 1
