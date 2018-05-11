@@ -1,0 +1,6 @@
+build-tree/pianobooster usr/games/
+debian/*.png usr/share/pixmaps/
+debian/*.xpm usr/share/pixmaps/
+debian/*.desktop usr/share/applications/
+translations/*.qm usr/share/games/pianobooster/translations/
+debian/resources/BoosterMusicBooks1/* usr/share/pianobooster/

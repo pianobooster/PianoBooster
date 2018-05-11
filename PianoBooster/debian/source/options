@@ -1,0 +1,5 @@
+# Bzip2 compression for debian.tar
+compression = "bzip2"
+compression-level = 7
+# Do not generate diff for changes in config.(sub|guess)
+extend-diff-ignore = "(^|/)config.(sub|guess)$"

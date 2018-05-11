@@ -1,0 +1,122 @@
+pianobooster for Debian
+-----------------------
+
+To hear the sound Piano Booster needs a MIDI sound generator, there are two
+different General Midi sound generators available on Linux, 'fluidsynth' and
+'timidity'.
+
+To install fluidsynth you must install the following packages: 'fluidsynth',
+'fluid-soundfont-gm' and 'fluid-soundfont-gs', using your favourite package
+manager.
+
+To start the fluidsynth sound generator copy and paste the following command
+line:
+
+fluidsynth /usr/share/sounds/sf2/FluidR3_GM.sf2
+
+Piano Booster FAQ suggests this line instead:
+
+fluidsynth -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
+
+If you have a fast machine, you can leave out the flags '-C 0 -R 0 -r 22050'
+which turns off the reverb, chorus and reduce the sample rate.
+
+The flags '-c 6 -z 128' control the latency. Try '-c 5 -z 128' for less
+latency but at the risk of audio drop outs.
+
+The flags '-o audio.alsa.device=plughw:0' bypasses the Pulse Audio layer
+which might cause a lot of latency delay, but unfortunately these flags
+may also bypass the desktop volume controls.
+
+For more information on running fluidsynth with low latency see this page:
+
+http://fluidsynth.resonance.org/trac/wiki/LowLatency
+
+On PianoBooster set the Setup/Midi Setup/Midi Output Device: to "FLUID Synth (fs):0"
+
+If you get problems with unsteady playback or the audio cutting out then try
+closing all other programs, turning off your wireless network and unplug any
+network cable.
+
+If you get an error, make sure to have snd-seq-midi kernel module loaded in your
+system (sudo modprobe snd-seq-midi).
+
+You might prefer to use qsynth as GUI interface to fluidsynth for easy setting
+of Reverbs, chorus effects, etc
+
+-----------------------
+
+Clarification of RtMidi's license by Gary Scavone <gary.scavone@mcgill.ca>:
+
+Subject: Re: About RtMidi License
+From: Gary Scavone <gary.scavone@mcgill.ca>
+In-Reply-To: <CAFotxVNxGxkrBFr06OuAcHg5PjH9ztS7J1OR0B033mBqr_B43A@mail.gmail.com>
+Date: Tue, 29 Nov 2011 09:24:29 -0500
+Content-Transfer-Encoding: quoted-printable
+Message-Id: <D1AE9378-B9C3-4A71-BEDB-BBA27E8CC69C@mcgill.ca>
+References: <CAFotxVNxGxkrBFr06OuAcHg5PjH9ztS7J1OR0B033mBqr_B43A@mail.gmail.com>
+To: Miriam Ruiz <miriam@debian.org>
+X-Mailer: Apple Mail (2.1084)
+
+Hi Miriam,
+
+I updated the license for RtAudio several years back to address your =
+concern but neglected to do the same for RtMidi.  The following is what =
+I currently use for RtAudio and I propose it should be the same for =
+RtMidi.
+
+===============
+Permission is hereby granted, free of charge, to any person obtaining a =
+copy of this software and associated documentation files (the =
+"Software"), to deal in the Software without restriction, including =
+without limitation the rights to use, copy, modify, merge, publish, =
+distribute, sublicense, and/or sell copies of the Software, and to =
+permit persons to whom the Software is furnished to do so, subject to =
+the following conditions:
+
+The above copyright notice and this permission notice shall be included =
+in all copies or substantial portions of the Software.
+
+Any person wishing to distribute modifications to the Software is asked =
+to send the modifications to the original developer so that they can be =
+incorporated into the canonical version. This is, however, not a binding =
+provision of this license.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS =
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF =
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. =
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY =
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, =
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE =
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+===============
+
+--gary
+
+On 2011-11-29, at 2:38 AM, Miriam Ruiz wrote:
+
+> Hi,
+> 
+> My name is Miriam Ruiz, and I am a Debian Developer. I am interested
+> in packaging a program for Debian and Ubuntu [1] that embeds RtMidi
+> [2], but I found out that RtMidi's license includes a clause that
+> legally requests to send the modifications to the original developer.
+> That clause is not recognized a Free Software by the DFSG [3] [4] and
+> thus is preventing me from doing to. I was wondering if it would be
+> possible to soften this clause so that, even if it was suggested, it
+> wasn't legally mandatory or, altenatively, dual-licensing the code
+> with some copylefted license such as LGPL or evn GPL so that I could
+> include it in Debian Free.
+> 
+> Please, feel free to ask me whatever doubts you might have about it.
+> 
+> Greetings and lots of thanks,
+> Miry
+> 
+> [1] http://pianobooster.sourceforge.net/
+> [2] http://www.music.mcgill.ca/~gary/rtmidi/
+> [3] http://www.debian.org/social_contract
+> [4] http://people.debian.org/~bap/dfsg-faq.html (see 9 a and b)
+> 
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Tue, 29 Nov 2011 15:41:19 +0100

@@ -1,0 +1,87 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
+CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
+LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+LDFLAGS2:=-Wl,-z,defs  -Wl,-as-needed -Wl,--no-undefined
+
+BUILD_TREE=$(CURDIR)/build-tree
+
+config: config-stamp
+config-stamp: 
+	dh_testdir
+	# Perform an out-of-tree build to keep a clean source tree
+	mkdir $(BUILD_TREE)
+	cd $(BUILD_TREE); cmake $(CURDIR)/src/ \
+		--debug-output \
+		-DCMAKE_BUILD_TYPE=Debug \
+		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+		-DCMAKE_INSTALL_PREFIX:STRING="/usr" \
+		-DCMAKE_C_FLAGS:STRING="$(CFLAGS) $(CPPFLAGS)" \
+		-DCMAKE_CXX_FLAGS:STRING="$(CXXFLAGS) $(CPPFLAGS)" \
+		-DBUILD_STATIC:BOOL=ON \
+		-DCMAKE_SHARED_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)" \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)"
+	touch $@
+
+build-stamp: config
+	dh_testdir
+	cd $(BUILD_TREE); $(MAKE)
+	cd src && lrelease *.pro
+	touch $@
+
+build-indep:
+
+build-arch: build-stamp
+
+build: build-arch build-indep
+
+clean: 
+	dh_testdir
+	dh_testroot
+	rm -fv build-stamp config-stamp
+	rm -fvr $(BUILD_TREE)
+	rm -fv translations/*.qm
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+
+# Build architecture-independent files here.
+binary-indep:
+
+# Build architecture-dependent files here.
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installexamples
+	dh_install
+	dh_installmenu
+	dh_installman
+	dh_link
+	dh_strip --dbg-package=pianobooster-dbg
+	dh_compress
+	dh_fixperms
+	[ ! -e /usr/bin/dh_buildinfo ] || dh_buildinfo
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+refresh-tr:
+	dh_testdir
+	# Update translations
+	cd $(CURDIR)/src/ && lupdate -verbose pianobooster.pro
+
+binary: binary-indep binary-arch
+.PHONY: config build build-indep build-arch clean binary-indep binary-arch binary install
