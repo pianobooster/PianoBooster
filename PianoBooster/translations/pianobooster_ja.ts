@@ -1,4 +1,6 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1">
 <context>
     <name>CGLView</name>
     <message>
@@ -18,11 +20,23 @@
     <name>CSettings</name>
     <message>
         <source>NO MIDI OUTPUT DEVICE: Use menu Setup/Midi Setup ...</source>
-        <translation>MIDI出力先が設定されていません。[設定/MIDI設定]で選択してください。</translation>
+        <translation type="vanished">MIDI出力先が設定されていません。[設定/MIDI設定]で選択してください。</translation>
     </message>
     <message>
         <source>NO MIDI FILE LOADED: Use menu File/Open ...</source>
-        <translation>MIDIファイルを読み込んでいません。&quot;ファイル/開く&quot;で選択してください。</translation>
+        <translation type="vanished">MIDIファイルを読み込んでいません。&quot;ファイル/開く&quot;で選択してください。</translation>
+    </message>
+    <message>
+        <source>space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -794,11 +808,20 @@ Violin</translation>
     </message>
     <message>
         <source>Note: the Microsoft SW Synth introduces an unwanted delay!</source>
-        <translation>注意: Microsoft SW Synthは遅延が大きいです!</translation>
+        <translation type="vanished">注意: Microsoft SW Synthは遅延が大きいです!</translation>
     </message>
     <message>
         <source>Midi Output Device: </source>
         <translation>MIDI出力デバイス: </translation>
+    </message>
+    <message>
+        <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Try a latency fix of 150msc)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -863,6 +886,14 @@ Violin</translation>
         <source>None</source>
         <translation>なし</translation>
     </message>
+    <message>
+        <source>Music Course</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Tutor Help Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GuiSidePanel</name>
@@ -888,7 +919,7 @@ Violin</translation>
     </message>
     <message>
         <source>Follow you</source>
-        <translation>追従する</translation>
+        <translation type="vanished">追従する</translation>
     </message>
     <message>
         <source>Play Along</source>
@@ -942,6 +973,26 @@ Violin</translation>
         <source>Reset Both Parts</source>
         <translation>両手のパートをリセット</translation>
     </message>
+    <message>
+        <source>Rhythm Tap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Follow You</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rhythm Tapping with:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drums</source>
+        <translation type="unfinished">ドラム</translation>
+    </message>
+    <message>
+        <source>Melody</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GuiSongDetailsDialog</name>
@@ -968,10 +1019,6 @@ Violin</translation>
     <message>
         <source>Left Hand MIDI Channel:</source>
         <translation>左手のMIDIチャンネル:</translation>
-    </message>
-    <message>
-        <source>Song Details</source>
-        <translation>歌曲詳細</translation>
     </message>
     <message>
         <source>The left and right hand channels must be different</source>
@@ -1039,6 +1086,82 @@ Violin</translation>
     <message>
         <source>Playing music from the beginning</source>
         <translation>曲の頭から演奏</translation>
+    </message>
+    <message>
+        <source>Gb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Db</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Eb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>G </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>D </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>B </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F#</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>G#</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C#</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>D#</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1159,7 +1282,7 @@ Violin</translation>
     </message>
     <message>
         <source>&amp;Show/Hide the Side Panel</source>
-        <translation>横パネルの表示切替(&amp;S)</translation>
+        <translation type="vanished">横パネルの表示切替(&amp;S)</translation>
     </message>
     <message>
         <source>F11</source>
@@ -1247,7 +1370,7 @@ Violin</translation>
     </message>
     <message>
         <source>Midi Files (*.mid *.MID *.midi *.kar *.KAR)</source>
-        <translation>MIDIファイル (*.mid *.MID *.midi *.kar *.KAR)</translation>
+        <translation type="vanished">MIDIファイル (*.mid *.MID *.midi *.kar *.KAR)</translation>
     </message>
     <message>
         <source>PianoBooster Midi File Error</source>
@@ -1300,6 +1423,34 @@ Violin</translation>
     <message>
         <source>None</source>
         <translation>なし</translation>
+    </message>
+    <message>
+        <source>&amp;Fullscreen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Show the Side Panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F12</source>
+        <translation type="unfinished">F12</translation>
+    </message>
+    <message>
+        <source>&amp;%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change to the Next Book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change to the Previous Book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Midi Files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

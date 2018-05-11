@@ -4,6 +4,7 @@ CONFIG += release
 
 TRANSLATIONS = ../translations/pianobooster_ja.ts \
                ../translations/pianobooster_es.ts \
+               ../translations/pianobooster_gl.ts \
                ../translations/pianobooster_blank.ts \
 
 

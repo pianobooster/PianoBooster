@@ -86,35 +86,35 @@ void GuiTopBar::reloadKeyCombo(bool major)
     keyCombo->clear();
     if (major)
     {
-        keyCombo->addItem("Gb"); // -6
-        keyCombo->addItem("Db"); // -5
-        keyCombo->addItem("Ab"); // -4
-        keyCombo->addItem("Eb"); // -3
-        keyCombo->addItem("Bb"); // -2
-        keyCombo->addItem("F "); // -1
-        keyCombo->addItem("C");  // 0
-        keyCombo->addItem("G "); // 1
-        keyCombo->addItem("D "); // 2
-        keyCombo->addItem("A "); // 3
-        keyCombo->addItem("E "); // 4
-        keyCombo->addItem("B "); // 5
-        keyCombo->addItem("F#"); // 6
+        keyCombo->addItem(tr("Gb")); // -6
+        keyCombo->addItem(tr("Db")); // -5
+        keyCombo->addItem(tr("Ab")); // -4
+        keyCombo->addItem(tr("Eb")); // -3
+        keyCombo->addItem(tr("Bb")); // -2
+        keyCombo->addItem(tr("F ")); // -1
+        keyCombo->addItem(tr("C"));  // 0
+        keyCombo->addItem(tr("G ")); // 1
+        keyCombo->addItem(tr("D ")); // 2
+        keyCombo->addItem(tr("A ")); // 3
+        keyCombo->addItem(tr("E ")); // 4
+        keyCombo->addItem(tr("B ")); // 5
+        keyCombo->addItem(tr("F#")); // 6
     }
     else
     {
-        keyCombo->addItem("Eb");
-        keyCombo->addItem("Bb");
-        keyCombo->addItem("F");
-        keyCombo->addItem("C");
-        keyCombo->addItem("G");
-        keyCombo->addItem("D ");
-        keyCombo->addItem("A");
-        keyCombo->addItem("E ");
-        keyCombo->addItem("B ");
-        keyCombo->addItem("F#");
-        keyCombo->addItem("G#");
-        keyCombo->addItem("C#");
-        keyCombo->addItem("D#");
+        keyCombo->addItem(tr("Eb"));
+        keyCombo->addItem(tr("Bb"));
+        keyCombo->addItem(tr("F"));
+        keyCombo->addItem(tr("C"));
+        keyCombo->addItem(tr("G"));
+        keyCombo->addItem(tr("D "));
+        keyCombo->addItem(tr("A"));
+        keyCombo->addItem(tr("E "));
+        keyCombo->addItem(tr("B "));
+        keyCombo->addItem(tr("F#"));
+        keyCombo->addItem(tr("G#"));
+        keyCombo->addItem(tr("C#"));
+        keyCombo->addItem(tr("D#"));
     }
     refresh(false);
 }
