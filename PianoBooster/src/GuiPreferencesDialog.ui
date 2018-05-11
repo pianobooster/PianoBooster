@@ -138,7 +138,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>Video  Settings</string>
+      <string>Video Settings</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="sizeConstraint">

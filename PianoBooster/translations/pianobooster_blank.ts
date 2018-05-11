@@ -896,7 +896,7 @@
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
-        <source>Bufer Size</source>
+        <source>Buffer Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1039,7 +1039,7 @@
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="121"/>
-        <source>Video  Settings</source>
+        <source>Video Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1196,7 +1196,7 @@
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
-        <source> Song Details</source>
+        <source>Song Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1468,7 +1468,7 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="306"/>
-        <source>Change the piano keybaord settings</source>
+        <source>Change the piano keyboard settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1544,7 +1544,7 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="384"/>
-        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency).&lt;/p&gt;&lt;p&gt;PianoBooster does not come with any &lt;b&gt;MIDI Files&lt;/b&gt; and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
+        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster does not come with any &lt;b&gt;MIDI Files&lt;/b&gt; and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1554,7 +1554,7 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="434"/>
-        <source>&lt;b&gt;PainoBooster - Version </source>
+        <source>&lt;b&gt;PianoBooster - Version </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

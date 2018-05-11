@@ -20,7 +20,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string> Song Details</string>
+      <string>Song Details</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>

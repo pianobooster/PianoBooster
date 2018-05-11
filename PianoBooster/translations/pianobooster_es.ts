@@ -890,8 +890,8 @@
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
-        <source>Bufer Size</source>
-        <translation>Tamaño del Bufer</translation>
+        <source>Buffer Size</source>
+        <translation>Tamaño del Buffer</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
@@ -1031,7 +1031,7 @@
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="121"/>
-        <source>Video  Settings</source>
+        <source>Video Settings</source>
         <translation>Configuración de Video</translation>
     </message>
     <message>
@@ -1187,7 +1187,7 @@
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
-        <source> Song Details</source>
+        <source>Song Details</source>
         <translation> Detalles de la Canción</translation>
     </message>
     <message>
@@ -1454,7 +1454,7 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="306"/>
-        <source>Change the piano keybaord settings</source>
+        <source>Change the piano keyboard settings</source>
         <translation>Cambiar la configuración del teclado musical</translation>
     </message>
     <message>
@@ -1529,8 +1529,8 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
-        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency).&lt;/p&gt;&lt;p&gt;PianoBooster does not come with any &lt;b&gt;MIDI Files&lt;/b&gt; and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
-        <translation>&lt;h3&gt;Como Empezar&lt;/h3&gt;&lt;p&gt;Necesitaras un &lt;b&gt;teclado musical MIDI &lt;/b&gt; y un &lt;b&gt;conector MIDI &lt;/b&gt; para el PC.De no tener un teclado musical MIDI, puedes utilizar Piano Booster con el teclado del PC, siendo &apos;X&quot; el C o Do Central.&lt;/p&gt;&lt;p&gt;Para escuchar la múscia necesitarás un &lt;b&gt;General Midi synthetizador de sonido&lt;/b&gt;. El &quot;Microsoft GS Wavetable software synthetizador&quot; que viene con Windows puede ser usado pero introduce un inaceptable retraso en la música.&lt;/p&gt;&lt;p&gt;PianoBooster no viene con ningún &lt;b&gt;archivo MIDI &lt;/b&gt;así que tendrás que obtenerlo de Internet. Mira &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; para saber donde encontarlos. PianoBooster funciona mejor con archivos MIDI que tienen partes separadas para mano izquierda y derecha y usan los canales 3 y 4 del MIDI.&lt;h3&gt;Como Configurar:&lt;/h3&gt;&lt;p&gt;Primero ve al menu &lt;i&gt;Configuración/ConfiguraciónMidi&lt;/i&gt; y selecciona la Entrada de MIDI y la Salida del MIDI según el hardware del que dispongas. Luego  ve a &lt;i&gt;Archivo/Abrir&lt;/i&gt; para abrir un archivo MIDI con extensión &quot;.mid&quot; o un arhivo de karaoke &quot;.kar&quot; . Ahora selecciona el &lt;i&gt;Modo&lt;/i&gt; que deseas en el Panel Lateral (&lt;i&gt;Escuchar&lt;/i&gt; la música,  &lt;i&gt;Sígueme&lt;/i&gt; o Acompañamiento&lt;/i&gt;). Finalmente cuando estés listo pulsa en el &lt;i&gt;icono de empezar&lt;/i&gt; (o pulsa la &lt;i&gt;barra espaciadora&lt;/i&gt;) para hacer andar la música.&lt;h3&gt;Sugerencias sobre como tocar el Piano&lt;/h3&gt;&lt;p&gt;Para sugerencias sobre como tocar el piano vea: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Sugerencias&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Más Información&lt;/h3&gt;&lt;p&gt;Para una mejor ayuda por favor visite la  PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;web&lt;/b&gt;&lt;/a&gt;, el  PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; y el &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;foro de usuarios&lt;/b&gt;&lt;/a&gt;. </translation>
+        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster does not come with any &lt;b&gt;MIDI Files&lt;/b&gt; and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
+        <translation>&lt;h3&gt;Comenzando&lt;/h3&gt;&lt;p&gt;Es necesario un &lt;b&gt;teclado musical MIDI&lt;/b&gt; y un &lt;b&gt;interfaz MIDI&lt;/b&gt; para el PC. Si no se dispone de un teclado MIDI, es posible usar PianoBooster utilizando el teclado del PC keyboard, «X» es el do (C) central.&lt;/p&gt;&lt;p&gt;Para escuchar la música, es necesario un &lt;b&gt;sintetizador MIDI&lt;/b&gt;. En Windows se puede usar el «Microsoft GS Wavetable software synthesizer», pero &amp;eacute;ste introduce una latencia inaceptable. En Linux se puede usar &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; o &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;PianoBooster no viene con ning&amp;uacute;n &lt;b&gt;archivo MIDI&lt;/b&gt; por lo que estos deberán ser descargados desde la red, o de cualquier otra fuente. Vaya a &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; para acceder a algunos de los sitios desde los que se pueden descargar. PianoBooster funciona mejor con archivos MIDI que tienen separadas las partes del piano ejecutadas por la mano derecha y la izquierda usando los canales MIDI 3 y 4.&lt;h3&gt;Configuraci&amp;oacute;n&lt;/h3&gt;&lt;p&gt;Use el men&amp;uacute; &lt;i&gt;Configuraci&amp;oacute;n/Configuraci&amp;oacute;n MIDI&lt;/i&gt; y seleccione la entrada y salida MIDI correspondientes a su arquitectura. A continuaci&amp;oacute;n use &lt;i&gt;Archivo/Abrir&lt;/i&gt; para abrir un archivo MIDI (&quot;.mid&quot;) o de karaoke (&quot;.kar&quot;). Seleccione si desea simplemente &lt;i&gt;escuchar&lt;/i&gt; la m&amp;uacute;sica o si desea &lt;i&gt;interpretarla&lt;/i&gt; en el teclado de piano, seleccionando el &lt;i&gt;nivel&lt;/i&gt; en el panel lateral. Finalmente, pulse el icono de &lt;i&gt;comenzar a tocar&lt;/i&gt; (o la &lt;i&gt;barra espaciadora&lt;/i&gt;) para que la canci&amp;oacute;n comience.&lt;h3&gt;Consejos para tocar el teclado de piano&lt;/h3&gt;&lt;p&gt;Para consejos sobre como interpretar con el teclado de piano, vea: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Consejos sobre piano&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;M&amp;aacute;s informaci&amp;oacute;n&lt;/h3&gt;&lt;p&gt;Para saber m&amp;aacute;s, visite la &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;p&amp;aacute;gina web de PianoBooster&lt;/b&gt;&lt;/a&gt;, la p&amp;aacute;gina de &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;preguntas frecuentes (FAQ)&lt;/b&gt;&lt;/a&gt; y el &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;foro de usuarios&lt;/b&gt;&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="432"/>
@@ -1539,8 +1539,8 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="435"/>
-        <source>&lt;b&gt;PainoBooster - Version </source>
-        <translation>&lt;b&gt;PainoBooster - Versión </translation>
+        <source>&lt;b&gt;PianoBooster - Version </source>
+        <translation>&lt;b&gt;PianoBooster - Versión </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="462"/>

@@ -363,7 +363,7 @@ void QtWindow::createActions()
 
     m_setupKeyboardAct = new QAction(tr("Piano &Keyboard Setting ..."), this);
     m_setupKeyboardAct->setShortcut(tr("Ctrl+K"));
-    m_setupKeyboardAct->setStatusTip(tr("Change the piano keybaord settings"));
+    m_setupKeyboardAct->setStatusTip(tr("Change the piano keyboard settings"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
 
     m_fullScreenStateAct = new QAction(tr("&Fullscreen"), this);
@@ -533,7 +533,8 @@ void QtWindow::help()
 
    "<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
    "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
-   "but it introduces an unacceptable delay (latency).</p>"
+   "but it introduces an unacceptable delay (latency). In Linux you can use "
+   "<a href=\"www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
 
 
    "<p>PianoBooster does not come with any <b>MIDI Files</b> and so you will need to get them from the net. "
@@ -574,7 +575,7 @@ void QtWindow::about()
     msgBox.setWindowTitle (tr("About Piano Booster"));
     msgBox.setText(
             tr(
-                "<b>PainoBooster - Version " PB_VERSION "</b> <br><br>"
+                "<b>PianoBooster - Version " PB_VERSION "</b> <br><br>"
                 "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
                 "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
                 "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
