@@ -2,6 +2,7 @@ SET( TRANSLATIONS_FILES
      pianobooster_ja.ts
      pianobooster_es.ts
      pianobooster_gl.ts
+     pianobooster_fr.ts
 )
 
 QT4_ADD_TRANSLATION(QM_FILES ${TRANSLATIONS_FILES})

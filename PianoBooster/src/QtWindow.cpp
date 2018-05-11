@@ -579,6 +579,7 @@ void QtWindow::about()
                 "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
                 "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
                 "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
+                "Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).<br><br>"
                 "This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
