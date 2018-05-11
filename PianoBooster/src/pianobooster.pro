@@ -107,7 +107,7 @@ USE_FLUIDSYNTH {
     }
 }
 
-QT += xml opengl
+QT += xml opengl widgets
 
 # enable the console window
 #QT+=testlib

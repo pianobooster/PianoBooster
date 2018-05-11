@@ -24,7 +24,7 @@
 
 */
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "GuiSongDetailsDialog.h"
 #include "GlView.h"

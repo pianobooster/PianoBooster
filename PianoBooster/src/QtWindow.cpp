@@ -696,7 +696,7 @@ void QtWindow::keyPressEvent ( QKeyEvent * event )
     if (event->key() == Qt::Key_F1)
         return;
 
-    int c = event->text().toAscii().at(0);
+    int c = event->text().toLatin1().at(0);
     m_song->pcKeyPress( c, true);
 }
 
@@ -708,7 +708,7 @@ void QtWindow::keyReleaseEvent ( QKeyEvent * event )
     if (event->text().length() == 0)
         return;
 
-    int c = event->text().toAscii().at(0);
+    int c = event->text().toLatin1().at(0);
     m_song->pcKeyPress( c, false);
 }
 

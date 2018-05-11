@@ -18,7 +18,7 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QTime>
-#include <QtGui>
+#include <QtWidgets>
 #include <QtOpenGL>
 #include <assert.h>
 #include <cstring>

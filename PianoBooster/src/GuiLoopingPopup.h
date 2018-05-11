@@ -30,7 +30,7 @@
 #define __GUILOOPINGPOPUP_H__
 
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "Song.h"
 

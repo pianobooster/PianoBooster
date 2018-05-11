@@ -29,7 +29,7 @@
 #ifndef __GUISIDEPANEL_H__
 #define __GUISIDEPANEL_H__
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "Song.h"
 #include "Score.h"

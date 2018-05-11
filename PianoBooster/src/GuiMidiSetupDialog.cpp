@@ -24,7 +24,7 @@
 
 */
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "GuiMidiSetupDialog.h"
 
@@ -124,7 +124,7 @@ void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
 {
     bool ok;
-    int latencyFix = QInputDialog::getInteger(this, tr("Enter a value for the latency fix in milliseconds"),
+    int latencyFix = QInputDialog::getInt(this, tr("Enter a value for the latency fix in milliseconds"),
             tr(
             "The latency fix works by running the music ahead of what you<br>"
             "are playing to counteract the delay within the sound generator.<br><br>"

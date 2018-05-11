@@ -27,7 +27,7 @@
 #ifndef __QT_WINDOW_H__
 #define __QT_WINDOW_H__
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "Song.h"
 #include "Score.h"

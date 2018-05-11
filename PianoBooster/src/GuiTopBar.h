@@ -28,7 +28,7 @@
 #ifndef __GUITOPBAR_H__
 #define __GUITOPBAR_H__
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "Song.h"
 #include "Score.h"

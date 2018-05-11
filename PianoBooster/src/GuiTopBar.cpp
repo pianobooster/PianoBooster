@@ -26,7 +26,7 @@
 */
 /*********************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "GuiTopBar.h"
 #include "TrackList.h"

@@ -4,6 +4,8 @@ SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 SET(USE_FLUIDSYNTH OFF)
 
+SET(OpenGL_GL_PREFERENCE GLVND)
+
 # The inplace directory is mainly for windows builds
 # SET(FLUIDSYNTH_INPLACE_DIR C:/download/misc/ljb/fluidsynth-1.0.9)
 SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
@@ -28,7 +30,7 @@ PROJECT( pianobooster )
 # enable warnings
 ADD_DEFINITIONS(-Wall)
 
-# by default only QtCore and QtGui modules are enabled
+# by default only QtCore and QtWidgets modules are enabled
 # other modules must be enabled like this:
 SET(QT_USE_QTOPENGL TRUE)
 SET(QT_USE_QTXML TRUE)
@@ -38,20 +40,29 @@ FIND_PACKAGE( OpenGL REQUIRED )
 
 # this command finds Qt5 libraries and sets all required variables
 # note that it's Qt5, not QT5 or qt5
-FIND_PACKAGE( Qt5 COMPONENTS Widgets LinguistTools REQUIRED )
+FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
 
-# add some useful macros and variables
-# (Qt5Widgets_INCLUDES is a variable defined by FIND_PACKAGE( Qt5 COMPONENTS Widgets ) that contains a path to CMake script)
-INCLUDE_DIRECTORIES( ${Qt5Widgets_INCLUDES} )
-# (Qt5LinguistTools_INCLUDES is a variable defined by FIND_PACKAGE( Qt5 COMPONENTS LinguistTools) that contains a path to CMake script)
-INCLUDE_DIRECTORIES( ${Qt5LinguistTools_INCLUDES} )
+## add some useful macros and variables
+INCLUDE_DIRECTORIES( ${Qt5Core_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5Widgets_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5LinguistTools_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5OpenGL_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5Xml_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5Core_LIBRARY_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5Widgets_LIBRARY_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5LinguistTools_LIBRARY_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5OpenGL_LIBRARY_DIRS} )
+INCLUDE_DIRECTORIES( ${Qt5Xml_LIBRARY_DIRS} )
 
 # We need add -DQT_WIDGETS_LIB when using QtWidgets in Qt 5.
+add_definitions(${Qt5Core_DEFINITIONS})
 add_definitions(${Qt5Widgets_DEFINITIONS})
+add_definitions(${Qt5LinguistTools_DEFINITIONS})
+add_definitions(${Qt5OpenGL_DEFINITIONS})
+add_definitions(${Qt5Xml_DEFINITIONS})
 
-# Executables fail to build with Qt 5 in the default configuration
-# without -fPIE. We add that here.
-set(CMAKE_CXX_FLAGS "${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+add_definitions(-fPIC)
 
 IF (USE_PCH)
 INCLUDE(precompile/PCHSupport_26.cmake)
@@ -215,6 +226,8 @@ IF(WIN32)
     SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 ENDIF(WIN32)
 
+
+qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 
 IF (USE_PCH)
 ADD_PRECOMPILED_HEADER( pianobooster ${CMAKE_CURRENT_SOURCE_DIR}/precompile/precompile.h )

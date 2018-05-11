@@ -30,7 +30,7 @@
 #define __GUISONGDETAILSDIALOG_H__
 
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "Song.h"
 #include "Settings.h"

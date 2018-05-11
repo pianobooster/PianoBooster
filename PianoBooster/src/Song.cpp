@@ -57,8 +57,8 @@ void CSong::loadSong(const QString & filename)
      fn = fn.replace('/','\\');
 #endif
     m_midiFile->setLogLevel(3);
-    m_midiFile->openMidiFile(string(fn.toAscii()));
-    ppLogInfo("Opening song %s",  string(fn.toAscii()).c_str());
+    m_midiFile->openMidiFile(string(fn.toLatin1()));
+    ppLogInfo("Opening song %s",  string(fn.toLatin1()).c_str());
     transpose(0);
     midiFileInfo();
     m_midiFile->setLogLevel(99);

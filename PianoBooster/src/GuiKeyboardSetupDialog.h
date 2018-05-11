@@ -29,7 +29,7 @@
 #ifndef __GUILEYBOARDSETUPDIALOG_H__
 #define __GUILEYBOARDSETUPDIALOG_H__
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "Song.h"
 #include "Settings.h"

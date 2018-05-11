@@ -26,7 +26,7 @@
 */
 /*********************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 
 
 #include "GuiKeyboardSetupDialog.h"
@@ -117,7 +117,7 @@ void GuiKeyboardSetupDialog::keyPressEvent ( QKeyEvent * event )
     if (event->isAutoRepeat() == true)
         return;
 
-    int c = event->text().toAscii().at(0);
+    int c = event->text().toLatin1().at(0);
     m_song->pcKeyPress( c, true);
 }
 
@@ -129,7 +129,7 @@ void GuiKeyboardSetupDialog::keyReleaseEvent ( QKeyEvent * event )
     if (event->text().length() == 0)
         return;
 
-    int c = event->text().toAscii().at(0);
+    int c = event->text().toLatin1().at(0);
     m_song->pcKeyPress( c, false);
 }
 

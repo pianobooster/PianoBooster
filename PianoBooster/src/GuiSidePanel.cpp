@@ -26,7 +26,7 @@
 */
 /*********************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "GuiSidePanel.h"
 #include "GuiTopBar.h"

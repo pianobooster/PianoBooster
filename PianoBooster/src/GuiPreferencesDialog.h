@@ -30,7 +30,7 @@
 #define __GUIPREFERENCESDIALOG_H__
 
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "Song.h"
 #include "Settings.h"
