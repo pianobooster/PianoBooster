@@ -19,8 +19,10 @@
 
 ****************************************************************************/
 
-#include <QApplication>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
+#include <QApplication>
 #include <QtOpenGL>
 #include "QtWindow.h"
 
