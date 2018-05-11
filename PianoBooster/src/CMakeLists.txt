@@ -38,11 +38,20 @@ FIND_PACKAGE( OpenGL REQUIRED )
 
 # this command finds Qt5 libraries and sets all required variables
 # note that it's Qt5, not QT5 or qt5
-FIND_PACKAGE( Qt5 REQUIRED )
+FIND_PACKAGE( Qt5 COMPONENTS Widgets LinguistTools REQUIRED )
 
 # add some useful macros and variables
-# (QT_USE_FILE is a variable defined by FIND_PACKAGE( Qt5 ) that contains a path to CMake script)
-INCLUDE( ${QT_USE_FILE} )
+# (Qt5Widgets_INCLUDES is a variable defined by FIND_PACKAGE( Qt5 COMPONENTS Widgets ) that contains a path to CMake script)
+INCLUDE_DIRECTORIES( ${Qt5Widgets_INCLUDES} )
+# (Qt5LinguistTools_INCLUDES is a variable defined by FIND_PACKAGE( Qt5 COMPONENTS LinguistTools) that contains a path to CMake script)
+INCLUDE_DIRECTORIES( ${Qt5LinguistTools_INCLUDES} )
+
+# We need add -DQT_WIDGETS_LIB when using QtWidgets in Qt 5.
+add_definitions(${Qt5Widgets_DEFINITIONS})
+
+# Executables fail to build with Qt 5 in the default configuration
+# without -fPIE. We add that here.
+set(CMAKE_CXX_FLAGS "${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 
 IF (USE_PCH)
 INCLUDE(precompile/PCHSupport_26.cmake)
@@ -177,13 +186,13 @@ SET( PIANOBOOSTER_RCS
 
 # this command will generate rules that will run rcc on all files from PIANOBOOSTER_RCS
 # in result PIANOBOOSTER_RC_SRCS variable will contain paths to files produced by rcc
-QT4_ADD_RESOURCES( PIANOBOOSTER_RC_SRCS ${PIANOBOOSTER_RCS} )
+QT5_ADD_RESOURCES( PIANOBOOSTER_RC_SRCS ${PIANOBOOSTER_RCS} )
 
 # this will run uic on .ui files:
-QT4_WRAP_UI( PIANOBOOSTER_UI_HDRS ${PIANOBOOSTER_UIS} )
+QT5_WRAP_UI( PIANOBOOSTER_UI_HDRS ${PIANOBOOSTER_UIS} )
 
 # and finally this will run moc:
-QT4_WRAP_CPP( PIANOBOOSTER_MOC_SRCS ${PIANOBOOSTER_MOC_HDRS} )
+QT5_WRAP_CPP( PIANOBOOSTER_MOC_SRCS ${PIANOBOOSTER_MOC_HDRS} )
 
 
 # here we instruct CMake to build "pianobooster" executable from all of the source files
