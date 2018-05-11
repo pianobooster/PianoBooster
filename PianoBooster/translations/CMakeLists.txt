@@ -8,7 +8,7 @@ ADD_CUSTOM_TARGET(translations ALL DEPENDS ${QM_FILES})
 
 IF (UNIX AND NOT APPLE)
     INSTALL( FILES ${QM_FILES}
-             DESTINATION share/pianobooster/translations )
+             DESTINATION share/games/pianobooster/translations )
 ENDIF (UNIX AND NOT APPLE)
 
 IF (WIN32)
