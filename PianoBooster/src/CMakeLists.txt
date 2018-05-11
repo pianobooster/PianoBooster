@@ -36,12 +36,12 @@ SET(QT_USE_QTXML TRUE)
 
 FIND_PACKAGE( OpenGL REQUIRED )
 
-# this command finds Qt4 libraries and sets all required variables
-# note that it's Qt4, not QT4 or qt4
-FIND_PACKAGE( Qt4 REQUIRED )
+# this command finds Qt5 libraries and sets all required variables
+# note that it's Qt5, not QT5 or qt5
+FIND_PACKAGE( Qt5 REQUIRED )
 
 # add some useful macros and variables
-# (QT_USE_FILE is a variable defined by FIND_PACKAGE( Qt4 ) that contains a path to CMake script)
+# (QT_USE_FILE is a variable defined by FIND_PACKAGE( Qt5 ) that contains a path to CMake script)
 INCLUDE( ${QT_USE_FILE} )
 
 IF (USE_PCH)
