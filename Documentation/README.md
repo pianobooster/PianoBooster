@@ -1,25 +1,29 @@
 ![logo](images/logo64x64.png)
 
-[Home](README.md)
-[Screenshots](screenshots.md)
-[Original project](http://pianobooster.sourceforge.net)
-[Features](#features)
-[Download](download.md)
-[Sheet Music](music.md)
-[FAQ](faq.md)
-[Original Wiki Help](http://sourceforge.net/apps/mediawiki/pianobooster/)
-[Original User Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html)
-[Original Development Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Development-f2625691.html)
-[Original Source Tree](http://sourceforge.net/projects/pianobooster/)
 
 # Boost your Piano playing skills
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [FAQ](faq.md)
+- [Download](download.md) (obsolete)
+
+External links:
+- [Original project](http://pianobooster.sourceforge.net)
+- [Original source tree](http://sourceforge.net/projects/pianobooster/)
+- [Original Wiki Help](http://sourceforge.net/apps/mediawiki/pianobooster/)
+- [Original User Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html)
+- [Original Development Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Development-f2625691.html)
+
+## Presentation
 
 *PianoBooster* is a fun way of playing along with a musical accompaniment and at
 the same time learning the basics of reading musical notation.  The difference
 between playing along to a CD or a standard midi file is that *PianoBooster*
 listens and follows what you are playing on a midi piano keyboard.
 
-## Introduction
+### Introduction
 *PianoBooster* is a free (Open Source) program that plays Standard Midi Files
 and allows you to change the speed of playback
 and transpose the music etc.
@@ -45,7 +49,7 @@ score. The music accompaniment will automatically wait for you to find and play
 the correct notes in the piece.
 
 
-## PianoBooster in Action
+### PianoBooster in Action
 
 Watch the video and see the features of *PianoBooster* in action.
 
@@ -60,7 +64,7 @@ beginners as well as for advanced players.
 It can be used for teaching music theory and is useful for piano practice and
 learning piano technique.
 
-## Timing markers
+### Timing markers
 
 Timing markers show whether you are playing ahead or behind of the beat.
 They appear as white crosses that are drawn over the note.
@@ -82,3 +86,12 @@ Timing markers are new in version 0.6.2
 - Change the *start bar* to start playing from any bar in the music. The *repeat bars* allows you to practice just a few difficult bars continuously.
 - *Timing markers* are white crosses that are drawn over each note and show if you are playing ahead or behind the beat.
 - A different instrument sound is used for the right and wrong notes that you play.
+
+## ScreenShots
+
+[Piano Booster main screen - Linux](images/LinuxScreenShot.png)
+[Piano Booster main screen - Windows](images/WindowsScreenShot.jpeg)
+[Piano Booster annotated screenshot](images/LinuxScreenShotAnnotated.png)
+[Piano Booster timing markers](images/timingmarkers.jpeg)
+[Piano Booster keyboard setup](images/keyboardsetup.png)
+[Piano Booster MIDI Setup Dialog](images/midisetup.png)
