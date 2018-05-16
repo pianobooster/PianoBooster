@@ -1,6 +1,9 @@
+Original PianoBooster TODO
+==========================
+
 Piano Booster To Do tasks (in no particular order)
 
-======== EASY ========
+# EASY
 
 - changing the piano sound to use the same sound as on the part.
 - [Bug] fix patches when all 16 channels are being used (mute parts 15 + 16)
@@ -9,7 +12,7 @@ Piano Booster To Do tasks (in no particular order)
 - Add - rhythm practice - any note played at the right time will be accepted
 
 
-======== MEDIUM ========
+# MEDIUM
 
 - Adding a high score of your playing ability.
 - Add stars -- see if you can collect all 10 stars.
@@ -26,7 +29,7 @@ Piano Booster To Do tasks (in no particular order)
 - read the midi file tracks (at present the tracks are split only by midi channel number)
 
 
-======== DIFFICULT ========
+# DIFFICULT
 
 - reduce the midi timing jitter by:
     3. Move the conductor realtime engine so it runs in it own thread.
@@ -34,12 +37,12 @@ Piano Booster To Do tasks (in no particular order)
 - Add note beams.
 - show a graph of how your playing has improved over time.
 
-======== NO PLANS FOR ========
+# NO PLANS FOR
 
 - Proper beautiful music notation complete with slurs, triplets,  correct note spacing etc.
       (Please use the printed musical score for this instead)
 
-======== NON SOFTWARE TASKS ========
+# NON SOFTWARE TASKS
 
 - Add a PB links page on the web site.
 - writing a user manual.
@@ -50,14 +53,14 @@ Piano Booster To Do tasks (in no particular order)
 - Writing a music teaching course
 
 
-======== COMPLETE ========
+# COMPLETE
 
 Add keyboard shortcuts. (Owen)
 Help for keyboard short cuts.
 Add assignable Left and Right hand midi channels.
 Save the setting per song (e.g. remember the current speed settings)
 
-======== NOTE========
+# NOTE
 
 Note: changed the '-' to a '+' when the task has been started.
 
