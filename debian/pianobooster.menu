@@ -1,3 +1,0 @@
-?package(pianobooster):needs="x11" section="Games/Action" \
-	title="Piano Booster" command="/usr/games/pianobooster" \
-	icon="/usr/share/pixmaps/pianobooster.xpm"
