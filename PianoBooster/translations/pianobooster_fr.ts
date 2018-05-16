@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
         <source>Song: </source>
-        <translation></translation>
+        <translation>Morceau : </translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="255"/>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Voice Oohs</source>
-        <translation>Chœur Oooh</translation>
+        <translation>Voix Oooh</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
@@ -587,7 +587,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation></translation>
+        <translation>Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -642,7 +642,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
         <source>Reverse Cymbal</source>
-        <translation>Cymbales inversée</translation>
+        <translation>Cymbale inversée</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="476"/>
@@ -657,7 +657,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="478"/>
         <source>Seashore</source>
-        <translation>Vagues</translation>
+        <translation>Bord de mer</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="479"/>
@@ -940,7 +940,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="59"/>
         <source>None (PC Keyboard)</source>
-        <translation></translation>
+        <translation>Aucun (clavier alpha-numérique)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
@@ -1694,8 +1694,8 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="524"/>
-        <source>Aide de Piano Booster</source>
-        <translation></translation>
+        <source>Piano Booster Help</source>
+        <translation>Aide de Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="526"/>
