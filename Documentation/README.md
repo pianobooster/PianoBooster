@@ -30,7 +30,7 @@ and transpose the music etc.
 There is a scrolling musical stave that shows the notes for just one part
 from all the parts in the complete musical arrangement.
 
-![Piano Booster main screen](images/LinuxScreenshot.png)
+![Piano Booster main screen](images/LinuxScreenShot.png)
 
 Piano Booster main screen
 
