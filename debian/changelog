@@ -1,4 +1,4 @@
-pianobooster (0.6.7~svn156-2~git20180511) UNRELEASED; urgency=medium
+pianobooster (0.6.7~svn156-2~git20180511) stretch; urgency=medium
 
   * New upstream (fork)
   * Patch applied by upstream, removed from debian/patch
