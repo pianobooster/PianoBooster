@@ -31,7 +31,7 @@ config-stamp:
 build-stamp: config
 	dh_testdir
 	cd $(BUILD_TREE); $(MAKE)
-	cd src && lrelease-qt4 *.pro
+	cd src && lrelease *.pro
 	touch $@
 
 build-indep:

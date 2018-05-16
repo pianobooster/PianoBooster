@@ -1,19 +1,32 @@
 Source: pianobooster
 Section: games
 Priority: optional
-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Uploaders: Miriam Ruiz <miriam@debian.org>, Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>
-Build-Depends: debhelper (>= 9), cmake, dh-buildinfo,
- qt4-qmake, libqt4-dev, libqt4-opengl-dev, qt4-linguist-tools,
- mesa-common-dev, libglu1-mesa-dev, libasound2-dev
+Maintainer: Équipe LibraZiK <librazik@tuxfamily.org>
+Uploaders:
+ Olivier Humbert <trebmuh@tuxfamily.org>,
+ Debian Games Team <pkg-games-devel@lists.alioth.debian.org>,
+ Miriam Ruiz <miriam@debian.org>,
+ Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>
+Build-Depends:
+ cmake,
+ debhelper (>= 10),
+ dh-buildinfo,
+ libasound2-dev,
+ libglu1-mesa-dev,
+ qt5-default,
+ qt5-qmake,
+ qtbase5-dev-tools,
+ mesa-common-dev,
 Standards-Version: 3.9.8
 Homepage: http://pianobooster.sourceforge.net/
-Vcs-Svn: svn://anonscm.debian.org/pkg-games/packages/trunk/pianobooster/
-Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-games/packages/trunk/pianobooster/
+Vcs-Git: git://github.com/captnfab/PianoBooster
+Vcs-Browser: https://github.com/captnfab/PianoBooster
 
 Package: pianobooster
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
 Recommends: fluidsynth | timidity
 Suggests: pianobooster-dbg (= ${binary:Version})
 Description: learn the piano just by playing a game
@@ -27,12 +40,18 @@ Description: learn the piano just by playing a game
  for the PC. If you don't have a MIDI keyboard you can still try out
  PianoBooster, using the PC keyboard ('x' is middle C), but a MIDI piano
  is really recommended).
+ .
+ Documentation page : http://librazik.tuxfamily.org/doc2/paquets/
+ .
+ LibraZiK audio studio package 2018 ©
 
 Package: pianobooster-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: pianobooster (= ${binary:Version}), ${misc:Depends}
+Depends:
+ pianobooster (= ${binary:Version}),
+ ${misc:Depends},
 Description: learn the piano just by playing a game - debug
  Piano Booster is a new way to learn the piano just by playing a game. 
  It takes elements of the game Guitar Hero but now it uses a real piano
@@ -41,3 +60,7 @@ Description: learn the piano just by playing a game - debug
  up learning to play a real musical instrument: the piano.
  .
  This package contains the debugging symbols.
+ .
+ Documentation page : http://librazik.tuxfamily.org/doc2/paquets/
+ .
+ LibraZiK audio studio package 2018 ©

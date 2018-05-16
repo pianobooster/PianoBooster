@@ -1,3 +1,59 @@
+pianobooster (0.6.7~svn156-2~git20180511) UNRELEASED; urgency=medium
+
+  * New upstream (fork)
+  * Patch applied by upstream, removed from debian/patch
+  * New version ported to Qt5
+
+ -- Fabien Givors <fabien.givors@chezlefab.net>  Fri, 11 May 2018 17:06:29 +0200
+
+pianobooster (0.6.7~svn156-1librazik2) stretch; urgency=medium
+
+  * Reconstruction avec pbuilder pour LibraZiK-2.
+    - traduction de l'interface graphique en français.
+    - ajout de morceaux MIDI et de partitions en PDF.
+  * debian/patches/3000-traduction_interface_en_FR.patch :
+    - création de la rustine (avec dquilt).
+  * debian/patches/3001-LZK.patch :
+    - création de la rustine (avec dquilt).
+  * debian/series :
+    - ajout de la rustine "3000-traduction_interface_en_FR.patch" (avec dquilt).
+    - ajout de la rustine "3001-LZK.patch.
+  * debian/resources :
+    - extrait à partir de music/BoosterMusicBooks.zip .
+  * debian/pianobooster.install :
+    - ajout de l'installation des resources/* .
+  * debian/resources/include-binaries :
+    - ajout des resources/* .
+
+ -- Olivier Humbert <trebmuh@tuxfamily.org>  Fri, 12 Jan 2018 14:16:26 +0100
+
+pianobooster (0.6.7~svn156-1librazik1) stretch; urgency=medium
+
+  * Reconstruction avec pbuilder pour LibraZiK-2.
+    - ajout d'un élément de menu en français.
+  * debian/pianobooster.desktop :
+    - ajout d'un nom et d'un commentaire en français.
+  * debian/compat :
+    - passage de 9 à 10.
+  * debian/control :
+    - mise à jour de "Maintainer" et de "Uploaders" en conformité avec
+      "debian-policy 5.6.2 and 5.6.3".
+    - listes :
+      + style des listes : un élément par ligne.
+      + remise en ordre alphabétique des listes.
+    - dépendance de construction :
+      + debhelper : passage de (>= 9) à (>= 10).
+    - vérification de la validité du lien "Homepage". OK.
+    - description :
+      + ajout d'une mention au projet LibraZiK.
+      + ajout d'un lien vers la page de documentation.
+  * debian/copyright :
+    - ajout de moi-même à la section copyright de l'empaquetage debian.
+  * debian/menu :
+    - suppression du fichier pour suivre la décision du comité (#741573).
+
+ -- Olivier Humbert <trebmuh@tuxfamily.org>  Thu, 11 Jan 2018 16:59:47 +0100
+
 pianobooster (0.6.7~svn156-1) unstable; urgency=medium
 
   [ Miriam Ruiz ]

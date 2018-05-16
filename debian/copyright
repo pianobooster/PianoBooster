@@ -36,7 +36,9 @@ License: MIT
  IN THE SOFTWARE.
 
 Files: debian/*
-Copyright: Copyright (C) 2009, Miriam Ruiz <little_miry@yahoo.es>
+Copyright:
+ 2009, Miriam Ruiz <little_miry@yahoo.es>
+ 2018, Olivier Humbert <trebmuh@tuxfamily.org>
 License: GPL-3+
 
 License: GPL-3+
