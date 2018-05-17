@@ -4,8 +4,8 @@ SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 SET(USE_FLUIDSYNTH OFF)
 
-SET(OpenGL_GL_PREFERENCE GLVND)
-
+#SET(OpenGL_GL_PREFERENCE GLVND)
+#
 # The inplace directory is mainly for windows builds
 # SET(FLUIDSYNTH_INPLACE_DIR C:/download/misc/ljb/fluidsynth-1.0.9)
 SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
@@ -30,36 +30,10 @@ PROJECT( pianobooster )
 # enable warnings
 ADD_DEFINITIONS(-Wall)
 
-# by default only QtCore and QtWidgets modules are enabled
-# other modules must be enabled like this:
-SET(QT_USE_QTOPENGL TRUE)
-SET(QT_USE_QTXML TRUE)
-
-
 FIND_PACKAGE( OpenGL REQUIRED )
 
-# this command finds Qt5 libraries and sets all required variables
-# note that it's Qt5, not QT5 or qt5
+# Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
-
-## add some useful macros and variables
-INCLUDE_DIRECTORIES( ${Qt5Core_INCLUDE_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5Widgets_INCLUDE_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5LinguistTools_INCLUDE_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5OpenGL_INCLUDE_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5Xml_INCLUDE_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5Core_LIBRARY_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5Widgets_LIBRARY_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5LinguistTools_LIBRARY_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5OpenGL_LIBRARY_DIRS} )
-INCLUDE_DIRECTORIES( ${Qt5Xml_LIBRARY_DIRS} )
-
-# We need add -DQT_WIDGETS_LIB when using QtWidgets in Qt 5.
-add_definitions(${Qt5Core_DEFINITIONS})
-add_definitions(${Qt5Widgets_DEFINITIONS})
-add_definitions(${Qt5LinguistTools_DEFINITIONS})
-add_definitions(${Qt5OpenGL_DEFINITIONS})
-add_definitions(${Qt5Xml_DEFINITIONS})
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 add_definitions(-fPIC)
@@ -68,7 +42,6 @@ IF (USE_PCH)
 INCLUDE(precompile/PCHSupport_26.cmake)
 INCLUDE_DIRECTORIES( precompile .)
 ENDIF(USE_PCH)
-
 
 # Add in the link libraries for each operating system
 IF(${CMAKE_SYSTEM} MATCHES "Linux")
@@ -119,12 +92,6 @@ ENDIF(USE_FLUIDSYNTH)
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} )
-
-# tell CMake what libraries our executable needs,
-# luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:
-LINK_LIBRARIES( ${QT_LIBRARIES} )
-
-
 
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp rtmidi/RtMidi.cpp ${PB_BASE_SRCS})
@@ -195,16 +162,10 @@ SET( PIANOBOOSTER_RCS
     ./application.qrc
 )
 
-# this command will generate rules that will run rcc on all files from PIANOBOOSTER_RCS
-# in result PIANOBOOSTER_RC_SRCS variable will contain paths to files produced by rcc
-QT5_ADD_RESOURCES( PIANOBOOSTER_RC_SRCS ${PIANOBOOSTER_RCS} )
-
-# this will run uic on .ui files:
-QT5_WRAP_UI( PIANOBOOSTER_UI_HDRS ${PIANOBOOSTER_UIS} )
-
-# and finally this will run moc:
-QT5_WRAP_CPP( PIANOBOOSTER_MOC_SRCS ${PIANOBOOSTER_MOC_HDRS} )
-
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # here we instruct CMake to build "pianobooster" executable from all of the source files
 IF(APPLE)
@@ -226,19 +187,19 @@ IF(WIN32)
     SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 ENDIF(WIN32)
 
-
 qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 
 IF (USE_PCH)
 ADD_PRECOMPILED_HEADER( pianobooster ${CMAKE_CURRENT_SOURCE_DIR}/precompile/precompile.h )
 ENDIF (USE_PCH)
 
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL)
 
 INSTALL( FILES pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
 #INSTALL( index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en  SUBDIR kmidimon )
 
-INSTALL( FILES ../README.txt  DESTINATION share/games/pianobooster/doc/ )
+INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
 
 INSTALL ( FILES images/pianobooster.png DESTINATION share/pixmaps )
 
