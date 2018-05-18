@@ -4,7 +4,6 @@ Q: "English Waltz  " 87
 C: Traditional
 M: 3/4 % time signature
 L: 1/4 % default length
-%%staves {RH LH} 
 V: 1 clef=treble 
 %%MIDI channel 4
 %%MIDI program 1 4
