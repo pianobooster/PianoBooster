@@ -8,7 +8,6 @@ Uploaders:
 Build-Depends:
  cmake,
  debhelper (>= 10),
- dh-buildinfo,
  libasound2-dev,
  libglu1-mesa-dev,
  qt5-default,
@@ -17,6 +16,7 @@ Build-Depends:
  qt5-qmake,
  qtbase5-dev-tools,
  mesa-common-dev,
+ libftgl-dev,
 Standards-Version: 3.9.8
 Homepage: http://pianobooster.sourceforge.net/
 Vcs-Git: git://github.com/captnfab/PianoBooster
@@ -27,6 +27,7 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+ fonts-dejavu-core,
 Recommends: fluidsynth | timidity
 Suggests: pianobooster-dbg (= ${binary:Version})
 Description: learn the piano just by playing a game
