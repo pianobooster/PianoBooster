@@ -79,7 +79,7 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool pl
 
 #define scaleGlVertex(xa, xb, ya, yb) glVertex2f( ((xa) * 1.2) + (xb), ((ya) * 1.2) + (yb))
 
-void CDraw::renderText(float x, float y, char* s)
+void CDraw::renderText(float x, float y, const char* s)
 {
   glRasterPos2f(x, y);
   font.Render(s);
@@ -148,7 +148,7 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
 
     if(0<item.pianoNote && item.pianoNote < 7)
      {
-      renderText(x-5, y, n[item.pianoNote].toLatin1().data());
+      renderText(x-5, y, n[item.pianoNote].toLocal8Bit().data());
      }
     else
      {

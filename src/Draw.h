@@ -104,7 +104,7 @@ protected:
     void drawStaves(float startX, float endX);
     void drawKeySignature(int key);
     void drawNoteName(int midiNote, float x, float y, int type);
-    void renderText(float x, float y, char* s);
+    void renderText(float x, float y, const char* s);
     CSettings* m_settings;
 
 private:
