@@ -58,7 +58,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="application.qrc">
          <normaloff>:/images/play-from-start.png</normaloff>:/images/play-from-start.png</iconset>
        </property>
        <property name="iconSize">
@@ -81,7 +81,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="application.qrc">
          <normaloff>:/images/play.png</normaloff>:/images/play.png</iconset>
        </property>
        <property name="iconSize">
@@ -173,7 +173,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="application.qrc">
          <normaloff>:/images/flag.png</normaloff>:/images/flag.png</iconset>
        </property>
        <property name="iconSize">
@@ -201,6 +201,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="application.qrc"/>
+ </resources>
  <connections/>
 </ui>
