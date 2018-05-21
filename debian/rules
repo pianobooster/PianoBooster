@@ -31,7 +31,7 @@ config-stamp:
 build-stamp: config
 	dh_testdir
 	cd $(BUILD_TREE); $(MAKE)
-	cd src && lrelease *.pro
+	cd src && lrelease -qt=5 *.pro
 	touch $@
 
 build-indep:
@@ -68,7 +68,7 @@ binary-arch: install
 	dh_installmenu
 	dh_installman
 	dh_link
-	dh_strip --dbg-package=pianobooster-dbg
+	dh_strip
 	dh_compress
 	dh_fixperms
 	[ ! -e /usr/bin/dh_buildinfo ] || dh_buildinfo
