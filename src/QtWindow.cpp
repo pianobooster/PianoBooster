@@ -216,7 +216,7 @@ bool QtWindow::validateIntegerParamWithMessage(QString arg)
 {
     bool ok = validateIntegerParam(arg);
     if (!ok) {
-        fprintf(stderr, "ERROR: Invalid paramater to a command line argument \"%s\".\n", qPrintable(arg));
+        fprintf(stderr, "ERROR: Invalid parameter to a command line argument \"%s\".\n", qPrintable(arg));
         exit(0);
     }
      return ok;
