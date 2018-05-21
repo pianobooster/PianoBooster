@@ -9,14 +9,15 @@ Build-Depends:
  cmake,
  debhelper (>= 10),
  libasound2-dev,
- libglu1-mesa-dev,
- qt5-default,
- qttools5-dev,
- libqt5opengl5-dev,
- qt5-qmake,
- qtbase5-dev-tools,
- mesa-common-dev,
  libftgl-dev,
+ libglu1-mesa-dev,
+ libqt5opengl5-dev,
+ mesa-common-dev,
+ qt5-qmake,
+ qtbase5-dev,
+ qtbase5-dev-tools,
+ qtchooser,
+ qttools5-dev,
 Standards-Version: 3.9.8
 Homepage: http://pianobooster.sourceforge.net/
 Vcs-Git: git://github.com/captnfab/PianoBooster
