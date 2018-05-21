@@ -104,6 +104,7 @@ protected:
     CSettings* m_settings;
 
 private:
+    Q_OBJECT
     void drawStaveNoteName(CSymbol symbol, float x, float y);
     bool drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour colour, bool playable);
 

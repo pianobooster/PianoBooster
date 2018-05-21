@@ -106,6 +106,7 @@ public:
 
 private:
 
+    Q_OBJECT
     QDomElement openDomElement(QDomElement parent, const QString & elementName, const QString & attributeName = QString());
     void loadHandSettings();
     void saveHandSettings();
