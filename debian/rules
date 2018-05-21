@@ -7,12 +7,12 @@ CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
 CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
 CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
 LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
-LDFLAGS2:=-Wl,-z,defs  -Wl,-as-needed -Wl,--no-undefined
+LDFLAGS2:=-Wl,-z,defs -Wl,-as-needed -Wl,--no-undefined
 
 BUILD_TREE=$(CURDIR)/build-tree
 
 config: config-stamp
-config-stamp: 
+config-stamp:
 	dh_testdir
 	# Perform an out-of-tree build to keep a clean source tree
 	mkdir $(BUILD_TREE)
@@ -40,13 +40,13 @@ build-arch: build-stamp
 
 build: build-arch build-indep
 
-clean: 
+clean:
 	dh_testdir
 	dh_testroot
 	rm -fv build-stamp config-stamp
 	rm -fvr $(BUILD_TREE)
 	rm -fv translations/*.qm
-	dh_clean 
+	dh_clean
 
 install: build
 	dh_testdir

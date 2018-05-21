@@ -7,7 +7,7 @@ Uploaders:
  Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>
 Build-Depends:
  cmake,
- debhelper (>= 10),
+ debhelper (>= 11),
  libasound2-dev,
  libftgl-dev,
  libglu1-mesa-dev,
@@ -18,9 +18,9 @@ Build-Depends:
  qtbase5-dev-tools,
  qtchooser,
  qttools5-dev,
-Standards-Version: 3.9.8
+Standards-Version: 4.1.4
 Homepage: http://pianobooster.sourceforge.net/
-Vcs-Git: git://github.com/captnfab/PianoBooster
+Vcs-Git: https://github.com/captnfab/PianoBooster
 Vcs-Browser: https://github.com/captnfab/PianoBooster
 
 Package: pianobooster
@@ -31,7 +31,7 @@ Depends:
  fonts-dejavu-core,
 Recommends: fluidsynth | timidity
 Description: learn the piano just by playing a game
- Piano Booster is a new way to learn the piano just by playing a game. 
+ Piano Booster is a new way to learn the piano just by playing a game.
  It takes elements of the game Guitar Hero but now it uses a real piano
  keyboard and the game has been turned sideways so the notes scroll along
  a musical stave. So instead of pressing buttons on a fake guitar you end
