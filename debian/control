@@ -30,7 +30,6 @@ Depends:
  ${misc:Depends},
  fonts-dejavu-core,
 Recommends: fluidsynth | timidity
-Suggests: pianobooster-dbg (= ${binary:Version})
 Description: learn the piano just by playing a game
  Piano Booster is a new way to learn the piano just by playing a game. 
  It takes elements of the game Guitar Hero but now it uses a real piano
@@ -42,19 +41,3 @@ Description: learn the piano just by playing a game
  for the PC. If you don't have a MIDI keyboard you can still try out
  PianoBooster, using the PC keyboard ('x' is middle C), but a MIDI piano
  is really recommended).
-
-Package: pianobooster-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends:
- pianobooster (= ${binary:Version}),
- ${misc:Depends},
-Description: learn the piano just by playing a game - debug
- Piano Booster is a new way to learn the piano just by playing a game. 
- It takes elements of the game Guitar Hero but now it uses a real piano
- keyboard and the game has been turned sideways so the notes scroll along
- a musical stave. So instead of pressing buttons on a fake guitar you end
- up learning to play a real musical instrument: the piano.
- .
- This package contains the debugging symbols.
