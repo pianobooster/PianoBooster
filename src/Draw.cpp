@@ -81,7 +81,9 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool pl
 
 void CDraw::renderText(float x, float y, const char* s)
 {
-  glRasterPos2f(x, y);
+  double w = font.Advance(s);
+  double h = font.Descender();
+  glRasterPos2f(x - w/2, y - h);
   font.Render(s);
 }
 
@@ -97,44 +99,9 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
 
     glLineWidth (1.0);
 
-    if (item.accidental != 0)
-    {
-        const float accidentalOffset = 10;
-        x += accidentalOffset/2;
-        if (item.accidental == 1)
-        {
-            glBegin(GL_LINES);
-                //  letterSharp4
-                scaleGlVertex( -1.317895, x,   5.794585, y);  //  1
-                scaleGlVertex( -1.265845, x,   -6.492455, y);  //  2
-                scaleGlVertex( 1.252305, x,   6.492455, y);  //  3
-                scaleGlVertex( 1.322655, x,   -5.422335, y);  //  4
-                scaleGlVertex( -2.645765, x,   1.967805, y);  //  5
-                scaleGlVertex( 2.648325, x,   3.625485, y);  //  6
-                scaleGlVertex( -2.648325, x,   -3.306965, y);  //  7
-                scaleGlVertex( 2.596205, x,   -1.675765, y);  //  8
-            glEnd();
-
-        }
-        else
-        {
-            glBegin(GL_LINE_STRIP);
-                //  letterFlat
-                scaleGlVertex( -2.52933, x,   6.25291, y);  //  1
-                scaleGlVertex( -2.50344, x,   -6.25291, y);  //  2
-                scaleGlVertex( 0.76991, x,   -3.63422, y);  //  3
-                scaleGlVertex( 2.07925, x,   -1.67021, y);  //  4
-                scaleGlVertex( 2.52933, x,   0.25288, y);  //  5
-                scaleGlVertex( 1.42458, x,   1.07122, y);  //  6
-                scaleGlVertex( -0.53943, x,   0.90755, y);  //  7
-                scaleGlVertex( -2.46252, x,   -1.01554, y);  //  8
-                scaleGlVertex( -2.50344, x,   -1.67021, y);  //  9
-            glEnd();
-
-        }
-        x -= accidentalOffset;
-    }
-
+    const QChar flat = QChar(0x266D);
+    const QChar natural = QChar(0x266E);
+    const QChar sharp = QChar(0x266F);
     const QString n[7] =
      {
       tr("C"),
@@ -148,23 +115,21 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
 
     if(0<item.pianoNote && item.pianoNote < 7)
      {
-      renderText(x-5, y, n[item.pianoNote].toLocal8Bit().data());
-     }
-    else
-     {
-      glBegin(GL_LINES);
-        glVertex2f(  3 + x,   -15  + y);  //  1
-        glVertex2f(  3 + x,   8    + y);  //  2
-
-        glVertex2f( -3 + x,   -8   + y);  //  3
-        glVertex2f( -3 + x,   15   + y);  //  4
-
-        glVertex2f(  3 + x,   8    + y);  //  5
-        glVertex2f( -3 + x,   2    + y);  //  6
-
-        glVertex2f(  3 + x,   -2   + y);  //  7
-        glVertex2f( -3 + x,   -8   + y);  //  8
-      glEnd();
+      QString accident = QString("");
+      switch(item.accidental)
+       {
+        case -1:
+          accident = QString(flat);
+          break;
+        case 1:
+          accident = QString(sharp);
+          break;
+        case 2:
+          accident = QString(natural);
+          break;
+       }
+      QString note = n[item.pianoNote] + accident;
+      renderText(x, y, note.toLocal8Bit().data());
      }
 }
 

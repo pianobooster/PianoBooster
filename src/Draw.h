@@ -40,6 +40,7 @@
 
 #define HORIZONTAL_SPACING_FACTOR   (0.75) // defines the speed of the scrolling
 #define FONT_TTF "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+#define FONT_SIZE 16
 
 #include "StavePosition.h"
 
@@ -72,7 +73,7 @@ public:
         m_displayHand = PB_PART_both;
         m_forceCompileRedraw = 1;
         m_scrollProperties = &m_scrollPropertiesHorizontal;
-        font.FaceSize(18, 18);
+        font.FaceSize(FONT_SIZE, FONT_SIZE);
     }
 
     void scrollVertex(float x, float y)
