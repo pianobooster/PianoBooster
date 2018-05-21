@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="es_ES">
+<TS version="2.1" language="es_ES">
+<context>
+    <name>CDraw</name>
+    <message>
+        <location filename="../src/Draw.cpp" line="140"/>
+        <source>C</source>
+        <translation type="unfinished">Do</translation>
+    </message>
+    <message>
+        <location filename="../src/Draw.cpp" line="141"/>
+        <source>D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/Draw.cpp" line="142"/>
+        <source>E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/Draw.cpp" line="143"/>
+        <source>F</source>
+        <translation type="unfinished">Fa</translation>
+    </message>
+    <message>
+        <location filename="../src/Draw.cpp" line="144"/>
+        <source>G</source>
+        <translation type="unfinished">Sol</translation>
+    </message>
+    <message>
+        <location filename="../src/Draw.cpp" line="145"/>
+        <source>A</source>
+        <translation type="unfinished">La</translation>
+    </message>
+    <message>
+        <location filename="../src/Draw.cpp" line="146"/>
+        <source>B</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>CGLView</name>
     <message>
@@ -23,11 +61,11 @@
     <name>CSettings</name>
     <message>
         <source>NO MIDI OUTPUT DEVICE: Use menu Setup/Midi Setup ...</source>
-        <translation>SIN DISPOSITIVO MIDI: Use el menú Ajustes/Ajustes Midi ...</translation>
+        <translation type="vanished">SIN DISPOSITIVO MIDI: Use el menú Ajustes/Ajustes Midi ...</translation>
     </message>
     <message>
         <source>NO MIDI FILE LOADED: Use menu File/Open ...</source>
-        <translation>SIN ARCHIVO MIDI CARGADO: Use el menú Archivo/Abrir ...</translation>
+        <translation type="vanished">SIN ARCHIVO MIDI CARGADO: Use el menú Archivo/Abrir ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="387"/>
@@ -1020,7 +1058,7 @@
     </message>
     <message>
         <source>Note: the Microsoft SW Synth introduces an unwanted delay!</source>
-        <translation>Nota: Microsoft SW Synth produce un indeseado retraso!</translation>
+        <translation type="vanished">Nota: Microsoft SW Synth produce un indeseado retraso!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
@@ -1145,7 +1183,7 @@
     </message>
     <message>
         <source>Follow you</source>
-        <translation>Sigue</translation>
+        <translation type="vanished">Sigue</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="134"/>
@@ -1628,7 +1666,7 @@
     </message>
     <message>
         <source>&amp;Show/Hide the Side Panel</source>
-        <translation>&amp;Mostrar/Ocultar el Panel Lateral</translation>
+        <translation type="vanished">&amp;Mostrar/Ocultar el Panel Lateral</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
@@ -1732,89 +1770,89 @@
         <translation>&lt;b&gt;PianoBooster - Versión </translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="605"/>
+        <location filename="../src/QtWindow.cpp" line="606"/>
         <source>PC Keyboard Short Cuts</source>
         <translation>Atajos del Teclado del PC</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="607"/>
+        <location filename="../src/QtWindow.cpp" line="608"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation>&lt;h2&gt;&lt;center&gt;Atajos del Teclado&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Se han definido los siguientes atajos del teclado&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="613"/>
+        <location filename="../src/QtWindow.cpp" line="614"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation>&lt;tr&gt;&lt;th&gt;Acción&lt;/th&gt;&lt;th&gt;Tecla&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="619"/>
+        <location filename="../src/QtWindow.cpp" line="620"/>
         <source>Choose the right hand</source>
         <translation>Seleccionar Mano Derecha</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="620"/>
+        <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Choose both hands</source>
         <translation>Seleccionar ambas manos</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="621"/>
+        <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Choose the left Hand</source>
         <translation>Seleccionar Mano Izquierda</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="622"/>
+        <location filename="../src/QtWindow.cpp" line="623"/>
         <source>Play from start toggle</source>
         <translation>Tocar desde el Principio</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="623"/>
+        <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Play Pause Toggle</source>
         <translation>Tocar Pausar Alternar</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="624"/>
         <location filename="../src/QtWindow.cpp" line="625"/>
+        <location filename="../src/QtWindow.cpp" line="626"/>
         <source>Increase the speed by 5%</source>
         <translation>Aumentar la velocidad un 5%</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="626"/>
+        <location filename="../src/QtWindow.cpp" line="627"/>
         <source>Change to the Next Song</source>
         <translation>Ir a la Siguiente Canción</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="627"/>
+        <location filename="../src/QtWindow.cpp" line="628"/>
         <source>Change to the Previous Song</source>
         <translation>Ir a la Canción Anterior</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="628"/>
+        <location filename="../src/QtWindow.cpp" line="629"/>
         <source>Change to the Next Book</source>
         <translation>Ir al Libro Siguiente</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="629"/>
+        <location filename="../src/QtWindow.cpp" line="630"/>
         <source>Change to the Previous Book</source>
         <translation>Ir al Libro Anterior</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="631"/>
+        <location filename="../src/QtWindow.cpp" line="632"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation>&lt;tr&gt;&lt;td&gt;Teclas del Piano Simuladas&lt;/td&gt;&lt;td&gt;X es el C central&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="652"/>
+        <location filename="../src/QtWindow.cpp" line="653"/>
         <source>Open Midi File</source>
         <translation>Abrir Archivo Midi</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="653"/>
+        <location filename="../src/QtWindow.cpp" line="654"/>
         <source>Midi Files</source>
         <translation>Archivos Midi</translation>
     </message>
     <message>
         <source>Midi Files (*.mid *.MID *.midi *.kar *.KAR)</source>
-        <translation>Archivos Midi (*.mid *.MID *.midi *.kar *.KAR)</translation>
+        <translation type="vanished">Archivos Midi (*.mid *.MID *.midi *.kar *.KAR)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
