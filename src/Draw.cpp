@@ -113,7 +113,7 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
       tr("B")
      };
 
-    if(0<item.pianoNote && item.pianoNote < 7)
+    if(0<item.pianoNote && item.pianoNote < 8)
      {
       QString accident = QString("");
       switch(item.accidental)
@@ -128,7 +128,7 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
           accident = QString(natural);
           break;
        }
-      QString note = n[item.pianoNote] + accident;
+      QString note = n[item.pianoNote-1] + accident;
       renderText(x, y, note.toLocal8Bit().data());
      }
 }
