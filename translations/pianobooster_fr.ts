@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="fr">
 <context>
     <name>CDraw</name>
     <message>
@@ -1210,7 +1210,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="212"/>
         <source>Rhythm Tapping with:</source>
-        <translation>Indiquer le rythme avec</translation>
+        <translation>Indiquer le rythme avec :</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="228"/>
@@ -1422,7 +1422,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
         <source>G </source>
-        <translation>Sol</translation>
+        <translation>Sol </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="97"/>
@@ -1644,7 +1644,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="364"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation>Paramétrer le &amp;clavier-piano</translation>
+        <translation>Paramétrer le &amp;clavier-piano ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="365"/>
