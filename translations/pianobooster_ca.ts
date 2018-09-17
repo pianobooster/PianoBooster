@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="225"/>
         <source>Accuracy:</source>
-        <translation></translation>
+        <translation>Acurar:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
@@ -62,17 +62,17 @@
     <message>
         <location filename="../src/Settings.cpp" line="387"/>
         <source>space</source>
-        <translation></translation>
+        <translation>espai</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation></translation>
+        <translation>ERROR - NO HI HA SO: Per arreglar-ho useu el menú Configuració/Configuració Midi…</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation></translation>
+        <translation>ERROR NO HI HA FITXER MIDI: Per arreglar-ho useu el menú Fitxer/Obrir…</translation>
     </message>
 </context>
 <context>
@@ -85,12 +85,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation></translation>
+        <translation>Piano de cua</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation></translation>
+        <translation type="unfinished">Bright Piano</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
@@ -105,22 +105,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
         <source>Electric Piano 1</source>
-        <translation></translation>
+        <translation>Piano elèctric 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="361"/>
         <source>Electric Piano 2</source>
-        <translation></translation>
+        <translation>Piano elèctric 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="362"/>
         <source>Harpsichord</source>
-        <translation></translation>
+        <translation>Clavicèmbal</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation></translation>
+        <translation>Clave</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
@@ -135,12 +135,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
         <source>Music Box</source>
-        <translation></translation>
+        <translation>Caixa de música</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
         <source>Vibraphone</source>
-        <translation></translation>
+        <translation>Vibràfon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
@@ -150,7 +150,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
         <source>Xylophone</source>
-        <translation></translation>
+        <translation>Xilòfon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
@@ -170,17 +170,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
         <source>Percussive Organ</source>
-        <translation></translation>
+        <translation>Orgue de percussió</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
         <source>Rock Organ</source>
-        <translation></translation>
+        <translation>Orgue de rock</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="375"/>
         <source>Church Organ</source>
-        <translation></translation>
+        <translation>Orgue d&apos;església</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
@@ -190,32 +190,32 @@
     <message>
         <location filename="../src/TrackList.cpp" line="377"/>
         <source>Accordion</source>
-        <translation></translation>
+        <translation>Acordió</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation></translation>
+        <translation>Harmònica</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
         <source>Tango Accordion</source>
-        <translation></translation>
+        <translation>Acordió de tango</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="380"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation></translation>
+        <translation>Guitarra acústica (niló)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="381"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation></translation>
+        <translation>Guitarra acústica (metall)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="382"/>
         <source>Electric Guitar (jazz)</source>
-        <translation></translation>
+        <translation>Guitarra elèctrica (jazz)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="383"/>
@@ -235,17 +235,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="386"/>
         <source>Distortion Guitar</source>
-        <translation></translation>
+        <translation>Guitarra amb distorsió</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
         <source>Guitar harmonics</source>
-        <translation></translation>
+        <translation>Harmònics de guitarra</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
         <source>Acoustic Bass</source>
-        <translation></translation>
+        <translation>Baix acústic</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
@@ -255,7 +255,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation></translation>
+        <translation>Baix elèctric (pua)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
@@ -275,17 +275,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="394"/>
         <source>Synth Bass 1</source>
-        <translation></translation>
+        <translation>Baix sintetitzat 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="395"/>
         <source>Synth Bass 2</source>
-        <translation></translation>
+        <translation>Baix sintetitzat 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="396"/>
         <source>Violin</source>
-        <translation></translation>
+        <translation>Violí</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
         <source>Contrabass</source>
-        <translation></translation>
+        <translation>Contrabaix</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
@@ -325,22 +325,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
         <source>String Ensemble 1</source>
-        <translation></translation>
+        <translation>Conjunt de corda 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="405"/>
         <source>String Ensemble 2</source>
-        <translation></translation>
+        <translation>Conjunt de corda 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
         <source>SynthStrings 1</source>
-        <translation></translation>
+        <translation>Cordes sintetitzades 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>SynthStrings 2</source>
-        <translation></translation>
+        <translation>Cordes sintetitzades 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
@@ -355,7 +355,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Synth Voice</source>
-        <translation></translation>
+        <translation>Veu sintetitzada</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
@@ -365,12 +365,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Trumpet</source>
-        <translation></translation>
+        <translation>Trompeta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation></translation>
+        <translation>Trombó</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
@@ -380,57 +380,57 @@
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
         <source>Muted Trumpet</source>
-        <translation></translation>
+        <translation>Trompeta amb sordina</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
         <source>French Horn</source>
-        <translation></translation>
+        <translation>Corn francès</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
         <source>Brass Section</source>
-        <translation></translation>
+        <translation>Secció de vents</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="418"/>
         <source>SynthBrass 1</source>
-        <translation></translation>
+        <translation>Vents sintetitzats 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="419"/>
         <source>SynthBrass 2</source>
-        <translation></translation>
+        <translation>Vents sintetitzats 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
         <source>Soprano Sax</source>
-        <translation></translation>
+        <translation>Saxo soprano</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="421"/>
         <source>Alto Sax</source>
-        <translation></translation>
+        <translation>Saxo alt</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="422"/>
         <source>Tenor Sax</source>
-        <translation></translation>
+        <translation>Saxo tenor</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Baritone Sax</source>
-        <translation></translation>
+        <translation>Saxo baríton</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Oboe</source>
-        <translation></translation>
+        <translation>Oboè</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>English Horn</source>
-        <translation></translation>
+        <translation>Corn anglès</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
@@ -450,17 +450,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
         <source>Flute</source>
-        <translation></translation>
+        <translation>Flauta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Recorder</source>
-        <translation></translation>
+        <translation>Enregistrador</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Pan Flute</source>
-        <translation></translation>
+        <translation>Flauta de Pan</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
@@ -565,27 +565,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>FX 1 (rain)</source>
-        <translation></translation>
+        <translation>FX 1 (pluja)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>FX 2 (soundtrack)</source>
-        <translation></translation>
+        <translation>FX 2 (banda sonora)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
         <source>FX 3 (crystal)</source>
-        <translation></translation>
+        <translation>FX 3 (vidre)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="455"/>
         <source>FX 4 (atmosphere)</source>
-        <translation></translation>
+        <translation>FX 4 (atmòsfera)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="456"/>
         <source>FX 5 (brightness)</source>
-        <translation></translation>
+        <translation>FX 5 (lluminositat)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="457"/>
@@ -595,12 +595,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="458"/>
         <source>FX 7 (echoes)</source>
-        <translation></translation>
+        <translation>FX 7 (ecos)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
         <source>FX 8 (sci-fi)</source>
-        <translation></translation>
+        <translation>FX 8 (ciència ficció)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
@@ -630,7 +630,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
         <source>Bag pipe</source>
-        <translation></translation>
+        <translation>Gaita</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="466"/>
@@ -655,12 +655,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
         <source>Steel Drums</source>
-        <translation></translation>
+        <translation>Percussió de metall</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
         <source>Woodblock</source>
-        <translation></translation>
+        <translation>Bloc de fusta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="472"/>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="474"/>
         <source>Synth Drum</source>
-        <translation></translation>
+        <translation>Percussió sintetitzada</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
@@ -690,37 +690,37 @@
     <message>
         <location filename="../src/TrackList.cpp" line="477"/>
         <source>Breath Noise</source>
-        <translation></translation>
+        <translation>Soroll de respiració</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="478"/>
         <source>Seashore</source>
-        <translation></translation>
+        <translation>Costa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="479"/>
         <source>Bird Tweet</source>
-        <translation></translation>
+        <translation>Cant d&apos;ocell</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="480"/>
         <source>Telephone Ring</source>
-        <translation></translation>
+        <translation>Trucada de telèfon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="481"/>
         <source>Helicopter</source>
-        <translation></translation>
+        <translation>Helicòpter</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="482"/>
         <source>Applause</source>
-        <translation></translation>
+        <translation>Aplaudiments</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="483"/>
         <source>Gunshot</source>
-        <translation></translation>
+        <translation>Dispar de pistola</translation>
     </message>
 </context>
 <context>
@@ -728,7 +728,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation></translation>
+        <translation>Configuració del teclat de piano</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
@@ -738,7 +738,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation></translation>
+        <translation>Configureu el vostre teclat de piano</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
@@ -755,7 +755,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="163"/>
         <source>volume:</source>
-        <translation></translation>
+        <translation>volum:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="89"/>
@@ -772,23 +772,23 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation></translation>
+        <translation>Notes incorrectes</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation></translation>
+        <translation>Interval de notes del teclat</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation></translation>
+        <translation>Nota més greu:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation></translation>
+        <translation>El nombre de notes ha d&apos;estar entre 0 i 127</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="239"/>
@@ -799,7 +799,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation></translation>
+        <translation>Nota més aguda:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
@@ -819,17 +819,17 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation></translation>
+        <translation>Podeu usar el teclat del PC en comptes d&apos;un teclat MIDI; &apos;x&apos; és el C3.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation></translation>
+        <translation>El vostre interval del teclat és de &lt;b&gt;%1 octaves&lt;/b&gt; i &lt;b&gt;%2 semitons&lt;/b&gt;; 60 is el C3.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation></translation>
+        <translation>Oops, el vostre teclat té &lt;b&gt;0notes&lt;/b&gt;!</translation>
     </message>
 </context>
 <context>
@@ -837,7 +837,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="37"/>
         <source>Continuous Looping</source>
-        <translation></translation>
+        <translation>Bucle continu</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
@@ -847,7 +847,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
         <source>Repeat Bar is disabled</source>
-        <translation></translation>
+        <translation>La barra de repetició està desactivada</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
@@ -857,7 +857,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation></translation>
+        <translation>Barres de repetició:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
@@ -875,22 +875,22 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation></translation>
+        <translation>Entrada i sortida MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="48"/>
         <source>Select the MIDI devices</source>
-        <translation></translation>
+        <translation>Selecció dels dispositius MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="81"/>
         <source>Midi Input Device:</source>
-        <translation></translation>
+        <translation>Dispositiu MIDI d&apos;entrada:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="94"/>
         <source>Midi Output Device:</source>
-        <translation></translation>
+        <translation>Dispositiu MIDI de sortida:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
@@ -900,47 +900,47 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
         <source>Sound Fonts</source>
-        <translation></translation>
+        <translation>Orígens de sons</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation></translation>
+        <translation>Afegir</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation></translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Configuració</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
         <source>Audio Device:</source>
-        <translation></translation>
+        <translation>Dispositiu de so:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="210"/>
         <source>Master Gain:</source>
-        <translation></translation>
+        <translation>Guany principal:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
         <source>Audio Driver:</source>
-        <translation></translation>
+        <translation>Controlador de so:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="236"/>
         <source>Sample Rate:</source>
-        <translation></translation>
+        <translation>Ràtio de mostreig:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
         <source>Buffer Size</source>
-        <translation></translation>
+        <translation>Mida del búfer</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
@@ -950,22 +950,22 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
         <source>Reverb</source>
-        <translation></translation>
+        <translation>Reverberació</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation></translation>
+        <translation>Cors</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
         <source>Latency Fix</source>
-        <translation></translation>
+        <translation>Arreglar latència</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="307"/>
         <source>Latency</source>
-        <translation></translation>
+        <translation>Latència</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="320"/>
@@ -978,7 +978,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="59"/>
         <source>None (PC Keyboard)</source>
-        <translation></translation>
+        <translation>Cap (teclat de PC)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
@@ -1001,7 +1001,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
         <source>Enter a value for the latency fix in milliseconds</source>
-        <translation></translation>
+        <translation>Entreu un valor per arreglar la latència en mil·lisegons</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
@@ -1016,42 +1016,42 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="219"/>
         <source>SoundFont2 Files (*.sf2)</source>
-        <translation></translation>
+        <translation>Arxius SoundFont2 (*.sf2)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
         <source>Midi Setup</source>
-        <translation></translation>
+        <translation>Configuració de Midi</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.&lt;/span&gt;</source>
-        <translation></translation>
+        <translation>Si no teniu un teclat MIDI podeu usar el teclat del PC; &apos;X&apos; és el C3.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
         <source>Midi Input Device: </source>
-        <translation></translation>
+        <translation>Dispositiu Midi d&apos;entrada: </translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation></translation>
+        <translation>No heu seleccionat cap dispositiu de so de sortida; escolliu un dispositiu Midi de sortida</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
         <source>The use of Midi Through is not recommended!</source>
-        <translation></translation>
+        <translation>L&apos;ús a través de Midi no és recomanada!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation></translation>
+        <translation>(Intenteu un ajustament de la latència de 150 msec)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
         <source>Midi Output Device: </source>
-        <translation></translation>
+        <translation>Dispositiu Midi de sortida: </translation>
     </message>
 </context>
 <context>
@@ -1064,12 +1064,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
         <source>Score Settings</source>
-        <translation></translation>
+        <translation>Configuració de la partitura</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="40"/>
         <source>Timing Markers</source>
-        <translation></translation>
+        <translation>Marcadors de temps</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="47"/>
@@ -1079,7 +1079,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="80"/>
         <source>Show Note Names</source>
-        <translation></translation>
+        <translation>Mostrar el nom de les notes</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
@@ -1089,37 +1089,37 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
         <source>Music Course</source>
-        <translation></translation>
+        <translation>Curs de música</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="123"/>
         <source>Show Tutor Help Pages</source>
-        <translation></translation>
+        <translation>Mostrar el tutor de les pàgines d&apos;ajuda</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
         <source>Video Settings</source>
-        <translation></translation>
+        <translation>Paràmetres de vídeo</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="152"/>
         <source>Video optimisation:</source>
-        <translation></translation>
+        <translation>Optimització de vídeo:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="39"/>
         <source>Preferences</source>
-        <translation></translation>
+        <translation>Preferències</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="40"/>
         <source>Automatic (Recommended)</source>
-        <translation></translation>
+        <translation>Automàtic (recomanat)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="41"/>
         <source>On the Beat</source>
-        <translation></translation>
+        <translation>A temps</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
@@ -1129,12 +1129,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Full (Recommended)</source>
-        <translation></translation>
+        <translation>Complert (recomanat)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>Medium</source>
-        <translation></translation>
+        <translation>Mitjà</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
@@ -1162,12 +1162,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="107"/>
         <source>Skill</source>
-        <translation></translation>
+        <translation>Nivell</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="113"/>
         <source>Listen</source>
-        <translation></translation>
+        <translation>Escoltar</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="134"/>
@@ -1177,7 +1177,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="150"/>
         <source>Hands</source>
-        <translation></translation>
+        <translation>Mans</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
@@ -1187,22 +1187,22 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation></translation>
+        <translation>Ambdues</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation></translation>
+        <translation>Esquerra</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
         <source>Adjust the volume of your piano</source>
-        <translation></translation>
+        <translation>Ajusteu el volum del vostre piano</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="212"/>
         <source>Rhythm Tapping with:</source>
-        <translation></translation>
+        <translation>Marcar el ritme amb:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="228"/>
@@ -1212,52 +1212,52 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="269"/>
         <source>Adjust the volume of the selected part</source>
-        <translation></translation>
+        <translation>Ajustar el volum de la part seleccionada</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="234"/>
         <source>Mute the currently selected part</source>
-        <translation></translation>
+        <translation>Silencieu la part seleccionada actualment</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="120"/>
         <source>Rhythm Tap</source>
-        <translation></translation>
+        <translation>Porta el ritme</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="127"/>
         <source>Follow You</source>
-        <translation></translation>
+        <translation>Segueix-te</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="237"/>
         <source>Mute your part when playing</source>
-        <translation></translation>
+        <translation>Silenciar la vostra part quan s&apos;està reproduint</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="57"/>
         <source>Drums</source>
-        <translation></translation>
+        <translation>Bateria</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="58"/>
         <source>Melody</source>
-        <translation></translation>
+        <translation>Melodia</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
         <source>Set as Right Hand Part</source>
-        <translation></translation>
+        <translation>Configurar com a part de la mà dreta</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="75"/>
         <source>Set as Left Hand Part</source>
-        <translation></translation>
+        <translation>Configurar com a part de la mà esquerra</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="79"/>
         <source>Reset Both Parts</source>
-        <translation></translation>
+        <translation>Reiniciar ambdues parts</translation>
     </message>
 </context>
 <context>
@@ -1266,7 +1266,7 @@
         <location filename="../src/GuiSongDetailsDialog.cpp" line="48"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="50"/>
         <source>No channel assigned</source>
-        <translation></translation>
+        <translation>No heu seleccionat cap canal</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
@@ -1282,42 +1282,42 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation></translation>
+        <translation>Els canals MIDI per les parts de la mà dreta i esquerra:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="41"/>
         <source>Right Hand MIDI Channel:</source>
-        <translation></translation>
+        <translation>Canal MIDI per la mà dreta:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="64"/>
         <source>Left Hand MIDI Channel:</source>
-        <translation></translation>
+        <translation>Canal MIDI per la mà esquerra:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
         <source>The left and right hand channels must be different</source>
-        <translation></translation>
+        <translation>Els canals de la mà dreta i esquerra han de ser diferents</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation></translation>
+        <translation>Els dos canals de la mà dreta i esquerra no poden estar seleccionats per tal de desactivar aquesta característica</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation></translation>
+        <translation>Configurar els canals de MIDI a usar per la mà dreta i esquerra per les parts de piano:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation></translation>
+        <translation>la part de la mà esquerra està usant el canal MIDI 1</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation></translation>
+        <translation>La part de piano de la mà dreta està usant el canal MIDI 1</translation>
     </message>
 </context>
 <context>
@@ -1330,28 +1330,28 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
         <source>Start playing music from the start</source>
-        <translation></translation>
+        <translation>Començar la reproducció des de l&apos;inici</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="78"/>
         <location filename="../src/GuiTopBar.cpp" line="174"/>
         <source>Start and stop playing music</source>
-        <translation></translation>
+        <translation>Començar i aturar la reproducció de música</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation></translation>
+        <translation>Velocitat:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation></translation>
+        <translation>Clau:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
         <source>Transpose:</source>
-        <translation></translation>
+        <translation>Transposició:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
@@ -1361,7 +1361,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation></translation>
+        <translation>Desar el nombre de compassos</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
@@ -1478,7 +1478,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
         <source>Playing music from the beginning</source>
-        <translation></translation>
+        <translation>Reproduir la música des del principi</translation>
     </message>
 </context>
 <context>
@@ -1487,32 +1487,32 @@
         <location filename="../src/MidiFile.cpp" line="92"/>
         <location filename="../src/MidiFile.cpp" line="99"/>
         <source>Midi File Error</source>
-        <translation></translation>
+        <translation>Error en l&apos;arxiu Midi</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;</source>
-        <translation></translation>
+        <translation>No es pot obrir el &quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file&quot;</source>
-        <translation></translation>
+        <translation>fitxer Midi&quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>&quot; is corrupted</source>
-        <translation></translation>
+        <translation>&quot; està corromput</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
         <source>OpenGL support</source>
-        <translation></translation>
+        <translation>Suport per a OpenGL</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="60"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation></translation>
+        <translation>Aquest sistema no permet el suport per a OpenGL, el qual és necessari per fer funcionar Piano Booster.</translation>
     </message>
 </context>
 <context>
@@ -1530,12 +1530,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="343"/>
         <source>Drums</source>
-        <translation></translation>
+        <translation>Bateria</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation></translation>
+        <translation>Desconegut</translation>
     </message>
 </context>
 <context>
@@ -1550,22 +1550,22 @@
         <location filename="../src/QtWindow.cpp" line="240"/>
         <location filename="../src/QtWindow.cpp" line="264"/>
         <source>PianoBooster Midi File Error</source>
-        <translation></translation>
+        <translation>Error de l&apos;arxiu Midi PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="233"/>
         <source>Cannot Open&quot;</source>
-        <translation></translation>
+        <translation>No es pot obrir &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="241"/>
         <source>Not a Midi File &quot;</source>
-        <translation></translation>
+        <translation>No és un arxiu Midi &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="265"/>
         <source>Not a valid MIDI file &quot;</source>
-        <translation></translation>
+        <translation>No és un fitxer MIDI vàlid &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
@@ -1580,7 +1580,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>Open an existing file</source>
-        <translation></translation>
+        <translation>Obrir un fitxer existent</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="346"/>
@@ -1595,17 +1595,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Exit the application</source>
-        <translation></translation>
+        <translation>Sortir de l&apos;aplicació</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
         <source>&amp;About</source>
-        <translation></translation>
+        <translation>&amp;Sobre</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
         <source>Show the application&apos;s About box</source>
-        <translation></translation>
+        <translation>Mostrar la caixa Sobre de l&apos;aplicació</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
@@ -1615,12 +1615,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="356"/>
         <source>The PC Keyboard shortcut keys</source>
-        <translation></translation>
+        <translation>Dreceres de teclat del PC</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="359"/>
         <source>&amp;Midi Setup ...</source>
-        <translation></translation>
+        <translation>&amp;Paràmetres de Midi…</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="360"/>
@@ -1631,12 +1631,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="361"/>
         <source>Setup the Midi input an output</source>
-        <translation></translation>
+        <translation>Configuració de l&apos;entrada i la sortida Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="364"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation></translation>
+        <translation>Paràmetres del teclat de piano</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="365"/>
@@ -1646,12 +1646,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
         <source>Change the piano keyboard settings</source>
-        <translation></translation>
+        <translation>Canviar els paràmetres de teclat del piano</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
         <source>&amp;Fullscreen</source>
-        <translation></translation>
+        <translation>&amp;Pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
@@ -1661,7 +1661,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="374"/>
         <source>&amp;Show the Side Panel</source>
-        <translation></translation>
+        <translation>&amp;Mostrar el panell lateral</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="375"/>
@@ -1671,7 +1671,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="381"/>
         <source>&amp;Preferences ...</source>
-        <translation></translation>
+        <translation>&amp;Preferències…</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
@@ -1732,7 +1732,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="524"/>
         <source>Piano Booster Help</source>
-        <translation></translation>
+        <translation>Ajuda de Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="526"/>
@@ -1742,17 +1742,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
         <source>About Piano Booster</source>
-        <translation></translation>
+        <translation>Sobre Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
         <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation></translation>
+        <translation>&lt;b&gt;PianoBooster - Versió </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="606"/>
         <source>PC Keyboard Short Cuts</source>
-        <translation></translation>
+        <translation>Dreceres de teclat del teclat del PC</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
@@ -1762,22 +1762,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation></translation>
+        <translation>&lt;tr&gt;&lt;th&gt;Acció&lt;/th&gt;&lt;th&gt;Tecla&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="620"/>
         <source>Choose the right hand</source>
-        <translation></translation>
+        <translation>Escolliu la mà dreta</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Choose both hands</source>
-        <translation></translation>
+        <translation>Escollir les dues mans</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Choose the left Hand</source>
-        <translation></translation>
+        <translation>Escollir la mà esquerra</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
@@ -1793,42 +1793,42 @@
         <location filename="../src/QtWindow.cpp" line="625"/>
         <location filename="../src/QtWindow.cpp" line="626"/>
         <source>Increase the speed by 5%</source>
-        <translation></translation>
+        <translation>Incrementar la velocitat en un 5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="627"/>
         <source>Change to the Next Song</source>
-        <translation></translation>
+        <translation>Canviar a la propera cançó</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="628"/>
         <source>Change to the Previous Song</source>
-        <translation></translation>
+        <translation>Change a la cançó anterior</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="629"/>
         <source>Change to the Next Book</source>
-        <translation></translation>
+        <translation>Canviar al següent llibre</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="630"/>
         <source>Change to the Previous Book</source>
-        <translation></translation>
+        <translation>Canviar al llibre anterior</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="632"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation></translation>
+        <translation>&lt;tr&gt;&lt;td&gt;Tecles del piano fals&lt;/td&gt;&lt;td&gt;X és el C3&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="653"/>
         <source>Open Midi File</source>
-        <translation></translation>
+        <translation>Obrir un arxiu Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="654"/>
         <source>Midi Files</source>
-        <translation></translation>
+        <translation>Arxius Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
