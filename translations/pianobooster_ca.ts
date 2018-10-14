@@ -6,37 +6,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="140"/>
         <source>C</source>
-        <translation></translation>
+        <translation>Do</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="141"/>
         <source>D</source>
-        <translation></translation>
+        <translation>Re</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="142"/>
         <source>E</source>
-        <translation></translation>
+        <translation>Mi</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="143"/>
         <source>F</source>
-        <translation></translation>
+        <translation>Fa</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="144"/>
         <source>G</source>
-        <translation></translation>
+        <translation>Sol</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="145"/>
         <source>A</source>
-        <translation></translation>
+        <translation>La</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="146"/>
         <source>B</source>
-        <translation></translation>
+        <translation>Si</translation>
     </message>
 </context>
 <context>
@@ -44,17 +44,17 @@
     <message>
         <location filename="../src/GlView.cpp" line="225"/>
         <source>Accuracy:</source>
-        <translation>Acurar:</translation>
+        <translation type="unfinished">Ajustar:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
         <source>Song: </source>
-        <translation></translation>
+        <translation>Cançó: </translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="255"/>
         <source>Bar: </source>
-        <translation></translation>
+        <translation>Compàs: </translation>
     </message>
 </context>
 <context>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation>ERROR - NO HI HA SO: Per arreglar-ho useu el menú Configuració/Configuració Midi…</translation>
+        <translation>ERROR - NO HI HA SO: Per arreglar-ho useu el menú Configuració/Configuració Midi ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation>ERROR NO HI HA FITXER MIDI: Per arreglar-ho useu el menú Fitxer/Obrir…</translation>
+        <translation>ERROR NO HI HA FITXER MIDI: Per arreglar-ho useu el menú Fitxer/Obrir ...</translation>
     </message>
 </context>
 <context>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation></translation>
+        <translation>(Cap)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
@@ -1636,7 +1636,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="364"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation>Paràmetres del teclat de piano</translation>
+        <translation>Paràmetres del teclat de piano...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="365"/>
