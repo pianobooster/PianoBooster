@@ -829,7 +829,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation>Vaites! O seu teclado ten &lt;b&gt;0 notas!</translation>
+        <translation>Vaites! O seu teclado ten&lt;b&gt;0 notas&lt;/b&gt;!</translation>
     </message>
 </context>
 <context>
