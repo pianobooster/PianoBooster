@@ -95,7 +95,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
         <source>Electric Grand</source>
-        <translation></translation>
+        <translation>Piano de cua elèctric</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
