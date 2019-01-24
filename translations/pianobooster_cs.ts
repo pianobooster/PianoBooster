@@ -1652,7 +1652,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Celá obrazovka</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
@@ -1809,12 +1809,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="629"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit na další knihu</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="630"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit na předchozí knihu</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="632"/>
