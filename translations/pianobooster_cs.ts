@@ -6,37 +6,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="140"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="141"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="142"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="143"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="144"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="145"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="146"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
 </context>
 <context>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>CHYBA, ŽÁDNÝ ZVUK: Pro opravení použijte Nastavení/Nastavení MIDI...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>CHYBA, ŽÁDNÝ SOUBOR MIDI: Pro opravení použijte nabídku Soubor/Otevřít...</translation>
     </message>
 </context>
 <context>
@@ -1047,7 +1047,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Zkuste opravu prodlevy 150 ms</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
@@ -1090,12 +1090,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
         <source>Music Course</source>
-        <translation type="unfinished"></translation>
+        <translation>Hudební kurs</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="123"/>
         <source>Show Tutor Help Pages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat stránky s návodem</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
@@ -1203,7 +1203,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="212"/>
         <source>Rhythm Tapping with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rytmické ťukání s:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="228"/>
@@ -1223,7 +1223,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="120"/>
         <source>Rhythm Tap</source>
-        <translation type="unfinished"></translation>
+        <translation>Rytmické ťukání</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="127"/>
@@ -1243,7 +1243,7 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="58"/>
         <source>Melody</source>
-        <translation type="unfinished"></translation>
+        <translation>Melodie</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
@@ -1377,104 +1377,104 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
         <source>Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>Gb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="90"/>
         <source>Db</source>
-        <translation type="unfinished"></translation>
+        <translation>Db</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="91"/>
         <source>Ab</source>
-        <translation type="unfinished"></translation>
+        <translation>Ab</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="92"/>
         <location filename="../src/GuiTopBar.cpp" line="105"/>
         <source>Eb</source>
-        <translation type="unfinished"></translation>
+        <translation>Eb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation type="unfinished"></translation>
+        <translation>Hb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
         <source>F </source>
-        <translation type="unfinished"></translation>
+        <translation>F </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
         <location filename="../src/GuiTopBar.cpp" line="108"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
         <source>G </source>
-        <translation type="unfinished"></translation>
+        <translation>G </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="97"/>
         <location filename="../src/GuiTopBar.cpp" line="110"/>
         <source>D </source>
-        <translation type="unfinished"></translation>
+        <translation>D </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="98"/>
         <source>A </source>
-        <translation type="unfinished"></translation>
+        <translation>A </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="99"/>
         <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>E </source>
-        <translation type="unfinished"></translation>
+        <translation>E </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>B </source>
-        <translation type="unfinished"></translation>
+        <translation>H </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="101"/>
         <location filename="../src/GuiTopBar.cpp" line="114"/>
         <source>F#</source>
-        <translation type="unfinished"></translation>
+        <translation>F#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
         <source>G#</source>
-        <translation type="unfinished"></translation>
+        <translation>G#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="116"/>
         <source>C#</source>
-        <translation type="unfinished"></translation>
+        <translation>C#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="117"/>
         <source>D#</source>
-        <translation type="unfinished"></translation>
+        <translation>D#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
