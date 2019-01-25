@@ -1213,12 +1213,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="269"/>
         <source>Adjust the volume of the selected part</source>
-        <translation>Upravit hlasitost vybraného hlasu</translation>
+        <translation>Upravit hlasitost vybraného partu</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="234"/>
         <source>Mute the currently selected part</source>
-        <translation>Ztlumit nyní vybraný hlas</translation>
+        <translation>Ztlumit nyní vybraný part</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="120"/>
@@ -1233,7 +1233,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="237"/>
         <source>Mute your part when playing</source>
-        <translation>Ztlumit při přehrávání váš hlas</translation>
+        <translation>Ztlumit při přehrávání váš part</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="57"/>
@@ -1248,12 +1248,12 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
         <source>Set as Right Hand Part</source>
-        <translation>Nastavit jako hlas pravé ruky</translation>
+        <translation>Nastavit jako part pravé ruky</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="75"/>
         <source>Set as Left Hand Part</source>
-        <translation>Nastavit jako hlas levé ruky</translation>
+        <translation>Nastavit jako part levé ruky</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="79"/>
@@ -1313,12 +1313,12 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation>Hlas klavíru levé ruky používá kanál MIDI 1</translation>
+        <translation>Part klavíru levé ruky používá kanál MIDI 1</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation>Hlas klavíru pravé ruky používá kanál MIDI 1</translation>
+        <translation>Part klavíru pravé ruky používá kanál MIDI 1</translation>
     </message>
 </context>
 <context>
