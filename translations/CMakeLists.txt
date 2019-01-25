@@ -1,8 +1,13 @@
 SET( TRANSLATIONS_FILES
-     pianobooster_ja.ts
+     pianobooster_ca.ts
+     pianobooster_cs.ts
+     pianobooster_de.ts
      pianobooster_es.ts
-     pianobooster_gl.ts
      pianobooster_fr.ts
+     pianobooster_gl.ts
+     pianobooster_ja.ts
+     pianobooster_nl.ts
+     pianobooster_ru.ts
 )
 
 QT5_ADD_TRANSLATION(QM_FILES ${TRANSLATIONS_FILES})
