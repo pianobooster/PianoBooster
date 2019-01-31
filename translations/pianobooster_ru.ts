@@ -1228,7 +1228,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="127"/>
         <source>Follow You</source>
-        <translation>Следовать за тобой</translation>
+        <translation>Идти за тобой</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="237"/>
@@ -1768,17 +1768,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="620"/>
         <source>Choose the right hand</source>
-        <translation>Выберите правую руку</translation>
+        <translation>Выбрать правую руку</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Choose both hands</source>
-        <translation>Выберите обе руки</translation>
+        <translation>Выбрать обе руки</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Choose the left Hand</source>
-        <translation>Выберите левую руку</translation>
+        <translation>Выбрать левую руку</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
