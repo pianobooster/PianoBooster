@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Piano Booster (TiMidity)
+Comment=A MIDI file player that teaches you how to play the piano, with TiMidity sequencer
+Comment[ru]=Проигрыватель MIDI-файлов, который научит вас играть на пианино с помощью секвенсора TiMidity
+GenericName=Piano Teacher
+GenericName[es]=Profesor de piano
+GenericName[fr]=Professeur de piano
+GenericName[gl]=Profesor de piano
+GenericName[ru]=Обучение пианино
+Exec=pianobooster-timidity
+Icon=pianobooster
+Terminal=false
+Type=Application
+Categories=Music;Education;
+MimeType=audio/x-karaoke;audio/x-midi;audio/midi;
+Keywords=audio;midi;music;piano;education;learning;playing;songs;
