@@ -53,7 +53,9 @@ int main(int argc, char *argv[])
 
      app.installTranslator(&translator);
 
-
+     QTranslator qtTranslator;
+     qtTranslator.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+     app.installTranslator(&qtTranslator);
 
     if (!QGLFormat::hasOpenGL()) {
         QMessageBox::information(0, QMessageBox::tr("OpenGL support"),
