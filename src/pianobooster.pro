@@ -20,6 +20,8 @@ DEFINES += PB_USE_FLUIDSYNTH
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompile/precompile.h
 
+CONFIG += link_pkgconfig
+
 HEADERS   = precompile/precompile.h \
             QtWindow.h \
             GlView.h \
@@ -29,7 +31,28 @@ HEADERS   = precompile/precompile.h \
             GuiKeyboardSetupDialog.h \
             GuiPreferencesDialog.h \
             GuiSongDetailsDialog.h \
-            GuiLoopingPopup.h
+            GuiLoopingPopup.h \
+            Draw.h \
+            Merge.h \
+            MidiDevice.h \
+            MidiDeviceBase.h \
+            MidiDeviceRt.h \
+            MidiDeviceFluidSynth.h \
+            MidiEvent.h \
+            MidiFile.h \
+            MidiTrack.h \
+            Notation.h \
+            Piano.h \
+            Queue.h \
+            Rating.h \
+            Score.h \
+            Scroll.h \
+            Song.h \
+            Symbol.h \
+            Tempo.h \
+            TrackList.h \
+            Settings.h
+
 
 FORMS    =  GuiTopBar.ui \
             GuiSidePanel.ui \
@@ -86,6 +109,7 @@ win32 {
 }
 
 unix {
+  PKGCONFIG += xft ftgl
   DEFINES += __LINUX_ALSASEQ__
   LIBS += -lasound
 }
