@@ -32,6 +32,7 @@
 #include <QString>
 #include <QList>
 #include <QListWidgetItem>
+#include <QObject>
 
 #include "MidiEvent.h"
 #include "Chord.h"
@@ -49,8 +50,9 @@ public:
 };
 
 
-class CTrackList
+class CTrackList : public QObject
 {
+Q_OBJECT
 public:
     CTrackList()
     {
