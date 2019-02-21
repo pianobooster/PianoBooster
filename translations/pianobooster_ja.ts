@@ -1377,7 +1377,7 @@ Violin</translation>
     </message>
     <message>
         <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation>&lt;b&gt;PianoBooster - バージョン </translation>
+        <translation type="vanished">&lt;b&gt;PianoBooster - バージョン </translation>
     </message>
     <message>
         <source>PC Keyboard Short Cuts</source>
@@ -1481,6 +1481,10 @@ Violin</translation>
     </message>
     <message>
         <source>Midi Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;&lt;br&gt;Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

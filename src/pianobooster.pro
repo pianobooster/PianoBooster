@@ -6,6 +6,12 @@ TRANSLATIONS = ../translations/pianobooster_ja.ts \
                ../translations/pianobooster_es.ts \
                ../translations/pianobooster_gl.ts \
                ../translations/pianobooster_fr.ts \
+               ../translations/pianobooster_ca.ts \
+               ../translations/pianobooster_cs.ts \
+               ../translations/pianobooster_de.ts \
+               ../translations/pianobooster_nb_NO.ts \
+               ../translations/pianobooster_nl.ts \
+               ../translations/pianobooster_ru.ts \
                ../translations/pianobooster_blank.ts \
 
 
