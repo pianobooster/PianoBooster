@@ -90,7 +90,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation type="unfinished">Bright Piano</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
