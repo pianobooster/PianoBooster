@@ -31,8 +31,6 @@ PROJECT( pianobooster )
 ADD_DEFINITIONS(-Wall)
 
 FIND_PACKAGE( OpenGL REQUIRED )
-SET(FTGL_INCLUDE_DIR "/usr/include/freetype2")
-SET(FTGL_LIBRARY "ftgl")
 
 # Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
@@ -93,7 +91,7 @@ ENDIF(USE_FLUIDSYNTH)
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
-INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} ${FTGL_INCLUDE_DIR})
+INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR}) 
 
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp rtmidi/RtMidi.cpp ${PB_BASE_SRCS})
@@ -195,7 +193,7 @@ IF (USE_PCH)
 ADD_PRECOMPILED_HEADER( pianobooster ${CMAKE_CURRENT_SOURCE_DIR}/precompile/precompile.h )
 ENDIF (USE_PCH)
 
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL )
 
 INSTALL( FILES pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)

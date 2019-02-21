@@ -35,11 +35,9 @@
   #include <GL/gl.h>
   #include <GL/glu.h>
 #endif
-#include <FTGL/ftgl.h>
 #include <QObject>
 
 #define HORIZONTAL_SPACING_FACTOR   (0.75) // defines the speed of the scrolling
-#define FONT_TTF "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 #define FONT_SIZE 16
 
 #include "StavePosition.h"
@@ -67,13 +65,11 @@ class CDraw : public QObject
 {
 public:
     CDraw(CSettings* settings)
-     :font(FONT_TTF)
     {
         m_settings = settings;
         m_displayHand = PB_PART_both;
         m_forceCompileRedraw = 1;
         m_scrollProperties = &m_scrollPropertiesHorizontal;
-        font.FaceSize(FONT_SIZE, FONT_SIZE);
     }
 
     void scrollVertex(float x, float y)
@@ -105,7 +101,6 @@ protected:
     void drawStaves(float startX, float endX);
     void drawKeySignature(int key);
     void drawNoteName(int midiNote, float x, float y, int type);
-    void renderText(float x, float y, const char* s);
     CSettings* m_settings;
 
 private:
@@ -121,7 +116,6 @@ private:
     CScrollProperties *m_scrollProperties;
     CScrollProperties m_scrollPropertiesHorizontal;
     CScrollProperties m_scrollPropertiesVertical;
-    FTGLPixmapFont font;
 };
 
 #endif //__DRAW_H__
