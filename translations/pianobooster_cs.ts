@@ -125,7 +125,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation>Celesta</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation>Marimba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation>Viola</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
@@ -375,7 +375,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation>Tuba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -570,7 +570,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>FX 2 (soundtrack)</source>
-        <translation>FX 2 (soundtrack)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
@@ -600,7 +600,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
         <source>FX 8 (sci-fi)</source>
-        <translation>FX 8 (sci-fi)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
@@ -620,12 +620,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation>Koto</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation>Kalimba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -650,7 +650,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation>Agogo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -895,7 +895,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
         <source>FluidSynth</source>
-        <translation>FluidSynth</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
@@ -1544,7 +1544,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="63"/>
         <source>Piano Booster</source>
-        <translation>Piano Booster</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="232"/>
