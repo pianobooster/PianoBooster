@@ -49,12 +49,12 @@
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
         <source>Song: </source>
-        <translation>Canción:</translation>
+        <translation>Canción: </translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="255"/>
         <source>Bar: </source>
-        <translation>Compás:</translation>
+        <translation>Compás: </translation>
     </message>
 </context>
 <context>
@@ -108,7 +108,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
         <source>Honky-tonk Piano</source>
-        <translation>Honky-tonk Piano</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation>Celesta</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation>Marimba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -298,7 +298,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation>Viola</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation>Tuba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -433,7 +433,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Oboe</source>
-        <translation>Oboe</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
@@ -488,7 +488,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Ocarina</source>
-        <translation>Ocarina</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
@@ -613,27 +613,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation>Sitar</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation>Banjo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation>Shamisen</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation>Koto</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation>Kalimba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -648,7 +648,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>Shanai</source>
-        <translation>Shanai</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
@@ -658,7 +658,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation>Agogo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -850,7 +850,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
         <source>Repeat End Bar: </source>
-        <translation>Reptir Compás Final:</translation>
+        <translation>Reptir Compás Final: </translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
@@ -903,7 +903,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
         <source>FluidSynth</source>
-        <translation>FluidSynth</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
@@ -953,7 +953,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Buffer counts</source>
-        <translation>Buffer counts</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
@@ -978,7 +978,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="320"/>
         <source>0 (msec)</source>
-        <translation>0 (msec)</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -999,7 +999,8 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.
 </source>
-        <translation>Aviso: el sintetizador Microsoft GS Wavetable introduce un retraso no intencionado.</translation>
+        <translation>Aviso: el sintetizador Microsoft GS Wavetable introduce un retraso no intencionado.
+</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
@@ -1009,7 +1010,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
         <source>%1 mSec</source>
-        <translation>%1 mSec</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
@@ -1063,7 +1064,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
         <source>Midi Output Device: </source>
-        <translation>Dispositivo de Salida Midi:</translation>
+        <translation>Dispositivo de Salida Midi: </translation>
     </message>
 </context>
 <context>
@@ -1169,7 +1170,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="65"/>
         <source>Song:</source>
-        <translation>Canción: </translation>
+        <translation>Canción:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="107"/>
@@ -1238,7 +1239,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="120"/>
         <source>Rhythm Tap</source>
-        <translation>Tap rítm.</translation>
+        <translation>Tap rítm</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="127"/>
@@ -1263,7 +1264,7 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
         <source>Set as Right Hand Part</source>
-        <translation>Seleccionar para Mano Derecha </translation>
+        <translation>Seleccionar para Mano Derecha</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="75"/>
@@ -1293,7 +1294,7 @@
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="39"/>
         <source>Song Details</source>
-        <translation> Detalles de la Canción</translation>
+        <translation>Detalles de la Canción</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
