@@ -94,6 +94,7 @@ void CGLView::paintGL()
 
     if (m_forcefullRedraw) // clear the screen only if we are doing a full redraw
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glPixelStorei(GL_UNPACK_ALIGNMENT,4);
     glLoadIdentity();
     //BENCHMARK(3, "glLoadIdentity");
 
