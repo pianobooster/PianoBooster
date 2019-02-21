@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="ja">
 <context>
     <name>CDraw</name>
     <message>
@@ -78,516 +78,515 @@
     </message>
     <message>
         <source>Grand Piano</source>
-        <translation>Grand Piano</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Bright Piano</source>
-        <translation>Bright Piano</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Grand</source>
-        <translation>Electric Grand</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Honky-tonk Piano</source>
-        <translation>Honky-tonk Piano</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Piano 1</source>
-        <translation>Electric Piano 1</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Piano 2</source>
-        <translation>Electric Piano 2</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Harpsichord</source>
-        <translation>Harpsichord</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Clavi</source>
-        <translation>Clavi</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Celesta</source>
-        <translation>Celesta</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Glockenspiel</source>
-        <translation>Glockenspiel</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Music Box</source>
-        <translation>Music Box</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Vibraphone</source>
-        <translation>Vibraphone</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Marimba</source>
-        <translation>Marimba</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Xylophone</source>
-        <translation>Xylophone</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Tubular Bells</source>
-        <translation>Tubular Bells</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Dulcimer</source>
-        <translation>Dulcimer</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Drawbar Organ</source>
-        <translation>Drawbar Organ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Percussive Organ</source>
-        <translation>Percussive Organ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Rock Organ</source>
-        <translation>Rock Organ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Church Organ</source>
-        <translation>Church Organ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Reed Organ</source>
-        <translation>Reed Organ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Accordion</source>
-        <translation>Accordion</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Harmonica</source>
-        <translation>Harmonica</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Tango Accordion</source>
-        <translation>Tango Accordion</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Acoustic Guitar (nylon)</source>
-        <translation>Acoustic Guitar (nylon)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Acoustic Guitar (steel)</source>
-        <translation>Acoustic Guitar (steel)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Guitar (jazz)</source>
-        <translation>Electric Guitar (jazz)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Guitar (clean)</source>
-        <translation>Electric Guitar (clean)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Guitar (muted)</source>
-        <translation>Electric Guitar (muted)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Overdriven Guitar</source>
-        <translation>Overdriven Guitar</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Distortion Guitar</source>
-        <translation>Distortion Guitar</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Guitar harmonics</source>
-        <translation>Guitar harmonics</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Acoustic Bass</source>
-        <translation>Acoustic Bass</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Bass (finger)</source>
-        <translation>Electric Bass (finger)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Electric Bass (pick)</source>
-        <translation>Electric Bass (pick)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Fretless Bass</source>
-        <translation>Fretless Bass</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Slap Bass 1</source>
-        <translation>Slap Bass 1</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Slap Bass 2</source>
-        <translation>Slap Bass 2</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Synth Bass 1</source>
-        <translation>Synth Bass 1</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Synth Bass 2</source>
-        <translation>Synth Bass 2</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Violin</source>
-        <translation>
-Violin</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Viola</source>
-        <translation>Viola</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Cello</source>
-        <translation>Cello</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Contrabass</source>
-        <translation>Contrabass</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Tremolo Strings</source>
-        <translation>Tremolo Strings</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pizzicato Strings</source>
-        <translation>Pizzicato Strings</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Orchestral Harp</source>
-        <translation>Orchestral Harp</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Timpani</source>
-        <translation>Timpani</translation>
+        <translation></translation>
     </message>
     <message>
         <source>String Ensemble 1</source>
-        <translation>String Ensemble 1</translation>
+        <translation></translation>
     </message>
     <message>
         <source>String Ensemble 2</source>
-        <translation>String Ensemble 2</translation>
+        <translation></translation>
     </message>
     <message>
         <source>SynthStrings 1</source>
-        <translation>SynthStrings 1</translation>
+        <translation></translation>
     </message>
     <message>
         <source>SynthStrings 2</source>
-        <translation>SynthStrings 2</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Choir Aahs</source>
-        <translation>Choir Aahs</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Voice Oohs</source>
-        <translation>Voice Oohs</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Synth Voice</source>
-        <translation>Synth Voice</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Orchestra Hit</source>
-        <translation>Orchestra Hit</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Trumpet</source>
-        <translation>Trumpet</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Trombone</source>
-        <translation>Trombone</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Tuba</source>
-        <translation>Tuba</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Muted Trumpet</source>
-        <translation>Muted Trumpet</translation>
+        <translation></translation>
     </message>
     <message>
         <source>French Horn</source>
-        <translation>French Horn</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Brass Section</source>
-        <translation>Brass Section</translation>
+        <translation></translation>
     </message>
     <message>
         <source>SynthBrass 1</source>
-        <translation>SynthBrass 1</translation>
+        <translation></translation>
     </message>
     <message>
         <source>SynthBrass 2</source>
-        <translation>SynthBrass 2</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Soprano Sax</source>
-        <translation>Soprano Sax</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Alto Sax</source>
-        <translation>Alto Sax</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Tenor Sax</source>
-        <translation>Tenor Sax</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Baritone Sax</source>
-        <translation>Baritone Sax</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Oboe</source>
-        <translation>Oboe</translation>
+        <translation></translation>
     </message>
     <message>
         <source>English Horn</source>
-        <translation>English Horn</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Bassoon</source>
-        <translation>Bassoon</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Clarinet</source>
-        <translation>Clarinet</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Piccolo</source>
-        <translation>Piccolo</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Flute</source>
-        <translation>Flute</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Recorder</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pan Flute</source>
-        <translation>Pan Flute</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Blown Bottle</source>
-        <translation>Blown Bottle</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Shakuhachi</source>
-        <translation>Shakuhachi</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Whistle</source>
-        <translation>Whistle</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Ocarina</source>
-        <translation>Ocarina</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 1 (square)</source>
-        <translation>Lead 1 (square)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 2 (sawtooth)</source>
-        <translation>Lead 2 (sawtooth)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 3 (calliope)</source>
-        <translation>Lead 3 (calliope)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 4 (chiff)</source>
-        <translation>Lead 4 (chiff)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 5 (charang)</source>
-        <translation>Lead 5 (charang)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 6 (voice)</source>
-        <translation>Lead 6 (voice)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 7 (fifths)</source>
-        <translation>Lead 7 (fifths)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lead 8 (bass + lead)</source>
-        <translation>Lead 8 (bass + lead)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 1 (new age)</source>
-        <translation>Pad 1 (new age)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 2 (warm)</source>
-        <translation>Pad 2 (warm)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 3 (polysynth)</source>
-        <translation>Pad 3 (polysynth)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 4 (choir)</source>
-        <translation>Pad 4 (choir)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 5 (bowed)</source>
-        <translation>Pad 5 (bowed)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 6 (metallic)</source>
-        <translation>Pad 6 (metallic)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 7 (halo)</source>
-        <translation>Pad 7 (halo)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Pad 8 (sweep)</source>
-        <translation>Pad 8 (sweep)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 1 (rain)</source>
-        <translation>FX 1 (rain)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 2 (soundtrack)</source>
-        <translation>FX 2 (soundtrack)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 3 (crystal)</source>
-        <translation>FX 3 (crystal)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 4 (atmosphere)</source>
-        <translation>FX 4 (atmosphere)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 5 (brightness)</source>
-        <translation>FX 5 (brightness)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 6 (goblins)</source>
-        <translation>FX 6 (goblins)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 7 (echoes)</source>
-        <translation>FX 7 (echoes)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>FX 8 (sci-fi)</source>
-        <translation>FX 8 (sci-fi)</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Sitar</source>
-        <translation>Sitar</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Banjo</source>
-        <translation>Banjo</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Shamisen</source>
-        <translation>Shamisen</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Koto</source>
-        <translation>Koto</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Kalimba</source>
-        <translation>Kalimba</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Bag pipe</source>
-        <translation>Bag pipe</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Fiddle</source>
-        <translation>Fiddle</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Shanai</source>
-        <translation>Shanai</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Tinkle Bell</source>
-        <translation>Tinkle Bell</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Agogo</source>
-        <translation>Agogo</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Steel Drums</source>
-        <translation>Steel Drums</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Woodblock</source>
-        <translation>Woodblock</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Taiko Drum</source>
-        <translation>Taiko Drum</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Melodic Tom</source>
-        <translation>Melodic Tom</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Synth Drum</source>
-        <translation>Synth Drum</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Reverse Cymbal</source>
-        <translation>Reverse Cymbal</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Guitar Fret Noise</source>
-        <translation>Guitar Fret Noise</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Breath Noise</source>
-        <translation>Breath Noise</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Seashore</source>
-        <translation>Seashore</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Bird Tweet</source>
-        <translation>Bird Tweet</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Telephone Ring</source>
-        <translation>Telephone Ring</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Helicopter</source>
-        <translation>Helicopter</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Applause</source>
-        <translation>Applause</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Gunshot</source>
-        <translation>Gunshot</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -614,7 +613,7 @@ Violin</translation>
     </message>
     <message>
         <source>volume:</source>
-        <translation> ボリューム:</translation>
+        <translation>ボリューム:</translation>
     </message>
     <message>
         <source>%</source>
@@ -681,7 +680,7 @@ Violin</translation>
     </message>
     <message>
         <source>Repeat End Bar: </source>
-        <translation>最後の小節を繰り返す:</translation>
+        <translation>最後の小節を繰り返す: </translation>
     </message>
     <message>
         <source>Repeat Bar is disabled</source>
@@ -724,7 +723,7 @@ Violin</translation>
     </message>
     <message>
         <source>FluidSynth</source>
-        <translation>FluidSynth</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Sound Fonts</source>
@@ -899,7 +898,7 @@ Violin</translation>
     </message>
     <message>
         <source>On the Beat</source>
-        <translation>On the Beat</translation>
+        <translation></translation>
     </message>
     <message>
         <source>After the Beat</source>
@@ -1018,7 +1017,7 @@ Violin</translation>
     </message>
     <message>
         <source>Drums</source>
-        <translation type="unfinished">ドラム</translation>
+        <translation>ドラム</translation>
     </message>
     <message>
         <source>Melody</source>
@@ -1245,7 +1244,7 @@ Violin</translation>
     <name>QtWindow</name>
     <message>
         <source>Piano Booster</source>
-        <translation>Piano Booster</translation>
+        <translation></translation>
     </message>
     <message>
         <source>&amp;Open...</source>
@@ -1289,7 +1288,7 @@ Violin</translation>
     </message>
     <message>
         <source>&amp;Midi Setup ...</source>
-        <translation>MIDI設定(&amp;M)</translation>
+        <translation>&amp;MIDI設定 。。。</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -1301,7 +1300,7 @@ Violin</translation>
     </message>
     <message>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation>ピアノ鍵盤設定(&amp;K)</translation>
+        <translation>ピアノ鍵盤設定(&amp;K) 。。。</translation>
     </message>
     <message>
         <source>Ctrl+K</source>
@@ -1321,7 +1320,7 @@ Violin</translation>
     </message>
     <message>
         <source>&amp;Preferences ...</source>
-        <translation>オプション設定(&amp;P)</translation>
+        <translation>オプション設定(&amp;P) 。。。</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -1329,7 +1328,7 @@ Violin</translation>
     </message>
     <message>
         <source>&amp;Song Details ...</source>
-        <translation>歌曲詳細(&amp;S)</translation>
+        <translation>歌曲詳細(&amp;S) 。。。</translation>
     </message>
     <message>
         <source>Shift+F1</source>
@@ -1465,7 +1464,7 @@ Violin</translation>
     </message>
     <message>
         <source>F12</source>
-        <translation type="unfinished">F12</translation>
+        <translation>F12</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
