@@ -484,7 +484,7 @@ QString CTrackList::getProgramName(int program)
     };
 
     if (program >= 0 && program < static_cast<int>(arraySize(gmInstrumentNames)))
-        return QObject::tr(gmInstrumentNames[program]);
+        return tr(gmInstrumentNames[program]);
     else
         return QString();
 }
