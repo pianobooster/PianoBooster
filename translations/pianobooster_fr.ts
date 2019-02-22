@@ -4,37 +4,37 @@
 <context>
     <name>CDraw</name>
     <message>
-        <location filename="../src/Draw.cpp" line="107"/>
+        <location filename="../src/Draw.cpp" line="140"/>
         <source>C</source>
         <translation>Do</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="108"/>
+        <location filename="../src/Draw.cpp" line="141"/>
         <source>D</source>
         <translation>Ré</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="109"/>
+        <location filename="../src/Draw.cpp" line="142"/>
         <source>E</source>
         <translation>Mi</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="110"/>
+        <location filename="../src/Draw.cpp" line="143"/>
         <source>F</source>
         <translation>Fa</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="111"/>
+        <location filename="../src/Draw.cpp" line="144"/>
         <source>G</source>
         <translation>Sol</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="112"/>
+        <location filename="../src/Draw.cpp" line="145"/>
         <source>A</source>
         <translation>La</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="113"/>
+        <location filename="../src/Draw.cpp" line="146"/>
         <source>B</source>
         <translation>Si</translation>
     </message>
@@ -42,17 +42,17 @@
 <context>
     <name>CGLView</name>
     <message>
-        <location filename="../src/GlView.cpp" line="226"/>
+        <location filename="../src/GlView.cpp" line="225"/>
         <source>Accuracy:</source>
         <translation>Exactitude :</translation>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="233"/>
+        <location filename="../src/GlView.cpp" line="232"/>
         <source>Song: </source>
         <translation>Morceau : </translation>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="256"/>
+        <location filename="../src/GlView.cpp" line="255"/>
         <source>Bar: </source>
         <translation>Mesure : </translation>
     </message>
@@ -1153,92 +1153,92 @@
 <context>
     <name>GuiSidePanel</name>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="20"/>
+        <location filename="../src/GuiSidePanel.ui" line="19"/>
         <source>Form</source>
         <translation>Depuis</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="40"/>
+        <location filename="../src/GuiSidePanel.ui" line="39"/>
         <source>Book:</source>
         <translation>Livre :</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="66"/>
+        <location filename="../src/GuiSidePanel.ui" line="65"/>
         <source>Song:</source>
         <translation>Morceau :</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="108"/>
+        <location filename="../src/GuiSidePanel.ui" line="107"/>
         <source>Skill</source>
         <translation>Compétence</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="114"/>
+        <location filename="../src/GuiSidePanel.ui" line="113"/>
         <source>Listen</source>
         <translation>Écouter</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="135"/>
+        <location filename="../src/GuiSidePanel.ui" line="134"/>
         <source>Play Along</source>
         <translation>Jouer avec</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="151"/>
+        <location filename="../src/GuiSidePanel.ui" line="150"/>
         <source>Hands</source>
         <translation>Mains</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="159"/>
+        <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
         <translation>Droite</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="166"/>
+        <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
         <translation>Les deux</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="173"/>
+        <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
         <translation>Gauche</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="188"/>
+        <location filename="../src/GuiSidePanel.ui" line="187"/>
         <source>Adjust the volume of your piano</source>
         <translation>Ajuste le volume de votre piano</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="211"/>
+        <location filename="../src/GuiSidePanel.ui" line="212"/>
         <source>Rhythm Tapping with:</source>
         <translation>Indiquer le rythme avec :</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="223"/>
+        <location filename="../src/GuiSidePanel.ui" line="228"/>
         <source>Parts</source>
         <translation>Parties</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="263"/>
+        <location filename="../src/GuiSidePanel.ui" line="269"/>
         <source>Adjust the volume of the selected part</source>
         <translation>Ajuste le volume de la partie sélectionnée</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="229"/>
+        <location filename="../src/GuiSidePanel.ui" line="234"/>
         <source>Mute the currently selected part</source>
         <translation>Silencier la partie actuellement sélectionnée</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="121"/>
+        <location filename="../src/GuiSidePanel.ui" line="120"/>
         <source>Rhythm Tap</source>
         <translation>Indiquer le rythme</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="128"/>
+        <location filename="../src/GuiSidePanel.ui" line="127"/>
         <source>Follow You</source>
         <translation>Vous suivre</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="232"/>
+        <location filename="../src/GuiSidePanel.ui" line="237"/>
         <source>Mute your part when playing</source>
         <translation>Silencier votre partie lors de la lecture</translation>
     </message>
@@ -1754,12 +1754,8 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
-        <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;&lt;br&gt;Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation type="vanished">&lt;b&gt;PianoBooster - Version </translation>
+        <translation>&lt;b&gt;PianoBooster - Version </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="606"/>

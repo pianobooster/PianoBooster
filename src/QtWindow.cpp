@@ -575,7 +575,7 @@ void QtWindow::about()
     msgBox.setWindowTitle (tr("About Piano Booster"));
     msgBox.setText(
             tr(
-                "<b>PianoBooster - Version %1</b> <br><br>"
+                "<b>PianoBooster - Version " PB_VERSION "</b> <br><br>"
                 "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
                 "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
                 "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
@@ -585,7 +585,7 @@ void QtWindow::about()
                 "the Free Software Foundation.<br><br>"
                 "This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
                 "Copyright(c) 2003-2007 Gary P. Scavone"
-                ).arg(PB_VERSION));
+                ));
     msgBox.setMinimumWidth(600);
     msgBox.exec();
 }
