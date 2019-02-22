@@ -733,7 +733,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Langas</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Bandyti</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -804,7 +804,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Atstatyti</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -852,7 +852,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
@@ -870,7 +870,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="13"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Langas</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
@@ -905,17 +905,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridėti</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Pašalinti</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nustatymai</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -930,7 +930,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
         <source>Audio Driver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Garso tvarkyklė:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="236"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Nėra</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1059,7 +1059,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Langas</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
@@ -1147,7 +1147,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="39"/>
@@ -1182,17 +1182,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Dešinėn</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>Abu</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Kairėn</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1271,7 +1271,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Langas</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
@@ -1341,12 +1341,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Greitis:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation type="unfinished"></translation>
+        <translation>Raktas:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1570,7 +1570,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>At&amp;verti...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
@@ -1580,7 +1580,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>Open an existing file</source>
-        <translation type="unfinished"></translation>
+        <translation>Atverti egzistuojantį failą</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="346"/>
@@ -1590,7 +1590,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="347"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
@@ -1600,7 +1600,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Apie</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
@@ -1656,7 +1656,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
         <source>F11</source>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="374"/>
@@ -1676,7 +1676,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
@@ -1696,12 +1696,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Failas</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rodymas</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
@@ -1717,7 +1717,7 @@
         <location filename="../src/QtWindow.cpp" line="445"/>
         <location filename="../src/QtWindow.cpp" line="448"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pagalba</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="452"/>
