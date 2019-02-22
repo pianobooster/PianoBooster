@@ -804,7 +804,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation></translation>
+        <translation>Sett tilbake</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -852,7 +852,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
@@ -905,17 +905,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation></translation>
+        <translation>Legg til</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation></translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -950,12 +950,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
         <source>Reverb</source>
-        <translation></translation>
+        <translation>Ekko</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation></translation>
+        <translation>Kor</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation></translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1147,7 +1147,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="19"/>
         <source>Form</source>
-        <translation></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="39"/>
@@ -1182,17 +1182,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation></translation>
+        <translation>Høyre</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation></translation>
+        <translation>Begge</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation></translation>
+        <translation>Venstre</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
@@ -1341,12 +1341,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation></translation>
+        <translation>Hastighet:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation></translation>
+        <translation>Nøkkel:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1570,7 +1570,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Open...</source>
-        <translation></translation>
+        <translation>&amp;Åpne …</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
@@ -1580,7 +1580,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>Open an existing file</source>
-        <translation></translation>
+        <translation>Åpne en eksisterende fil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="346"/>
@@ -1600,7 +1600,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
         <source>&amp;About</source>
-        <translation></translation>
+        <translation>&amp;Om</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
@@ -1696,12 +1696,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&amp;File</source>
-        <translation></translation>
+        <translation>&amp;Fil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation></translation>
+        <translation>&amp;Vis</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
@@ -1717,7 +1717,7 @@
         <location filename="../src/QtWindow.cpp" line="445"/>
         <location filename="../src/QtWindow.cpp" line="448"/>
         <source>&amp;Help</source>
-        <translation></translation>
+        <translation>&amp;Hjelp</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="452"/>
