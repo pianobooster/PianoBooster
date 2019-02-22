@@ -728,83 +728,83 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt bàn phím Piano</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài Đặt Bàn Phím Piano</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
         <source>Right Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nốt nhạc đúng</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="140"/>
         <source>sound:</source>
-        <translation type="unfinished"></translation>
+        <translation>âm thanh:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="163"/>
         <source>volume:</source>
-        <translation type="unfinished"></translation>
+        <translation>âm lượng:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="89"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="172"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểm tra</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nốt nhạc sai</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Quãng nốt bàn phím</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nốt nhạc thấp nhất:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation type="unfinished"></translation>
+        <translation>Nốt nhạc ở giữa 0 và 127</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="239"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="275"/>
         <source>000; </source>
-        <translation type="unfinished"></translation>
+        <translation>000; </translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nốt nhạc cao nhất:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập lại</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -837,32 +837,32 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="37"/>
         <source>Continuous Looping</source>
-        <translation type="unfinished"></translation>
+        <translation>Lặp lại Liên tục</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
         <source>Repeat End Bar: </source>
-        <translation type="unfinished"></translation>
+        <translation>Lặp lại nhịp cuối: </translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
         <source>Repeat Bar is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã tắt lặp lại nhịp</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation type="unfinished"></translation>
+        <translation>Những khuôn nhạc lập lại:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
         <source>End bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Khuôn nhạc kết thúc</translation>
     </message>
 </context>
 <context>
@@ -870,32 +870,32 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="13"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation type="unfinished"></translation>
+        <translation>Đầu vào &amp;&amp; Đầu ra MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="48"/>
         <source>Select the MIDI devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn thiết bị MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="81"/>
         <source>Midi Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Đầu vào Thiết bị Midi:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="94"/>
         <source>Midi Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Đầu ra Thiết bị Midi:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
         <source>FluidSynth</source>
-        <translation type="unfinished"></translation>
+        <translation>FluidSynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
@@ -905,22 +905,22 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Gỡ bỏ</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
         <source>Audio Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết bị Âm thanh:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="210"/>
@@ -930,12 +930,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
         <source>Audio Driver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chương trình điều khiển Âm thanh:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="236"/>
         <source>Sample Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tần số mẫu:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
@@ -945,32 +945,32 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Buffer counts</source>
-        <translation type="unfinished"></translation>
+        <translation>Đếm vùng đệm</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
         <source>Reverb</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng vang</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation type="unfinished"></translation>
+        <translation>Điệp khúc</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
         <source>Latency Fix</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh độ trễ</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="307"/>
         <source>Latency</source>
-        <translation type="unfinished"></translation>
+        <translation>Độ trễ</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="320"/>
         <source>0 (msec)</source>
-        <translation type="unfinished"></translation>
+        <translation>0 (mili giây)</translation>
     </message>
 </context>
 <context>
@@ -978,14 +978,14 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="59"/>
         <source>None (PC Keyboard)</source>
-        <translation type="unfinished"></translation>
+        <translation>Không (Bàn phím máy tính)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Không</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -996,27 +996,27 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
         <source>%1 mSec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 mili giây</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
         <source>Enter a value for the latency fix in milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhập giá trị chỉnh độ trễ bằng mili giây</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bộ chỉnh độ trễ hoạt động bằng cách chạy nhạc trước âm thanh&lt;br&gt;bạn đang phát để khắc phục độ chậm trễ do bộ sinh âm.&lt;br&gt;&lt;br&gt;Bạn sẽ cần một đàn piano &lt;b&gt; có loa&lt;/b&gt; đã được &lt;b&gt;lên dây&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Nhập thời gian trễ tính theo mili giây (1000 mili giây = 1 giây)&lt;br&gt;(Đối với Microsoft GS Wavetable SW Synth hãy thử nhập 150)&lt;br&gt;Nếu không chắc chắn hãy nhập giá trị là 0.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="218"/>
         <source>Open SoundFont2 File for fluid synth</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở tập tin SoundFont2 cho fluid synth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="219"/>
         <source>SoundFont2 Files (*.sf2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tập tin SoundFont2 (*.sf2)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
@@ -1059,32 +1059,32 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
         <source>Score Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt bản nhạc</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="40"/>
         <source>Timing Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Bộ đặt giờ</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="47"/>
         <source>Follow stop point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Theo điểm dừng:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="80"/>
         <source>Show Note Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiện tên nốt</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
         <source>Courtesy Accidentals</source>
-        <translation type="unfinished"></translation>
+        <translation>Dấu hóa</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
@@ -1147,57 +1147,57 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biểu mẫu</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="39"/>
         <source>Book:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sách:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="65"/>
         <source>Song:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bài hát:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="107"/>
         <source>Skill</source>
-        <translation type="unfinished"></translation>
+        <translation>Kỹ năng</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="113"/>
         <source>Listen</source>
-        <translation type="unfinished"></translation>
+        <translation>Nghe</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="134"/>
         <source>Play Along</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi cùng</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="150"/>
         <source>Hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Tay</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Phải</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>Cả hai</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Trái</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
         <source>Adjust the volume of your piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Điều chỉnh âm lượng Piano</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="212"/>
@@ -1207,17 +1207,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="228"/>
         <source>Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Phần</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="269"/>
         <source>Adjust the volume of the selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Điều chỉnh âm lượng phần được chọn</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="234"/>
         <source>Mute the currently selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Tắt tiếng phần được chọn</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="120"/>
@@ -1227,12 +1227,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="127"/>
         <source>Follow You</source>
-        <translation type="unfinished"></translation>
+        <translation>Theo bạn</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="237"/>
         <source>Mute your part when playing</source>
-        <translation type="unfinished"></translation>
+        <translation>Tắt tiếng phần của bạn khi phát</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="57"/>
@@ -1266,12 +1266,12 @@
         <location filename="../src/GuiSongDetailsDialog.cpp" line="48"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="50"/>
         <source>No channel assigned</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có kênh nào được gán</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
@@ -1282,17 +1282,17 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kênh MIDI cho phần piano bên trái và phải:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="41"/>
         <source>Right Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kênh MIDI tay phải:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="64"/>
         <source>Left Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kênh MIDI tay trái:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
@@ -1325,43 +1325,43 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Đơn</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
         <source>Start playing music from the start</source>
-        <translation type="unfinished"></translation>
+        <translation>Bắt đầu chơi nhạc từ nút khởi động</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="78"/>
         <location filename="../src/GuiTopBar.cpp" line="174"/>
         <source>Start and stop playing music</source>
-        <translation type="unfinished"></translation>
+        <translation>Bắt đầu và dừng chơi nhạc</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tốc độ:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation type="unfinished"></translation>
+        <translation>Khóa:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
         <source>Transpose:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chuyển vị:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhịp bắt đầu:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu số nhịp này</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
@@ -1543,7 +1543,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="63"/>
         <source>Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="232"/>
@@ -1570,78 +1570,78 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mở...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>Open an existing file</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở một tập tin có sẵn</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="346"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Thoát</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="347"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Exit the application</source>
-        <translation type="unfinished"></translation>
+        <translation>Thoát ứng dụng</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Giới thiệu</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
         <source>Show the application&apos;s About box</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiện hộp thoại Giới thiệu ứng dụng</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
         <source>&amp;PC Shortcut Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Phím tắt máy tính</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="356"/>
         <source>The PC Keyboard shortcut keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Phím tắt bàn phím máy tính</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="359"/>
         <source>&amp;Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cài đặt Midi...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="360"/>
         <location filename="../src/QtWindow.cpp" line="386"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="361"/>
         <source>Setup the Midi input an output</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt đầu vào và đầu ra Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="364"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập &amp;Bàn phím Piano...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="365"/>
         <source>Ctrl+K</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+K</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
@@ -1656,7 +1656,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
         <source>F11</source>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="374"/>
@@ -1671,58 +1671,58 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="381"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tùy chỉnh...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>&amp;Song Details ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Chi tiết Bản nhạc...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
         <source>Shift+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="395"/>
         <source>Alt+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tập tin</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Xem</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
         <source>&amp;Song</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bản nhạc</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="440"/>
         <source>Set&amp;up</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài&amp;đặt</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="445"/>
         <location filename="../src/QtWindow.cpp" line="448"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Trợ g&amp;iúp</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="452"/>
         <source>&amp;Website</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Trang web</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="475"/>
@@ -1732,7 +1732,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="524"/>
         <source>Piano Booster Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Trợ giúp Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="526"/>
@@ -1742,7 +1742,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
         <source>About Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Giới thiệu về Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
@@ -1752,17 +1752,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="606"/>
         <source>PC Keyboard Short Cuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Phím tắt bàn phím máy tính</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Phím tắt bàn phím&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Những phím tắt sau đã được xác định.&lt;/p&gt;&lt;center&gt;&lt;table border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;th&gt;Hành động&lt;/th&gt;&lt;th&gt;Từ khóa&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="620"/>
@@ -1818,12 +1818,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="632"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;td&gt;Phím Piano giả&lt;/td&gt;&lt;td&gt;X là phím Đô giữa&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="653"/>
         <source>Open Midi File</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở tập tin Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="654"/>
