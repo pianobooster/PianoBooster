@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>ניסיון</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -804,7 +804,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>איפוס</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -852,7 +852,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>טופס</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
@@ -905,17 +905,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדרות</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -955,7 +955,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation type="unfinished"></translation>
+        <translation>פזמון</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>ללא</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1147,7 +1147,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>טופס</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="39"/>
@@ -1182,17 +1182,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>ימינה</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>שניהם</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>שמאלה</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>טופס</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
@@ -1341,12 +1341,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>מהירות:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation type="unfinished"></translation>
+        <translation>מפתח:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1570,7 +1570,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;פתיחה...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
@@ -1590,7 +1590,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="347"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
@@ -1600,7 +1600,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;אודות</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
@@ -1676,7 +1676,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
@@ -1696,12 +1696,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;קובץ</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;תצוגה</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
@@ -1717,7 +1717,7 @@
         <location filename="../src/QtWindow.cpp" line="445"/>
         <location filename="../src/QtWindow.cpp" line="448"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>ע&amp;זרה</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="452"/>
