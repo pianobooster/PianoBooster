@@ -910,7 +910,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Töşer</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
