@@ -804,7 +804,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>重設</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -905,17 +905,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>加號</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定值</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -955,7 +955,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation type="unfinished"></translation>
+        <translation>合唱</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>無</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1182,17 +1182,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>順時針</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>兩者</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>逆時針</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1341,12 +1341,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>速度：</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation type="unfinished"></translation>
+        <translation>密碼匙：</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
