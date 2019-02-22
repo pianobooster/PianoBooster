@@ -910,7 +910,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռացնել</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
@@ -1543,7 +1543,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="63"/>
         <source>Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Երաժշտական ծրագիր (Պիանո Բուստեր)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="232"/>
