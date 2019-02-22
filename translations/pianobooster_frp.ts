@@ -1182,7 +1182,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Dreti</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
@@ -1192,7 +1192,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Gauchi</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
