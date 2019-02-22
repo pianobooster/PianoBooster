@@ -905,12 +905,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Lê zêde bike</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Rake</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
@@ -955,7 +955,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation type="unfinished"></translation>
+        <translation>Koro</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Tune</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1182,17 +1182,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Rast</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>Her du</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Çep</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1341,7 +1341,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lez:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
