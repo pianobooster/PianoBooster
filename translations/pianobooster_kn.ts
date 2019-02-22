@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪ್ರಾಯೋಗಿಕ</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -804,7 +804,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪುನಃ ಹೊಂದಿಸು</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -852,7 +852,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫಾರ್ಮ್</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
@@ -905,17 +905,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸೇರಿಸು</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>ತೆಗೆದು ಹಾಕು</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸಿದ್ಧತೆಗಳು</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1147,7 +1147,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫಾರ್ಮ್</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="39"/>
@@ -1182,17 +1182,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>ಬಲ</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>ಎರಡೂ</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>ಎಡ</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫಾರ್ಮ್</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
@@ -1341,7 +1341,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>ವೇಗ:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
@@ -1696,12 +1696,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>ಕಡತ(&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>ನೋಟ(&amp;V)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
