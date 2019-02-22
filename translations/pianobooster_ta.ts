@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>சோதனை</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -804,7 +804,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>நிலை மீள்</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -852,7 +852,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>படிவம்</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
@@ -905,17 +905,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>சேர்</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>நீக்கு</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>அமைவுகள்</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -955,7 +955,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation type="unfinished"></translation>
+        <translation>கொரஸ்</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>எதுவுமில்லை</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1147,7 +1147,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>படிவம்</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="39"/>
@@ -1182,17 +1182,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>வலது</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>இரண்டும்</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>இடது</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>படிவம்</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
@@ -1341,12 +1341,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
         <source>Speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>வேகம்:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation type="unfinished"></translation>
+        <translation>விசை:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1570,7 +1570,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>திற...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
@@ -1600,7 +1600,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>பற்றி</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
@@ -1696,12 +1696,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பு</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>பார்வை</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
@@ -1717,7 +1717,7 @@
         <location filename="../src/QtWindow.cpp" line="445"/>
         <location filename="../src/QtWindow.cpp" line="448"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>உதவி</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="452"/>
