@@ -574,18 +574,19 @@ void QtWindow::about()
     QMessageBox msgBox(this);
     msgBox.setWindowTitle (tr("About Piano Booster"));
     msgBox.setText(
-            tr(
-                "<b>PianoBooster - Version %1</b> <br><br>"
-                "<b>Boost</b> your <b>Piano</b> playing skills!<br><br>"
-                "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>"
-                "Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>"
-                "Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).<br><br>"
-                "This program is made available "
+            tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
+            tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
+            tr("<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>") +
+            tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>") +
+            tr("Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).<br><br>") +
+            tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
-                "This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
+            ) +
+            tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
                 "Copyright(c) 2003-2007 Gary P. Scavone"
-                ).arg(PB_VERSION));
+            )
+    );
     msgBox.setMinimumWidth(600);
     msgBox.exec();
 }
