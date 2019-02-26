@@ -340,30 +340,30 @@ void QtWindow::createActions()
 {
     m_openAct = new QAction(QIcon(":/images/open.png"), tr("&Open..."), this);
     m_openAct->setShortcut(tr("Ctrl+O"));
-    m_openAct->setStatusTip(tr("Open an existing file"));
+    m_openAct->setToolTip(tr("Open an existing file"));
     connect(m_openAct, SIGNAL(triggered()), this, SLOT(open()));
 
     m_exitAct = new QAction(tr("E&xit"), this);
     m_exitAct->setShortcut(tr("Ctrl+Q"));
-    m_exitAct->setStatusTip(tr("Exit the application"));
+    m_exitAct->setToolTip(tr("Exit the application"));
     connect(m_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
     m_aboutAct = new QAction(tr("&About"), this);
-    m_aboutAct->setStatusTip(tr("Show the application's About box"));
+    m_aboutAct->setToolTip(tr("Show the application's About box"));
     connect(m_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 
     m_shortcutAct = new QAction(tr("&PC Shortcut Keys"), this);
-    m_shortcutAct->setStatusTip(tr("The PC Keyboard shortcut keys"));
+    m_shortcutAct->setToolTip(tr("The PC Keyboard shortcut keys"));
     connect(m_shortcutAct, SIGNAL(triggered()), this, SLOT(keyboardShortcuts()));
 
     m_setupMidiAct = new QAction(tr("&Midi Setup ..."), this);
     m_setupMidiAct->setShortcut(tr("Ctrl+S"));
-    m_setupMidiAct->setStatusTip(tr("Setup the Midi input an output"));
+    m_setupMidiAct->setToolTip(tr("Setup the Midi input an output"));
     connect(m_setupMidiAct, SIGNAL(triggered()), this, SLOT(showMidiSetup()));
 
     m_setupKeyboardAct = new QAction(tr("Piano &Keyboard Setting ..."), this);
     m_setupKeyboardAct->setShortcut(tr("Ctrl+K"));
-    m_setupKeyboardAct->setStatusTip(tr("Change the piano keyboard settings"));
+    m_setupKeyboardAct->setToolTip(tr("Change the piano keyboard settings"));
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
 
     m_fullScreenStateAct = new QAction(tr("&Fullscreen"), this);
@@ -422,6 +422,7 @@ void QtWindow::createActions()
 void QtWindow::createMenus()
 {
     m_fileMenu = menuBar()->addMenu(tr("&File"));
+    m_fileMenu->setToolTipsVisible(true);
     m_fileMenu->addAction(m_openAct);
     m_separatorAct = m_fileMenu->addSeparator();
     for (int i = 0; i < MAX_RECENT_FILES; ++i)
@@ -431,18 +432,22 @@ void QtWindow::createMenus()
     updateRecentFileActions();
 
     m_viewMenu = menuBar()->addMenu(tr("&View"));
+    m_viewMenu->setToolTipsVisible(true);
     m_viewMenu->addAction(m_sidePanelStateAct);
     m_viewMenu->addAction(m_fullScreenStateAct);
 
     m_songMenu = menuBar()->addMenu(tr("&Song"));
+    m_songMenu->setToolTipsVisible(true);
     m_songMenu->addAction(m_songDetailsAct);
 
     m_setupMenu = menuBar()->addMenu(tr("Set&up"));
+    m_setupMenu->setToolTipsVisible(true);
     m_setupMenu->addAction(m_setupMidiAct);
     m_setupMenu->addAction(m_setupKeyboardAct);
     m_setupMenu->addAction(m_setupPreferencesAct);
 
     m_helpMenu = menuBar()->addMenu(tr("&Help"));
+    m_helpMenu->setToolTipsVisible(true);
 
     QAction* act;
     act = new QAction(tr("&Help"), this);
