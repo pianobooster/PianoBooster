@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="387"/>
         <source>space</source>
-        <translation type="unfinished"></translation>
+        <translation>Spacja</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
@@ -80,12 +80,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation type="unfinished"></translation>
+        <translation>(brak)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Pianoforte</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
@@ -100,47 +100,47 @@
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
         <source>Honky-tonk Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortepian honky-tonk</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
         <source>Electric Piano 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortepian elektryczny 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="361"/>
         <source>Electric Piano 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortepian elektryczny 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="362"/>
         <source>Harpsichord</source>
-        <translation type="unfinished"></translation>
+        <translation>Clavicembalo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation>Klawikord</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation type="unfinished"></translation>
+        <translation>Czelesta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
         <source>Glockenspiel</source>
-        <translation type="unfinished"></translation>
+        <translation>Campanelli</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
         <source>Music Box</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozytywka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
         <source>Vibraphone</source>
-        <translation type="unfinished"></translation>
+        <translation>Vibrafono</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
@@ -150,102 +150,102 @@
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
         <source>Xylophone</source>
-        <translation type="unfinished"></translation>
+        <translation>Xilofono</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
         <source>Tubular Bells</source>
-        <translation type="unfinished"></translation>
+        <translation>Dzwony rurowe</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation type="unfinished"></translation>
+        <translation>Cimbalom</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
         <source>Drawbar Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Organy Drawbar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
         <source>Percussive Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Percussione organo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
         <source>Rock Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Organy rockowe</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="375"/>
         <source>Church Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Organy kościelne</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
         <source>Reed Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Organo ad ancia</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="377"/>
         <source>Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Fisarmonica diatonica</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation type="unfinished"></translation>
+        <translation>Armonica</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
         <source>Tango Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Akordeon (tango)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="380"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara akustyczna (nylonowe)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="381"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara akustyczna (stalowe)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="382"/>
         <source>Electric Guitar (jazz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara elektryczna (jazzowa)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="383"/>
         <source>Electric Guitar (clean)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara elektryczna (clean)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="384"/>
         <source>Electric Guitar (muted)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara elektryczna (muted)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="385"/>
         <source>Overdriven Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara przesterowana</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="386"/>
         <source>Distortion Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara zniekształcona</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
         <source>Guitar harmonics</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitara harmoniczna</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
         <source>Acoustic Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Basso acustico</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
@@ -260,117 +260,117 @@
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
         <source>Fretless Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas bezprogowy</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="392"/>
         <source>Slap Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas klepany 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="393"/>
         <source>Slap Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas klepany 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="394"/>
         <source>Synth Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas syntetyczny 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="395"/>
         <source>Synth Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas syntetyczny 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="396"/>
         <source>Violin</source>
-        <translation type="unfinished"></translation>
+        <translation>Violino</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation type="unfinished"></translation>
+        <translation>Altówka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
         <source>Cello</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiolonczela</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
         <source>Contrabass</source>
-        <translation type="unfinished"></translation>
+        <translation>Contrabbasso</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
         <source>Tremolo Strings</source>
-        <translation type="unfinished"></translation>
+        <translation>Smyczki tremolo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="401"/>
         <source>Pizzicato Strings</source>
-        <translation type="unfinished"></translation>
+        <translation>Smyczki pizzicato</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="402"/>
         <source>Orchestral Harp</source>
-        <translation type="unfinished"></translation>
+        <translation>Harfa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
         <source>Timpani</source>
-        <translation type="unfinished"></translation>
+        <translation>Kotły</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
         <source>String Ensemble 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekcja smyczków 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="405"/>
         <source>String Ensemble 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekcja smyczków 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
         <source>SynthStrings 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntetyczne smyczki 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>SynthStrings 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntetyczne smyczki 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
         <source>Choir Aahs</source>
-        <translation type="unfinished"></translation>
+        <translation>Chór Aahs</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Voice Oohs</source>
-        <translation type="unfinished"></translation>
+        <translation>Głos Oohs</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Synth Voice</source>
-        <translation type="unfinished"></translation>
+        <translation>Głos syntetyczny</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Orchestra Hit</source>
-        <translation type="unfinished"></translation>
+        <translation>Orchestra hit</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Tromba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation type="unfinished"></translation>
+        <translation>Puzon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
@@ -380,92 +380,92 @@
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
         <source>Muted Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Trąbka z tłumikiem</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
         <source>French Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Waltornia</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
         <source>Brass Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekcja dętych blaszanych</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="418"/>
         <source>SynthBrass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntetyczne dęte blaszane 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="419"/>
         <source>SynthBrass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntetyczne dęte blaszane 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
         <source>Soprano Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saksofon sopranowy</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="421"/>
         <source>Alto Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saksofon altowy</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="422"/>
         <source>Tenor Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saksofon tenorowy</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Baritone Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saksofon barytonowy</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Oboe</source>
-        <translation type="unfinished"></translation>
+        <translation>Obój</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>English Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Corno inglese</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
         <source>Bassoon</source>
-        <translation type="unfinished"></translation>
+        <translation>Fagotto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
         <source>Clarinet</source>
-        <translation type="unfinished"></translation>
+        <translation>Clarinetto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
         <source>Piccolo</source>
-        <translation type="unfinished"></translation>
+        <translation>Flauto piccolo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
         <source>Flute</source>
-        <translation type="unfinished"></translation>
+        <translation>Flauto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Flauto dolce</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Pan Flute</source>
-        <translation type="unfinished"></translation>
+        <translation>Flauto di Pan</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Blown Bottle</source>
-        <translation type="unfinished"></translation>
+        <translation>Dmuchana butelka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
@@ -475,12 +475,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
         <source>Whistle</source>
-        <translation type="unfinished"></translation>
+        <translation>Gwizdek</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Ocarina</source>
-        <translation type="unfinished"></translation>
+        <translation>Okaryna</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
@@ -630,12 +630,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
         <source>Bag pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Dudy</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="466"/>
         <source>Fiddle</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrzypce fiddle</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
@@ -645,7 +645,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
         <source>Tinkle Bell</source>
-        <translation type="unfinished"></translation>
+        <translation>Dzwonek tinkle</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
@@ -655,17 +655,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
         <source>Steel Drums</source>
-        <translation type="unfinished"></translation>
+        <translation>Steel pan</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
         <source>Woodblock</source>
-        <translation type="unfinished"></translation>
+        <translation>Blok z drewna</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="472"/>
         <source>Taiko Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>Bęben Taiko</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="473"/>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="474"/>
         <source>Synth Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntetyczna perkusja</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
@@ -685,42 +685,42 @@
     <message>
         <location filename="../src/TrackList.cpp" line="476"/>
         <source>Guitar Fret Noise</source>
-        <translation type="unfinished"></translation>
+        <translation>Dźwięk progu w gitarze</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="477"/>
         <source>Breath Noise</source>
-        <translation type="unfinished"></translation>
+        <translation>Dźwięk oddechu</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="478"/>
         <source>Seashore</source>
-        <translation type="unfinished"></translation>
+        <translation>Brzeg morza</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="479"/>
         <source>Bird Tweet</source>
-        <translation type="unfinished"></translation>
+        <translation>Śpiew ptaka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="480"/>
         <source>Telephone Ring</source>
-        <translation type="unfinished"></translation>
+        <translation>Dzwonek telefonu</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="481"/>
         <source>Helicopter</source>
-        <translation type="unfinished"></translation>
+        <translation>Helikopter</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="482"/>
         <source>Applause</source>
-        <translation type="unfinished"></translation>
+        <translation>Oklaski</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="483"/>
         <source>Gunshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Postrzał</translation>
     </message>
 </context>
 <context>
@@ -1109,7 +1109,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="39"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferencje</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="40"/>
@@ -1366,12 +1366,12 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
         <source>Major</source>
-        <translation type="unfinished"></translation>
+        <translation>Dur</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="56"/>
         <source>Minor</source>
-        <translation type="unfinished"></translation>
+        <translation>Minor</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
@@ -1386,19 +1386,19 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="91"/>
         <source>Ab</source>
-        <translation type="unfinished"></translation>
+        <translation>Ab</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="92"/>
         <location filename="../src/GuiTopBar.cpp" line="105"/>
         <source>Eb</source>
-        <translation type="unfinished"></translation>
+        <translation>Eb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1443,7 +1443,7 @@
         <location filename="../src/GuiTopBar.cpp" line="101"/>
         <location filename="../src/GuiTopBar.cpp" line="114"/>
         <source>F#</source>
-        <translation type="unfinished"></translation>
+        <translation>f#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
@@ -1463,17 +1463,17 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
         <source>G#</source>
-        <translation type="unfinished"></translation>
+        <translation>g#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="116"/>
         <source>C#</source>
-        <translation type="unfinished"></translation>
+        <translation>c#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="117"/>
         <source>D#</source>
-        <translation type="unfinished"></translation>
+        <translation>d#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
@@ -1520,12 +1520,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="268"/>
         <source>L</source>
-        <translation type="unfinished"></translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="270"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="343"/>
@@ -1535,7 +1535,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieznany</translation>
     </message>
 </context>
 <context>
@@ -1651,7 +1651,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pełen &amp;ekran</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
@@ -1828,7 +1828,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="654"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Pliki MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
