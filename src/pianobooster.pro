@@ -29,7 +29,10 @@ HEADERS   = precompile/precompile.h \
             GuiKeyboardSetupDialog.h \
             GuiPreferencesDialog.h \
             GuiSongDetailsDialog.h \
-            GuiLoopingPopup.h
+            GuiLoopingPopup.h \
+            Settings.h \
+            Draw.h \
+            TrackList.h
 
 FORMS    =  GuiTopBar.ui \
             GuiSidePanel.ui \
@@ -79,6 +82,9 @@ RC_FILE     = pianobooster.rc
 INCLUDEPATH += rtmidi
 
 OBJECTS_DIR = tmp
+
+CONFIG += link_pkgconfig
+PKGCONFIG += ftgl
 
 win32 {
   DEFINES += __WINDOWS_MM__ _WIN32
