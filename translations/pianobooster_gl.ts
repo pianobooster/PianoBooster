@@ -85,7 +85,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano de cola</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="362"/>
         <source>Harpsichord</source>
-        <translation type="unfinished"></translation>
+        <translation>Clavicémbalo (clave)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
         <source>Vibraphone</source>
-        <translation type="unfinished"></translation>
+        <translation>Vibráfono</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
@@ -150,7 +150,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
         <source>Xylophone</source>
-        <translation type="unfinished"></translation>
+        <translation>Xilófono</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation type="unfinished"></translation>
+        <translation>Salterio</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
         <source>Percussive Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Órgano percutivo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
@@ -185,17 +185,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
         <source>Reed Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Órgano de palleta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="377"/>
         <source>Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Acordeón</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation type="unfinished"></translation>
+        <translation>Harmónica</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
         <source>Acoustic Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Baixo acústico</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
@@ -285,7 +285,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="396"/>
         <source>Violin</source>
-        <translation type="unfinished"></translation>
+        <translation>Violín</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
         <source>Contrabass</source>
-        <translation type="unfinished"></translation>
+        <translation>Contrabaixo [rexistro]</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
         <source>Timpani</source>
-        <translation type="unfinished"></translation>
+        <translation>Timbais</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
@@ -365,12 +365,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Trompeta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation type="unfinished"></translation>
+        <translation>Trombón</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
@@ -430,17 +430,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>English Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Corno inglés</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
         <source>Bassoon</source>
-        <translation type="unfinished"></translation>
+        <translation>Fagot</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
         <source>Clarinet</source>
-        <translation type="unfinished"></translation>
+        <translation>Clarinete</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
@@ -450,17 +450,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
         <source>Flute</source>
-        <translation type="unfinished"></translation>
+        <translation>Frauta travesa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Frauta doce</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Pan Flute</source>
-        <translation type="unfinished"></translation>
+        <translation>Frauta de Pan</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
@@ -615,7 +615,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation type="unfinished"></translation>
+        <translation>Shamisen (sangen)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
@@ -625,7 +625,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalimba (Mbira, piano de man)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -655,7 +655,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
         <source>Steel Drums</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambores de aceiro</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
@@ -1786,7 +1786,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="526"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster does not come with any &lt;b&gt;MIDI Files&lt;/b&gt; and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
-        <translation>&lt;h3&gt;Comezando&lt;/h3&gt;&lt;p&gt;É necesario un &lt;b&gt;teclado de piano MIDI&lt;/b&gt; e unha &lt;b&gt;interface MIDI&lt;/b&gt; para o PC. Se non se dispón dun teclado MIDI, pode empregar PianoBooster co teclado do PC, «X» é o do (C) central.&lt;/p&gt;&lt;p&gt;Para escoitar a música, é necesario un &lt;b&gt;sintetizador MIDI&lt;/b&gt;. En Windows pode empregarse o «Microsoft GS Wavetable software synthesizer», mais este introduce unha latencia inaceptábel. En Linux pódese empregar &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; ou &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;PianoBooster non ven con ningún &lt;b&gt;ficheiro MIDI&lt;/b&gt; polo que estes deberán ser descargados desde a rede, ou de calquera outra orixe. Vaia a &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; para acceder a algúns dos sitios desde os que se poden descargar. PianoBooster funciona mellor con ficheiros MIDI que teñen separadas as partes do piano executadas pola man dereita e a esquerda usando as canles MIDI 3 e 4.&lt;h3&gt;Configuración&lt;/h3&gt;&lt;p&gt;Use o menú; &lt;i&gt;Configuración/Configuración MIDI&lt;/i&gt; e seleccione a entrada e a saída MIDI correspondentes a súa arquitectura. A seguir use &lt;i&gt;Ficheiro/Abrir&lt;/i&gt; para abrir un ficheiro MIDI («.mid») ou de karaoke («.kar»). Seleccione se desexa simplemente &lt;i&gt;escoitar&lt;/i&gt; a música ou se desexa &lt;i&gt;interpretala&lt;/i&gt; no teclado do piano, seleccionando o &lt;i&gt;nivel&lt;/i&gt; no panel lateral. Finalmente, prema na icona de &lt;i&gt;comezar a interpretar&lt;/i&gt; (ou na &lt;i&gt;barra espaciadora&lt;/i&gt;) para que a canción comece.&lt;h3&gt;Consellos para interpretar co teclado do piano&lt;/h3&gt;&lt;p&gt;Para obter consellos sobre como interpretar co teclado do piano, vexa: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Consellos sobre piano&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Máis información&lt;/h3&gt;&lt;p&gt;Para obter máis axuda, visite a &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;páxina web de PianoBooster&lt;/b&gt;&lt;/a&gt;, a páxina de &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;preguntas frecuentes (FAQ)&lt;/b&gt;&lt;/a&gt; e o &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;foro de usuarios&lt;/b&gt;&lt;/a&gt;.</translation>
+        <translation>&lt;h3&gt;Comezando&lt;/h3&gt;&lt;p&gt;É necesario un &lt;b&gt;teclado de piano MIDI&lt;/b&gt; e unha &lt;b&gt;interface MIDI&lt;/b&gt; para o PC. Se non se dispón dun teclado MIDI, pode empregar PianoBooster co teclado do PC, «X» é o do (C) central.&lt;/p&gt;&lt;p&gt;Para escoitar a música, é necesario un &lt;b&gt;sintetizador MIDI&lt;/b&gt;. En Windows pode empregarse o «Microsoft GS Wavetable software synthesizer», mais este introduce unha latencia inaceptábel. En Linux pódese empregar &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; ou &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;PianoBooster non ven con ningún &lt;b&gt;ficheiro MIDI&lt;/b&gt; polo que estes deberán ser descargados desde a rede, ou de calquera outra orixe. Vaia a &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; para acceder a algúns dos sitios desde os que se poden descargar. PianoBooster funciona mellor con ficheiros MIDI que teñen separadas as partes do piano executadas pola man dereita e a esquerda usando as canles MIDI 3 e 4.&lt;h3&gt;Configuración&lt;/h3&gt;&lt;p&gt;Use o menú; &lt;i&gt;Configuración/Configuración MIDI&lt;/i&gt; e seleccione a entrada e a saída MIDI correspondentes a súa arquitectura. A seguir use &lt;i&gt;Ficheiro/Abrir&lt;/i&gt; para abrir un ficheiro MIDI («.mid») ou de karaoke («.kar»). Seleccione se desexa simplemente &lt;i&gt;escoitar&lt;/i&gt; a música ou se desexa &lt;i&gt;interpretala&lt;/i&gt; no teclado do piano, seleccionando o &lt;i&gt;nivel&lt;/i&gt; no panel lateral. Finalmente, prema na icona de &lt;i&gt;comezar a interpretar&lt;/i&gt; (ou na &lt;i&gt;barra espaciadora&lt;/i&gt;) para que a canción comece.&lt;h3&gt;Consellos para interpretar co teclado do piano&lt;/h3&gt;&lt;p&gt;Para obter consellos sobre como interpretar co teclado do piano, vexa: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Consellos sobre piano&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Máis información&lt;/h3&gt;&lt;p&gt;Para obter máis axuda, visite a &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;páxina web de PianoBooster&lt;/b&gt;&lt;/a&gt;, a páxina de &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;preguntas frecuentes (FAQ)&lt;/b&gt;&lt;/a&gt; e o &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;foro de usuarios&lt;/b&gt;&lt;/a&gt;. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="654"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro MIDI </translation>
     </message>
     <message>
         <source>Midi Files (*.mid *.MID *.midi *.kar *.KAR)</source>
