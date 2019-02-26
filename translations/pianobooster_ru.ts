@@ -125,12 +125,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation>Селеста</translation>
+        <translation>Челеста</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
         <source>Glockenspiel</source>
-        <translation>Колокольчики</translation>
+        <translation>Глокеншпиль</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
         <source>Vibraphone</source>
-        <translation>Виброфон</translation>
+        <translation>Вибрафон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation>Цимбалы</translation>
+        <translation>Дульсимер</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation>Губная гармоника</translation>
+        <translation>Гармоника</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
         <source>Acoustic Bass</source>
-        <translation>Акустический бас</translation>
+        <translation>Акустическая бас-гитара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
         <source>Timpani</source>
-        <translation>Литавр</translation>
+        <translation>Литавры</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
@@ -430,7 +430,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>English Horn</source>
-        <translation>Английский рог</translation>
+        <translation>Английский рожок</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
@@ -445,7 +445,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
         <source>Piccolo</source>
-        <translation>Пикколо</translation>
+        <translation>Флейта-пикколо</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
@@ -655,7 +655,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
         <source>Steel Drums</source>
-        <translation>Стальные барабаны</translation>
+        <translation>Стальные ударные</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
@@ -935,7 +935,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="236"/>
         <source>Sample Rate:</source>
-        <translation>Частота дискретизации:</translation>
+        <translation>Частота семплирования:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
@@ -955,7 +955,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Chorus</source>
-        <translation>Припев</translation>
+        <translation>Хорус</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
@@ -1702,7 +1702,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation>&amp;Просмотр</translation>
+        <translation>&amp;Вид</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
