@@ -28,7 +28,7 @@ ENDIF(WIN32)
 PROJECT( pianobooster )
 
 # enable warnings
-ADD_DEFINITIONS(-Wall)
+add_compile_options(-Wall)
 
 FIND_PACKAGE( OpenGL REQUIRED )
 
@@ -43,7 +43,7 @@ SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
-add_definitions(-fPIC)
+add_compile_options(-fPIC)
 
 IF (USE_PCH)
 INCLUDE(precompile/PCHSupport_26.cmake)
