@@ -130,7 +130,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
         <source>Glockenspiel</source>
-        <translation type="unfinished"></translation>
+        <translation>Carillón</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
@@ -155,7 +155,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
         <source>Tubular Bells</source>
-        <translation type="unfinished"></translation>
+        <translation>Campás tubulares</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
@@ -295,7 +295,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
         <source>Cello</source>
-        <translation type="unfinished"></translation>
+        <translation>Violoncello</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
@@ -405,27 +405,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
         <source>Soprano Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saxofón soprano</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="421"/>
         <source>Alto Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saxofón alto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="422"/>
         <source>Tenor Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saxofón tenor</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Baritone Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Saxofón barítono</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Oboe</source>
-        <translation type="unfinished"></translation>
+        <translation>Óboe</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
@@ -445,7 +445,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
         <source>Piccolo</source>
-        <translation type="unfinished"></translation>
+        <translation>Frautín</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
@@ -610,7 +610,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation type="unfinished"></translation>
+        <translation>Banxo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="654"/>
         <source>Midi Files</source>
-        <translation>Ficheiro MIDI </translation>
+        <translation>Ficheiro MIDI</translation>
     </message>
     <message>
         <source>Midi Files (*.mid *.MID *.midi *.kar *.KAR)</source>
