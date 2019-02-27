@@ -80,7 +80,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation>(Пусто)</translation>
+        <translation>(Нету)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
@@ -155,12 +155,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
         <source>Tubular Bells</source>
-        <translation>Трубчатые колокола</translation>
+        <translation>Трубные колокола</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation>Дульсимер</translation>
+        <translation>Дульцимер</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation>Гармоника</translation>
+        <translation>Губная гармоника</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
         <source>Acoustic Bass</source>
-        <translation>Акустическая бас-гитара</translation>
+        <translation>Акустический бас</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
         <source>Tremolo Strings</source>
-        <translation>Струны тремоло</translation>
+        <translation>Струнное тремоло</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="401"/>
@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
         <source>Timpani</source>
-        <translation>Литавры</translation>
+        <translation>Тимпаны, литавры</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
@@ -345,12 +345,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
         <source>Choir Aahs</source>
-        <translation>Хор Аахс</translation>
+        <translation>Хоровое ахание</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Voice Oohs</source>
-        <translation>Голос охи</translation>
+        <translation>Голосовое охание</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
@@ -360,7 +360,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Orchestra Hit</source>
-        <translation>Оркестр Хит</translation>
+        <translation>Оркестровый хит (удар)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
@@ -405,22 +405,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
         <source>Soprano Sax</source>
-        <translation>Саксофон сопрано</translation>
+        <translation>Саксофон-сопрано</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="421"/>
         <source>Alto Sax</source>
-        <translation>Саксофон альт</translation>
+        <translation>Саксофон-альт</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="422"/>
         <source>Tenor Sax</source>
-        <translation>Саксофон тенор</translation>
+        <translation>Саксофон-тенор</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Baritone Sax</source>
-        <translation>Саксофон баритон</translation>
+        <translation>Саксофон-баритон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
@@ -670,7 +670,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="473"/>
         <source>Melodic Tom</source>
-        <translation>Мелодичный Том</translation>
+        <translation>Мелодичный том</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="474"/>
@@ -680,7 +680,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
         <source>Reverse Cymbal</source>
-        <translation>Обратная тарелка</translation>
+        <translation>Реверс-кимвал</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="476"/>
@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation>Пусто</translation>
+        <translation>Нету</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -862,7 +862,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
         <source>End bar</source>
-        <translation>Конечный такт</translation>
+        <translation>Последний такт</translation>
     </message>
 </context>
 <context>
@@ -1140,7 +1140,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>None</source>
-        <translation>Пусто</translation>
+        <translation>Нету</translation>
     </message>
 </context>
 <context>
@@ -1347,7 +1347,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation>Клавиша:</translation>
+        <translation>Ключ:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1834,7 +1834,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation>Пусто</translation>
+        <translation>Нету</translation>
     </message>
 </context>
 </TS>
