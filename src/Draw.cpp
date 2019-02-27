@@ -81,10 +81,10 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool pl
 
 void CDraw::renderText(float x, float y, const char* s)
 {
-  double w = font.Advance(s);
-  double h = font.Descender();
+  double w = font->Advance(s);
+  double h = font->Descender();
   glRasterPos2f(x - w/2, y - h);
-  font.Render(s);
+  font->Render(s);
 }
 
 void CDraw::drawNoteName(int midiNote, float x, float y, int type)

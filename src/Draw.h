@@ -37,9 +37,10 @@
 #endif
 #include <FTGL/ftgl.h>
 #include <QObject>
+#include <QFile>
+#include <QApplication>
 
 #define HORIZONTAL_SPACING_FACTOR   (0.75) // defines the speed of the scrolling
-#define FONT_TTF "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 #define FONT_SIZE 16
 
 #include "StavePosition.h"
@@ -67,13 +68,39 @@ class CDraw : public QObject
 {
 public:
     CDraw(CSettings* settings)
-     :font(FONT_TTF)
+        :font(nullptr)
     {
+        QStringList listPathFonts;
+#if defined(USE_FONT)
+        listPathFonts.push_back(USE_FONT);
+#endif
+        listPathFonts.push_back("/usr/share/games/pianobooster/fonts/DejaVuSans.ttf");
+        listPathFonts.push_back(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
+        listPathFonts.push_back("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
+        listPathFonts.push_back("/usr/share/fonts/dejavu/DejaVuSans.ttf");
+        listPathFonts.push_back("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
+
+        for (int i=0;i<listPathFonts.size();i++){
+            QFile file(listPathFonts.at(i));
+            if (file.exists()){
+                font = new FTGLPixmapFont(listPathFonts.at(i).toStdString().c_str());
+                break;
+            }
+        }
+        if (font==nullptr){
+            ppLogError(tr("font DejaVuSans.ttf not found !").toStdString().c_str());
+            exit(0);
+        }
+
         m_settings = settings;
         m_displayHand = PB_PART_both;
         m_forceCompileRedraw = 1;
         m_scrollProperties = &m_scrollPropertiesHorizontal;
-        font.FaceSize(FONT_SIZE, FONT_SIZE);
+        font->FaceSize(FONT_SIZE, FONT_SIZE);
+    }
+
+    ~CDraw(){
+        if (font!=nullptr) delete font;
     }
 
     void scrollVertex(float x, float y)
@@ -121,7 +148,7 @@ private:
     CScrollProperties *m_scrollProperties;
     CScrollProperties m_scrollPropertiesHorizontal;
     CScrollProperties m_scrollPropertiesVertical;
-    FTGLPixmapFont font;
+    FTGLPixmapFont *font;
 };
 
 #endif //__DRAW_H__
