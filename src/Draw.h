@@ -88,7 +88,7 @@ public:
             }
         }
         if (font==nullptr){
-            ppLogError(tr("font DejaVuSans.ttf not found !").toStdString().c_str());
+            ppLogError("Font DejaVuSans.ttf was not found !");
             exit(0);
         }
 
