@@ -749,7 +749,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="140"/>
         <source>sound:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дуу:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
@@ -950,7 +950,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
         <source>Reverb</source>
-        <translation type="unfinished"></translation>
+        <translation>Чих</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
@@ -1351,7 +1351,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
         <source>Transpose:</source>
-        <translation type="unfinished"></translation>
+        <translation>Өнгө шилжүүлэх:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
