@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="225"/>
         <source>Accuracy:</source>
-        <translation type="unfinished">Ajustar:</translation>
+        <translation>Ajustar:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
