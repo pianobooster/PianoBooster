@@ -1123,19 +1123,19 @@
     </message>
     <message>
         <source>Db</source>
-        <translation type="unfinished"></translation>
+        <translation>dB</translation>
     </message>
     <message>
         <source>Ab</source>
-        <translation type="unfinished"></translation>
+        <translation>Ab</translation>
     </message>
     <message>
         <source>Eb</source>
-        <translation type="unfinished"></translation>
+        <translation>E♭</translation>
     </message>
     <message>
         <source>Bb</source>
-        <translation type="unfinished"></translation>
+        <translation>B♭</translation>
     </message>
     <message>
         <source>F </source>
@@ -1167,7 +1167,7 @@
     </message>
     <message>
         <source>F#</source>
-        <translation type="unfinished"></translation>
+        <translation>f#</translation>
     </message>
     <message>
         <source>F</source>
@@ -1183,15 +1183,15 @@
     </message>
     <message>
         <source>G#</source>
-        <translation type="unfinished"></translation>
+        <translation>g#</translation>
     </message>
     <message>
         <source>C#</source>
-        <translation type="unfinished"></translation>
+        <translation>c#</translation>
     </message>
     <message>
         <source>D#</source>
-        <translation type="unfinished"></translation>
+        <translation>d#</translation>
     </message>
 </context>
 <context>
@@ -1480,7 +1480,7 @@
     </message>
     <message>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI ファイル</translation>
     </message>
 </context>
 </TS>
