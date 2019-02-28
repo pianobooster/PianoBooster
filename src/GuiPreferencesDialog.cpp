@@ -65,7 +65,7 @@ void GuiPreferencesDialog::initLanguageCombo(){
     QFile file;
     file.setFileName(localeDirectory+"/langs.json");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug() << tr("Error while opening")+" langs.json" << file.errorString();
+        ppLogError("Error while opening langs.json");
         return;
     }else{
         QByteArray val = file.readAll();
@@ -73,7 +73,7 @@ void GuiPreferencesDialog::initLanguageCombo(){
 
         QJsonDocument document = QJsonDocument::fromJson(val);
         if (document.isEmpty()){
-            qDebug() << "langs.json "+tr("is not valid");
+            ppLogError("langs.json is not valid");
             return;
         }else{
             rootLangs = document.object();
@@ -90,6 +90,8 @@ void GuiPreferencesDialog::initLanguageCombo(){
         QRegExp rx("(pianobooster_)(.*)(.qm)");
         if (rx.indexIn(fileInfo.fileName())!=-1){
             QString lang_code = rx.cap(2);
+
+            if (lang_code=="blank") continue;
 
             QString lang_code_loc = lang_code;
             if (lang_code_loc.indexOf("_")==-1) lang_code_loc+="_"+lang_code_loc.toUpper();
