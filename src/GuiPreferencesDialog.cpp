@@ -82,6 +82,8 @@ void GuiPreferencesDialog::initLanguageCombo(){
 
     // loading languages
     languageCombo->clear();
+    languageCombo->addItem("English","en");
+
     QDir dirLang(localeDirectory);
     dirLang.setFilter(QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot);
     QFileInfoList listLang = dirLang.entryInfoList();
