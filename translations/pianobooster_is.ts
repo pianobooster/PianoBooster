@@ -54,7 +54,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="255"/>
         <source>Bar: </source>
-        <translation type="unfinished"></translation>
+        <translation>Taktur: </translation>
     </message>
 </context>
 <context>
@@ -85,17 +85,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Flygill</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Skært píanó</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"></translation>
+        <translation>Rafmagnsflygill</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
@@ -135,7 +135,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
         <source>Music Box</source>
-        <translation type="unfinished"></translation>
+        <translation>Spiladós</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
@@ -1351,27 +1351,27 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
         <source>Transpose:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hækka/Lækka:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Upphafstaktur:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista þetta taktnúmer</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
         <source>Major</source>
-        <translation type="unfinished"></translation>
+        <translation>Dúr</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="56"/>
         <source>Minor</source>
-        <translation type="unfinished"></translation>
+        <translation>Moll</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
