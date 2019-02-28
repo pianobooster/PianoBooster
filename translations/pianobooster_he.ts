@@ -6,37 +6,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="140"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="141"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="142"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="143"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="144"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="145"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="146"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
 </context>
 <context>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../src/GlView.cpp" line="225"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>דיוק:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
         <source>Song: </source>
-        <translation type="unfinished"></translation>
+        <translation>שיר: </translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="255"/>
