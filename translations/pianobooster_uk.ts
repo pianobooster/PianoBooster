@@ -6,37 +6,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="140"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>До</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="141"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ре</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="142"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>Мі</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="143"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>Фа</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="144"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>Соль</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="145"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>Ля</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="146"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>Сі-бемоль</translation>
     </message>
 </context>
 <context>
@@ -44,17 +44,17 @@
     <message>
         <location filename="../src/GlView.cpp" line="225"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>Точність:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
         <source>Song: </source>
-        <translation type="unfinished"></translation>
+        <translation>Пісня: </translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="255"/>
         <source>Bar: </source>
-        <translation type="unfinished"></translation>
+        <translation>Такт: </translation>
     </message>
 </context>
 <context>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Немає)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
