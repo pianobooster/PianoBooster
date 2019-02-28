@@ -14,6 +14,9 @@ if(INSTALL_ALL_LANGS)
 file (GLOB TRANSLATIONS_FILES "*.ts")   
 endif()
 
+get_filename_component(full_path_blank_ts ${CMAKE_CURRENT_SOURCE_DIR}/pianobooster_blank.ts ABSOLUTE)
+list(REMOVE_ITEM TRANSLATIONS_FILES ${full_path_blank_ts})
+
 FIND_PACKAGE(Qt5 REQUIRED COMPONENTS LinguistTools)
 
 QT5_ADD_TRANSLATION(QM_FILES ${TRANSLATIONS_FILES})
@@ -28,3 +31,4 @@ IF (WIN32)
     INSTALL( FILES ${QM_FILES} DESTINATION . )
     INSTALL( FILES langs.json DESTINATION . )
 ENDIF (WIN32)
+
