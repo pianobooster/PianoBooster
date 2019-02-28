@@ -25,6 +25,9 @@
 */
 
 #include <QtWidgets>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QJsonValue>
 
 #include "GuiPreferencesDialog.h"
 #include "GlView.h"
@@ -45,6 +48,81 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     videoOptimiseCombo->addItem(tr("None"));
 }
 
+void GuiPreferencesDialog::initLanguageCombo(){
+    QString localeDirectory =
+ #ifdef Q_OS_WIN32
+        QApplication::applicationDirPath() + "/translations/";
+ #endif
+ #ifdef Q_OS_LINUX
+        QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/translations/";
+ #endif
+ #ifdef Q_OS_DARWIN
+        QApplication::applicationDirPath() + "/../Resources/translations/";
+ #endif
+
+    // read langs.json
+    QJsonObject rootLangs;
+    QFile file;
+    file.setFileName(localeDirectory+"/langs.json");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        qDebug() << tr("Error while opening")+" langs.json" << file.errorString();
+        return;
+    }else{
+        QByteArray val = file.readAll();
+        file.close();
+
+        QJsonDocument document = QJsonDocument::fromJson(val);
+        if (document.isEmpty()){
+            qDebug() << "langs.json "+tr("is not valid");
+            return;
+        }else{
+            rootLangs = document.object();
+        }
+    }
+
+    // loading languages
+    languageCombo->clear();
+    QDir dirLang(localeDirectory);
+    dirLang.setFilter(QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot);
+    QFileInfoList listLang = dirLang.entryInfoList();
+    for (int i = 0; i < listLang.size(); ++i) {
+        QFileInfo fileInfo = listLang.at(i);
+        QRegExp rx("(pianobooster_)(.*)(.qm)");
+        if (rx.indexIn(fileInfo.fileName())!=-1){
+            QString lang_code = rx.cap(2);
+
+            QString lang_code_loc = lang_code;
+            if (lang_code_loc.indexOf("_")==-1) lang_code_loc+="_"+lang_code_loc.toUpper();
+
+            QString languageName = "";
+
+            if (rootLangs.value(lang_code).toObject().value("nativeName").isString()){
+                languageName = rootLangs.value(lang_code).toObject().value("nativeName").toString();
+            }
+
+            if (languageName.isEmpty()){
+                QLocale loc(lang_code_loc);
+                languageName = loc.nativeLanguageName();
+
+                if (languageName.isEmpty()){
+                    languageName=QLocale::languageToString(loc.language());
+                }
+
+            }
+
+            languageName[0]=languageName[0].toUpper();
+
+            if (languageName.isEmpty() or languageName=="C"){
+                    languageName=lang_code;
+            }
+
+            languageCombo->addItem(languageName,lang_code);
+            if (m_settings->value("General/lang",QLocale::system().bcp47Name()).toString()==lang_code){
+                languageCombo->setCurrentIndex(languageCombo->count()-1);
+            }
+        }
+    }
+}
 
 void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glView)
 {
@@ -62,6 +140,8 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
     showTutorPagesCheck->setChecked(m_settings->isTutorPagesEnabled());
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
+
+    initLanguageCombo();
 }
 
 void GuiPreferencesDialog::accept()
@@ -76,6 +156,8 @@ void GuiPreferencesDialog::accept()
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
     m_song->refreshScroll();
+
+    m_settings->setValue("General/lang",languageCombo->currentData().toString());
 
     this->QDialog::accept();
 }

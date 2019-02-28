@@ -53,6 +53,8 @@ private slots:
     void accept();
 
 private:
+    void initLanguageCombo();
+
     CSettings* m_settings;
     CSong* m_song;
     CGLView *m_glView;
