@@ -820,4 +820,5 @@ void QtWindow::refreshTranslate(){
     m_sidePanel->updateTranslate();
     m_topBar->updateTranslate();
     m_settings->updateWarningMessages();
+    m_settings->updateTutorPage();
 }
