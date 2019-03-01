@@ -6,5 +6,5 @@ For the lowest five notes  *C D E F * and *E* use
  Then for *A* just stretch your *little finger* to reach that note.
 
 
-Hint: _To help find the notes ensure "Show Note Names" are turned on from "Setup
+*Hint:* _To help find the notes ensure "Show Note Names" are turned on from "Setup
 Preferences" menu._
