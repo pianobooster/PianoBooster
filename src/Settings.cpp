@@ -266,7 +266,7 @@ void CSettings::updateTutorPage()
 
     QString fileBase = fileInfo.absolutePath() + "/InfoPages/" + fileInfo.completeBaseName() + "_";
 
-    QString locale = QLocale::system().name();
+    QString locale = value("General/lang",QLocale::system().bcp47Name()).toString();
 
     if (m_tutorPagesEnabled)
     {

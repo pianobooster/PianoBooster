@@ -58,6 +58,8 @@ public:
     void setSongIndex(int index){songCombo->setCurrentIndex(index);}
     void setCurrentHand(QString hand);
 
+    void updateTranslate();
+
     void setActiveHand(whichPart_t hand)
     {
         if (hand == PB_PART_right) rightHandRadio->setChecked(true);
@@ -171,6 +173,9 @@ private slots:
 
 private:
     void autoSetMuteYourPart();
+
+    QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
+    QMap<QAction*,QMap<QString,QString>> listActionsRetranslateUi;
 
     CSong* m_song;
     CScore* m_score;

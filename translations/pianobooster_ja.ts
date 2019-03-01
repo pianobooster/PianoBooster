@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>space</source>
-        <translation type="unfinished"></translation>
+        <translation>スペース</translation>
     </message>
     <message>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
@@ -1123,7 +1123,7 @@
     </message>
     <message>
         <source>Db</source>
-        <translation>dB</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Ab</source>

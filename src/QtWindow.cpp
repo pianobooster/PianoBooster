@@ -155,6 +155,7 @@ QtWindow::QtWindow()
 
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
     m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("midi/output").toString());
+
 }
 
 void QtWindow::init()
@@ -166,6 +167,7 @@ void QtWindow::init()
     createMenus();
     readSettings();
 
+    refreshTranslate();
     show();
 }
 
@@ -727,11 +729,97 @@ void QtWindow::loadTutorHtml(const QString & name)
     }
     else
     {
-        m_tutorWindow->setSource(QUrl("file:///" + name));
+        QFile file(name);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+        QTextStream out(&file);
+        out.setCodec("UTF-8");
+
+        m_tutorWindow->setHtml(out.readAll());
         m_tutorWindow->setFixedHeight(120);
+
         m_tutorWindow->show();
 
+        file.close();
     }
 
 }
 
+void QtWindow::refreshTranslate(){
+    QString localeDirectory =
+ #ifdef Q_OS_WIN32
+        QApplication::applicationDirPath() + "/translations/";
+ #endif
+ #ifdef Q_OS_LINUX
+        QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/translations/";
+ #endif
+ #ifdef Q_OS_DARWIN
+        QApplication::applicationDirPath() + "/../Resources/translations/";
+ #endif
+
+    QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
+
+    qApp->removeTranslator(&translator);
+    qApp->removeTranslator(&qtTranslator);
+
+    // save original
+    if (listWidgetsRetranslateUi.size()==0){
+        QList<QWidget*> l2 = this->findChildren<QWidget *>();
+        for (auto &w:l2){
+            QMap<QString,QString> m;
+            m["toolTip"]=w->toolTip();
+            m["whatsThis"]=w->whatsThis();
+            m["windowTitle"]=w->windowTitle();
+            m["statusTip"]=w->statusTip();
+            listWidgetsRetranslateUi[w]=m;
+        }
+
+        QList<QAction*> l = this->findChildren<QAction *>();
+        for (auto &w:l){
+            QMap<QString,QString> m;
+            m["toolTip"]=w->toolTip();
+            m["whatsThis"]=w->whatsThis();
+            m["statusTip"]=w->statusTip();
+            m["text"]=w->text();
+            listActionsRetranslateUi[w]=m;
+        }
+
+    }
+
+    // set translator for app
+    if (!translator.load(QSTR_APPNAME + QString("_") + locale , localeDirectory))
+       if (!translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath()  + "/translations/"))
+           translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
+    qApp->installTranslator(&translator);
+
+    // set translator for default widget's text (for example: QMessageBox's buttons)
+#ifdef __WIN32
+    qtTranslator.load("qt_"+locale,localeDirectory);
+#else
+    qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+#endif
+    qApp->installTranslator(&qtTranslator);
+
+
+    // retranslate UI
+    QList<QWidget*> l2 = this->findChildren<QWidget *>();
+    for (auto &w:l2){
+        if (!w->toolTip().isEmpty()) w->setToolTip(tr(listWidgetsRetranslateUi[w]["toolTip"].toStdString().c_str()));
+        if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(listWidgetsRetranslateUi[w]["whatsThis"].toStdString().c_str()));
+        if (!w->windowTitle().isEmpty()) w->setWindowTitle(tr(listWidgetsRetranslateUi[w]["windowTitle"].toStdString().c_str()));
+        if (!w->statusTip().isEmpty()) w->setStatusTip(tr(listWidgetsRetranslateUi[w]["statusTip"].toStdString().c_str()));
+    }
+
+    QList<QAction*> l = this->findChildren<QAction *>();
+    for (auto &w:l){
+        if (!w->toolTip().isEmpty()) w->setToolTip(tr(listActionsRetranslateUi[w]["toolTip"].toStdString().c_str()));
+        if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(listActionsRetranslateUi[w]["whatsThis"].toStdString().c_str()));
+        if (!w->statusTip().isEmpty()) w->setStatusTip(tr(listActionsRetranslateUi[w]["statusTip"].toStdString().c_str()));
+        if (!w->text().isEmpty()) w->setText(tr(listActionsRetranslateUi[w]["text"].toStdString().c_str()));
+    }
+
+    m_sidePanel->updateTranslate();
+    m_topBar->updateTranslate();
+    m_settings->updateWarningMessages();
+    m_settings->updateTutorPage();
+}

@@ -30,6 +30,11 @@ PROJECT( pianobooster )
 # enable warnings
 add_compile_options(-Wall)
 
+
+if(USE_FONT)
+    add_compile_options("-DUSE_FONT=\"${USE_FONT}\"")
+endif()
+
 FIND_PACKAGE( OpenGL REQUIRED )
 
 include(FindPkgConfig)
@@ -211,6 +216,14 @@ if(NOT NO_DOCS)
 endif()
 
 INSTALL ( FILES images/pianobooster.png DESTINATION share/pixmaps )
+
+if(USE_FONT)
+    INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
+endif()
+
+if(NOT USE_SYSTEM_FONT)
+    INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION share/games/pianobooster/fonts)
+endif()
 
 #INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm  DESTINATION share/pianobooster/translations/ )
 
