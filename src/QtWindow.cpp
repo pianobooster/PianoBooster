@@ -729,10 +729,17 @@ void QtWindow::loadTutorHtml(const QString & name)
     }
     else
     {
-        m_tutorWindow->setSource(QUrl("file:///" + name));
+        QFile file(name);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+        QTextStream out(&file);
+        out.setCodec("UTF-8");
+
+        m_tutorWindow->setHtml(out.readAll());
         m_tutorWindow->setFixedHeight(104);
         m_tutorWindow->show();
 
+        file.close();
     }
 
 }
