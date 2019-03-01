@@ -1520,12 +1520,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="268"/>
         <source>L</source>
-        <translation>L</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="270"/>
         <source>R</source>
-        <translation>r</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="343"/>
