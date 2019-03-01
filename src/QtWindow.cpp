@@ -728,7 +728,7 @@ void QtWindow::loadTutorHtml(const QString & name)
     else
     {
         m_tutorWindow->setSource(QUrl("file:///" + name));
-        m_tutorWindow->setFixedHeight(104);
+        m_tutorWindow->setFixedHeight(120);
         m_tutorWindow->show();
 
     }
