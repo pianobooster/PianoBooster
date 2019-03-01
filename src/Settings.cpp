@@ -405,7 +405,7 @@ void CSettings::unzipBootserMusicBooks()
 {
     // Set default values
 
-    const int MUSIC_RELEASE = 1;
+    const int MUSIC_RELEASE = 2;
     const QString ZIPFILENAME("BoosterMusicBooks.zip");
 
 

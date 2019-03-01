@@ -211,7 +211,9 @@ INSTALL( FILES pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
 #INSTALL( index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en  SUBDIR kmidimon )
 
-INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
+if(NOT NO_DOCS)
+    INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
+endif()
 
 INSTALL ( FILES images/pianobooster.png DESTINATION share/pixmaps )
 

@@ -3,7 +3,6 @@ So for the first two notes which are *E* you should use the *middle finger* of y
 
 This piece introduces the use of *both hands* as the melody goes across *middle C*.
 
-Hint: _For the notes in the *treble clef* you always use your *right hand*
-and for the *base clef* your *left hand*._
-
-_Make sure you always keep using the correct finger for each note._
+*Hint*: _For the notes in the *treble clef* you always use your *right hand*
+and for the *base clef* your *left hand*.
+Make sure you always keep using the correct finger for each note._
