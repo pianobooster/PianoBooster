@@ -176,6 +176,36 @@ void GuiTopBar::setPlayButtonState(bool checked, bool atTheEnd)
     }
 }
 
+void GuiTopBar::updateTranslate(){
+    // save original
+    if (listWidgetsRetranslateUi.size()==0){
+        QList<QWidget*> l2 = this->findChildren<QWidget *>();
+        for (auto &w:l2){
+            QMap<QString,QString> m;
+            m["toolTip"]=w->toolTip();
+            m["whatsThis"]=w->whatsThis();
+            m["windowTitle"]=w->windowTitle();
+            m["statusTip"]=w->statusTip();
+            listWidgetsRetranslateUi[w]=m;
+        }
+    }
+
+    // retranslate UI
+    QList<QWidget*> l2 = this->findChildren<QWidget *>();
+    for (auto &w:l2){
+        if (!w->toolTip().isEmpty()) w->setToolTip(tr(listWidgetsRetranslateUi[w]["toolTip"].toStdString().c_str()));
+        if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(listWidgetsRetranslateUi[w]["whatsThis"].toStdString().c_str()));
+        if (!w->windowTitle().isEmpty()) w->setWindowTitle(tr(listWidgetsRetranslateUi[w]["windowTitle"].toStdString().c_str()));
+        if (!w->statusTip().isEmpty()) w->setStatusTip(tr(listWidgetsRetranslateUi[w]["statusTip"].toStdString().c_str()));
+    }
+
+    majorCombo->setItemText(0,tr("Major"));
+    majorCombo->setItemText(1,tr("Minor"));
+    majorCombo->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
+
+    retranslateUi(this);
+}
+
 
 void GuiTopBar::on_playButton_clicked(bool clicked)
 {

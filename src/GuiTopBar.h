@@ -53,6 +53,8 @@ public:
     void setSpeed(int value){ speedSpin->setValue(value); }
     int getSpeed(){return speedSpin->value();}
 
+    void updateTranslate();
+
 public slots:
     void on_playFromStartButton_clicked(bool clicked);
     void on_playButton_clicked(bool clicked);
@@ -79,6 +81,9 @@ private:
 
     CSong* m_song;
     CSettings* m_settings;
+
+    QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
+    QMap<QAction*,QMap<QString,QString>> listActionsRetranslateUi;
 
     bool m_atTheEndOfTheSong;
 };

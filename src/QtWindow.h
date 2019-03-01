@@ -89,6 +89,8 @@ private slots:
         GuiPreferencesDialog preferencesDialog(this);
         preferencesDialog.init(m_song, m_settings, m_glWidget);
         preferencesDialog.exec();
+
+        refreshTranslate();
     }
 
     void showSongDetailsDialog()
@@ -169,6 +171,8 @@ private:
     void addShortcutAction(const QString & key, const char * method);
     void updateRecentFileActions();
     QString strippedName(const QString &fullFileName);
+    void refreshTranslate();
+
 
     void displayUsage();
     void createActions();
@@ -182,6 +186,11 @@ private:
     GuiTopBar *m_topBar;
     QTextBrowser *m_tutorWindow;
 
+    QTranslator translator;
+    QTranslator qtTranslator;
+
+    QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
+    QMap<QAction*,QMap<QString,QString>> listActionsRetranslateUi;
 
     CGLView *m_glWidget;
     QAction *m_openAct;
