@@ -67,12 +67,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ПОМИЛКА, НЕМАЄ ЗВУКУ: щоб виправити це, скористайтеся пунктом меню «Налаштування/Налаштувати MIDI»…</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ПОМИЛКА, НЕМАЄ ФАЙЛА MIDI: щоб виправити це, скористайтеся пунктом меню «Файл -&gt; Відкрити»...</translation>
     </message>
 </context>
 <context>
@@ -814,17 +814,17 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть правильний і неправильний звук для вашої гри.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Замість MIDI-клавіатури можете скористатися звичайною; «x» —середня нота до.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш діапазон клавіатури — &lt;b&gt;октави %1&lt;/b&gt; і &lt;b&gt;півтони %2&lt;/b&gt;; 60 — середня нота до.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
@@ -842,7 +842,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
         <source>Repeat End Bar: </source>
-        <translation type="unfinished"></translation>
+        <translation>Кінцевий такт повторення: </translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
@@ -925,7 +925,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="210"/>
         <source>Master Gain:</source>
-        <translation type="unfinished"></translation>
+        <translation>Підсилення основного каналу:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
@@ -991,7 +991,8 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Зауваження: використання Microsoft GS Wavetable Synth додає небажану затримку!.
+</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
@@ -1001,12 +1002,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
         <source>Enter a value for the latency fix in milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть значення для виправлення затримки у мілісекундах</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виправлення затримки виконується за рахунок випереджального&lt;br&gt;відтворення для компенсації затримки у засобі відтворення звукових даних.&lt;br&gt;&lt;br&gt;Вам потрібне буде піаніно &lt;b&gt;із гучномовцями&lt;/b&gt;, які &lt;b&gt;розвернуто вгору&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Вкажіть час затримки у мілісекундах (1000 мс = 1 секунда)&lt;br&gt;(Для Microsoft GS Wavetable SW Synth рекомендуємо значення 150)&lt;br&gt;Якщо не певні, чи це потрібно, вкажіть нульове значення.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="218"/>
@@ -1026,7 +1027,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо у вас немає MIDI-клавіатури, можете скористатися звичайною; «X» — середня нота до.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
@@ -1036,17 +1037,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вибрано пристрою для виведення звуку; виберіть пристрій для виведення MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
         <source>The use of Midi Through is not recommended!</source>
-        <translation type="unfinished"></translation>
+        <translation>Не рекомендуємо використовувати MIDI Through!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Спробуйте виправлення затримки у 150 мс)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
@@ -1064,7 +1065,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
         <source>Score Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметри нотного стану</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="40"/>
@@ -1074,7 +1075,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="47"/>
         <source>Follow stop point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Стеження за поточною позицією:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="80"/>
@@ -1084,17 +1085,17 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
         <source>Courtesy Accidentals</source>
-        <translation type="unfinished"></translation>
+        <translation>Пробачати випадкові помилки</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
         <source>Music Course</source>
-        <translation type="unfinished"></translation>
+        <translation>Музичний курс</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="123"/>
         <source>Show Tutor Help Pages</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати сторінки навчальної довідки</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
@@ -1114,22 +1115,22 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="40"/>
         <source>Automatic (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично (рекомендовано)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="41"/>
         <source>On the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>На долях такту</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>After the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>Після такту</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Full (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Повна (рекомендовано)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
@@ -1167,12 +1168,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="113"/>
         <source>Listen</source>
-        <translation>Прослухати</translation>
+        <translation>Прослуховування</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="134"/>
         <source>Play Along</source>
-        <translation type="unfinished"></translation>
+        <translation>Самостійна гра</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="150"/>
@@ -1197,12 +1198,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
         <source>Adjust the volume of your piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Скоригуйте гучність вашого піаніно</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="212"/>
         <source>Rhythm Tapping with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відбиття ритму за допомогою:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="228"/>
@@ -1212,32 +1213,32 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="269"/>
         <source>Adjust the volume of the selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Скоригуйте гучність вибраної частини</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="234"/>
         <source>Mute the currently selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимкнути звук для поточної вибраної частини</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="120"/>
         <source>Rhythm Tap</source>
-        <translation type="unfinished"></translation>
+        <translation>Відбиття ритму</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="127"/>
         <source>Follow You</source>
-        <translation type="unfinished"></translation>
+        <translation>Стеження</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="237"/>
         <source>Mute your part when playing</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимкнути вашу партія під час відтворення</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="57"/>
         <source>Drums</source>
-        <translation type="unfinished"></translation>
+        <translation>Ударні</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="58"/>
@@ -1247,17 +1248,17 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
         <source>Set as Right Hand Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановити як партію для правої руки</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="75"/>
         <source>Set as Left Hand Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановити як партію для лівої руки</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="79"/>
         <source>Reset Both Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Скинути обидві партії</translation>
     </message>
 </context>
 <context>
@@ -1266,7 +1267,7 @@
         <location filename="../src/GuiSongDetailsDialog.cpp" line="48"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="50"/>
         <source>No channel assigned</source>
-        <translation type="unfinished"></translation>
+        <translation>Не прив&apos;язано жодного каналу</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
@@ -1282,42 +1283,42 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Канали MIDI длля партій піаніно для лівої і правої рук:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="41"/>
         <source>Right Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал MIDI для правої руки:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="64"/>
         <source>Left Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал MIDI для лівої руки:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
         <source>The left and right hand channels must be different</source>
-        <translation type="unfinished"></translation>
+        <translation>Канали для лівої і правої руки мають бути різними</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation type="unfinished"></translation>
+        <translation>Для вимикання цієї можливості канали для лівої і правої рук мають бути порожніми</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановлено канали MIDI, які слід використовувати для партій для лівої і правої рук:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"></translation>
+        <translation>партія піаніно для лівої руки використовує MIDI-канали 1</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"></translation>
+        <translation>партія піаніно для правої руки використовує MIDI-канали 1</translation>
     </message>
 </context>
 <context>
@@ -1330,13 +1331,13 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
         <source>Start playing music from the start</source>
-        <translation type="unfinished"></translation>
+        <translation>Розпочати відтворення музики від початку</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="78"/>
         <location filename="../src/GuiTopBar.cpp" line="174"/>
         <source>Start and stop playing music</source>
-        <translation type="unfinished"></translation>
+        <translation>Почати або зупинити відтворення музики</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
@@ -1361,7 +1362,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти цей номер такту</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
@@ -1403,7 +1404,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
         <source>F </source>
-        <translation type="unfinished"></translation>
+        <translation>F </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
@@ -1414,7 +1415,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
         <source>G </source>
-        <translation type="unfinished"></translation>
+        <translation>G </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="97"/>
@@ -1425,7 +1426,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="98"/>
         <source>A </source>
-        <translation type="unfinished"></translation>
+        <translation>A </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="99"/>
@@ -1448,17 +1449,17 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
@@ -1512,7 +1513,7 @@
     <message>
         <location filename="../src/QtMain.cpp" line="60"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation type="unfinished"></translation>
+        <translation>У цій системі не передбачено підтримки бібліотеки OpenGL, яка потрібна для роботи Piano Booster.</translation>
     </message>
 </context>
 <context>
@@ -1550,7 +1551,7 @@
         <location filename="../src/QtWindow.cpp" line="240"/>
         <location filename="../src/QtWindow.cpp" line="264"/>
         <source>PianoBooster Midi File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка із файлом MIDI у Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="233"/>
@@ -1560,12 +1561,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="241"/>
         <source>Not a Midi File &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не є файлом MIDI «</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="265"/>
         <source>Not a valid MIDI file &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не є коректним файлом MIDI «</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
@@ -1610,17 +1611,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
         <source>&amp;PC Shortcut Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Клавіші клавіатури комп&apos;ютера</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="356"/>
         <source>The PC Keyboard shortcut keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Клавіатурні скорочення на клавіатурі комп&apos;ютера</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="359"/>
         <source>&amp;Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Налаштувати MIDI…</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="360"/>
@@ -1631,12 +1632,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="361"/>
         <source>Setup the Midi input an output</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштувати введення і виведення даних MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="364"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштувати &amp;клавіатуру піаніно…</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="365"/>
@@ -1646,7 +1647,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
         <source>Change the piano keyboard settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити параметри клавіатури піаніно</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
@@ -1661,7 +1662,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="374"/>
         <source>&amp;Show the Side Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Показати бічну панель</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="375"/>
@@ -1681,7 +1682,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>&amp;Song Details ...</source>
-        <translation type="unfinished"></translation>
+        <translation>П&amp;араметри пісні…</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
@@ -1737,7 +1738,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="526"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster does not come with any &lt;b&gt;MIDI Files&lt;/b&gt; and so you will need to get them from the net. See the &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;PianoBooster FAQ&lt;/b&gt;&lt;/a&gt; for where to get MIDI files. PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Початкові зауваження&lt;/h3&gt;&lt;p&gt;Вам знадобиться &lt;b&gt;MIDI-клавіатура піаніно&lt;/b&gt; та &lt;b&gt;MIDI-інтерфейс&lt;/b&gt; на персональному комп&apos;ютері. Якщо у вас немає MIDI-клавіатури, можете спробувати скористатися звичайною клавіатурою для комп&apos;ютерів; «X» — середня нота до.&lt;/p&gt;&lt;p&gt;Для відтворення музики вам знадобиться &lt;b&gt;типовий звуковий синтезатор MIDI&lt;/b&gt;. Можна скористатися «Microsoft GS Wavetable software synthesizer», який постачається разом із Windows, але цей синтезатор додає неприйнятну затримку (латентність). У Linux ви можете скористатися &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; або &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Пакунок PianoBooster не містить жодних &lt;b&gt;файлів MIDI&lt;/b&gt;, тому вам доведеться знайти ці файли десь у інтернеті. Поради щодо місць пошуку файлів MIDI наведено у &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;Списку поширених питань щодо PianoBooster&lt;/b&gt;&lt;/a&gt;. Найкращими для PianoBooster є файли MIDI, у яких партії для піаніно поділено на ліву і праву частини за допомогою каналів MIDI 3 та 4.&lt;h3&gt;Налаштовування&lt;/h3&gt;&lt;p&gt;Спочатку, скористайтеся пунктом меню &lt;i&gt;Налаштування/Налаштувати MIDI&lt;/i&gt;. У діалоговому вікні виберіть інтерфейси введення та виведення MIDI, які відповідають вашому обладнанню. Далі, скористайтеся пунктом меню &lt;i&gt;Файл/Відкрити&lt;/i&gt;, щоб відкрити файл MIDI «.mid» або караоке «.kar». Далі, виберіть, щочете ви просто &lt;i&gt;прослухати&lt;/i&gt; музику або &lt;i&gt;самостійно відтворити&lt;/i&gt; музичний твір на клавіатурі піаніно встановленням рівня &lt;i&gt;навичок&lt;/i&gt; на бічній панелі. Нарешті, коли будете готові, натисніть &lt;i&gt;піктограму відтворення&lt;/i&gt; (або клавішу &lt;i&gt;пробіл&lt;/i&gt;) для відтворення музики.&lt;h3&gt;Підказки щодо гри на піаніно&lt;/h3&gt;&lt;p&gt;Настанови щодо гри на піаніно можна знайти тут: &lt;a href=&quot;http://pianobooster.sourceforge.net/pianohints.html&quot; &gt;&lt;b&gt;Підказки щодо гри на піаніно&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Додаткові відомості&lt;/h3&gt;&lt;p&gt;Щоб дізнатися більше, відвідайте &lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;сайт&lt;/b&gt;&lt;/a&gt;, &lt;a href=&quot;http://pianobooster.sourceforge.net/faq.html&quot; &gt;&lt;b&gt;список поширених питань та відповідей на них&lt;/b&gt;&lt;/a&gt; або &lt;a href=&quot;http://n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;форум користувачів&lt;/b&gt;&lt;/a&gt; PianoBooster. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
@@ -1752,12 +1753,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="606"/>
         <source>PC Keyboard Short Cuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Комбінації клавіш на клавіатурі</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Комбінації клавіш&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Визначено вказані нижче комбінації клавіш на клавіатурі комп&apos;ютера.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
@@ -1818,7 +1819,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="632"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;td&gt;Клавіші імітатора піаніно&lt;/td&gt;&lt;td&gt;X — середня нота до&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="653"/>
