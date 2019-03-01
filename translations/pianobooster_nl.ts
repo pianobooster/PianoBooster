@@ -1047,7 +1047,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation type="unfinished">(Probeer een vertragingscorrectie van 150msec)</translation>
+        <translation>(Probeer een vertragingscorrectie van 150msec)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>

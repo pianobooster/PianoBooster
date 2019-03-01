@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="225"/>
         <source>Accuracy:</source>
-        <translation type="unfinished">Nøyaktighet:</translation>
+        <translation>Nøyaktighet:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="232"/>
@@ -885,12 +885,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="81"/>
         <source>Midi Input Device:</source>
-        <translation type="unfinished">MIDI-inndataenhet:</translation>
+        <translation>MIDI-inndataenhet:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="94"/>
         <source>Midi Output Device:</source>
-        <translation type="unfinished">MIDI-utdataenhet:</translation>
+        <translation>MIDI-utdataenhet:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
@@ -1021,7 +1021,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
         <source>Midi Setup</source>
-        <translation type="unfinished">MIDI-oppsett</translation>
+        <translation>MIDI-oppsett</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
@@ -1031,7 +1031,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
         <source>Midi Input Device: </source>
-        <translation type="unfinished">MIDI-inndataenhet: </translation>
+        <translation>MIDI-inndataenhet: </translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
@@ -1051,7 +1051,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
         <source>Midi Output Device: </source>
-        <translation type="unfinished">MIDI-utdataenhet: </translation>
+        <translation>MIDI-utdataenhet: </translation>
     </message>
 </context>
 <context>
@@ -1237,7 +1237,7 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="57"/>
         <source>Drums</source>
-        <translation type="unfinished">Trommer</translation>
+        <translation>Trommer</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="58"/>
@@ -1497,12 +1497,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file&quot;</source>
-        <translation type="unfinished">MIDI-fil&quot;</translation>
+        <translation>MIDI-fil&quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>&quot; is corrupted</source>
-        <translation type="unfinished">&quot; skadet</translation>
+        <translation>&quot; skadet</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
@@ -1530,7 +1530,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="343"/>
         <source>Drums</source>
-        <translation type="unfinished">Trommer</translation>
+        <translation>Trommer</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
@@ -1560,7 +1560,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="241"/>
         <source>Not a Midi File &quot;</source>
-        <translation type="unfinished">Ikke en MIDI-fil &quot;</translation>
+        <translation>Ikke en MIDI-fil &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="265"/>
@@ -1620,7 +1620,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="359"/>
         <source>&amp;Midi Setup ...</source>
-        <translation type="unfinished">&amp;MIDI-oppsett …</translation>
+        <translation>&amp;MIDI-oppsett …</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="360"/>
@@ -1752,7 +1752,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="606"/>
         <source>PC Keyboard Short Cuts</source>
-        <translation type="unfinished">PC-tastatursnarveier</translation>
+        <translation>PC-tastatursnarveier</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
@@ -1823,7 +1823,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="653"/>
         <source>Open Midi File</source>
-        <translation type="unfinished">Åpne MIDI-fil</translation>
+        <translation>Åpne MIDI-fil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="654"/>

@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="387"/>
         <source>space</source>
-        <translation type="unfinished"></translation>
+        <translation>пробіл</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
@@ -90,27 +90,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Світле фортепіано</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"></translation>
+        <translation>Електророяль</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
         <source>Honky-tonk Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Розладнане фортепіано</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
         <source>Electric Piano 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Електропіаніно 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="361"/>
         <source>Electric Piano 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Електропіаніно 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="362"/>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation>Клавінет</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
@@ -135,7 +135,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
         <source>Music Box</source>
-        <translation type="unfinished"></translation>
+        <translation>Музична скринька</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
@@ -155,7 +155,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
         <source>Tubular Bells</source>
-        <translation type="unfinished"></translation>
+        <translation>Дзвони</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
         <source>Drawbar Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Орган</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
@@ -175,12 +175,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
         <source>Rock Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Рок орган</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="375"/>
         <source>Church Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Церковний орган</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
@@ -200,47 +200,47 @@
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
         <source>Tango Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Танго-акордеон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="380"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Акустична гітара (нейлонові струни)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="381"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation type="unfinished"></translation>
+        <translation>Акустична гітара (сталеві струни)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="382"/>
         <source>Electric Guitar (jazz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Джазова електрогітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="383"/>
         <source>Electric Guitar (clean)</source>
-        <translation type="unfinished"></translation>
+        <translation>Електрогітара (звичайна)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="384"/>
         <source>Electric Guitar (muted)</source>
-        <translation type="unfinished"></translation>
+        <translation>Електрогітара (приглушена)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="385"/>
         <source>Overdriven Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемодульована гітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="386"/>
         <source>Distortion Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Розладнана  гітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
         <source>Guitar harmonics</source>
-        <translation type="unfinished"></translation>
+        <translation>Гітарні гармоніки</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
@@ -250,37 +250,37 @@
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"></translation>
+        <translation>Бас-гітара (щипком)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation type="unfinished"></translation>
+        <translation>Бас-гітара (медіатором)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
         <source>Fretless Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Безладова бас-гітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="392"/>
         <source>Slap Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Слеп 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="393"/>
         <source>Slap Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Слеп 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="394"/>
         <source>Synth Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезаторний бас 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="395"/>
         <source>Synth Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезаторний бас 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="396"/>
@@ -295,7 +295,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
         <source>Cello</source>
-        <translation type="unfinished"></translation>
+        <translation>Віолончель</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
@@ -305,17 +305,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
         <source>Tremolo Strings</source>
-        <translation type="unfinished"></translation>
+        <translation>Тремулюючі струни</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="401"/>
         <source>Pizzicato Strings</source>
-        <translation type="unfinished"></translation>
+        <translation>Струнні піцикато</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="402"/>
         <source>Orchestral Harp</source>
-        <translation type="unfinished"></translation>
+        <translation>Оркестрова арфа</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
@@ -325,42 +325,42 @@
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
         <source>String Ensemble 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Струнний ансамбль 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="405"/>
         <source>String Ensemble 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Струнний ансамбль 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
         <source>SynthStrings 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезаторні струнні 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>SynthStrings 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезаторні струнні 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
         <source>Choir Aahs</source>
-        <translation type="unfinished"></translation>
+        <translation>Хоровий спів</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Voice Oohs</source>
-        <translation type="unfinished"></translation>
+        <translation>Вигук о</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Synth Voice</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезований голос</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Orchestra Hit</source>
-        <translation type="unfinished"></translation>
+        <translation>Оркестровий акцент</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
@@ -380,47 +380,47 @@
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
         <source>Muted Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Засурдинена труба</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
         <source>French Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Французький ріжок</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
         <source>Brass Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Духові інструменти</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="418"/>
         <source>SynthBrass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезаторні мідні 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="419"/>
         <source>SynthBrass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезаторні мідні 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
         <source>Soprano Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Сопрановий саксофон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="421"/>
         <source>Alto Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Альтовий саксофон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="422"/>
         <source>Tenor Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Теноровий саксофон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Baritone Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Баритоновий саксофон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
@@ -465,17 +465,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Blown Bottle</source>
-        <translation type="unfinished"></translation>
+        <translation>Дмухання в пляшку</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
         <source>Shakuhachi</source>
-        <translation type="unfinished"></translation>
+        <translation>Шакухачі</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
         <source>Whistle</source>
-        <translation type="unfinished"></translation>
+        <translation>Свист</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
@@ -485,122 +485,122 @@
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
         <source>Lead 1 (square)</source>
-        <translation type="unfinished"></translation>
+        <translation>Соло-гітара 1 (прямокутна хвиля)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="437"/>
         <source>Lead 2 (sawtooth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Соло-гітара 2 (пилкоподібна хвиля)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Lead 3 (calliope)</source>
-        <translation type="unfinished"></translation>
+        <translation>Calliope-гітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
         <source>Lead 4 (chiff)</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiff-гітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="440"/>
         <source>Lead 5 (charang)</source>
-        <translation type="unfinished"></translation>
+        <translation>Charang-гітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="441"/>
         <source>Lead 6 (voice)</source>
-        <translation type="unfinished"></translation>
+        <translation>Соло-гітара (голосовий тембр)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="442"/>
         <source>Lead 7 (fifths)</source>
-        <translation type="unfinished"></translation>
+        <translation>Соло-гітара 7</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="443"/>
         <source>Lead 8 (bass + lead)</source>
-        <translation type="unfinished"></translation>
+        <translation>Соло- і бас-гітара 8</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="444"/>
         <source>Pad 1 (new age)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 1 (нью ейдж)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="445"/>
         <source>Pad 2 (warm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 2 (теплий)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="446"/>
         <source>Pad 3 (polysynth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 3 (полісинтезатор)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="447"/>
         <source>Pad 4 (choir)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 4 (хоровий)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="448"/>
         <source>Pad 5 (bowed)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 5 (смичковий)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="449"/>
         <source>Pad 6 (metallic)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 6 (метал)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="450"/>
         <source>Pad 7 (halo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 7 (ореол)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="451"/>
         <source>Pad 8 (sweep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезатор 8 (гойдання)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>FX 1 (rain)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 1 (дощ)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>FX 2 (soundtrack)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 2 (саундтрек)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
         <source>FX 3 (crystal)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 3 (кришталь)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="455"/>
         <source>FX 4 (atmosphere)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 4 (атмосфера)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="456"/>
         <source>FX 5 (brightness)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 5 (яскравість)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="457"/>
         <source>FX 6 (goblins)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 6 (гобліни)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="458"/>
         <source>FX 7 (echoes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 7 (відлуння)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
         <source>FX 8 (sci-fi)</source>
-        <translation type="unfinished"></translation>
+        <translation>Спецефект 8 (наукова фантастика)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
@@ -630,27 +630,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
         <source>Bag pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Волинка</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="466"/>
         <source>Fiddle</source>
-        <translation type="unfinished"></translation>
+        <translation>Вулична скрипка</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>Shanai</source>
-        <translation type="unfinished"></translation>
+        <translation>Санаї</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
         <source>Tinkle Bell</source>
-        <translation type="unfinished"></translation>
+        <translation>Дзвіночок</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation type="unfinished"></translation>
+        <translation>Аґоґо</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -660,67 +660,67 @@
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
         <source>Woodblock</source>
-        <translation type="unfinished"></translation>
+        <translation>Коробочка (гольцтон)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="472"/>
         <source>Taiko Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>Барабан Таїко</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="473"/>
         <source>Melodic Tom</source>
-        <translation type="unfinished"></translation>
+        <translation>Мелодійний томтом</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="474"/>
         <source>Synth Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>Синтезаторний барабан</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
         <source>Reverse Cymbal</source>
-        <translation type="unfinished"></translation>
+        <translation>Реверсивна тарілка (запис у зворотньому напрямку)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="476"/>
         <source>Guitar Fret Noise</source>
-        <translation type="unfinished"></translation>
+        <translation>Шум гітарних ладів</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="477"/>
         <source>Breath Noise</source>
-        <translation type="unfinished"></translation>
+        <translation>Подих</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="478"/>
         <source>Seashore</source>
-        <translation type="unfinished"></translation>
+        <translation>Морський берег</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="479"/>
         <source>Bird Tweet</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвірінькання</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="480"/>
         <source>Telephone Ring</source>
-        <translation type="unfinished"></translation>
+        <translation>Телефонний дзвінок</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="481"/>
         <source>Helicopter</source>
-        <translation type="unfinished"></translation>
+        <translation>Гвинтокрил</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="482"/>
         <source>Applause</source>
-        <translation type="unfinished"></translation>
+        <translation>Аплодисменти</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="483"/>
         <source>Gunshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Постріл</translation>
     </message>
 </context>
 <context>
@@ -728,7 +728,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметри клавіатури піаніно</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
@@ -738,12 +738,12 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштуйте вашу клавіатуру піаніно</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
         <source>Right Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Правильні ноти</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
@@ -772,34 +772,34 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилкові ноти</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Діапазон нот для клавіатури</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Найнижча нота:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер ноти від 0 до 127</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="239"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="275"/>
         <source>000; </source>
-        <translation type="unfinished"></translation>
+        <translation>000; </translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Найвища нота:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -829,7 +829,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation type="unfinished"></translation>
+        <translation>Оце тобі: на вашій клавіатурі &lt;b&gt;0 нот&lt;/b&gt;!</translation>
     </message>
 </context>
 <context>
@@ -837,7 +837,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="37"/>
         <source>Continuous Looping</source>
-        <translation type="unfinished"></translation>
+        <translation>Неперервне повторення</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
@@ -847,7 +847,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
         <source>Repeat Bar is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторення такту вимкнено</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
@@ -857,12 +857,12 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторити такти:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
         <source>End bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Кінцевий такт</translation>
     </message>
 </context>
 <context>
@@ -875,32 +875,32 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation type="unfinished"></translation>
+        <translation>Введення і виведення MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="48"/>
         <source>Select the MIDI devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть пристрої MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="81"/>
         <source>Midi Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій введення MIDI:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="94"/>
         <source>Midi Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій виведення MIDI:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
         <source>FluidSynth</source>
-        <translation type="unfinished"></translation>
+        <translation>FluidSynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
         <source>Sound Fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Звукові шрифти</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
@@ -920,7 +920,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
         <source>Audio Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Звуковий пристрій:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="210"/>
@@ -930,7 +930,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
         <source>Audio Driver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Звуковий драйвер:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="236"/>
@@ -940,12 +940,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
         <source>Buffer Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір буфера</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Buffer counts</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість буферів</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
@@ -960,17 +960,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
         <source>Latency Fix</source>
-        <translation type="unfinished"></translation>
+        <translation>Виправлення затримки</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="307"/>
         <source>Latency</source>
-        <translation type="unfinished"></translation>
+        <translation>Затримка</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="320"/>
         <source>0 (msec)</source>
-        <translation type="unfinished"></translation>
+        <translation>0 (мс)</translation>
     </message>
 </context>
 <context>
@@ -978,7 +978,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="59"/>
         <source>None (PC Keyboard)</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає (клавіатура ПК)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
@@ -996,7 +996,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
         <source>%1 mSec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 мс</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
@@ -1011,17 +1011,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="218"/>
         <source>Open SoundFont2 File for fluid synth</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити файл SoundFont2 для fluidsynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="219"/>
         <source>SoundFont2 Files (*.sf2)</source>
-        <translation type="unfinished"></translation>
+        <translation>файли SoundFont2 (*.sf2)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
         <source>Midi Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
@@ -1031,7 +1031,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
         <source>Midi Input Device: </source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій введення MIDI: </translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
@@ -1051,7 +1051,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
         <source>Midi Output Device: </source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій виведення MIDI: </translation>
     </message>
 </context>
 <context>
@@ -1069,7 +1069,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="40"/>
         <source>Timing Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Позначки часу</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="47"/>
@@ -1079,7 +1079,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="80"/>
         <source>Show Note Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати назви нот</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
@@ -1099,12 +1099,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
         <source>Video Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметри відео</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="152"/>
         <source>Video optimisation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Оптимізація відео:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="39"/>
@@ -1134,12 +1134,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Середній</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає</translation>
     </message>
 </context>
 <context>
@@ -1152,22 +1152,22 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="39"/>
         <source>Book:</source>
-        <translation type="unfinished"></translation>
+        <translation>Книга:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="65"/>
         <source>Song:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пісня:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="107"/>
         <source>Skill</source>
-        <translation type="unfinished"></translation>
+        <translation>Майстерність</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="113"/>
         <source>Listen</source>
-        <translation type="unfinished"></translation>
+        <translation>Прослухати</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="134"/>
@@ -1177,22 +1177,22 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="150"/>
         <source>Hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Руки</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Right</source>
-        <translation>Праворуч</translation>
+        <translation>Права</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="165"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>Обидві</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="172"/>
         <source>Left</source>
-        <translation>Ліворуч</translation>
+        <translation>Ліва</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="187"/>
@@ -1207,7 +1207,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="228"/>
         <source>Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Партії</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="269"/>
@@ -1242,7 +1242,7 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="58"/>
         <source>Melody</source>
-        <translation type="unfinished"></translation>
+        <translation>Мелодія</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
@@ -1277,7 +1277,7 @@
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="39"/>
         <source>Song Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Подробиці щодо пісні</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
@@ -1356,7 +1356,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Початковий такт:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
@@ -1376,7 +1376,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
         <source>Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>Gb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="90"/>
@@ -1409,7 +1409,7 @@
         <location filename="../src/GuiTopBar.cpp" line="95"/>
         <location filename="../src/GuiTopBar.cpp" line="108"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
@@ -1420,7 +1420,7 @@
         <location filename="../src/GuiTopBar.cpp" line="97"/>
         <location filename="../src/GuiTopBar.cpp" line="110"/>
         <source>D </source>
-        <translation type="unfinished"></translation>
+        <translation>D </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="98"/>
@@ -1431,19 +1431,19 @@
         <location filename="../src/GuiTopBar.cpp" line="99"/>
         <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>E </source>
-        <translation type="unfinished"></translation>
+        <translation>E </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>B </source>
-        <translation type="unfinished"></translation>
+        <translation>B </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="101"/>
         <location filename="../src/GuiTopBar.cpp" line="114"/>
         <source>F#</source>
-        <translation>f#</translation>
+        <translation>F#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
@@ -1463,22 +1463,22 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
         <source>G#</source>
-        <translation>g#</translation>
+        <translation>G#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="116"/>
         <source>C#</source>
-        <translation>c#</translation>
+        <translation>C#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="117"/>
         <source>D#</source>
-        <translation>d#</translation>
+        <translation>D#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
         <source>Playing music from the beginning</source>
-        <translation type="unfinished"></translation>
+        <translation>Відтворюємо музику від початку</translation>
     </message>
 </context>
 <context>
@@ -1487,27 +1487,27 @@
         <location filename="../src/MidiFile.cpp" line="92"/>
         <location filename="../src/MidiFile.cpp" line="99"/>
         <source>Midi File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка у файлі MIDI</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося відкрити «</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл MIDI «</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>&quot; is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>» пошкоджено</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
         <source>OpenGL support</source>
-        <translation type="unfinished"></translation>
+        <translation>Підтримка OpenGL</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="60"/>
@@ -1520,22 +1520,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="268"/>
         <source>L</source>
-        <translation type="unfinished"></translation>
+        <translation>Л</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="270"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation>П</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="343"/>
         <source>Drums</source>
-        <translation type="unfinished"></translation>
+        <translation>Ударні</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомий</translation>
     </message>
 </context>
 <context>
@@ -1543,7 +1543,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="63"/>
         <source>Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="232"/>
@@ -1555,7 +1555,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="233"/>
         <source>Cannot Open&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося відкрити «</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="241"/>
@@ -1575,7 +1575,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
@@ -1585,17 +1585,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="346"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви&amp;йти</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="347"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Exit the application</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершити роботу програми</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
@@ -1605,7 +1605,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
         <source>Show the application&apos;s About box</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати панель з інформацією про програму</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
@@ -1626,7 +1626,7 @@
         <location filename="../src/QtWindow.cpp" line="360"/>
         <location filename="../src/QtWindow.cpp" line="386"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="361"/>
@@ -1641,7 +1641,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="365"/>
         <source>Ctrl+K</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+K</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
@@ -1666,17 +1666,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="375"/>
         <source>F12</source>
-        <translation type="unfinished"></translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="381"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Налаштування…</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
@@ -1686,12 +1686,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
         <source>Shift+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="395"/>
         <source>Alt+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
@@ -1706,12 +1706,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
         <source>&amp;Song</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Пісня</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="440"/>
         <source>Set&amp;up</source>
-        <translation type="unfinished"></translation>
+        <translation>На&amp;лаштування</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="445"/>
@@ -1722,17 +1722,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="452"/>
         <source>&amp;Website</source>
-        <translation type="unfinished"></translation>
+        <translation>С&amp;айт</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="475"/>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;%1 %2</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="524"/>
         <source>Piano Booster Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Довідка з Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="526"/>
@@ -1742,12 +1742,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
         <source>About Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Про Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
         <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PianoBooster — версія </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="606"/>
@@ -1762,58 +1762,58 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;th&gt;Дія&lt;/th&gt;&lt;th&gt;Клавіші&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="620"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрати праву руку</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрати обидві руки</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрати ліву руку</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
         <source>Play from start toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемикач відтворення від початку</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Play Pause Toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемикач відтворення/пауза</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="625"/>
         <location filename="../src/QtWindow.cpp" line="626"/>
         <source>Increase the speed by 5%</source>
-        <translation type="unfinished"></translation>
+        <translation>Збільшити швидкість на 5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="627"/>
         <source>Change to the Next Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейти до наступної пісні</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="628"/>
         <source>Change to the Previous Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейти до попередньої пісні</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="629"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейти до наступної книги</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="630"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейти до попередньої книги</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="632"/>
@@ -1823,7 +1823,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="653"/>
         <source>Open Midi File</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкриття файла MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="654"/>
@@ -1833,7 +1833,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає</translation>
     </message>
 </context>
 </TS>

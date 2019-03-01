@@ -1109,7 +1109,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="39"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>偏好設定</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="40"/>
@@ -1366,12 +1366,12 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
         <source>Major</source>
-        <translation type="unfinished"></translation>
+        <translation>大調</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="56"/>
         <source>Minor</source>
-        <translation type="unfinished"></translation>
+        <translation>小調</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
@@ -1570,7 +1570,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>開啟(&amp;O)...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
@@ -1651,7 +1651,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>全螢幕(&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
@@ -1696,12 +1696,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="424"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案(&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>檢視(&amp;V)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="437"/>
@@ -1717,7 +1717,7 @@
         <location filename="../src/QtWindow.cpp" line="445"/>
         <location filename="../src/QtWindow.cpp" line="448"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>說明(&amp;H)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="452"/>
