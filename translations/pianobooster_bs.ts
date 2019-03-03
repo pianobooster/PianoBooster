@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -804,12 +804,12 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation>Poništi</translation>
+        <translation>Поништи</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">Ništa</translation>
+        <translation>Ништа</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -905,17 +905,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
         <source>Add</source>
-        <translation>Dodaj</translation>
+        <translation>Додај</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation>Ukloni</translation>
+        <translation>Уклони</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation>Postavke</translation>
+        <translation>Поставке</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -985,7 +985,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation>Ništa</translation>
+        <translation>Ништа</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">Ništa</translation>
+        <translation>Ништа</translation>
     </message>
 </context>
 <context>
@@ -1192,7 +1192,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="159"/>
         <source>Right</source>
-        <translation>Desno</translation>
+        <translation>Десно</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="166"/>
@@ -1202,7 +1202,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Left</source>
-        <translation>Lijevo</translation>
+        <translation>Лијево</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="188"/>
@@ -1584,7 +1584,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>&amp;Open...</source>
-        <translation>&amp;Otvori...</translation>
+        <translation>&amp;Отвори...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="344"/>
@@ -1614,7 +1614,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation>O progr&amp;amu</translation>
+        <translation>О прогр&amp;аму</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1710,12 +1710,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="426"/>
         <source>&amp;File</source>
-        <translation>&amp;Datoteka</translation>
+        <translation>&amp;Датотека</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="436"/>
         <source>&amp;View</source>
-        <translation>Po&amp;gled</translation>
+        <translation>По&amp;глед</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="441"/>
@@ -1731,7 +1731,7 @@
         <location filename="../src/QtWindow.cpp" line="451"/>
         <location filename="../src/QtWindow.cpp" line="455"/>
         <source>&amp;Help</source>
-        <translation>P&amp;omoć</translation>
+        <translation>П&amp;омоћ</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="459"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">Ništa</translation>
+        <translation>Ништа</translation>
     </message>
 </context>
 </TS>
