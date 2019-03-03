@@ -28,6 +28,7 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+ unzip,
  fonts-dejavu-core,
 Recommends: fluidsynth | timidity
 Description: learn the piano just by playing a game
