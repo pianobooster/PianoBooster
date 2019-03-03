@@ -1110,12 +1110,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Мова</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мова:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
@@ -1762,37 +1762,37 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="584"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PianoBooster — версія %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="585"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Удоскональте&lt;/b&gt; ваші навички гри на &lt;b&gt;піаніно&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="586"/>
         <source>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="587"/>
         <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>© L. J. Barman, 2008-2009; усі права захищено.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="588"/>
         <source>Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>© Olivier Humbert, 2018; переклад французькою.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="589"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Цю програму випущено за умов дотримання Загальної громадської ліцензії GNU (GNU General Public License) версії 3, з текстом, який оприлюднено Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="593"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
-        <translation type="unfinished"></translation>
+        <translation>До коду цієї програми включено код RtMIDI: класи обробки вхідних-вихідних даних MIDI мовою C++&lt;br&gt;© Gary P. Scavone, 2003–2007</translation>
     </message>
     <message>
         <source>&lt;b&gt;PianoBooster - Version </source>
