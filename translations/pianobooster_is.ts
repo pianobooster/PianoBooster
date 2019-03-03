@@ -67,7 +67,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation>VILLA EKKERT HLJÓÐ: Til að laga þetta, farðu í valmyndina Uppsetning/Uppsetning Midi ...</translation>
+        <translation>VILLA EKKERT HLJÓÐ: Til að laga þetta, farðu í valmyndina Uppsetning/Uppsetning MIDI ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
@@ -200,27 +200,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
         <source>Tango Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangó-harmónikka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="380"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Órafmagnaður gítar (nælonstrengir)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="381"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation type="unfinished"></translation>
+        <translation>Órafmagnaður gítar (stálstrengir)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="382"/>
         <source>Electric Guitar (jazz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rafmagnsgítar (djass)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="383"/>
         <source>Electric Guitar (clean)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rafmagnsgítar (hreinn)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="384"/>
@@ -325,12 +325,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
         <source>String Ensemble 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Strengjasveit 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="405"/>
         <source>String Ensemble 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Strengjasveit 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
@@ -605,7 +605,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Sítar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="466"/>
         <source>Fiddle</source>
-        <translation type="unfinished"></translation>
+        <translation>Fíólín</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
@@ -690,7 +690,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="477"/>
         <source>Breath Noise</source>
-        <translation type="unfinished"></translation>
+        <translation>Andardráttur</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="478"/>
@@ -743,7 +743,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
         <source>Right Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Réttar nótur</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
@@ -875,22 +875,22 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation>Midi-inntak &amp;&amp; úttak</translation>
+        <translation>MIDI-inntak &amp;&amp; úttak</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="48"/>
         <source>Select the MIDI devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu MIDI-tækin</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="81"/>
         <source>Midi Input Device:</source>
-        <translation>Midi-inntakstæki:</translation>
+        <translation>MIDI-inntakstæki:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="94"/>
         <source>Midi Output Device:</source>
-        <translation>Midi-úttakstæki:</translation>
+        <translation>MIDI-úttakstæki:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
@@ -1001,7 +1001,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
         <source>Enter a value for the latency fix in milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Settu inn gildi fyrir lagfæringu á biðtíma í millísekúndum</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
@@ -1021,7 +1021,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
         <source>Midi Setup</source>
-        <translation>Uppsetning Midi</translation>
+        <translation>Uppsetning MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
@@ -1031,7 +1031,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
         <source>Midi Input Device: </source>
-        <translation>Midi-inntakstæki: </translation>
+        <translation>MIDI-inntakstæki: </translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
@@ -1046,12 +1046,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation type="unfinished"></translation>
+        <translation>(prófaðu lagfæringu á biðtíma um 150 msek)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
         <source>Midi Output Device: </source>
-        <translation>Midi-úttakstæki: </translation>
+        <translation>MIDI-úttakstæki: </translation>
     </message>
 </context>
 <context>
@@ -1069,7 +1069,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="40"/>
         <source>Timing Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Tímasetningarmerki</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="47"/>
@@ -1094,7 +1094,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="123"/>
         <source>Show Tutor Help Pages</source>
-        <translation type="unfinished"></translation>
+        <translation>Birta kennslusíður</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
@@ -1109,12 +1109,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Tungumál</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tungumál:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
@@ -1124,7 +1124,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Automatic (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjálfvirkt (mælt er með þessu)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
@@ -1139,7 +1139,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="46"/>
         <source>Full (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fullt (mælt er með þessu)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
@@ -1162,7 +1162,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="40"/>
         <source>Book:</source>
-        <translation>Bók:</translation>
+        <translation>Lagahefti:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="66"/>
@@ -1217,12 +1217,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="223"/>
         <source>Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Píanópartar</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="263"/>
         <source>Adjust the volume of the selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta hljóðstyrk valda partsins</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="229"/>
@@ -1462,17 +1462,17 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>G</source>
-        <translation type="unfinished">G</translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>A</source>
-        <translation type="unfinished">A</translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
@@ -1501,7 +1501,7 @@
         <location filename="../src/MidiFile.cpp" line="92"/>
         <location filename="../src/MidiFile.cpp" line="99"/>
         <source>Midi File Error</source>
-        <translation>Villa í Midi-skrá</translation>
+        <translation>Villa í MIDI-skrá</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
@@ -1511,7 +1511,7 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file&quot;</source>
-        <translation>Midi skráin &quot;</translation>
+        <translation>MIDI-skráin &quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
@@ -1526,7 +1526,7 @@
     <message>
         <location filename="../src/QtMain.cpp" line="36"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stýrikerfið styður ekki OpenGL sem er nauðsynlegt til að geta keyrt Booster.</translation>
     </message>
 </context>
 <context>
@@ -1564,7 +1564,7 @@
         <location filename="../src/QtWindow.cpp" line="242"/>
         <location filename="../src/QtWindow.cpp" line="266"/>
         <source>PianoBooster Midi File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Villa í PianoBooster MIDI-skrá</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="235"/>
@@ -1574,12 +1574,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="243"/>
         <source>Not a Midi File &quot;</source>
-        <translation>Þetta er ekki Midi-skrá &quot;</translation>
+        <translation>Þetta er ekki MIDI-skrá &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="267"/>
         <source>Not a valid MIDI file &quot;</source>
-        <translation>Þetta er ekki gild Midi-skrá &quot;</translation>
+        <translation>Þetta er ekki gild MIDI-skrá &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
@@ -1619,12 +1619,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
         <source>Show the application&apos;s About box</source>
-        <translation type="unfinished"></translation>
+        <translation>Birta upplýsingaglugga forritsins</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="357"/>
         <source>&amp;PC Shortcut Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Flýtilyklar á lyklaborði tölvunnar</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="358"/>
@@ -1634,7 +1634,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="361"/>
         <source>&amp;Midi Setup ...</source>
-        <translation>Uppsetning &amp;Midi ...</translation>
+        <translation>Uppsetning &amp;MIDI ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="362"/>
@@ -1746,7 +1746,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="531"/>
         <source>Piano Booster Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Aðstoð við notkun Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
@@ -1761,22 +1761,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="584"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PianoBooster - Útgáfa %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="585"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Bættu&lt;/b&gt; hæfileika þína til að spila á &lt;b&gt;píanó&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="586"/>
         <source>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="587"/>
         <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Höfundarréttur (c) L. J. Barman, 2008-2009; Öll réttindi áskilin.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="588"/>
@@ -1815,17 +1815,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="628"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu hægri hendina</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="629"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu báðar hendurnar</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="630"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu vinstri hendina</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="631"/>
@@ -1856,12 +1856,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="637"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Skipta yfir í næsta lagahefti</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="638"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Skipta yfir í fyrra lagahefti</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="640"/>
@@ -1871,12 +1871,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="661"/>
         <source>Open Midi File</source>
-        <translation>Opna Midi-skrá</translation>
+        <translation>Opna MIDI-skrá</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="662"/>
         <source>Midi Files</source>
-        <translation>Midi-skrár</translation>
+        <translation>MIDI-skrár</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
