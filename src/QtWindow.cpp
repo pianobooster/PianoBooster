@@ -585,7 +585,7 @@ void QtWindow::about()
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
             tr("<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>") +
             tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>") +
-            tr("Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).<br><br>") +
+            tr("Copyright(c) Olivier Humbert, 2018 for the French translation.<br><br>") +
             tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
