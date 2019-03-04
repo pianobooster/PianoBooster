@@ -2,12 +2,7 @@
 CONFIG += release
 #CONFIG += console
 
-TRANSLATIONS = ../translations/pianobooster_ja.ts \
-               ../translations/pianobooster_es.ts \
-               ../translations/pianobooster_gl.ts \
-               ../translations/pianobooster_fr.ts \
-               ../translations/pianobooster_blank.ts \
-               ../translations/pianobooster_af.ts \
+TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_am.ts \
                ../translations/pianobooster_ar.ts \
                ../translations/pianobooster_as.ts \

@@ -8,6 +8,7 @@ SET( TRANSLATIONS_FILES
      pianobooster_ja.ts
      pianobooster_nl.ts
      pianobooster_ru.ts
+     pianobooster_uk.ts
 )
 
 if(INSTALL_ALL_LANGS)
