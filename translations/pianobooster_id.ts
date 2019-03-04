@@ -290,7 +290,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation type="unfinished"></translation>
+        <translation>Biola Alto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
         <source>Contrabass</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrabas</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
@@ -385,7 +385,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
         <source>French Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Terompet Perancis</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
@@ -430,7 +430,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>English Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Terompet Inggris</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">Tidak ada</translation>
+        <translation>Tidak ada</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">Tidak ada</translation>
+        <translation>Tidak ada</translation>
     </message>
 </context>
 <context>
@@ -1379,7 +1379,7 @@
         <location filename="../src/GuiTopBar.cpp" line="55"/>
         <location filename="../src/GuiTopBar.cpp" line="202"/>
         <source>Major</source>
-        <translation type="unfinished"></translation>
+        <translation>Mayor</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="56"/>
@@ -1412,7 +1412,7 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation>B</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1549,7 +1549,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak dikenal</translation>
     </message>
 </context>
 <context>
@@ -1867,17 +1867,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="661"/>
         <source>Open Midi File</source>
-        <translation type="unfinished"></translation>
+        <translation>Buka Berkas MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="662"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Berkas MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">Tidak ada</translation>
+        <translation>Tidak ada</translation>
     </message>
 </context>
 </TS>
