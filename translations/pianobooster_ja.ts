@@ -90,123 +90,123 @@
     </message>
     <message>
         <source>Honky-tonk Piano</source>
-        <translation></translation>
+        <translation>ホンキートンクピアノ</translation>
     </message>
     <message>
         <source>Electric Piano 1</source>
-        <translation></translation>
+        <translation>エレクトリックピアノ1</translation>
     </message>
     <message>
         <source>Electric Piano 2</source>
-        <translation></translation>
+        <translation>エレクトリックピアノ2</translation>
     </message>
     <message>
         <source>Harpsichord</source>
-        <translation></translation>
+        <translation>ハープシコード</translation>
     </message>
     <message>
         <source>Clavi</source>
-        <translation></translation>
+        <translation>クラビネット</translation>
     </message>
     <message>
         <source>Celesta</source>
-        <translation></translation>
+        <translation>チェレスタ</translation>
     </message>
     <message>
         <source>Glockenspiel</source>
-        <translation></translation>
+        <translation>グロッケンシュピール</translation>
     </message>
     <message>
         <source>Music Box</source>
-        <translation></translation>
+        <translation>オルゴール</translation>
     </message>
     <message>
         <source>Vibraphone</source>
-        <translation></translation>
+        <translation>ビフラフォン</translation>
     </message>
     <message>
         <source>Marimba</source>
-        <translation></translation>
+        <translation>マリンバ</translation>
     </message>
     <message>
         <source>Xylophone</source>
-        <translation></translation>
+        <translation>シロフォン</translation>
     </message>
     <message>
         <source>Tubular Bells</source>
-        <translation></translation>
+        <translation>チューブラベル</translation>
     </message>
     <message>
         <source>Dulcimer</source>
-        <translation></translation>
+        <translation>(ハンマー)ダルシマー</translation>
     </message>
     <message>
         <source>Drawbar Organ</source>
-        <translation></translation>
+        <translation>ドローバーオルガン</translation>
     </message>
     <message>
         <source>Percussive Organ</source>
-        <translation></translation>
+        <translation>パーカッシブオルガン</translation>
     </message>
     <message>
         <source>Rock Organ</source>
-        <translation></translation>
+        <translation>ロックオルガン</translation>
     </message>
     <message>
         <source>Church Organ</source>
-        <translation></translation>
+        <translation>チャーチオルガン</translation>
     </message>
     <message>
         <source>Reed Organ</source>
-        <translation></translation>
+        <translation>リードオルガン</translation>
     </message>
     <message>
         <source>Accordion</source>
-        <translation></translation>
+        <translation>アコーディオン</translation>
     </message>
     <message>
         <source>Harmonica</source>
-        <translation></translation>
+        <translation>ハーモニカ</translation>
     </message>
     <message>
         <source>Tango Accordion</source>
-        <translation></translation>
+        <translation>タンゴアコーディオン</translation>
     </message>
     <message>
         <source>Acoustic Guitar (nylon)</source>
-        <translation></translation>
+        <translation>アコースティックギター(ナイロン弦)</translation>
     </message>
     <message>
         <source>Acoustic Guitar (steel)</source>
-        <translation></translation>
+        <translation>アコースティックギター(スチール弦)</translation>
     </message>
     <message>
         <source>Electric Guitar (jazz)</source>
-        <translation></translation>
+        <translation>ジャズギター</translation>
     </message>
     <message>
         <source>Electric Guitar (clean)</source>
-        <translation></translation>
+        <translation>クリーンギター</translation>
     </message>
     <message>
         <source>Electric Guitar (muted)</source>
-        <translation></translation>
+        <translation>ミュートギター</translation>
     </message>
     <message>
         <source>Overdriven Guitar</source>
-        <translation></translation>
+        <translation>オーバードライブギター</translation>
     </message>
     <message>
         <source>Distortion Guitar</source>
-        <translation></translation>
+        <translation>ディストーションギター</translation>
     </message>
     <message>
         <source>Guitar harmonics</source>
-        <translation></translation>
+        <translation>ギターハーモニクス</translation>
     </message>
     <message>
         <source>Acoustic Bass</source>
-        <translation></translation>
+        <translation>アコースティックベース</translation>
     </message>
     <message>
         <source>Electric Bass (finger)</source>
@@ -218,375 +218,375 @@
     </message>
     <message>
         <source>Fretless Bass</source>
-        <translation></translation>
+        <translation>フレットレスベース</translation>
     </message>
     <message>
         <source>Slap Bass 1</source>
-        <translation></translation>
+        <translation>スラップベース1</translation>
     </message>
     <message>
         <source>Slap Bass 2</source>
-        <translation></translation>
+        <translation>スラップベース2</translation>
     </message>
     <message>
         <source>Synth Bass 1</source>
-        <translation></translation>
+        <translation>シンセベース1</translation>
     </message>
     <message>
         <source>Synth Bass 2</source>
-        <translation></translation>
+        <translation>シンセベース2</translation>
     </message>
     <message>
         <source>Violin</source>
-        <translation></translation>
+        <translation>バイオリン</translation>
     </message>
     <message>
         <source>Viola</source>
-        <translation></translation>
+        <translation>ビオラ</translation>
     </message>
     <message>
         <source>Cello</source>
-        <translation></translation>
+        <translation>チェロ</translation>
     </message>
     <message>
         <source>Contrabass</source>
-        <translation></translation>
+        <translation>コントラバス</translation>
     </message>
     <message>
         <source>Tremolo Strings</source>
-        <translation></translation>
+        <translation>トレモロ</translation>
     </message>
     <message>
         <source>Pizzicato Strings</source>
-        <translation></translation>
+        <translation>ピチカート</translation>
     </message>
     <message>
         <source>Orchestral Harp</source>
-        <translation></translation>
+        <translation>ハープ</translation>
     </message>
     <message>
         <source>Timpani</source>
-        <translation></translation>
+        <translation>ティンパニ</translation>
     </message>
     <message>
         <source>String Ensemble 1</source>
-        <translation></translation>
+        <translation>ストリングアンサンブル1</translation>
     </message>
     <message>
         <source>String Ensemble 2</source>
-        <translation></translation>
+        <translation>ストリングアンサンブル2</translation>
     </message>
     <message>
         <source>SynthStrings 1</source>
-        <translation></translation>
+        <translation>シンセストリングス1</translation>
     </message>
     <message>
         <source>SynthStrings 2</source>
-        <translation></translation>
+        <translation>シンセストリングス2</translation>
     </message>
     <message>
         <source>Choir Aahs</source>
-        <translation></translation>
+        <translation>&quot;あー&quot;と言う声</translation>
     </message>
     <message>
         <source>Voice Oohs</source>
-        <translation></translation>
+        <translation>&quot;おー&quot;という声</translation>
     </message>
     <message>
         <source>Synth Voice</source>
-        <translation></translation>
+        <translation>シンセヴォイス</translation>
     </message>
     <message>
         <source>Orchestra Hit</source>
-        <translation></translation>
+        <translation>オーケストラピット</translation>
     </message>
     <message>
         <source>Trumpet</source>
-        <translation></translation>
+        <translation>トランペット</translation>
     </message>
     <message>
         <source>Trombone</source>
-        <translation></translation>
+        <translation>トロンボーン</translation>
     </message>
     <message>
         <source>Tuba</source>
-        <translation></translation>
+        <translation>チューバ</translation>
     </message>
     <message>
         <source>Muted Trumpet</source>
-        <translation></translation>
+        <translation>ミュートトランペット</translation>
     </message>
     <message>
         <source>French Horn</source>
-        <translation></translation>
+        <translation>フレンチホルン</translation>
     </message>
     <message>
         <source>Brass Section</source>
-        <translation></translation>
+        <translation>ブラスセクション</translation>
     </message>
     <message>
         <source>SynthBrass 1</source>
-        <translation></translation>
+        <translation>シンセブラス1</translation>
     </message>
     <message>
         <source>SynthBrass 2</source>
-        <translation></translation>
+        <translation>シンセブラス2</translation>
     </message>
     <message>
         <source>Soprano Sax</source>
-        <translation></translation>
+        <translation>ソプラノサキソフォン</translation>
     </message>
     <message>
         <source>Alto Sax</source>
-        <translation></translation>
+        <translation>アルトサキソフォン</translation>
     </message>
     <message>
         <source>Tenor Sax</source>
-        <translation></translation>
+        <translation>テノールサキソフォン</translation>
     </message>
     <message>
         <source>Baritone Sax</source>
-        <translation></translation>
+        <translation>バリトンサキソフォン</translation>
     </message>
     <message>
         <source>Oboe</source>
-        <translation></translation>
+        <translation>オーボエ</translation>
     </message>
     <message>
         <source>English Horn</source>
-        <translation></translation>
+        <translation>イングリッシュホルン</translation>
     </message>
     <message>
         <source>Bassoon</source>
-        <translation></translation>
+        <translation>バスーン</translation>
     </message>
     <message>
         <source>Clarinet</source>
-        <translation></translation>
+        <translation>クラリネット</translation>
     </message>
     <message>
         <source>Piccolo</source>
-        <translation></translation>
+        <translation>ピッコロ</translation>
     </message>
     <message>
         <source>Flute</source>
-        <translation></translation>
+        <translation>フルート</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation></translation>
+        <translation>リコーダー</translation>
     </message>
     <message>
         <source>Pan Flute</source>
-        <translation></translation>
+        <translation>パンパイプ</translation>
     </message>
     <message>
         <source>Blown Bottle</source>
-        <translation></translation>
+        <translation>茶瓶</translation>
     </message>
     <message>
         <source>Shakuhachi</source>
-        <translation></translation>
+        <translation>尺八</translation>
     </message>
     <message>
         <source>Whistle</source>
-        <translation></translation>
+        <translation>口笛</translation>
     </message>
     <message>
         <source>Ocarina</source>
-        <translation></translation>
+        <translation>オカリナ</translation>
     </message>
     <message>
         <source>Lead 1 (square)</source>
-        <translation></translation>
+        <translation>矩形波</translation>
     </message>
     <message>
         <source>Lead 2 (sawtooth)</source>
-        <translation></translation>
+        <translation>鋸波</translation>
     </message>
     <message>
         <source>Lead 3 (calliope)</source>
-        <translation></translation>
+        <translation>カリオペ</translation>
     </message>
     <message>
         <source>Lead 4 (chiff)</source>
-        <translation></translation>
+        <translation>チフ</translation>
     </message>
     <message>
         <source>Lead 5 (charang)</source>
-        <translation></translation>
+        <translation>チャラング</translation>
     </message>
     <message>
         <source>Lead 6 (voice)</source>
-        <translation></translation>
+        <translation>声</translation>
     </message>
     <message>
         <source>Lead 7 (fifths)</source>
-        <translation></translation>
+        <translation>フィフスズ</translation>
     </message>
     <message>
         <source>Lead 8 (bass + lead)</source>
-        <translation></translation>
+        <translation>バス+リード</translation>
     </message>
     <message>
         <source>Pad 1 (new age)</source>
-        <translation></translation>
+        <translation>ファンタジア</translation>
     </message>
     <message>
         <source>Pad 2 (warm)</source>
-        <translation></translation>
+        <translation>ウォーム</translation>
     </message>
     <message>
         <source>Pad 3 (polysynth)</source>
-        <translation></translation>
+        <translation>ポリシンセ</translation>
     </message>
     <message>
         <source>Pad 4 (choir)</source>
-        <translation></translation>
+        <translation>クワイア</translation>
     </message>
     <message>
         <source>Pad 5 (bowed)</source>
-        <translation></translation>
+        <translation>ボウ</translation>
     </message>
     <message>
         <source>Pad 6 (metallic)</source>
-        <translation></translation>
+        <translation>メタリック</translation>
     </message>
     <message>
         <source>Pad 7 (halo)</source>
-        <translation></translation>
+        <translation>ハロー</translation>
     </message>
     <message>
         <source>Pad 8 (sweep)</source>
-        <translation></translation>
+        <translation>スイープ</translation>
     </message>
     <message>
         <source>FX 1 (rain)</source>
-        <translation></translation>
+        <translation>雨</translation>
     </message>
     <message>
         <source>FX 2 (soundtrack)</source>
-        <translation></translation>
+        <translation>サウンドトラック</translation>
     </message>
     <message>
         <source>FX 3 (crystal)</source>
-        <translation></translation>
+        <translation>クリスタル</translation>
     </message>
     <message>
         <source>FX 4 (atmosphere)</source>
-        <translation></translation>
+        <translation>アトモスフィア</translation>
     </message>
     <message>
         <source>FX 5 (brightness)</source>
-        <translation></translation>
+        <translation>ブライトネス</translation>
     </message>
     <message>
         <source>FX 6 (goblins)</source>
-        <translation></translation>
+        <translation>ゴブリン</translation>
     </message>
     <message>
         <source>FX 7 (echoes)</source>
-        <translation></translation>
+        <translation>エコー</translation>
     </message>
     <message>
         <source>FX 8 (sci-fi)</source>
-        <translation></translation>
+        <translation>サイファイ</translation>
     </message>
     <message>
         <source>Sitar</source>
-        <translation></translation>
+        <translation>シタール</translation>
     </message>
     <message>
         <source>Banjo</source>
-        <translation></translation>
+        <translation>バンジョー</translation>
     </message>
     <message>
         <source>Shamisen</source>
-        <translation></translation>
+        <translation>三味線</translation>
     </message>
     <message>
         <source>Koto</source>
-        <translation></translation>
+        <translation>箏</translation>
     </message>
     <message>
         <source>Kalimba</source>
-        <translation></translation>
+        <translation>カリンバ</translation>
     </message>
     <message>
         <source>Bag pipe</source>
-        <translation></translation>
+        <translation>バグパイプ</translation>
     </message>
     <message>
         <source>Fiddle</source>
-        <translation></translation>
+        <translation>フィドル</translation>
     </message>
     <message>
         <source>Shanai</source>
-        <translation></translation>
+        <translation>シャハナーイ</translation>
     </message>
     <message>
         <source>Tinkle Bell</source>
-        <translation></translation>
+        <translation>ティングルベル</translation>
     </message>
     <message>
         <source>Agogo</source>
-        <translation></translation>
+        <translation>アゴゴ</translation>
     </message>
     <message>
         <source>Steel Drums</source>
-        <translation></translation>
+        <translation>スチールドラム</translation>
     </message>
     <message>
         <source>Woodblock</source>
-        <translation></translation>
+        <translation>ウッドブロック</translation>
     </message>
     <message>
         <source>Taiko Drum</source>
-        <translation></translation>
+        <translation>太鼓</translation>
     </message>
     <message>
         <source>Melodic Tom</source>
-        <translation></translation>
+        <translation>メロディックタム</translation>
     </message>
     <message>
         <source>Synth Drum</source>
-        <translation></translation>
+        <translation>シンセドラム</translation>
     </message>
     <message>
         <source>Reverse Cymbal</source>
-        <translation></translation>
+        <translation>逆シンバル</translation>
     </message>
     <message>
         <source>Guitar Fret Noise</source>
-        <translation></translation>
+        <translation>ギターフレットノイズ</translation>
     </message>
     <message>
         <source>Breath Noise</source>
-        <translation></translation>
+        <translation>ブレスノイズ</translation>
     </message>
     <message>
         <source>Seashore</source>
-        <translation></translation>
+        <translation>海岸</translation>
     </message>
     <message>
         <source>Bird Tweet</source>
-        <translation></translation>
+        <translation>鳥のさえずり</translation>
     </message>
     <message>
         <source>Telephone Ring</source>
-        <translation></translation>
+        <translation>電話の着信音</translation>
     </message>
     <message>
         <source>Helicopter</source>
-        <translation></translation>
+        <translation>ヘリコプター</translation>
     </message>
     <message>
         <source>Applause</source>
-        <translation></translation>
+        <translation>拍手</translation>
     </message>
     <message>
         <source>Gunshot</source>
-        <translation></translation>
+        <translation>銃声</translation>
     </message>
 </context>
 <context>
@@ -696,7 +696,7 @@
     </message>
     <message>
         <source>End bar</source>
-        <translation>小節最後尾</translation>
+        <translation>終了小節</translation>
     </message>
 </context>
 <context>
@@ -969,7 +969,7 @@
     </message>
     <message>
         <source>Right</source>
-        <translation>右手</translation>
+        <translation>右</translation>
     </message>
     <message>
         <source>Both</source>
@@ -977,7 +977,7 @@
     </message>
     <message>
         <source>Left</source>
-        <translation>左手</translation>
+        <translation>左</translation>
     </message>
     <message>
         <source>Adjust the volume of your piano</source>
@@ -1115,11 +1115,11 @@
     </message>
     <message>
         <source>Major</source>
-        <translation>メジャー</translation>
+        <translation>長調</translation>
     </message>
     <message>
         <source>Minor</source>
-        <translation>マイナー</translation>
+        <translation>短調</translation>
     </message>
     <message>
         <source>Playing music from the beginning</source>
