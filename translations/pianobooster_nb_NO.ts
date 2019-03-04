@@ -6,37 +6,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="107"/>
         <source>C</source>
-        <translation></translation>
+        <translation type="unfinished">C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="108"/>
         <source>D</source>
-        <translation></translation>
+        <translation type="unfinished">D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="109"/>
         <source>E</source>
-        <translation></translation>
+        <translation type="unfinished">E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="110"/>
         <source>F</source>
-        <translation></translation>
+        <translation type="unfinished">F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="111"/>
         <source>G</source>
-        <translation></translation>
+        <translation type="unfinished">G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="112"/>
         <source>A</source>
-        <translation></translation>
+        <translation type="unfinished">A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="113"/>
         <source>B</source>
-        <translation></translation>
+        <translation type="unfinished">B</translation>
     </message>
 </context>
 <context>
