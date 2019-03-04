@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">ไม่มี</translation>
+        <translation>ไม่มี</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -895,7 +895,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
         <source>FluidSynth</source>
-        <translation>FluidSynth</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">ไม่มี</translation>
+        <translation>ไม่มี</translation>
     </message>
 </context>
 <context>
@@ -1412,7 +1412,7 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation>B</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1680,7 +1680,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
         <source>F12</source>
-        <translation type="unfinished">F12</translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">ไม่มี</translation>
+        <translation>ไม่มี</translation>
     </message>
 </context>
 </TS>
