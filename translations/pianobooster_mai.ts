@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">किछु नहि</translation>
+        <translation>किछु नहि</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">किछु नहि</translation>
+        <translation>किछु नहि</translation>
     </message>
 </context>
 <context>
@@ -1614,7 +1614,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation>क&apos; संबंधमे (&amp;A) </translation>
+        <translation>क&apos; संबंधमे (&amp;A)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1680,7 +1680,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
         <source>F12</source>
-        <translation type="unfinished">F12</translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">किछु नहि</translation>
+        <translation>किछु नहि</translation>
     </message>
 </context>
 </TS>
