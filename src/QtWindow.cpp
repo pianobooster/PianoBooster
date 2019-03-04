@@ -600,10 +600,12 @@ void QtWindow::about()
 
 QString QtWindow::displayShortCut(QString key, QString description)
 {
+    QString space = tr("space");
+
     QString str = QString("<tr>"
                 "<td>%1</td>"
                 "<td>%2</td>"
-                "</tr>").arg( description ).arg( m_settings->value(key).toString());
+                "</tr>").arg( description ).arg(tr(m_settings->value(key).toString().toUtf8().data()));
     return str;
 
 }
