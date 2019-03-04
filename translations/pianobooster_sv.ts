@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="387"/>
         <source>space</source>
-        <translation>Blanksteg</translation>
+        <translation>blanksteg</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
@@ -125,7 +125,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation>celest</translation>
+        <translation>Celest</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation>marimba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation>hackbräde</translation>
+        <translation>Hackbräde</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation>altfiol</translation>
+        <translation>Altfiol</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
@@ -365,7 +365,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Trumpet</source>
-        <translation>trumpet</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
@@ -375,7 +375,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation>tuba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Oboe</source>
-        <translation>oboe</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
         <source>Flute</source>
-        <translation>Tvärflöjt</translation>
+        <translation>Flöjt</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
@@ -470,7 +470,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
         <source>Shakuhachi</source>
-        <translation>shakuhachi</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
@@ -605,27 +605,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation>sitra</translation>
+        <translation>Sitra</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation>banjo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation>shamisen</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation>koto</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation>kalimba</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -650,7 +650,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation>agogo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -733,7 +733,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -870,7 +870,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="13"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
@@ -1059,7 +1059,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
 </context>
 <context>
@@ -1283,7 +1283,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
@@ -1412,7 +1412,7 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation>B</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1534,12 +1534,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="268"/>
         <source>L</source>
-        <translation>L</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="270"/>
         <source>R</source>
-        <translation>R</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="343"/>
@@ -1680,7 +1680,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
         <source>F12</source>
-        <translation type="unfinished">F12</translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
 </context>
 </TS>
