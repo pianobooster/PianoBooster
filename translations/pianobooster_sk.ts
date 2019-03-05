@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -804,7 +804,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation>Reset</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
