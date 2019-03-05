@@ -775,7 +775,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
