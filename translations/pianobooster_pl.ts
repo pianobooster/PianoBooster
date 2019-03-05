@@ -80,7 +80,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation>(brak)</translation>
+        <translation>(Brak)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation>Próba</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
