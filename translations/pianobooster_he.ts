@@ -1867,12 +1867,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="661"/>
         <source>Open Midi File</source>
-        <translation type="unfinished"></translation>
+        <translation>פתיחת קובץ Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="662"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>קובצי Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
