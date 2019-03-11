@@ -115,17 +115,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="362"/>
         <source>Harpsichord</source>
-        <translation type="unfinished"></translation>
+        <translation>Semball</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation>Klavikord</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation type="unfinished"></translation>
+        <translation>Selesta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation>Marimba</translation>
+        <translation>Marímba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -155,22 +155,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
         <source>Tubular Bells</source>
-        <translation type="unfinished"></translation>
+        <translation>Rörklukkur</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation type="unfinished"></translation>
+        <translation>Dulcimer</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
         <source>Drawbar Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Dragsveifaorgel (drawbar)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
         <source>Percussive Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Ásláttarorgel</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
@@ -225,17 +225,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="384"/>
         <source>Electric Guitar (muted)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rafmagnsgítar (daufur)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="385"/>
         <source>Overdriven Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Gítar á yfirsnúningi</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="386"/>
         <source>Distortion Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Bjagaður gítar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
@@ -265,22 +265,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="392"/>
         <source>Slap Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Slagbassi 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="393"/>
         <source>Slap Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Slagbassi 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="394"/>
         <source>Synth Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerfilbassi 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="395"/>
         <source>Synth Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerfilbassi 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="396"/>
@@ -315,12 +315,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="402"/>
         <source>Orchestral Harp</source>
-        <translation type="unfinished"></translation>
+        <translation>Hljómsveitarharpa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
         <source>Timpani</source>
-        <translation type="unfinished"></translation>
+        <translation>Pákur</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="404"/>
@@ -335,27 +335,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
         <source>SynthStrings 1</source>
-        <translation type="unfinished"></translation>
+        <translation>SynthStrings 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>SynthStrings 2</source>
-        <translation type="unfinished"></translation>
+        <translation>SynthStrings 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
         <source>Choir Aahs</source>
-        <translation type="unfinished"></translation>
+        <translation>Aah-kór</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Voice Oohs</source>
-        <translation type="unfinished"></translation>
+        <translation>Ooh-rödd</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Synth Voice</source>
-        <translation type="unfinished"></translation>
+        <translation>Hljóðgervilsrödd</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
@@ -370,7 +370,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation type="unfinished"></translation>
+        <translation>Básúna</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
@@ -380,7 +380,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
         <source>Muted Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Þaggaður trompet</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
@@ -390,17 +390,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
         <source>Brass Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Málmblásarasveit</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="418"/>
         <source>SynthBrass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>SynthBrass 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="419"/>
         <source>SynthBrass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>SynthBrass 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
@@ -435,7 +435,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
         <source>Bassoon</source>
-        <translation type="unfinished"></translation>
+        <translation>Fagott</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
@@ -445,7 +445,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
         <source>Piccolo</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikkolóflauta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
@@ -455,7 +455,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Upptaka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
@@ -465,22 +465,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Blown Bottle</source>
-        <translation type="unfinished"></translation>
+        <translation>Flöskublástur</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
         <source>Shakuhachi</source>
-        <translation type="unfinished"></translation>
+        <translation>Shakuhachi bambusflauta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
         <source>Whistle</source>
-        <translation type="unfinished"></translation>
+        <translation>Blístur</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Ocarina</source>
-        <translation type="unfinished"></translation>
+        <translation>Okkarína</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
@@ -615,7 +615,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation type="unfinished"></translation>
+        <translation>Shamisen strengjahljóðfæri</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="478"/>
         <source>Seashore</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjávarsíða</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="479"/>
@@ -814,17 +814,17 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu hljóð fyrir rétt og rangt þegar þú spilar.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Þú getur notað lyklaborð tölvunnar í stað MIDI-hljómborðs; &apos;X&apos; er miðju-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nótnasvið lyklaborðsins er &lt;b&gt;%1 áttundir&lt;/b&gt; og &lt;b&gt;%2 hálftónar&lt;/b&gt;; 60 er miðju-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
@@ -852,7 +852,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
@@ -991,7 +991,8 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Athugaðu: hljóðgervillinn Microsoft GS Wavetable Synth bætir við óþarfa töf!.
+</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
@@ -1026,7 +1027,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ef þú ert ekki með MIDI-hljómborð geturðu notað lyklaborð tölvunnar; &apos;X&apos; er miðju-C.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
@@ -1036,7 +1037,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekkert hljóðúttakstæki valið; veldu MIDI-úttakstæki</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
@@ -1079,7 +1080,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="80"/>
         <source>Show Note Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Birta nöfn á nótum</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
@@ -1089,7 +1090,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
         <source>Music Course</source>
-        <translation type="unfinished"></translation>
+        <translation>Tónlistarnámskeið</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="123"/>
@@ -1157,7 +1158,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="20"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="40"/>
@@ -1337,18 +1338,18 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
         <source>Start playing music from the start</source>
-        <translation type="unfinished"></translation>
+        <translation>Byrja að spila tónlist frá upphafi</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="78"/>
         <location filename="../src/GuiTopBar.cpp" line="174"/>
         <source>Start and stop playing music</source>
-        <translation type="unfinished"></translation>
+        <translation>Ræsa og stöðva afspilun</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
@@ -1557,7 +1558,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="63"/>
         <source>Piano Booster</source>
-        <translation>Piano Booster</translation>
+        <translation>Píanó Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="234"/>
@@ -1645,7 +1646,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
         <source>Setup the Midi input an output</source>
-        <translation type="unfinished"></translation>
+        <translation>Settu upp úttak fyrir MIDI-inntakið</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
@@ -1781,22 +1782,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="588"/>
         <source>Copyright(c) Olivier Humbert, 2018 for the French translation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Höfundarréttur(c) Olivier Humbert, 2018 fyrir frönsku þýðinguna.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="603"/>
         <source>space</source>
-        <translation type="unfinished">bil</translation>
+        <translation>bil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="589"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Þetta er frjáls hugbúnaður; þú mátt dreifa honum og/eða breyta samkvæmt skilmálum í almenna GNU GPL3 notkunarleyfinu eins og það er gefið út af Frjálsu hugbúnaðarstofnuninni.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="593"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
-        <translation type="unfinished"></translation>
+        <translation>Þetta forrit inniheldur einnig RtMIDI: rauntíma MIDI i/o C++ klasa&lt;br&gt;Höfundarréttur(c) 2003-2007 Gary P. Scavone</translation>
     </message>
     <message>
         <source>&lt;b&gt;PianoBooster - Version </source>
@@ -1810,7 +1811,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="618"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Flýtileiðir á lyklaborði&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Eftirfarandi flýtilyklasamsetningar hafa verið skilgreindar.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>
