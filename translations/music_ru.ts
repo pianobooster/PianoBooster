@@ -250,8 +250,8 @@ But remember to &lt;b&gt;turn them off&lt;/b&gt; when you get more skilled.
  все случайные ошибки в подписи ключа).
 Мелодия для правой руки с простой левой партией.&lt;/p&gt;
 
-&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Подсказка:&lt;i&gt;
-&lt;b&gt;Вы можете видеть &lt;b&gt;Уважать случайности&lt;/b&gt; в меню  Piano Booster Настройка -&gt; Предпочтения.
+&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Подсказка:&lt;/b&gt;&lt;i&gt;
+Вы можете видеть &lt;b&gt;Уважать случайности&lt;/b&gt; в меню  Piano Booster Настройка -&gt; Предпочтения.
 Но не забудьте &lt;b&gt;выключить их&lt;/b&gt;, когда вы станете более опытным.&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;/body&gt;
 </translation>
