@@ -28,8 +28,8 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- unzip,
  fonts-dejavu-core,
+ unzip,
 Recommends: fluidsynth | timidity
 Description: learn the piano just by playing a game
  Piano Booster is a new way to learn the piano just by playing a game.
