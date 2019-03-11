@@ -797,9 +797,9 @@ void QtWindow::refreshTranslate(){
     qApp->installTranslator(&translator);
 
     // set translator for music
-    if (!translator.load(QString("music_") + locale , localeDirectory))
-       if (!translator.load(QString("music_") + locale, QApplication::applicationDirPath()  + "/translations/"))
-           translator.load(QString("music_") + locale, QApplication::applicationDirPath());
+    if (!translatorMusic.load(QString("music_") + locale , localeDirectory))
+       if (!translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath()  + "/translations/"))
+           translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translatorMusic);
 
 
