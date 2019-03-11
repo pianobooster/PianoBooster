@@ -1287,23 +1287,23 @@
         <translation>Dialoogvenster</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
+        <location filename="../src/GuiSongDetailsDialog.ui" line="27"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="39"/>
         <source>Song Details</source>
         <translation>Liedeigenschappen</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
+        <location filename="../src/GuiSongDetailsDialog.ui" line="33"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
         <translation>MIDI Kanalen voor linker en rechter hand pianopartijen:</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.ui" line="41"/>
+        <location filename="../src/GuiSongDetailsDialog.ui" line="45"/>
         <source>Right Hand MIDI Channel:</source>
         <translation>Rechterhand MIDI Kanaal:</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.ui" line="64"/>
+        <location filename="../src/GuiSongDetailsDialog.ui" line="68"/>
         <source>Left Hand MIDI Channel:</source>
         <translation>Linkerhand MIDI Kanaal:</translation>
     </message>
@@ -1781,8 +1781,13 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="588"/>
-        <source>Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;</source>
+        <source>Copyright(c) Olivier Humbert, 2018 for the French translation.&lt;br&gt;&lt;br&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="603"/>
+        <source>space</source>
+        <translation type="unfinished">spatie</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="589"/>
@@ -1799,83 +1804,83 @@
         <translation type="vanished">&lt;b&gt;PianoBooster - Versie </translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="614"/>
+        <location filename="../src/QtWindow.cpp" line="616"/>
         <source>PC Keyboard Short Cuts</source>
         <translation>Computer toetsenbord sneltoetsen</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="616"/>
+        <location filename="../src/QtWindow.cpp" line="618"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation>&lt;h2&gt;&lt;center&gt;Sneltoetsen&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;De volgende computer sneltoetsen zijn gedefiniëerd.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="622"/>
+        <location filename="../src/QtWindow.cpp" line="624"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation>&lt;tr&gt;&lt;th&gt;Actie&lt;/th&gt;&lt;th&gt;Toets&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="628"/>
+        <location filename="../src/QtWindow.cpp" line="630"/>
         <source>Choose the right hand</source>
         <translation>Kies de rechterhand</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="629"/>
+        <location filename="../src/QtWindow.cpp" line="631"/>
         <source>Choose both hands</source>
         <translation>Kies beide handen</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="630"/>
+        <location filename="../src/QtWindow.cpp" line="632"/>
         <source>Choose the left Hand</source>
         <translation>Kies de linkerhand</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="631"/>
+        <location filename="../src/QtWindow.cpp" line="633"/>
         <source>Play from start toggle</source>
         <translation>Speel vanaf het begin knop</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="632"/>
+        <location filename="../src/QtWindow.cpp" line="634"/>
         <source>Play Pause Toggle</source>
         <translation>Speel Pauzeer Knop</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="633"/>
-        <location filename="../src/QtWindow.cpp" line="634"/>
+        <location filename="../src/QtWindow.cpp" line="635"/>
+        <location filename="../src/QtWindow.cpp" line="636"/>
         <source>Increase the speed by 5%</source>
         <translation>Verhoog de snelheid met 5%</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="635"/>
+        <location filename="../src/QtWindow.cpp" line="637"/>
         <source>Change to the Next Song</source>
         <translation>Ga naar het Volgende Lied</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="636"/>
+        <location filename="../src/QtWindow.cpp" line="638"/>
         <source>Change to the Previous Song</source>
         <translation>Ga naar het Vorige Lied</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="637"/>
+        <location filename="../src/QtWindow.cpp" line="639"/>
         <source>Change to the Next Book</source>
         <translation>Ga naar het Volgende Boek</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="638"/>
+        <location filename="../src/QtWindow.cpp" line="640"/>
         <source>Change to the Previous Book</source>
         <translation>Ga naar het Vorige Boek</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="640"/>
+        <location filename="../src/QtWindow.cpp" line="642"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation>&lt;tr&gt;&lt;td&gt;Neptoetsen&lt;/td&gt;&lt;td&gt;X is de centrale C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="661"/>
+        <location filename="../src/QtWindow.cpp" line="663"/>
         <source>Open Midi File</source>
         <translation>Open Midi Bestand</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="662"/>
+        <location filename="../src/QtWindow.cpp" line="664"/>
         <source>Midi Files</source>
         <translation>Midi Bestanden</translation>
     </message>

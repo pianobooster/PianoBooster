@@ -1507,16 +1507,20 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copyright(c) Olivier Humbert, 2018 for the French translation.&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>space</source>
+        <translation type="unfinished">スペース</translation>
     </message>
 </context>
 </TS>
