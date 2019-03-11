@@ -58,7 +58,7 @@ Try to remember where &lt;b&gt;Middle C&lt;/b&gt; is on the piano -- this is the
 та же самая нота &lt;b&gt;С в середине&lt;/b&gt; показана в &lt;b&gt;басовом ключе&lt;/b&gt;.
 Играйте, используя большой палец на левой руке.&lt;/p&gt;
 
-&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Подсказка:&lt;/b&gt; &lt;i&gt;Попробуйте вспомнить, где &lt;b&gt;C в середине&lt;/b&gt; находится на пианино - это самая &lt;b&gt;важная нота&lt;/b&gt;!&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Подсказка:&lt;/b&gt; &lt;i&gt;Попробуйте вспомнить, где &lt;b&gt;C в середине&lt;/b&gt; находится на пианино - это самая &lt;b&gt;важная нота&lt;/b&gt;!&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 
 &lt;/body&gt;
 </translation>
