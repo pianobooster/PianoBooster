@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">कुछ नहीं</translation>
+        <translation>कुछ नहीं</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">कुछ नहीं</translation>
+        <translation>कुछ नहीं</translation>
     </message>
 </context>
 <context>
@@ -1584,7 +1584,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>&amp;Open...</source>
-        <translation>खोलें... (&amp;O)</translation>
+        <translation>खोलें (&amp;O)...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="344"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">कुछ नहीं</translation>
+        <translation>कुछ नहीं</translation>
     </message>
 </context>
 </TS>

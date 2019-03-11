@@ -996,7 +996,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
         <source>%1 mSec</source>
-        <translation>%1 м.сек.</translation>
+        <translation>%1 мсек</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>

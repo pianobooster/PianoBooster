@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">ללא</translation>
+        <translation>ללא</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">ללא</translation>
+        <translation>ללא</translation>
     </message>
 </context>
 <context>
@@ -1423,7 +1423,7 @@
         <location filename="../src/GuiTopBar.cpp" line="95"/>
         <location filename="../src/GuiTopBar.cpp" line="108"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
@@ -1462,17 +1462,17 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>G</source>
-        <translation type="unfinished">G</translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>A</source>
-        <translation type="unfinished">A</translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
@@ -1867,17 +1867,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="661"/>
         <source>Open Midi File</source>
-        <translation type="unfinished"></translation>
+        <translation>פתיחת קובץ Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="662"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>קובצי Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">ללא</translation>
+        <translation>ללא</translation>
     </message>
 </context>
 </TS>

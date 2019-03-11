@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Draw.cpp" line="107"/>
         <source>C</source>
-        <translation type="unfinished">Do</translation>
+        <translation>Do</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="108"/>
@@ -21,17 +21,17 @@
     <message>
         <location filename="../src/Draw.cpp" line="110"/>
         <source>F</source>
-        <translation type="unfinished">Fa</translation>
+        <translation>Fa</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="111"/>
         <source>G</source>
-        <translation type="unfinished">Sol</translation>
+        <translation>Sol</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="112"/>
         <source>A</source>
-        <translation type="unfinished">La</translation>
+        <translation>La</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="113"/>
@@ -775,7 +775,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -1434,7 +1434,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
         <source>F </source>
-        <translation>Fa</translation>
+        <translation>Fa </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
@@ -1445,30 +1445,30 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
         <source>G </source>
-        <translation>Sol</translation>
+        <translation>Sol </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="97"/>
         <location filename="../src/GuiTopBar.cpp" line="110"/>
         <source>D </source>
-        <translation>Re</translation>
+        <translation>Re </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="98"/>
         <source>A </source>
-        <translation>La</translation>
+        <translation>La </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="99"/>
         <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>E </source>
-        <translation>Mi</translation>
+        <translation>Mi </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>B </source>
-        <translation>Si</translation>
+        <translation>Si </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="101"/>

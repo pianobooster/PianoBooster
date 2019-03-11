@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">Hini ebet</translation>
+        <translation>Hini ebet</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">Hini ebet</translation>
+        <translation>Hini ebet</translation>
     </message>
 </context>
 <context>
@@ -1358,7 +1358,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation>Alc&apos;hwez&#xa0;:</translation>
+        <translation>Alc&apos;hwez :</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">Hini ebet</translation>
+        <translation>Hini ebet</translation>
     </message>
 </context>
 </TS>

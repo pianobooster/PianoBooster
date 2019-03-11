@@ -733,7 +733,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -870,7 +870,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="13"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
@@ -1059,7 +1059,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
 </context>
 <context>
@@ -1283,7 +1283,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
@@ -1412,7 +1412,7 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation>b</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1680,7 +1680,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
         <source>F12</source>
-        <translation type="unfinished">F12</translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
 </context>
 </TS>

@@ -1445,11 +1445,11 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
         <source>F </source>
-        <translation>F (Fa)</translation>
+        <translation>F (Fa) </translation>
     </message>
     <message>
         <source>C </source>
-        <translation type="vanished">C (Do)</translation>
+        <translation>C (Do) </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
@@ -1460,30 +1460,30 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
         <source>G </source>
-        <translation>G (Sol)</translation>
+        <translation>G (Sol) </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="97"/>
         <location filename="../src/GuiTopBar.cpp" line="110"/>
         <source>D </source>
-        <translation>D (Re)</translation>
+        <translation>D (Re) </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="98"/>
         <source>A </source>
-        <translation>A (La)</translation>
+        <translation>A (La) </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="99"/>
         <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>E </source>
-        <translation>E (Mi)</translation>
+        <translation>E (Mi) </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>B </source>
-        <translation>B (Sí)</translation>
+        <translation>B (Sí) </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="101"/>

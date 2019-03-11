@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">无</translation>
+        <translation>无</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">无</translation>
+        <translation>无</translation>
     </message>
 </context>
 <context>
@@ -1412,7 +1412,7 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation>B</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1660,12 +1660,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="368"/>
         <source>Change the piano keyboard settings</source>
-        <translation type="unfinished"></translation>
+        <translation>改变钢琴键设置</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="371"/>
         <source>&amp;Fullscreen</source>
-        <translation>全螢幕(&amp;F)</translation>
+        <translation>全屏(&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="372"/>
@@ -1680,7 +1680,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
         <source>F12</source>
-        <translation type="unfinished">F12</translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
@@ -1695,7 +1695,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="387"/>
         <source>&amp;Song Details ...</source>
-        <translation>曲子详情(&amp;S)...</translation>
+        <translation>歌曲信息(&amp;S)...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="392"/>
@@ -1837,12 +1837,12 @@
         <location filename="../src/QtWindow.cpp" line="633"/>
         <location filename="../src/QtWindow.cpp" line="634"/>
         <source>Increase the speed by 5%</source>
-        <translation type="unfinished"></translation>
+        <translation>以百分之五的速度增长</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="635"/>
         <source>Change to the Next Song</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到下一首歌</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="636"/>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">无</translation>
+        <translation>无</translation>
     </message>
 </context>
 </TS>

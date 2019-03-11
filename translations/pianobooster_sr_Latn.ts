@@ -85,7 +85,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Klavir — koncertni</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="362"/>
         <source>Harpsichord</source>
-        <translation type="unfinished"></translation>
+        <translation>Čembalo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
@@ -125,7 +125,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation type="unfinished"></translation>
+        <translation>Čelesta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
         <source>Vibraphone</source>
-        <translation type="unfinished"></translation>
+        <translation>Vibrafon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
@@ -150,7 +150,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
         <source>Xylophone</source>
-        <translation type="unfinished"></translation>
+        <translation>Ksilofon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation type="unfinished"></translation>
+        <translation>Cimbal</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
         <source>Percussive Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaračke orgulje</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
@@ -185,17 +185,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
         <source>Reed Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Orgulje sa jezičkom</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="377"/>
         <source>Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Harmonika</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation type="unfinished"></translation>
+        <translation>Harmonika — usna</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
         <source>Acoustic Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas — Akustični</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
@@ -285,7 +285,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="396"/>
         <source>Violin</source>
-        <translation type="unfinished"></translation>
+        <translation>Violina</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
@@ -300,7 +300,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
         <source>Contrabass</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrabas</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
@@ -365,12 +365,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Truba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation type="unfinished"></translation>
+        <translation>Trombon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
@@ -435,12 +435,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
         <source>Bassoon</source>
-        <translation type="unfinished"></translation>
+        <translation>Fagot</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
         <source>Clarinet</source>
-        <translation type="unfinished"></translation>
+        <translation>Klarinet</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
@@ -605,17 +605,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitara</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation type="unfinished"></translation>
+        <translation>Bendžo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation type="unfinished"></translation>
+        <translation>Šamisen</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
@@ -655,7 +655,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
         <source>Steel Drums</source>
-        <translation type="unfinished"></translation>
+        <translation>Čelični bubnjevi</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
@@ -728,22 +728,22 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavke klavijature</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozorče</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Podesite Vašu klavijaturu</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
         <source>Right Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Note — desno</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
@@ -755,7 +755,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="163"/>
         <source>volume:</source>
-        <translation type="unfinished"></translation>
+        <translation>glasnoća:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="89"/>
@@ -772,34 +772,34 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Pogrešne note</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Notni opseg klavijature</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Najtiša nota:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation type="unfinished"></translation>
+        <translation>Notni broj od 0 - 127</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="239"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="275"/>
         <source>000; </source>
-        <translation type="unfinished"></translation>
+        <translation>000; </translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Najglasnija nota:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
@@ -870,37 +870,37 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="13"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozorče</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation type="unfinished"></translation>
+        <translation>Midi ulaz i izlaz</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="48"/>
         <source>Select the MIDI devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberite midi-uređaj</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="81"/>
         <source>Midi Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulazni midi-uređaj:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="94"/>
         <source>Midi Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izlazni midi-uređaj:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
         <source>FluidSynth</source>
-        <translation type="unfinished"></translation>
+        <translation>Fluid-sint</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
         <source>Sound Fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvukoteke</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
@@ -920,22 +920,22 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
         <source>Audio Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvučni uređaj:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="210"/>
         <source>Master Gain:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jačina (Master):</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
         <source>Audio Driver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvučni posrednik:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="236"/>
         <source>Sample Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Učestanost uzorkovanja:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
@@ -945,12 +945,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Buffer counts</source>
-        <translation type="unfinished"></translation>
+        <translation>Količina bafera</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
         <source>Reverb</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeka</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
@@ -960,17 +960,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
         <source>Latency Fix</source>
-        <translation type="unfinished"></translation>
+        <translation>Ispravka za kašnjenje</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="307"/>
         <source>Latency</source>
-        <translation type="unfinished"></translation>
+        <translation>Kašnjenje</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="320"/>
         <source>0 (msec)</source>
-        <translation type="unfinished"></translation>
+        <translation>0 (m.sek)</translation>
     </message>
 </context>
 <context>
@@ -978,7 +978,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="59"/>
         <source>None (PC Keyboard)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ništa (računarska tastatura)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
@@ -1001,7 +1001,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
         <source>Enter a value for the latency fix in milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Unesite vrednost ispravke za kašnjenje u milisekundama</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
@@ -1011,12 +1011,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="218"/>
         <source>Open SoundFont2 File for fluid synth</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvori zvukoteku (.sf2) za Fluid-sint</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="219"/>
         <source>SoundFont2 Files (*.sf2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvukoteke (*.sf2)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
@@ -1059,7 +1059,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozorče</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
@@ -1079,7 +1079,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="80"/>
         <source>Show Note Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži nazive nota</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
@@ -1172,7 +1172,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="108"/>
         <source>Skill</source>
-        <translation type="unfinished"></translation>
+        <translation>Umešnost</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="114"/>
@@ -1187,7 +1187,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="151"/>
         <source>Hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruke</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="159"/>
@@ -1207,7 +1207,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="188"/>
         <source>Adjust the volume of your piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Prilagodite glasnoću Vašeg klavira</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="211"/>
@@ -1217,17 +1217,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="223"/>
         <source>Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Deonice</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="263"/>
         <source>Adjust the volume of the selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Prilagodite glasnoću odabrane deonice</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="229"/>
         <source>Mute the currently selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Utišaj trenutno odabranu deonicu</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="121"/>
@@ -1278,12 +1278,12 @@
         <location filename="../src/GuiSongDetailsDialog.cpp" line="48"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="50"/>
         <source>No channel assigned</source>
-        <translation type="unfinished"></translation>
+        <translation>Nema pridruženih kanala</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozorče</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="23"/>
@@ -1294,17 +1294,17 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="29"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Midi-kanali za klavirske deonice za levu i desnu ruku:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="41"/>
         <source>Right Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Midi-kanal za desnu ruku:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="64"/>
         <source>Left Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Midi-kanal za levu ruku:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
@@ -1557,7 +1557,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="63"/>
         <source>Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavik klavira</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="234"/>
@@ -1589,27 +1589,27 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="344"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="345"/>
         <source>Open an existing file</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvori postojeću datoteku</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;izađi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="350"/>
         <source>Exit the application</source>
-        <translation type="unfinished"></translation>
+        <translation>Napustite program</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
@@ -1619,43 +1619,43 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
         <source>Show the application&apos;s About box</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži prozorče sa podacima o programu</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="357"/>
         <source>&amp;PC Shortcut Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Prečice računarske tastature</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="358"/>
         <source>The PC Keyboard shortcut keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Taseteri prečica na računarskoj tastaturi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="361"/>
         <source>&amp;Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Midi-postavke...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="362"/>
         <location filename="../src/QtWindow.cpp" line="388"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
         <source>Setup the Midi input an output</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavke midi ulaza i izlaza</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavke &amp;klavijature...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="367"/>
         <source>Ctrl+K</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+K</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="368"/>
@@ -1670,7 +1670,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="372"/>
         <source>F11</source>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="376"/>
@@ -1680,32 +1680,32 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
         <source>F12</source>
-        <translation type="unfinished"></translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Postavke...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="387"/>
         <source>&amp;Song Details ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Podaci o pe&amp;smi...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="392"/>
         <source>Shift+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="397"/>
         <source>Alt+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="426"/>
@@ -1720,12 +1720,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="441"/>
         <source>&amp;Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Pe&amp;sma</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="445"/>
         <source>Set&amp;up</source>
-        <translation type="unfinished"></translation>
+        <translation>Po&amp;stavka</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="451"/>
@@ -1736,7 +1736,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="459"/>
         <source>&amp;Website</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Veb-stranice</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="482"/>
@@ -1746,7 +1746,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="531"/>
         <source>Piano Booster Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoćnik nastavika klavira</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
@@ -1756,7 +1756,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="582"/>
         <source>About Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>O Nastaviku klavira</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="584"/>
@@ -1796,17 +1796,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>PC Keyboard Short Cuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Prečice računarske tastature</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="616"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Prečice računarske tastature&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Određene su ove prečice računarske tastature.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="622"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;th&gt;Radnja&lt;/th&gt;&lt;th&gt;Taster&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="628"/>
@@ -1862,12 +1862,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="640"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;td&gt;Patvorene klavirske dirke&lt;/td&gt;&lt;td&gt;Dž je nota »Do« prve oktave (C4)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="661"/>
         <source>Open Midi File</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvori midi-datoteku</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="662"/>

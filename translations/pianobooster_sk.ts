@@ -767,7 +767,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -804,12 +804,12 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation>Reset</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished">Žiaden</translation>
+        <translation>Žiaden</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished">Žiaden</translation>
+        <translation>Žiaden</translation>
     </message>
 </context>
 <context>
@@ -1877,7 +1877,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished">Žiaden</translation>
+        <translation>Žiaden</translation>
     </message>
 </context>
 </TS>
