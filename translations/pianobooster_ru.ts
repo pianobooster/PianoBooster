@@ -1782,12 +1782,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="588"/>
         <source>Copyright(c) Olivier Humbert, 2018 for the French translation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright(c) Olivier Humbert, 2018 для перевода на французский язык.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="603"/>
         <source>space</source>
-        <translation type="unfinished">пробел</translation>
+        <translation>пробел</translation>
     </message>
     <message>
         <source>Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;</source>
