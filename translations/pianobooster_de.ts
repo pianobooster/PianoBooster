@@ -1787,7 +1787,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="603"/>
         <source>space</source>
-        <translation type="unfinished">Leertaste</translation>
+        <translation>Leertaste</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="589"/>
