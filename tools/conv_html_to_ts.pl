@@ -3,12 +3,12 @@
 use strict;
 use HTML::Entities;
 
-my $folderHtml = "InfoPages";
-
-if (defined($ARGV[0])){
-    $folderHtml=$ARGV[0];
+if (!defined($ARGV[0])){
+    print("use $0 <folder>\n");
+    exit;
 }
 
+my $folderBooks=$ARGV[0];
 
 
 open (FILE, "> music_blank.ts");
@@ -19,17 +19,26 @@ print FILE "<?xml version=\"1.0\" encoding=\"utf-8\"?>
     <name>QtWindow</name>
 ";
 
-opendir DIR, $folderHtml or die $!;
-while(my $fname = readdir DIR) {
-    next unless ($fname=~/(\.html)$/);
-    print $fname."\n";
-    my $text = readFile($folderHtml."/".$fname);
-    print FILE "    <message>\n";
-    print FILE "       <source>$text</source>\n";
-    print FILE "        <translation type=\"unfinished\"></translation>\n";
-    print FILE "    </message>";
+
+opendir DIR_FOLDER, $folderBooks or die $!;
+while(my $folder = readdir DIR_FOLDER) {
+    next if (-f $folder or $folder eq ".." or $folder eq ".");
+    
+    my $folderHtml = $folderBooks."/".$folder."/InfoPages/";
+    
+    opendir DIR, $folderHtml or die $!;
+    while(my $fname = readdir DIR) {
+	next unless ($fname=~/(\.html)$/);
+        print $fname."\n";
+	my $text = readFile($folderHtml."/".$fname);
+        print FILE "    <message>\n";
+	print FILE "       <source>$text</source>\n";
+        print FILE "        <translation type=\"unfinished\"></translation>\n";
+        print FILE "    </message>\n";
+    }
+    closedir DIR;
 }
-closedir DIR;
+closedir DIR_FOLDER;
 
 
 print FILE "</context>\n";
