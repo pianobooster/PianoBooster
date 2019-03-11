@@ -15,7 +15,11 @@
   </property>
   <layout class="QVBoxLayout" name="_2">
    <item>
-    <widget class="QTextEdit" name="songInfoText"/>
+    <widget class="QTextEdit" name="songInfoText">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="groupBox_2">

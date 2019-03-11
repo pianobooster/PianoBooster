@@ -600,10 +600,12 @@ void QtWindow::about()
 
 QString QtWindow::displayShortCut(QString key, QString description)
 {
+    QString space = tr("space");
+
     QString str = QString("<tr>"
                 "<td>%1</td>"
                 "<td>%2</td>"
-                "</tr>").arg( description ).arg( m_settings->value(key).toString());
+                "</tr>").arg( description ).arg(tr(m_settings->value(key).toString().toUtf8().data()));
     return str;
 
 }
@@ -735,7 +737,8 @@ void QtWindow::loadTutorHtml(const QString & name)
         QTextStream out(&file);
         out.setCodec("UTF-8");
 
-        m_tutorWindow->setHtml(out.readAll());
+	QString text=out.readAll();
+        m_tutorWindow->setHtml(tr(text.toUtf8().data()));
         m_tutorWindow->setFixedHeight(120);
 
         m_tutorWindow->show();
@@ -760,6 +763,7 @@ void QtWindow::refreshTranslate(){
     QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
 
     qApp->removeTranslator(&translator);
+    qApp->removeTranslator(&translatorMusic);
     qApp->removeTranslator(&qtTranslator);
 
     // save original
@@ -791,6 +795,13 @@ void QtWindow::refreshTranslate(){
        if (!translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath()  + "/translations/"))
            translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translator);
+
+    // set translator for music
+    if (!translatorMusic.load(QString("music_") + locale , localeDirectory))
+       if (!translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath()  + "/translations/"))
+           translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
+    qApp->installTranslator(&translatorMusic);
+
 
     // set translator for default widget's text (for example: QMessageBox's buttons)
 #ifdef __WIN32

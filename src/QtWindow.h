@@ -187,6 +187,7 @@ private:
     QTextBrowser *m_tutorWindow;
 
     QTranslator translator;
+    QTranslator translatorMusic;
     QTranslator qtTranslator;
 
     QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
