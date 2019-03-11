@@ -8,6 +8,7 @@ SET( TRANSLATIONS_FILES
      pianobooster_ja.ts
      pianobooster_nl.ts
      pianobooster_ru.ts
+     music_ru.ts
 )
 
 if(INSTALL_ALL_LANGS)
@@ -15,6 +16,9 @@ file (GLOB TRANSLATIONS_FILES "*.ts")
 endif()
 
 get_filename_component(full_path_blank_ts ${CMAKE_CURRENT_SOURCE_DIR}/pianobooster_blank.ts ABSOLUTE)
+list(REMOVE_ITEM TRANSLATIONS_FILES ${full_path_blank_ts})
+
+get_filename_component(full_path_blank_ts ${CMAKE_CURRENT_SOURCE_DIR}/music_blank.ts ABSOLUTE)
 list(REMOVE_ITEM TRANSLATIONS_FILES ${full_path_blank_ts})
 
 FIND_PACKAGE(Qt5 REQUIRED COMPONENTS LinguistTools)
