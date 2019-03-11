@@ -1796,7 +1796,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="603"/>
         <source>space</source>
-        <translation type="unfinished">mellemrum</translation>
+        <translation>mellemrum</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="616"/>
