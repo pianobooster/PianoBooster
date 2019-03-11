@@ -763,6 +763,7 @@ void QtWindow::refreshTranslate(){
     QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
 
     qApp->removeTranslator(&translator);
+    qApp->removeTranslator(&translatorMusic);
     qApp->removeTranslator(&qtTranslator);
 
     // save original
@@ -794,6 +795,13 @@ void QtWindow::refreshTranslate(){
        if (!translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath()  + "/translations/"))
            translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translator);
+
+    // set translator for music
+    if (!translator.load(QString("music_") + locale , localeDirectory))
+       if (!translator.load(QString("music_") + locale, QApplication::applicationDirPath()  + "/translations/"))
+           translator.load(QString("music_") + locale, QApplication::applicationDirPath());
+    qApp->installTranslator(&translatorMusic);
+
 
     // set translator for default widget's text (for example: QMessageBox's buttons)
 #ifdef __WIN32
