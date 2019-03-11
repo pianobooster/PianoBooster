@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 
 use strict;
-use HTML::Entities;
 
 if (!defined($ARGV[0])){
     print("use $0 <folder>\n");
@@ -28,7 +27,7 @@ while(my $folder = readdir DIR_FOLDER) {
     
     opendir DIR, $folderHtml or die $!;
     while(my $fname = readdir DIR) {
-	next unless ($fname=~/(\.html)$/);
+	next unless ($fname=~/(en\.html)$/);
         print $fname."\n";
 	my $text = readFile($folderHtml."/".$fname);
         print FILE "    <message>\n";
@@ -56,5 +55,9 @@ sub readFile {
     $text.=$_ while(<FILE2>);
     close FILE2;
 
-    $text = encode_entities($text);
+    $text=~s/</&lt;/gm;
+    $text=~s/>/&gt;/gm;
+    $text=~s/"/&quot;/gm;
+    
+    return $text;
 }
