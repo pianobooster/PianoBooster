@@ -112,6 +112,14 @@ private slots:
         m_sidePanel->setVisible(m_sidePanelStateAct->isChecked());
     }
 
+    void onViewPianoKeyboard(){
+        if (m_viewPianoKeyboard->isChecked()){
+            m_settings->setValue("View/PianoKeyboard","on");
+        }else{
+            m_settings->setValue("View/PianoKeyboard","off");
+        }
+    }
+
     void onFullScreenStateAct () {
         if (m_fullScreenStateAct->isChecked())
             showFullScreen();
@@ -202,6 +210,7 @@ private:
     QAction *m_setupMidiAct;
     QAction *m_setupKeyboardAct;
     QAction *m_sidePanelStateAct;
+    QAction *m_viewPianoKeyboard;
     QAction *m_fullScreenStateAct;
     QAction *m_setupPreferencesAct;
     QAction *m_songDetailsAct;

@@ -253,6 +253,55 @@ void CScroll::refresh()
         compileSlot(m_scrollQueue->index(i));
 }
 
+bool CScroll::getKeyboardInfo(int *notes)
+{
+    int stoppedScrollIdx = -1;
+    for(int i=0; i<m_scrollQueue->length(); ++i) {
+        CSlotDisplayList &info = *m_scrollQueue->indexPtr(i);
+        if(m_show == false || info.m_displayListId == 0) continue;
+
+        CSlot* slot = &info;
+        for(int j=0; j<slot->length(); ++j) {
+            if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
+            if(slot->getSymbol(j).getColour() == Cfg::playedStoppedColour()) {
+                stoppedScrollIdx = i;
+                break;
+            }
+        }
+        if(stoppedScrollIdx > -1) break;
+    }
+    if(stoppedScrollIdx > -1) {
+        for(int i=0; i<stoppedScrollIdx; ++i) {
+            CSlotDisplayList &info = *m_scrollQueue->indexPtr(i);
+            if(m_show == false || info.m_displayListId == 0) continue;
+
+            CSlot* slot = &info;
+            for(int j=0; j<slot->length(); ++j) {
+                if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
+                slot->getSymbolPtr(j)->setColour(Cfg::playedGoodColour());
+            }
+        }
+    }
+
+    int *note = notes;
+    for(int i=0; i<m_scrollQueue->length(); ++i) {
+        CSlotDisplayList &info = *m_scrollQueue->indexPtr(i);
+        if(m_show == false || info.m_displayListId == 0) continue;
+
+        CSlot* slot = &info;
+        bool stopped = false;
+        for(int j=0; j<slot->length(); ++j) {
+            if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
+
+            if(slot->getSymbol(j).getColour() == Cfg::noteColour() ||
+               slot->getSymbol(j).getColour() == Cfg::playedStoppedColour())
+                *(note++) = slot->getSymbol(j).getNote();
+            if(slot->getSymbol(j).getColour() == Cfg::playedStoppedColour()) stopped = true;
+        }
+        if(note != notes) return stopped;
+    }
+    return false;
+}
 
 void CScroll::transpose(int transpose)
 {

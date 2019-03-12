@@ -78,6 +78,7 @@ public:
 
     void drawScrollingSymbols(bool show);
     void showScroll(bool show);
+    bool getKeyboardInfo(int *notes);
 
 private:
     class CSlotDisplayList : public CSlot

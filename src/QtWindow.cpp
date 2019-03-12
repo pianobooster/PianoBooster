@@ -379,6 +379,13 @@ void QtWindow::createActions()
     m_sidePanelStateAct->setChecked(true);
     connect(m_sidePanelStateAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
 
+    m_viewPianoKeyboard = new QAction(tr("&Show Piano Keyboard"), this);
+    m_viewPianoKeyboard->setCheckable(true);
+    m_viewPianoKeyboard->setChecked(false);
+    if (m_settings->value("View/PianoKeyboard").toString()=="on"){
+        m_viewPianoKeyboard->setChecked(true);
+    }
+    connect(m_viewPianoKeyboard, SIGNAL(triggered()), this, SLOT(onViewPianoKeyboard()));
 
     m_setupPreferencesAct = new QAction(tr("&Preferences ..."), this);
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
@@ -437,6 +444,7 @@ void QtWindow::createMenus()
     m_viewMenu->setToolTipsVisible(true);
     m_viewMenu->addAction(m_sidePanelStateAct);
     m_viewMenu->addAction(m_fullScreenStateAct);
+    m_viewMenu->addAction(m_viewPianoKeyboard);
 
     m_songMenu = menuBar()->addMenu(tr("&Song"));
     m_songMenu->setToolTipsVisible(true);

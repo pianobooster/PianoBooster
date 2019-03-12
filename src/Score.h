@@ -141,7 +141,7 @@ public:
 
     void drawScore();
     void drawScroll(bool refresh);
-
+    void drawPianoKeyboard();
 
 protected:
     CPiano* m_piano;
