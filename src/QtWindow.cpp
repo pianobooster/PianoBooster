@@ -379,7 +379,7 @@ void QtWindow::createActions()
     m_sidePanelStateAct->setChecked(true);
     connect(m_sidePanelStateAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
 
-    m_viewPianoKeyboard = new QAction(tr("&Show Piano Keyboard"), this);
+    m_viewPianoKeyboard = new QAction(tr("Show Piano &Keyboard"), this);
     m_viewPianoKeyboard->setCheckable(true);
     m_viewPianoKeyboard->setChecked(false);
     if (m_settings->value("View/PianoKeyboard").toString()=="on"){
