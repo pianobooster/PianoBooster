@@ -94,8 +94,133 @@ void CScore::drawScroll(bool refresh)
     else
         glCallList(m_stavesDisplayListId);
 
+    if (m_settings->value("View/PianoKeyboard").toString()=="on"){
+        drawPianoKeyboard();
+    }
     drawScrollingSymbols(true);
     m_piano->drawPianoInput();
+}
+
+void CScore::drawPianoKeyboard(){
+    const static int keysCount = 88;
+    struct PianoKeyboard {
+        int i, k;
+        float yStart;
+        float xSize;
+        float ySize;
+
+        float xPlaceSize;
+        float xKeySize;
+        char state[keysCount];
+        bool stopped;
+
+        PianoKeyboard() {
+            i = 0; k = 0;
+            yStart = 0.0f;
+            xSize = Cfg::staveEndX() - Cfg::staveStartX();
+            ySize = 30;
+
+            xPlaceSize = xSize / 52.0f;
+            xKeySize = xPlaceSize - xPlaceSize * 0.1f;
+            stopped = false;
+        }
+
+        void drawBlackKey(int i, int k) {
+            glPushMatrix();
+            float yBlackShift = ySize / 2.5;
+            float yBlackSize = ySize - yBlackShift;
+            glScalef(1, 1.4, 1);
+            glTranslatef(Cfg::staveStartX() + xPlaceSize * i - xPlaceSize / 3,
+                yStart + yBlackShift, 0.0);
+
+            float xKeySize = this->xKeySize / 1.5;
+
+            CDraw::drColour (CColour(0.0, 0.0, 0.0));
+            if(state[k]==1) CDraw::drColour(stopped ? Cfg::playedStoppedColour() : Cfg::noteColour());
+            if(state[k]==2) CDraw::drColour(Cfg::playedBadColour());
+            glBegin(GL_QUADS);
+            glVertex2f(0, yBlackSize);
+            glVertex2f(xKeySize, yBlackSize);
+            glVertex2f(xKeySize, 0);
+            glVertex2f(0, 0);
+            glEnd();
+
+            glPopMatrix();
+            state[k] = 0;
+        }
+
+        void drawWhiteKey() {
+            glPushMatrix();
+            glScalef(1, 1.4, 1);
+            glTranslatef(Cfg::staveStartX() + xPlaceSize * i++, yStart, 0.0);
+
+            CDraw::drColour (CColour(1.0, 1.0, 1.0));
+            if(state[k]==1) CDraw::drColour(stopped ? Cfg::playedStoppedColour() : Cfg::noteColour());
+            if(state[k]==2) CDraw::drColour(Cfg::playedBadColour());
+            glBegin(GL_QUADS);
+            glVertex2f(0, ySize);
+            glVertex2f(xKeySize, ySize);
+            glVertex2f(xKeySize, 0);
+            glVertex2f(0, 0);
+            glEnd();
+
+            glPopMatrix();
+            state[k++] = 0;
+        }
+
+        void drawOctave() {
+            drawWhiteKey();
+            int b1 = i, k1 = k++;
+            drawWhiteKey();
+            int b2 = i, k2 = k++;
+            drawWhiteKey();
+            drawWhiteKey();
+            int b3 = i, k3 = k++;
+            drawWhiteKey();
+            int b4 = i, k4 = k++;
+            drawWhiteKey();
+            int b5 = i, k5 = k++;
+            drawWhiteKey();
+            drawBlackKey(b1, k1);
+            drawBlackKey(b2, k2);
+            drawBlackKey(b3, k3);
+            drawBlackKey(b4, k4);
+            drawBlackKey(b5, k5);
+        }
+
+        void drawKeyboard() {
+            i = k = 0;
+            drawWhiteKey();
+            int b1 = i, k1 = k++;
+            drawWhiteKey();
+            drawBlackKey(b1, k1);
+            for(int i=0; i<7; ++i) drawOctave();
+            drawWhiteKey();
+        }
+    };
+    static PianoKeyboard pianoKeyboard;
+
+    CChord chord = m_piano->getBadChord();
+    for(int n=0; n<chord.length(); ++n) {
+        int pitch = chord.getNote(n).pitch();
+        int k = pitch - 21;
+        k = k < 0 ? 0 : (k >= keysCount ? (keysCount-1) : k);
+        pianoKeyboard.state[k] = 2;
+    }
+
+    for(size_t i=0; i<arraySize(m_scroll); ++i) {
+        int notes[64];
+        memset(notes, 0, sizeof(notes));
+        bool stopped = m_scroll[i]->getKeyboardInfo(notes);
+        for(int *note=notes; *note; ++note) {
+            pianoKeyboard.stopped = stopped;
+            int k = *note - 21;
+            k = k < 0 ? 0 : (k >= keysCount ? (keysCount-1) : k);
+            pianoKeyboard.state[k] = 1;
+        }
+    }
+
+    pianoKeyboard.drawKeyboard();
 }
 
 void CScore::drawScore()
