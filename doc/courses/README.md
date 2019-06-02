@@ -132,5 +132,5 @@ _Make sure you always keep using the correct finger for each note._
 ![score](BoosterMusic/AmazingGraceMid001.svg)
 
 [midi file](BoosterMusic/AmazingGraceMid.mid)
-All the music on this page is available [here](../music/BoosterMusicBooks.zip).
+All the music on this page is available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
 This free sheet music can be used for beginner piano lessons with *PianoBooster*.
