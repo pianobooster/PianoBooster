@@ -2,18 +2,22 @@
 Type=Application
 Name=Piano Booster
 GenericName=Piano Teacher
-GenericName[es]=Profesor de piano
-GenericName[fr]=Professeur de piano
-GenericName[gl]=Profesor de piano
-GenericName[ru]=Обучение пианино
 Comment=Learn the piano just by playing a game
-Comment[es]=Aprender piano mientras juega
-Comment[fr]=Apprendre le piano en jouant à un jeu
-Comment[gl]=Aprender piano mentres se xoga
-Comment[ru]=Изучайте пианино просто играя в игру
 Icon=pianobooster
 Exec=pianobooster %f
 Terminal=false
 MimeType=audio/x-karaoke;audio/x-midi;audio/midi;
 Categories=Music;Education;
 Keywords=audio;midi;music;piano;education;learning;playing;songs;
+
+
+# Translations
+Comment[gl]=Aprender piano mentres se xoga
+GenericName[gl]=Profesor de piano
+Name[ru]=Piano Booster
+Comment[ru]=Изучайте пианино просто играя в игру
+GenericName[ru]=Обучение пианино
+Comment[fr]=Apprendre le piano en jouant à un jeu
+GenericName[fr]=Professeur de piano
+Comment[es]=Aprender piano mientras juega
+GenericName[es]=Profesor de piano
