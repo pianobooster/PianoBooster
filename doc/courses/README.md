@@ -2,7 +2,7 @@
 
 These pieces of music have been created to work with *PianoBooster* and
 are free from copyright or have the creative commons copyright.
-All the music is available [here](PianoBoosterMusic.zip).
+All the music is originally available [here](PianoBoosterMusic.zip).
 
 *Please add to the music on this page  -- everyone can help.* For more information see this
 [this forum post](http://n2.nabble.com/Creating-music-for-PianoBooster-using-MMA-Everyone-can-help-td4167350.html#a4167350).
@@ -132,5 +132,5 @@ _Make sure you always keep using the correct finger for each note._
 ![score](BoosterMusic/AmazingGraceMid001.svg)
 
 [midi file](BoosterMusic/AmazingGraceMid.mid)
-All the music on this page is available [here](PianoBoosterMusic.zip).
+All the music on this page is available [here](../music/BoosterMusicBooks.zip).
 This free sheet music can be used for beginner piano lessons with *PianoBooster*.
