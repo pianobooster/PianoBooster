@@ -1522,5 +1522,9 @@
         <source>space</source>
         <translation type="unfinished">スペース</translation>
     </message>
+    <message>
+        <source>Show Piano &amp;Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
