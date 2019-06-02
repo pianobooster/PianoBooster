@@ -5,10 +5,15 @@ SET( TRANSLATIONS_FILES
      pianobooster_es.ts
      pianobooster_fr.ts
      pianobooster_gl.ts
+     pianobooster_is.ts
+     pianobooster_it.ts
      pianobooster_ja.ts
      pianobooster_nl.ts
+     pianobooster_pl.ts
      pianobooster_ru.ts
+     pianobooster_sv.ts
      pianobooster_uk.ts
+     pianobooster_zh.ts
      music_ru.ts
 )
 

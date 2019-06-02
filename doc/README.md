@@ -1,4 +1,4 @@
-![logo](logo/Logotype_horizontal.png)
+![logo](../logo/Logotype_horizontal.png)
 
 
 # Boost your Piano playing skills
