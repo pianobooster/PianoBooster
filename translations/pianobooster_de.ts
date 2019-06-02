@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.1">
 <context>
     <name>CDraw</name>
     <message>
@@ -1413,7 +1411,7 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1686,7 +1684,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
@@ -1790,11 +1788,6 @@
         <translation>Copyright(c) Olivier Humbert, 2018 für die französische Übersetzung. &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="611"/>
-        <source>space</source>
-        <translation>Leertaste</translation>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="597"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation>Dieses Programm wird unter den Bedingungen der GNU General Public License Version 3, wie sie von der Free Software Foundation veröffentlicht wurde, zur Verfügung gestellt.&lt;br&gt;&lt;br&gt;</translation>
@@ -1805,8 +1798,9 @@
         <translation>Dieses Programm enthält auch RtMIDI: Echtzeit MIDI i/o C++ Klassen&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</translation>
     </message>
     <message>
-        <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation type="vanished">&lt;b&gt;PianoBooster - Version </translation>
+        <location filename="../src/QtWindow.cpp" line="611"/>
+        <source>space</source>
+        <translation>Leertaste</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>

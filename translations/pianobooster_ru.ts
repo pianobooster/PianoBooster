@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>CDraw</name>
     <message>
@@ -1686,7 +1684,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать &amp;клавиатуру фортепиано</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
@@ -1790,15 +1788,6 @@
         <translation>Copyright(c) Olivier Humbert, 2018 для перевода на французский язык.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="611"/>
-        <source>space</source>
-        <translation>пробел</translation>
-    </message>
-    <message>
-        <source>Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;</source>
-        <translation type="vanished">Copyright(c) Olivier Humbert, 2018 для перевода на французский язык.&lt;br&gt;&lt;br&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="597"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation>Эта программа доступна на условиях Стандартной общественной лицензии GNU версии 3, опубликованной Фондом свободного программного обеспечения.&lt;br&gt;&lt;br&gt;</translation>
@@ -1809,8 +1798,9 @@
         <translation>Эта программа также содержит RtMIDI: классы C++ ввода/вывода MIDI в реальном времени&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</translation>
     </message>
     <message>
-        <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation type="vanished">&lt;b&gt;PianoBooster - Версия </translation>
+        <location filename="../src/QtWindow.cpp" line="611"/>
+        <source>space</source>
+        <translation>пробел</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>

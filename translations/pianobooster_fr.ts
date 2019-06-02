@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>CDraw</name>
     <message>
@@ -1056,13 +1054,6 @@
     </message>
 </context>
 <context>
-    <name>GuiPreferences</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Depuis</translation>
-    </message>
-</context>
-<context>
     <name>GuiPreferencesDialog</name>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
@@ -1693,7 +1684,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
@@ -1797,15 +1788,6 @@
         <translation>Copyright(c) Olivier Humbert, 2018 pour la traduction en français.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="611"/>
-        <source>space</source>
-        <translation>espace</translation>
-    </message>
-    <message>
-        <source>Copyright(c) Olivier Humbert, 2018 pour la traduction en français (for the French translation).&lt;br&gt;&lt;br&gt;</source>
-        <translation type="vanished">Copyright(c) Olivier Humbert, 2018 pour la traduction en français.&lt;br&gt;&lt;br&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="597"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation>Ce programme est disponible sous les termes de la Licence Publique Générale GNU version 3 telle que publiée par la Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
@@ -1816,8 +1798,9 @@
         <translation>Ce programme contient également RtMIDI : classes C++ entrée/sortie MIDI&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</translation>
     </message>
     <message>
-        <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation type="vanished">&lt;b&gt;PianoBooster - Version </translation>
+        <location filename="../src/QtWindow.cpp" line="611"/>
+        <source>space</source>
+        <translation>espace</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>

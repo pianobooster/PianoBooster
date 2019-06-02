@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
 <context>
     <name>CDraw</name>
     <message>
@@ -11,12 +9,12 @@
     <message>
         <location filename="../src/Draw.cpp" line="108"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="109"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="110"/>
@@ -36,7 +34,7 @@
     <message>
         <location filename="../src/Draw.cpp" line="113"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -59,14 +57,6 @@
 </context>
 <context>
     <name>CSettings</name>
-    <message>
-        <source>NO MIDI OUTPUT DEVICE: Use menu Setup/Midi Setup ...</source>
-        <translation type="vanished">SIN DISPOSITIVO MIDI: Use el menú Ajustes/Ajustes Midi ...</translation>
-    </message>
-    <message>
-        <source>NO MIDI FILE LOADED: Use menu File/Open ...</source>
-        <translation type="vanished">SIN ARCHIVO MIDI CARGADO: Use el menú Archivo/Abrir ...</translation>
-    </message>
     <message>
         <location filename="../src/Settings.cpp" line="387"/>
         <source>space</source>
@@ -108,7 +98,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
         <source>Honky-tonk Piano</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
@@ -133,7 +123,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -153,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -298,7 +288,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
@@ -383,7 +373,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -433,7 +423,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Oboe</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
@@ -488,7 +478,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Ocarina</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
@@ -613,27 +603,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -648,7 +638,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>Shanai</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
@@ -658,7 +648,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -775,7 +765,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -903,7 +893,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
         <source>FluidSynth</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
@@ -953,7 +943,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Buffer counts</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
@@ -978,7 +968,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="320"/>
         <source>0 (msec)</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1003,14 +993,9 @@
 </translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
-        <source>(Try a latency fix of 150msc)</source>
-        <translation>(Probar con una corrección de latencia de 150 mseg)</translation>
-    </message>
-    <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
         <source>%1 mSec</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
@@ -1058,8 +1043,9 @@
         <translation>El uso a través del Midi no es recomendable!</translation>
     </message>
     <message>
-        <source>Note: the Microsoft SW Synth introduces an unwanted delay!</source>
-        <translation type="vanished">Nota: Microsoft SW Synth produce un indeseado retraso!</translation>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
+        <source>(Try a latency fix of 150msc)</source>
+        <translation>(Probar con una corrección de latencia de 150 mseg)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
@@ -1122,12 +1108,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
@@ -1191,10 +1177,6 @@
         <location filename="../src/GuiSidePanel.ui" line="114"/>
         <source>Listen</source>
         <translation>Escuchar</translation>
-    </message>
-    <message>
-        <source>Follow you</source>
-        <translation type="vanished">Sigue</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
@@ -1680,55 +1662,6 @@
         <translation>Cambiar la configuración del teclado musical</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="382"/>
-        <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="592"/>
-        <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="593"/>
-        <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="594"/>
-        <source>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</source>
-        <translation>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="595"/>
-        <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="596"/>
-        <source>Copyright(c) Olivier Humbert, 2018 for the French translation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="611"/>
-        <source>space</source>
-        <translation>espacio</translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="597"/>
-        <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="601"/>
-        <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Show/Hide the Side Panel</source>
-        <translation type="vanished">&amp;Mostrar/Ocultar el Panel Lateral</translation>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="371"/>
         <source>&amp;Fullscreen</source>
         <translation>Pantalla Completa (&amp;F)</translation>
@@ -1747,6 +1680,11 @@
         <location filename="../src/QtWindow.cpp" line="377"/>
         <source>F12</source>
         <translation>F12</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="382"/>
+        <source>Show Piano &amp;Keyboard</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
@@ -1807,7 +1745,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="490"/>
         <source>&amp;%1 %2</source>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="539"/>
@@ -1825,8 +1763,44 @@
         <translation>Sobre Piano Booster</translation>
     </message>
     <message>
-        <source>&lt;b&gt;PianoBooster - Version </source>
-        <translation type="vanished">&lt;b&gt;PianoBooster - Versión </translation>
+        <location filename="../src/QtWindow.cpp" line="592"/>
+        <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="593"/>
+        <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="594"/>
+        <source>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</source>
+        <translation>&lt;a href=&quot;http://pianobooster.sourceforge.net/&quot; &gt;&lt;b&gt;http://pianobooster.sourceforge.net&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="595"/>
+        <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="596"/>
+        <source>Copyright(c) Olivier Humbert, 2018 for the French translation.&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="597"/>
+        <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="601"/>
+        <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="611"/>
+        <source>space</source>
+        <translation>espacio</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>
@@ -1908,10 +1882,6 @@
         <location filename="../src/QtWindow.cpp" line="672"/>
         <source>Midi Files</source>
         <translation>Archivos Midi</translation>
-    </message>
-    <message>
-        <source>Midi Files (*.mid *.MID *.midi *.kar *.KAR)</source>
-        <translation type="vanished">Archivos Midi (*.mid *.MID *.midi *.kar *.KAR)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
