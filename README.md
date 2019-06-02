@@ -60,8 +60,8 @@ LANGUAGES
 
 PianoBooster isn't translated in your language? Help us, and we will gladly ship
 new translations with it. Use our
-[Collaborative Translation Plateform](https://hosted.weblate.org/projects/piano-booster/translations/)
-(Weblate) to add your favorite languages.
+[Collaborative Translation Platform](https://www.transifex.com/Magic/pianobooster)
+(Transifex) to add your favorite languages.
 
 LICENSE
 =======
