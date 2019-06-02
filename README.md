@@ -37,10 +37,7 @@ MIDI FILES
 
 To run PianoBooster you will need some Midi files preferably with right and left piano
 parts on channels 4 and 3. Some high quality demo MIDI files that are compatible with
-PianoBooster are available on the PianoBooster download page see:
-
-<http://pianobooster.sourceforge.net/download.html>
-
+PianoBooster are available in doc/courses/*/ directories.
 
 INSTRUCTIONS
 ============
