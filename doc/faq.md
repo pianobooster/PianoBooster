@@ -2,9 +2,7 @@
 
 ## Where are the music files?
 
-Piano Booster uses MIDI music files (.mid) or karaoke files (.kar) to play music
-but none of these files are included with the program so you will have to get
-them from the NET.
+Piano Booster uses MIDI music files (.mid) or karaoke files (.kar) to play music.
 
 In particular there  are some high quality demo midi files contained in three
 zip files available from [this page](http://www.pianobooster.pwp.blueyonder.co.uk).
@@ -43,7 +41,6 @@ On PianoBooster set the Setup/Midi Setup/Midi Output Device: to `FLUID Synth (fs
 If you get problems with unsteady playback or the audio cutting out then try closing all other programs,
 turning off your wireless network and unplug any network cable.
 
-
 ## How do I hear the sound on Mac?
 
 While there are many possible choices General Midi sound generators for the Mac
@@ -73,7 +70,6 @@ To use the **'Follow You'** mode you will need set the latency value (see the ne
 or alternately use a realtime sound generator with low latency (recommended, For Linux see
 [fluidsynth Low Latency page](http://fluidsynth.resonance.org/trac/wiki/LowLatency>).
 
-
 ## What is the latency fix?
 
 The Latency fix aims to counteract the latency delay of the sound generator by
@@ -96,7 +92,6 @@ then the music will stop in the wrong place (because the music
 was deliberately being run ahead of your playing).
 The use of the latency fix is less than ideal and so the **best**
 solution is to change to different realtime sound generator that has a low latency delay.
-
 
 ## What value should I use for the latency fix?
 

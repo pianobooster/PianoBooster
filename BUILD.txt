@@ -2,7 +2,7 @@
    TO COMPILE THE SOURCE CODE IN LINUX
 ===============================================================================================
 
-   Ensure that the following packages 'cmake', 'libqt4-dev', 'libasound2-dev' and
+   Ensure that the following packages 'cmake', 'libqt5-dev', 'libasound2-dev' and
    'build-essential" are installed.
 
    Then type "cmake .", followed by "make". Finally as root type "make install".
@@ -53,13 +53,6 @@
    LICENSE
 ===============================================================================================
 
-
-   In the PianoBooster directory type "cd release" to change to the "release" directory
-
-===============================================================================================
-   LICENSE
-===============================================================================================
-
    Piano Booster is fully copyrighted by the author and all rights are reserved.
 
    PianoBooster is free software (Open Source software): you can redistribute it and/or modify
@@ -70,6 +63,3 @@
    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    See the GNU General Public License in the file "gplv3.txt" or from the web site
    <http://www.gnu.org/licenses/>.
-
-
-

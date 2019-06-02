@@ -16,7 +16,7 @@ forum section of this website for possible solutions.
 
 To run PianoBooster you will need some Midi files preferably with right and left piano parts on channels 4 and 3.
 Some high quality demo MIDI files that are compatible with
-PianoBooster are available [here](http://www.pianobooster.pwp.blueyonder.co.uk/)
+PianoBooster are available in doc/courses/*/ directories.
 
 ## Executable for Windows
 
@@ -36,15 +36,10 @@ A universal binary for the Mac (Thanks to Christian).
 
 ## Packages for Linux
 
-*A Ubuntu Package* for Piano Booster for the current version 0.6.4 is available [here](https://launchpad.net/~racb/+archive/extra)
-
-Download and install the .deb package that corresponds to your architecture using your favourite package manager.
+Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster)
 
 Note: In Ubuntu 9.04 there is an issue with the Intel drivers which that means PianoBooster
 performs very badly if you have Intel graphic chips.  Upgrading to Ubuntu 9.10 fixes this problem.
-
-*A Fedora Package* for Piano Booster is available as part of the distribution see:
-[http://www.rpmfind.net](http://www.rpmfind.net) then search for *pianobooster*
 
 *Note:* The packages provided with distributions may not exist or are out of date,
 in which case you will have to compile from the source code.
@@ -56,10 +51,10 @@ in the section below.
 Download and uncompress the archive file below and then follow the instructions in
 the *BUILD.txt* file.
 
-[pianobooster-src-0.6.4b.tar.gz](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.4b/pianobooster-src-0.6.4b.tar.gz/download)
+[releases](https://github.com/captnfab/PianoBooster/releases)
 
 *Compiling on Linux:* You need to have the following packages installed *cmake*,
-*libqt4-dev*, *libasound2-dev*, and the *build-essential* packages. Then in the
+*libqt5-dev*, *libasound2-dev*, and the *build-essential* packages. Then in the
 *pianobooster/build* directory type `cmake ../src`, then type `make`, followed
 by `sudo make install`. Finally type `sudo update-desktop-database` to get *open
 with* working in Nautilus. (Version 0.6.4b fixes a problem on Ubutnu 10.4 Lucid

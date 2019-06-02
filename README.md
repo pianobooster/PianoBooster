@@ -1,7 +1,4 @@
-<img align="center" width="400" height="116,683" src="https://user-images.githubusercontent.com/34600369/40283290-ec913e66-5c73-11e8-9479-bc5c3d229b9a.png">
-
-
-
+![logo](logo/Logotype_horizontal.png)
 
 INTRODUCTION
 ============

@@ -1,4 +1,4 @@
-![logo](images/logo64x64.png)
+![logo](logo/Logotype_horizontal.png)
 
 
 # Boost your Piano playing skills
@@ -7,7 +7,7 @@
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [FAQ](faq.md)
-- [Download](download.md) (obsolete)
+- [Download](download.md)
 
 External links:
 - [Original project](http://pianobooster.sourceforge.net)
