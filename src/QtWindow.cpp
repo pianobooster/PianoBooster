@@ -59,7 +59,7 @@ QtWindow::QtWindow()
     QCoreApplication::setOrganizationDomain("https://github.com/captnfab/PianoBooster");
     QCoreApplication::setApplicationName("Piano Booster");
     m_settings = new CSettings(this);
-    setWindowIcon(QIcon(":/images/Logo32x32.png"));
+    setWindowIcon(QIcon(":/images/pianobooster.png"));
     setWindowTitle(tr("Piano Booster"));
 
     Cfg::setDefaults();

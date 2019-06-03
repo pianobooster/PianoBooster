@@ -139,7 +139,7 @@ SET( PIANOBOOSTER_SRCS
     Merge.cpp
     #Band.cpp
     pianobooster.rc
-    pianobooster.ico
+    images/pianobooster.ico
 #    precompile.h
 )
 
@@ -207,7 +207,7 @@ ENDIF (USE_PCH)
 
 target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY})
 
-INSTALL( FILES pianobooster.desktop DESTINATION share/applications )
+INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
 #INSTALL( index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en  SUBDIR kmidimon )
 

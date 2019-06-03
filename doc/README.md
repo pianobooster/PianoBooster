@@ -12,6 +12,7 @@
 - [FAQ](faq.md)
 - [Download](download.md)
 - [Hints on playing the Piano](pianohints.md)
+- [Piano Booster Music](courses/README.md)
 
 External links:
 - [Original project](http://pianobooster.sourceforge.net)

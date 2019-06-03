@@ -95,4 +95,5 @@ CONTRIBUTING
 ============
 
 PianoBooster is community developing project since 2018. You're welcome with patches:
-[Pull Requests](https://github.com/captnfab/PianoBooster/issues)
+
+[Pull Requests](https://github.com/captnfab/PianoBooster/pulls)

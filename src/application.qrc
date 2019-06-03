@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/" >
-        <file>images/Logo32x32.png</file>
+        <file>images/pianobooster.png</file>
         <file>images/copy.png</file>
         <file>images/cut.png</file>
         <file>images/flag.png</file>

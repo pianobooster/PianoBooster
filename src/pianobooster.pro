@@ -13,7 +13,7 @@ TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_blank.ts \
                ../translations/pianobooster_bn.ts \
                ../translations/pianobooster_br.ts \
-               ../translations/pianobooster_bs_Latn.ts \
+               ../translations/pianobooster_bs_BA.ts \
                ../translations/pianobooster_bs.ts \
                ../translations/pianobooster_ca.ts \
                ../translations/pianobooster_crh.ts \
@@ -64,7 +64,7 @@ TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_mr.ts \
                ../translations/pianobooster_ms.ts \
                ../translations/pianobooster_my.ts \
-               ../translations/pianobooster_nb_NO.ts \
+               ../translations/pianobooster_nb.ts \
                ../translations/pianobooster_nds.ts \
                ../translations/pianobooster_ne.ts \
                ../translations/pianobooster_nl.ts \
@@ -83,7 +83,7 @@ TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_sk.ts \
                ../translations/pianobooster_sl.ts \
                ../translations/pianobooster_sq.ts \
-               ../translations/pianobooster_sr_Latn.ts \
+               ../translations/pianobooster_sr@latin.ts \
                ../translations/pianobooster_sr.ts \
                ../translations/pianobooster_sv.ts \
                ../translations/pianobooster_ta.ts \
@@ -97,9 +97,8 @@ TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_vi.ts \
                ../translations/pianobooster_wa.ts \
                ../translations/pianobooster_xh.ts \
-               ../translations/pianobooster_zh_HANS-CN.ts \
-               ../translations/pianobooster_zh_Hant_HK.ts \
-
+               ../translations/pianobooster_zh_HK.ts \
+               ../translations/pianobooster_zh.ts \
 
 USE_FLUIDSYNTH {
 # Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
@@ -221,7 +220,7 @@ unix {
    target.path = $$PREFIX/bin
 
    desktop.path = $$PREFIX/share/applications
-   desktop.files = pianobooster.desktop
+   desktop.files = ../pianobooster.desktop
 
    pixmaps.path = $$PREFIX/share/pixmaps
    pixmaps.files = images/pianobooster.png
