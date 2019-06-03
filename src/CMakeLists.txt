@@ -215,7 +215,7 @@ if(NOT NO_DOCS)
     INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
 endif()
 
-INSTALL ( FILES images/pianobooster.png DESTINATION share/pixmaps )
+INSTALL ( FILES ../logo/pianobooster.png DESTINATION share/pixmaps )
 
 if(USE_FONT)
     INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
