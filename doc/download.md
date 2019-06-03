@@ -38,7 +38,7 @@ A universal binary for the Mac (Thanks to Christian).
 
 Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster)
 
-Note: In Ubuntu 9.04 there is an issue with the Intel drivers which that means PianoBooster
+*Note:* In Ubuntu 9.04 there is an issue with the Intel drivers which that means PianoBooster
 performs very badly if you have Intel graphic chips.  Upgrading to Ubuntu 9.10 fixes this problem.
 
 *Note:* The packages provided with distributions may not exist or are out of date,

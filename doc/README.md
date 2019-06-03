@@ -5,8 +5,8 @@
 
 - [Presentation](#presentation)
 - [Introduction](#introduction)
-- [PianoBooster in Action](#PianoBooster in Action)
-- [Timing markers](#timing markers)
+- [PianoBooster in Action](#pianoBooster-in-action)
+- [Timing markers](#timing-markers)
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [FAQ](faq.md)
@@ -58,7 +58,7 @@ Watch the video and see the features of *PianoBooster* in action.
 [![Watch Piano Booster in
 action](http://img.youtube.com/vi/UGbfm8Tv-20/0.jpg)](http://www.youtube.com/watch?v=UGbfm8Tv-20)
 
-More videos are available [here](http://www.youtube.com/watch?v=7YaDllVreuM)
+More videos are available [here](https://www.youtube.com/watch?v=7YaDllVreuM) and [here](https://www.youtube.com/watch?v=58iw8nu3EOM)
 
 *Piano Booster* is piano teaching software that can provide piano lessons for
 beginners as well as for advanced players.
