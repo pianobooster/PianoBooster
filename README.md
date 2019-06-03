@@ -60,6 +60,16 @@ new translations with it. Use our
 Using Transifex is not mandatory.
 You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls)
 
+You need to translate:
+
+[1] (https://github.com/captnfab/PianoBooster/blob/master/translations/pianobooster_blank.ts)
+
+[2] (https://github.com/captnfab/PianoBooster/blob/master/translations/music_blank.ts)
+
+[3] (https://github.com/captnfab/PianoBooster/blob/master/pianobooster.desktop)
+
+[4] (https://github.com/captnfab/PianoBooster/blob/master/tools/timidity/pianobooster-timidity.desktop)
+
 LICENSE
 =======
 

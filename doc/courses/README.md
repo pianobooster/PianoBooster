@@ -6,7 +6,7 @@ All the music is originally available [here](https://github.com/captnfab/PianoBo
 
 *Please add to the music on this page  -- everyone can help.* For more information see this
 [this forum post](http://piano-booster.2625608.n2.nabble.com/Creating-music-for-PianoBooster-using-MMA-Everyone-can-help-td4167350.html#a4167350).
-The piano parts for were created using the [ABC Plus music](http://abcplus.sourceforge.net/) system.
+The piano parts for were created using the [ABC Plus music](http://abcplus.sourceforge.net/) system
 and the accompaniment was created with the [Musical MIDI Accompaniment (MMA)]("http://www.mellowood.ca/mma/).
 ## StartWithMiddleC
 ![score](BeginnerCourse/StartWithMiddleC001.svg)
