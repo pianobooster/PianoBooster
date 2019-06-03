@@ -3,7 +3,10 @@
 
 # Boost your Piano playing skills
 
+- [Presentation](#presentation)
 - [Introduction](#introduction)
+- [PianoBooster in Action](#PianoBooster in Action)
+- [Timing markers](#timing markers)
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [FAQ](faq.md)
@@ -12,7 +15,6 @@
 External links:
 - [Original project](http://pianobooster.sourceforge.net)
 - [Original source tree](http://sourceforge.net/projects/pianobooster/)
-- [Original Wiki Help](http://sourceforge.net/apps/mediawiki/pianobooster/)
 - [Original User Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html)
 - [Original Development Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Development-f2625691.html)
 

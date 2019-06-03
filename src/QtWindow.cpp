@@ -56,7 +56,7 @@ static int set_realtime_priority(int policy, int prio)
 QtWindow::QtWindow()
 {
     QCoreApplication::setOrganizationName("PianoBooster");
-    QCoreApplication::setOrganizationDomain("pianobooster.sourceforge.net/");
+    QCoreApplication::setOrganizationDomain("https://github.com/captnfab/PianoBooster");
     QCoreApplication::setApplicationName("Piano Booster");
     m_settings = new CSettings(this);
     setWindowIcon(QIcon(":/images/Logo32x32.png"));
@@ -530,7 +530,7 @@ void QtWindow::setCurrentFile(const QString &fileName)
 
 void QtWindow::website()
 {
-    QDesktopServices::openUrl(QUrl("http://pianobooster.sourceforge.net"));
+    QDesktopServices::openUrl(QUrl("https://github.com/captnfab/PianoBooster/tree/master/doc"));
 }
 
 void QtWindow::help()
@@ -552,10 +552,7 @@ void QtWindow::help()
    "<a href=\"www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
 
 
-   "<p>PianoBooster does not come with any <b>MIDI Files</b> and so you will need to get them from the net. "
-   "See the <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>PianoBooster FAQ</b></a> "
-   "for where to get MIDI files. "
-   "PianoBooster works best with MIDI files that have separate left and right piano parts "
+   "<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
    "using MIDI channels 3 and 4."
 
    "<h3>Setting Up</h3>"
@@ -571,13 +568,13 @@ void QtWindow::help()
 
    "<h3>Hints on Playing the Piano</h3>"
    "<p>For hints on how to play the piano see: "
-   "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>Piano Hints</b></a></p>"
+   "<a href=\"https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md\" ><b>Piano Hints</b></a></p>"
 
    "<h3>More Information</h3>"
    "<p>For more help please visit the PianoBooster "
-   "<a href=\"http://pianobooster.sourceforge.net/\" ><b>website</b></a>, "
-   "the PianoBooster <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>FAQ</b></a> "
-   "and the <a href=\"http://n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>. "
+   "<a href=\"https://github.com/captnfab/PianoBooster/tree/master/doc\" ><b>website</b></a>, "
+   "the PianoBooster <a href=\"https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md\" ><b>FAQ</b></a> "
+   "and the <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>. "
 
                 ));
     msgBox.setMinimumWidth(600);
@@ -591,9 +588,9 @@ void QtWindow::about()
     msgBox.setText(
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
-            tr("<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net</b></a><br><br>") +
+            tr("<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>") +
             tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>") +
-            tr("Copyright(c) Olivier Humbert, 2018 for the French translation.<br><br>") +
+            tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br><br>") +
             tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"

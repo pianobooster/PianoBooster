@@ -22,17 +22,17 @@ PianoBooster are available in doc/courses/*/ directories.
 
 There is now an installer/uninstaller for windows. Just download and run this setup program.
 
-[PianoBoosterInstall-0-6-4.exe](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.4/PianoBoosterInstall-0-6-4.exe/download)
+[PianoBoosterInstall-0-6-4.exe](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.4/PianoBoosterInstall-0-6-4.exe/download) (obsoleted)
 
 ## Executable for The Mac
 
-Piano Booster has been tested with [SimplSynth](http://notahat.com/simplesynth)
+Piano Booster has been tested with [SimpleSynth](http://notahat.com/simplesynth)
 for the Mac which can be obtained for free (MIT license).
 
 Version 0.6.4 for the Mac is coming soon in the meantime here is the previous release.
 A universal binary for the Mac (Thanks to Christian).
 
-[pianobooster-mac-0.6.2.dmg](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.2/pianobooster-mac-0.6.2.dmg/download)
+[pianobooster-mac-0.6.2.dmg](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.2/pianobooster-mac-0.6.2.dmg/download) (obsoleted)
 
 ## Packages for Linux
 
@@ -51,7 +51,7 @@ in the section below.
 Download and uncompress the archive file below and then follow the instructions in
 the *BUILD.txt* file.
 
-[releases](https://github.com/captnfab/PianoBooster/releases)
+[PianoBooster releases](https://github.com/captnfab/PianoBooster/releases)
 
 *Compiling on Linux:* You need to have the following packages installed *cmake*,
 *libqt5-dev*, *libasound2-dev*, and the *build-essential* packages. Then in the

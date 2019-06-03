@@ -9,7 +9,7 @@ zip files available from [this page](http://www.pianobooster.pwp.blueyonder.co.u
 These are demos of commercially produced MIDI files that used to be supplied
 with music tutor books but now these books are sold without any MIDI files.
 
-Also see [this thread](http://n2.nabble.com/Pieces-of-music-that-I-have-enjoyed-playing---please-add-to-this-list-td1600345.html)
+Also see [this thread](http://piano-booster.2625608.n2.nabble.com/Pieces-of-music-that-I-have-enjoyed-playing-please-add-to-this-list-td1600345.html)
 on the forum which list useful source of midi files on the net.
 Please add to this list if you find any pieces of music that you enjoy playing.
 
@@ -34,7 +34,7 @@ which caused a lot of latency delay but unfortunately these flags may also
 bypass the desktop volume controls.
 
 For more information on running fluidsynth with low latency see
-[this page](http://fluidsynth.resonance.org/trac/wiki/LowLatency).
+[this page](https://github.com/FluidSynth/fluidsynth/wiki/LowLatency).
 
 On PianoBooster set the Setup/Midi Setup/Midi Output Device: to `FLUID Synth (fs):0`
 
@@ -68,7 +68,7 @@ Then aim to use the **'Play Along'** mode as much as possible.
 
 To use the **'Follow You'** mode you will need set the latency value (see the next question)
 or alternately use a realtime sound generator with low latency (recommended, For Linux see
-[fluidsynth Low Latency page](http://fluidsynth.resonance.org/trac/wiki/LowLatency>).
+[fluidsynth Low Latency page](https://github.com/FluidSynth/fluidsynth/wiki/LowLatency>).
 
 ## What is the latency fix?
 
