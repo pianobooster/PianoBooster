@@ -49,13 +49,16 @@ start.
 It is recommended that you shut down all other programs whilst running Piano Booster so that
 the scrolling notes move smoothly across the screen.
 
-LANGUAGES
-=========
+TRANSLATIONS
+============
 
 PianoBooster isn't translated in your language? Help us, and we will gladly ship
 new translations with it. Use our
 [Collaborative Translation Platform](https://www.transifex.com/Magic/pianobooster)
 (Transifex) to add your favorite languages.
+
+Using Transifex is not mandatory.
+You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls)
 
 LICENSE
 =======
