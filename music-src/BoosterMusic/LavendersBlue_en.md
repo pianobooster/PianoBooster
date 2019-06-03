@@ -1,6 +1,6 @@
 *Lavender's Blue* is a simple tune in the right hand only that uses
 the first six notes of the scale of C Major.
-For the lowest five notes  *C D E F * and *E* use
+For the lowest five notes  *C D E F * and *G* use
  all the fingers or your right hand -- one for each note.
  (With your *thumb* on *C* and your *little finger* on *G*).
  Then for *A* just stretch your *little finger* to reach that note.

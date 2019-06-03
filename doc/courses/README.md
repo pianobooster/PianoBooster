@@ -41,7 +41,7 @@ Use your *thumb* for *C*, your *index finger* for *D*…
 all the way down to your *little finger* for *G*.
 
 
-Hint: _Make sure you *every finger* on your *left hand* when playing this
+Hint: _Make sure you use *every finger* on your *left hand* when playing this
 piece._
 [midi file](BeginnerCourse/DownAndUp.mid)
 ## ClairDeLaLune
@@ -49,8 +49,8 @@ piece._
 
 Now we are ready to play our first tune, this is a simplified version of *Clair De La Lune*
 that uses just three notes *C D* and *E* from your right hand.
-First find *middle C* and always uses your *thumb* for this note,
-then for *D* use your *first finger* and for *E* and *middle finger*.
+First find *middle C* and always use your *thumb* for this note,
+then for *D* use your *first finger* and for *E* use *middle finger*.
 
 
 Hint: _Remember the fingering: Use your *thumb* for *middle C*, your *first finger* for *D*
@@ -61,7 +61,7 @@ and *middle finger* for *E*.
 
 Now we are going to play using your *left hand* the *F major chord*.
 The three notes of a chord are called a triad and this chord has the same shape as the C major chord
-we played eariler but played on a different part of the piano.
+we played earlier but played on a different part of the piano.
 
 Use your *little finger* or the left hand for *F*, your *middle finger* for *A*
 and your *thumb* for *C*.
@@ -88,7 +88,7 @@ Hint: _If you don't know the notes on the piano then
 
 *Lavender's Blue* is a simple tune in the right hand only that uses
 the first six notes of the scale of C Major.
-For the lowest five notes  *C D E F * and *E* use
+For the lowest five notes  *C D E F * and *G* use
  all the fingers or your right hand -- one for each note.
  (With your *thumb* on *C* and your *little finger* on *G*).
  Then for *A* just stretch your *little finger* to reach that note.
@@ -106,8 +106,8 @@ Preferences" menu._
 
 This is a simplified version of *Clair De La Lune*
 that uses only the three notes *C D* and *E* from your right hand.
-First find *middle C* and always uses your *thumb* for this note,
-then for *D* use your *first finger* and for *E* and *middle finger*.
+First find *middle C* and always use your *thumb* for this note,
+then for *D* use your *first finger* and for *E* use *middle finger*.
 
 Hint: _If you are a complete beginner try the pieces from the *Beginner Course* first._
 [midi file](BoosterMusic/ClairDeLaLune.mid)

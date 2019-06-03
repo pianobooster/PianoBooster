@@ -5,5 +5,5 @@ Use your *thumb* for *C*, your *index finger* for *D*, . . . ,
 all the way down to your *little finger* for *G*.
 
 
-*Hint:* _Make sure you *every finger* on your *left hand* when playing this
+*Hint:* _Make sure you use *every finger* on your *left hand* when playing this
 piece._

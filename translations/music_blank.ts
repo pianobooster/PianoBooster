@@ -15,7 +15,7 @@ all the way down to your &lt;b&gt;little finger&lt;/b&gt; for &lt;b&gt;G&lt;/b&g
 
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
-Make sure you &lt;b&gt;every finger&lt;/b&gt; on your &lt;b&gt;left hand&lt;/b&gt; when playing this piece.
+Make sure you use &lt;b&gt;every finger&lt;/b&gt; on your &lt;b&gt;left hand&lt;/b&gt; when playing this piece.
 &lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 
 &lt;/body&gt;
@@ -44,8 +44,8 @@ Try to remember where &lt;b&gt;Middle C&lt;/b&gt; is on the piano -- this is the
        <source>&lt;body bgcolor=#FFFFC0&gt;
 &lt;p&gt; Now we are ready to play our first tune, this is a simplified version of &lt;b&gt;Clair De La Lune&lt;/b&gt;
 that uses just three notes &lt;b&gt;C D&lt;/b&gt; and &lt;b&gt;E&lt;/b&gt; from your right hand.
-First find &lt;b&gt;middle C&lt;/b&gt; and always uses your &lt;b&gt;thumb&lt;/b&gt; for this note,
-then for &lt;b&gt;D&lt;/b&gt; use your &lt;b&gt;first finger&lt;/b&gt; and for &lt;b&gt;E&lt;/b&gt; and &lt;b&gt;middle finger&lt;/b&gt;.
+First find &lt;b&gt;middle C&lt;/b&gt; and always use your &lt;b&gt;thumb&lt;/b&gt; for this note,
+then for &lt;b&gt;D&lt;/b&gt; use your &lt;b&gt;first finger&lt;/b&gt; and for &lt;b&gt;E&lt;/b&gt; use &lt;b&gt;middle finger&lt;/b&gt;.
 
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
@@ -84,7 +84,7 @@ If you don't know the notes on the piano then
 &lt;p&gt;
 Now we are going to play using your &lt;b&gt;left hand&lt;/b&gt; the &lt;b&gt;F major chord&lt;/b&gt;.
 The three notes of a chord are called a triad and this chord has the same shape as the C major chord
-we played eariler but played on a different part of the piano.
+we played earlier but played on a different part of the piano.
 &lt;/p&gt;
 &lt;p&gt;
 &lt;p&gt;
@@ -123,7 +123,7 @@ from the PianoBooster &lt;b&gt;Setup/Preferences&lt;/b&gt; menu.
 
 introduces the key of &lt;b&gt;F major&lt;/b&gt; which has a &lt;b&gt;single Flat - Bb&lt;/b&gt;.
 Again the flat symbol is not normally shown on the score when playing Bb.
-Practice both hands seprately at first and then when ready reduce the speed to 70% when trying both hands for the first time.
+Practice both hands separately at first and then when ready reduce the speed to 70% when trying both hands for the first time.
 &lt;/p&gt;
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
@@ -138,8 +138,8 @@ Reduce the speed to 70% when trying both hands for the first time.
 &lt;p&gt;
 This is a simplified version of &lt;b&gt;Clair De La Lune&lt;/b&gt;
 that uses only the three notes &lt;b&gt;C D&lt;/b&gt; and &lt;b&gt;E&lt;/b&gt; from your right hand.
-First find &lt;b&gt;middle C&lt;/b&gt; and always uses your &lt;b&gt;thumb&lt;/b&gt; for this note,
-then for &lt;b&gt;D&lt;/b&gt; use your &lt;b&gt;first finger&lt;/b&gt; and for &lt;b&gt;E&lt;/b&gt; and &lt;b&gt;middle finger&lt;/b&gt;.
+First find &lt;b&gt;middle C&lt;/b&gt; and always use your &lt;b&gt;thumb&lt;/b&gt; for this note,
+then for &lt;b&gt;D&lt;/b&gt; use your &lt;b&gt;first finger&lt;/b&gt; and for &lt;b&gt;E&lt;/b&gt; use &lt;b&gt;middle finger&lt;/b&gt;.
 &lt;/p&gt;
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
@@ -171,7 +171,7 @@ Practice the &lt;b&gt;left hand&lt;/b&gt; and &lt;b&gt;right hand&lt;/b&gt; part
        <source>&lt;body bgcolor=#FFFFC0&gt;
 &lt;p&gt;  &lt;b&gt;Lavender's Blue&lt;/b&gt; is a simple tune in the right hand only that uses
 the first six notes of the scale of C Major.
-For the lowest five notes  &lt;b&gt;C D E F &lt;/b&gt; and &lt;b&gt;E&lt;/b&gt; use
+For the lowest five notes  &lt;b&gt;C D E F &lt;/b&gt; and &lt;b&gt;G&lt;/b&gt; use
  all the fingers or your right hand -- one for each note.
  (With your &lt;b&gt;thumb&lt;/b&gt; on &lt;b&gt;C&lt;/b&gt; and your &lt;b&gt;little finger&lt;/b&gt; on &lt;b&gt;G&lt;/b&gt;).
  Then for &lt;b&gt;A&lt;/b&gt; just stretch your &lt;b&gt;little finger&lt;/b&gt; to reach that note.
