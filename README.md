@@ -78,3 +78,21 @@ SOURCE CODE
 As part of GNU General Public License the source code for PianoBooster is available from
 the GitHub site  <https://github.com/captnfab/PianoBooster>. See the BUILD.txt for
 instructions on how to build the source code.
+
+
+DOCUMENTATION
+=============
+
+[Documentation](doc/README.md)
+
+
+BUGTRACKER
+==========
+
+[Issues](https://github.com/captnfab/PianoBooster/issues)
+
+CONTRIBUTING
+============
+
+PianoBooster is community developing project since 2018. You're welcome with patches:
+[Pull Requests](https://github.com/captnfab/PianoBooster/issues)

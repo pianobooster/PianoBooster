@@ -11,6 +11,7 @@
 - [Screenshots](#screenshots)
 - [FAQ](faq.md)
 - [Download](download.md)
+- [Hints on playing the Piano](pianohints.md)
 
 External links:
 - [Original project](http://pianobooster.sourceforge.net)
@@ -101,7 +102,7 @@ Piano Booster main screen - Windows
 
 ![Piano Booster annotated screenshot](images/LinuxScreenShotAnnotated.png)
 
-Piano Booster annotated screenshotPiano Booster annotated screenshot
+Piano Booster annotated screenshot
 
 ![Piano Booster timing markers](images/timingmarkers.jpeg)
 
