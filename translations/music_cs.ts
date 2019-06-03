@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
 <context>
     <name>QtWindow</name>
     <message>
@@ -22,7 +20,7 @@ from the PianoBooster &lt;b&gt;Setup/Preferences&lt;/b&gt; menu.
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -40,7 +38,21 @@ Try to remember where &lt;b&gt;Middle C&lt;/b&gt; is on the piano -- this is the
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=#FFFFC0&gt;
+&lt;p&gt;
+&lt;b&gt;Začnutí jednočárkovaným C&lt;/b&gt; je velice snadný úkol. Prostě na klavíru najděte &lt;b&gt;jednočárkované C&lt;/b&gt;,
+a potom notu čtyřikrát zahrajte pomocí svého &lt;b&gt;palce&lt;/b&gt; na &lt;b&gt;pravé ruce&lt;/b&gt;.
+První polovina kusu má &lt;b&gt;jednočárkované C&lt;/b&gt; v &lt;b&gt;houslovém klíči&lt;/b&gt;,
+pak pro druhou polovinu kusu je ta samá nota &lt;b&gt;jednočárkovaného C&lt;/b&gt; ukázána v &lt;b&gt;basovém klíči&lt;/b&gt;.
+Hrajte pomocí &lt;b&gt;palce&lt;/b&gt; na &lt;b&gt;levé ruce&lt;/b&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
+Pokuste se zapamatovat si, kde je &lt;b&gt;jednočárkované C&lt;/b&gt; na klavíru -- je to ta nejdůležitější nota&lt;b&gt;&lt;/b&gt;!
+&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+</translation>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -56,7 +68,7 @@ and your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;.
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -76,7 +88,7 @@ If you don't know the notes on the piano then
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -95,7 +107,22 @@ Make sure you use &lt;b&gt;every finger&lt;/b&gt; on your &lt;b&gt;left hand&lt;
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=#FFFFC0&gt;
+&lt;p&gt;
+&lt;b&gt;Levá ruka dolů a nahoru&lt;/b&gt; je zrcadlovou verzí nahoru a dolů, ale zahraná pomocí vaší levé ruky&lt;b&gt;&lt;/b&gt;.
+Toto je horních pět not stupnice C dur. Znovu se pokuste použít všechny své prsty.
+&lt;/p&gt;
+&lt;p&gt;
+Použijte svůj &lt;b&gt;palec&lt;/b&gt; pro &lt;b&gt;C&lt;/b&gt;, váš &lt;b&gt;ukazováček&lt;/b&gt; pro &lt;b&gt;D&lt;/b&gt;, . . . ,
+a tak dále až k vašemu &lt;b&gt;malíčku&lt;/b&gt; pro &lt;b&gt;G&lt;/b&gt;.
+
+
+&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
+Ujistěte se, že při hraní tohoto kusu používáte &lt;b&gt;každý prst&lt;/b&gt; na vaší &lt;b&gt;levé ruce&lt;/b&gt;.
+&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+</translation>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -114,7 +141,22 @@ and &lt;b&gt;middle finger&lt;/b&gt; for &lt;b&gt;E&lt;/b&gt;.
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=#FFFFC0&gt;
+&lt;p&gt; Nyní jsme připravení zahrát naši první melodii. Jedná se o zjednodušenou verzi &lt;b&gt;Clair De La Lune&lt;/b&gt;,
+která používá tři noty &lt;b&gt;C D&lt;/b&gt; a &lt;b&gt;E&lt;/b&gt; z vaší pravé ruky.
+Nejprve zahrajte &lt;b&gt;jednočárkované C&lt;/b&gt; a vždy pro tuto notu použijte &lt;b&gt;palec&lt;/b&gt;,
+potom pro &lt;b&gt;D&lt;/b&gt; použijte &lt;b&gt;první prst (ukazováček)&lt;/b&gt; a pro &lt;b&gt;E&lt;/b&gt; použijte &lt;b&gt;prostředníček&lt;/b&gt;.
+
+
+&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Rada:&lt;/b&gt; &lt;i&gt;
+Zapamatujte si prstoklad:
+Použijte &lt;b&gt;palec&lt;/b&gt; pro &lt;b&gt;jednočárkované C&lt;/b&gt;, &lt;b&gt;ukazováček&lt;/b&gt; pro &lt;b&gt;D&lt;/b&gt;
+a &lt;b&gt;prostředníček&lt;/b&gt; for &lt;b&gt;E&lt;/b&gt;.
+
+&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+</translation>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -131,7 +173,7 @@ If you are a complete beginner try the pieces from the &lt;b&gt;Beginner Course&
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -145,7 +187,7 @@ Don't think about what fingers to use, just use the fingering that &lt;b&gt;come
 &lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -165,7 +207,7 @@ But remember to &lt;b&gt;turn them off&lt;/b&gt; when you get more skilled.
 &lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -184,7 +226,7 @@ Make sure you always keep using the correct finger for each note.
 &lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -202,7 +244,7 @@ To help find the notes ensure &quot;Show Note Names&quot; are turned on from &qu
 
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -219,7 +261,7 @@ Reduce the speed to 70% when trying both hands for the first time.
 &lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=#FFFFC0&gt;
@@ -236,7 +278,7 @@ Practice the &lt;b&gt;left hand&lt;/b&gt; and &lt;b&gt;right hand&lt;/b&gt; part
 &lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;/body&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

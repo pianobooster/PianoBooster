@@ -1684,7 +1684,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"/>
+        <translation>Показати &amp;клавіатуру піаніно</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>

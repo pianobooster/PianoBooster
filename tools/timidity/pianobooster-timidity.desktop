@@ -13,8 +13,17 @@ Keywords=audio;midi;music;piano;education;learning;playing;songs;
 
 # Translations
 GenericName[gl]=Profesor de piano
+Name[hi]=पियानो बूस्टर (TiMidity)
+Name[pt]=Piano Booster (TiMidity)
+Comment[pt]=Um reprodutor de ficheiro MIDI que ensina a tocar piano, com o sequenciador TiMidity
+GenericName[pt]=Professor de Piano
+Comment[pt_BR]=Um reprodutor de arquivos MIDI que ensina a tocar piano, com o sequenciador TiMidity
+GenericName[pt_BR]=Professor de Piano
 Name[ru]=Piano Booster (TiMidity)
 Comment[ru]=Проигрыватель MIDI-файлов, который научит вас играть на пианино с помощью секвенсора TiMidity
 GenericName[ru]=Обучение пианино
-GenericName[fr]=Professeur de piano
 GenericName[es]=Profesor de piano
+Name[uk]=Piano Booster (TiMidity)
+Comment[uk]=Програвач файлів MIDI, який навчить вас гри на піаніно за допомогою синтезатора TiMidity
+GenericName[uk]=Навчання гри на піаніно
+GenericName[fr]=Professeur de piano

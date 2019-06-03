@@ -4,37 +4,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="107"/>
         <source>C</source>
-        <translation type="unfinished"/>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="108"/>
         <source>D</source>
-        <translation type="unfinished"/>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="109"/>
         <source>E</source>
-        <translation type="unfinished"/>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="110"/>
         <source>F</source>
-        <translation type="unfinished"/>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="111"/>
         <source>G</source>
-        <translation type="unfinished"/>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="112"/>
         <source>A</source>
-        <translation type="unfinished"/>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="113"/>
         <source>B</source>
-        <translation type="unfinished"/>
+        <translation>B</translation>
     </message>
 </context>
 <context>
@@ -42,12 +42,12 @@
     <message>
         <location filename="../src/GlView.cpp" line="226"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"/>
+        <translation>Precisão:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="233"/>
         <source>Song: </source>
-        <translation type="unfinished"/>
+        <translation>Música:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="256"/>
@@ -83,12 +83,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation>Piano de cauda</translation>
+        <translation>Piano de Cauda</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation type="unfinished"/>
+        <translation>Piano Vertical</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
         <source>Music Box</source>
-        <translation>Caixinha de música</translation>
+        <translation>Caixinha de Música</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation type="unfinished"/>
+        <translation>Marimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -153,12 +153,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
         <source>Tubular Bells</source>
-        <translation>Sinos tubulares</translation>
+        <translation>Sinos Tubulares</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation type="unfinished"/>
+        <translation>Saltério</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
@@ -168,7 +168,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
         <source>Percussive Organ</source>
-        <translation>Orgão Percussivo</translation>
+        <translation>Órgão Percussivo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
@@ -178,7 +178,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="375"/>
         <source>Church Organ</source>
-        <translation>Órgão de igreja</translation>
+        <translation>Órgão de Igreja</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
