@@ -125,7 +125,7 @@ string CMidiTrack::readTextEvent()
 
     string text;
     length = readVarLen();
-    if (length >= 100)
+    if (length >= 1000)
     {
         ppLogError("Text Event too large %d", length);
         errorFail(SMF_END_OF_FILE);
