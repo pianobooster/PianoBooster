@@ -1,6 +1,4 @@
-===============================================================================================
-   TO COMPILE THE SOURCE CODE IN LINUX
-===============================================================================================
+# Linux
 
    Ensure that the following packages 'cmake', 'libqt5-dev', 'libasound2-dev' and
    'build-essential" are installed.
@@ -15,15 +13,21 @@
 
    If you make changes to the source code then please post details on the forum.
 
-===============================================================================================
-   TO COMPILE THE SOURCE CODE IN MacOSX
-===============================================================================================
+# macOS
 
-   Install latest XCode (from Apple Developer Connection, free registration required)
+   Install latest Xcode (from Apple Developer Connection, free registration required)
 
-   Install CMake and QT libraries (either from source or via Fink or MacPorts)
+   Install CMake and QT libraries via Homebrew:
 
-   Generate XCode project file, via 'cmake -G Xcode ../src'
+   ```
+   $ brew install cmake qt5
+   ```
+
+   Generate XCode project file via CMake:
+
+   ```
+   $ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)`
+   ```
 
    Open the project file in XCode, set whatever options you like (universal or single architecture,
    debug or release etc.) and compile
@@ -32,9 +36,7 @@
 
    If you make changes to the source code then please post details on the forum.
 
-===============================================================================================
-   TO COMPILE THE SOURCE CODE IN WINDOWS
-===============================================================================================
+# Windows
 
    To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
    When installing Qt select the option to download and install the MinGW compiler. Open the
@@ -49,9 +51,8 @@
 
    If you make changes to the source code then please post details on the forum.
 
-===============================================================================================
-   LICENSE
-===============================================================================================
+
+# License
 
    Piano Booster is fully copyrighted by the author and all rights are reserved.
 

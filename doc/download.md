@@ -49,7 +49,7 @@ in the section below.
 ## Source Code for all platforms
 
 Download and uncompress the archive file below and then follow the instructions in
-the *BUILD.txt* file.
+the *BUILD.md* file.
 
 [PianoBooster releases](https://github.com/captnfab/PianoBooster/releases)
 

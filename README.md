@@ -89,7 +89,7 @@ SOURCE CODE
 ===========
 
 As part of GNU General Public License the source code for PianoBooster is available from
-the GitHub site  <https://github.com/captnfab/PianoBooster>. See the BUILD.txt for
+the GitHub site  <https://github.com/captnfab/PianoBooster>. See the [BUILD.md](BUILD.md) for
 instructions on how to build the source code.
 
 
