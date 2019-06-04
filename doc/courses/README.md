@@ -37,8 +37,8 @@ from the PianoBooster *Setup/Preferences* menu._
 *Down And Up* is mirror version of the Up And Down piece we played earlier but this version uses your *left hand*.
 These are the top five notes of the scale of C major. Again try to use all your fingers.
 
-Use your *thumb* for *C*, your *index finger* for *D*…
-all the way down to your *little finger* for *G*.
+Use your *thumb* for *C*, your *index finger* for *B*…
+all the way down to your *little finger* for *F*.
 
 
 Hint: _Make sure you use *every finger* on your *left hand* when playing this
@@ -63,7 +63,7 @@ Now we are going to play using your *left hand* the *F major chord*.
 The three notes of a chord are called a triad and this chord has the same shape as the C major chord
 we played earlier but played on a different part of the piano.
 
-Use your *little finger* or the left hand for *F*, your *middle finger* for *A*
+Use your *little finger* on the left hand for *F*, your *middle finger* for *A*
 and your *thumb* for *C*.
 [midi file](BeginnerCourse/ChordOfFMajor.mid)
 ## UpAndDown

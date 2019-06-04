@@ -70,7 +70,7 @@ we played earlier but played on a different part of the piano.
 &lt;/p&gt;
 &lt;p&gt;
 &lt;p&gt;
-Use your &lt;b&gt;little finger&lt;/b&gt; or the left hand for &lt;b&gt;F&lt;/b&gt;, your &lt;b&gt;middle finger&lt;/b&gt; for &lt;b&gt;A&lt;/b&gt;
+Use your &lt;b&gt;little finger&lt;/b&gt; on the left hand for &lt;b&gt;F&lt;/b&gt;, your &lt;b&gt;middle finger&lt;/b&gt; for &lt;b&gt;A&lt;/b&gt;
 and your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;.
 
 &lt;/body&gt;
@@ -80,7 +80,7 @@ and your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;.
 Три ноты аккорда называются триадой, и этот аккорд имеет ту же форму, что
 и аккорд C (До) мажор, который мы играли раньше, но на другой части пианино.&lt;/p&gt;
 
-&lt;p&gt;Используйте свой &lt;b&gt;мизинец&lt;/b&gt; или левую руку для &lt;b&gt;F&lt;/b&gt;, свой &lt;b&gt;средний палец&lt;/b&gt; для &lt;b&gt;A&lt;/b&gt;
+&lt;p&gt;Используйте свой &lt;b&gt;мизинец&lt;/b&gt; на левой руке для &lt;b&gt;F&lt;/b&gt;, свой &lt;b&gt;средний палец&lt;/b&gt; для &lt;b&gt;A&lt;/b&gt;
 и свой &lt;b&gt;большой палец&lt;/b&gt; для &lt;b&gt;C&lt;/b&gt;.&lt;/p&gt;
 
 &lt;/body&gt;
@@ -125,8 +125,8 @@ If you don't know the notes on the piano then
 These are the top five notes of the scale of C major again try to use all your fingers.
 &lt;/p&gt;
 &lt;p&gt;
-Use your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;, your &lt;b&gt;index finger&lt;/b&gt; for &lt;b&gt;D&lt;/b&gt;, . . . ,
-all the way down to your &lt;b&gt;little finger&lt;/b&gt; for &lt;b&gt;G&lt;/b&gt;.
+Use your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;, your &lt;b&gt;index finger&lt;/b&gt; for &lt;b&gt;B&lt;/b&gt;, . . . ,
+all the way down to your &lt;b&gt;little finger&lt;/b&gt; for &lt;b&gt;F&lt;/b&gt;.
 
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
@@ -140,8 +140,8 @@ Make sure you use &lt;b&gt;every finger&lt;/b&gt; on your &lt;b&gt;left hand&lt;
 мы играли ранее, но в этой версии используется ваша &lt;b&gt;левая рука&lt;/b&gt;.
 Это первые пять нот тоники C (До) мажор. Снова попробуйте использовать все свои пальцы.&lt;/p&gt;
 
-&lt;p&gt;Используйте &lt;b&gt;большой палец&lt;/b&gt; для &lt;b&gt;C&lt;/b&gt;, ваш &lt;b&gt;указательный палец&lt;/b&gt; для &lt;b&gt;D&lt;/b&gt;, . . . , вплоть до вашего
-&lt;b&gt;мизинца&lt;/b&gt; для &lt;b&gt;G&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;Используйте &lt;b&gt;большой палец&lt;/b&gt; для &lt;b&gt;C&lt;/b&gt;, ваш &lt;b&gt;указательный палец&lt;/b&gt; для &lt;b&gt;B&lt;/b&gt;, . . . , вплоть до вашего
+&lt;b&gt;мизинца&lt;/b&gt; для &lt;b&gt;F&lt;/b&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Подсказка:&lt;/b&gt; &lt;i&gt;Убедитесь, что вы используете &lt;b&gt;каждый палец&lt;/b&gt; на &lt;b&gt;левой руке&lt;/b&gt; при игре этой пьесы.&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
 

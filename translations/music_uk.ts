@@ -79,7 +79,7 @@ we played earlier but played on a different part of the piano.
 &lt;/p&gt;
 &lt;p&gt;
 &lt;p&gt;
-Use your &lt;b&gt;little finger&lt;/b&gt; or the left hand for &lt;b&gt;F&lt;/b&gt;, your &lt;b&gt;middle finger&lt;/b&gt; for &lt;b&gt;A&lt;/b&gt;
+Use your &lt;b&gt;little finger&lt;/b&gt; on the left hand for &lt;b&gt;F&lt;/b&gt;, your &lt;b&gt;middle finger&lt;/b&gt; for &lt;b&gt;A&lt;/b&gt;
 and your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;.
 
 &lt;/body&gt;
@@ -92,7 +92,7 @@ and your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;.
 &lt;/p&gt;
 &lt;p&gt;
 &lt;p&gt;
-Скористайтеся &lt;b&gt;мізинцем&lt;/b&gt; або лівою рукою для &lt;b&gt;фа&lt;/b&gt;, &lt;b&gt;середнім пальцем&lt;/b&gt; для &lt;b&gt;ля&lt;/b&gt; і &lt;b&gt;великим пальцем&lt;/b&gt; для &lt;b&gt;до&lt;/b&gt;.
+Використовуйте &lt;b&gt;мізинець&lt;/b&gt; на лівій руці для &lt;b&gt;фа&lt;/b&gt;, &lt;b&gt;середнім пальцем&lt;/b&gt; для &lt;b&gt;ля&lt;/b&gt; і &lt;b&gt;великим пальцем&lt;/b&gt; для &lt;b&gt;до&lt;/b&gt;.
 
 &lt;/body&gt;
 </translation>
@@ -137,8 +137,8 @@ If you don't know the notes on the piano then
 These are the top five notes of the scale of C major again try to use all your fingers.
 &lt;/p&gt;
 &lt;p&gt;
-Use your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;, your &lt;b&gt;index finger&lt;/b&gt; for &lt;b&gt;D&lt;/b&gt;, . . . ,
-all the way down to your &lt;b&gt;little finger&lt;/b&gt; for &lt;b&gt;G&lt;/b&gt;.
+Use your &lt;b&gt;thumb&lt;/b&gt; for &lt;b&gt;C&lt;/b&gt;, your &lt;b&gt;index finger&lt;/b&gt; for &lt;b&gt;B&lt;/b&gt;, . . . ,
+all the way down to your &lt;b&gt;little finger&lt;/b&gt; for &lt;b&gt;F&lt;/b&gt;.
 
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Hint:&lt;/b&gt; &lt;i&gt;
@@ -153,8 +153,8 @@ Make sure you use &lt;b&gt;every finger&lt;/b&gt; on your &lt;b&gt;left hand&lt;
 Це верхні п&apos;ять нот гами до-мажор. Знову ж таки, намагайтеся використовувати усі ваші пальці.
 &lt;/p&gt;
 &lt;p&gt;
-Скористайтеся &lt;b&gt;великим пальцем&lt;/b&gt; для &lt;b&gt;до&lt;/b&gt;,  &lt;b&gt;Вказівним пальцем&lt;/b&gt; слід грати &lt;b&gt;ре&lt;/b&gt;, . . . ,
-і так далі, аж до вашого &lt;b&gt;мізинця&lt;/b&gt; для &lt;b&gt;соль&lt;/b&gt;.
+Скористайтеся &lt;b&gt;великим пальцем&lt;/b&gt; для &lt;b&gt;до&lt;/b&gt;,  &lt;b&gt;Вказівним пальцем&lt;/b&gt; слід грати &lt;b&gt;сі&lt;/b&gt;, . . . ,
+і так далі, аж до вашого &lt;b&gt;мізинця&lt;/b&gt; для &lt;b&gt;фа&lt;/b&gt;.
 
 
 &lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;b&gt;Підказка:&lt;/b&gt; &lt;i&gt;
