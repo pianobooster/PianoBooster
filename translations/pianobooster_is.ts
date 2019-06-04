@@ -976,7 +976,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
         <source>Midi Output Device:</source>
-        <translation type="unfinished"/>
+        <translation>MIDI-úttakstæki:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
@@ -1543,7 +1543,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="235"/>
         <source>Cannot open &quot;</source>
-        <translation type="unfinished"/>
+        <translation>Get ekki opnað &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="243"/>

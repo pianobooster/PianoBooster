@@ -1523,7 +1523,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"/>
+        <translation>Namə&apos;lum</translation>
     </message>
 </context>
 <context>

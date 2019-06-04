@@ -1095,12 +1095,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Bahasa</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
         <source>Language:</source>
-        <translation type="unfinished"/>
+        <translation>Bahasa:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
@@ -1130,7 +1130,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
         <source>Medium</source>
-        <translation type="unfinished"/>
+        <translation>Sedang</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>

@@ -1543,7 +1543,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="235"/>
         <source>Cannot open &quot;</source>
-        <translation type="unfinished"/>
+        <translation>Non se pode abrir &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="243"/>

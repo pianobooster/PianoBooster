@@ -1105,7 +1105,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"/>
+        <translation>Postavke</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
@@ -1523,7 +1523,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"/>
+        <translation>Nepoznato</translation>
     </message>
 </context>
 <context>
@@ -1664,7 +1664,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Postavke ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="391"/>

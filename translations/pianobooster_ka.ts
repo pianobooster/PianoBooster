@@ -1523,7 +1523,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"/>
+        <translation>უცნობი</translation>
     </message>
 </context>
 <context>
@@ -1689,12 +1689,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;File</source>
-        <translation type="unfinished"/>
+        <translation>&amp;ფაილი</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;View</source>
-        <translation type="unfinished"/>
+        <translation>&amp;ხედი</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="449"/>

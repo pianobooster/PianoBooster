@@ -759,7 +759,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation type="unfinished"/>
+        <translation>Provë</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -790,7 +790,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"/>
+        <translation>Rivendos</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -1095,7 +1095,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Gjuhë</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
@@ -1523,7 +1523,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"/>
+        <translation>Nuk njihet</translation>
     </message>
 </context>
 <context>
@@ -1573,7 +1573,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"/>
+        <translation>D&amp;il</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
@@ -1588,7 +1588,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Informacione</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1694,7 +1694,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;View</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Shfaq</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="449"/>

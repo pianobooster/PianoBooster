@@ -1573,7 +1573,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"/>
+        <translation>Konča&amp;j</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>

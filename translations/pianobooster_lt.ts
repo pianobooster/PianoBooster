@@ -1543,7 +1543,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="235"/>
         <source>Cannot open &quot;</source>
-        <translation type="unfinished"/>
+        <translation>Nepavyksta atverti &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="243"/>
@@ -1563,7 +1563,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="344"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="345"/>
@@ -1614,7 +1614,7 @@
         <location filename="../src/QtWindow.cpp" line="362"/>
         <location filename="../src/QtWindow.cpp" line="395"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>

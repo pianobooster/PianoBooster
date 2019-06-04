@@ -790,7 +790,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation type="unfinished"/>
+        <translation>ዳግም አቀናብር</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -896,7 +896,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
         <source>Remove</source>
-        <translation type="unfinished"/>
+        <translation>ቅድመ እይታ</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
@@ -1095,17 +1095,17 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>ቋንቋ</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
         <source>Language:</source>
-        <translation type="unfinished"/>
+        <translation>ቋንቋ:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"/>
+        <translation>ምርጫዎች</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
@@ -1130,7 +1130,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
         <source>Medium</source>
-        <translation type="unfinished"/>
+        <translation>መካከለኛ</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
@@ -1178,7 +1178,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="159"/>
         <source>Right</source>
-        <translation type="unfinished"/>
+        <translation>ቀኝ</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="166"/>
@@ -1188,7 +1188,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Left</source>
-        <translation type="unfinished"/>
+        <translation>ግራ</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="188"/>
@@ -1588,7 +1588,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation type="unfinished"/>
+        <translation>&amp;ስለ</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1664,7 +1664,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"/>
+        <translation>&amp;ምርጫዎች ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="391"/>
@@ -1689,12 +1689,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;File</source>
-        <translation type="unfinished"/>
+        <translation>&amp;ፋይል</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;View</source>
-        <translation type="unfinished"/>
+        <translation>&amp;ተመልከት</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="449"/>

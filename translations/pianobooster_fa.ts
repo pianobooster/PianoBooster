@@ -1095,17 +1095,17 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>زبان</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
         <source>Language:</source>
-        <translation type="unfinished"/>
+        <translation>زبان:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"/>
+        <translation>تنظیمات</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
@@ -1523,7 +1523,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
         <source>Unknown</source>
-        <translation type="unfinished"/>
+        <translation>نامعلوم</translation>
     </message>
 </context>
 <context>
@@ -1588,7 +1588,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation>و درباره</translation>
+        <translation>&amp;و درباره</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1664,7 +1664,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"/>
+        <translation>&amp;تنظیمات...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="391"/>

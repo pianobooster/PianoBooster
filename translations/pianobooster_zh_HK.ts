@@ -1588,7 +1588,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation type="unfinished"/>
+        <translation>關於(&amp;A)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>

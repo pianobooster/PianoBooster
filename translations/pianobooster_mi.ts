@@ -78,7 +78,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation type="unfinished"/>
+        <translation>(Kore)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
@@ -795,7 +795,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
         <source>None</source>
-        <translation type="unfinished"/>
+        <translation>Kore</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
@@ -971,7 +971,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>None</source>
-        <translation type="unfinished"/>
+        <translation>Kore</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
@@ -1105,7 +1105,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"/>
+        <translation>Ngā Hiahia</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
@@ -1135,7 +1135,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
         <source>None</source>
-        <translation type="unfinished"/>
+        <translation>Kore</translation>
     </message>
 </context>
 <context>
@@ -1178,7 +1178,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="159"/>
         <source>Right</source>
-        <translation type="unfinished"/>
+        <translation>Matau</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="166"/>
@@ -1188,7 +1188,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Left</source>
-        <translation type="unfinished"/>
+        <translation>Mauī</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="188"/>
@@ -1588,7 +1588,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Mo</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1664,7 +1664,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Ngā Hiahia ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="391"/>
@@ -1689,12 +1689,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;File</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Kōnae</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;View</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Titiro</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="449"/>
@@ -1856,7 +1856,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="127"/>
         <source>None</source>
-        <translation type="unfinished"/>
+        <translation>Kore</translation>
     </message>
 </context>
 </TS>
