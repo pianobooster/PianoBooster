@@ -88,21 +88,21 @@ void GuiMidiSetupDialog::updateMidiInfoText()
     midiInfoText->clear();
 
     if (midiInputCombo->currentIndex() == 0)
-        midiInfoText->append("<span style=\"color:black\">" + tr("If you don't have a MIDI keyboard you can use the PC keyboard; 'X' is middle C.</span>"));
+        midiInfoText->append("<span style=\"color:black\">" + tr("If you don't have a MIDI keyboard you can use the PC keyboard; 'X' is middle C.") + "</span>");
     else if (midiInputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:#FF6600\">The use of Midi Through is not recommended!</span>");
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
     else
-        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Input Device: " )+ midiInputCombo->currentText() +"</span>");
+        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Input Device:") + " " + midiInputCombo->currentText() +"</span>");
 
     if (midiOutputCombo->currentText() == tr("None"))
         midiInfoText->append("<span style=\"color:red\">" + tr("No Sound Output Device selected; Choose a Midi Output Device") + "</span>");
     else if (midiOutputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
     else if (midiOutputCombo->currentText().contains("Microsoft GS Wavetable", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.\n")
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.") + "\n"
                               + tr("(Try a latency fix of 150msc)") + "</span>");
     else
-        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device: ") + midiOutputCombo->currentText() +"</span>");
+        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device:") + " " + midiOutputCombo->currentText() +"</span>");
 
     latencyFixLabel->setText(tr("%1 mSec").arg(m_latencyFix));
 
@@ -215,7 +215,7 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
     if (sfList.size() > 0)
         lastSoundFont = sfList.last();
 
-    QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluid synth"),
+    QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluidsynth"),
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
     if (!soundFontName.isEmpty())
         m_settings->addFluidSoundFontName(soundFontName);

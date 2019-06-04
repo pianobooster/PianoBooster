@@ -46,13 +46,13 @@
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="233"/>
-        <source>Song: </source>
-        <translation>Lied: </translation>
+        <source>Song:</source>
+        <translation>Lied:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="256"/>
-        <source>Bar: </source>
-        <translation>Maat: </translation>
+        <source>Bar:</source>
+        <translation>Maat:</translation>
     </message>
 </context>
 <context>
@@ -756,12 +756,6 @@
         <translation>volume:</translation>
     </message>
     <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="89"/>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="172"/>
-        <source>%</source>
-        <translation>%</translation>
-    </message>
-    <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
@@ -787,12 +781,6 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
         <translation>Het aantal noten tussen 0 en 127</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="239"/>
-        <location filename="../src/GuiKeyboardSetupDialog.ui" line="275"/>
-        <source>000; </source>
-        <translation>000; </translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
@@ -839,8 +827,8 @@
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
-        <source>Repeat End Bar: </source>
-        <translation>Herhalingsteken: </translation>
+        <source>Repeat End Bar:</source>
+        <translation>Herhalingsteken:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
@@ -986,11 +974,9 @@
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
-        <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.
-</source>
-        <translation>Opmerking: de Microsoft GS Wavetable Synth veroorzaakt een ongewenste vertraging!.
-</translation>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
+        <source>Midi Output Device:</source>
+        <translation>MIDI Uitvoer Apparaat:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
@@ -1008,11 +994,6 @@
         <translation>De vertragingscorrectie werkt door de muziek te vervroegen ten opzichte van&lt;br&gt;wat u speelt om vertraging door de geluidsgenerator te compenseren.&lt;br&gt;&lt;br&gt;U heeft hiervoor een piano nodig met &lt;b&gt;werkende luidsprekers&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Geef de tijd in milliseconden in voor de vertraging (1000 mSec = 1 sec)&lt;br&gt;(Probeer 150 voor de Microsoft GS Wavetable SW Synth)&lt;br&gt;Als u niet weet wat u moet invullen, vul dan 0 in.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="218"/>
-        <source>Open SoundFont2 File for fluid synth</source>
-        <translation>Open SoundFont2 Bestand voor fluid synth</translation>
-    </message>
-    <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="219"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>SoundFont2 Bestanden (*.sf2)</translation>
@@ -1023,24 +1004,30 @@
         <translation>MIDI Instellingen</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
-        <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.&lt;/span&gt;</source>
-        <translation>Als u geen MIDI toetsenbord heeft, kunt u het computertoetsenbord gebruiken; &apos;X&apos; is de centrale C.&lt;/span&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
-        <source>Midi Input Device: </source>
-        <translation>MIDI Invoerapparaat: </translation>
-    </message>
-    <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>Geen Geluid Uitvoerapparaat geselecteerd; Kies een Midi Uitvoerapparaat</translation>
     </message>
     <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="93"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation>Het gebruik van Midi Through wordt afgeraden!</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
+        <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
+        <translation>Als u geen MIDI toetsenbord heeft, kunt u het computertoetsenbord gebruiken; &apos;X&apos; is de centrale C.</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
+        <source>Midi Input Device:</source>
+        <translation>MIDI Invoerapparaat:</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
+        <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
+        <translation>Opmerking: de Microsoft GS Wavetable Synth veroorzaakt een ongewenste vertraging!.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
@@ -1048,9 +1035,9 @@
         <translation>(Probeer een vertragingscorrectie van 150msec)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
-        <source>Midi Output Device: </source>
-        <translation>Midi Uitvoerapparaat: </translation>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="218"/>
+        <source>Open SoundFont2 File for fluidsynth</source>
+        <translation>Open SoundFont2 Bestand voor fluidsynth</translation>
     </message>
 </context>
 <context>
@@ -1414,43 +1401,10 @@
         <translation>Bes</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="94"/>
-        <source>F </source>
-        <translation>F </translation>
-    </message>
-    <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
         <location filename="../src/GuiTopBar.cpp" line="108"/>
         <source>C</source>
         <translation>C</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiTopBar.cpp" line="96"/>
-        <source>G </source>
-        <translation>G </translation>
-    </message>
-    <message>
-        <location filename="../src/GuiTopBar.cpp" line="97"/>
-        <location filename="../src/GuiTopBar.cpp" line="110"/>
-        <source>D </source>
-        <translation>D </translation>
-    </message>
-    <message>
-        <location filename="../src/GuiTopBar.cpp" line="98"/>
-        <source>A </source>
-        <translation>A </translation>
-    </message>
-    <message>
-        <location filename="../src/GuiTopBar.cpp" line="99"/>
-        <location filename="../src/GuiTopBar.cpp" line="112"/>
-        <source>E </source>
-        <translation>E </translation>
-    </message>
-    <message>
-        <location filename="../src/GuiTopBar.cpp" line="100"/>
-        <location filename="../src/GuiTopBar.cpp" line="113"/>
-        <source>B </source>
-        <translation>B </translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="101"/>
@@ -1459,19 +1413,40 @@
         <translation>Fis</translation>
     </message>
     <message>
+        <location filename="../src/GuiTopBar.cpp" line="94"/>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
+        <location filename="../src/GuiTopBar.cpp" line="96"/>
         <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>G</source>
         <translation>G</translation>
     </message>
     <message>
+        <location filename="../src/GuiTopBar.cpp" line="97"/>
+        <location filename="../src/GuiTopBar.cpp" line="110"/>
+        <source>D</source>
+        <translation>D</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiTopBar.cpp" line="98"/>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>A</source>
         <translation>A</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiTopBar.cpp" line="99"/>
+        <location filename="../src/GuiTopBar.cpp" line="112"/>
+        <source>E</source>
+        <translation>E</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiTopBar.cpp" line="100"/>
+        <location filename="../src/GuiTopBar.cpp" line="113"/>
+        <source>B</source>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
@@ -1509,13 +1484,13 @@
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
-        <source>Midi file&quot;</source>
-        <translation>Midi bestand&quot;</translation>
+        <source>Midi file &quot;</source>
+        <translation>Midi bestand &quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
-        <source>&quot; is corrupted</source>
-        <translation>&quot; is beschadigd</translation>
+        <source>is corrupted</source>
+        <translation>is beschadigd</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="35"/>
@@ -1567,7 +1542,7 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="235"/>
-        <source>Cannot Open&quot;</source>
+        <source>Cannot open &quot;</source>
         <translation>Kan niet openen: &quot;</translation>
     </message>
     <message>
@@ -1753,14 +1728,14 @@
         <translation>Piano Booster Hulp</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="541"/>
-        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;. </source>
-        <translation>&lt;h3&gt;Van start gaan&lt;/h3&gt;&lt;p&gt;U heeft een &lt;b&gt;MIDI Piano Toetsenbord &lt;/b&gt; nodig en een &lt;b&gt;MIDI interface&lt;/b&gt; voor de computer. ALs u geen MIDI toetsenbord heeft kunt u PianoBooster uitproberen met uw computertoetsenbord, &apos;X&apos; is de centrale C.&lt;/p&gt;&lt;p&gt;Om de muziek te horen heeft u een &lt;b&gt;Algemene Midi geluidgenerator&lt;/b&gt; nodig. De &quot;Microsoft GS Wavetable software synthesizer&quot;, standaardonderdeel van Windows, kan gebruikt worden, maar introduceert een onacceptabele vertraging (latency). In Linux kunt u &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; gebruiken, of &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster werkt het beste met MIDI bestanden waarin de linker- en rechterhand partijen gescheiden zijn in de MIDI kanalen 3 en 4.&lt;h3&gt;Instellingen&lt;/h3&gt;&lt;p&gt;Ga naar het menu &lt;i&gt;Instellingen/Midi Instellingen&lt;/i&gt; en selecteer in het dialoogvenster de MIDI invoer en MIDI uitvoer interfaces die overeenkomen met uw hardware. Daarna kunt u met &lt;i&gt;File/Open&lt;/i&gt; een MIDI bestand &quot;.mid&quot; of karaoke &quot;.kar&quot; bestand openen. Vervolgens kunt u selecteren of u wilt &lt;i&gt;luisteren&lt;/i&gt; naar de muziek, of &lt;i&gt;meespelen&lt;/i&gt; op het piano toetsenbord door in het zijpaneel de instelling &lt;i&gt;bekwaamheid&lt;/i&gt; te zetten. Ten slotte kunt u op de knop &lt;i&gt;afspelen&lt;/i&gt; klikken (of druk op de &lt;i&gt;spatiebalk&lt;/i&gt;) om de muziek af te spelen.&lt;h3&gt;Hints voor Pianospelen&lt;/h3&gt;&lt;p&gt;Voor hints over hoe te pianospelen, zie: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Meer Informatie&lt;/h3&gt;&lt;p&gt;Voor meer informatie, ga naar de PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; of het &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;gebruikersforum&lt;/b&gt;&lt;/a&gt;. </translation>
+        <location filename="../src/QtWindow.cpp" line="621"/>
+        <source>PC Keyboard ShortCuts</source>
+        <translation>Computer toetsenbord sneltoetsen</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="591"/>
-        <source>&lt;a href=&quot;https://github.com/captnfab/PianoBooster&quot; &gt;&lt;b&gt;https://github.com/captnfab/PianoBooster&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/captnfab/PianoBooster&quot; &gt;&lt;b&gt;https://github.com/captnfab/PianoBooster&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;</translation>
+        <location filename="../src/QtWindow.cpp" line="623"/>
+        <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
+        <translation>&lt;h2&gt;&lt;center&gt;Sneltoetsen&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;De volgende computer sneltoetsen zijn gedefiniëerd.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="593"/>
@@ -1771,6 +1746,11 @@
         <location filename="../src/QtWindow.cpp" line="587"/>
         <source>About Piano Booster</source>
         <translation>Over Piano Booster</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="541"/>
+        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Van start gaan&lt;/h3&gt;&lt;p&gt;U heeft een &lt;b&gt;MIDI Piano Toetsenbord &lt;/b&gt; nodig en een &lt;b&gt;MIDI interface&lt;/b&gt; voor de computer. ALs u geen MIDI toetsenbord heeft kunt u PianoBooster uitproberen met uw computertoetsenbord, &apos;X&apos; is de centrale C.&lt;/p&gt;&lt;p&gt;Om de muziek te horen heeft u een &lt;b&gt;Algemene Midi geluidgenerator&lt;/b&gt; nodig. De &quot;Microsoft GS Wavetable software synthesizer&quot;, standaardonderdeel van Windows, kan gebruikt worden, maar introduceert een onacceptabele vertraging (latency). In Linux kunt u &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; gebruiken, of &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster werkt het beste met MIDI bestanden waarin de linker- en rechterhand partijen gescheiden zijn in de MIDI kanalen 3 en 4.&lt;h3&gt;Instellingen&lt;/h3&gt;&lt;p&gt;Ga naar het menu &lt;i&gt;Instellingen/Midi Instellingen&lt;/i&gt; en selecteer in het dialoogvenster de MIDI invoer en MIDI uitvoer interfaces die overeenkomen met uw hardware. Daarna kunt u met &lt;i&gt;File/Open&lt;/i&gt; een MIDI bestand &quot;.mid&quot; of karaoke &quot;.kar&quot; bestand openen. Vervolgens kunt u selecteren of u wilt &lt;i&gt;luisteren&lt;/i&gt; naar de muziek, of &lt;i&gt;meespelen&lt;/i&gt; op het piano toetsenbord door in het zijpaneel de instelling &lt;i&gt;bekwaamheid&lt;/i&gt; te zetten. Ten slotte kunt u op de knop &lt;i&gt;afspelen&lt;/i&gt; klikken (of druk op de &lt;i&gt;spatiebalk&lt;/i&gt;) om de muziek af te spelen.&lt;h3&gt;Hints voor Pianospelen&lt;/h3&gt;&lt;p&gt;Voor hints over hoe te pianospelen, zie: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Meer Informatie&lt;/h3&gt;&lt;p&gt;Voor meer informatie, ga naar de PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; of het &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;gebruikersforum&lt;/b&gt;&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="589"/>
@@ -1801,16 +1781,6 @@
         <location filename="../src/QtWindow.cpp" line="608"/>
         <source>space</source>
         <translation>spatie</translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="621"/>
-        <source>PC Keyboard Short Cuts</source>
-        <translation>Computer toetsenbord sneltoetsen</translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="623"/>
-        <source>&lt;h2&gt;&lt;center&gt;Keyboard short cuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard short cuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation>&lt;h2&gt;&lt;center&gt;Sneltoetsen&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;De volgende computer sneltoetsen zijn gedefiniëerd.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="629"/>

@@ -49,7 +49,7 @@ void GuiLoopingPopup::init(CSong* song)
 void GuiLoopingPopup::updateInfo()
 {
     if (m_song->getLoopingBars() > 0.0)
-        loopingText->setText(tr("Repeat End Bar: ") + QString().setNum(m_song->getPlayUptoBar()));
+        loopingText->setText(tr("Repeat End Bar:") + " " + QString().setNum(m_song->getPlayUptoBar()));
     else
         loopingText->setText(tr("Repeat Bar is disabled"));
 }

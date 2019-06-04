@@ -86,7 +86,7 @@
                <item>
                 <widget class="QSpinBox" name="rightVolumeSpin" >
                  <property name="suffix" >
-                  <string>%</string>
+                  <string notr="true">%</string>
                  </property>
                  <property name="minimum" >
                   <number>1</number>
@@ -169,7 +169,7 @@
                <item>
                 <widget class="QSpinBox" name="wrongVolumeSpin" >
                  <property name="suffix" >
-                  <string>%</string>
+                  <string notr="true">%</string>
                  </property>
                  <property name="minimum" >
                   <number>1</number>
@@ -236,7 +236,7 @@
             <string>The note number between 0 and 127</string>
            </property>
            <property name="inputMask" >
-            <string>000; </string>
+            <string notr="true">000; </string>
            </property>
           </widget>
          </item>
@@ -272,7 +272,7 @@
             <string>The note number between 0 and 127</string>
            </property>
            <property name="inputMask" >
-            <string>000; </string>
+            <string notr="true">000; </string>
            </property>
           </widget>
          </item>

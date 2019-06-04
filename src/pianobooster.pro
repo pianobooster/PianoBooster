@@ -223,7 +223,7 @@ unix {
    desktop.files = ../pianobooster.desktop
 
    pixmaps.path = $$PREFIX/share/pixmaps
-   pixmaps.files = images/pianobooster.png
+   pixmaps.files = ../logo/pianobooster.png
 
    docs.path = $$PREFIX/share/doc/pianobooster
    docs.files = ../README.txt

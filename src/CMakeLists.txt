@@ -140,7 +140,7 @@ SET( PIANOBOOSTER_SRCS
     #Band.cpp
     pianobooster.rc
     images/pianobooster.ico
-#    precompile.h
+    #precompile.h
 )
 
 

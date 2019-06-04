@@ -91,13 +91,13 @@ void GuiTopBar::reloadKeyCombo(bool major)
         keyCombo->addItem(tr("Ab")); // -4
         keyCombo->addItem(tr("Eb")); // -3
         keyCombo->addItem(tr("Bb")); // -2
-        keyCombo->addItem(tr("F ")); // -1
+        keyCombo->addItem(tr("F")); // -1
         keyCombo->addItem(tr("C"));  // 0
-        keyCombo->addItem(tr("G ")); // 1
-        keyCombo->addItem(tr("D ")); // 2
-        keyCombo->addItem(tr("A ")); // 3
-        keyCombo->addItem(tr("E ")); // 4
-        keyCombo->addItem(tr("B ")); // 5
+        keyCombo->addItem(tr("G")); // 1
+        keyCombo->addItem(tr("D")); // 2
+        keyCombo->addItem(tr("A")); // 3
+        keyCombo->addItem(tr("E")); // 4
+        keyCombo->addItem(tr("B")); // 5
         keyCombo->addItem(tr("F#")); // 6
     }
     else
@@ -107,10 +107,10 @@ void GuiTopBar::reloadKeyCombo(bool major)
         keyCombo->addItem(tr("F"));
         keyCombo->addItem(tr("C"));
         keyCombo->addItem(tr("G"));
-        keyCombo->addItem(tr("D "));
+        keyCombo->addItem(tr("D"));
         keyCombo->addItem(tr("A"));
-        keyCombo->addItem(tr("E "));
-        keyCombo->addItem(tr("B "));
+        keyCombo->addItem(tr("E"));
+        keyCombo->addItem(tr("B"));
         keyCombo->addItem(tr("F#"));
         keyCombo->addItem(tr("G#"));
         keyCombo->addItem(tr("C#"));

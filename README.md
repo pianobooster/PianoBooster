@@ -62,13 +62,13 @@ You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pul
 
 You need to translate:
 
-[1] (https://github.com/captnfab/PianoBooster/blob/master/translations/pianobooster_blank.ts)
+[Main program](https://github.com/captnfab/PianoBooster/blob/master/translations/pianobooster_blank.ts)
 
-[2] (https://github.com/captnfab/PianoBooster/blob/master/translations/music_blank.ts)
+[Courses](https://github.com/captnfab/PianoBooster/blob/master/translations/music_blank.ts)
 
-[3] (https://github.com/captnfab/PianoBooster/blob/master/pianobooster.desktop)
+[Desktop file #1](https://github.com/captnfab/PianoBooster/blob/master/pianobooster.desktop)
 
-[4] (https://github.com/captnfab/PianoBooster/blob/master/tools/timidity/pianobooster-timidity.desktop)
+[Desktop file #2](https://github.com/captnfab/PianoBooster/blob/master/tools/timidity/pianobooster-timidity.desktop)
 
 LICENSE
 =======

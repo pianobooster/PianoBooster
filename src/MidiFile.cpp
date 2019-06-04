@@ -97,7 +97,7 @@ void CMidiFile::openMidiFile(string filename)
     rewind();
     if (getMidiError() != SMF_NO_ERROR)
         QMessageBox::warning(0, QMessageBox::tr("Midi File Error"),
-                 QMessageBox::tr("Midi file\"") + QString(filename.c_str()) + QMessageBox::tr("\" is corrupted"));
+                 QMessageBox::tr("Midi file \"") + QString(filename.c_str()) + " \"" + QMessageBox::tr("is corrupted"));
 }
 
 void CMidiFile::rewind()

@@ -232,7 +232,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
     if (!fileInfo.exists() )
     {
         QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
-                 tr("Cannot Open\"") + fileInfo.absoluteFilePath() + "\"");
+                 tr("Cannot open \"") + fileInfo.absoluteFilePath() + "\"");
         exit(1);
     }
         else if ( !(fileInfo.fileName().endsWith(".mid", Qt::CaseInsensitive ) ||
@@ -574,7 +574,7 @@ void QtWindow::help()
    "<p>For more help please visit the PianoBooster "
    "<a href=\"https://github.com/captnfab/PianoBooster/tree/master/doc\" ><b>website</b></a>, "
    "the PianoBooster <a href=\"https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md\" ><b>FAQ</b></a> "
-   "and the <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>. "
+   "and the <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>."
 
                 ));
     msgBox.setMinimumWidth(600);
@@ -588,7 +588,7 @@ void QtWindow::about()
     msgBox.setText(
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
-            tr("<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>") +
+            "<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>" +
             tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>") +
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br><br>") +
             tr("This program is made available "
@@ -618,11 +618,11 @@ QString QtWindow::displayShortCut(QString key, QString description)
 void QtWindow::keyboardShortcuts()
 {
     QMessageBox msgBox(this);
-    msgBox.setWindowTitle (tr("PC Keyboard Short Cuts"));
+    msgBox.setWindowTitle (tr("PC Keyboard ShortCuts"));
     QString msg =
             tr(
-                "<h2><center>Keyboard short cuts</center></h2>"
-                "<p>The following PC keyboard short cuts have been defined.</p>"
+                "<h2><center>Keyboard shortcuts</center></h2>"
+                "<p>The following PC keyboard shortcuts have been defined.</p>"
                 "<center><table  border='1' cellspacing='0' cellpadding='4' >"
                 );
 
