@@ -143,7 +143,6 @@ Section "Uninstall"
     ; Remove files and uninstaller
     Delete $INSTDIR\*.*
     Delete $INSTDIR\doc\README.md
-    Delete $INSTDIR\doc\README.txt
     Delete $INSTDIR\doc\license.txt
     Delete $INSTDIR\doc\gplv3.txt
     RMDir "$INSTDIR\doc"
