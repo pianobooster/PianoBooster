@@ -74,23 +74,34 @@ Section "Install Section"
 
     ; Put file there
     File FilesForRelease\pianobooster.exe
-    #File FilesForRelease\libfluidsynth-1.dll
-    File FilesForRelease\QtCore4.dll
-    File FilesForRelease\QtGui4.dll
-    File FilesForRelease\QtXml4.dll
-    File FilesForRelease\QtOpenGL4.dll
-    File FilesForRelease\mingwm10.dll
-    File FilesForRelease\libgcc_s_dw2-1.dll
+    File FilesForRelease\*.dll
+
+
+    CreateDirectory $INSTDIR\fonts
+    SetOutPath $INSTDIR\fonts
+    File FilesForRelease\fonts\DejaVuSans.ttf
+
+    CreateDirectory $INSTDIR\music
+    SetOutPath $INSTDIR\music
+    File FilesForRelease\music\BoosterMusicBooks.zip
+
+    CreateDirectory $INSTDIR\platforms
+    SetOutPath $INSTDIR\platforms
+    File FilesForRelease\platforms\*.dll
+
+    CreateDirectory $INSTDIR\translations
+    SetOutPath $INSTDIR\translations
+    File FilesForRelease\translations\*.*
 
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc
-    File FilesForRelease\README.txt
+    File FilesForRelease\README.md
     File FilesForRelease\license.txt
     File FilesForRelease\gplv3.txt
 
     CreateDirectory "$DOCUMENTS\My Music"
     SetOutPath "$DOCUMENTS\My Music"
-    File /r FilesForRelease\BoosterMusicBooks1
+    File /r FilesForRelease\BoosterMusicBooks3
 
     SetOutPath $INSTDIR
 
@@ -130,18 +141,24 @@ Section "Uninstall"
 
 
     ; Remove files and uninstaller
-    Delete $INSTDIR\pianobooster.exe
-    Delete $INSTDIR\mingwm10.dll
-    #Delete $INSTDIR\libfluidsynth-1.dll
-    Delete $INSTDIR\QtCore4.dll
-    Delete $INSTDIR\QtGui4.dll
-    Delete $INSTDIR\QtXml4.dll
-    Delete $INSTDIR\QtOpenGL4.dll
-    Delete $INSTDIR\mingwm10.dll
+    Delete $INSTDIR\*.*
+    Delete $INSTDIR\doc\README.md
     Delete $INSTDIR\doc\README.txt
     Delete $INSTDIR\doc\license.txt
     Delete $INSTDIR\doc\gplv3.txt
     RMDir "$INSTDIR\doc"
+
+    Delete $INSTDIR\fonts\*.*
+    RMDir "$INSTDIR\fonts"
+
+    Delete $INSTDIR\music\*.*
+    RMDir "$INSTDIR\music"
+
+    Delete $INSTDIR\platforms\*.*
+    RMDir "$INSTDIR\platforms"
+
+    Delete $INSTDIR\translations\*.*
+    RMDir "$INSTDIR\translations"
 
     Delete $INSTDIR\uninstall.exe
     RMDir "$INSTDIR"
