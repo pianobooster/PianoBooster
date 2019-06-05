@@ -15,6 +15,7 @@ SET( TRANSLATIONS_FILES
      pianobooster_uk.ts
      pianobooster_zh.ts
      music_ru.ts
+     music_uk.ts
 )
 
 if(INSTALL_ALL_LANGS)
