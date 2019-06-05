@@ -1538,7 +1538,7 @@
         <location filename="../src/QtWindow.cpp" line="242"/>
         <location filename="../src/QtWindow.cpp" line="266"/>
         <source>PianoBooster Midi File Error</source>
-        <translation>Villa í PianoBooster MIDI-skrá</translation>
+        <translation>Villa í PíanóBooster MIDI-skrá</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="235"/>
@@ -1659,7 +1659,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="382"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"/>
+        <translation>Birta &amp;nótnaborð á píanói</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
@@ -1725,7 +1725,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="539"/>
         <source>Piano Booster Help</source>
-        <translation>Aðstoð við notkun Piano Booster</translation>
+        <translation>Aðstoð við notkun Píanó Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="621"/>
@@ -1745,7 +1745,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="587"/>
         <source>About Piano Booster</source>
-        <translation>Um Piano Booster</translation>
+        <translation>Um Píanó Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="541"/>
@@ -1755,7 +1755,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="589"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation>&lt;b&gt;PianoBooster - Útgáfa %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
+        <translation>&lt;b&gt;PíanóBooster - Útgáfa %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="590"/>

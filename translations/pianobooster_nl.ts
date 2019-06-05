@@ -118,12 +118,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation>Clavi</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation>Celesta</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation>Marimba</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -193,7 +193,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation>Harmonica</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
@@ -293,7 +293,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
         <source>Cello</source>
-        <translation>Cello</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
@@ -368,12 +368,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation>Trombone</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation>Tuba</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -438,12 +438,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
         <source>Clarinet</source>
-        <translation>Clarinet</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
         <source>Piccolo</source>
-        <translation>Piccolo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
@@ -478,152 +478,152 @@
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Ocarina</source>
-        <translation>Ocarina</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
         <source>Lead 1 (square)</source>
-        <translation>Lead 1 (square)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="437"/>
         <source>Lead 2 (sawtooth)</source>
-        <translation>Lead 2 (sawtooth)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Lead 3 (calliope)</source>
-        <translation>Lead 3 (calliope)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
         <source>Lead 4 (chiff)</source>
-        <translation>Lead 4 (chiff)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="440"/>
         <source>Lead 5 (charang)</source>
-        <translation>Lead 5 (charang)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="441"/>
         <source>Lead 6 (voice)</source>
-        <translation>Lead 6 (voice)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="442"/>
         <source>Lead 7 (fifths)</source>
-        <translation>Lead 7 (fifths)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="443"/>
         <source>Lead 8 (bass + lead)</source>
-        <translation>Lead 8 (bass + lead)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="444"/>
         <source>Pad 1 (new age)</source>
-        <translation>Pad 1 (new age)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="445"/>
         <source>Pad 2 (warm)</source>
-        <translation>Pad 2 (warm)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="446"/>
         <source>Pad 3 (polysynth)</source>
-        <translation>Pad 3 (polysynth)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="447"/>
         <source>Pad 4 (choir)</source>
-        <translation>Pad 4 (choir)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="448"/>
         <source>Pad 5 (bowed)</source>
-        <translation>Pad 5 (bowed)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="449"/>
         <source>Pad 6 (metallic)</source>
-        <translation>Pad 6 (metallic)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="450"/>
         <source>Pad 7 (halo)</source>
-        <translation>Pad 7 (halo)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="451"/>
         <source>Pad 8 (sweep)</source>
-        <translation>Pad 8 (sweep)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>FX 1 (rain)</source>
-        <translation>FX 1 (rain)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>FX 2 (soundtrack)</source>
-        <translation>FX 2 (soundtrack)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
         <source>FX 3 (crystal)</source>
-        <translation>FX 3 (crystal)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="455"/>
         <source>FX 4 (atmosphere)</source>
-        <translation>FX 4 (atmosphere)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="456"/>
         <source>FX 5 (brightness)</source>
-        <translation>FX 5 (brightness)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="457"/>
         <source>FX 6 (goblins)</source>
-        <translation>FX 6 (goblins)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="458"/>
         <source>FX 7 (echoes)</source>
-        <translation>FX 7 (echoes)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
         <source>FX 8 (sci-fi)</source>
-        <translation>FX 8 (sci-fi)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation>Sitar</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation>Banjo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation>Shamisen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation>Koto</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation>Kalimba</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -638,7 +638,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>Shanai</source>
-        <translation>Shanai</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
@@ -648,7 +648,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation>Agogo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -658,7 +658,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
         <source>Woodblock</source>
-        <translation>Woodblock</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="472"/>
@@ -673,7 +673,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="474"/>
         <source>Synth Drum</source>
-        <translation>Synth Drum</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
@@ -753,13 +753,13 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="163"/>
         <source>volume:</source>
-        <translation>volume:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="201"/>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
@@ -886,7 +886,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
         <source>Sound Fonts</source>
-        <translation>Sound Fonts</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
@@ -1558,7 +1558,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>&amp;Open...</source>
-        <translation>&amp;Open...</translation>
+        <translation>&amp;Openen...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="344"/>
@@ -1573,7 +1573,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>E&amp;xit</source>
-        <translation>Afsluiten</translation>
+        <translation>&amp;Afsluiten</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
@@ -1588,7 +1588,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="353"/>
         <source>&amp;About</source>
-        <translation>Over</translation>
+        <translation>&amp;Over</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1624,7 +1624,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation>Toetsenbordinstellingen ...</translation>
+        <translation>&amp;Toetsenbordinstellingen ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="367"/>
@@ -1639,7 +1639,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="371"/>
         <source>&amp;Fullscreen</source>
-        <translation>Volledig scherm</translation>
+        <translation>&amp;Volledig scherm</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="372"/>
@@ -1649,7 +1649,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="376"/>
         <source>&amp;Show the Side Panel</source>
-        <translation>Toon het zijpaneel</translation>
+        <translation>&amp;Toon het zijpaneel</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
@@ -1664,7 +1664,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="390"/>
         <source>&amp;Preferences ...</source>
-        <translation>Instellingen ...</translation>
+        <translation>&amp;Instellingen ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="391"/>
@@ -1674,7 +1674,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="394"/>
         <source>&amp;Song Details ...</source>
-        <translation>Liedeigenschappen ...</translation>
+        <translation>&amp;Liedeigenschappen ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="399"/>
@@ -1689,22 +1689,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="433"/>
         <source>&amp;File</source>
-        <translation>Bestand</translation>
+        <translation>&amp;Bestand</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;View</source>
-        <translation>Scherm</translation>
+        <translation>&amp;Scherm</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="449"/>
         <source>&amp;Song</source>
-        <translation>Lied</translation>
+        <translation>&amp;Lied</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="453"/>
         <source>Set&amp;up</source>
-        <translation>Instellingen</translation>
+        <translation>&amp;Instellingen</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="459"/>

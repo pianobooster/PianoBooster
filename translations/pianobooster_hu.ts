@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
         <source>Music Box</source>
-        <translation>ZenelĂĄda</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
@@ -238,7 +238,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
         <source>Guitar harmonics</source>
-        <translation>Harmonics gitĂĄr</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
@@ -258,7 +258,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
         <source>Fretless Bass</source>
-        <translation>Fretless (bund nĂŠlkĂźli) basszus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="392"/>
@@ -747,7 +747,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="140"/>
         <source>sound:</source>
-        <translation>Hang:</translation>
+        <translation>hang:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>

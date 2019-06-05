@@ -493,7 +493,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Lead 3 (calliope)</source>
-        <translation>Solo 3 (Calliope)</translation>
+        <translation>Solo 3 (calliope)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
