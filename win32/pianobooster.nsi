@@ -99,10 +99,6 @@ Section "Install Section"
     File FilesForRelease\license.txt
     File FilesForRelease\gplv3.txt
 
-    CreateDirectory "$DOCUMENTS\My Music"
-    SetOutPath "$DOCUMENTS\My Music"
-    File /r FilesForRelease\BoosterMusicBooks3
-
     SetOutPath $INSTDIR
 
     ; Write the installation path into the registry
@@ -116,7 +112,7 @@ Section "Install Section"
         ;Create shortcuts
         CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Piano Booster.lnk" "$INSTDIR\pianobooster.exe" "" "$INSTDIR\pianobooster.exe" 0
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\ReadMe.lnk" "$INSTDIR\doc\ReadMe.txt" "" "$INSTDIR\doc\ReadMe.txt" 0
+        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\ReadMe.lnk" "$INSTDIR\doc\ReadMe.md" "" "$INSTDIR\doc\ReadMe.md" 0
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
 
     !insertmacro MUI_STARTMENU_WRITE_END
