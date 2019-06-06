@@ -161,6 +161,10 @@ Section "Install Section"
     File FilesForRelease\license.txt
     File FilesForRelease\gplv3.txt
 
+    CreateDirectory "$DOCUMENTS\My Music"
+    SetOutPath "$DOCUMENTS\My Music"
+    File /r FilesForRelease\BoosterMusicBooks3
+
     SetOutPath $INSTDIR
 
     ; Write the installation path into the registry
