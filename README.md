@@ -110,3 +110,10 @@ CONTRIBUTING
 PianoBooster is community developing project since 2018. You're welcome with patches:
 
 [Pull Requests](https://github.com/captnfab/PianoBooster/pulls)
+
+We have many issues always [Issues](https://github.com/captnfab/PianoBooster/issues)
+
+PLATFORMS
+=========
+
+We support Linux and Windows platforms. We do not have macOS developers at the moment.

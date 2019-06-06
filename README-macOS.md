@@ -55,7 +55,7 @@
    PianoBooster is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    See the GNU General Public License in the file "gplv3.txt" or from the web site
-   <http://www.gnu.org/licenses/>.
+   <http://www.gnu.org/licenses/> or [gplv3.txt](gplv3.txt).
 
 # Source code
 
