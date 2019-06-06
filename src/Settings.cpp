@@ -47,7 +47,7 @@
 #include "GuiTopBar.h"
 #include "GuiSidePanel.h"
 #include "QtWindow.h"
-#include "ReleaseNote.txt"
+#include "version.txt"
 
 
 #define OPTION_DEBUG_SETTINGS     0

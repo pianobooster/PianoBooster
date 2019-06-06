@@ -36,6 +36,8 @@
 
    If you make changes to the source code then please post details on the forum.
 
+   See also [README-macOS.md](README-macOS.md)
+
 # Windows
 
    To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.

@@ -57,7 +57,7 @@
 #include "QtWindow.h"
 #include "Queue.h"
 #include "Rating.h"
-#include "ReleaseNote.txt"
+#include "version.txt"
 #include "Score.h"
 #include "Scroll.h"
 #include "Settings.h"

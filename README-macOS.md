@@ -1,6 +1,4 @@
-===============================================================================================
-   INTRODUCTION
-===============================================================================================
+# Introduction
 
    Piano Booster is a MIDI file player that displays the musical notes AND teaches you how to
    play the piano. You can play along to any track in the midi file and PianoBooster will
@@ -12,10 +10,7 @@
 
    Original work by Louis J. Barman can be found here: <http://pianobooster.sourceforge.net/>
 
-
-===============================================================================================
-   REQUIREMENTS
-===============================================================================================
+# Requirements
 
    To run Piano Booster you need a MIDI Piano Keyboard and a MIDI-USB interface if the keyboard
    does not have a USB interface. (If you don't have a MIDI keyboard you can still try out 
@@ -24,25 +19,17 @@
    To hear music from the computer you will need a General Midi compatible sound synthesizer.
    While there are many possible choices for the Mac (Timidity, FluidSynth or an external MIDI
    Synth), the easiest way is to use SimplSynth, which can be obtained for free (MIT license)
-   from:
-
-                 <http://notahat.com/simplesynth>
+   from: <http://notahat.com/simplesynth>
 
    This must be started before Pianobooster, and also allows to load custom Soundfonts.
 
-
-===============================================================================================
-   MIDI FILES
-===============================================================================================
+# MIDI files
 
    To run PianoBooster you will need some Midi files preferably with right and left piano
    parts on channels 4 and 3. Some high quality demo MIDI files that are compatible with
    PianoBooster are available in doc/courses/*/ directories.
 
-
-===============================================================================================
-   INSTRUCTIONS
-===============================================================================================
+# Instructions
 
    Double Click on the DMG file containing PianoBooster, then just drag the pianobooster.app
    file wherever you wish (/Application folder is suggested).
@@ -57,10 +44,7 @@
    It is recommended that you shut down all other programs whilst running Piano Booster so that
    the scrolling notes move smoothly across the screen.
 
-
-===============================================================================================
-   LICENSE
-===============================================================================================
+# License
 
    Piano Booster is fully copyrighted by the author and all rights are reserved.
 
@@ -73,10 +57,7 @@
    See the GNU General Public License in the file "gplv3.txt" or from the web site
    <http://www.gnu.org/licenses/>.
 
-
-===============================================================================================
-   SOURCE CODE
-===============================================================================================
+# Source code
 
    As part of GNU General Public License the source code for PianoBooster is available from
    the GitHub site <https://github.com/captnfab/PianoBooster>.
