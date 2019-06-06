@@ -1,8 +1,13 @@
 # Piano Booster Music
 
-These pieces of music have been created to work with _PianoBooster_ and are free from copyright or have the creative commons copyright. All the music is originally available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
+These pieces of music have been created to work with _PianoBooster_ and
+are free from copyright or have the creative commons copyright.
+All the music is available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
 
-_Please add to the music on this page -- everyone can help._ For more information see this [this forum post](http://piano-booster.2625608.n2.nabble.com/Creating-music-for-PianoBooster-using-MMA-Everyone-can-help-td4167350.html#a4167350). The piano parts for were created using the [ABC Plus music](http://abcplus.sourceforge.net/) system and the accompaniment was created with the Musical MIDI Accompaniment (MMA).
+_Please add to the music on this page  -- everyone can help._ For more information see this
+[this forum post](http://piano-booster.2625608.n2.nabble.com/Creating-music-for-PianoBooster-using-MMA-Everyone-can-help-td4167350.html).
+The piano parts for were created using the [ABC Plus music](http://abcplus.sourceforge.net/) system.
+and the accompaniment was created with the [Musical MIDI Accompaniment (MMA)]("http://www.mellowood.ca/mma/).
 
 ## StartWithMiddleC
 
@@ -26,17 +31,17 @@ Use your **thumb** for **C**, your **middle finger** for **E** and your **little
 
 [midi file](BeginnerCourse/ChordOfCMajor.mid)
 
-## UpAndDown
+## DownAndUp
 
-![score](BeginnerCourse/UpAndDown001.svg)
+![score](BeginnerCourse/DownAndUp001.svg)
 
-**Up And Down** uses all the fingers of your right hand to play the first five notes of the **scale of C major**.
+**Down And Up** is mirror version of the Up And Down piece we played earlier but this version uses your **left hand**. These are the top five notes of the scale of C major. Again try to use all your fingers.
 
-Use your **thumb** for **C**, your **index finger** for **D**, . . . , all the way up to your **little finger** for **G**. Make sure you keep using the correct finger for each note.
+Use your **thumb** for **C**, your **index finger** for **B**, . . . , all the way down to your **little finger** for **F**.
 
-**Hint:** _If you don't know the notes on the piano then **label the piano keys** using the PianoBooster **Note Chart**._
+**Hint:** _Make sure you use **every finger** on your **left hand** when playing this piece._
 
-[midi file](BeginnerCourse/UpAndDown.mid)
+[midi file](BeginnerCourse/DownAndUp.mid)
 
 ## ClairDeLaLune
 
@@ -60,27 +65,37 @@ Use your **little finger** on the left hand for **F**, your **middle finger** fo
 
 [midi file](BeginnerCourse/ChordOfFMajor.mid)
 
-## DownAndUp
+## UpAndDown
 
-![score](BeginnerCourse/DownAndUp001.svg)
+![score](BeginnerCourse/UpAndDown001.svg)
 
-**Down And Up** is mirror version of the Up And Down piece we played earlier but this version uses your **left hand**. These are the top five notes of the scale of C major. Again try to use all your fingers.
+**Up And Down** uses all the fingers of your right hand to play the first five notes of the **scale of C major**.
 
-Use your **thumb** for **C**, your **index finger** for **B**, . . . , all the way down to your **little finger** for **F**.
+Use your **thumb** for **C**, your **index finger** for **D**, . . . , all the way up to your **little finger** for **G**. Make sure you keep using the correct finger for each note.
 
-**Hint:** _Make sure you use **every finger** on your **left hand** when playing this piece._
+**Hint:** _If you don't know the notes on the piano then **label the piano keys** using the PianoBooster **Note Chart**._
 
-[midi file](BeginnerCourse/DownAndUp.mid)
+[midi file](BeginnerCourse/UpAndDown.mid)
 
-## ClairDeLaLune
+## AmazingGrace
 
-![score](BoosterMusic/ClairDeLaLune001.svg)
+![score](BoosterMusic/AmazingGrace001.svg)
 
-This is a simplified version of **Clair De La Lune** that uses only the three notes **C D** and **E** from your right hand. First find **middle C** and always use your **thumb** for this note, then for **D** use your **first finger** and for **E** use **middle finger**.
+**Amazing Grace** introduces the key of **F major** which has a **single Flat - Bb**. Again the flat symbol is not normally shown on the score when playing Bb. Practice both hands separately at first and then when ready reduce the speed to 70% when trying both hands for the first time.
 
-**Hint:** _If you are a complete beginner try the pieces from the **Beginner Course** first._
+**Hint:** _Reduce the speed to 70% when trying both hands for the first time._
 
-[midi file](BoosterMusic/ClairDeLaLune.mid)
+[midi file](BoosterMusic/AmazingGrace.mid)
+
+## Greensleeves
+
+![score](BoosterMusic/Greensleeves001.svg)
+
+**Green Sleeves** introduces the key of **G major** which has **one Sharp - F#**. Normally the sharp symbol is not shown when **F#** is played (but turning on **Courtesy Accidentals** from the Piano Booster setup/preferences menu will show all accidentals in the key signature). The melody is in the right hand with a simple left hand part.
+
+**Hint:** _You can show **Courtesy Accidentals** from the PianoBooster setup/preferences menu. But remember to **turn them off** when you get more skilled._
+
+[midi file](BoosterMusic/Greensleeves.mid)
 
 ## LavendersBlue
 
@@ -91,6 +106,26 @@ This is a simplified version of **Clair De La Lune** that uses only the three no
 **Hint:** _To help find the notes ensure "Show Note Names" are turned on from "Setup Preferences" menu._
 
 [midi file](BoosterMusic/LavendersBlue.mid)
+
+## ScarboroughFair
+
+![score](BoosterMusic/ScarboroughFair001.svg)
+
+**Scarborough Fair** spans a range of eight notes and so you will have to move fingers up the piano. Use the fingering that you feel comfortable with but ensure that you **use all your fingers** (of your right hand).
+
+**Hint:** _Don't think about what fingers to use, just use the fingering that **comes naturally to you**._
+
+[midi file](BoosterMusic/ScarboroughFair.mid)
+
+## ClairDeLaLune
+
+![score](BoosterMusic/ClairDeLaLune001.svg)
+
+This is a simplified version of **Clair De La Lune** that uses only the three notes **C D** and **E** from your right hand. First find **middle C** and always use your **thumb** for this note, then for **D** use your **first finger** and for **E** use **middle finger**.
+
+**Hint:** _If you are a complete beginner try the pieces from the **Beginner Course** first._
+
+[midi file](BoosterMusic/ClairDeLaLune.mid)
 
 ## SkipToMyLoo
 
@@ -114,34 +149,5 @@ For **Frere Jacques** introduces the use of playing both hands together with a v
 
 [midi file](BoosterMusic/FrereJacques.mid)
 
-## ScarboroughFair
-
-![score](BoosterMusic/ScarboroughFair001.svg)
-
-**Scarborough Fair** spans a range of eight notes and so you will have to move fingers up the piano. Use the fingering that you feel comfortable with but ensure that you **use all your fingers** (of your right hand).
-
-**Hint:** _Don't think about what fingers to use, just use the fingering that **comes naturally to you**._
-
-[midi file](BoosterMusic/ScarboroughFair.mid)
-
-## Greensleeves
-
-![score](BoosterMusic/Greensleeves001.svg)
-
-**Green Sleeves** introduces the key of **G major** which has **one Sharp - F#**. Normally the sharp symbol is not shown when **F#** is played (but turning on **Courtesy Accidentals** from the Piano Booster setup/preferences menu will show all accidentals in the key signature). The melody is in the right hand with a simple left hand part.
-
-**Hint:** _You can show **Courtesy Accidentals** from the PianoBooster setup/preferences menu. But remember to **turn them off** when you get more skilled._
-
-[midi file](BoosterMusic/Greensleeves.mid)
-
-## AmazingGraceMid
-
-![score](BoosterMusic/AmazingGraceMid001.svg)
-
-**Amazing Grace** introduces the key of **F major** which has a **single Flat - Bb**. Again the flat symbol is not normally shown on the score when playing Bb. Practice both hands separately at first and then when ready reduce the speed to 70% when trying both hands for the first time.
-
-**Hint:** _Reduce the speed to 70% when trying both hands for the first time._
-
-[midi file](BoosterMusic/AmazingGraceMid.mid)
-
-All the music on this page is available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip). This free sheet music can be used for beginner piano lessons with _PianoBooster_.
+All the music on this page is available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
+This free sheet music can be used for beginner piano lessons with _PianoBooster_.
