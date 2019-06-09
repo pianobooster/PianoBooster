@@ -2,6 +2,7 @@ dirs:= BeginnerCourse BoosterMusic
 output:= PianoBoosterMusic
 ABCs:=$(foreach dir, $(dirs), $(wildcard $(dir)/*.abc))
 MMAs:=$(filter-out $(foreach dir, $(dirs), $(wildcard $(dir)/*Lib.mma)),$(foreach dir, $(dirs), $(wildcard $(dir)/*.mma)))
+MMAs:=$(sort $(MMAs))
 MIDs:=$(foreach mma, $(MMAs:.mma=.mid), $(output)/$(mma))
 SOLs:=$(foreach abc, $(ABCs:.abc=.solo.mid), $(abc))
 SVGs:=$(foreach abc, $(ABCs:.abc=001.svg), $(output)/$(abc))
