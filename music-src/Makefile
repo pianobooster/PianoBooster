@@ -29,15 +29,15 @@ $(output)/README.md: $(SVGs) $(MIDs)
 	cat music.md.end >> $@
 
 $(output)/%001.svg: %.abc
-	$(foreach dir, $(dirs), mkdir -p $(output)/$(dir))
+	$(foreach dir, $(dirs), mkdir -p $(output)/$(dir);)
 	abcm2ps -g -s 0.9 -c "$<" -O "$(output)/$(basename $<).svg"
 
 %.solo.mid: %.abc
-	$(foreach dir, $(dirs), mkdir -p $(output)/$(dir))
+	$(foreach dir, $(dirs), mkdir -p $(output)/$(dir);)
 	abc2midi "$<" -o "$@" -RS
 
 $(output)/%.mid: %.mma $(SOLs)
-	$(foreach dir, $(dirs), mkdir -p $(output)/$(dir))
+	$(foreach dir, $(dirs), mkdir -p $(output)/$(dir);)
 	sh -c 'cd $(dir $<); mma "$(notdir $<)" -o -f "../$@"'
 
 clean:
