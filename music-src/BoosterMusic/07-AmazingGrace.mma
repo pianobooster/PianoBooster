@@ -21,7 +21,7 @@ z
 Groove countrywaltz2
 
 Beatadjust 2
-midiInc file=AmazingGraceMid.solo.mid Solo-Right=4 Solo-Left=3 Volume=80
+midiInc file=07-AmazingGrace.solo.mid Solo-Right=4 Solo-Left=3 Volume=80
 Beatadjust -2
 
 1 z

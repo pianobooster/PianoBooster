@@ -38,7 +38,7 @@ Groove GuitarBallad
 //Groove Main-A
 
 
-MIDIinc file=SkipToMyLoo.solo.mid Solo-Right=4  Solo-Left=3 Volume=120
+MIDIinc file=03-SkipToMyLoo.solo.mid Solo-Right=4  Solo-Left=3 Volume=120
 Groove GuitarBallad
 1  C
 2  C

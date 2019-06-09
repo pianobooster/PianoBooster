@@ -85,7 +85,7 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=ClairDeLaLune.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=01-ClairDeLaLune.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
 
 Groove PlectrumFingerPicking
 //Groove PlectrumStrum

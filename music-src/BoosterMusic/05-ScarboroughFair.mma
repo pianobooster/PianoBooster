@@ -100,7 +100,7 @@ Groove Metronome3
 z!
 z
 
-midiInc file=ScarboroughFair.solo.mid Solo-Right=4 Solo-Left=3  Volume=100
+midiInc file=05-ScarboroughFair.solo.mid Solo-Right=4 Solo-Left=3  Volume=100
 // midiInc file="scarborough Fair.mid" Solo=1 Volume=70 octave=-1
 
 

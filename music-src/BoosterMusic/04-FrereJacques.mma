@@ -84,7 +84,7 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=FrereJacques.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=04-FrereJacques.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
 
 Groove PlectrumFingerPicking
 C

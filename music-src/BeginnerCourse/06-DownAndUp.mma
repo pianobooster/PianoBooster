@@ -64,7 +64,7 @@ Groove CountIn
 z
 Groove First
 
-midiInc file=DownAndUp.solo.mid Solo-Left=3 Solo-Right=4  Volume=80
+midiInc file=06-DownAndUp.solo.mid Solo-Left=3 Solo-Right=4  Volume=80
 
     C C Am Am
     F

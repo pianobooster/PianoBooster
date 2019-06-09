@@ -64,7 +64,7 @@ z
 Groove First
 
 
-midiInc file=UpAndDown.solo.mid Solo-Left=3 Solo-Right=4  Volume=60
+midiInc file=03-UpAndDown.solo.mid Solo-Left=3 Solo-Right=4  Volume=60
 
     C C Am:5 Am:5
     G:8

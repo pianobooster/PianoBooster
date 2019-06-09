@@ -85,7 +85,7 @@ Timesig 4 4
 Groove Metronome4
 
 z
-midiInc file=StartWithMiddleC.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
+midiInc file=01-StartWithMiddleC.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
 
 Groove PlectrumStrum
 C:8

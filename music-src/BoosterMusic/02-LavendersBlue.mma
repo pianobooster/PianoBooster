@@ -133,7 +133,7 @@ Timesig 3 4
 Groove Metronome3
 
 z
-midiInc file=LavendersBlue.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
+midiInc file=02-LavendersBlue.solo.mid Solo-Left=3 Solo-Right=4  Volume=100
 
 Groove PlectrumFingerPicking1
 C
