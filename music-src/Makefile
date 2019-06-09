@@ -1,5 +1,5 @@
 dirs:= BeginnerCourse BoosterMusic
-output:= PianoBoosterMusic
+output:= ../doc/courses
 ABCs:=$(foreach dir, $(dirs), $(wildcard $(dir)/*.abc))
 MMAs:=$(filter-out $(foreach dir, $(dirs), $(wildcard $(dir)/*Lib.mma)),$(foreach dir, $(dirs), $(wildcard $(dir)/*.mma)))
 MMAs:=$(sort $(MMAs))
@@ -33,7 +33,6 @@ $(output)/%001.svg: %.abc
 	abcm2ps -g -s 0.9 -c "$<" -O "$(output)/$(basename $<).svg"
 
 %.solo.mid: %.abc
-	$(foreach dir, $(dirs), mkdir -p $(output)/$(dir);)
 	abc2midi "$<" -o "$@" -RS
 
 $(output)/%.mid: %.mma $(SOLs)
