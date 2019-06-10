@@ -21,7 +21,7 @@ do
   sed -i 's|<p><strong>Hint:|<font color="#ff0000"><p><b>Hint:|g' $file_html
   printf "</font>" >> $file_html
   printf "</body>" >> $file_html
-  sed -i '1s/^/<body bgcolor=#FFFFC0>/' $file_html
+  sed -i '1s/^/<body bgcolor="#FFFFC0">/' $file_html
 done
 
 pushd music

@@ -57,7 +57,10 @@ sub readFile {
 
     $text=~s/</&lt;/gm;
     $text=~s/>/&gt;/gm;
-    $text=~s/"/&quot;/gm;
-    
+    $text=~s/&rsquo;/'/gm;
+    $text=~s/&hellip;/. . ./gm;
+    $text=~s/&ldquo;/&quot;/gm;
+    $text=~s/&rdquo;/&quot;/gm;
+
     return $text;
 }
