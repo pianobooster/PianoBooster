@@ -11,6 +11,8 @@
 
    (Alternatively you can use qmake followed by make in the src directory.)
 
+   See [Debian branch](https://github.com/captnfab/PianoBooster/tree/debian) for more details.
+
    If you make changes to the source code then please post details.
 
 # macOS

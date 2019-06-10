@@ -36,7 +36,7 @@ On PianoBooster set the Setup/Midi Setup/Midi Output Device: to `FLUID Synth (fs
 If you get problems with unsteady playback or the audio cutting out then try closing all other programs,
 turning off your wireless network and unplug any network cable.
 
-Using 'timidity': [wrapper script and desktop file] (https://github.com/captnfab/PianoBooster/tree/master/tools/timidity).
+Using 'timidity': [wrapper script and desktop file](https://github.com/captnfab/PianoBooster/tree/master/tools/timidity).
 
 ## How do I hear the sound on Mac?
 
