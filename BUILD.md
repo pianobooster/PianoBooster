@@ -11,7 +11,7 @@
 
    (Alternatively you can use qmake followed by make in the src directory.)
 
-   If you make changes to the source code then please post details on the forum.
+   If you make changes to the source code then please post details.
 
 # macOS
 
@@ -34,7 +34,7 @@
 
    To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0)
 
-   If you make changes to the source code then please post details on the forum.
+   If you make changes to the source code then please post details.
 
    See also [README-macOS.md](README-macOS.md)
 
@@ -51,7 +51,7 @@
 
    Or alternatively you can install QtCreator and then open the painobooster.pro
 
-   If you make changes to the source code then please post details on the forum.
+   If you make changes to the source code then please post details.
 
 
 # License

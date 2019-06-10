@@ -10,7 +10,7 @@ To hear the music you will need a General Midi compatible sound synthesizer. Unf
 the "Microsoft GS Wavetable software synthesizer" that comes with Windows introduces an
 unacceptable delay (latency) between pressing a note and hearing the sound. For this reason
 the use of "Microsoft GS Wavetable software synthesizer" is not recommend. Please see the
-forum section of this website for possible solutions.
+forum section for possible solutions.
 
 ## MIDI files
 
@@ -33,6 +33,8 @@ Version 0.6.4 for the Mac is coming soon in the meantime here is the previous re
 A universal binary for the Mac (Thanks to Christian).
 
 [pianobooster-mac-0.6.2.dmg](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.2/pianobooster-mac-0.6.2.dmg/download) (obsoleted)
+
+[pianobooster-mac-0.6.5-alpha1.dmg](https://github.com/chrisballinger/PianoBooster/releases/tag/v0.6.5-alpha1) (not official)
 
 ## Packages for Linux
 

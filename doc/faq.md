@@ -4,19 +4,14 @@
 
 Piano Booster uses MIDI music files (.mid) or karaoke files (.kar) to play music.
 
-In particular there  are some high quality demo midi files contained in three
-zip files available from [this page](http://www.pianobooster.pwp.blueyonder.co.uk).
-These are demos of commercially produced MIDI files that used to be supplied
-with music tutor books but now these books are sold without any MIDI files.
-
-Also see [this thread](http://piano-booster.2625608.n2.nabble.com/Pieces-of-music-that-I-have-enjoyed-playing-please-add-to-this-list-td1600345.html)
+See [this thread](http://piano-booster.2625608.n2.nabble.com/Pieces-of-music-that-I-have-enjoyed-playing-please-add-to-this-list-td1600345.html)
 on the forum which list useful source of midi files on the net.
 Please add to this list if you find any pieces of music that you enjoy playing.
 
 ## How do I hear the sound on Linux (Ubuntu)?
 
 To hear the sound Piano Booster needs a MIDI sound generator,
-there are two different General Midi sound generators available on Linux, 'fluidsynth' and 'timidty'.
+there are two different General Midi sound generators available on Linux, 'fluidsynth' and 'timidity'.
 To install fluidsynth you must install the following packages 'fluidsynth' 'fluid-soundfont-gm' and
 'fluid-soundfont-gs' using your favourite package manager.
 To start the fluidsynth sound generator copy and paste the following command line (one very long command line).
@@ -40,6 +35,8 @@ On PianoBooster set the Setup/Midi Setup/Midi Output Device: to `FLUID Synth (fs
 
 If you get problems with unsteady playback or the audio cutting out then try closing all other programs,
 turning off your wireless network and unplug any network cable.
+
+Using 'timidity': [wrapper script and desktop file] (https://github.com/captnfab/PianoBooster/tree/master/tools/timidity).
 
 ## How do I hear the sound on Mac?
 
