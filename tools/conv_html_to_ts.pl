@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# This script generates music_blank.ts
+# License: same with Pianobooster
+# Author: DanSoft <http://dansoft.krasnokamensk.ru/>
+
 use strict;
 
 if (!defined($ARGV[0])){
