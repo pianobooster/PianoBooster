@@ -76,7 +76,7 @@
     <message>
        <source>&lt;body bgcolor="#FFFFC0"&gt;&lt;p&gt;&lt;strong&gt;Lavender's Blue&lt;/strong&gt; is a simple tune in the right hand only that uses the first six notes of the scale of C Major. For the lowest five notes &lt;strong&gt;C D E F&lt;/strong&gt; and &lt;strong&gt;G&lt;/strong&gt; use all the fingers or your right hand - one for each note. (With your &lt;strong&gt;thumb&lt;/strong&gt; on &lt;strong&gt;C&lt;/strong&gt; and your &lt;strong&gt;little finger&lt;/strong&gt; on &lt;strong&gt;G&lt;/strong&gt;). Then for &lt;strong&gt;A&lt;/strong&gt; just stretch your &lt;strong&gt;little finger&lt;/strong&gt; to reach that note.&lt;/p&gt;
 
-&lt;font color="#ff0000"&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;To help find the notes ensure &quot;Show Note Names&quot; are turned on from &quot;Setup Preferences&quot; menu.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
+&lt;font color="#ff0000"&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;To help find the notes ensure &lt;strong&gt;Show Note Names&lt;/strong&gt; are turned on from &lt;strong&gt;Setup Preferences&lt;/strong&gt; menu.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
 <context>
     <name>QtWindow</name>
     <message>
@@ -7,15 +7,19 @@
 &lt;p&gt;Use your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;C&lt;/strong&gt;, your &lt;strong&gt;middle finger&lt;/strong&gt; for &lt;strong&gt;E&lt;/strong&gt; and your &lt;strong&gt;little finger&lt;/strong&gt; for &lt;strong&gt;G&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;If you don&apos;t know the names of the notes on the score then turn on &lt;strong&gt;Show Note Names&lt;/strong&gt; from the PianoBooster &lt;strong&gt;Setup/Preferences&lt;/strong&gt; menu.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;La pieza &lt;strong&gt;Acorde de Do Mayor&lt;/strong&gt; te presenta el acorde de &lt;strong&gt;Do Mayor&lt;/strong&gt; el cual tiene tres notas &lt;strong&gt;Do medio&lt;/strong&gt;, &lt;strong&gt;Mi&lt;/strong&gt; y &lt;strong&gt;Fa&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Usa tu &lt;strong&gt;pulgar&lt;/strong&gt; para &lt;strong&gt;Do&lt;/strong&gt;, tu &lt;strong&gt;dedo medio&lt;/strong&gt; para &lt;strong&gt;Mi&lt;/strong&gt; y tu &lt;strong&gt;dedo meñique&lt;/strong&gt; para &lt;strong&gt;Fa&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Consejo:&lt;/strong&gt; &lt;em&gt;Si no conoce los nombres de las notas en la puntuación, active &lt;strong&gt;Mostrar nombres de notas&lt;/strong&gt; desde el menú de PianoBooster &lt;strong&gt;Configuración / Preferencias&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
     <message>
        <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Start With Middle C&lt;/strong&gt; is an extremely easy piece. Just find &lt;strong&gt;middle C&lt;/strong&gt; on the piano and then play that note four times using your &lt;strong&gt;thumb&lt;/strong&gt; on your &lt;strong&gt;right hand&lt;/strong&gt;. The first half of the piece has &lt;strong&gt;middle C&lt;/strong&gt; in the &lt;strong&gt;Treble Clef&lt;/strong&gt;, then for the second half of the piece the same &lt;strong&gt;middle C&lt;/strong&gt; note is shown the &lt;strong&gt;Bass Clef&lt;/strong&gt;. Play this using your &lt;strong&gt;thumb&lt;/strong&gt; on your &lt;strong&gt;left hand&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;Try to remember where &lt;strong&gt;Middle C&lt;/strong&gt; is on the piano - this is the most &lt;strong&gt;important note&lt;/strong&gt;!&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Začnutí jednočárkovaným C&lt;/strong&gt; je velice snadný úkol. Prostě na klavíru najděte &lt;strong&gt;jednočárkované C&lt;/strong&gt;, a potom notu čtyřikrát zahrajte pomocí svého &lt;strong&gt;palce&lt;/strong&gt; na &lt;strong&gt;pravé ruce&lt;/strong&gt;. První polovina kusu má &lt;strong&gt;jednočárkované C&lt;/strong&gt; v &lt;strong&gt;houslovém klíči&lt;/strong&gt;, pak pro druhou polovinu kusu je ta samá nota &lt;strong&gt;jednočárkovaného C&lt;/strong&gt; ukázána v &lt;strong&gt;basovém klíči&lt;/strong&gt;. Hrajte pomocí &lt;strong&gt;palce&lt;/strong&gt; na &lt;strong&gt;levé ruce&lt;/strong&gt;.&lt;/p&gt;
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Comienza con Do Medio&lt;/strong&gt;es una pieza extremadamente fácil. Solo encuentra la &lt;strong&gt;Do Medio&lt;/strong&gt;en el piano y luego toca esa nota cuatro veces con el &lt;strong&gt;pulgar &lt;/strong&gt;de tu&lt;strong&gt; mano derecha&lt;/strong&gt;. La primera mitad de la pieza tiene &lt;strong&gt;Do Medio &lt;/strong&gt;en la &lt;strong&gt;Clave de Sol&lt;/strong&gt;, luego, para la segunda mitad de la pieza, la misma nota &lt;strong&gt;Do medio&lt;/strong&gt;se muestra la &lt;strong&gt;Clave de Fa&lt;/strong&gt;. Juega esto usando tu &lt;strong&gt;pulgar &lt;/strong&gt;de tu &lt;strong&gt;mano izquierda&lt;/strong&gt;. &lt;/p&gt;
 
-&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;Pokuste se zapamatovat si, kde je &lt;strong&gt;jednočárkované C&lt;/strong&gt; na klavíru -- je to ta &lt;strong&gt;nejdůležitější nota&lt;/strong&gt;!&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Consejo:&lt;/strong&gt; &lt;em&gt;Trate de recordar dónde está &lt;strong&gt;Do Medio&lt;/strong&gt;en el piano. ¡Esta es la &lt;strong&gt;nota más importante&lt;/strong&gt;!&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
     <message>
        <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Now we are going to play using your &lt;strong&gt;left hand&lt;/strong&gt; the &lt;strong&gt;F major chord&lt;/strong&gt;. The three notes of a chord are called a triad and this chord has the same shape as the C major chord we played earlier but played on a different part of the piano.&lt;/p&gt;
@@ -45,9 +49,7 @@
        <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Now we are ready to play our first tune, this is a simplified version of &lt;strong&gt;Clair De La Lune&lt;/strong&gt; that uses just three notes &lt;strong&gt;C D&lt;/strong&gt; and &lt;strong&gt;E&lt;/strong&gt; from your right hand. First find &lt;strong&gt;middle C&lt;/strong&gt; and always use your &lt;strong&gt;thumb&lt;/strong&gt; for this note, then for &lt;strong&gt;D&lt;/strong&gt; use your &lt;strong&gt;first finger&lt;/strong&gt; and for &lt;strong&gt;E&lt;/strong&gt; use &lt;strong&gt;middle finger&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;Remember the fingering: Use your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;middle C&lt;/strong&gt;, your &lt;strong&gt;first finger&lt;/strong&gt; for &lt;strong&gt;D&lt;/strong&gt; and &lt;strong&gt;middle finger&lt;/strong&gt; for &lt;strong&gt;E&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Nyní jsme připravení zahrát naši první melodii. Jedná se o zjednodušenou verzi &lt;strong&gt;Clair De La Lune&lt;/strong&gt;, která používá tři noty &lt;strong&gt;C D&lt;/strong&gt; a &lt;strong&gt;E&lt;/strong&gt; z vaší pravé ruky. Nejprve zahrajte &lt;strong&gt;jednočárkované C&lt;/strong&gt; a vždy pro tuto notu použijte &lt;strong&gt;palec&lt;/strong&gt;, potom pro &lt;strong&gt;D&lt;/strong&gt; použijte &lt;strong&gt;první prst (ukazováček)&lt;/strong&gt; a pro &lt;strong&gt;E&lt;/strong&gt; použijte &lt;strong&gt;prostředníček&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Rada:&lt;/strong&gt; &lt;em&gt;Zapamatujte si prstoklad: Použijte &lt;strong&gt;palec&lt;/strong&gt; pro &lt;strong&gt;jednočárkované C&lt;/strong&gt;, &lt;strong&gt;ukazováček&lt;/strong&gt; pro &lt;strong&gt;D&lt;/strong&gt; a &lt;strong&gt;prostředníček&lt;/strong&gt; for &lt;strong&gt;E&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
        <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;This is a simplified version of &lt;strong&gt;Clair De La Lune&lt;/strong&gt; that uses only the three notes &lt;strong&gt;C D&lt;/strong&gt; and &lt;strong&gt;E&lt;/strong&gt; from your right hand. First find &lt;strong&gt;middle C&lt;/strong&gt; and always use your &lt;strong&gt;thumb&lt;/strong&gt; for this note, then for &lt;strong&gt;D&lt;/strong&gt; use your &lt;strong&gt;first finger&lt;/strong&gt; and for &lt;strong&gt;E&lt;/strong&gt; use &lt;strong&gt;middle finger&lt;/strong&gt;.&lt;/p&gt;
@@ -91,7 +93,9 @@
        <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;For &lt;strong&gt;Frere Jacques&lt;/strong&gt; introduces the use of playing both hands together with a very simple left hand part. First practice the &lt;strong&gt;left hand&lt;/strong&gt; and &lt;strong&gt;right hand&lt;/strong&gt; parts separately. Then when ready reduce the &lt;strong&gt;speed to 70%&lt;/strong&gt; and try &lt;strong&gt;both hands&lt;/strong&gt; together. Again start with &lt;strong&gt;both thumbs&lt;/strong&gt; on &lt;strong&gt;Middle C&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;Practice the &lt;strong&gt;left hand&lt;/strong&gt; and &lt;strong&gt;right hand&lt;/strong&gt; parts separately.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Para &lt;strong&gt;Frere Jacques &lt;/strong&gt;introduce el uso de jugar ambas manos juntas con una parte muy simple de la mano izquierda.  Primero practique las &lt;strong&gt;partes de la mano izquierda &lt;/strong&gt;y &lt;strong&gt;la mano derecha &lt;/strong&gt;por separado. Luego, cuando esté listo, reduzca la &lt;strong&gt;velocidad al 70% &lt;/strong&gt;e intente &lt;strong&gt;ambas manos &lt;/strong&gt;juntas. De nuevo comienza con&lt;strong&gt; los dos pulgares&lt;/strong&gt; en &lt;strong&gt;el Do central &lt;/strong&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Consejo: &lt;/strong&gt;&lt;em&gt;Practique las &lt;strong&gt;partes de la mano izquierda y &lt;strong&gt;la mano derecha &lt;/strong&gt;por separado.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
 </context>
 </TS>
