@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 if [ -f "/usr/share/soundfonts/FluidR3_GM.sf2" ] && [ -f "/usr/share/soundfonts/FluidR3_GS.sf2" ]
 then

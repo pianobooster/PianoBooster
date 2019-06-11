@@ -50,6 +50,8 @@ of Reverbs, chorus effects, etc.
 
 Using 'timidity': [wrapper script and desktop file](https://github.com/captnfab/PianoBooster/tree/master/tools/timidity).
 
+Using 'fluidsynth': [wrapper script and desktop file](https://github.com/captnfab/PianoBooster/tree/master/tools/fluidsynth).
+
 ## How do I hear the sound on Mac?
 
 While there are many possible choices General Midi sound generators for the Mac
