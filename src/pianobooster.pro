@@ -154,7 +154,7 @@ SOURCES   = QtMain.cpp  \
             Tempo.cpp \
             MidiDevice.cpp \
             MidiDeviceRt.cpp \
-            rtmidi/RtMidi.cpp \
+            3rdparty/rtmidi/RtMidi.cpp \
             StavePosition.cpp \
             Score.cpp \
             Cfg.cpp \
@@ -170,7 +170,7 @@ SOURCES   = QtMain.cpp  \
 
 RC_FILE     = pianobooster.rc
 
-INCLUDEPATH += rtmidi
+INCLUDEPATH += 3rdparty
 
 OBJECTS_DIR = tmp
 
