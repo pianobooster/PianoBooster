@@ -36,6 +36,8 @@ do
   printf "</font>" >> $file_html
   printf "</body>" >> $file_html
   sed -i '1s/^/<body bgcolor="#FFFFC0">/' $file_html
+  sed -i "s|&rsquo;|'|g" $file_html
+  sed -i "s|&hellip;|. . .|g" $file_html
 done
 echo "Done for generating HTML files from MD files"
 
