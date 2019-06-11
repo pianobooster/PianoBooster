@@ -1,0 +1,38 @@
+[Desktop Entry]
+Name=Piano Booster (FluidSynth)
+Comment=A MIDI file player that teaches you how to play the piano, with FluidSynth sequencer
+GenericName=Piano Teacher
+Exec=pianobooster-fluidsynth
+Icon=pianobooster
+Terminal=false
+Type=Application
+Categories=Music;Education;
+MimeType=audio/x-karaoke;audio/x-midi;audio/midi;
+Keywords=audio;midi;music;piano;education;learning;playing;songs;
+
+
+# Translations
+GenericName[gl]=Profesor de piano
+Name[hi]=पियानो बूस्टर (FluidSynth)
+Name[pt]=Piano Booster (FluidSynth)
+Comment[pt]=Um reprodutor de ficheiro MIDI que ensina a tocar piano, com o sequenciador FluidSynth
+GenericName[pt]=Professor de Piano
+Comment[pt_BR]=Um reprodutor de arquivos MIDI que ensina a tocar piano, com o sequenciador FluidSynth
+GenericName[pt_BR]=Professor de Piano
+Name[ru]=Piano Booster (FluidSynth)
+Comment[ru]=Проигрыватель MIDI-файлов, который научит вас играть на пианино с помощью секвенсора FluidSynth
+GenericName[ru]=Обучение пианино
+Name[is]=Píanó Booster (FluidSynth)
+GenericName[is]=Píanókennari
+Name[cs]=Piano Booster (FluidSynth)
+Comment[cs]=Přehrávač souborů MIDI, který vás učí hře na klavír, se sekvencerem FluidSynth
+GenericName[cs]=Učitel klavíru
+Name[de]=Piano Booster (FluidSynth)
+Name[es]=Piano Booster (FluidSynth)
+Comment[es]=Un reproductor de archivos MIDI que te enseña a tocar el piano, con el secuenciador FluidSynth
+GenericName[es]=Profesor de piano
+Name[uk]=Piano Booster (FluidSynth)
+Comment[uk]=Програвач файлів MIDI, який навчить вас гри на піаніно за допомогою синтезатора FluidSynth
+GenericName[uk]=Навчання гри на піаніно
+Name[fr]=Piano Booster (FluidSynth)
+GenericName[fr]=Professeur de piano

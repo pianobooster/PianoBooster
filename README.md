@@ -69,6 +69,8 @@ You need to translate:
 
 [Desktop file #2](https://github.com/captnfab/PianoBooster/blob/master/tools/timidity/pianobooster-timidity.desktop)
 
+[Desktop file #3](https://github.com/captnfab/PianoBooster/blob/master/tools/fluidsynth/pianobooster-fluidsynth.desktop)
+
 LICENSE
 =======
 
