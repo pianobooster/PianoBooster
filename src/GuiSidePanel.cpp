@@ -251,6 +251,29 @@ void GuiSidePanel::updateTranslate(){
     rhythmTappingCombo->setItemText(1,tr("Melody"));
 
     retranslateUi(this);
+
+
+    // ---  smart resize panel  --- //
+    int maxDeltaWidth=0;
+    this->setMaximumWidth(300); // default
+    QVector<QWidget*> listCheckWidget {label2,listenRadio,rhythmTapRadio,followYouRadio,playAlongRadio,rightHandRadio,bothHandsRadio,leftHandRadio};
+
+    for (QWidget* w:listCheckWidget){
+        int delta = 0;
+        QFontMetrics fm(w->font());
+
+        QLabel *lb = dynamic_cast<QLabel*>(w);
+        if (lb) delta=fm.width(lb->text())-lb->width();
+
+        QRadioButton *rb = dynamic_cast<QRadioButton*>(w);
+        if (rb) delta=fm.width(rb->text())-rb->width();
+
+        if (delta>maxDeltaWidth) maxDeltaWidth=delta;
+    }
+
+    if (maxDeltaWidth>400) maxDeltaWidth=400;
+    this->setMinimumWidth(300+maxDeltaWidth);
+
 }
 
 
