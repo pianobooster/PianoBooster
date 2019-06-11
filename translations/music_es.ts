@@ -76,7 +76,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-       <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Now we are ready to play our first tune, this is a simplified version of &lt;strong&gt;Clair De La Lune&lt;/strong&gt; that uses just three notes &lt;strong&gt;C D&lt;/strong&gt; and &lt;strong&gt;E&lt;/strong&gt; from your right hand. First find &lt;strong&gt;middle C&lt;/strong&gt; and always use your &lt;strong&gt;thumb&lt;/strong&gt; for this note, then for &lt;strong&gt;D&lt;/strong&gt; use your &lt;strong&gt;first finger&lt;/strong&gt; and for &lt;strong&gt;E&lt;/strong&gt; use &lt;strong&gt;middle finger&lt;/strong&gt;.&lt;/p&gt;
+       <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;This is a simplified version of &lt;strong&gt;Clair De La Lune&lt;/strong&gt; that uses just three notes &lt;strong&gt;C D&lt;/strong&gt; and &lt;strong&gt;E&lt;/strong&gt; from your right hand. First find &lt;strong&gt;middle C&lt;/strong&gt; and always use your &lt;strong&gt;thumb&lt;/strong&gt; for this note, then for &lt;strong&gt;D&lt;/strong&gt; use your &lt;strong&gt;first finger&lt;/strong&gt; and for &lt;strong&gt;E&lt;/strong&gt; use &lt;strong&gt;middle finger&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;b&gt;Hint:&lt;/strong&gt; &lt;em&gt;Remember the fingering: Use your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;middle C&lt;/strong&gt;, your &lt;strong&gt;first finger&lt;/strong&gt; for &lt;strong&gt;D&lt;/strong&gt; and &lt;strong&gt;middle finger&lt;/strong&gt; for &lt;strong&gt;E&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
         <translation type="unfinished"/>
