@@ -103,12 +103,24 @@ ENDIF(USE_FLUIDSYNTH)
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
-INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} ${FTGL_INCLUDE_DIR})
+INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} ${FTGL_INCLUDE_DIR} ${RTMIDI_INCLUDE_DIR})
 
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
-    Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp rtmidi/RtMidi.cpp ${PB_BASE_SRCS})
+    Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp ${PB_BASE_SRCS})
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
-    Chord.h Tempo.h MidiDevice.h rtmidi/RtMidi.h)
+    Chord.h Tempo.h MidiDevice.h)
+    
+IF (USE_SYSTEM_RTMIDI)
+    pkg_check_modules(RTMIDI rtmidi)
+    SET(RTMIDI_INCLUDE_DIR ${RTMIDI_INCLUDE_DIRS})
+    SET(RTMIDI_LIBRARY ${RTMIDI_LIBRARIES})
+    ADD_DEFINITIONS(-D__UNIX_JACK__ -D__LINUX_ALSA__)
+ELSE(USE_SYSTEM_RTMIDI)
+    INCLUDE_DIRECTORIES("3rdparty")
+    SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
+    SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
+ENDIF(USE_SYSTEM_RTMIDI)
+    
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
@@ -205,7 +217,7 @@ IF (USE_PCH)
 ADD_PRECOMPILED_HEADER( pianobooster ${CMAKE_CURRENT_SOURCE_DIR}/precompile/precompile.h )
 ENDIF (USE_PCH)
 
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY} ${RTMIDI_LIBRARY})
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
