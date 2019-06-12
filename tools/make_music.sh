@@ -26,9 +26,9 @@ cp -f doc/courses/BoosterMusic/*.mid music/BoosterMusicBooks$version/BoosterMusi
 echo "Done for copying MIDI files"
 
 echo "Generating HTML files from MD files..."
-for file in `find ./music-src -name ??-*.md`
+for file in `find ./music/src -name ??-*.md`
 do
-  file_html=`echo $file|sed "s|_en.md|_en.html|g"|sed "s|./music-src|music/BoosterMusicBooks$version|g"|sed "s|/0|/InfoPages/0|g"`
+  file_html=`echo $file|sed "s|_en.md|_en.html|g"|sed "s|./music/src|music/BoosterMusicBooks$version|g"|sed "s|/0|/InfoPages/0|g"`
   markdown $file > $file_html
   awk 'NR>1{printf "\n"} {printf $0}' $file_html > "$file_html"_tmp
   mv -f "$file_html"_tmp $file_html

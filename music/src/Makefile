@@ -1,5 +1,5 @@
 dirs:= BeginnerCourse BoosterMusic
-output:= ../doc/courses
+output:= ../../doc/courses
 ABCs:=$(foreach dir, $(dirs), $(wildcard $(dir)/??-*.abc))
 MMAs:=$(sort $(foreach dir, $(dirs), $(wildcard $(dir)/??-*.mma)))
 MIDs:=$(foreach mma, $(MMAs:.mma=.mid), $(output)/$(mma))

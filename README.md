@@ -115,6 +115,8 @@ PianoBooster is community developing project since 2018. You're welcome with pat
 
 We have many issues always [Issues](https://github.com/captnfab/PianoBooster/issues)
 
+We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src). For more information look at [README.md](doc/courses/README.md)
+
 PLATFORMS
 =========
 
