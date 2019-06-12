@@ -2,13 +2,13 @@
 # for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
 SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
-SET(USE_FLUIDSYNTH OFF)
+#SET(USE_FLUIDSYNTH OFF)
 
 #SET(OpenGL_GL_PREFERENCE GLVND)
 #
 # The inplace directory is mainly for windows builds
 # SET(FLUIDSYNTH_INPLACE_DIR C:/download/misc/ljb/fluidsynth-1.0.9)
-SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
+# SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
 
 
 # Testing precompiled headers  it does not work -- leave as OFF.
