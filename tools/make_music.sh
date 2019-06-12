@@ -32,7 +32,7 @@ do
   markdown $file > $file_html
   awk 'NR>1{printf "\n"} {printf $0}' $file_html > "$file_html"_tmp
   mv -f "$file_html"_tmp $file_html
-  sed -i 's|<p><strong>Hint:|<font color="#ff0000"><p><b>Hint:|g' $file_html
+  sed -i 's|<p><strong>Hint:|<font color="#ff0000"><p><strong>Hint:|g' $file_html
   printf "</font>" >> $file_html
   printf "</body>" >> $file_html
   sed -i '1s/^/<body bgcolor="#FFFFC0">/' $file_html
