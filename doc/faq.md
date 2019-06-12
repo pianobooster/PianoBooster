@@ -17,12 +17,6 @@ To install fluidsynth you must install the following packages 'fluidsynth' 'flui
 To start the fluidsynth sound generator copy and paste the following command line (one very long command line).
 
 ```bash
-fluidsynth /usr/share/sounds/sf2/FluidR3_GM.sf2
-```
-
-or
-
-```bash
 fluidsynth -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
 ```
 If you have a fast machine then you can leave out the flags  `-C 0 -R 0 -r 22050` which turns off the reverb, chorus and reduce the sample rate.
