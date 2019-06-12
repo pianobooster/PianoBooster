@@ -71,7 +71,6 @@ Summary:        Wrapper to launch PianoBooster with FluidSynth as MIDI sequencer
 Group:          Sound/Midi
 
 Requires:       %{name} = %{version}-%{release}
-Requires:       xterm
 Requires:       fluidsynth
 Requires:       fluid-soundfont-gm
 Requires:       fluid-soundfont-gs
