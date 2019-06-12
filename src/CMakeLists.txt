@@ -231,6 +231,16 @@ if(WITH_MAN)
     INSTALL( FILES ../pianobooster.6  DESTINATION share/man/man6/ )
 endif()
 
+if(WITH_TIMIDITY)
+    INSTALL( FILES ../tools/timidity/pianobooster-timidity PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ DESTINATION bin )
+    INSTALL( FILES ../tools/timidity/pianobooster-timidity.desktop DESTINATION share/applications )
+endif()
+
+if(WITH_FLUIDSYNTH)
+    INSTALL( FILES ../tools/fluidsynth/pianobooster-fluidsynth PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ DESTINATION bin )
+    INSTALL( FILES ../tools/fluidsynth/pianobooster-fluidsynth.desktop DESTINATION share/applications )
+endif()
+
 INSTALL ( FILES ../icons/hicolor/32x32/pianobooster.png DESTINATION share/icons/hicolor/32x32/apps )
 INSTALL ( FILES ../icons/hicolor/48x48/pianobooster.png DESTINATION share/icons/hicolor/48x48/apps )
 INSTALL ( FILES ../icons/hicolor/64x64/pianobooster.png DESTINATION share/icons/hicolor/64x64/apps )

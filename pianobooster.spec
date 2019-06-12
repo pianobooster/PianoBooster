@@ -91,20 +91,15 @@ even without a plugged-in MIDI keyboard.
 %autosetup -p1 -n %{name}-%{version}
 
 %build
-%cmake -DUSE_SYSTEM_FONT=ON -DNO_DOCS=ON -DINSTALL_ALL_LANGS=1 -DUSE_SYSTEM_RTMIDI=1 -DWITH_MAN=ON
+%cmake \
+       -DUSE_SYSTEM_FONT=ON \
+       -DNO_DOCS=ON \
+       -DINSTALL_ALL_LANGS=ON \
+       -DUSE_SYSTEM_RTMIDI=ON \
+       -DWITH_MAN=ON \
+       -DWITH_TIMIDITY=ON \
+       -DWITH_FLUIDSYNTH=ON
 %make_build
 
 %install
 %make_install -C build
-
-# Install a wrapper script to start a TiMidity server together with PianoBooster
-install -D -m755 tools/timidity/%{name}-timidity %{buildroot}%{_bindir}
-
-# Install a TiMidity desktop file for the wrapper script
-install -D -m644 tools/timidity/%{name}-timidity.desktop %{buildroot}%{_datadir}/applications/%{name}-timidity.desktop
-
-# Install a wrapper script to start a FluidSynth server together with PianoBooster
-install -D -m755 tools/fluidsynth/%{name}-fluidsynth %{buildroot}%{_bindir}
-
-# Install a FluidSynth desktop file for the wrapper script
-install -D -m644 tools/fluidsynth/%{name}-fluidsynth.desktop %{buildroot}%{_datadir}/applications/%{name}-fluidsynth.desktop
