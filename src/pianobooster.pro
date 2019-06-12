@@ -222,11 +222,17 @@ unix {
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
 
-   pixmaps.path = $$PREFIX/share/pixmaps
-   pixmaps.files = ../icons/hicolor/64x64/pianobooster.png
+   icon32.path = $$PREFIX/icons/hicolor/32x32/apps
+   icon32.files = ../icons/hicolor/32x32/pianobooster.png
+
+   icon48.path = $$PREFIX/icons/hicolor/48x48/apps
+   icon48.files = ../icons/hicolor/48x48/pianobooster.png
+
+   icon64.path = $$PREFIX/icons/hicolor/64x64/apps
+   icon64.files = ../icons/hicolor/64x64/pianobooster.png
 
    docs.path = $$PREFIX/share/doc/pianobooster
    docs.files = ../README.txt
 
-   INSTALLS += target desktop pixmaps docs
+   INSTALLS += target desktop icon32 icon48 icon64 docs
 }

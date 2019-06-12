@@ -109,7 +109,7 @@ SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp ${PB_BASE_SRCS})
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h)
-    
+
 IF (USE_SYSTEM_RTMIDI)
     pkg_check_modules(RTMIDI rtmidi)
     SET(RTMIDI_INCLUDE_DIR ${RTMIDI_INCLUDE_DIRS})
@@ -120,7 +120,7 @@ ELSE(USE_SYSTEM_RTMIDI)
     SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
     SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
 ENDIF(USE_SYSTEM_RTMIDI)
-    
+
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
@@ -227,7 +227,9 @@ if(NOT NO_DOCS)
     INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
 endif()
 
-INSTALL ( FILES ../icons/hicolor/64x64/pianobooster.png DESTINATION share/pixmaps )
+INSTALL ( FILES ../icons/hicolor/32x32/pianobooster.png DESTINATION share/icons/hicolor/32x32/apps )
+INSTALL ( FILES ../icons/hicolor/48x48/pianobooster.png DESTINATION share/icons/hicolor/48x48/apps )
+INSTALL ( FILES ../icons/hicolor/64x64/pianobooster.png DESTINATION share/icons/hicolor/64x64/apps )
 
 if(USE_FONT)
     INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
