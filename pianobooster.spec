@@ -91,13 +91,11 @@ even without a plugged-in MIDI keyboard.
 %autosetup -p1 -n %{name}-%{version}
 
 %build
-%cmake -DUSE_SYSTEM_FONT=ON -DNO_DOCS=ON -DINSTALL_ALL_LANGS=1 -DUSE_SYSTEM_RTMIDI=1
+%cmake -DUSE_SYSTEM_FONT=ON -DNO_DOCS=ON -DINSTALL_ALL_LANGS=1 -DUSE_SYSTEM_RTMIDI=1 -DWITH_MAN=ON
 %make_build
 
 %install
 %make_install -C build
-
-install -D -m644 %{name}.6 %{buildroot}%{_mandir}/man6/%{name}.6
 
 # Install a wrapper script to start a TiMidity server together with PianoBooster
 install -D -m755 tools/timidity/%{name}-timidity %{buildroot}%{_bindir}

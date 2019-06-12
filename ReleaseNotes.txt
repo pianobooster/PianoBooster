@@ -6,12 +6,14 @@ v0.7.0:
 - Use FTGL library to draw fonts in GL context
 - Translate notes
 - Fix Qt strings localization
-- New options: INSTALL_ALL_LANGS, USE_SYSTEM_FONT, NO_DOCS, USE_SYSTEM_RTMIDI
+- New options: INSTALL_ALL_LANGS, USE_SYSTEM_FONT, NO_DOCS, USE_SYSTEM_RTMIDI,
+  WITH_MAN
 - Allow to switch between languages within a session
 - Add Piano Keyboard widget
 - Update documentation
 - Fix problem loading midi files with text events
 - New Windows installer
+- Use hicolor icon theme
 
 v0.6.6: (05 September 2013)
 - Reset should be fixed now (keylights)
@@ -31,13 +33,13 @@ v0.6.4: (28 November 2009)
 - Greatly reduced the memory footprint.
 - Reduced the CPU load.
 - Reduced the screen flicker (recommend setting the screen refresh rate to 60Hz
-     and for Intel Graphic chips updating the drivers).
+  and for Intel Graphic chips updating the drivers).
 - Added keyboard short-cuts. These are - speed up/down, play from start,
-     play/pause, next previous song, left right both hands.
+  play/pause, next previous song, left right both hands.
 - Remembers the song settings in a configuration file called "pb.cfg".
-     these are the midi channels, speed, left right or both hands.
+  these are the midi channels, speed, left right or both hands.
 - Now works well Ubuntu 9.10 and Intel graphic chips.
-    (Those with Ubuntu 9.04 and Intel should upgrade to 9.10 and this version)
+  (Those with Ubuntu 9.04 and Intel should upgrade to 9.10 and this version)
 - Fixed various start up issues.
 - Now correctly notates repeated accidentals that occur in a single bar.
 - Added the option to display courtesy accidentals.
@@ -58,11 +60,11 @@ v0.6.2: (01 April 2009)
 v0.6.1: (11 March 2009)
 - Added a play from bar (so you can start from playing any bar)
 - Added a latency fix for high latency sound generators (e.g. the windows GS software synth)
-    (requires a piano keyboard _with_ it's own speakers/sound generator)
+  (requires a piano keyboard _with_ it's own speakers/sound generator)
 - Added the ability to "mute your part when playing" along.
 - May have reduced the flickering especially on windows with a low spec machine
 - Added a piano volume slider (so you can adjust the volume of your piano with compared
-    to the accompaniment)
+  to the accompaniment)
 - Added an icon for the Piano Booster main window.
 - Fix a bug when swapping hands in the middle of a piece.
 - Fix a bug left or right now correctly dim the other stave.

@@ -227,6 +227,10 @@ if(NOT NO_DOCS)
     INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
 endif()
 
+if(WITH_MAN)
+    INSTALL( FILES ../pianobooster.6  DESTINATION share/man/man6/ )
+endif()
+
 INSTALL ( FILES ../icons/hicolor/32x32/pianobooster.png DESTINATION share/icons/hicolor/32x32/apps )
 INSTALL ( FILES ../icons/hicolor/48x48/pianobooster.png DESTINATION share/icons/hicolor/48x48/apps )
 INSTALL ( FILES ../icons/hicolor/64x64/pianobooster.png DESTINATION share/icons/hicolor/64x64/apps )
