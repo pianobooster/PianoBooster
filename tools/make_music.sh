@@ -4,6 +4,12 @@
 # License: same with Pianobooster
 # Author: Alexey Loginov <alexl@mageia.org>
 
+if [ ! -f "/usr/bin/markdown" ]
+then
+  echo "Program '/usr/bin/markdown' was not found. Please install 'discount' package."
+  exit 0
+fi
+
 pushd ../
 
 echo "Determining MUSIC_RELEASE..."
@@ -40,6 +46,11 @@ do
   sed -i "s|&hellip;|. . .|g" $file_html
 done
 echo "Done for generating HTML files from MD files"
+
+echo "Renaming directories..."
+mv -f "music/BoosterMusicBooks$version/BeginnerCourse" "music/BoosterMusicBooks$version/Beginner Course"
+mv -f "music/BoosterMusicBooks$version/BoosterMusic" "music/BoosterMusicBooks$version/Booster Music"
+echo "Done for renaming directories"
 
 echo "Creating ZIP file..."
 pushd music
