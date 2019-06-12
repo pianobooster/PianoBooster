@@ -10,6 +10,12 @@ then
   exit 0
 fi
 
+if [ ! -f "/usr/bin/zip" ]
+then
+  echo "Program '/usr/bin/zip' was not found. Please install 'zip' package."
+  exit 0
+fi
+
 pushd ../
 
 echo "Determining MUSIC_RELEASE..."
