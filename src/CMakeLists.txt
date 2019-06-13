@@ -11,9 +11,6 @@ SET(CMAKE_VERBOSE_MAKEFILE OFF)
 # SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
 
 
-# Testing precompiled headers  it does not work -- leave as OFF.
-SET(USE_PCH OFF)
-
 cmake_minimum_required(VERSION 2.4)
 if(COMMAND cmake_policy)
     cmake_policy(SET CMP0003 NEW)
@@ -49,11 +46,6 @@ FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml 
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 add_compile_options(-fPIC)
-
-IF (USE_PCH)
-INCLUDE(precompile/PCHSupport_26.cmake)
-INCLUDE_DIRECTORIES( precompile .)
-ENDIF(USE_PCH)
 
 # Add in the link libraries for each operating system
 IF(${CMAKE_SYSTEM} MATCHES "Linux")
@@ -153,10 +145,8 @@ SET( PIANOBOOSTER_SRCS
     Bar.cpp
     Settings.cpp
     Merge.cpp
-    #Band.cpp
     pianobooster.rc
     images/pianobooster.ico
-    #precompile.h
 )
 
 
@@ -216,10 +206,6 @@ IF(WIN32)
 ENDIF(WIN32)
 
 qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
-
-IF (USE_PCH)
-ADD_PRECOMPILED_HEADER( pianobooster ${CMAKE_CURRENT_SOURCE_DIR}/precompile/precompile.h )
-ENDIF (USE_PCH)
 
 target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY} ${RTMIDI_LIBRARY})
 
