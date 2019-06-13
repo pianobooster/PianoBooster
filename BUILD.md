@@ -4,7 +4,7 @@
    'build-essential" are installed.
 
    Then type "cmake .", followed by "make". Finally as root type "make install".
-   (The pianobooster binary executable is now the "build" subdirectory)
+   (The pianobooster binary executable is now in the "build" subdirectory.)
 
    To build a debug version create a dir called "debug" and change to that dir and then
    type "cmake -DCMAKE_BUILD_TYPE=Debug .."
@@ -13,11 +13,13 @@
 
    See [Debian branch](https://github.com/captnfab/PianoBooster/tree/debian) for more details.
 
+   See [Mageia Linux spec file ](pianobooster.spec) for more details.
+
    If you make changes to the source code then please post details.
 
 # macOS
 
-   Install latest Xcode (from Apple Developer Connection, free registration required)
+   Install latest Xcode (from Apple Developer Connection, free registration required).
 
    Install CMake and QT libraries via Homebrew:
 
@@ -32,13 +34,11 @@
    ```
 
    Open the project file in XCode, set whatever options you like (universal or single architecture,
-   debug or release etc.) and compile
+   debug or release etc.) and compile.
 
-   To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0)
+   To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
 
    If you make changes to the source code then please post details.
-
-   See also [README-macOS.md](README-macOS.md)
 
 # Windows
 
@@ -51,7 +51,7 @@
 
    Once this is completed type "make".
 
-   Or alternatively you can install QtCreator and then open the painobooster.pro
+   Or alternatively you can install QtCreator and then open the pianobooster.pro
 
    If you make changes to the source code then please post details.
 

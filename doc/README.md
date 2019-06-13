@@ -1,6 +1,5 @@
 ![logo](../logo/Logotype_horizontal.png)
 
-
 # Boost your Piano playing skills
 
 - [Presentation](#presentation)
@@ -10,7 +9,6 @@
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [FAQ](faq.md)
-- [Download](download.md)
 - [Hints on playing the Piano](pianohints.md)
 - [Piano Booster Music](courses/README.md)
 
@@ -28,6 +26,7 @@ between playing along to a CD or a standard midi file is that *PianoBooster*
 listens and follows what you are playing on a midi piano keyboard.
 
 ### Introduction
+
 *PianoBooster* is a free (Open Source) program that plays Standard Midi Files
 and allows you to change the speed of playback
 and transpose the music etc.
@@ -52,7 +51,6 @@ playing the right notes while at the same time keeping your eyes on the printed
 score. The music accompaniment will automatically wait for you to find and play
 the correct notes in the piece.
 
-
 ### PianoBooster in Action
 
 Watch the video and see the features of *PianoBooster* in action.
@@ -60,7 +58,11 @@ Watch the video and see the features of *PianoBooster* in action.
 [![Watch Piano Booster in
 action](http://img.youtube.com/vi/UGbfm8Tv-20/0.jpg)](http://www.youtube.com/watch?v=UGbfm8Tv-20)
 
-More videos are available [here](https://www.youtube.com/watch?v=7YaDllVreuM) and [here](https://www.youtube.com/watch?v=58iw8nu3EOM)
+[![Watch Piano Booster in
+action](http://img.youtube.com/vi/7YaDllVreuM/0.jpg)](http://www.youtube.com/watch?v=7YaDllVreuM)
+
+[![Watch Piano Booster in
+action](http://img.youtube.com/vi/58iw8nu3EOM/0.jpg)](http://www.youtube.com/watch?v=58iw8nu3EOM)
 
 *Piano Booster* is piano teaching software that can provide piano lessons for
 beginners as well as for advanced players.

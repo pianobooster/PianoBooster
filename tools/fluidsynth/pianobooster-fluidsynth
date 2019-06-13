@@ -19,7 +19,7 @@ then
 fi
 
 fluidsynth -s -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
-sleep 1
 PID=$!
+sleep 1
 pianobooster
 kill $PID
