@@ -266,12 +266,10 @@ void GuiSidePanel::updateTranslate(){
         if (lb) delta=fm.width(lb->text())-lb->width();
 
         QRadioButton *rb = dynamic_cast<QRadioButton*>(w);
-        if (rb) delta=fm.width(rb->text())-rb->width();
+        if (rb) delta=fm.width(rb->text())-(rb->width()-32);
 
         if (delta>maxDeltaWidth) maxDeltaWidth=delta;
     }
-
-//    if (maxDeltaWidth>400) maxDeltaWidth=400;
     this->setMinimumWidth(300+maxDeltaWidth);
 
 }
