@@ -81,7 +81,7 @@ static void flushLogs()
 
 void closeLogs()
 {
-    if (logInfoFile != stdout)
+    if (logInfoFile && logInfoFile != stdout)
     {
         fclose(logInfoFile);
         logInfoFile = stdout;
