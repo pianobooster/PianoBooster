@@ -267,7 +267,7 @@ void CGLView::resizeGL(int width, int height)
     int staveGap;
     int maxSoreHeight;
 
-    int space = height - (heightAboveStave + heightBelowStave + minTitleHeight + minStaveGap);
+    //int space = height - (heightAboveStave + heightBelowStave + minTitleHeight + minStaveGap);
     //m_titleHeight = qBound(minTitleHeight, minTitleHeight + space/2, 70);
     // staveGap = qBound(minStaveGap, minStaveGap+ space/2, static_cast<int>(CStavePos::staveHeight() * 3));
     if (height < 430)  // So it works on an eeepc 701 (for Trev)

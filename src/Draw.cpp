@@ -576,7 +576,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x)
 void CDraw::drawSlot(CSlot* slot)
 {
     CStavePos stavePos;
-    int av8Left = slot->getAv8Left();
+    //int av8Left = slot->getAv8Left();
     for (int i=0; i < slot->length(); i++)
     {
         stavePos.notePos(slot->getSymbol(i).getHand(), slot->getSymbol(i).getNote());

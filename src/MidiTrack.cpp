@@ -31,11 +31,11 @@
 #include "Util.h"
 #include "StavePosition.h"
 
-#define OPTION_DEBUG_TRACK     0
+#define OPTION_DEBUG_TRACK     1
 #if OPTION_DEBUG_TRACK
-#define ppDEBUG_TRACK(args)     ppDebugTrack args
+#define __dt(X)        X
 #else
-#define ppDEBUG_TRACK(args)
+#define __dt(X)
 #endif
 
 int CMidiTrack::m_logLevel;
@@ -68,7 +68,7 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
         }
     }
     m_trackLengthCounter = readDWord();
-    ppDEBUG_TRACK((9, "Track Length %d", m_trackLengthCounter));
+    __dt(ppDebugTrack(9, "Track Length %d", m_trackLengthCounter));
 
     m_filePos = m_file.tellg();
     m_trackLength = m_trackLengthCounter + 8; // 4 bytes for the "MTrk" + 4 bytes for the track length
@@ -114,7 +114,7 @@ dword_t CMidiTrack::readVarLen()
     }
 #if OPTION_DEBUG_TRACK
     if (value > 400)
-        ppDEBUG_TRACK((2,"Large variable length data %d", value));
+        __dt(ppDebugTrack(2,"Large variable length data %d", value));
 #endif
     return ( value );
 }
@@ -215,7 +215,7 @@ void CMidiTrack::readTimeSignatureEvent()
     b4 = readByte();           /* Ignore the last bytes */
     event.metaEvent(readDelaTime(), MIDI_PB_timeSignature, timeSigNumerator, 1<<timeSigDenominator);
     m_trackEventQueue->push(event);
-    ppDEBUG_TRACK((4,"Key Signature %d/%d metronome %d quarter %d", timeSigNumerator, 1<<timeSigDenominator, b3, b4));
+    __dt(ppDebugTrack(4,"Key Signature %d/%d metronome %d quarter %d", timeSigNumerator, 1<<timeSigDenominator, b3, b4));
 }
 
 /* Key Signature */
@@ -242,7 +242,7 @@ void CMidiTrack::readKeySignatureEvent()
 
     event.metaEvent(readDelaTime(), MIDI_PB_keySignature, keySig, majorKey);
     m_trackEventQueue->push(event);
-    ppDEBUG_TRACK((4,"Key Signature %d maj/min %d", keySig, majorKey));
+    __dt(ppDebugTrack(4,"Key Signature %d maj/min %d", keySig, majorKey));
     if (CStavePos::getKeySignature() == NOT_USED)
         CStavePos::setKeySignature(event.data1(), event.data2());
 }
@@ -252,7 +252,7 @@ void CMidiTrack::readKeySignatureEvent()
 void CMidiTrack::readMetaEvent(byte_t type)
 {
     string text;
-    dword_t data;
+    __dt(dword_t data);
 
     if (failed() == true)
         return;
@@ -262,29 +262,29 @@ void CMidiTrack::readMetaEvent(byte_t type)
     switch (type)
     {
     case METASEQN:                     /* Sequence Number */
-        data = readDataEvent(2);
-        ppDEBUG_TRACK((3,"Sequence Number %lu", data));
+        __dt(data = readDataEvent(2));
+        __dt(ppDebugTrack(3,"Sequence Number %lu", data));
         break;
 
     case METACOPYR:                             /* Copyright Notice */
         text = readTextEvent();
-        ppDEBUG_TRACK((3,"Copyright %s", text.c_str()));
+        __dt(ppDebugTrack(3,"Copyright %s", text.c_str()));
         break;
 
     case METATNAME:                          /* Seq/Track Name */
         text = readTextEvent();
         m_trackName = QString(text.c_str());
-        ppDEBUG_TRACK((3,"Seq/Track Name %s", text.c_str()));
+        __dt(ppDebugTrack(3,"Seq/Track Name %s", text.c_str()));
         break;
 
     case METAINAME:                          /* Instrument */
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"Instrument %s", text.c_str()));
+        __dt(ppDebugTrack(2,"Instrument %s", text.c_str()));
         break;
 
     case METAEOT:                         /* End of Track */
         readVarLen();
-        ppDEBUG_TRACK((2,"End of Track"));
+        __dt(ppDebugTrack(2,"End of Track"));
         break;
 
     case METATEMPO:                        /* Set Tempo */
@@ -304,7 +304,7 @@ void CMidiTrack::readMetaEvent(byte_t type)
         tempo = b1 << 16 | b2 << 8 | b3; // microseconds per quarter-note#
         event.metaEvent(readDelaTime(), MIDI_PB_tempo, tempo, 0);
         m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((2,"Set Tempo %d", tempo));
+        __dt(ppDebugTrack(2,"Set Tempo %d", tempo));
         break;
     }
 
@@ -318,47 +318,47 @@ void CMidiTrack::readMetaEvent(byte_t type)
 
     case METATEXT:                      /* Text Event */
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"Text %s", text.c_str()));
+        __dt(ppDebugTrack(2,"Text %s", text.c_str()));
         break;
 
     case METALYRIC:                         /* Lyric */
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"Lyric %s", text.c_str()));
+        __dt(ppDebugTrack(2,"Lyric %s", text.c_str()));
         break;
 
     case METAMARKER:
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"METAMARKER %s", text.c_str()));
+        __dt(ppDebugTrack(2,"METAMARKER %s", text.c_str()));
         break;
 
     case METACUEPT:
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"METACUEPT %s", text.c_str()));
+        __dt(ppDebugTrack(2,"METACUEPT %s", text.c_str()));
         break;
 
     case METACHANPFX:                         /* Midi Channel Prefix */
-        data = readDataEvent(1);
-        ppDEBUG_TRACK((2,"MIDI Channel Prefix %lu", data));
+        __dt(data = readDataEvent(1));
+        __dt(ppDebugTrack(2,"MIDI Channel Prefix %lu", data));
         break;
 
     case METASMPTEOFF:                        /* SMPTE Offset */
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"SMPTE Offset %s", text.c_str()));
+        __dt(ppDebugTrack(2,"SMPTE Offset %s", text.c_str()));
         break;
 
     case METASEQEVENT:                        /* sequencer Specific */
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"sequencer Specific %s", text.c_str()));
+        __dt(ppDebugTrack(2,"sequencer Specific %s", text.c_str()));
         break;
 
     case 0x21:                         /* MIDI Port */
         data = readDataEvent(1);
-        ppDEBUG_TRACK((2,"MIDI Port %lu", data));
+        __dt(ppDebugTrack(2,"MIDI Port %lu", data));
         break;
 
     case 0x09:                          // meta type
         text = readTextEvent();
-        ppDEBUG_TRACK((2,"midi meta event 0x%02x %s", type, text.c_str()));
+        __dt(ppDebugTrack(2,"midi meta event 0x%02x %s", type, text.c_str()));
         break;
     default:                          /* Unknown meta type */
         text = readTextEvent();
@@ -375,7 +375,7 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
     {
     case MIDI_SYSEXEVENT:    /* System exclusive Transmitted */
     case 0xf7:  /* System exclusive Not transmitted */
-        ppDEBUG_TRACK((2,"SYSEXEVENT xx"));
+        __dt(ppDebugTrack(2,"SYSEXEVENT xx"));
         /*ignore_sysex_event();*/
         ignoreSysexEvent(data1);
         break;
@@ -385,7 +385,7 @@ void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
         break;
 
     default:
-        ppDEBUG_TRACK((99,"UNKNOWN"));
+        __dt(ppDebugTrack(99,"UNKNOWN"));
         ignoreSysexEvent(data1);
         errorFail(SMF_UNKNOW_EVENT);
         break;
@@ -414,7 +414,7 @@ void CMidiTrack::noteOffEvent(CMidiEvent &event, int deltaTime, int channel, int
     event.noteOffEvent(deltaTime, channel, pitch, velocity);
 
     m_trackEventQueue->push(event);
-    ppDEBUG_TRACK((1,"Chan %d Note off %d", channel + 1, pitch));
+    __dt(ppDebugTrack(1,"Chan %d Note off %d", channel + 1, pitch));
 }
 
 void CMidiTrack::decodeMidiEvent()
@@ -459,7 +459,7 @@ void CMidiTrack::decodeMidiEvent()
         if (data2 != 0 )
         {
             event.noteOnEvent(readDelaTime(), channel, data1, data2);
-            ppDEBUG_TRACK((1,"Chan %d note on %d",channel + 1, data1));
+            __dt(ppDebugTrack(1,"Chan %d note on %d",channel + 1, data1));
 
             event.setDuration(m_currentTime); // Set the duration to the current time for now
             //ppLogDebug ("NOTE ON  pitch %d m_currentTime %d event->getDuration() %d", data1, m_currentTime, event.getDuration());
@@ -480,33 +480,33 @@ void CMidiTrack::decodeMidiEvent()
         data2 = readByte();
         event.notePressure(readDelaTime(), channel, data1, data2);
         m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((2,"Chan %d After touch", channel + 1));
+        __dt(ppDebugTrack(2,"Chan %d After touch", channel + 1));
         break;
 
     case MIDI_PROGRAM_CHANGE :               /* program change */
         event.programChangeEvent(readDelaTime(), channel, data1);
         m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((2,"Chan %d Program change %d", channel + 1, data1 + 1));
+        __dt(ppDebugTrack(2,"Chan %d Program change %d", channel + 1, data1 + 1));
         break;
 
     case MIDI_CONTROL_CHANGE :               /* Control Change */
         data2 = readByte();
         event.controlChangeEvent(readDelaTime(), channel, data1, data2);
         m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((2,"Chan %d Control Change %d %d", channel + 1, data1, data2));
+        __dt(ppDebugTrack(2,"Chan %d Control Change %d %d", channel + 1, data1, data2));
         break;
 
     case MIDI_CHANNEL_PRESSURE:            /* Channel Pressure (AFTERTOUCH)*/
         event.channelPressure(readDelaTime(), channel, data1);
         m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((2,"Chan %d Channel Pressure", channel + 1));
+        __dt(ppDebugTrack(2,"Chan %d Channel Pressure", channel + 1));
         break;
 
     case MIDI_PITCH_BEND:    /* Pitch bend */
         data2 = readByte();
         event.pitchBendEvent(readDelaTime(), channel, data1, data2);
         m_trackEventQueue->push(event);
-        ppDEBUG_TRACK((2,"Chan %d Pitch bend",channel + 1));
+        __dt(ppDebugTrack(2,"Chan %d Pitch bend",channel + 1));
         break;
 
     case MIDI_SYSEXEVENT :           /* System EX */
