@@ -744,7 +744,7 @@ void QtWindow::loadTutorHtml(const QString & name)
 
 	QString text=out.readAll();
         m_tutorWindow->setHtml(tr(text.toUtf8().data()));
-        m_tutorWindow->setFixedHeight(120);
+        m_tutorWindow->setFixedHeight(130);
 
         m_tutorWindow->show();
 
