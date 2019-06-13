@@ -97,7 +97,8 @@ even without a plugged-in MIDI keyboard.
        -DUSE_SYSTEM_RTMIDI=ON \
        -DWITH_MAN=ON \
        -DWITH_TIMIDITY=ON \
-       -DWITH_FLUIDSYNTH=ON
+       -DWITH_FLUIDSYNTH=ON \
+       -DUSE_FLUIDSYNTH=ON
 %make_build
 
 %install
