@@ -29,6 +29,8 @@
 #ifndef __MIDI_EVENT_H__
 #define __MIDI_EVENT_H__
 
+#include <stdio.h>
+#include <string>
 #include "Util.h"
 
 #define MIDI_NOTE_OFF               0x80    /* MIDI voice messages */
@@ -234,8 +236,64 @@ public:
     //@brief how long the midi note was played for
     long getDuration(){return m_duration;}
 
+    std::string event_type_str(int atype)
+       {
+         std::string r;
+         switch (atype) {
+         case MIDI_NOTE_OFF:             r = "MIDI_NOTE_OFF";break;
+         case MIDI_NOTE_ON:              r = "MIDI_NOTE_ON";break;
+         case MIDI_NOTE_PRESSURE:        r = "MIDI_NOTE_PRESSURE";break;
+         case MIDI_CONTROL_CHANGE:       r = "MIDI_CONTROL_CHANGE";break;
+         case MIDI_PROGRAM_CHANGE:       r = "MIDI_PROGRAM_CHANGE";break;
+         case MIDI_CHANNEL_PRESSURE:     r = "MIDI_CHANNEL_PRESSURE";break;
+         case MIDI_PITCH_BEND:           r = "MIDI_PITCH_BEND";break;
+         case MIDI_SYSTEM_EVENT:         r = "MIDI_SYSTEM_EVENT";break;
+         case MIDI_SUSTAIN:              r = "MIDI_SUSTAIN";break;
+         case MIDI_MAIN_VOLUME:          r = "MIDI_MAIN_VOLUME";break;
+         case MIDI_RESET_ALL_CONTROLLERS:r = "MIDI_RESET_ALL_CONTROLLERS";break;
+         case MIDI_ALL_SOUND_OFF:        r = "MIDI_ALL_SOUND_OFF";break;
+         case MIDI_ALL_NOTES_OFF:        r = "MIDI_ALL_NOTES_OFF";break;
 
-    void printDetails() const
+         case MIDI_NONE:                 r = "MIDI_NONE";break;
+         case MIDI_ERROR:                r = "MIDI_ERROR";break;
+         case MIDI_PB_EOF:               r = "MIDI_PB_EOF";break;
+         case MIDI_PB_chordSeparator:    r = "MIDI_PB_chordSeparator";break;
+         case MIDI_PB_tempo:             r = "MIDI_PB_tempo";break;
+         case MIDI_PB_timeSignature:     r = "MIDI_PB_timeSignature";break;
+         case MIDI_PB_keySignature:      r = "MIDI_PB_keySignature";break;
+         case MIDI_PB_collateRawMidiData:r = "MIDI_PB_collateRawMidiData";break;
+         case MIDI_PB_outputRawMidiData: r = "MIDI_PB_outputRawMidiData";break;
+
+           //      case MIDI_SYSEXEVENT:           r = "MIDI_SYSEXEVENT";break;
+         case METAEVENT:                 r = "METAEVENT";break;
+         case METASEQN:                  r = "METASEQN";break;
+         case METATEXT:                  r = "METATEXT";break;
+         case METACOPYR:                 r = "METACOPYR";break;
+         case METATNAME:                 r = "METATNAME";break;
+         case METAINAME:                 r = "METAINAME";break;
+         case METALYRIC:                 r = "METALYRIC";break;
+         case METAMARKER:                r = "METAMARKER";break;
+           //      case METACUEPT:                 r = "METACUEPT";break;
+         case METACHANPFX:               r = "METACHANPFX";break;
+         case METAEOT:                   r = "METAEOT";break;
+         case METATEMPO:                 r = "METATEMPO";break;
+         case METASMPTEOFF:              r = "METASMPTEOFF";break;
+         case METATIMESIG:               r = "METATIMESIG";break;
+         case METAKEYSIG:                r = "METAKEYSIG";break;
+         case METASEQEVENT:              r = "METASEQEVENT";break;
+
+         default:
+           {
+             char s[16];
+             sprintf(s, "%2x", atype);
+             r = s;
+           }
+         }
+         return r;
+       }
+
+
+    void printDetails()
     {
         if (type() == MIDI_NOTE_ON) {
             ppTiming("chan %2d NOTE ON  note %3d vel %3d", channel(), note(), velocity() );
@@ -244,7 +302,8 @@ public:
             ppTiming("chan %2d NOTE OFF note %3d vel %3d", channel(), note(), velocity() );
         }
         else {
-             ppTiming("chan %2d type %2X data1 %3d data2 %3d", channel(), type(), note(), velocity() );
+            ppTiming("chan %2d type %-20s note %3d velocity %3d deltaTime %3d",
+                      channel(), event_type_str(type()).c_str(), note(), velocity(), deltaTime());
         }
    }
 

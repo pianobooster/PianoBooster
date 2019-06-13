@@ -201,7 +201,7 @@ void ppTiming(const char *msg, ...)
 
     openLogFile();
     va_start(ap, msg);
-    fprintf(logInfoFile, "T %4d " , s_realtime.restart() );
+    fprintf(logInfoFile, "Time %4d " , s_realtime.restart() );
     vfprintf(logInfoFile, msg, ap);
     va_end(ap);
     fputc('\n', logInfoFile);

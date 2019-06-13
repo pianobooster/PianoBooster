@@ -82,7 +82,11 @@ public:
     midiErrors_t getMidiError() { return m_midiError;}
 
     int length() {return m_trackEventQueue->length();}
-    CMidiEvent pop() {return m_trackEventQueue->pop();}
+    CMidiEvent pop() {
+        CMidiEvent m = m_trackEventQueue->pop();
+        m.printDetails();
+        return m;
+    }
     QString getTrackName() {return m_trackName;}
 
     static void setLogLevel(int level){m_logLevel = level;}
