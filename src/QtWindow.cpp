@@ -597,8 +597,9 @@ void QtWindow::about()
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
             "<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>" +
-            tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>") +
-            tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br><br>") +
+            tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br>") +
+            tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
+            "<br>" +
             tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
