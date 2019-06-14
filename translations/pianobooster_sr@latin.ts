@@ -1751,7 +1751,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
         <source>Setup the Midi input and output</source>
-        <translation type="unfinished"/>
+        <translation>Postavke midi ulaza i izlaza</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="372"/>
@@ -1771,7 +1771,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="394"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>Postavke</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="399"/>

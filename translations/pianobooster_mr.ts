@@ -1771,7 +1771,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="394"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>समायोजन</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="399"/>

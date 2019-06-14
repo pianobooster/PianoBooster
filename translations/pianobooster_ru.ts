@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="384"/>
         <source>Electric Guitar (muted)</source>
-        <translation>Электрогитара (без звука)</translation>
+        <translation>Электрогитара (приглушённая)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="385"/>
@@ -233,7 +233,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="386"/>
         <source>Distortion Guitar</source>
-        <translation>Искажённая гитара</translation>
+        <translation>Расстроенная гитара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
@@ -253,7 +253,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation>Электрический бас (кирка)</translation>
+        <translation>Электрический бас (медиатор)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
@@ -303,7 +303,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
         <source>Tremolo Strings</source>
-        <translation>Струнное тремоло</translation>
+        <translation>Струны тремоло</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="401"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Orchestra Hit</source>
-        <translation>Оркестровый хит (удар)</translation>
+        <translation>Оркестровый хит (акцент)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
@@ -388,7 +388,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
         <source>Brass Section</source>
-        <translation>Латунная секция</translation>
+        <translation>Духовые инструменты</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="418"/>
@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="448"/>
         <source>Pad 5 (bowed)</source>
-        <translation>Пэд 5 (изогнутый)</translation>
+        <translation>Пэд 5 (смычковый)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="449"/>
@@ -558,7 +558,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="451"/>
         <source>Pad 8 (sweep)</source>
-        <translation>Пэд 8 (развёртка)</translation>
+        <translation>Пэд 8 (покачивание)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
@@ -658,7 +658,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
         <source>Woodblock</source>
-        <translation>Вуд-блок</translation>
+        <translation>Вуд-блок, гольцтон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="472"/>
@@ -726,7 +726,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation>Настройки фортепианной клавиатуры</translation>
+        <translation>Настройка клавиатуры пианино</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
@@ -736,7 +736,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation>Настройте вашу фортепианную клавиатуру</translation>
+        <translation>Настройте вашу клавиатуру пианино</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
@@ -911,7 +911,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="210"/>
         <source>Master Gain:</source>
-        <translation>Мастер усиления:</translation>
+        <translation>Усиление основного канала:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
@@ -931,7 +931,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Buffer counts</source>
-        <translation>Подсчёты буфера</translation>
+        <translation>Количество буферов</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
@@ -1032,7 +1032,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation>(Попробуйте исправленную задержку в 150 мс)</translation>
+        <translation>(Попробуйте исправление задержки в 150 мс)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="218"/>
@@ -1070,7 +1070,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
         <source>Courtesy Accidentals</source>
-        <translation>Уважать случайности</translation>
+        <translation>Прощать случайные ошибки</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
@@ -1218,7 +1218,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="121"/>
         <source>Rhythm Tap</source>
-        <translation>Ритм Тап</translation>
+        <translation>Отбивание ритма</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="128"/>
@@ -1280,7 +1280,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="33"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation>MIDI-каналы для левой и правой партий фортепиано:</translation>
+        <translation>MIDI-каналы для левой и правой партий пианино:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="45"/>
@@ -1305,17 +1305,17 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation>Установите MIDI-каналы, которые будут использоваться для левой и правой партий фортепиано:</translation>
+        <translation>Установите MIDI-каналы, которые будут использоваться для левой и правой партий пианино:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation>партия фортепиано левой руки использует MIDI канал 1</translation>
+        <translation>партия пианино левой руки использует MIDI канал 1</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation>партия фортепиано правой руки использует MIDI канал 2</translation>
+        <translation>партия пианино правой руки использует MIDI канал 2</translation>
     </message>
 </context>
 <context>
@@ -1349,7 +1349,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
         <source>Transpose:</source>
-        <translation>Транспонировать:</translation>
+        <translation>Транспозиция:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
@@ -1531,7 +1531,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="63"/>
         <source>Piano Booster</source>
-        <translation>Программа Piano Booster</translation>
+        <translation>Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="234"/>
@@ -1619,7 +1619,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation>Настройка &amp;фортепианной клавиатуры ...</translation>
+        <translation>Настройка &amp;клавиатуры пианино ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="367"/>
@@ -1654,7 +1654,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation>Показать &amp;клавиатуру фортепиано</translation>
+        <translation>Показать &amp;клавиатуру пианино</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="393"/>
@@ -1736,7 +1736,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;&lt;br&gt;</source>
-        <translation>Copyright(c) Fabien Givors, 2018-2019; Все права защищены.&lt;br&gt;&lt;br&gt;</translation>
+        <translation>© Fabien Givors, 2018-2019; Все права защищены.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="594"/>
@@ -1746,7 +1746,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="548"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Начало работы&lt;/h3&gt;&lt;p&gt;Вам нужна &lt;b&gt;фортепианная клавиатура MIDI &lt;/b&gt; и &lt;b&gt;интерфейс MIDI&lt;/b&gt; для ПК. Если у вас нет MIDI-клавиатуры, вы все равно можете попробовать PianoBooster, используя клавиатуру ПК, &apos;X&apos; - это C в середине.&lt;/p&gt;&lt;p&gt;Чтобы услышать музыку вам понадобится &lt;b&gt;Общий звуковой синтезатор Midi&lt;/b&gt;. Можно использовать &quot;программный синтезатор Microsoft GS Wavetable&quot;, поставляемый с Windows, но он вводит недопустимую задержку (латентность). В Linux вы можете использовать &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; или &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster лучше всего работает с файлами MIDI, которые имеют отдельные партии для левого и правого фортепиано, используя MIDI-каналы 3 и 4.&lt;h3&gt;Настройка&lt;/h3&gt;&lt;p&gt;Сначала используйте &lt;i&gt;Настройка/Настройка Midi&lt;/i&gt;, в меню и в диалоговом окне выберите интерфейсы ввода MIDI и вывода MIDI, соответствующие вашему оборудованию. Затем используйте &lt;i&gt;Файл/Открыть&lt;/i&gt; чтобы открыть файл MIDI &quot;.mid&quot; или файл караоке &quot;.kar&quot;. Теперь выберите, хотите ли вы просто &lt;i&gt;слушать&lt;/i&gt; музыку или &lt;i&gt;проигрывать&lt;/i&gt; на фортепианной клавиатуре, установив уровень &lt;i&gt;навыка&lt;/i&gt; на боковой панели. Наконец, когда вы будете готовы, нажмите &lt;i&gt;иконку воспроизведения&lt;/i&gt; (или нажмите &lt;i&gt;пробел&lt;/i&gt;) для музыки.&lt;h3&gt;Советы по игре на пианино&lt;/h3&gt;&lt;p&gt;Для подсказок о том, как играть на пианино, смотрите: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Подсказки для фортепиано&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Дополнительная информация&lt;/h3&gt;&lt;p&gt;Для получения дополнительной помощи, пожалуйста, посетите &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;сайт&lt;/b&gt;&lt;/a&gt; PianoBooster, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;ЧАВО&lt;/b&gt;&lt;/a&gt; PianoBooster и &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;форум пользователей&lt;/b&gt;&lt;/a&gt;.</translation>
+        <translation>&lt;h3&gt;Начало работы&lt;/h3&gt;&lt;p&gt;Вам нужна &lt;b&gt;клавиатура пианино MIDI &lt;/b&gt; и &lt;b&gt;интерфейс MIDI&lt;/b&gt; для ПК. Если у вас нет MIDI-клавиатуры, вы всё равно можете попробовать PianoBooster, используя клавиатуру ПК, &apos;X&apos; - это C в середине.&lt;/p&gt;&lt;p&gt;Чтобы услышать музыку вам понадобится &lt;b&gt;Общий звуковой синтезатор Midi&lt;/b&gt;. Можно использовать &quot;программный синтезатор Microsoft GS Wavetable&quot;, поставляемый с Windows, но он вводит недопустимую задержку (латентность). В Linux вы можете использовать &lt;a href=&quot;www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; или &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster лучше всего работает с файлами MIDI, которые имеют отдельные партии для левого и правого пианино, используя MIDI-каналы 3 и 4.&lt;h3&gt;Настройка&lt;/h3&gt;&lt;p&gt;Сначала используйте &lt;i&gt;Настройка/Настройка Midi&lt;/i&gt;, в меню и в диалоговом окне выберите интерфейсы ввода MIDI и вывода MIDI, соответствующие вашему оборудованию. Затем используйте &lt;i&gt;Файл/Открыть&lt;/i&gt; чтобы открыть файл MIDI &quot;.mid&quot; или файл караоке &quot;.kar&quot;. Теперь выберите, хотите ли вы просто &lt;i&gt;слушать&lt;/i&gt; музыку или &lt;i&gt;проигрывать&lt;/i&gt; на клавиатуре пианино, установив уровень &lt;i&gt;навыка&lt;/i&gt; на боковой панели. Наконец, когда вы будете готовы, нажмите &lt;i&gt;иконку воспроизведения&lt;/i&gt; (или нажмите &lt;i&gt;пробел&lt;/i&gt;) для музыки.&lt;h3&gt;Советы по игре на пианино&lt;/h3&gt;&lt;p&gt;Для подсказок о том, как играть на пианино, смотрите: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Подсказки для пианино&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Дополнительная информация&lt;/h3&gt;&lt;p&gt;Для получения дополнительной помощи, пожалуйста, посетите &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;сайт&lt;/b&gt;&lt;/a&gt; PianoBooster, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;ЧАВО&lt;/b&gt;&lt;/a&gt; PianoBooster и &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;форум пользователей&lt;/b&gt;&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
@@ -1766,7 +1766,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation>Показать виджет клавиатуры фортепиано</translation>
+        <translation>Показать виджет клавиатуры пианино</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="394"/>
@@ -1796,7 +1796,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="599"/>
         <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;&lt;br&gt;</source>
-        <translation>Copyright(c) L. J. Barman, 2008-2009; Все права защищены.&lt;br&gt;&lt;br&gt;</translation>
+        <translation>© L. J. Barman, 2008-2009; Все права защищены.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="601"/>
@@ -1806,7 +1806,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="605"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
-        <translation>Эта программа также содержит RtMIDI: классы C++ ввода/вывода MIDI в реальном времени&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</translation>
+        <translation>Эта программа также содержит RtMIDI: классы C++ ввода/вывода MIDI в реальном времени&lt;br&gt;© 2003-2007 Gary P. Scavone</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="615"/>
@@ -1836,7 +1836,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="645"/>
         <source>Play from start toggle</source>
-        <translation>Воспроизвести с начала переключения</translation>
+        <translation>Переключить воспроизведение с начала</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="646"/>

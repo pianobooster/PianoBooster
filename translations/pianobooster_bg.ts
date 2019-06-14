@@ -901,7 +901,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
         <source>Settings</source>
-        <translation>Натройки</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
@@ -1771,7 +1771,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="394"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="399"/>
