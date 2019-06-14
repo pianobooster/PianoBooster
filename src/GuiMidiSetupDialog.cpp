@@ -155,8 +155,13 @@ void GuiMidiSetupDialog::accept()
             CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
                               m_settings->value("Keyboard/HighestNote", 127).toInt());
 
-         m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
-        m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
+        if (midiOutputCombo->currentIndex()==0){
+            m_settings->setValue("Midi/Output", "");
+            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,"");
+        }else{
+            m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
+            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
+        }
         m_settings->updateWarningMessages();
         m_midiChanged = false;
     }
