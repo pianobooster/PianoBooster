@@ -61,6 +61,7 @@ QtWindow::QtWindow()
     m_settings = new CSettings(this);
     setWindowIcon(QIcon(":/images/pianobooster.png"));
     setWindowTitle(tr("Piano Booster"));
+    show();
 
     Cfg::setDefaults();
 
