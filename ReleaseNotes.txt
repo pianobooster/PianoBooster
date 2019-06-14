@@ -15,6 +15,7 @@ v0.7.0:
 - New Windows installer
 - Use hicolor icon theme
 - Fix USE_FLUIDSYNTH
+- Fix incorrect drawing on ARM systems
 
 v0.6.6: (05 September 2013)
 - Reset should be fixed now (keylights)
