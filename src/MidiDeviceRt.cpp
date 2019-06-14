@@ -200,6 +200,10 @@ void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
                 message.push_back( m_savedRawBytes[i]);
             m_rawDataIndex = 0;
             break;
+
+        default:
+            return;
+            break;
     }
 
     m_midiout->sendMessage( &message );
