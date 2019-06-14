@@ -360,7 +360,7 @@ void QtWindow::createActions()
 
     m_setupMidiAct = new QAction(tr("&Midi Setup ..."), this);
     m_setupMidiAct->setShortcut(tr("Ctrl+S"));
-    m_setupMidiAct->setToolTip(tr("Setup the Midi input an output"));
+    m_setupMidiAct->setToolTip(tr("Setup the Midi input and output"));
     connect(m_setupMidiAct, SIGNAL(triggered()), this, SLOT(showMidiSetup()));
 
     m_setupKeyboardAct = new QAction(tr("Piano &Keyboard Setting ..."), this);
@@ -369,17 +369,20 @@ void QtWindow::createActions()
     connect(m_setupKeyboardAct, SIGNAL(triggered()), this, SLOT(showKeyboardSetup()));
 
     m_fullScreenStateAct = new QAction(tr("&Fullscreen"), this);
+    m_fullScreenStateAct->setToolTip(tr("Fullscreen mode"));
     m_fullScreenStateAct->setShortcut(tr("F11"));
     m_fullScreenStateAct->setCheckable(true);
     connect(m_fullScreenStateAct, SIGNAL(triggered()), this, SLOT(onFullScreenStateAct()));
 
     m_sidePanelStateAct = new QAction(tr("&Show the Side Panel"), this);
+    m_sidePanelStateAct->setToolTip(tr("Show the Left Side Panel"));
     m_sidePanelStateAct->setShortcut(tr("F12"));
     m_sidePanelStateAct->setCheckable(true);
     m_sidePanelStateAct->setChecked(true);
     connect(m_sidePanelStateAct, SIGNAL(triggered()), this, SLOT(toggleSidePanel()));
 
     m_viewPianoKeyboard = new QAction(tr("Show Piano &Keyboard"), this);
+    m_viewPianoKeyboard->setToolTip(tr("Show Piano Keyboard Widget"));
     m_viewPianoKeyboard->setCheckable(true);
     m_viewPianoKeyboard->setChecked(false);
     if (m_settings->value("View/PianoKeyboard").toString()=="on"){
@@ -388,10 +391,12 @@ void QtWindow::createActions()
     connect(m_viewPianoKeyboard, SIGNAL(triggered()), this, SLOT(onViewPianoKeyboard()));
 
     m_setupPreferencesAct = new QAction(tr("&Preferences ..."), this);
+    m_setupPreferencesAct->setToolTip(tr("Settings"));
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
     connect(m_setupPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
 
     m_songDetailsAct = new QAction(tr("&Song Details ..."), this);
+    m_songDetailsAct->setToolTip(tr("Song Settings"));
     m_songDetailsAct->setShortcut(tr("Ctrl+S"));
     connect(m_songDetailsAct, SIGNAL(triggered()), this, SLOT(showSongDetailsDialog()));
 
@@ -461,10 +466,12 @@ void QtWindow::createMenus()
 
     QAction* act;
     act = new QAction(tr("&Help"), this);
+    act->setToolTip(tr("Piano Booster Help"));
     connect(act, SIGNAL(triggered()), this, SLOT(help()));
     m_helpMenu->addAction(act);
 
     act = new QAction(tr("&Website"), this);
+    act->setToolTip(tr("Piano Booster Website"));
     connect(act, SIGNAL(triggered()), this, SLOT(website()));
     m_helpMenu->addAction(act);
 
