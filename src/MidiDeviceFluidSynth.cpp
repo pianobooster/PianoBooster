@@ -85,6 +85,8 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
 
     if (type == MIDI_INPUT)
         return false;
+        
+    if (getMidiPortList(type).size()==0) return false;
 
     /* Create the settings. */
     m_fluidSettings = new_fluid_settings();
