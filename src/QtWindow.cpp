@@ -561,7 +561,7 @@ void QtWindow::help()
    "<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
    "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
    "but it introduces an unacceptable delay (latency). In Linux you can use "
-   "<a href=\"www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
+   "<a href=\"http://www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
 
 
    "<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
@@ -601,8 +601,9 @@ void QtWindow::about()
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
             "<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>" +
-            tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br><br>") +
-            tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br><br>") +
+            tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br>") +
+            tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
+            "<br>" +
             tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
