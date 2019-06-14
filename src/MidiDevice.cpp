@@ -73,6 +73,7 @@ QStringList CMidiDevice::getMidiPortList(midiType_t type)
 
 bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
 {
+    if (portName=="None") return false;
 
     closeMidiPort(type, -1);
     if (type == MIDI_INPUT)
