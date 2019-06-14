@@ -61,7 +61,6 @@ QtWindow::QtWindow()
     m_settings = new CSettings(this);
     setWindowIcon(QIcon(":/images/pianobooster.png"));
     setWindowTitle(tr("Piano Booster"));
-    show();
 
     Cfg::setDefaults();
 
@@ -156,6 +155,11 @@ QtWindow::QtWindow()
 
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
     m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("Midi/Output").toString());
+
+
+    QString songName = m_settings->value("CurrentSong").toString();
+    if (!songName.isEmpty())
+        m_settings->openSongFile( songName );
 
 }
 

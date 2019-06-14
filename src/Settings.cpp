@@ -392,9 +392,9 @@ void CSettings::loadSettings()
     setDefaultValue("ShortCuts/PreviousSong","[");
     setDefaultValue("ShortCuts/NextBook","{");
     setDefaultValue("ShortCuts/PreviousBook","}");
-    QString songName = value("CurrentSong").toString();
-    if (!songName.isEmpty())
-        openSongFile( songName );
+//    QString songName = value("CurrentSong").toString();
+//    if (!songName.isEmpty())
+//        openSongFile( songName );
 
     updateWarningMessages();
     updateTutorPage();
