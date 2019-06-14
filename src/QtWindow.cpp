@@ -557,7 +557,7 @@ void QtWindow::help()
    "<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
    "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
    "but it introduces an unacceptable delay (latency). In Linux you can use "
-   "<a href=\"www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
+   "<a href=\"http://www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
 
 
    "<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
