@@ -130,9 +130,10 @@ void CMidiDevice::playMidiEvent(const CMidiEvent & event)
 // Return the number of events waiting to be read from the midi device
 int CMidiDevice::checkMidiInput()
 {
-    if (m_selectedMidiOutputDevice == 0)
+    if (m_selectedMidiInputDevice == 0)
         return 0;
 
+    m_selectedMidiInputDevice->checkMidiInput();
     return m_selectedMidiInputDevice->checkMidiInput();
 }
 
