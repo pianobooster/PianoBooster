@@ -2,39 +2,61 @@
 
 lang=`echo $LANGUAGE|cut -d ":" --fields=2`
 
-MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
-MES2="Error: fluidsynth was not run!"
-MES3="Error: SoundFont FluidR3_GM.sf2 was not found!"
-MES4="Error: SoundFont FluidR3_GS.sf2 was not found!"
-MES5="Please try again!"
+case $lang in
+     ru|be)
+          MES1="Ошибка: Звуковые шрифты FluidR3_GM.sf2 и FluidR3_GS.sf2 не были найдены!"
+          MES2="Ошибка: fluidsynth не был запущен!"
+          MES3="Ошибка: Звуковой шрифт FluidR3_GM.sf2 не был найден!"
+          MES4="Ошибка: Звуковой шрифт FluidR3_GS.sf2 не был найден!"
+          MES5="Пожалуйста, попытайтесь снова!"
+          ;;
+     uk)
+          MES1="Помилка: не знайдено звукових шрифтів FluidR3_GM.sf2 та FluidR3_GS.sf2!"
+          MES2="Помилка: fluidsynth не запущено!"
+          MES3="Помилка: не знайдено звукового шрифту FluidR3_GM.sf2!"
+          MES4="Помилка: не знайдено звукового шрифту FluidR3_GS.sf2!"
+          MES5="Будь ласка, повторіть спробу!"
+          ;;
+     cs)
+          MES1="Chyba: Zvukové banky FluidR3_GM.sf2 a FluidR3_GS.sf2 nebyly nalezeny!"
+          MES2="Chyba: fluidsynth nebyl spuštěn!"
+          MES3="Chyba: Zvuková banka FluidR3_GM.sf2 nebyla nalezena!"
+          MES4="Chyba: Zvuková banka FluidR3_GS.sf2 nebyla nalezena!"
+          MES5="Zkuste to, prosím, znovu!"
+          ;;
+     gl)
+          MES1="Erro: Non se atopou  SoundFonts FluidR3_GM.sf2 e FluidR3_GS.sf2!"
+          MES2="Erro: o fluidsynth non foi executado!"
+          MES3="Erro: Non se atopou SoundFont FluidR3_GM.sf2!"
+          MES4="Erro: Non se atopou SoundFont FluidR3_GS.sf2!"
+          MES5="Tenteo de novo!"
+          ;;
+     *)
+          MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
+          MES2="Error: fluidsynth was not run!"
+          MES3="Error: SoundFont FluidR3_GM.sf2 was not found!"
+          MES4="Error: SoundFont FluidR3_GS.sf2 was not found!"
+          MES5="Please try again!"
+          ;;
+esac
 
-if [ "$lang" = "ru" ]
-then
-  MES1="Ошибка: Звуковые шрифты FluidR3_GM.sf2 и FluidR3_GS.sf2 не были найдены!"
-  MES2="Ошибка: fluidsynth не был запущен!"
-  MES3="Ошибка: Звуковой шрифт FluidR3_GM.sf2 не был найден!"
-  MES4="Ошибка: Звуковой шрифт FluidR3_GS.sf2 не был найден!"
-  MES5="Пожалуйста, попытайтесь снова!"
-fi
-
-if [ "$lang" = "uk" ]
-then
-  MES1="Помилка: не знайдено звукових шрифтів FluidR3_GM.sf2 та FluidR3_GS.sf2!"
-  MES2="Помилка: fluidsynth не запущено!"
-  MES3="Помилка: не знайдено звукового шрифту FluidR3_GM.sf2!"
-  MES4="Помилка: не знайдено звукового шрифту FluidR3_GS.sf2!"
-  MES5="Будь ласка, повторіть спробу!"
-fi
-
-if [ -f "/usr/share/soundfonts/FluidR3_GM.sf2" ] && [ -f "/usr/share/soundfonts/FluidR3_GS.sf2" ]
+if [ -f "/usr/share/soundfonts/FluidR3_GM.sf2" ]
 then
   sf2_1="/usr/share/soundfonts/FluidR3_GM.sf2"
+fi
+
+if [ -f "/usr/share/soundfonts/FluidR3_GS.sf2" ]
+then
   sf2_2="/usr/share/soundfonts/FluidR3_GS.sf2"
 fi
 
-if [ -f "/usr/share/sounds/sf2/FluidR3_GM.sf2" ] && [ -f "/usr/share/sounds/sf2/FluidR3_GS.sf2" ]
+if [ -f "/usr/share/sounds/sf2/FluidR3_GM.sf2" ]
 then
   sf2_1="/usr/share/sounds/sf2/FluidR3_GM.sf2"
+fi
+
+if [ -f "/usr/share/sounds/sf2/FluidR3_GS.sf2" ]
+then
   sf2_2="/usr/share/sounds/sf2/FluidR3_GS.sf2"
 fi
 
@@ -71,9 +93,13 @@ then
 fi
 
 fluidsynth -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
+
 PID=$!
+
 sleep 1
+
 process=`ps -p $PID -o comm=`
+
 if [ -z $process ]
 then
   echo "$MES2 $MES5"
@@ -83,5 +109,7 @@ then
   fi
   exit 1
 fi
+
 pianobooster
+
 kill $PID
