@@ -1756,17 +1756,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="373"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"/>
+        <translation>Повноекранний режим</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="379"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"/>
+        <translation>Показувати ліву бічну панель</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="386"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"/>
+        <translation>Показувати віджет клавіатури піаніно</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="395"/>
@@ -1776,12 +1776,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="400"/>
         <source>Song Settings</source>
-        <translation type="unfinished"/>
+        <translation>Параметри композиції</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="475"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"/>
+        <translation>Сайт Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="549"/>

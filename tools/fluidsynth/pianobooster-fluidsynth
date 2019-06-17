@@ -17,6 +17,15 @@ then
   MES5="Пожалуйста, попытайтесь снова!"
 fi
 
+if [ "$lang" = "uk" ]
+then
+  MES1="Помилка: не знайдено звукових шрифтів FluidR3_GM.sf2 та FluidR3_GS.sf2!"
+  MES2="Помилка: fluidsynth не запущено!"
+  MES3="Помилка: не знайдено звукового шрифту FluidR3_GM.sf2!"
+  MES4="Помилка: не знайдено звукового шрифту FluidR3_GS.sf2!"
+  MES5="Будь ласка, повторіть спробу!"
+fi
+
 if [ -f "/usr/share/soundfonts/FluidR3_GM.sf2" ] && [ -f "/usr/share/soundfonts/FluidR3_GS.sf2" ]
 then
   sf2_1="/usr/share/soundfonts/FluidR3_GM.sf2"
