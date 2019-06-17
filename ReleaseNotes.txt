@@ -19,6 +19,13 @@ v0.7.0:
 - Fix segfault on the next start of program after playing corrupted midi file
 - Fix midi input/output devices detection
 
+v0.6.8: (11 May 2018)
+- French and Galician translations
+- Translate notes
+- Armel patch
+- Install in /usr/share/games
+- RtMidi: version 1.0.15
+
 v0.6.7: (05 September 2013)
 - Reset should be fixed now (keylights)
 - Patch for kotechnology added
