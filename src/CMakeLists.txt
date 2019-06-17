@@ -107,6 +107,7 @@ SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h)
 
 IF (USE_SYSTEM_RTMIDI)
+    add_compile_options("-DUSE_SYSTEM_RTMIDI")
     pkg_check_modules(RTMIDI rtmidi)
     SET(RTMIDI_INCLUDE_DIR ${RTMIDI_INCLUDE_DIRS})
     SET(RTMIDI_LIBRARY ${RTMIDI_LIBRARIES})

@@ -607,10 +607,13 @@ void QtWindow::about()
             tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
-            ) +
+            )
+            #if !defined(USE_SYSTEM_RTMIDI)
+             +
             tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
                 "Copyright(c) 2003-2007 Gary P. Scavone"
             )
+            #endif
     );
     msgBox.setMinimumWidth(600);
     msgBox.exec();
