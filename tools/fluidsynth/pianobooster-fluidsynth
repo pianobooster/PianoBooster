@@ -51,7 +51,7 @@ then
   exit 1
 fi
 
-if [ -z "$sf2_2"]
+if [ -z "$sf2_2" ]
 then
   echo "$MES4"
   if [ ! -z "$notify_send" ]
@@ -61,7 +61,7 @@ then
   exit 1
 fi
 
-fluidsynth -s -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
+fluidsynth -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
 PID=$!
 sleep 1
 process=`ps -p $PID -o comm=`
