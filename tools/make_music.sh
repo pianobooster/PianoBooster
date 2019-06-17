@@ -19,7 +19,7 @@ fi
 pushd ../
 
 echo "Determining MUSIC_RELEASE..."
-version=`cat src/Settings.cpp|grep 'MUSIC_RELEASE ='|cut -d "=" --fields=2|sed "s|.* ||g"|cut -d ";" --fields=1`
+version=`cat src/version.txt|grep 'MUSIC_RELEASE'|cut -d " " --fields=3`
 echo "Done for determining MUSIC_RELEASE"
 echo "MUSIC_RELEASE=$version"
 
