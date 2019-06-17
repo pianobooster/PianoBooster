@@ -74,6 +74,7 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       fluidsynth
 Requires:       fluid-soundfont-gm
 Requires:       fluid-soundfont-gs
+Requires:       libnotify
 
 %description    fluidsynth
 This package contains a wrapper script to launch PianoBooster together with

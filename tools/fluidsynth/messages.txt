@@ -1,0 +1,5 @@
+Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!
+Error: fluidsynth was not run!
+Error: SoundFont FluidR3_GM.sf2 was not found!
+Error: SoundFont FluidR3_GS.sf2 was not found!
+Please try again!
