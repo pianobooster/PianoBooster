@@ -121,6 +121,8 @@ You need to translate:
 
 [Desktop file #3](tools/fluidsynth/pianobooster-fluidsynth.desktop)
 
+[Script](tools/fluidsynth/pianobooster-fluidsynth)
+
 LICENSE
 =======
 
