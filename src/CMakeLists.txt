@@ -106,12 +106,19 @@ SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h)
 
+
+# Check for Jack
+find_library(JACK_LIB jack)
+pkg_check_modules(JACK jack)
+SET(JACK_INCLUDE_DIR ${JACK_INCLUDE_DIRS})
+SET(JACK_LIBRARY ${JACK_LIBRARIES})
+ADD_DEFINITIONS(-D__UNIX_JACK__ -D__LINUX_ALSA__)
+
 IF (USE_SYSTEM_RTMIDI)
     add_compile_options("-DUSE_SYSTEM_RTMIDI")
     pkg_check_modules(RTMIDI rtmidi)
     SET(RTMIDI_INCLUDE_DIR ${RTMIDI_INCLUDE_DIRS})
     SET(RTMIDI_LIBRARY ${RTMIDI_LIBRARIES})
-    ADD_DEFINITIONS(-D__UNIX_JACK__ -D__LINUX_ALSA__)
 ELSE(USE_SYSTEM_RTMIDI)
     INCLUDE_DIRECTORIES("3rdparty")
     SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
@@ -208,7 +215,7 @@ ENDIF(WIN32)
 
 qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY} ${RTMIDI_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY} ${RTMIDI_LIBRARY} ${JACK_LIBRARY})
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
