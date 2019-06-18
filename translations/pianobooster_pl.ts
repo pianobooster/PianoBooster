@@ -248,12 +248,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"/>
+        <translation>Bas elektryczny (palce)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation type="unfinished"/>
+        <translation>Bas Elektryczny (kostka)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
@@ -603,7 +603,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation type="unfinished"/>
+        <translation>Sitara</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
@@ -810,7 +810,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation type="unfinished"/>
+        <translation>Zakres twojej klawiatury to &lt;b&gt; %1 oktaw &lt;/b&gt; i &lt;b&gt; %2 półtonów &lt;/b&gt;; 60 to środkowe C. </translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
@@ -926,7 +926,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
         <source>Buffer Size</source>
-        <translation type="unfinished"/>
+        <translation>Wielkość bufora</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
@@ -1001,7 +1001,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
         <source>Midi Setup</source>
-        <translation type="unfinished"/>
+        <translation>Ustawienia Midi</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
@@ -1017,7 +1017,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
-        <translation type="unfinished"/>
+        <translation>Jeżeli mi posiadasz klawiatury MISI możesz użyć klawiatury komputera; &apos;X&apos; jest środkowym C. </translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
@@ -1245,7 +1245,7 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="71"/>
         <source>Set as Right Hand Part</source>
-        <translation type="unfinished"/>
+        <translation>Ustaw jako część dla prawej ręki</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="75"/>
@@ -1295,7 +1295,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
         <source>The left and right hand channels must be different</source>
-        <translation type="unfinished"/>
+        <translation>Kanały dla lewej i prawej ręki muszą się różnić </translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
@@ -1381,7 +1381,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="90"/>
         <source>Db</source>
-        <translation type="unfinished"/>
+        <translation>Db</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="91"/>
@@ -1548,12 +1548,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="244"/>
         <source>Not a Midi File &quot;</source>
-        <translation type="unfinished"/>
+        <translation>To nie jest plik MIDI &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="268"/>
         <source>Not a valid MIDI file &quot;</source>
-        <translation type="unfinished"/>
+        <translation>Niewłaściwy plik MIDI &quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="344"/>
@@ -1644,7 +1644,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="378"/>
         <source>&amp;Show the Side Panel</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Pokaż panel boczny</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="380"/>
@@ -1756,12 +1756,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="373"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"/>
+        <translation>Pełny ekran</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="379"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"/>
+        <translation>Pokaż panel boczny</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="386"/>
@@ -1776,7 +1776,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="400"/>
         <source>Song Settings</source>
-        <translation type="unfinished"/>
+        <translation>Ustawienia utworu</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="475"/>
@@ -1821,17 +1821,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="644"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"/>
+        <translation>Wybierz prawą rękę</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="645"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"/>
+        <translation>Wybierz obie ręce</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="646"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"/>
+        <translation>Wybierz lewą rękę</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="647"/>

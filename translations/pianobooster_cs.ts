@@ -123,7 +123,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation type="unfinished"/>
+        <translation>Celesta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation type="unfinished"/>
+        <translation>Marimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -288,7 +288,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation type="unfinished"/>
+        <translation>Viola</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
@@ -373,7 +373,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation type="unfinished"/>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -568,7 +568,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>FX 2 (soundtrack)</source>
-        <translation type="unfinished"/>
+        <translation>FX 2 (zvuková stopa)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
@@ -598,7 +598,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
         <source>FX 8 (sci-fi)</source>
-        <translation type="unfinished"/>
+        <translation>FX 8 (sci-fi)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
@@ -618,12 +618,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation type="unfinished"/>
+        <translation>Koto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation type="unfinished"/>
+        <translation>Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -648,7 +648,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation type="unfinished"/>
+        <translation>Agogo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -1654,7 +1654,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"/>
+        <translation>Ukázat &amp;klávesnici klavíru</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="394"/>
@@ -1726,12 +1726,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
         <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>Kopírovací právo (c) L. J. Barman, 2008-2009; Všechna práva vyhrazena.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="601"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>Kopírovací právo (c) Fabien Givors, 2018-2019; Všechna práva vyhrazena.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="630"/>
@@ -1756,17 +1756,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="373"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"/>
+        <translation>Režim celé obrazovky</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="379"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"/>
+        <translation>Ukázat levý postranní panel</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="386"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"/>
+        <translation>Ukázat panel s klávesnicí klavíru</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="395"/>
@@ -1776,12 +1776,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="400"/>
         <source>Song Settings</source>
-        <translation type="unfinished"/>
+        <translation>Nastavení písně</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="475"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"/>
+        <translation>Stránky Piano Boosteru</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="549"/>
@@ -1791,22 +1791,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="597"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;PianoBooster - verze %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="598"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;Pozvedněte&lt;/b&gt; své &lt;b&gt;dovednosti hry na klavír&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="603"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>Tento program je dostupný za podmínek GNU General Public License verze 3, jak jsou zveřejněny Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="607"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;Copyright(c) 2003-2007 Gary P. Scavone</source>
-        <translation type="unfinished"/>
+        <translation>Tento program také obsahuje RtMIDI: třídy MIDI i/o C++ ve skutečném čase&lt;br&gt;Kopírovací právo (c) 2003-2007 Gary P. Scavone</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="617"/>

@@ -12,6 +12,8 @@ Keywords=audio;midi;music;piano;education;learning;playing;songs;
 
 
 # Translations
+Name[gl]=Piano Booster (FluidSynth)
+Comment[gl]=Un reprodutor de ficheiros MIDI que lle ensina como tocar o piano, co secuenciador FluidSynth
 GenericName[gl]=Profesor de piano
 Name[hi]=पियानो बूस्टर (FluidSynth)
 Comment[pl]=Odtwarzacz plików MIDI, który uczy, jak grać na pianinie dzięki sekwencerowi FluidSynth

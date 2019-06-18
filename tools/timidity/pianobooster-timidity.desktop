@@ -12,6 +12,8 @@ Keywords=audio;midi;music;piano;education;learning;playing;songs;
 
 
 # Translations
+Name[gl]=Piano Booster (TiMidity)
+Comment[gl]=Un reprodutor de ficheiros MIDI que lle ensina como tocar o piano, co secuenciador TiMidity
 GenericName[gl]=Profesor de piano
 Name[hi]=पियानो बूस्टर (TiMidity)
 Comment[pl]=Odtwarzacz plików MIDI, który uczy, jak grać na pianinie, za pomocą sekwencera TiMidity
