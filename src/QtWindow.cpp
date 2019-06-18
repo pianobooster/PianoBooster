@@ -156,6 +156,7 @@ QtWindow::QtWindow()
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
     m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("Midi/Output").toString());
 
+    readSettings();
 
     QString songName = m_settings->value("CurrentSong").toString();
     if (!songName.isEmpty())
