@@ -610,9 +610,8 @@ void QtWindow::about()
             )
             #if !defined(USE_SYSTEM_RTMIDI)
              +
-            tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>"
-                "Copyright(c) 2003-2007 Gary P. Scavone"
-            )
+            tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>") +
+            tr("Copyright(c) Gary P. Scavone, 2003-2011; All rights reserved.")
             #endif
     );
     msgBox.setMinimumWidth(600);
