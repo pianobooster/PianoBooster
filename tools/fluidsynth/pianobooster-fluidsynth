@@ -1,5 +1,11 @@
 #!/bin/sh
 
+MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
+MES2="Error: fluidsynth was not run!"
+MES3="Error: SoundFont FluidR3_GM.sf2 was not found!"
+MES4="Error: SoundFont FluidR3_GS.sf2 was not found!"
+MES5="Please try again!"
+
 lang=`echo $LANGUAGE|cut -d ":" --fields=2`
 
 case $lang in
@@ -31,12 +37,13 @@ case $lang in
           MES4="Erro: Non se atopou SoundFont FluidR3_GS.sf2!"
           MES5="Tenteo de novo!"
           ;;
-     *)
-          MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
-          MES2="Error: fluidsynth was not run!"
-          MES3="Error: SoundFont FluidR3_GM.sf2 was not found!"
-          MES4="Error: SoundFont FluidR3_GS.sf2 was not found!"
-          MES5="Please try again!"
+     bg)
+          MES1="Грешка: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 не бяха намерени!"
+          MES2="Грешка: Не намирам fluidsynth!"
+          MES5="Моля, опитайте отново!"
+          ;;
+     pl)
+          MES5="Spróbuj ponownie!"
           ;;
 esac
 
