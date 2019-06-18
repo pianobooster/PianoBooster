@@ -1740,8 +1740,8 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
-        <source>Copyright(c) Gary P. Scavone, 2003-2011; All rights reserved.</source>
-        <translation>Copyright(c) Gary P. Scavone, 2003-2011; Todos los derechos reservados.</translation>
+        <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
+        <translation>Copyright(c) Gary P. Scavone, 2003-2019; Todos los derechos reservados.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="636"/>

@@ -18,6 +18,7 @@ v0.7.0:
 - Fix incorrect drawing on ARM systems
 - Fix segfault on the next start of program after playing corrupted midi file
 - Fix midi input/output devices detection
+- RtMidi: version 4.0.0
 
 v0.6.8: (11 May 2018)
 - French and Galician translations
