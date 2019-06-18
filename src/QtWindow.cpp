@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008-2009, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -601,7 +601,7 @@ void QtWindow::about()
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
             "<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>" +
-            tr("Copyright(c) L. J. Barman, 2008-2009; All rights reserved.<br>") +
+            tr("Copyright(c) L. J. Barman, 2008-2013; All rights reserved.<br>") +
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
             "<br>" +
             tr("This program is made available "

@@ -1726,11 +1726,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="604"/>
-        <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="605"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"></translation>
@@ -1808,6 +1803,11 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="604"/>
+        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

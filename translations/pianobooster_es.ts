@@ -1725,8 +1725,8 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="604"/>
-        <source>Copyright(c) L. J. Barman, 2008-2009; All rights reserved.&lt;br&gt;</source>
-        <translation>Copyright(c) L. J. Barman, 2008-2009; Todos los derechos reservados.&lt;br&gt;</translation>
+        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
+        <translation>Copyright(c) L. J. Barman, 2008-2013; Todos los derechos reservados.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="605"/>
