@@ -158,7 +158,7 @@ QtWindow::QtWindow()
 
     readSettings();
 
-    QTimer::singleShot(10, [&](){
+    QTimer::singleShot(100, [&](){
         QString songName = m_settings->value("CurrentSong").toString();
         if (!songName.isEmpty())
             m_settings->openSongFile( songName );
