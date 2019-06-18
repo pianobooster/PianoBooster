@@ -12,6 +12,7 @@ BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(ftgl)
 BuildRequires:  pkgconfig(gl)
+BuildRequires:  pkgconfig(glu)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Help)
@@ -19,12 +20,15 @@ BuildRequires:  pkgconfig(Qt5OpenGL)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(rtmidi)
+BuildRequires:  pkgconfig(fluidsynth)
+BuildRequires:  hicolor-icon-theme
 
 Requires:       fonts-ttf-dejavu
 Requires:       unzip
+Requires:       hicolor-icon-theme
 
 Recommends:     %{name}-timidity
-#Recommends:     %{name}-fluidsynth
+#Recommends:     %%{name}-fluidsynth
 Recommends:     qttranslations5
 
 %description
@@ -43,7 +47,7 @@ MIDI keyboard.
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_gamesdatadir}/%{name}/
+%{_datadir}/games/%{name}
 %{_mandir}/man6/%{name}.6*
 
 #----------------------------------------------------------------------------
