@@ -35,7 +35,9 @@
   #include <GL/gl.h>
   #include <GL/glu.h>
 #endif
+#ifndef NO_USE_FTGL
 #include <FTGL/ftgl.h>
+#endif
 #include <QObject>
 #include <QFile>
 #include <QApplication>
@@ -68,12 +70,15 @@ class CDraw : public QObject
 {
 public:
     CDraw(CSettings* settings)
+#ifndef NO_USE_FTGL
         :font(nullptr)
-    {
-        QStringList listPathFonts;
-#if defined(USE_FONT)
-        listPathFonts.push_back(USE_FONT);
 #endif
+    {
+#ifndef NO_USE_FTGL
+        QStringList listPathFonts;
+        #if defined(USE_FONT)
+        listPathFonts.push_back(USE_FONT);
+        #endif
         listPathFonts.push_back("/usr/share/games/pianobooster/fonts/DejaVuSans.ttf");
         listPathFonts.push_back(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
         listPathFonts.push_back("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
@@ -92,16 +97,18 @@ public:
             ppLogError("Font DejaVuSans.ttf was not found !");
             exit(0);
         }
-
+        font->FaceSize(FONT_SIZE, FONT_SIZE);
+#endif
         m_settings = settings;
         m_displayHand = PB_PART_both;
         m_forceCompileRedraw = 1;
         m_scrollProperties = &m_scrollPropertiesHorizontal;
-        font->FaceSize(FONT_SIZE, FONT_SIZE);
     }
 
     ~CDraw(){
+#ifndef NO_USE_FTGL
         if (font!=nullptr) delete font;
+#endif
     }
 
     void scrollVertex(float x, float y)
@@ -133,7 +140,9 @@ protected:
     void drawStaves(float startX, float endX);
     void drawKeySignature(int key);
     void drawNoteName(int midiNote, float x, float y, int type);
+#ifndef NO_USE_FTGL
     void renderText(float x, float y, const char* s);
+#endif
     CSettings* m_settings;
 
 private:
@@ -149,7 +158,9 @@ private:
     CScrollProperties *m_scrollProperties;
     CScrollProperties m_scrollPropertiesHorizontal;
     CScrollProperties m_scrollPropertiesVertical;
+#ifndef NO_USE_FTGL
     FTGLPixmapFont *font;
+#endif
 };
 
 #endif //__DRAW_H__

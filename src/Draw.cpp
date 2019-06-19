@@ -79,6 +79,7 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool pl
 
 #define scaleGlVertex(xa, xb, ya, yb) glVertex2f( ((xa) * 1.2) + (xb), ((ya) * 1.2) + (yb))
 
+#ifndef NO_USE_FTGL
 void CDraw::renderText(float x, float y, const char* s)
 {
   double w = font->Advance(s);
@@ -86,6 +87,7 @@ void CDraw::renderText(float x, float y, const char* s)
   glRasterPos2f(x - w/2, y - h);
   font->Render(s);
 }
+#endif
 
 void CDraw::drawNoteName(int midiNote, float x, float y, int type)
 {
@@ -99,6 +101,168 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
 
     glLineWidth (1.0);
 
+#ifdef NO_USE_FTGL
+    if (item.accidental != 0)
+      {
+          const float accidentalOffset = 10;
+          x += accidentalOffset/2;
+          if (item.accidental == 1)
+          {
+              glBegin(GL_LINES);
+                  //  letterSharp4
+                  scaleGlVertex( -1.317895, x,   5.794585, y);  //  1
+                  scaleGlVertex( -1.265845, x,   -6.492455, y);  //  2
+                  scaleGlVertex( 1.252305, x,   6.492455, y);  //  3
+                  scaleGlVertex( 1.322655, x,   -5.422335, y);  //  4
+                  scaleGlVertex( -2.645765, x,   1.967805, y);  //  5
+                  scaleGlVertex( 2.648325, x,   3.625485, y);  //  6
+                  scaleGlVertex( -2.648325, x,   -3.306965, y);  //  7
+                  scaleGlVertex( 2.596205, x,   -1.675765, y);  //  8
+              glEnd();
+
+          }
+          else
+          {
+              glBegin(GL_LINE_STRIP);
+                  //  letterFlat
+                  scaleGlVertex( -2.52933, x,   6.25291, y);  //  1
+                  scaleGlVertex( -2.50344, x,   -6.25291, y);  //  2
+                  scaleGlVertex( 0.76991, x,   -3.63422, y);  //  3
+                  scaleGlVertex( 2.07925, x,   -1.67021, y);  //  4
+                  scaleGlVertex( 2.52933, x,   0.25288, y);  //  5
+                  scaleGlVertex( 1.42458, x,   1.07122, y);  //  6
+                  scaleGlVertex( -0.53943, x,   0.90755, y);  //  7
+                  scaleGlVertex( -2.46252, x,   -1.01554, y);  //  8
+                  scaleGlVertex( -2.50344, x,   -1.67021, y);  //  9
+              glEnd();
+
+          }
+          x -= accidentalOffset;
+      }
+
+      switch(item.pianoNote)
+      {
+      case 1:
+          glBegin(GL_LINE_STRIP);
+              //  letterC
+              scaleGlVertex( 3.513445, x,   2.17485, y);  //  1
+              scaleGlVertex( 1.880175, x,   4.47041, y);  //  2
+              scaleGlVertex( -1.598825, x,   4.4321, y);  //  3
+              scaleGlVertex( -3.692215, x,   2.26571, y);  //  4
+              scaleGlVertex( -3.702055, x,   -1.88958, y);  //  5
+              scaleGlVertex( -1.630675, x,   -4.47041, y);  //  6
+              scaleGlVertex( 1.932545, x,   -4.44064, y);  //  7
+              scaleGlVertex( 3.702055, x,   -1.88554, y);  //  8
+          glEnd();
+      break;
+
+      case 2:
+          glBegin(GL_LINE_STRIP);
+              //  letterD
+              scaleGlVertex( -3.30696, x,   4.31878, y);  //  1
+              scaleGlVertex( -3.3428, x,   -4.31878, y);  //  2
+              scaleGlVertex( 0.9425, x,   -4.28164, y);  //  3
+              scaleGlVertex( 3.31415, x,   -1.42302, y);  //  4
+              scaleGlVertex( 3.3428, x,   1.66626, y);  //  5
+              scaleGlVertex( 0.70825, x,   4.31317, y);  //  6
+              scaleGlVertex( -3.22083, x,   4.29495, y);  //  7
+          glEnd();
+      break;
+
+      case 3: // E
+          glBegin(GL_LINE_STRIP);
+              //  letterE2
+              scaleGlVertex( 2.966065, x,   4.416055, y);  //  1
+              scaleGlVertex( -3.007275, x,   4.403495, y);  //  2
+              scaleGlVertex( -3.037615, x,   -4.416055, y);  //  3
+              scaleGlVertex( 3.037615, x,   -4.415435, y);  //  4
+          glEnd();
+          glBegin(GL_LINES);
+              scaleGlVertex( 3.011705, x,   0.197675, y);  //  5
+              scaleGlVertex( -2.990845, x,   0.196615, y);  //  6
+          glEnd();
+      break;
+
+      case 4: // F
+          glBegin(GL_LINE_STRIP);
+              //  letterF2
+              scaleGlVertex( -2.55172, x,   -4.434285, y);  //  1
+              scaleGlVertex( -2.51956, x,   4.433665, y);  //  2
+              scaleGlVertex( 2.39942, x,   4.434285, y);  //  3
+          glEnd();
+          glBegin(GL_LINES);
+              scaleGlVertex( 2.58143, x,   0.244465, y);  //  4
+              scaleGlVertex( -2.58143, x,   0.243405, y);  //  5
+
+          glEnd();
+      break;
+
+      case 5:
+          glBegin(GL_LINE_STRIP);
+              //  letterG
+              scaleGlVertex( 0.58123, x,   -0.34005, y);  //  1
+              scaleGlVertex( 3.66047, x,   -0.48722, y);  //  2
+              scaleGlVertex( 3.70461, x,   -3.23595, y);  //  3
+              scaleGlVertex( 1.96234, x,   -4.41694, y);  //  4
+              scaleGlVertex( -0.96712, x,   -4.57846, y);  //  5
+              scaleGlVertex( -3.70461, x,   -2.29011, y);  //  6
+              scaleGlVertex( -3.67245, x,   2.14034, y);  //  7
+              scaleGlVertex( -1.25347, x,   4.57846, y);  //  8
+              scaleGlVertex( 1.90018, x,   4.55293, y);  //  9
+              scaleGlVertex( 3.54236, x,   2.38612, y);  //  10
+          glEnd();
+      break;
+
+      case 6: // A
+          glBegin(GL_LINE_STRIP);
+              //  letterA2
+              scaleGlVertex( -3.91146, x,   -4.907395, y);  //  1
+              scaleGlVertex( 0.06571, x,   4.907395, y);  //  2
+              scaleGlVertex( 3.91146, x,   -4.803315, y);  //  3
+          glEnd();
+          glBegin(GL_LINES);
+              scaleGlVertex( 2.60111, x,   -1.400435, y);  //  4
+              scaleGlVertex( -2.56175, x,   -1.357305, y);  //  5
+
+          glEnd();
+      break;
+
+      case 7:
+          glBegin(GL_LINE_STRIP);
+              //  letterB
+              scaleGlVertex( 1.038555, x,   0.105285, y);  //  1
+              scaleGlVertex( -3.001935, x,   0.121925, y);  //  2
+              scaleGlVertex( -3.027615, x,   4.417905, y);  //  3
+              scaleGlVertex( 1.325925, x,   4.451255, y);  //  4
+              scaleGlVertex( 2.737985, x,   3.048615, y);  //  5
+              scaleGlVertex( 2.721765, x,   1.366235, y);  //  6
+              scaleGlVertex( 1.022635, x,   0.120235, y);  //  7
+              scaleGlVertex( 3.026015, x,   -1.282295, y);  //  8
+              scaleGlVertex( 3.027615, x,   -3.046285, y);  //  9
+              scaleGlVertex( 1.176815, x,   -4.451255, y);  //  10
+              scaleGlVertex( -2.981475, x,   -4.445735, y);  //  11
+              scaleGlVertex( -3.021355, x,   0.176035, y);  //  12
+          glEnd();
+      break;
+
+
+      default:
+          glBegin(GL_LINES);
+              glVertex2f(  3 + x,   -15  + y);  //  1
+              glVertex2f(  3 + x,   8    + y);  //  2
+
+              glVertex2f( -3 + x,   -8   + y);  //  3
+              glVertex2f( -3 + x,   15   + y);  //  4
+
+              glVertex2f(  3 + x,   8    + y);  //  5
+              glVertex2f( -3 + x,   2    + y);  //  6
+
+              glVertex2f(  3 + x,   -2   + y);  //  7
+              glVertex2f( -3 + x,   -8   + y);  //  8
+          glEnd();
+      break;
+      }
+#else
     const QChar flat = QChar(0x266D);
     const QChar natural = QChar(0x266E);
     const QChar sharp = QChar(0x266F);
@@ -131,6 +295,7 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
       QString note = n[item.pianoNote-1] + accident;
       renderText(x, y, note.toLocal8Bit().data());
      }
+#endif
 }
 
 void CDraw::drawStaveNoteName(CSymbol symbol, float x, float y)
