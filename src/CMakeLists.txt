@@ -2,6 +2,9 @@
 # for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
 SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
+
+option(USE_FTGL "build with ftgl" ON)
+
 #SET(USE_FLUIDSYNTH OFF)
 
 #SET(OpenGL_GL_PREFERENCE GLVND)
@@ -30,16 +33,20 @@ add_compile_options(-Wall)
 
 if(USE_FONT)
     add_compile_options("-DUSE_FONT=\"${USE_FONT}\"")
-endif()
+endif(USE_FONT)
 
 FIND_PACKAGE( OpenGL REQUIRED )
 
 include(FindPkgConfig)
 FIND_PACKAGE( PkgConfig REQUIRED )
 
-pkg_check_modules(FTGL ftgl)
-SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
-SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+if(USE_FTGL)
+   pkg_check_modules(FTGL ftgl)
+   SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
+   SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+else(USE_FTGL)
+    add_compile_options("-DNO_USE_FTGL")
+endif(USE_FTGL)
 
 # Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
@@ -112,7 +119,9 @@ find_library(JACK_LIB jack)
 pkg_check_modules(JACK jack)
 SET(JACK_INCLUDE_DIR ${JACK_INCLUDE_DIRS})
 SET(JACK_LIBRARY ${JACK_LIBRARIES})
-ADD_DEFINITIONS(-D__UNIX_JACK__ -D__LINUX_ALSA__)
+IF (JACK_FOUND)
+ADD_DEFINITIONS(-D__UNIX_JACK__)
+ENDIF(JACK_FOUND)
 
 IF (USE_SYSTEM_RTMIDI)
     add_compile_options("-DUSE_SYSTEM_RTMIDI")
