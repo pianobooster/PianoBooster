@@ -2,7 +2,12 @@ Name:           pianobooster
 Version:        0.7.0
 Release:        %mkrel 1
 Summary:        A MIDI file player that teaches you how to play the piano
+%if 0%{?mageia}
 Group:          Sound/Midi
+%endif
+%if 0%{?suse}
+Group:          Productivity/Multimedia/Sound/Midi
+%endif
 License:        GPLv3+
 Url:            https://github.com/captnfab/PianoBooster
 Source0:        %{name}-%{version}.tar.gz
@@ -23,13 +28,23 @@ BuildRequires:  pkgconfig(rtmidi)
 BuildRequires:  pkgconfig(fluidsynth)
 BuildRequires:  hicolor-icon-theme
 
+%if 0%{?mageia}
 Requires:       fonts-ttf-dejavu
+%endif
+%if 0%{?suse}
+Requires:       dejavu-fonts
+%endif
 Requires:       unzip
 Requires:       hicolor-icon-theme
 
 Recommends:     %{name}-timidity
 #Recommends:     %%{name}-fluidsynth
+%if 0%{?mageia}
 Recommends:     qttranslations5
+%endif
+%if 0%{?suse}
+Recommends:     libqt5-qttranslations
+%endif
 
 %description
 A MIDI file player/game that displays the musical notes AND teaches you how
@@ -57,7 +72,12 @@ Summary:        Wrapper to launch PianoBooster with TiMidity as MIDI sequencer
 Group:          Sound/Midi
 
 Requires:       %{name} = %{version}-%{release}
+%if 0%{?mageia}
 Requires:       TiMidity++
+%endif
+%if 0%{?suse}
+Requires:       timidity
+%endif
 
 %description    timidity
 This package contains a wrapper script to launch PianoBooster together with
@@ -78,7 +98,12 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       fluidsynth
 Requires:       fluid-soundfont-gm
 Requires:       fluid-soundfont-gs
+%if 0%{?mageia}
 Requires:       libnotify
+%endif
+%if 0%{?suse}
+Requires:       libnotify-tools
+%endif
 
 %description    fluidsynth
 This package contains a wrapper script to launch PianoBooster together with
