@@ -31,6 +31,17 @@ case $lang in
           MES8="Запускается fluidsynth..."
           MES9="Пожалуйста, ожидайте около 10 секунд!"
           ;;
+     de)
+          MES1="Fehler: SoundFonts FluidR3_GM.sf2 und FluidR3_GS.sf2 wurden nicht gefunden!"
+          MES2="Fehler: Fluidsynth wurde nicht ausgeführt!"
+          MES3="Fehler: SoundFont FluidR3_GM.sf2 wurde nicht gefunden!"
+          MES4="Fehler: SoundFont FluidR3_GS.sf2 wurde nicht gefunden!"
+          MES5="Bitte erneut versuchen!"
+          MES6="Fehler: Fluidsynth wurde nicht gefunden oder ist beschädigt!"
+          MES7="Fehler: /usr/bin/jackd wurde nicht gefunden!"
+          MES8="Fluidsynth wird gestartet..."
+          MES9="Bitte noch 10 Sekunden warten!"
+          ;;
      uk)
           MES1="Помилка: не знайдено звукових шрифтів FluidR3_GM.sf2 та FluidR3_GS.sf2!"
           MES2="Помилка: fluidsynth не запущено!"

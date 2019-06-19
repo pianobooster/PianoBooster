@@ -50,6 +50,11 @@ else(USE_FTGL)
     add_compile_options("-DNO_USE_FTGL")
 endif(USE_FTGL)
 
+if (NO_LANGS)
+    add_compile_options("-DNO_LANGS")
+endif(NO_LANGS)
+
+
 # Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
 
@@ -211,7 +216,7 @@ ENDIF(WIN32)
 
 qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIBRARY} ${RTMIDI_LIBRARY} ${JACK_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARY} ${JACK_LIBRARY})
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)

@@ -23,6 +23,9 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+ fluid-soundfont-gm,
+ fluid-soundfont-gs,
+ fluidsynth,
  fonts-dejavu-core,
  hicolor-icon-theme,
  timidity,

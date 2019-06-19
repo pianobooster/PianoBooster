@@ -776,6 +776,7 @@ void QtWindow::loadTutorHtml(const QString & name)
 }
 
 void QtWindow::refreshTranslate(){
+#ifndef NO_LANGS
     QString localeDirectory =
  #ifdef Q_OS_WIN32
         QApplication::applicationDirPath() + "/translations/";
@@ -860,4 +861,6 @@ void QtWindow::refreshTranslate(){
     m_topBar->updateTranslate();
     m_settings->updateWarningMessages();
     m_settings->updateTutorPage();
+
+#endif
 }
