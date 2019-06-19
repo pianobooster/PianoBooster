@@ -1,0 +1,32 @@
+pkgdesc='A MIDI file player that teaches you how to play the piano'
+pkgname='pianobooster'
+pkgver=0.7.0
+pkgrel=1
+makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'rtmidi' 'jack2' 'fluidsynth' 'hicolor-icon-theme')
+depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme')
+optdepends=('qt5-translations')
+arch=('x86_64')
+groups=('qt5')
+url='https://github.com/captnfab/PianoBooster'
+license=('GPL3+')
+source=("pianobooster-${pkgver}.tar.gz")
+md5sums=('SKIP')
+
+build () {
+    cd "${pkgname}-${pkgver}"
+    cmake . \
+       -DUSE_SYSTEM_FONT=ON \
+       -DINSTALL_ALL_LANGS=ON \
+       -DUSE_SYSTEM_RTMIDI=ON \
+       -DWITH_MAN=ON \
+       -DWITH_TIMIDITY=ON \
+       -DWITH_FLUIDSYNTH=ON \
+       -DUSE_FLUIDSYNTH=ON \
+       -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr"
+    make
+}
+
+package () {
+    cd "${pkgname}-${pkgver}"
+    make install -C build
+}
