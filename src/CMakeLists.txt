@@ -2,6 +2,9 @@
 # for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
 SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
+
+option(USE_FTGL "build with ftgl" ON)
+
 #SET(USE_FLUIDSYNTH OFF)
 
 #SET(OpenGL_GL_PREFERENCE GLVND)
@@ -37,13 +40,13 @@ FIND_PACKAGE( OpenGL REQUIRED )
 include(FindPkgConfig)
 FIND_PACKAGE( PkgConfig REQUIRED )
 
-if(NO_USE_FTGL)
-    add_compile_options("-DNO_USE_FTGL")
-else(NO_USE_FTGL)
+if(USE_FTGL)
    pkg_check_modules(FTGL ftgl)
    SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
    SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
-endif(NO_USE_FTGL)
+else(USE_FTGL)
+    add_compile_options("-DNO_USE_FTGL")
+endif(USE_FTGL)
 
 # Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
