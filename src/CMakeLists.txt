@@ -222,7 +222,8 @@ INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
 #INSTALL( index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en  SUBDIR kmidimon )
 
 if(NOT NO_DOCS)
-    INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
+    INSTALL( FILES ../README.md DESTINATION share/doc/pianobooster/ )
+    INSTALL( FILES ../ReleaseNotes.txt DESTINATION share/doc/pianobooster/ )
 endif()
 
 if(WITH_MAN)
