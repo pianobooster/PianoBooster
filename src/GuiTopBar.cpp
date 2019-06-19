@@ -58,7 +58,7 @@ GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
     setMaximumSize(QSize(16777215, 30));
 }
 
-void GuiTopBar::init(CSong* songObj, CTrackList* trackList)
+void GuiTopBar::init(CSong* songObj)
 {
     m_song = songObj;
     reloadKeyCombo(true);

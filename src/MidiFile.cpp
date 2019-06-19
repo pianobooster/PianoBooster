@@ -90,14 +90,14 @@ void CMidiFile::openMidiFile(string filename)
     if (m_file.fail() == true)
     {
         QMessageBox::warning(0, QMessageBox::tr("Midi File Error"),
-                 QMessageBox::tr("Cannot open \"") + QString(filename.c_str()) + "\"");
+                 QMessageBox::tr("Cannot open \"%1\"").arg(QString(filename.c_str())));
         midiError(SMF_CANNOT_OPEN_FILE);
         return;
     }
     rewind();
     if (getMidiError() != SMF_NO_ERROR)
         QMessageBox::warning(0, QMessageBox::tr("Midi File Error"),
-                 QMessageBox::tr("Midi file \"") + QString(filename.c_str()) + " \"" + QMessageBox::tr("is corrupted"));
+                 QMessageBox::tr("Midi file \"%1\" is corrupted").arg(QString(filename.c_str())));
 }
 
 void CMidiFile::rewind()

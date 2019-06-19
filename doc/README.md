@@ -74,7 +74,7 @@ learning piano technique.
 
 Timing markers show whether you are playing ahead or behind of the beat.
 They appear as white crosses that are drawn over the note.
-Timing markers are new in version 0.6.2
+Timing markers are new in version 0.6.2.
 
 ![Piano Booster timing markers](images/timingmarkers.jpeg)
 

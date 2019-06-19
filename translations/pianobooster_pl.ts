@@ -805,7 +805,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation type="unfinished"/>
+        <translation>Możesz użyć klawiatury komputera zamiast klawiatury MIDI; &apos;x&apos; jest środkowym C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
@@ -1125,7 +1125,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="46"/>
         <source>Full (Recommended)</source>
-        <translation type="unfinished"/>
+        <translation>Pełny (zalecany)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
@@ -1724,11 +1724,6 @@
         <translation>Pomoc Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="604"/>
-        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="605"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"/>
@@ -1801,11 +1796,16 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="601"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;PianoBooster - Wersja %1&lt;/b&gt;&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="604"/>
+        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1852,17 +1852,17 @@
         <location filename="../src/QtWindow.cpp" line="655"/>
         <location filename="../src/QtWindow.cpp" line="656"/>
         <source>Increase the speed by 5%</source>
-        <translation type="unfinished"/>
+        <translation>Zwiększ prędkość o 5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="657"/>
         <source>Change to the Next Song</source>
-        <translation type="unfinished"/>
+        <translation>Zmień na następny utwór</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="658"/>
         <source>Change to the Previous Song</source>
-        <translation type="unfinished"/>
+        <translation>Zmień na poprzedni utwór</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="659"/>

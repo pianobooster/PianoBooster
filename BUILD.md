@@ -1,70 +1,85 @@
 # Linux
 
-   Ensure that the following packages 'cmake', 'libqt5-dev', 'libasound2-dev' and
-   'build-essential" are installed.
+Ensure that the build required packages are installed. Full list of them you can find [here](pkgs).
 
-   Then type "cmake .", followed by "make". Finally as root type "make install".
-   (The pianobooster binary executable is now in the "build" subdirectory.)
+Then type:
 
-   To build a debug version create a dir called "debug" and change to that dir and then
-   type "cmake -DCMAKE_BUILD_TYPE=Debug .."
+```cmake .```
 
-   (Alternatively you can use qmake followed by make in the src directory.)
+```make```
 
-   See [Debian branch](https://github.com/captnfab/PianoBooster/tree/debian) for more details.
+Finally as root type:
 
-   See [Mageia Linux spec file ](pianobooster.spec) for more details.
+```make install -C build```
 
-   If you make changes to the source code then please post details.
+(The pianobooster binary executable is now in the "build" subdirectory.)
+
+To build a debug version create a dir called "debug" and change to that dir and then type:
+
+```cmake -DCMAKE_BUILD_TYPE=Debug .```
+
+(Alternatively you can use qmake followed by make.)
+
+See [DEB](pkgs/deb) for more details.
+
+See [RPM](pkgs/rpm/pianobooster.spec) for more details.
+
+See [ARCH](pkgs/arch/PKGBUILD) for more details.
 
 # macOS
 
-   Install latest Xcode (from Apple Developer Connection, free registration required).
+Install latest Xcode (from Apple Developer Connection, free registration required).
 
-   Install CMake and QT libraries via Homebrew:
+Install CMake and QT libraries via Homebrew:
 
-   ```
-   $ brew install cmake qt5
-   ```
+```$ brew install cmake qt5```
 
-   Generate XCode project file via CMake:
+Generate XCode project file via CMake:
 
-   ```
-   $ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)`
-   ```
+```$ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)```
 
-   Open the project file in XCode, set whatever options you like (universal or single architecture,
-   debug or release etc.) and compile.
+Open the project file in XCode, set whatever options you like (universal or single architecture,
+debug or release etc.) and compile.
 
-   To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
+To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
 
-   If you make changes to the source code then please post details.
+It's recommends to build with disabled USE_FTGL.
 
 # Windows
 
-   To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
-   When installing Qt select the option to download and install the MinGW compiler. Open the
-   Qt Command Prompt and then change to the "PianoBooster" directory and then type the
-   command below.
+To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
+When installing Qt select the option to download and install the MinGW compiler. Open the
+Qt Command Prompt and then change to the "PianoBooster" directory and then type the
+command below:
 
-   "C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .
+```"C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .```
 
-   Once this is completed type "make".
+Once this is completed type:
 
-   Or alternatively you can install QtCreator and then open the pianobooster.pro
+```make```
 
-   If you make changes to the source code then please post details.
+Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
+It's recommends to build with disabled USE_FTGL to fix notes drawing.
 
-# License
+# Build options
 
-   Piano Booster is fully copyrighted by the author and all rights are reserved.
+**USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization.
 
-   PianoBooster is free software (Open Source software): you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by the Free Software
-   Foundation, either version 3 of the License, or (at your option) any later version.
+**NO_DOCS**: do not install documents; disabled by default.
 
-   PianoBooster is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-   without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-   See the GNU General Public License in the file "gplv3.txt" or from the web site
-   <http://www.gnu.org/licenses/> or [gplv3.txt](gplv3.txt).
+**WITH_MAN**: install man page; disabled by default.
+
+**WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default.
+
+**WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default.
+
+**INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and always enabled for qmake.
+
+**USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default.
+
+**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default.
+
+**USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
+
+**USE_FONT**: build with specified font; null by default.

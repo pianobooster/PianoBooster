@@ -2,6 +2,9 @@
 # for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
 SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
+
+option(USE_FTGL "build with ftgl" ON)
+
 #SET(USE_FLUIDSYNTH OFF)
 
 #SET(OpenGL_GL_PREFERENCE GLVND)
@@ -9,7 +12,6 @@ SET(CMAKE_VERBOSE_MAKEFILE OFF)
 # The inplace directory is mainly for windows builds
 # SET(FLUIDSYNTH_INPLACE_DIR C:/download/misc/ljb/fluidsynth-1.0.9)
 # SET(FLUIDSYNTH_INPLACE_DIR /home/louis/build/fluidsynth-1.0.9)
-
 
 cmake_minimum_required(VERSION 2.4)
 if(COMMAND cmake_policy)
@@ -27,39 +29,38 @@ PROJECT( pianobooster )
 # enable warnings
 add_compile_options(-Wall)
 
+if (${CMAKE_BUILD_TYPE} MATCHES "Debug")
+    ADD_DEFINITIONS(-DIS_DEBUG)
+endif (${CMAKE_BUILD_TYPE} MATCHES "Debug")
 
 if(USE_FONT)
     add_compile_options("-DUSE_FONT=\"${USE_FONT}\"")
-endif()
+endif(USE_FONT)
 
 FIND_PACKAGE( OpenGL REQUIRED )
 
 include(FindPkgConfig)
 FIND_PACKAGE( PkgConfig REQUIRED )
 
-pkg_check_modules(FTGL ftgl)
-SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
-SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+if(USE_FTGL)
+   pkg_check_modules(FTGL ftgl)
+   SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
+   SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+else(USE_FTGL)
+    add_compile_options("-DNO_USE_FTGL")
+endif(USE_FTGL)
 
 # Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
 
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 add_compile_options(-fPIC)
 
 # Add in the link libraries for each operating system
 IF(${CMAKE_SYSTEM} MATCHES "Linux")
-    #FIND_PACKAGE(PkgConfig REQUIRED)
-    #PKG_CHECK_MODULES(ALSA REQUIRED alsa>=1.0)
-    #IF(ALSA_FOUND)
-        ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
-        LINK_LIBRARIES (asound)
-        LINK_LIBRARIES (pthread)
-        LINK_LIBRARIES (GL)
-    #ELSE(ALSA_FOUND)
-    #    MESSAGE(FATAL_ERROR "Please install the 'libasound2-dev' package and then try again")
-    #ENDIF(ALSA_FOUND)
-
+    ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
+    LINK_LIBRARIES (asound)
+    LINK_LIBRARIES (pthread)
+    LINK_LIBRARIES (GL)
 ENDIF(${CMAKE_SYSTEM} MATCHES "Linux")
 
 IF(${CMAKE_SYSTEM} MATCHES "FreeBSD")
@@ -67,7 +68,6 @@ IF(${CMAKE_SYSTEM} MATCHES "FreeBSD")
 ENDIF(${CMAKE_SYSTEM} MATCHES "FreeBSD")
 
 IF(${CMAKE_SYSTEM} MATCHES "Windows")
-#    FIND_PACKAGE(WINDRES REQUIRED)
     ADD_DEFINITIONS(-D__WINDOWS_MM__ -D_WIN32)
     LINK_LIBRARIES(winmm opengl32)
 ENDIF(${CMAKE_SYSTEM} MATCHES "Windows")
@@ -95,8 +95,6 @@ IF(USE_FLUIDSYNTH)
     ENDIF(FLUIDSYNTH_INPLACE_DIR)
 ENDIF(USE_FLUIDSYNTH)
 
-
-
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} ${FTGL_INCLUDE_DIR} ${RTMIDI_INCLUDE_DIR})
@@ -106,13 +104,14 @@ SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h)
 
-
 # Check for Jack
 find_library(JACK_LIB jack)
 pkg_check_modules(JACK jack)
 SET(JACK_INCLUDE_DIR ${JACK_INCLUDE_DIRS})
 SET(JACK_LIBRARY ${JACK_LIBRARIES})
-ADD_DEFINITIONS(-D__UNIX_JACK__ -D__LINUX_ALSA__)
+IF (JACK_FOUND)
+ADD_DEFINITIONS(-D__UNIX_JACK__)
+ENDIF(JACK_FOUND)
 
 IF (USE_SYSTEM_RTMIDI)
     add_compile_options("-DUSE_SYSTEM_RTMIDI")
@@ -124,7 +123,6 @@ ELSE(USE_SYSTEM_RTMIDI)
     SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
     SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
 ENDIF(USE_SYSTEM_RTMIDI)
-
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
@@ -156,8 +154,6 @@ SET( PIANOBOOSTER_SRCS
     pianobooster.rc
     images/pianobooster.ico
 )
-
-
 
 # another list, this time it includes all header files that should be treated with moc
 SET( PIANOBOOSTER_MOC_HDRS
@@ -219,10 +215,10 @@ target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${FTGL_LIB
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
-#INSTALL( index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en  SUBDIR kmidimon )
 
 if(NOT NO_DOCS)
-    INSTALL( FILES ../README.md  DESTINATION share/games/pianobooster/doc/ )
+    INSTALL( FILES ../README.md DESTINATION share/doc/pianobooster/ )
+    INSTALL( FILES ../ReleaseNotes.txt DESTINATION share/doc/pianobooster/ )
 endif()
 
 if(WITH_MAN)
@@ -243,6 +239,14 @@ INSTALL ( FILES ../icons/hicolor/32x32/pianobooster.png DESTINATION share/icons/
 INSTALL ( FILES ../icons/hicolor/48x48/pianobooster.png DESTINATION share/icons/hicolor/48x48/apps )
 INSTALL ( FILES ../icons/hicolor/64x64/pianobooster.png DESTINATION share/icons/hicolor/64x64/apps )
 
+IF (UNIX AND NOT APPLE)
+    INSTALL ( FILES ../music/BoosterMusicBooks.zip DESTINATION share/games/pianobooster/music )
+ENDIF (UNIX AND NOT APPLE)
+
+IF (WIN32)
+    INSTALL( FILES ../music/BoosterMusicBooks.zip DESTINATION . )
+ENDIF (WIN32)
+
 if(USE_FONT)
     INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
 endif()
@@ -251,7 +255,4 @@ if(NOT USE_SYSTEM_FONT)
     INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION share/games/pianobooster/fonts)
 endif()
 
-#INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm  DESTINATION share/pianobooster/translations/ )
-
-
-
+ADD_SUBDIRECTORY(../translations ../build/translations)

@@ -7,18 +7,24 @@ v0.7.0:
 - Translate notes
 - Fix Qt strings localization
 - New options: INSTALL_ALL_LANGS, USE_SYSTEM_FONT, NO_DOCS, USE_SYSTEM_RTMIDI,
-  WITH_MAN, WITH_TIMIDITY, WITH_FLUIDSYNTH
+  WITH_MAN, WITH_TIMIDITY, WITH_FLUIDSYNTH, USE_FTGL
 - Allow to switch between languages within a session
 - Add Piano Keyboard widget
 - Update documentation
 - Fix problem loading midi files with text events
 - New Windows installer
 - Use hicolor icon theme
-- Fix USE_FLUIDSYNTH
+- Fix USE_FLUIDSYNTH flag
 - Fix incorrect drawing on ARM systems
 - Fix segfault on the next start of program after playing corrupted midi file
 - Fix midi input/output devices detection
 - RtMidi: version 4.0.0
+- Fix reading saved position of main window
+- Fix music and translations installation
+- Qmake is alternative for Cmake (Linux, Windows)
+- Fix macOS building
+- Fix file open dialog hang
+- Add JACK support for tools/fluidsynth
 
 v0.6.8: (11 May 2018)
 - French and Galician translations

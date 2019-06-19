@@ -7,9 +7,7 @@ Piano Booster is a MIDI file player that displays the musical notes AND teaches 
 play the piano. You can play along to any track in the midi file and PianoBooster will
 follow YOUR playing. PianoBooster makes sight reading fun!
 
-Piano Booster is a free (Open Source) program available from:
-
-<https://github.com/captnfab/PianoBooster/>
+Piano Booster is a free (Open Source) program available from: <https://github.com/captnfab/PianoBooster/>
 
 Original work by Louis J. Barman can be found here: <http://pianobooster.sourceforge.net/>
 
@@ -68,10 +66,15 @@ This must be started before Pianobooster, and also allows to load custom Soundfo
 
 Install RPM, DEB, etc. package.
 
-Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster)
+Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster).
 
-*Note:* In Ubuntu 9.04 there is an issue with the Intel drivers which that means PianoBooster
-performs very badly if you have Intel graphic chips. Upgrading to Ubuntu 9.10 fixes this problem.
+Packages for Linux are available in OBS repository:
+
+[pianobooster](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster)
+
+[pianobooster-timidity](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-timidity)
+
+[pianobooster-fluidsynth](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-fluidsynth)
 
 *Note:* The packages provided with distributions may not exist or are out of date,
 in which case you will have to compile from the source code.
@@ -88,6 +91,8 @@ PianoBooster are available in doc/courses/*/ directories.
 INSTRUCTIONS
 ============
 
+The MIDI input device is used to connect your piano keyboard to the PC. First ensure that your
+piano keyboard is connected up to the PC using a MIDI USB adaptor (or through a PC sound card).
 Once the Piano Booster application starts up you must first setup the midi input and midi
 output interface from the Setup menu. Next open a midi file ".mid" or a karaoke ".kar" file
 using File/Open from the Piano Booster menu. Now choose the skill level, if you want to
@@ -107,7 +112,7 @@ new translations with it. Use our
 (Transifex) to add your favorite languages.
 
 Using Transifex is not mandatory.
-You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls)
+You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls).
 
 You need to translate:
 
@@ -137,6 +142,8 @@ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 See the GNU General Public License in the file "gplv3.txt" or from the web site
 <http://www.gnu.org/licenses/> or [gplv3.txt](gplv3.txt).
 
+The Piano Booster Documentation and Music are released under the Creative Commons License (CC-BY).
+
 [PianoBooster License](license.txt)
 
 SOURCE CODE
@@ -150,6 +157,27 @@ the *BUILD.md* file.
 As part of GNU General Public License the source code for PianoBooster is available from
 the GitHub site  <https://github.com/captnfab/PianoBooster>. See the [BUILD.md](BUILD.md) for
 instructions on how to build the source code.
+
+DEBUGGING
+=========
+
+To get a backtrace, build Piano Booster with DEBUG option 
+
+type:
+
+```cmake -DCMAKE_BUILD_TYPE=Debug .```
+
+type:
+
+```gdb ./pianobooster```
+
+then:
+
+```run```
+
+then:
+
+```bt```
 
 DOCUMENTATION
 =============
@@ -172,9 +200,9 @@ PianoBooster is community developing project since 2018. You're welcome with pat
 
 We have many [issues](https://github.com/captnfab/PianoBooster/issues) always.
 
-We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src). For more information look at [README.md](doc/courses/README.md)
+We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src). For more information look at [README.md](doc/courses/README.md).
 
 PLATFORMS
 =========
 
-We support Linux and Windows platforms. We do not have macOS developers at the moment.
+We support Linux and Windows platforms. We do not have macOS, FreeBSD developers at the moment.

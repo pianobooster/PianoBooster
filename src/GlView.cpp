@@ -53,6 +53,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_forcefullRedraw = 0;
     m_forceRatingRedraw = 0;
     m_forceBarRedraw = 0;
+    m_allowedTimerEvent = true;
 
     m_backgroundColour = QColor(0, 0, 0);
 
@@ -81,6 +82,16 @@ QSize CGLView::minimumSizeHint() const
 QSize CGLView::sizeHint() const
 {
     return QSize(200, 800); //fixme this does not work
+}
+
+void CGLView::stopTimerEvent()
+{
+    m_allowedTimerEvent=false;
+}
+
+void CGLView::startTimerEvent()
+{
+    m_allowedTimerEvent=true;
 }
 
 void CGLView::paintGL()
@@ -373,6 +384,8 @@ void CGLView::updateMidiTask()
 
 void CGLView::timerEvent(QTimerEvent *event)
 {
+    if (!m_allowedTimerEvent) return;
+
     BENCHMARK(0, "timer enter");
     if (event->timerId() != m_timer.timerId())
     {

@@ -44,7 +44,7 @@ class GuiTopBar : public QWidget, private Ui::GuiTopBar
 public:
     GuiTopBar(QWidget *parent, CSettings* settings);
 
-    void init(CSong* songObj, CTrackList* trackList);
+    void init(CSong* songObj);
 
     void refresh(bool reset);
 

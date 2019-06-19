@@ -1724,11 +1724,6 @@
         <translation>Nápověda k Piano Boosteru</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="604"/>
-        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation>Kopírovací právo (c) L. J. Barman, 2008-2013; Všechna práva vyhrazena.&lt;br&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="605"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation>Kopírovací právo (c) Fabien Givors, 2018-2019; Všechna práva vyhrazena.&lt;br&gt;</translation>
@@ -1807,6 +1802,11 @@
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;Pozvedněte&lt;/b&gt; své &lt;b&gt;dovednosti hry na klavír&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="604"/>
+        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
+        <translation>Kopírovací právo (c) L. J. Barman, 2008-2013; Všechna práva vyhrazena.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="607"/>

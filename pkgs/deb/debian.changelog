@@ -1,0 +1,107 @@
+pianobooster (0.7.0) unstable; urgency=medium
+
+  * Better installation by 'make install'
+  * Update dependencies
+  * Update copyright
+  * Update description
+
+ -- Alexey Loginov <alexl@mageia.org>  Wed, 19 Jun 2019 01:08:17 +0100
+
+pianobooster (0.6.7~svn156-1) unstable; urgency=medium
+
+  [ Miriam Ruiz ]
+  * Adapted changes for Debian
+  * Refreshed patches
+  * Added typos.patch and i18n.patch
+  * Upgraded Standards-Version from 3.9.6 to 3.9.8
+  * Added Daniel Gimpelevich to Uploaders
+
+ -- Miriam Ruiz <miriam@debian.org>  Thu, 17 Nov 2016 01:08:17 +0100
+
+pianobooster (0.6.7~svn156-0ppa2~trusty) trusty; urgency=medium
+
+  * New Upstream Release.
+  * Dropped link-pthread-and-GL-explicitly.patch, merged upstream
+  * Dropped i18n.patch pending rebase
+  * Reflected upstream i18n in debian/rules and debian/pianobooster.install
+  * Rebased rtmidi-1.0.15.patch
+  * Updated manpage
+  * Added paths.patch and armel.patch
+
+ -- Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>  Sat, 23 Oct 2016 04:19:54 -0700
+
+pianobooster (0.6.4.0-1) UNRELEASED; urgency=medium
+
+  * New Upstream Release.
+  * Added build dependency: qt4-linguist-tools
+  * Upgraded Standards-Version from 3.9.4 to 3.9.6
+
+ -- Miriam Ruiz <miriam@debian.org>  Fri, 27 Nov 2015 00:35:47 +0100
+
+pianobooster (0.6.4b-2) unstable; urgency=low
+
+  * Team upload.
+  * Bump Standards-Version to 3.9.4, no changes.
+  * Use canonical VCS-URI.
+  * Remove quilt from Build-Depends because source format 3.0 uses quilt by
+    default.
+  * Remove superfluous substvar ${shlibs:Depends} from performous-dbg.
+  * Add link-pthread-and-GL-explicitly.patch and fix FTBFS by linking the
+    missing libraries in CMakelist.txt explicitly. (Closes: #713691)
+  * Fix lintian error and do not set the library RPATH in debian/rules anymore.
+    Use the normal library search path instead.
+  * Update debian/copyright to copyright format 1.0. Fix spelling mistakes.
+  * pianobooster.desktop: Add keywords.
+  * Update debian/watch.
+
+ -- Markus Koschany <apo@gambaru.de>  Tue, 02 Jul 2013 16:53:50 +0200
+
+pianobooster (0.6.4b-1) unstable; urgency=low
+
+  [ Miriam Ruiz ]
+  * New upstream release
+  * Upgraded Standards-Version from 3.9.2 to 3.9.3
+  * Upgraded debian/compat to 9.
+  * Added patch: linker_opts.patch
+  * Modified debian/rules to use fortified libc functions.
+    See: http://wiki.debian.org/Hardening
+  * Changed my email address in debian/control to miriam@debian.org
+
+  [ Martin Erik Werner ]
+  * Use -DCMAKE_BUILD_TYPE=Debug to get a better debug package. Closes: #664473
+
+  [ Paul Wise ]
+  * Install a MIDI synthesizer and sounds by default. Closes: #650700
+
+ -- Miriam Ruiz <miriam@debian.org>  Tue, 04 Dec 2012 00:44:18 +0100
+
+pianobooster (0.6.4-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "ftbfs with GCC-4.7": add patch to set linker flag -mwindows only on
+    Windows. (Closes: #667322)
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 23 May 2012 18:13:25 +0200
+
+pianobooster (0.6.4-3) unstable; urgency=low
+
+  [ Miriam Ruiz ]
+  * Added Galician translation and improved Spanish. Thanks to Miguel Bouzada.
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Sat, 03 Dec 2011 17:27:22 +0100
+
+pianobooster (0.6.4-2) unstable; urgency=low
+
+  [ Miriam Ruiz ]
+  * Added support for translations: i18n.patch
+  * Added Spanish translation
+  * Fixed desktop file
+  * Set the Games Team as Maintainer
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Wed, 30 Nov 2011 08:02:42 +0100
+
+pianobooster (0.6.4-1) unstable; urgency=low
+
+  * Initial release. Closes: #650398
+
+-- Miriam Ruiz <little_miry@yahoo.es> Tue, 29 Nov 2011 15:41:19 +0100

@@ -231,15 +231,15 @@ void CNotation::calculateScoreNoteLength()
         long midiDuration = symbol->getMidiDuration();
 
         if (midiDuration < cfg_param[NOTATE_semiquaverBoundary] )
-            symbol->setNoteLength(PB_SYMBOL_semiquaver, 99);
+            symbol->setNoteLength(PB_SYMBOL_semiquaver);
         if (midiDuration < cfg_param[NOTATE_quaverBoundary] )
-            symbol->setNoteLength(PB_SYMBOL_quaver, 99);
+            symbol->setNoteLength(PB_SYMBOL_quaver);
         else if (midiDuration < cfg_param[NOTATE_crotchetBoundary] )
-            symbol->setNoteLength(PB_SYMBOL_crotchet, 99);
+            symbol->setNoteLength(PB_SYMBOL_crotchet);
         else if (midiDuration < cfg_param[NOTATE_minimBoundary] )
-            symbol->setNoteLength(PB_SYMBOL_minim, 99);
+            symbol->setNoteLength(PB_SYMBOL_minim);
         else
-            symbol->setNoteLength(PB_SYMBOL_semibreve, 123);
+            symbol->setNoteLength(PB_SYMBOL_semibreve);
     }
 }
 
