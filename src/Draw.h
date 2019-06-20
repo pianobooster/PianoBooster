@@ -85,6 +85,7 @@ public:
         listPathFonts.push_back("/usr/share/fonts/dejavu/DejaVuSans.ttf");
         listPathFonts.push_back("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
         listPathFonts.push_back("/usr/share/fonts/TTF/DejaVuSans.ttf");
+        listPathFonts.push_back("/usr/share/fonts/truetype/DejaVuSans.ttf");
 
         for (int i=0;i<listPathFonts.size();i++){
             QFile file(listPathFonts.at(i));
