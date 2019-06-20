@@ -5,10 +5,18 @@ Summary:        A MIDI file player that teaches you how to play the piano
 %if 0%{?mageia}
 Group:          Sound/Midi
 %endif
-%if 0%{?suse}
+%if 0%{?fedora}
+Group:          Applications/Sound
+%endif
+%if 0%{?suse_version}
 Group:          Productivity/Multimedia/Sound/Midi
 %endif
+%if 0%{?mageia} || 0%{?fedora}
 License:        GPLv3+
+%endif
+%if 0%{?suse_version}
+License:        GPL-3.0-or-later
+%endif
 Url:            https://github.com/captnfab/PianoBooster
 Source0:        %{name}-%{version}.tar.gz
 
@@ -31,8 +39,11 @@ BuildRequires:  hicolor-icon-theme
 %if 0%{?mageia}
 Requires:       fonts-ttf-dejavu
 %endif
-%if 0%{?suse}
+%if 0%{?suse_version}
 Requires:       dejavu-fonts
+%endif
+%if 0%{?fedora}
+Requires:       dejavu-sans-fonts
 %endif
 Requires:       unzip
 Requires:       hicolor-icon-theme
@@ -42,8 +53,11 @@ Recommends:     %{name}-timidity
 %if 0%{?mageia}
 Recommends:     qttranslations5
 %endif
-%if 0%{?suse}
+%if 0%{?suse_version}
 Recommends:     libqt5-qttranslations
+%endif
+%if 0%{?fedora}
+Recommends:     qt5-qttranslations
 %endif
 
 %description
@@ -55,6 +69,11 @@ at the same time learning the basics of reading musical notation.
 The difference between playing along to a CD or a standard MIDI file
 is that PianoBooster listens and reacts to what you are playing on a
 MIDI keyboard.
+
+To run Piano Booster you need a MIDI Piano Keyboard and a MIDI interface
+for the PC. If you don't have a MIDI keyboard you can still try out
+PianoBooster, using the PC keyboard ('x' is middle C), but a MIDI piano
+is really recommended.
 
 %files
 %doc README.md ReleaseNotes.txt
@@ -69,14 +88,25 @@ MIDI keyboard.
 
 %package        timidity
 Summary:        Wrapper to launch PianoBooster with TiMidity as MIDI sequencer
+%if 0%{?mageia}
 Group:          Sound/Midi
+%endif
+%if 0%{?fedora}
+Group:          Applications/Sound
+%endif
+%if 0%{?suse_version}
+Group:          Productivity/Multimedia/Sound/Midi
+%endif
 
 Requires:       %{name} = %{version}-%{release}
 %if 0%{?mageia}
 Requires:       TiMidity++
 %endif
-%if 0%{?suse}
+%if 0%{?suse_version}
 Requires:       timidity
+%endif
+%if 0%{?fedora}
+Requires:       timidity++
 %endif
 
 %description    timidity
@@ -92,16 +122,24 @@ even without a plugged-in MIDI keyboard.
 
 %package        fluidsynth
 Summary:        Wrapper to launch PianoBooster with FluidSynth as MIDI sequencer
+%if 0%{?mageia}
 Group:          Sound/Midi
+%endif
+%if 0%{?fedora}
+Group:          Applications/Sound
+%endif
+%if 0%{?suse_version}
+Group:          Productivity/Multimedia/Sound/Midi
+%endif
 
 Requires:       %{name} = %{version}-%{release}
 Requires:       fluidsynth
 Requires:       fluid-soundfont-gm
 Requires:       fluid-soundfont-gs
-%if 0%{?mageia}
+%if 0%{?mageia} || 0%{?fedora}
 Requires:       libnotify
 %endif
-%if 0%{?suse}
+%if 0%{?suse_version}
 Requires:       libnotify-tools
 %endif
 
