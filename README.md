@@ -88,6 +88,8 @@ PianoBooster are available in doc/courses/*/ directories.
 INSTRUCTIONS
 ============
 
+The MIDI input device is used to connect your piano keyboard to the PC. First ensure that your
+piano keyboard is connected up to the PC using a MIDI USB adaptor (or through a PC sound card).
 Once the Piano Booster application starts up you must first setup the midi input and midi
 output interface from the Setup menu. Next open a midi file ".mid" or a karaoke ".kar" file
 using File/Open from the Piano Booster menu. Now choose the skill level, if you want to
@@ -150,6 +152,12 @@ the *BUILD.md* file.
 As part of GNU General Public License the source code for PianoBooster is available from
 the GitHub site  <https://github.com/captnfab/PianoBooster>. See the [BUILD.md](BUILD.md) for
 instructions on how to build the source code.
+
+DEBUGGING
+=========
+
+To get a backtrace, build Piano Booster with DEBUG option (type "cmake -DCMAKE_BUILD_TYPE=Debug ."),
+type “gdb ./pianobooster”, then “run” then “bt”.
 
 DOCUMENTATION
 =============

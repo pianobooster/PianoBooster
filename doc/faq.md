@@ -8,6 +8,81 @@ See [this thread](http://piano-booster.2625608.n2.nabble.com/Pieces-of-music-tha
 on the forum which list useful source of midi files on the net.
 Please add to this list if you find any pieces of music that you enjoy playing.
 
+## Community Favorites MIDI
+
+Google search: Taylor's Traditional Tune Book, and download the "English Tunes". They are only single melody to play with quite good MIDI arrangements. Barry is quite fond of key changes which make it quite challenging. Especially "I Saw Three Ships."
+
+[Bach collection](https://www.mutopiaproject.org/cgibin/make-table.cgi?collection=bachgb&preview=1) and others from repository of sheet music [Mutopia Project](https://www.mutopiaproject.org/)
+
+[Miracle Piano Tutor](http://piano-booster.2625608.n2.nabble.com/attachment/4582249/0/teachmid.tar.gz)
+
+## CC and MIDI: What Songs are Legal to Share
+
+Piano Booster will only distribute MIDI files submitted to the project under the Creative Commons License.
+
+MIDI files created by hand constitute "original work". Original work can be released under the CC license. (see [forum discussion](http://piano-booster.2625608.n2.nabble.com/Creating-music-for-PianoBooster-using-MMA-Everyone-can-help-td4167350.html#a4167350))
+
+MIDI files copied from existing works, (either digital copies, format-shifted copies, or 'recording' the playback output of works) are subject to the copyright laws under which the original works were released.
+
+... (other cases? please add relevant links, discussion)
+
+## Making MIDI
+
+Although MIDI files can be generated in several ways, this guide covers a method that also produces sheet music and accompaniment.
+The general process: write "abc notation" of music (ABC file); convert ABC file to Solo MIDI and Sheet Music; write accompaniment "hints" (MMA file); convert solo MIDI and MMA file to final MIDI (ready to practice playing).
+
+### ABC Notation
+
+The ABCPlus notation describes the notes to be played by the right and left hands in plain text ascii-character file.
+
+[wiki](http://en.wikipedia.org/wiki/Abc_notation)
+[site](http://abcnotation.com/)
+[The ABC Plus Project](http://abcplus.sourceforge.net/)
+[Examples](http://abcnotation.com/examples)
+
+### ABC to MIDI Conversion
+
+#### Generating MIDI file
+
+The ABC file is converted to a MIDI file using the abc2midi tool. This creates a MIDI file with right and left hand parts.
+
+#### Generating sheet music
+
+The ABC file can also be converted to a sheet music image with the abc2mtex tool.
+
+### Auto-generated Accompaniment
+
+The MMA software can greatly simplify creating accompanying "background" music.
+
+[Musical MIDI Accompaniment](http://www.mellowood.ca/mma/)
+
+## Open a MIDI File
+
+Select file open from PianoBooster main menu and then choose the .mid file or the .kar file. If you put all your MIDI files in adjacent directories then each directory will appear as books that can be accessed using the -book drop down list- and then each MIDI file can be accessed from the song drop down list.
+
+## Listen to the MIDI music
+
+When learning a new piece of music it is recommended that you first listen to the piece of music to hear how it should sound. Set the /skill level to listen/ and then click the /play stop button icon/. To stop the music click the /play/stop button again. To play the music from the beginning click on the /play from start button/.
+
+## Play along with the MIDI music
+
+Piano Booster has been specially designed so that you can play along with the MIDI music using a piano keyboard. Ensure that MIDI input is correctly set up. You can choose which hand to play select 'right', 'both' or 'left' from the hands selection. If you choose to play just a single part then Piano Booster will automatically play the other part for you. There are two different ways of playing along the 'follow you' mode and the 'play along' mode. When learning a new piece of music the follow you mode makes it much easier but you should progress to the 'play along' method as this ensure that you play with the correct timing.
+
+## Playing the piano with the music 'following your' playing
+
+Select the 'follow you' option and choose which hand you want play and then click the play button to start the accompaniment playing.
+The music will start playing and at the same time you should playing along to the notes shown on the screen.
+
+##  Connecting MIDI Hardware
+
+While Piano Booster can take input from the computer keyboard, it is recommended to use a MIDI capable keyboard or piano. This section assumes you are using a keyboard or piano with either a USB MIDI port or MIDI input/output ports with a MIDI/USB adapter.
+
+MIDI or Musical Instrument Digital Interface allows electronic musical equipment to communicate with each other. MIDI works like a pipeline; data (the music notes) "flows" in one direction. Every MIDI device port is labeled as either IN/input or OUT/output. The Output of the first device goes to an Input of the next device.
+
+If your keyboard has a USB MIDI port, then a standard USB cable to the computer will provide both input from keys and output to the keyboard speakers (if there are speakers).
+
+If the keyboard as MIDI IN/OUT ports, then the OUTPUT port of keyboard must be connected the INPUT of the USB MIDI adapter. To hear the Piano booster output on the keyboard speakers, the OUTPUT of the USB adapter must be connected to the INPUT port on the keyboard.
+
 ## How do I hear the sound on Linux (Ubuntu)?
 
 To hear the sound Piano Booster needs a MIDI sound generator,
@@ -97,6 +172,8 @@ then the music will stop in the wrong place (because the music
 was deliberately being run ahead of your playing).
 The use of the latency fix is less than ideal and so the **best**
 solution is to change to different realtime sound generator that has a low latency delay.
+
+Optional workaround: Try using a real time kernel.
 
 ## What value should I use for the latency fix?
 

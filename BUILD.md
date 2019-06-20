@@ -7,13 +7,15 @@
    (The pianobooster binary executable is now in the "build" subdirectory.)
 
    To build a debug version create a dir called "debug" and change to that dir and then
-   type "cmake -DCMAKE_BUILD_TYPE=Debug .."
+   type "cmake -DCMAKE_BUILD_TYPE=Debug .".
 
    (Alternatively you can use qmake followed by make in the src directory.)
 
-   See [Debian branch](https://github.com/captnfab/PianoBooster/tree/debian) for more details.
+   See [DEB](pkgs/deb) for more details.
 
-   See [Mageia Linux spec file ](pianobooster.spec) for more details.
+   See [RPM](pkgs/rpm/pianobooster.spec) for more details.
+
+   See [ARCH](pkgs/arch/PKGBUILD) for more details.
 
    If you make changes to the source code then please post details.
 
@@ -54,7 +56,6 @@
    Or alternatively you can install QtCreator and then open the pianobooster.pro
 
    If you make changes to the source code then please post details.
-
 
 # License
 
