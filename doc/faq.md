@@ -36,8 +36,11 @@ The general process: write "abc notation" of music (ABC file); convert ABC file 
 The ABCPlus notation describes the notes to be played by the right and left hands in plain text ascii-character file.
 
 [wiki](http://en.wikipedia.org/wiki/Abc_notation)
+
 [site](http://abcnotation.com/)
+
 [The ABC Plus Project](http://abcplus.sourceforge.net/)
+
 [Examples](http://abcnotation.com/examples)
 
 ### ABC to MIDI Conversion

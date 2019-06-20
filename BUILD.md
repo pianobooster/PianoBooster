@@ -3,11 +3,21 @@
    Ensure that the following packages 'cmake', 'libqt5-dev', 'libasound2-dev' and
    'build-essential" are installed.
 
-   Then type "cmake .", followed by "make". Finally as root type "make install".
+   Then type
+
+   ```cmake .```
+
+   ```make```
+
+   Finally as root type
+
+   ```make install```
+
    (The pianobooster binary executable is now in the "build" subdirectory.)
 
-   To build a debug version create a dir called "debug" and change to that dir and then
-   type "cmake -DCMAKE_BUILD_TYPE=Debug .".
+   To build a debug version create a dir called "debug" and change to that dir and then type
+
+   ```cmake -DCMAKE_BUILD_TYPE=Debug .```
 
    (Alternatively you can use qmake followed by make in the src directory.)
 
@@ -25,15 +35,11 @@
 
    Install CMake and QT libraries via Homebrew:
 
-   ```
-   $ brew install cmake qt5
-   ```
+   ```$ brew install cmake qt5```
 
    Generate XCode project file via CMake:
 
-   ```
-   $ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)`
-   ```
+   ```$ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)```
 
    Open the project file in XCode, set whatever options you like (universal or single architecture,
    debug or release etc.) and compile.
@@ -49,9 +55,11 @@
    Qt Command Prompt and then change to the "PianoBooster" directory and then type the
    command below.
 
-   "C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .
+   ```"C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .```
 
-   Once this is completed type "make".
+   Once this is completed type
+
+   ```make```
 
    Or alternatively you can install QtCreator and then open the pianobooster.pro
 
