@@ -2,10 +2,23 @@
 CONFIG += release
 #CONFIG += console
 
+CONFIG += link_pkgconfig
+
+# default
+isEmpty(USE_FTGL): USE_FTGL="ON"
+isEmpty(NO_DOCS): NO_DOCS="OFF"
+isEmpty(WITH_MAN): WITH_MAN="ON"
+isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
+isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
+isEmpty(INSTALL_ALL_LANGS): INSTALL_ALL_LANGS="OFF"
+
+
+
 TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_am.ts \
-               ../translations/pianobooster_ar.ts \
-               ../translations/pianobooster_as.ts \
+               ../translations/pianobooster_ar.ts
+
+A =               ../translations/pianobooster_as.ts \
                ../translations/pianobooster_ast.ts \
                ../translations/pianobooster_az.ts \
                ../translations/pianobooster_be.ts \
@@ -152,7 +165,6 @@ SOURCES   = QtMain.cpp  \
             Tempo.cpp \
             MidiDevice.cpp \
             MidiDeviceRt.cpp \
-            3rdparty/rtmidi/RtMidi.cpp \
             StavePosition.cpp \
             Score.cpp \
             Cfg.cpp \
@@ -166,14 +178,25 @@ SOURCES   = QtMain.cpp  \
             Settings.cpp \
             Merge.cpp \
 
+
+contains(USE_SYSTEM_RTMIDI, ON){
+    PKGCONFIG += rtmidi
+}else{
+    INCLUDEPATH += 3rdparty
+    SOURCES+= 3rdparty/rtmidi/RtMidi.cpp
+}
+
+contains(USE_FTGL, ON){
+    PKGCONFIG += ftgl
+}else{
+    DEFINES += NO_USE_FTGL
+}
+
 RC_FILE     = pianobooster.rc
 
-INCLUDEPATH += 3rdparty
 
 OBJECTS_DIR = tmp
 
-CONFIG += link_pkgconfig
-PKGCONFIG += ftgl
 
 win32 {
   DEFINES += __WINDOWS_MM__ _WIN32
@@ -207,8 +230,15 @@ QT += xml opengl widgets
 # enable the console window
 #QT+=testlib
 
-
-
+isEmpty(QMAKE_LRELEASE) {
+    win32|os2:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\lrelease.exe
+    else:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
+    unix {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt5 }
+    } else {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
+    }
+}
 
 
 unix {
@@ -216,6 +246,67 @@ unix {
    isEmpty( PREFIX ) { PREFIX = /usr/local }
 
    target.path = $$PREFIX/bin
+
+   contains(NO_DOCS, OFF){
+      docs.path = $$PREFIX/share/doc/pianobooster
+      docs.files = ../README.md ../ReleaseNotes.txt
+      INSTALLS += docs
+   }
+
+   contains(WITH_MAN, ON){
+      man.path = $$PREFIX/share/man/man6/
+      man.files = ../pianobooster.6
+      INSTALLS += man
+   }
+
+   contains(WITH_TIMIDITY, ON){
+      timidity.path = $$PREFIX/bin
+      timidity.files = ../tools/timidity/pianobooster-timidity
+      INSTALLS += timidity
+
+      timidity_desktop.path = $$PREFIX/share/applications
+      timidity_desktop.files = ../tools/timidity/pianobooster-timidity.desktop
+      INSTALLS += timidity_desktop
+   }
+
+   contains(WITH_FLUIDSYNTH, ON){
+      fluidsynth.path = $$PREFIX/bin
+      fluidsynth.files = ../tools/fluidsynth/pianobooster-fluidsynth
+      INSTALLS += fluidsynth
+
+      fluidsynth_desktop.path = $$PREFIX/share/applications
+      fluidsynth_desktop.files = ../tools/fluidsynth/pianobooster-fluidsynth.desktop
+      INSTALLS += fluidsynth_desktop
+   }
+
+   !contains(USE_SYSTEM_FONT, ON){
+      font.path = $$PREFIX/share/games/pianobooster/fonts
+      font.files = fonts/DejaVuSans.ttf
+      INSTALLS += font
+   }
+
+   !isEmpty( USE_FONT ){
+      myfont.path = $$PREFIX/share/games/pianobooster/fonts
+      myfont.files = $$USE_FONT
+      INSTALLS += myfont
+      DEFINES += USE_FONT=$$USE_FONT
+   }
+
+   contains(INSTALL_ALL_LANGS, ON){
+        TRANSLATIONS = $$files(../translations/*.ts)
+   }
+
+   updateqm.input = TRANSLATIONS
+   updateqm.output = ../translations/${QMAKE_FILE_BASE}.qm
+   updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm ../translations/${QMAKE_FILE_BASE}.qm
+   updateqm.CONFIG += no_link target_predeps
+   QMAKE_EXTRA_COMPILERS += updateqm
+
+   data_langs.path = $$PREFIX/share/games/pianobooster/translations
+   data_langs.files = ../translations/*.qm ../translations/langs.json
+   INSTALLS += data_langs
+
+
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
@@ -229,8 +320,6 @@ unix {
    icon64.path = $$PREFIX/icons/hicolor/64x64/apps
    icon64.files = ../icons/hicolor/64x64/pianobooster.png
 
-   docs.path = $$PREFIX/share/doc/pianobooster
-   docs.files = ../README.txt
 
-   INSTALLS += target desktop icon32 icon48 icon64 docs
+   INSTALLS += target desktop icon32 icon48 icon64
 }
