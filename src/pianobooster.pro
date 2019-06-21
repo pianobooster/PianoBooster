@@ -6,6 +6,9 @@ CONFIG += link_pkgconfig
 
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
+isEmpty(NO_DOCS): NO_DOCS="OFF"
+isEmpty(WITH_MAN): WITH_MAN="ON"
+
 
 
 TRANSLATIONS = ../translations/pianobooster_af.ts \
@@ -225,13 +228,23 @@ QT += xml opengl widgets
 
 
 
-
-
 unix {
 
    isEmpty( PREFIX ) { PREFIX = /usr/local }
 
    target.path = $$PREFIX/bin
+
+   contains(NO_DOCS, OFF){
+      docs.path = $$PREFIX/share/doc/pianobooster
+      docs.files = ../README.md ../ReleaseNotes.txt
+      INSTALLS += docs
+   }
+
+   contains(WITH_MAN, ON){
+      man.path = $$PREFIX/share/man/man6/
+      man.files = ../pianobooster.6
+      INSTALLS += man
+   }
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
@@ -245,8 +258,6 @@ unix {
    icon64.path = $$PREFIX/icons/hicolor/64x64/apps
    icon64.files = ../icons/hicolor/64x64/pianobooster.png
 
-   docs.path = $$PREFIX/share/doc/pianobooster
-   docs.files = ../README.txt
 
-   INSTALLS += target desktop icon32 icon48 icon64 docs
+   INSTALLS += target desktop icon32 icon48 icon64
 }
