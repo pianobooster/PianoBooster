@@ -274,6 +274,13 @@ unix {
       INSTALLS += font
    }
 
+   !isEmpty( USE_FONT ){
+      myfont.path = $$PREFIX/share/games/pianobooster/fonts
+      myfont.files = $$USE_FONT
+      INSTALLS += myfont
+      DEFINES += USE_FONT=$$USE_FONT
+   }
+
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
