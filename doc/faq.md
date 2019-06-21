@@ -12,7 +12,7 @@ Please add to this list if you find any pieces of music that you enjoy playing.
 
 Google search: Taylor's Traditional Tune Book, and download the "English Tunes". They are only single melody to play with quite good MIDI arrangements. Barry is quite fond of key changes which make it quite challenging. Especially "I Saw Three Ships."
 
-[Bach collection](https://www.mutopiaproject.org/cgibin/make-table.cgi?collection=bachgb&preview=1) and others from repository of sheet music [Mutopia Project](https://www.mutopiaproject.org/)
+[Bach collection](https://www.mutopiaproject.org/cgibin/make-table.cgi?collection=bachgb&preview=1) and others from repository of sheet music - [Mutopia Project](https://www.mutopiaproject.org/)
 
 [Miracle Piano Tutor](http://piano-booster.2625608.n2.nabble.com/attachment/4582249/0/teachmid.tar.gz)
 
@@ -35,9 +35,9 @@ The general process: write "abc notation" of music (ABC file); convert ABC file 
 
 The ABCPlus notation describes the notes to be played by the right and left hands in plain text ascii-character file.
 
-[wiki](http://en.wikipedia.org/wiki/Abc_notation)
+[Wiki](http://en.wikipedia.org/wiki/Abc_notation)
 
-[site](http://abcnotation.com/)
+[Site](http://abcnotation.com/)
 
 [The ABC Plus Project](http://abcplus.sourceforge.net/)
 
