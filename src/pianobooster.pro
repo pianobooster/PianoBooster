@@ -2,6 +2,9 @@
 CONFIG += release
 #CONFIG += console
 
+CONFIG += link_pkgconfig
+
+
 TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_am.ts \
                ../translations/pianobooster_ar.ts \
@@ -152,7 +155,6 @@ SOURCES   = QtMain.cpp  \
             Tempo.cpp \
             MidiDevice.cpp \
             MidiDeviceRt.cpp \
-            3rdparty/rtmidi/RtMidi.cpp \
             StavePosition.cpp \
             Score.cpp \
             Cfg.cpp \
@@ -166,13 +168,19 @@ SOURCES   = QtMain.cpp  \
             Settings.cpp \
             Merge.cpp \
 
+
+defined(USE_SYSTEM_RTMIDI,var) {
+    PKGCONFIG += rtmidi
+}else{
+    INCLUDEPATH += 3rdparty
+    SOURCES+= 3rdparty/rtmidi/RtMidi.cpp
+}
+
 RC_FILE     = pianobooster.rc
 
-INCLUDEPATH += 3rdparty
 
 OBJECTS_DIR = tmp
 
-CONFIG += link_pkgconfig
 PKGCONFIG += ftgl
 
 win32 {
