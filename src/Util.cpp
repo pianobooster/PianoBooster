@@ -153,6 +153,7 @@ void ppLogWarn(const char *msg, ...)
 
 void ppLogTrace(const char *msg, ...)
 {
+#ifdef IS_DEBUG
     va_list ap;
 
     openLogFile();
@@ -163,6 +164,7 @@ void ppLogTrace(const char *msg, ...)
     va_end(ap);
     fputc('\n', logInfoFile);
     flushLogs();
+#endif
 }
 
 
@@ -197,6 +199,7 @@ void ppLogError(const char *msg, ...)
 
 void ppTiming(const char *msg, ...)
 {
+#ifdef IS_DEBUG
     va_list ap;
 
     openLogFile();
@@ -206,6 +209,7 @@ void ppTiming(const char *msg, ...)
     va_end(ap);
     fputc('\n', logInfoFile);
     flushLogs();
+#endif
 }
 
 ////////////////////// BENCH MARK //////////////////////

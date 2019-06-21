@@ -108,6 +108,8 @@ message(building using fluidsynth)
 DEFINES += PB_USE_FLUIDSYNTH
 }
 
+CONFIG(debug, debug|release): DEFINES += IS_DEBUG
+
 HEADERS   = QtWindow.h \
             GlView.h \
             GuiTopBar.h \
