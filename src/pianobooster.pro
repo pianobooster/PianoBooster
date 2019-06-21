@@ -6,6 +6,11 @@ CONFIG += link_pkgconfig
 
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
+isEmpty(NO_DOCS): NO_DOCS="OFF"
+isEmpty(WITH_MAN): WITH_MAN="ON"
+isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
+isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
+
 
 
 TRANSLATIONS = ../translations/pianobooster_af.ts \
@@ -225,13 +230,50 @@ QT += xml opengl widgets
 
 
 
-
-
 unix {
 
    isEmpty( PREFIX ) { PREFIX = /usr/local }
 
    target.path = $$PREFIX/bin
+
+   contains(NO_DOCS, OFF){
+      docs.path = $$PREFIX/share/doc/pianobooster
+      docs.files = ../README.md ../ReleaseNotes.txt
+      INSTALLS += docs
+   }
+
+   contains(WITH_MAN, ON){
+      man.path = $$PREFIX/share/man/man6/
+      man.files = ../pianobooster.6
+      INSTALLS += man
+   }
+
+   contains(WITH_TIMIDITY, ON){
+      timidity.path = $$PREFIX/bin
+      timidity.files = ../tools/timidity/pianobooster-timidity
+      INSTALLS += timidity
+
+      timidity_desktop.path = $$PREFIX/share/applications
+      timidity_desktop.files = ../tools/timidity/pianobooster-timidity.desktop
+      INSTALLS += timidity_desktop
+   }
+
+   contains(WITH_FLUIDSYNTH, ON){
+      fluidsynth.path = $$PREFIX/bin
+      fluidsynth.files = ../tools/fluidsynth/pianobooster-fluidsynth
+      INSTALLS += fluidsynth
+
+      fluidsynth_desktop.path = $$PREFIX/share/applications
+      fluidsynth_desktop.files = ../tools/fluidsynth/pianobooster-fluidsynth.desktop
+      INSTALLS += fluidsynth_desktop
+   }
+
+   !contains(USE_SYSTEM_FONT, ON){
+      font.path = $$PREFIX/share/games/pianobooster/fonts
+      font.files = fonts/DejaVuSans.ttf
+      INSTALLS += font
+   }
+
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
@@ -245,8 +287,6 @@ unix {
    icon64.path = $$PREFIX/icons/hicolor/64x64/apps
    icon64.files = ../icons/hicolor/64x64/pianobooster.png
 
-   docs.path = $$PREFIX/share/doc/pianobooster
-   docs.files = ../README.txt
 
-   INSTALLS += target desktop icon32 icon48 icon64 docs
+   INSTALLS += target desktop icon32 icon48 icon64
 }
