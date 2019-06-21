@@ -2,6 +2,12 @@
 CONFIG += release
 #CONFIG += console
 
+CONFIG += link_pkgconfig
+
+# default
+isEmpty(USE_FTGL): USE_FTGL="ON"
+
+
 TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_am.ts \
                ../translations/pianobooster_ar.ts \
@@ -152,7 +158,6 @@ SOURCES   = QtMain.cpp  \
             Tempo.cpp \
             MidiDevice.cpp \
             MidiDeviceRt.cpp \
-            3rdparty/rtmidi/RtMidi.cpp \
             StavePosition.cpp \
             Score.cpp \
             Cfg.cpp \
@@ -166,14 +171,25 @@ SOURCES   = QtMain.cpp  \
             Settings.cpp \
             Merge.cpp \
 
+
+contains(USE_SYSTEM_RTMIDI, ON){
+    PKGCONFIG += rtmidi
+}else{
+    INCLUDEPATH += 3rdparty
+    SOURCES+= 3rdparty/rtmidi/RtMidi.cpp
+}
+
+contains(USE_FTGL, ON){
+    PKGCONFIG += ftgl
+}else{
+    DEFINES += NO_USE_FTGL
+}
+
 RC_FILE     = pianobooster.rc
 
-INCLUDEPATH += 3rdparty
 
 OBJECTS_DIR = tmp
 
-CONFIG += link_pkgconfig
-PKGCONFIG += ftgl
 
 win32 {
   DEFINES += __WINDOWS_MM__ _WIN32
