@@ -8,6 +8,8 @@ CONFIG += link_pkgconfig
 isEmpty(USE_FTGL): USE_FTGL="ON"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
 isEmpty(WITH_MAN): WITH_MAN="ON"
+isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
+isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
 
 
 
@@ -245,6 +247,27 @@ unix {
       man.files = ../pianobooster.6
       INSTALLS += man
    }
+
+   contains(WITH_TIMIDITY, ON){
+      timidity.path = $$PREFIX/bin
+      timidity.files = ../tools/timidity/pianobooster-timidity
+      INSTALLS += timidity
+
+      timidity_desktop.path = $$PREFIX/share/applications
+      timidity_desktop.files = ../tools/timidity/pianobooster-timidity.desktop
+      INSTALLS += timidity_desktop
+   }
+
+   contains(WITH_FLUIDSYNTH, ON){
+      fluidsynth.path = $$PREFIX/bin
+      fluidsynth.files = ../tools/fluidsynth/pianobooster-fluidsynth
+      INSTALLS += fluidsynth
+
+      fluidsynth_desktop.path = $$PREFIX/share/applications
+      fluidsynth_desktop.files = ../tools/fluidsynth/pianobooster-fluidsynth.desktop
+      INSTALLS += fluidsynth_desktop
+   }
+
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
