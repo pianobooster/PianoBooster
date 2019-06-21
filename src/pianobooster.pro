@@ -268,6 +268,12 @@ unix {
       INSTALLS += fluidsynth_desktop
    }
 
+   !contains(USE_SYSTEM_FONT, ON){
+      font.path = $$PREFIX/share/games/pianobooster/fonts
+      font.files = fonts/DejaVuSans.ttf
+      INSTALLS += font
+   }
+
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
