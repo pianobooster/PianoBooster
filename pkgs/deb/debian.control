@@ -7,7 +7,6 @@ Build-Depends:
  debhelper (>= 10),
  hicolor-icon-theme,
  libasound2-dev,
- libfluidsynth-dev,
  libftgl-dev,
  libglu1-mesa-dev,
  libjack-dev,
@@ -23,16 +22,13 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- fluid-soundfont-gm,
- fluid-soundfont-gs,
- fluidsynth,
  fonts-dejavu-core,
  hicolor-icon-theme,
  libnotify-bin,
  timidity,
  unzip
 Recommends: qttranslations5-l10n
-Description: learn the piano just by playing a game
+Description: Learn the piano just by playing a game
  A MIDI file player/game that displays the musical notes AND teaches you how
  to play the piano.
  .
