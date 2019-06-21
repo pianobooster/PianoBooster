@@ -30,6 +30,11 @@ PROJECT( pianobooster )
 # enable warnings
 add_compile_options(-Wall)
 
+if (${CMAKE_BUILD_TYPE} MATCHES "Debug")
+    ADD_DEFINITIONS(-DIS_DEBUG)
+endif (${CMAKE_BUILD_TYPE} MATCHES "Debug")
+
+
 
 if(USE_FONT)
     add_compile_options("-DUSE_FONT=\"${USE_FONT}\"")
