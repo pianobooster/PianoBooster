@@ -236,7 +236,7 @@ isEmpty(QMAKE_LRELEASE) {
 
 unix {
 
-   isEmpty( PREFIX ) { PREFIX = /usr/local }
+   isEmpty( PREFIX ) { PREFIX = /usr }
 
    target.path = $$PREFIX/bin
 
@@ -309,13 +309,13 @@ unix {
    desktop.path = $$PREFIX/share/applications
    desktop.files = pianobooster.desktop
 
-   icon32.path = $$PREFIX/icons/hicolor/32x32/apps
+   icon32.path = $$PREFIX/share/icons/hicolor/32x32/apps
    icon32.files = icons/hicolor/32x32/pianobooster.png
 
-   icon48.path = $$PREFIX/icons/hicolor/48x48/apps
+   icon48.path = $$PREFIX/share/icons/hicolor/48x48/apps
    icon48.files = icons/hicolor/48x48/pianobooster.png
 
-   icon64.path = $$PREFIX/icons/hicolor/64x64/apps
+   icon64.path = $$PREFIX/share/icons/hicolor/64x64/apps
    icon64.files = icons/hicolor/64x64/pianobooster.png
 
    music.path = $$PREFIX/share/games/pianobooster/music
