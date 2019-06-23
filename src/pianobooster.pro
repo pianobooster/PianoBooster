@@ -16,9 +16,8 @@ isEmpty(INSTALL_ALL_LANGS): INSTALL_ALL_LANGS="OFF"
 
 TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_am.ts \
-               ../translations/pianobooster_ar.ts
-
-A =               ../translations/pianobooster_as.ts \
+               ../translations/pianobooster_ar.ts \
+               ../translations/pianobooster_as.ts \
                ../translations/pianobooster_ast.ts \
                ../translations/pianobooster_az.ts \
                ../translations/pianobooster_be.ts \
