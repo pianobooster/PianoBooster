@@ -11,7 +11,7 @@
 
    Finally as root type
 
-   ```make install```
+   ```make install -C build```
 
    (The pianobooster binary executable is now in the "build" subdirectory.)
 
@@ -19,7 +19,7 @@
 
    ```cmake -DCMAKE_BUILD_TYPE=Debug .```
 
-   (Alternatively you can use qmake followed by make in the src directory.)
+   (Alternatively you can use qmake followed by make.)
 
    See [DEB](pkgs/deb) for more details.
 
