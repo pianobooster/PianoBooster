@@ -7,12 +7,10 @@ CONFIG += link_pkgconfig
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
-isEmpty(WITH_MAN): WITH_MAN="ON"
+isEmpty(WITH_MAN): WITH_MAN="OFF"
 isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
 isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
 isEmpty(INSTALL_ALL_LANGS): INSTALL_ALL_LANGS="OFF"
-
-
 
 TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_am.ts \
@@ -175,27 +173,28 @@ SOURCES   = QtMain.cpp  \
             Rating.cpp \
             Bar.cpp \
             Settings.cpp \
-            Merge.cpp \
-
+            Merge.cpp
 
 contains(USE_SYSTEM_RTMIDI, ON){
+    message(building using system rtmidi)
     PKGCONFIG += rtmidi
 }else{
+    message(building using bundled rtmidi)
     INCLUDEPATH += 3rdparty
     SOURCES+= 3rdparty/rtmidi/RtMidi.cpp
 }
 
 contains(USE_FTGL, ON){
+    message(building using ftgl)
     PKGCONFIG += ftgl
 }else{
+    message(building without ftgl)
     DEFINES += NO_USE_FTGL
 }
 
 RC_FILE     = pianobooster.rc
 
-
 OBJECTS_DIR = tmp
-
 
 win32 {
   DEFINES += __WINDOWS_MM__ _WIN32
@@ -208,11 +207,8 @@ unix {
 }
 
 USE_FLUIDSYNTH {
-
-     SOURCES   += MidiDeviceFluidSynth.cpp
-
+    SOURCES   += MidiDeviceFluidSynth.cpp
     !isEmpty(FLUIDSYNTH_INPLACE_DIR) {
-
     !exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
        error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
     }
@@ -220,7 +216,6 @@ USE_FLUIDSYNTH {
       INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
       win32:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a
       unix:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a
-
     }
 }
 
@@ -239,7 +234,6 @@ isEmpty(QMAKE_LRELEASE) {
     }
 }
 
-
 unix {
 
    isEmpty( PREFIX ) { PREFIX = /usr/local }
@@ -247,18 +241,21 @@ unix {
    target.path = $$PREFIX/bin
 
    contains(NO_DOCS, OFF){
+      message(building with docs)
       docs.path = $$PREFIX/share/doc/pianobooster
       docs.files = ../README.md ../ReleaseNotes.txt
       INSTALLS += docs
    }
 
    contains(WITH_MAN, ON){
+      message(building with man)
       man.path = $$PREFIX/share/man/man6/
       man.files = ../pianobooster.6
       INSTALLS += man
    }
 
    contains(WITH_TIMIDITY, ON){
+      message(building with timidity)
       timidity.path = $$PREFIX/bin
       timidity.files = ../tools/timidity/pianobooster-timidity
       INSTALLS += timidity
@@ -269,6 +266,7 @@ unix {
    }
 
    contains(WITH_FLUIDSYNTH, ON){
+      message(building with fluidsynth)
       fluidsynth.path = $$PREFIX/bin
       fluidsynth.files = ../tools/fluidsynth/pianobooster-fluidsynth
       INSTALLS += fluidsynth
@@ -279,12 +277,14 @@ unix {
    }
 
    !contains(USE_SYSTEM_FONT, ON){
+      message(building using system font)
       font.path = $$PREFIX/share/games/pianobooster/fonts
       font.files = fonts/DejaVuSans.ttf
       INSTALLS += font
    }
 
-   !isEmpty( USE_FONT ){
+   !isEmpty(USE_FONT){
+      message(building with specified font)
       myfont.path = $$PREFIX/share/games/pianobooster/fonts
       myfont.files = $$USE_FONT
       INSTALLS += myfont
@@ -292,7 +292,8 @@ unix {
    }
 
    contains(INSTALL_ALL_LANGS, ON){
-        TRANSLATIONS = $$files(../translations/*.ts)
+      message(building with all languages)
+      TRANSLATIONS = $$files(../translations/*.ts)
    }
 
    updateqm.input = TRANSLATIONS
@@ -304,8 +305,6 @@ unix {
    data_langs.path = $$PREFIX/share/games/pianobooster/translations
    data_langs.files = ../translations/*.qm ../translations/langs.json
    INSTALLS += data_langs
-
-
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = ../pianobooster.desktop
@@ -319,6 +318,8 @@ unix {
    icon64.path = $$PREFIX/icons/hicolor/64x64/apps
    icon64.files = ../icons/hicolor/64x64/pianobooster.png
 
+   music.path = $$PREFIX/share/games/pianobooster/music
+   music.files = ../music/BoosterMusicBooks.zip
 
-   INSTALLS += target desktop icon32 icon48 icon64
+   INSTALLS += target desktop icon32 icon48 icon64 music
 }
