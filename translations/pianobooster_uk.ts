@@ -1724,11 +1724,6 @@
         <translation>Довідка з Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="604"/>
-        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation>© L. J. Barman, 2008-2013; усі права захищено.&lt;br&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/QtWindow.cpp" line="605"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation>© Fabien Givors, 2018-2019; усі права захищено.&lt;br&gt;</translation>
@@ -1741,7 +1736,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation>© Gary P. Scavone, 2003-2019; усі права захищено.&lt;br&gt;</translation>
+        <translation>© Gary P. Scavone, 2003-2019; усі права захищено.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="636"/>
@@ -1807,6 +1802,11 @@
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;Удоскональте&lt;/b&gt; ваші навички гри на &lt;b&gt;піаніно&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="604"/>
+        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
+        <translation>© L. J. Barman, 2008-2013; усі права захищено.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="607"/>
