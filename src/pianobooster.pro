@@ -10,13 +10,15 @@ isEmpty(NO_DOCS): NO_DOCS="OFF"
 isEmpty(WITH_MAN): WITH_MAN="ON"
 isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
 isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
+isEmpty(INSTALL_ALL_LANGS): INSTALL_ALL_LANGS="OFF"
 
 
 
 TRANSLATIONS = ../translations/pianobooster_af.ts \
                ../translations/pianobooster_am.ts \
-               ../translations/pianobooster_ar.ts \
-               ../translations/pianobooster_as.ts \
+               ../translations/pianobooster_ar.ts
+
+A =               ../translations/pianobooster_as.ts \
                ../translations/pianobooster_ast.ts \
                ../translations/pianobooster_az.ts \
                ../translations/pianobooster_be.ts \
@@ -228,6 +230,15 @@ QT += xml opengl widgets
 # enable the console window
 #QT+=testlib
 
+isEmpty(QMAKE_LRELEASE) {
+    win32|os2:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\lrelease.exe
+    else:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
+    unix {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt5 }
+    } else {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
+    }
+}
 
 
 unix {
@@ -273,6 +284,28 @@ unix {
       font.files = fonts/DejaVuSans.ttf
       INSTALLS += font
    }
+
+   !isEmpty( USE_FONT ){
+      myfont.path = $$PREFIX/share/games/pianobooster/fonts
+      myfont.files = $$USE_FONT
+      INSTALLS += myfont
+      DEFINES += USE_FONT=$$USE_FONT
+   }
+
+   contains(INSTALL_ALL_LANGS, ON){
+        TRANSLATIONS = $$files(../translations/*.ts)
+   }
+
+   updateqm.input = TRANSLATIONS
+   updateqm.output = ../translations/${QMAKE_FILE_BASE}.qm
+   updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm ../translations/${QMAKE_FILE_BASE}.qm
+   updateqm.CONFIG += no_link target_predeps
+   QMAKE_EXTRA_COMPILERS += updateqm
+
+   data_langs.path = $$PREFIX/share/games/pianobooster/translations
+   data_langs.files = ../translations/*.qm ../translations/langs.json
+   INSTALLS += data_langs
+
 
 
    desktop.path = $$PREFIX/share/applications
