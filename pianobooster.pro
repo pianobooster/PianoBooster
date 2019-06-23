@@ -203,7 +203,7 @@ win32 {
 
 unix {
   DEFINES += __LINUX_ALSASEQ__
-  LIBS += -lasound
+  LIBS += -lasound -lpthread -lGL
 }
 
 USE_FLUIDSYNTH {
