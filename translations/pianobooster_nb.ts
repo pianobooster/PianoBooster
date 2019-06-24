@@ -78,7 +78,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation type="unfinished"/>
+        <translation>(Ingen)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
@@ -88,7 +88,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation type="unfinished"/>
+        <translation>Lyst piano</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
         <source>Music Box</source>
-        <translation>Spilledåse</translation>
+        <translation>Spilldåse</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="367"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation type="unfinished"/>
+        <translation>Marimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
         <source>Tubular Bells</source>
-        <translation>Rørklokkespill</translation>
+        <translation>Rørklokker</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
         <source>Rock Organ</source>
-        <translation>Rockeorgel</translation>
+        <translation>Hammondorgel</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="375"/>
@@ -203,12 +203,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="380"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation>Akustisk gitar (nylonstrenger)</translation>
+        <translation>Akustisk gitar (nylon)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="381"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation>Akustisk gitar (stålstrenger)</translation>
+        <translation>Akustisk gitar (stål)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="382"/>
@@ -223,22 +223,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="384"/>
         <source>Electric Guitar (muted)</source>
-        <translation>Elektrisk gitar (dempet)</translation>
+        <translation>Elektrisk gitar (forstummet)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="385"/>
         <source>Overdriven Guitar</source>
-        <translation>Gitar (overdrive)</translation>
+        <translation>Overdrevet gitar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="386"/>
         <source>Distortion Guitar</source>
-        <translation>Gitar (forvrenget)</translation>
+        <translation>Forvrengningsgitar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
         <source>Guitar harmonics</source>
-        <translation>Gitar (overtoner)</translation>
+        <translation>Gitarharmonier</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
@@ -248,17 +248,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
         <source>Electric Bass (finger)</source>
-        <translation>Elektrisk bassgitar (finger)</translation>
+        <translation>Elektrisk gitar (finger)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation>Elektrisk bassgitar (plekter)</translation>
+        <translation>Elektrisk gitar (plekter)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
         <source>Fretless Bass</source>
-        <translation>Båndløs bassgitar</translation>
+        <translation>Bandløs bass</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="392"/>
@@ -313,7 +313,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="402"/>
         <source>Orchestral Harp</source>
-        <translation>Harpe</translation>
+        <translation>Orkesterharpe</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
@@ -373,12 +373,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation type="unfinished"/>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
         <source>Muted Trumpet</source>
-        <translation>Trompet med mute</translation>
+        <translation>Forstummet trompet</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
@@ -1085,12 +1085,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
         <source>Video Settings</source>
-        <translation type="unfinished"/>
+        <translation>Videoinnstillinger</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="152"/>
         <source>Video optimisation:</source>
-        <translation type="unfinished"/>
+        <translation>Videooptimisering</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
@@ -1125,12 +1125,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="46"/>
         <source>Full (Recommended)</source>
-        <translation type="unfinished"/>
+        <translation>Full (anbefalt)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
         <source>Medium</source>
-        <translation type="unfinished"/>
+        <translation>Middels</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
@@ -1148,17 +1148,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="40"/>
         <source>Book:</source>
-        <translation type="unfinished"/>
+        <translation>Bok:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="66"/>
         <source>Song:</source>
-        <translation type="unfinished"/>
+        <translation>Sang:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="108"/>
         <source>Skill</source>
-        <translation type="unfinished"/>
+        <translation>Ferdighet</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="114"/>
@@ -1168,12 +1168,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
         <source>Play Along</source>
-        <translation type="unfinished"/>
+        <translation>Spill med</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="151"/>
         <source>Hands</source>
-        <translation type="unfinished"/>
+        <translation>Hender</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="159"/>
@@ -1193,7 +1193,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="188"/>
         <source>Adjust the volume of your piano</source>
-        <translation type="unfinished"/>
+        <translation>Juster lydstyrken på pianoet ditt</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="211"/>
@@ -1328,7 +1328,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
         <source>Start playing music from the start</source>
-        <translation type="unfinished"/>
+        <translation>Start musikken fra begynnelsen</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="78"/>
@@ -1466,7 +1466,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
         <source>Playing music from the beginning</source>
-        <translation type="unfinished"/>
+        <translation>Spiller musikk fra begynnelsen</translation>
     </message>
 </context>
 <context>
@@ -1857,22 +1857,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="657"/>
         <source>Change to the Next Song</source>
-        <translation type="unfinished"/>
+        <translation>Bytt tll neste sang</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="658"/>
         <source>Change to the Previous Song</source>
-        <translation type="unfinished"/>
+        <translation>Bytt til forrige sang</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="659"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"/>
+        <translation>Bytt til neste bok</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="660"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"/>
+        <translation>Bytt til forrige bok</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="662"/>

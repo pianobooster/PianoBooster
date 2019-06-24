@@ -83,7 +83,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation>Piano de cola</translation>
+        <translation>Piano de Cola</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
