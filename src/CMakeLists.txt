@@ -276,5 +276,4 @@ endif()
 
 #INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm  DESTINATION share/pianobooster/translations/ )
 
-
-
+ADD_SUBDIRECTORY(../translations ../build/translations)
