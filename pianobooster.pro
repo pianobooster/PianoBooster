@@ -115,7 +115,6 @@ contains(INSTALL_ALL_LANGS, ON){
   TRANSLATIONS = $$files(translations/*.ts)
 }
 
-
 USE_FLUIDSYNTH {
 # Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
 # You normally do not need to set it
@@ -304,13 +303,12 @@ unix {
       DEFINES += USE_FONT=$$USE_FONT
    }
 
-
    updateqm.input = TRANSLATIONS
    updateqm.output = translations/${QMAKE_FILE_BASE}.qm
    updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
    updateqm.CONFIG += no_link target_predeps
    QMAKE_EXTRA_COMPILERS += updateqm
-  
+
    data_langs.path = $$PREFIX/share/games/pianobooster/translations
    data_langs.files = translations/*.qm translations/langs.json
    INSTALLS += data_langs

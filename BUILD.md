@@ -77,7 +77,7 @@
 
 **WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default
 
-**INSTALL_ALL_LANGS**: install all languages; disabled by default
+**INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and enabled for qmake
 
 **USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default
 
