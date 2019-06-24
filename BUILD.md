@@ -64,3 +64,25 @@
    Or alternatively you can install QtCreator and then open the pianobooster.pro
 
    If you make changes to the source code then please post details.
+
+# Build options
+
+**USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization
+
+**NO_DOCS**: do not install documents; disabled by default
+
+**WITH_MAN**: install man page; disabled by default
+
+**WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default
+
+**WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default
+
+**INSTALL_ALL_LANGS**: install all languages; disabled by default
+
+**USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default
+
+**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default
+
+**USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default
+
+**USE_FONT**: build with specified font; empty by default
