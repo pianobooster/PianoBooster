@@ -21,4 +21,4 @@ Build-Depends:
 Package-List:
  pianobooster deb games optional arch=any
 Files:
- 24892795dc5b5506bbd710f559da1d24 8477967 pianobooster-0.7.0.tar.gz
+ 7e32ca7fc4eb65ac39a5bc5d95cd5709 8511345 pianobooster-0.7.0.tar.gz
