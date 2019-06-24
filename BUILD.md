@@ -46,6 +46,8 @@
 
    To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
 
+   It's recommends to build with disabled USE_FTGL.
+
    If you make changes to the source code then please post details.
 
 # Windows
@@ -62,6 +64,8 @@
    ```make```
 
    Or alternatively you can install QtCreator and then open the pianobooster.pro
+
+   It's recommends to build with disabled USE_FTGL to fix notes drawing.
 
    If you make changes to the source code then please post details.
 
