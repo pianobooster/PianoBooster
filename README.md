@@ -66,7 +66,7 @@ This must be started before Pianobooster, and also allows to load custom Soundfo
 
 Install RPM, DEB, etc. package.
 
-Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster)
+Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster).
 
 Packages for Linux are available in OBS repository:
 
@@ -75,9 +75,6 @@ Packages for Linux are available in OBS repository:
 [pianobooster-timidity](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-timidity)
 
 [pianobooster-fluidsynth](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-fluidsynth)
-
-*Note:* In Ubuntu 9.04 there is an issue with the Intel drivers which that means PianoBooster
-performs very badly if you have Intel graphic chips. Upgrading to Ubuntu 9.10 fixes this problem.
 
 *Note:* The packages provided with distributions may not exist or are out of date,
 in which case you will have to compile from the source code.
@@ -115,7 +112,7 @@ new translations with it. Use our
 (Transifex) to add your favorite languages.
 
 Using Transifex is not mandatory.
-You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls)
+You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls).
 
 You need to translate:
 
@@ -203,7 +200,7 @@ PianoBooster is community developing project since 2018. You're welcome with pat
 
 We have many [issues](https://github.com/captnfab/PianoBooster/issues) always.
 
-We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src). For more information look at [README.md](doc/courses/README.md)
+We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src). For more information look at [README.md](doc/courses/README.md).
 
 PLATFORMS
 =========

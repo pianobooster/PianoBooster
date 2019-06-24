@@ -1,21 +1,20 @@
 # Linux
 
-   Ensure that the following packages 'cmake', 'libqt5-dev', 'libasound2-dev' and
-   'build-essential" are installed.
+   Ensure that the build required packages are installed. Full list of them you can find [here](pkgs).
 
-   Then type
+   Then type:
 
    ```cmake .```
 
    ```make```
 
-   Finally as root type
+   Finally as root type:
 
    ```make install -C build```
 
    (The pianobooster binary executable is now in the "build" subdirectory.)
 
-   To build a debug version create a dir called "debug" and change to that dir and then type
+   To build a debug version create a dir called "debug" and change to that dir and then type:
 
    ```cmake -DCMAKE_BUILD_TYPE=Debug .```
 
@@ -26,8 +25,6 @@
    See [RPM](pkgs/rpm/pianobooster.spec) for more details.
 
    See [ARCH](pkgs/arch/PKGBUILD) for more details.
-
-   If you make changes to the source code then please post details.
 
 # macOS
 
@@ -48,45 +45,41 @@
 
    It's recommends to build with disabled USE_FTGL.
 
-   If you make changes to the source code then please post details.
-
 # Windows
 
    To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
    When installing Qt select the option to download and install the MinGW compiler. Open the
    Qt Command Prompt and then change to the "PianoBooster" directory and then type the
-   command below.
+   command below:
 
    ```"C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .```
 
-   Once this is completed type
+   Once this is completed type:
 
    ```make```
 
-   Or alternatively you can install QtCreator and then open the pianobooster.pro
+   Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
    It's recommends to build with disabled USE_FTGL to fix notes drawing.
 
-   If you make changes to the source code then please post details.
-
 # Build options
 
-**USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization
+   **USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization.
 
-**NO_DOCS**: do not install documents; disabled by default
+   **NO_DOCS**: do not install documents; disabled by default.
 
-**WITH_MAN**: install man page; disabled by default
+   **WITH_MAN**: install man page; disabled by default.
 
-**WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default
+   **WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default.
 
-**WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default
+   **WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default.
 
-**INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and enabled for qmake
+   **INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and enabled for qmake.
 
-**USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default
+   **USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default.
 
-**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default
+   **USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default.
 
-**USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default
+   **USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
 
-**USE_FONT**: build with specified font; empty by default
+   **USE_FONT**: build with specified font; null by default.

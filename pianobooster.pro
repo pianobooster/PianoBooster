@@ -108,7 +108,7 @@ TRANSLATIONS = translations/pianobooster_af.ts \
                translations/pianobooster_wa.ts \
                translations/pianobooster_xh.ts \
                translations/pianobooster_zh_HK.ts \
-               translations/pianobooster_zh.ts \
+               translations/pianobooster_zh.ts
 
 contains(INSTALL_ALL_LANGS, ON){
   message(building with all languages)
