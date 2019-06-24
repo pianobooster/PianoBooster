@@ -618,12 +618,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation type="unfinished"/>
+        <translation>Koto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation type="unfinished"/>
+        <translation>Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -638,7 +638,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>Shanai</source>
-        <translation type="unfinished"/>
+        <translation>Shanai</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
@@ -648,7 +648,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation type="unfinished"/>
+        <translation>Agogo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -1538,7 +1538,7 @@
         <location filename="../src/QtWindow.cpp" line="247"/>
         <location filename="../src/QtWindow.cpp" line="271"/>
         <source>PianoBooster Midi File Error</source>
-        <translation>Villa í PíanóBooster MIDI-skrá</translation>
+        <translation>Villa í PianoBooster MIDI-skrá</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="240"/>
@@ -1721,12 +1721,7 @@
         <location filename="../src/QtWindow.cpp" line="474"/>
         <location filename="../src/QtWindow.cpp" line="551"/>
         <source>Piano Booster Help</source>
-        <translation>Aðstoð við notkun Píanó Booster</translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="604"/>
-        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation>Höfundarréttur (c) L. J. Barman, 2008-2013; Öll réttindi áskilin.&lt;br&gt;</translation>
+        <translation>Aðstoð við notkun Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="605"/>
@@ -1756,7 +1751,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="599"/>
         <source>About Piano Booster</source>
-        <translation>Um Píanó Booster</translation>
+        <translation>Um Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="368"/>
@@ -1801,12 +1796,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="601"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation>&lt;b&gt;PíanóBooster - Útgáfa %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
+        <translation>&lt;b&gt;PianoBooster - Útgáfa %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;Bættu&lt;/b&gt; hæfileika þína til að spila á &lt;b&gt;píanó&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="604"/>
+        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
+        <translation>Höfundarréttur (c) L. J. Barman, 2008-2013; Öll réttindi áskilin.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="607"/>

@@ -11,7 +11,6 @@ Build-Depends:
  debhelper (>= 10),
  hicolor-icon-theme,
  libasound2-dev,
- libfluidsynth-dev,
  libftgl-dev,
  libglu1-mesa-dev,
  libjack-dev,
@@ -22,4 +21,4 @@ Build-Depends:
 Package-List:
  pianobooster deb games optional arch=any
 Files:
- 31a89fa8152ae12eff5077f4706308d1 8388608 pianobooster-0.7.0.tar.gz
+ 7e32ca7fc4eb65ac39a5bc5d95cd5709 8511345 pianobooster-0.7.0.tar.gz

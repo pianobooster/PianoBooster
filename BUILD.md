@@ -11,7 +11,7 @@
 
    Finally as root type
 
-   ```make install```
+   ```make install -C build```
 
    (The pianobooster binary executable is now in the "build" subdirectory.)
 
@@ -19,7 +19,7 @@
 
    ```cmake -DCMAKE_BUILD_TYPE=Debug .```
 
-   (Alternatively you can use qmake followed by make in the src directory.)
+   (Alternatively you can use qmake followed by make.)
 
    See [DEB](pkgs/deb) for more details.
 
@@ -64,16 +64,3 @@
    Or alternatively you can install QtCreator and then open the pianobooster.pro
 
    If you make changes to the source code then please post details.
-
-# License
-
-   Piano Booster is fully copyrighted by the author and all rights are reserved.
-
-   PianoBooster is free software (Open Source software): you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by the Free Software
-   Foundation, either version 3 of the License, or (at your option) any later version.
-
-   PianoBooster is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-   without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-   See the GNU General Public License in the file "gplv3.txt" or from the web site
-   <http://www.gnu.org/licenses/> or [gplv3.txt](gplv3.txt).

@@ -1,3 +1,5 @@
+build_with_cmake="0"
+
 pkgdesc='A MIDI file player that teaches you how to play the piano'
 pkgname='pianobooster'
 pkgver=0.7.0
@@ -14,6 +16,8 @@ md5sums=('SKIP')
 
 build () {
     cd "${pkgname}-${pkgver}"
+if [ "$build_with_cmake" = "1" ]
+then
     cmake . \
        -DUSE_SYSTEM_FONT=ON \
        -DINSTALL_ALL_LANGS=ON \
@@ -23,10 +27,26 @@ build () {
        -DWITH_FLUIDSYNTH=ON \
        -DUSE_FLUIDSYNTH=ON \
        -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr"
+else
+     qmake-qt5 \
+        USE_SYSTEM_FONT=ON \
+        NO_DOCS=ON \
+        INSTALL_ALL_LANGS=ON \
+        USE_SYSTEM_RTMIDI=ON \
+        WITH_MAN=ON \
+        WITH_TIMIDITY=ON \
+        WITH_FLUIDSYNTH=ON \
+        USE_FLUIDSYNTH=ON
     make
+fi
 }
 
 package () {
     cd "${pkgname}-${pkgver}"
-    make install -C build
+    if [ "$build_with_cmake" = "1" ]
+    then
+       make install -C build
+    else
+       make install INSTALL_ROOT=${pkgdir}
+    fi
 }

@@ -1,3 +1,9 @@
+%define build_with_cmake 1
+
+%if 0%{?suse_version}
+%define qmake_qt5 qmake-qt5
+%endif
+
 Name:           pianobooster
 Version:        0.7.0
 Release:        %mkrel 1
@@ -20,7 +26,9 @@ License:        GPL-3.0-or-later
 Url:            https://github.com/captnfab/PianoBooster
 Source0:        %{name}-%{version}.tar.gz
 
+%if %{build_with_cmake}
 BuildRequires:  cmake
+%endif
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(ftgl)
@@ -81,7 +89,12 @@ is really recommended.
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_datadir}/games/%{name}
+%dir %{_datadir}/games/%{name}
+%dir %{_datadir}/games/%{name}/music
+%dir %{_datadir}/games/%{name}/translations
+%{_datadir}/games/%{name}/music/*.zip
+%{_datadir}/games/%{name}/translations/*.qm
+%{_datadir}/games/%{name}/translations/*.json
 %{_mandir}/man6/%{name}.6*
 
 #----------------------------------------------------------------------------
@@ -158,6 +171,7 @@ even without a plugged-in MIDI keyboard.
 %autosetup -p1 -n %{name}-%{version}
 
 %build
+%if %{build_with_cmake}
 %cmake \
        -DUSE_SYSTEM_FONT=ON \
        -DNO_DOCS=ON \
@@ -167,7 +181,22 @@ even without a plugged-in MIDI keyboard.
        -DWITH_TIMIDITY=ON \
        -DWITH_FLUIDSYNTH=ON \
        -DUSE_FLUIDSYNTH=ON
+%else
+%qmake_qt5 \
+       USE_SYSTEM_FONT=ON \
+       NO_DOCS=ON \
+       INSTALL_ALL_LANGS=ON \
+       USE_SYSTEM_RTMIDI=ON \
+       WITH_MAN=ON \
+       WITH_TIMIDITY=ON \
+       WITH_FLUIDSYNTH=ON \
+       USE_FLUIDSYNTH=ON
+%endif
 %make_build
 
 %install
+%if %{build_with_cmake}
 %make_install -C build
+%else
+%make_install INSTALL_ROOT=%{buildroot}
+%endif

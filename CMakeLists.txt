@@ -8,5 +8,3 @@ PROJECT( pianobooster )
 
 
 ADD_SUBDIRECTORY(src build)
-ADD_SUBDIRECTORY(translations build/translations)
-ADD_SUBDIRECTORY(music build/music)

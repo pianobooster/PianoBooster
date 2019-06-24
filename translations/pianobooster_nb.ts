@@ -1110,7 +1110,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Automatic (Recommended)</source>
-        <translation type="unfinished"/>
+        <translation>Automatisk (anbefalt)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
@@ -1275,7 +1275,7 @@
         <location filename="../src/GuiSongDetailsDialog.ui" line="27"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="39"/>
         <source>Song Details</source>
-        <translation type="unfinished"/>
+        <translation>Sangdetailjer</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="33"/>
@@ -1699,7 +1699,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="463"/>
         <source>Set&amp;up</source>
-        <translation type="unfinished"/>
+        <translation>Opp&amp;sett</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="469"/>
@@ -1710,7 +1710,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="478"/>
         <source>&amp;Website</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Nettside</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="502"/>
@@ -1721,11 +1721,6 @@
         <location filename="../src/QtWindow.cpp" line="474"/>
         <location filename="../src/QtWindow.cpp" line="551"/>
         <source>Piano Booster Help</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="604"/>
-        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1806,6 +1801,11 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="604"/>
+        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>

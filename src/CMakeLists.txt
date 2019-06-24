@@ -258,6 +258,14 @@ INSTALL ( FILES ../icons/hicolor/32x32/pianobooster.png DESTINATION share/icons/
 INSTALL ( FILES ../icons/hicolor/48x48/pianobooster.png DESTINATION share/icons/hicolor/48x48/apps )
 INSTALL ( FILES ../icons/hicolor/64x64/pianobooster.png DESTINATION share/icons/hicolor/64x64/apps )
 
+IF (UNIX AND NOT APPLE)
+    INSTALL ( FILES ../music/BoosterMusicBooks.zip DESTINATION share/games/pianobooster/music )
+ENDIF (UNIX AND NOT APPLE)
+
+IF (WIN32)
+    INSTALL( FILES ../music/BoosterMusicBooks.zip DESTINATION . )
+ENDIF (WIN32)
+
 if(USE_FONT)
     INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
 endif()
@@ -268,5 +276,4 @@ endif()
 
 #INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm  DESTINATION share/pianobooster/translations/ )
 
-
-
+ADD_SUBDIRECTORY(../translations ../build/translations)

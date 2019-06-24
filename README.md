@@ -7,9 +7,7 @@ Piano Booster is a MIDI file player that displays the musical notes AND teaches 
 play the piano. You can play along to any track in the midi file and PianoBooster will
 follow YOUR playing. PianoBooster makes sight reading fun!
 
-Piano Booster is a free (Open Source) program available from:
-
-<https://github.com/captnfab/PianoBooster/>
+Piano Booster is a free (Open Source) program available from: <https://github.com/captnfab/PianoBooster/>
 
 Original work by Louis J. Barman can be found here: <http://pianobooster.sourceforge.net/>
 
@@ -69,6 +67,14 @@ This must be started before Pianobooster, and also allows to load custom Soundfo
 Install RPM, DEB, etc. package.
 
 Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster)
+
+Packages for Linux are available in OBS repository:
+
+[pianobooster](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster)
+
+[pianobooster-timidity](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-timidity)
+
+[pianobooster-fluidsynth](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-fluidsynth)
 
 *Note:* In Ubuntu 9.04 there is an issue with the Intel drivers which that means PianoBooster
 performs very badly if you have Intel graphic chips. Upgrading to Ubuntu 9.10 fixes this problem.
@@ -139,6 +145,8 @@ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 See the GNU General Public License in the file "gplv3.txt" or from the web site
 <http://www.gnu.org/licenses/> or [gplv3.txt](gplv3.txt).
 
+The Piano Booster Documentation and Music are released under the Creative Commons License (CC-BY).
+
 [PianoBooster License](license.txt)
 
 SOURCE CODE
@@ -156,8 +164,23 @@ instructions on how to build the source code.
 DEBUGGING
 =========
 
-To get a backtrace, build Piano Booster with DEBUG option (type "cmake -DCMAKE_BUILD_TYPE=Debug ."),
-type “gdb ./pianobooster”, then “run” then “bt”.
+To get a backtrace, build Piano Booster with DEBUG option 
+
+type
+
+```cmake -DCMAKE_BUILD_TYPE=Debug .```
+
+type
+
+```gdb ./pianobooster```
+
+then
+
+```run```
+
+then
+
+```bt```
 
 DOCUMENTATION
 =============
