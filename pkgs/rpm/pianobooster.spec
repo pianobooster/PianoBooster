@@ -93,7 +93,8 @@ is really recommended.
 %dir %{_datadir}/games/%{name}/music
 %dir %{_datadir}/games/%{name}/translations
 %{_datadir}/games/%{name}/music/*.zip
-%{_datadir}/games/%{name}/translations/*.qm
+%{_datadir}/games/%{name}/translations/%{name}*.qm
+%{_datadir}/games/%{name}/translations/music*.qm
 %{_datadir}/games/%{name}/translations/*.json
 %{_mandir}/man6/%{name}.6*
 

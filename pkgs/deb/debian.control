@@ -24,7 +24,6 @@ Depends:
  ${misc:Depends},
  fonts-dejavu-core,
  hicolor-icon-theme,
- libnotify-bin,
  timidity,
  unzip
 Recommends: qttranslations5-l10n

@@ -1,11 +1,11 @@
-build_with_cmake="0"
+build_with_cmake="1"
 
 pkgdesc='A MIDI file player that teaches you how to play the piano'
 pkgname='pianobooster'
 pkgver=0.7.0
 pkgrel=1
 makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'rtmidi' 'jack2' 'fluidsynth' 'hicolor-icon-theme')
-depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'timidity++' 'fluidsynth' 'soundfont-fluid' 'libnotify' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'rtmidi' 'jack2' )
+depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'rtmidi' 'jack2')
 optdepends=('qt5-translations')
 arch=('x86_64')
 groups=('qt5')
@@ -23,8 +23,8 @@ then
        -DINSTALL_ALL_LANGS=ON \
        -DUSE_SYSTEM_RTMIDI=ON \
        -DWITH_MAN=ON \
-       -DWITH_TIMIDITY=ON \
-       -DWITH_FLUIDSYNTH=ON \
+       -DWITH_TIMIDITY=OFF \
+       -DWITH_FLUIDSYNTH=OFF \
        -DUSE_FLUIDSYNTH=ON \
        -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr"
 else
@@ -34,8 +34,8 @@ else
         INSTALL_ALL_LANGS=ON \
         USE_SYSTEM_RTMIDI=ON \
         WITH_MAN=ON \
-        WITH_TIMIDITY=ON \
-        WITH_FLUIDSYNTH=ON \
+        WITH_TIMIDITY=OFF \
+        WITH_FLUIDSYNTH=OFF \
         USE_FLUIDSYNTH=ON
     make
 fi
