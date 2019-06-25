@@ -20,6 +20,9 @@ v0.7.0:
 - Fix midi input/output devices detection
 - RtMidi: version 4.0.0
 - Fix reading position of main window
+- Fix music and translations installation
+- Qmake is alternative for Cmake
+- Fix macOS building
 
 v0.6.8: (11 May 2018)
 - French and Galician translations

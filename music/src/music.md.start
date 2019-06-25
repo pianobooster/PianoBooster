@@ -17,7 +17,7 @@ Here it is. right in the middle.
 
 ## Start with your thumb on Middle C
 
-Press it four times. wait for four beats then press it again
+Press it four times. wait for four beats then press it again.
 
 ## Next play E
 
@@ -25,7 +25,7 @@ Two white notes to the right of C is a note called E. Press it four times.
 
 ## Jump over F to get to G
 
-Jump over F to get to G
+Jump over F to get to G.
 
 ## The first five white notes
 

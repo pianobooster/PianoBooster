@@ -128,7 +128,7 @@ Using 'fluidsynth': [wrapper script and desktop file](https://github.com/captnfa
 
 While there are many possible choices General Midi sound generators for the Mac
 (Timidity, FluidSynth or an external MIDI Synth), the easiest way is to use
-SimpleSynth, which can be obtained for free (MIT license) frome [here](http://notahat.com/simplesynth)
+SimpleSynth, which can be obtained for free (MIT license) frome [here](http://notahat.com/simplesynth).
 
 This must be started before Pianobooster, and also allows to load custom Soundfonts.
 

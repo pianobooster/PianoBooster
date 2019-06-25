@@ -638,7 +638,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>Shanai</source>
-        <translation type="unfinished"/>
+        <translation>Shehnai</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>

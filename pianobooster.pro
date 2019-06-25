@@ -108,7 +108,13 @@ TRANSLATIONS = translations/pianobooster_af.ts \
                translations/pianobooster_wa.ts \
                translations/pianobooster_xh.ts \
                translations/pianobooster_zh_HK.ts \
-               translations/pianobooster_zh.ts \
+               translations/pianobooster_zh.ts
+
+contains(INSTALL_ALL_LANGS, ON){
+  message(building with all languages)
+  TRANSLATIONS = $$files(translations/*.ts)
+}
+
 
 USE_FLUIDSYNTH {
 # Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
@@ -234,6 +240,13 @@ isEmpty(QMAKE_LRELEASE) {
     }
 }
 
+!win32 {
+  system($${QMAKE_LRELEASE} -silent $${_PRO_FILE_} 2> /dev/null)
+}
+win32 {
+  system($$[QT_INSTALL_BINS]\\lrelease.exe $${_PRO_FILE_})
+}
+
 unix {
 
    isEmpty( PREFIX ) { PREFIX = /usr }
@@ -291,11 +304,6 @@ unix {
       DEFINES += USE_FONT=$$USE_FONT
    }
 
-   contains(INSTALL_ALL_LANGS, ON){
-      message(building with all languages)
-      TRANSLATIONS = $$files(translations/*.ts)
-   }
-
    updateqm.input = TRANSLATIONS
    updateqm.output = translations/${QMAKE_FILE_BASE}.qm
    updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
@@ -305,6 +313,11 @@ unix {
    data_langs.path = $$PREFIX/share/games/pianobooster/translations
    data_langs.files = translations/*.qm translations/langs.json
    INSTALLS += data_langs
+
+   data_langs_fix.path = $$PREFIX/share/games/pianobooster/translations/
+   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/music_blank.qm \
+       ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/pianobooster_blank.qm
+   INSTALLS += data_langs_fix
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = pianobooster.desktop
