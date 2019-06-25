@@ -115,8 +115,6 @@ contains(INSTALL_ALL_LANGS, ON){
   TRANSLATIONS = $$files(translations/*.ts)
 }
 
-TRANSLATIONS ~= s/(translations.music_blank.ts)//d
-TRANSLATIONS ~= s/(translations.pianobooster_blank.ts)//d
 
 USE_FLUIDSYNTH {
 # Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
@@ -315,6 +313,11 @@ unix {
    data_langs.path = $$PREFIX/share/games/pianobooster/translations
    data_langs.files = translations/*.qm translations/langs.json
    INSTALLS += data_langs
+
+   data_langs_fix.path = $$PREFIX/share/games/pianobooster/translations/
+   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/music_blank.qm \
+       ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/pianobooster_blank.qm
+   INSTALLS += data_langs_fix
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = pianobooster.desktop
