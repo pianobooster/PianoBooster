@@ -117,7 +117,7 @@ public:
     ////////////////////////////////////////////////////////////////////////////////
     //@brief set the note score length
     //@param lengthModifer 0 for normal, 1 for doted rhythm etc
-    void setNoteLength(musicalSymbol_t type,  int lengthModifer ) {m_symbolType = type;}
+    void setNoteLength(musicalSymbol_t type) {m_symbolType = type;}
 
     ////////////////////////////////////////////////////////////////////////////////
     //@brief returns the midi note number
