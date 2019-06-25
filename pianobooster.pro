@@ -186,7 +186,7 @@ contains(USE_SYSTEM_RTMIDI, ON){
     PKGCONFIG += rtmidi
 }else{
     message(building using bundled rtmidi)
-    INCLUDEPATH += 3rdparty
+    INCLUDEPATH += src/3rdparty
     SOURCES+= src/3rdparty/rtmidi/RtMidi.cpp
 }
 

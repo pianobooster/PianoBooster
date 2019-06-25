@@ -270,8 +270,7 @@ void GuiSidePanel::updateTranslate(){
 
         if (delta>maxDeltaWidth) maxDeltaWidth=delta;
     }
-    this->setMinimumWidth(300+maxDeltaWidth);
-
+    this->setMaximumWidth(300+maxDeltaWidth);
 }
 
 
