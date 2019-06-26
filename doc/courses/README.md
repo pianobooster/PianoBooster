@@ -1,7 +1,7 @@
 # Piano Booster Music
 
 These pieces of music have been created to work with _PianoBooster_ and
-are free from copyright or have the creative commons copyright.
+have the creative commons copyright.
 All the music is available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
 
 _Please add to the music on this page  - everyone can help._ For more information see this

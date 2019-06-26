@@ -11,6 +11,7 @@ Build-Depends:
  debhelper (>= 10),
  hicolor-icon-theme,
  libasound2-dev,
+ libfluidsynth-dev,
  libftgl-dev,
  libglu1-mesa-dev,
  libjack-dev,

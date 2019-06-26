@@ -43,9 +43,9 @@ License: MIT
 Files: music/*
 Copyright:
  2008-2013, Louis J. Barman <louisjb@users.sourceforge.net>
-License: PD, CC-BY
+License: CC-BY
  These pieces of music have been created to work with PianoBooster and
- are free from copyright or have the creative commons copyright.
+ have the creative commons copyright.
 
 Files: debian/*
 Copyright:

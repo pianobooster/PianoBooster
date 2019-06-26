@@ -115,7 +115,6 @@ contains(INSTALL_ALL_LANGS, ON){
   TRANSLATIONS = $$files(translations/*.ts)
 }
 
-
 USE_FLUIDSYNTH {
 # Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
 # You normally do not need to set it
