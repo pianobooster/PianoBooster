@@ -241,7 +241,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
     if (!fileInfo.exists() )
     {
         QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
-                 tr("Cannot open \"") + fileInfo.absoluteFilePath() + "\"");
+                 tr("Cannot open \"%1\"").arg(QString(fileInfo.absoluteFilePath())));
         exit(1);
     }
         else if ( !(fileInfo.fileName().endsWith(".mid", Qt::CaseInsensitive ) ||
@@ -249,7 +249,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
              fileInfo.fileName().endsWith(".kar", Qt::CaseInsensitive )) )
     {
         QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
-                 tr("Not a Midi File \"") + fileInfo.fileName() + "\"");
+                 tr("\"%1\" is not a Midi File").arg(QString(fileInfo.fileName())));
         exit(1);
     }
     else
@@ -273,7 +273,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
         else
         {
             QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
-                 tr("Not a valid MIDI file \"") + fileInfo.absoluteFilePath() + "\"");
+                 tr("\"%1\" is not a valid Midi file").arg(QString(fileInfo.absoluteFilePath())));
             exit(1);
         }
     }
