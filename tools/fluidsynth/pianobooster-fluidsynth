@@ -1,10 +1,16 @@
 #!/bin/sh
 
+#use_jack="1"
+
 MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
 MES2="Error: fluidsynth was not run!"
 MES3="Error: SoundFont FluidR3_GM.sf2 was not found!"
 MES4="Error: SoundFont FluidR3_GS.sf2 was not found!"
 MES5="Please try again!"
+MES6="Error: fluidsynth was not found!"
+MES7="Error: /usr/bin/jackd was not found!"
+MES8="Starting fluidsynth..."
+MES9="Please wait 10 more seconds!"
 
 lang=`echo $LANGUAGE|cut -d ":" --fields=2`
 
@@ -15,6 +21,10 @@ case $lang in
           MES3="Ошибка: Звуковой шрифт FluidR3_GM.sf2 не был найден!"
           MES4="Ошибка: Звуковой шрифт FluidR3_GS.sf2 не был найден!"
           MES5="Пожалуйста, попытайтесь снова!"
+          MES6="Ошибка: fluidsynth не был найден!"
+          MES7="Ошибка: /usr/bin/jackd не был найден!"
+          MES8="Запускается fluidsynth..."
+          MES9="Пожалуйста, ожидайте около 10 секунд!"
           ;;
      uk)
           MES1="Помилка: не знайдено звукових шрифтів FluidR3_GM.sf2 та FluidR3_GS.sf2!"
@@ -69,6 +79,28 @@ fi
 
 notify_send=`notify-send -v 2>/dev/null`
 
+fluidsynth=`fluidsynth -V 2>/dev/null`
+
+if [ -z "$fluidsynth" ]
+then
+  echo "$MES6"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES6"
+  fi
+  exit 1
+fi
+
+if [ ! -f "/usr/bin/jackd" ] && [ ! -z "$use_jack" ]
+then
+  echo "$MES7"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES7"
+  fi
+  exit 1
+fi
+
 if [ -z "$sf2_1" ] && [ -z "$sf2_2" ]
 then
   echo "$MES1"
@@ -99,11 +131,30 @@ then
   exit 1
 fi
 
-fluidsynth -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
+if [ ! -z "$use_jack" ]
+then
+  echo "$MES8" "$MES9"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES8 $MES9"
+  fi
+fi
+
+if [ ! -z "$use_jack" ]
+then
+  fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -j $sf2_1 $sf2_2 &
+else
+  fluidsynth -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
+fi
 
 PID=$!
 
-sleep 1
+if [ ! -z "$use_jack" ]
+then
+  sleep 10
+else
+  sleep 3
+fi
 
 process=`ps -p $PID -o comm=`
 
@@ -120,3 +171,8 @@ fi
 pianobooster
 
 kill $PID
+
+if [ ! -z "$use_jack" ]
+then
+  sleep 5
+fi
