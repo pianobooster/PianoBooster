@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 # This script creates BoosterMusicBooks.zip and generates music_blank.ts
 # License: same with Pianobooster
