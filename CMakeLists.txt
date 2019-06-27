@@ -6,5 +6,4 @@ endif(COMMAND cmake_policy)
 # set project's name
 PROJECT( pianobooster )
 
-
 ADD_SUBDIRECTORY(src build)

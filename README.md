@@ -205,4 +205,4 @@ We are looking for musicians to make music for pianobooster. It can be education
 PLATFORMS
 =========
 
-We support Linux and Windows platforms. We do not have macOS developers at the moment.
+We support Linux and Windows platforms. We do not have macOS, FreeBSD developers at the moment.

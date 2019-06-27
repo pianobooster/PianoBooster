@@ -1,85 +1,85 @@
 # Linux
 
-   Ensure that the build required packages are installed. Full list of them you can find [here](pkgs).
+Ensure that the build required packages are installed. Full list of them you can find [here](pkgs).
 
-   Then type:
+Then type:
 
-   ```cmake .```
+```cmake .```
 
-   ```make```
+```make```
 
-   Finally as root type:
+Finally as root type:
 
-   ```make install -C build```
+```make install -C build```
 
-   (The pianobooster binary executable is now in the "build" subdirectory.)
+(The pianobooster binary executable is now in the "build" subdirectory.)
 
-   To build a debug version create a dir called "debug" and change to that dir and then type:
+To build a debug version create a dir called "debug" and change to that dir and then type:
 
-   ```cmake -DCMAKE_BUILD_TYPE=Debug .```
+```cmake -DCMAKE_BUILD_TYPE=Debug .```
 
-   (Alternatively you can use qmake followed by make.)
+(Alternatively you can use qmake followed by make.)
 
-   See [DEB](pkgs/deb) for more details.
+See [DEB](pkgs/deb) for more details.
 
-   See [RPM](pkgs/rpm/pianobooster.spec) for more details.
+See [RPM](pkgs/rpm/pianobooster.spec) for more details.
 
-   See [ARCH](pkgs/arch/PKGBUILD) for more details.
+See [ARCH](pkgs/arch/PKGBUILD) for more details.
 
 # macOS
 
-   Install latest Xcode (from Apple Developer Connection, free registration required).
+Install latest Xcode (from Apple Developer Connection, free registration required).
 
-   Install CMake and QT libraries via Homebrew:
+Install CMake and QT libraries via Homebrew:
 
-   ```$ brew install cmake qt5```
+```$ brew install cmake qt5```
 
-   Generate XCode project file via CMake:
+Generate XCode project file via CMake:
 
-   ```$ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)```
+```$ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)```
 
-   Open the project file in XCode, set whatever options you like (universal or single architecture,
-   debug or release etc.) and compile.
+Open the project file in XCode, set whatever options you like (universal or single architecture,
+debug or release etc.) and compile.
 
-   To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
+To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
 
-   It's recommends to build with disabled USE_FTGL.
+It's recommends to build with disabled USE_FTGL.
 
 # Windows
 
-   To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
-   When installing Qt select the option to download and install the MinGW compiler. Open the
-   Qt Command Prompt and then change to the "PianoBooster" directory and then type the
-   command below:
+To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
+When installing Qt select the option to download and install the MinGW compiler. Open the
+Qt Command Prompt and then change to the "PianoBooster" directory and then type the
+command below:
 
-   ```"C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .```
+```"C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .```
 
-   Once this is completed type:
+Once this is completed type:
 
-   ```make```
+```make```
 
-   Or alternatively you can install QtCreator and then open the pianobooster.pro.
+Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
-   It's recommends to build with disabled USE_FTGL to fix notes drawing.
+It's recommends to build with disabled USE_FTGL to fix notes drawing.
 
 # Build options
 
-   **USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization.
+**USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization.
 
-   **NO_DOCS**: do not install documents; disabled by default.
+**NO_DOCS**: do not install documents; disabled by default.
 
-   **WITH_MAN**: install man page; disabled by default.
+**WITH_MAN**: install man page; disabled by default.
 
-   **WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default.
+**WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default.
 
-   **WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default.
+**WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default.
 
-   **INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and enabled for qmake.
+**INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and always enabled for qmake.
 
-   **USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default.
+**USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default.
 
-   **USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default.
+**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default.
 
-   **USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
+**USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
 
-   **USE_FONT**: build with specified font; null by default.
+**USE_FONT**: build with specified font; null by default.

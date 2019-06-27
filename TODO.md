@@ -29,7 +29,7 @@ Piano Booster To Do tasks (in no particular order)
 # DIFFICULT
 
 - Reduce the midi timing jitter by:
-    3. Move the conductor realtime engine so it runs in it own thread.
+    1. Move the conductor realtime engine so it runs in it own thread.
 - Show the rests in each bar.
 - Add note beams.
 - Show a graph of how your playing has improved over time.
