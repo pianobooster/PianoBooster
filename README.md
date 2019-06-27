@@ -163,19 +163,19 @@ DEBUGGING
 
 To get a backtrace, build Piano Booster with DEBUG option 
 
-type
+type:
 
 ```cmake -DCMAKE_BUILD_TYPE=Debug .```
 
-type
+type:
 
 ```gdb ./pianobooster```
 
-then
+then:
 
 ```run```
 
-then
+then:
 
 ```bt```
 

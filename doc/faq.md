@@ -94,17 +94,31 @@ To install fluidsynth you must install the following packages 'fluidsynth' 'flui
 'fluid-soundfont-gs' using your favourite package manager.
 To start the fluidsynth sound generator copy and paste the following command line (one very long command line).
 
+Using ALSA:
+
 ```bash
-fluidsynth -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
+fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
 ```
+Using JACK:
+
+```bash
+fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
+```
+
 If you have a fast machine then you can leave out the flags  `-C 0 -R 0 -r 22050` which turns off the reverb, chorus and reduce the sample rate.
 
 The flags `-c 6 -z 128` control the latency try `-c 5 -z 128` for less latency
 but at the risk of audio drop outs.
 
-The flags `-o audio.alsa.device=plughw:0` bypasses the Ubuntu Pulse Audio layer
+The flags `-o audio.alsa.device=plughw:0` bypasses the Pulse Audio layer
 which caused a lot of latency delay but unfortunately these flags may also
 bypass the desktop volume controls.
+
+Flag `-i`: don't read commands from the shell. Flag `-s`: start FluidSynth as a server process. Flag `-g 1`: set the master gain = 1.
+
+Flag `-a alsa` or `-a jack`: the name of the audio driver to use.
+
+Flag `-j`: attempt to connect the jack outputs to the physical ports.
 
 For more information on running fluidsynth with low latency see
 [this page](https://github.com/FluidSynth/fluidsynth/wiki/LowLatency).

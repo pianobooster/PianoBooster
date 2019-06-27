@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#use_jack="1"
+use_jack="0"
 
 MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
 MES2="Error: fluidsynth was not run!"
@@ -91,7 +91,7 @@ then
   exit 1
 fi
 
-if [ ! -f "/usr/bin/jackd" ] && [ ! -z "$use_jack" ]
+if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
 then
   echo "$MES7"
   if [ ! -z "$notify_send" ]
@@ -131,7 +131,7 @@ then
   exit 1
 fi
 
-if [ ! -z "$use_jack" ]
+if [ "$use_jack" = "1" ]
 then
   echo "$MES8" "$MES9"
   if [ ! -z "$notify_send" ]
@@ -140,23 +140,23 @@ then
   fi
 fi
 
-if [ ! -z "$use_jack" ]
+if [ "$use_jack" = "1" ]
 then
-  fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -j -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
+  fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j $sf2_1 $sf2_2 &
 else
   fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
 fi
 
 PID=$!
 
-if [ ! -z "$use_jack" ]
+if [ "$use_jack" = "1" ]
 then
   sleep 10
 else
   sleep 3
 fi
 
-process=`ps -p $PID -o comm=`
+process=`ps -p $PID -o comm= 2>/dev/null`
 
 if [ -z $process ]
 then
@@ -172,7 +172,7 @@ pianobooster
 
 kill $PID
 
-if [ ! -z "$use_jack" ]
+if [ "$use_jack" = "1" ]
 then
   sleep 5
 fi
