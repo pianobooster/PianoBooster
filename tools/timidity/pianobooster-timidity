@@ -1,11 +1,22 @@
 #!/bin/sh
+
+# This script runs pinobooster with timidity
+# It supports ALSA only
+# License: same with Pianobooster
+# Author: Alexey Loginov <alexl@mageia.org>
+
 timidity=`timidity -v 2>/dev/null`
+
 if [ -z "$timidity" ]
 then
    echo "Error: timidity was not found or broken!"
    exit 1
 fi
+
 timidity -iA -OO &
+
 PID=$!
+
 pianobooster
+
 kill $PID

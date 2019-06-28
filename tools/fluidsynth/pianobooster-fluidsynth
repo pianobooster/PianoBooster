@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# This script runs pinobooster with fluidsynth
+# It supports JACK and ALSA both
+# License: same with Pianobooster
+# Author: Alexey Loginov <alexl@mageia.org>
+
 use_jack="0"
 
 MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
