@@ -14,7 +14,7 @@ v0.7.0:
 - Fix problem loading midi files with text events
 - New Windows installer
 - Use hicolor icon theme
-- Fix USE_FLUIDSYNTH
+- Fix USE_FLUIDSYNTH flag
 - Fix incorrect drawing on ARM systems
 - Fix segfault on the next start of program after playing corrupted midi file
 - Fix midi input/output devices detection
@@ -23,6 +23,8 @@ v0.7.0:
 - Fix music and translations installation
 - Qmake is alternative for Cmake (Linux, Windows)
 - Fix macOS building
+- Fix file open dialog hang
+- Add JACK support for tools/fluidsynth
 
 v0.6.8: (11 May 2018)
 - French and Galician translations
