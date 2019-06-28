@@ -676,6 +676,8 @@ void QtWindow::keyboardShortcuts()
 
 void QtWindow::open()
 {
+    m_glWidget->stopTimerEvent();
+
     QFileInfo currentSong = m_settings->getCurrentSongLongFileName();
 
     QString dir;
@@ -691,6 +693,7 @@ void QtWindow::open()
         m_settings->openSongFile(fileName);
         setCurrentFile(fileName);
     }
+    m_glWidget->startTimerEvent();
 }
 
 void QtWindow::readSettings()
