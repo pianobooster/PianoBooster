@@ -1,11 +1,14 @@
+# FIXME: libffado was added as dependency, because it requires by jack (and not optionally, but mandatory), but Arch Linux jack's maintainer is stupid to understand it
+# TiMidity, Fluidsynth+JACK do not work out of box, but Fluidsynth without JACK works
+
 build_with_cmake="1"
 
 pkgdesc='A MIDI file player that teaches you how to play the piano'
 pkgname='pianobooster'
 pkgver=0.7.0
 pkgrel=1
-makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'rtmidi' 'jack2' 'fluidsynth' 'hicolor-icon-theme')
-depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'rtmidi' 'jack2')
+makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'rtmidi' 'jack' 'fluidsynth' 'hicolor-icon-theme')
+depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'rtmidi' 'jack' 'libffado' 'fluidsynth' 'soundfont-fluid' 'libnotify')
 optdepends=('qt5-translations')
 arch=('x86_64')
 groups=('qt5')
@@ -24,7 +27,7 @@ then
        -DUSE_SYSTEM_RTMIDI=ON \
        -DWITH_MAN=ON \
        -DWITH_TIMIDITY=OFF \
-       -DWITH_FLUIDSYNTH=OFF \
+       -DWITH_FLUIDSYNTH=ON \
        -DUSE_FLUIDSYNTH=ON \
        -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr"
 else
@@ -35,7 +38,7 @@ else
         USE_SYSTEM_RTMIDI=ON \
         WITH_MAN=ON \
         WITH_TIMIDITY=OFF \
-        WITH_FLUIDSYNTH=OFF \
+        WITH_FLUIDSYNTH=ON \
         USE_FLUIDSYNTH=ON
     make
 fi
