@@ -99,6 +99,7 @@ To start the fluidsynth sound generator copy and paste the following command lin
 Using ALSA:
 
 `fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
+
 Using JACK:
 
 `fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
@@ -186,7 +187,7 @@ This must be started before Pianobooster, and also allows to load custom Soundfo
 
 ## How to use Fluidsynth with JACK
 
-Just enable `use_jack="1"` in /usr/bin/pianobooster-fluidsynth
+Just enable `use_jack="1"` in /usr/bin/pianobooster-fluidsynth. If `use_jack="0"`, then JACK is disabled.
 
 ## Why is there a delay between pressing the note and hearing the sound?
 
