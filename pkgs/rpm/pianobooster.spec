@@ -156,6 +156,11 @@ Requires:       libnotify
 %if 0%{?suse_version}
 Requires:       libnotify-tools
 %endif
+%if 0%{?suse_version}
+# workaround for missing /usr/bin/jackd dependency, but to recommend it
+# while use_jack flag of pianobooster-fluidsynth script is not enabled
+Recommends:     jack
+%endif
 
 %description    fluidsynth
 This package contains a wrapper script to launch PianoBooster together with
