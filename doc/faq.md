@@ -188,6 +188,10 @@ SimpleSynth, which can be obtained for free (MIT license) frome [here](http://no
 
 This must be started before Pianobooster, and also allows to load custom Soundfonts.
 
+## How to use Fluidsynth with JACK
+
+Just enable ```use_jack="1"``` in /usr/bin/pianobooster-fluidsynth
+
 ## Why is there a delay between pressing the note and hearing the sound?
 
 The delay between pressing the note and hearing the sound is called the latency.
