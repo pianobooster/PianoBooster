@@ -2,6 +2,7 @@
 
 # This script runs pinobooster with timidity
 # It supports ALSA only
+# TiMidity in Debian compilled without Libao mode -OO, using ALSA pcm device instead -Os
 # License: same with Pianobooster
 # Author: Alexey Loginov <alexl@mageia.org>
 
