@@ -111,6 +111,7 @@ private slots:
     void on_listenRadio_toggled (bool checked)
     {
         if (!m_song || !checked) return;
+        m_settings->setValue("SidePanel/skill",PB_PLAY_MODE_listen);
         m_song->setPlayMode(PB_PLAY_MODE_listen);
         autoSetMuteYourPart();
     }
@@ -118,6 +119,7 @@ private slots:
     void on_rhythmTapRadio_toggled (bool checked)
     {
         if (!m_song || !checked) return;
+        m_settings->setValue("SidePanel/skill",PB_PLAY_MODE_rhythmTapping);
         m_song->setPlayMode(PB_PLAY_MODE_rhythmTapping);
         autoSetMuteYourPart();
     }
@@ -125,6 +127,7 @@ private slots:
     void on_followYouRadio_toggled (bool checked)
     {
         if (!m_song || !checked) return;
+        m_settings->setValue("SidePanel/skill",PB_PLAY_MODE_followYou);
         m_song->setPlayMode(PB_PLAY_MODE_followYou);
         autoSetMuteYourPart();
     }
@@ -132,6 +135,7 @@ private slots:
     void on_playAlongRadio_toggled (bool checked)
     {
         if (!m_song || !checked) return;
+        m_settings->setValue("SidePanel/skill",PB_PLAY_MODE_playAlong);
         m_song->setPlayMode(PB_PLAY_MODE_playAlong);
         autoSetMuteYourPart();
     }
