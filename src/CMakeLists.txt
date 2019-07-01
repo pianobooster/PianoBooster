@@ -50,6 +50,11 @@ else(USE_FTGL)
     add_compile_options("-DNO_USE_FTGL")
 endif(USE_FTGL)
 
+if (NO_LANGS)
+    add_compile_options("-DNO_LANGS")
+endif(NO_LANGS)
+
+
 # Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
 

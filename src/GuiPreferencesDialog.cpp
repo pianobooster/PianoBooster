@@ -49,6 +49,7 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
 }
 
 void GuiPreferencesDialog::initLanguageCombo(){
+#ifndef NO_LANGS
     QString localeDirectory =
  #ifdef Q_OS_WIN32
         QApplication::applicationDirPath() + "/translations/";
@@ -126,6 +127,7 @@ void GuiPreferencesDialog::initLanguageCombo(){
             }
         }
     }
+#endif
 }
 
 void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glView)
