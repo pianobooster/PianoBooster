@@ -164,7 +164,7 @@ unix {
    contains(NO_DOCS, OFF){
       message(building with docs)
       docs.path = $$PREFIX/share/doc/pianobooster
-      docs.files = README.md ReleaseNotes.txt
+      docs.files = README.md ReleaseNotes.txt doc/faq.md
       INSTALLS += docs
    }
 

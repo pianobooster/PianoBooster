@@ -220,6 +220,7 @@ INSTALL(TARGETS pianobooster RUNTIME DESTINATION bin)
 if(NOT NO_DOCS)
     INSTALL( FILES ../README.md DESTINATION share/doc/pianobooster/ )
     INSTALL( FILES ../ReleaseNotes.txt DESTINATION share/doc/pianobooster/ )
+    INSTALL( FILES ../doc/faq.md DESTINATION share/doc/pianobooster/ )
 endif()
 
 if(NOT NO_LICENSE)

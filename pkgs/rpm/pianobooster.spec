@@ -84,7 +84,7 @@ PianoBooster, using the PC keyboard ('x' is middle C), but a MIDI piano
 is really recommended.
 
 %files
-%doc README.md ReleaseNotes.txt
+%doc README.md ReleaseNotes.txt doc/faq.md
 %license license.txt
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
