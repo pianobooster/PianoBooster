@@ -33,7 +33,6 @@ then
 else
      qmake-qt5 \
         USE_SYSTEM_FONT=ON \
-        NO_DOCS=ON \
         INSTALL_ALL_LANGS=ON \
         USE_SYSTEM_RTMIDI=ON \
         WITH_MAN=ON \
