@@ -45,6 +45,10 @@ To make a self contained application bundle use QT's macdeployqt tool (included 
 
 It's recommends to build with disabled USE_FTGL.
 
+# BSD Unix
+
+It's recommends to build with enabled NO_DOCS.
+
 # Windows
 
 To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
