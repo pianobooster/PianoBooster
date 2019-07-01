@@ -98,6 +98,12 @@ contains(USE_FTGL, ON){
     DEFINES += NO_USE_FTGL
 }
 
+contains(NO_LANGS, ON){
+    message(building without languages)
+    DEFINES += NO_LANGS
+}
+
+
 RC_FILE = src/pianobooster.rc
 
 OBJECTS_DIR = tmp
