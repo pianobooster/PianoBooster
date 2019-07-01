@@ -142,6 +142,43 @@ Using 'timidity': [wrapper script and desktop file](https://github.com/captnfab/
 
 Using 'fluidsynth': [wrapper script and desktop file](https://github.com/captnfab/PianoBooster/tree/master/tools/fluidsynth).
 
+## How do I hear the sound on Arch Linux?
+
+Timidity in Arch Linux does not work out of box.
+To use Freepats (freepats-general-midi package) with TiMidity, add the following lines to /etc/timidity++/timidity.cfg:
+
+```soundfont /usr/share/soundfonts/freepats-general-midi.sf2```
+
+[Arch Linux Wiki](https://wiki.archlinux.org/index.php/Timidity)
+
+Potentially needs to disable pulseaudio to use ALSA.
+
+JACK can be used by jack or jack2. jack has better logging than jack2 to see errors, but they work equally.
+But JACK does not work out of box, needs to configure it.
+
+run:
+
+```sudo sed -i "s|# End of file|@audio - rtprio 99|g" /etc/security/limits.conf```
+
+run:
+
+```sudo usermod -a -G audio exton```,
+where exton is user
+
+log out and log in
+
+stop pulseaudio:
+
+```systemctl --user stop pulseaudio.socket```
+
+```pianobooster-fluidsynth```
+
+start pulseaudio after:
+
+```systemctl --user start pulseaudio.socket```
+
+*Note:* Fluidsynth works without JACK with ALSA out of box even without conflicts with pulseaudio.
+
 ## How do I hear the sound on Mac?
 
 While there are many possible choices General Midi sound generators for the Mac
