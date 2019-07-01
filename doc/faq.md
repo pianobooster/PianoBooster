@@ -153,7 +153,7 @@ To use Freepats (freepats-general-midi package) with TiMidity, add the following
 
 Potentially needs to disable pulseaudio to use ALSA.
 
-JACK can be used by jack or jack2. jack has better logging than jack2 to see errors, but they work equally.
+JACK can be used by jack or jack2. jack has better debug logs than jack2 to see errors, but they work equally.
 But JACK does not work out of box, needs to configure it.
 
 run:
@@ -162,8 +162,7 @@ run:
 
 run:
 
-```sudo usermod -a -G audio exton```,
-where exton is user
+```sudo usermod -a -G audio exton```, where exton is user
 
 log out and log in
 
@@ -171,6 +170,7 @@ stop pulseaudio:
 
 ```systemctl --user stop pulseaudio.socket```
 
+run script:
 ```pianobooster-fluidsynth```
 
 start pulseaudio after:
