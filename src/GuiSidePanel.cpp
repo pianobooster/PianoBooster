@@ -31,6 +31,7 @@
 #include "GuiSidePanel.h"
 #include "GuiTopBar.h"
 #include "TrackList.h"
+#include "Conductor.h"
 
 
 GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
@@ -42,6 +43,8 @@ GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     m_topBar = 0;
     m_settings = settings;
     setupUi(this);
+
+
 }
 
 void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar)
@@ -51,7 +54,29 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     m_topBar = topBar;
     m_trackList->init(songObj, m_settings);
 
-    followYouRadio->setChecked(true);
+    // set skill from config
+    playMode_t skill = m_settings->value("SidePanel/skill",PB_PLAY_MODE_followYou).toInt();
+    switch (skill) {
+        case PB_PLAY_MODE_listen:
+            listenRadio->setChecked(true);
+            on_listenRadio_toggled(true);
+            break;
+        case PB_PLAY_MODE_rhythmTapping:
+            rhythmTapRadio->setChecked(true);
+            on_rhythmTapRadio_toggled(true);
+            break;
+        case PB_PLAY_MODE_followYou:
+            followYouRadio->setChecked(true);
+            on_followYouRadio_toggled(true);
+            break;
+        case PB_PLAY_MODE_playAlong:
+            playAlongRadio->setChecked(true);
+            on_playAlongRadio_toggled(true);
+            break;
+        default:
+            break;
+    }
+
     bothHandsRadio->setChecked(true);
 
     rhythmTappingCombo->addItem(tr("Drums"));
@@ -81,6 +106,9 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     connect(act, SIGNAL(triggered()), this, SLOT(clearTrackPart()));
 
     trackListWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
+
+
+
 }
 
 void GuiSidePanel::refresh() {
