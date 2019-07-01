@@ -7,7 +7,7 @@ v0.7.0:
 - Translate notes
 - Fix Qt strings localization
 - New options: INSTALL_ALL_LANGS, USE_SYSTEM_FONT, NO_DOCS, USE_SYSTEM_RTMIDI,
-  WITH_MAN, WITH_TIMIDITY, WITH_FLUIDSYNTH, USE_FTGL
+  WITH_MAN, WITH_TIMIDITY, WITH_FLUIDSYNTH, USE_FTGL, NO_LANGS
 - Allow to switch between languages within a session
 - Add Piano Keyboard widget
 - Update documentation
@@ -25,6 +25,8 @@ v0.7.0:
 - Fix macOS building
 - Fix file open dialog hang
 - Add JACK support for tools/fluidsynth
+- Fix FreeBSD, OpenBSD building by enabling NO_LANGS
+- Saving skill's settings in config file
 
 v0.6.8: (11 May 2018)
 - French and Galician translations

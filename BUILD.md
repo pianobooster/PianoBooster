@@ -83,3 +83,5 @@ It's recommends to build with disabled USE_FTGL to fix notes drawing.
 **USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
 
 **USE_FONT**: build with specified font; null by default.
+
+**NO_LANGS**: do not install languages; disabled by default.
