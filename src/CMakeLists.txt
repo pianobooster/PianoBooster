@@ -222,6 +222,10 @@ if(NOT NO_DOCS)
     INSTALL( FILES ../ReleaseNotes.txt DESTINATION share/doc/pianobooster/ )
 endif()
 
+if(NOT NO_LICENSE)
+    INSTALL( FILES ../license.txt DESTINATION share/licenses/pianobooster/ )
+endif()
+
 if(WITH_MAN)
     INSTALL( FILES ../pianobooster.6  DESTINATION share/man/man6/ )
 endif()

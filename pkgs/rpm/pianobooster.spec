@@ -181,6 +181,7 @@ even without a plugged-in MIDI keyboard.
 %cmake \
        -DUSE_SYSTEM_FONT=ON \
        -DNO_DOCS=ON \
+       -DNO_LICENSE=ON \
        -DINSTALL_ALL_LANGS=ON \
        -DUSE_SYSTEM_RTMIDI=ON \
        -DWITH_MAN=ON \
@@ -191,6 +192,7 @@ even without a plugged-in MIDI keyboard.
 %qmake_qt5 \
        USE_SYSTEM_FONT=ON \
        NO_DOCS=ON \
+       NO_LICENSE=ON \
        INSTALL_ALL_LANGS=ON \
        USE_SYSTEM_RTMIDI=ON \
        WITH_MAN=ON \

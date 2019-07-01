@@ -7,6 +7,7 @@ CONFIG += link_pkgconfig
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
+isEmpty(NO_LICENSE): NO_LICENSE="OFF"
 isEmpty(WITH_MAN): WITH_MAN="OFF"
 isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
 isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
@@ -164,6 +165,13 @@ unix {
       docs.path = $$PREFIX/share/doc/pianobooster
       docs.files = README.md ReleaseNotes.txt
       INSTALLS += docs
+   }
+
+   contains(NO_LICENSE, OFF){
+      message(building with license)
+      license.path = $$PREFIX/share/licenses/pianobooster
+      license.files = license.txt
+      INSTALLS += license
    }
 
    contains(WITH_MAN, ON){

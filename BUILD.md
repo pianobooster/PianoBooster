@@ -47,7 +47,7 @@ It's recommends to build with disabled USE_FTGL.
 
 # BSD Unix
 
-It's recommends to build with enabled NO_DOCS.
+It's recommends to build with enabled NO_LANGS.
 
 # Windows
 
@@ -71,6 +71,8 @@ It's recommends to build with disabled USE_FTGL to fix notes drawing.
 **USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization.
 
 **NO_DOCS**: do not install documents; disabled by default.
+
+**NO_LICENSE**: do not install license; disabled by default.
 
 **WITH_MAN**: install man page; disabled by default.
 
