@@ -171,6 +171,7 @@ stop pulseaudio:
 ```systemctl --user stop pulseaudio.socket```
 
 run script:
+
 ```pianobooster-fluidsynth```
 
 start pulseaudio after:
