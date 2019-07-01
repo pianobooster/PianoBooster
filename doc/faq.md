@@ -98,14 +98,10 @@ To start the fluidsynth sound generator copy and paste the following command lin
 
 Using ALSA:
 
-```bash
-fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
-```
+`fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
 Using JACK:
 
-```bash
-fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2
-```
+`fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
 
 *Note:* Path `/usr/share/sounds/sf2` is Debian, Ubuntu, OpenSuse, Slackware, etc. For Alt Linux, Arch Linux, CentOS, Fedora, Mageia, OpenMandriva, ROSA, etc. you must use path `/usr/share/soundfonts` instead.
 
@@ -147,7 +143,7 @@ Using 'fluidsynth': [wrapper script and desktop file](https://github.com/captnfa
 Timidity in Arch Linux does not work out of box.
 To use Freepats (freepats-general-midi package) with TiMidity, add the following lines to /etc/timidity++/timidity.cfg:
 
-```soundfont /usr/share/soundfonts/freepats-general-midi.sf2```
+`soundfont /usr/share/soundfonts/freepats-general-midi.sf2`
 
 [Arch Linux Wiki](https://wiki.archlinux.org/index.php/Timidity)
 
@@ -158,25 +154,25 @@ But JACK does not work out of box, needs to configure it.
 
 run:
 
-```sudo sed -i "s|# End of file|@audio - rtprio 99|g" /etc/security/limits.conf```
+`sudo sed -i "s|# End of file|@audio - rtprio 99|g" /etc/security/limits.conf`
 
 run:
 
-```sudo usermod -a -G audio exton```, where exton is user
+`sudo usermod -a -G audio exton`, where exton is user
 
 log out and log in
 
 stop pulseaudio:
 
-```systemctl --user stop pulseaudio.socket```
+`systemctl --user stop pulseaudio.socket`
 
 run script:
 
-```pianobooster-fluidsynth```
+`pianobooster-fluidsynth`
 
 start pulseaudio after:
 
-```systemctl --user start pulseaudio.socket```
+`systemctl --user start pulseaudio.socket`
 
 *Note:* Fluidsynth works without JACK with ALSA out of box even without conflicts with pulseaudio.
 
@@ -190,7 +186,7 @@ This must be started before Pianobooster, and also allows to load custom Soundfo
 
 ## How to use Fluidsynth with JACK
 
-Just enable ```use_jack="1"``` in /usr/bin/pianobooster-fluidsynth
+Just enable `use_jack="1"` in /usr/bin/pianobooster-fluidsynth
 
 ## Why is there a delay between pressing the note and hearing the sound?
 
