@@ -11,6 +11,7 @@ isEmpty(NO_LICENSE): NO_LICENSE="OFF"
 isEmpty(WITH_MAN): WITH_MAN="OFF"
 isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
 isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
+isEmpty(NO_LANGS): NO_LANGS="OFF"
 
 # install all languages always
 INSTALL_ALL_LANGS="ON"
@@ -218,20 +219,22 @@ unix {
       DEFINES += USE_FONT=$$USE_FONT
    }
 
-   updateqm.input = TRANSLATIONS
-   updateqm.output = translations/${QMAKE_FILE_BASE}.qm
-   updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
-   updateqm.CONFIG += no_link target_predeps
-   QMAKE_EXTRA_COMPILERS += updateqm
-
-   data_langs.path = $$PREFIX/share/games/pianobooster/translations
-   data_langs.files = translations/*.qm translations/langs.json
-   INSTALLS += data_langs
-
-   data_langs_fix.path = $$PREFIX/share/games/pianobooster/translations/
-   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/music_blank.qm \
-       ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/pianobooster_blank.qm
-   INSTALLS += data_langs_fix
+   contains(NO_LANGS, OFF){
+	   updateqm.input = TRANSLATIONS
+	   updateqm.output = translations/${QMAKE_FILE_BASE}.qm
+	   updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
+	   updateqm.CONFIG += no_link target_predeps
+	   QMAKE_EXTRA_COMPILERS += updateqm
+	
+	   data_langs.path = $$PREFIX/share/games/pianobooster/translations
+	   data_langs.files = translations/*.qm translations/langs.json
+	   INSTALLS += data_langs
+	
+	   data_langs_fix.path = $$PREFIX/share/games/pianobooster/translations/
+	   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/music_blank.qm \
+	       ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/pianobooster_blank.qm
+	   INSTALLS += data_langs_fix
+   }
 
    desktop.path = $$PREFIX/share/applications
    desktop.files = pianobooster.desktop
