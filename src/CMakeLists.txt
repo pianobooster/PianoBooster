@@ -256,4 +256,6 @@ if(NOT USE_SYSTEM_FONT)
     INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION share/games/pianobooster/fonts)
 endif()
 
-ADD_SUBDIRECTORY(../translations ../build/translations)
+if (NOT NO_LANGS)
+    ADD_SUBDIRECTORY(../translations ../build/translations)
+endif(NO_LANGS)
