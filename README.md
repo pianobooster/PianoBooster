@@ -64,7 +64,7 @@ to use Timidity.
 
 This must be started before Pianobooster, and also allows to load custom Soundfonts.
 
-Install RPM, DEB, etc. package.
+Install RPM, DEB, ARCH, etc. package.
 
 Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster).
 
@@ -78,8 +78,7 @@ Packages for Linux are available in OBS repository:
 
 *Note:* The packages provided with distributions may not exist or are out of date,
 in which case you will have to compile from the source code.
-However compiling from source is quite easy on Linux, see the instructions
-in the section below.
+However compiling from source is quite easy on Linux.
 
 MIDI FILES
 ==========
@@ -200,7 +199,7 @@ PianoBooster is community developing project since 2018. You're welcome with pat
 
 We have many [issues](https://github.com/captnfab/PianoBooster/issues) always.
 
-We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src). For more information look at [README.md](doc/courses/README.md).
+We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src). For more information look at [README.md](doc/courses/README.md) and [faq.md](doc/faq.md).
 
 PLATFORMS
 =========

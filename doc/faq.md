@@ -18,7 +18,7 @@ Google search: Taylor's Traditional Tune Book, and download the "English Tunes".
 
 ## CC and MIDI: What Songs are Legal to Share
 
-Piano Booster will only distribute MIDI files submitted to the project under the Creative Commons License.
+Piano Booster will only distribute MIDI files submitted to the project under the Creative Commons (CC) License.
 
 MIDI files created by hand constitute "original work". Original work can be released under the CC license. (see [forum discussion](http://piano-booster.2625608.n2.nabble.com/Creating-music-for-PianoBooster-using-MMA-Everyone-can-help-td4167350.html#a4167350))
 
@@ -61,7 +61,7 @@ The MMA software can greatly simplify creating accompanying "background" music.
 
 ## Open a MIDI File
 
-Select file open from PianoBooster main menu and then choose the .mid file or the .kar file. If you put all your MIDI files in adjacent directories then each directory will appear as books that can be accessed using the -book drop down list- and then each MIDI file can be accessed from the song drop down list.
+Select File -> Open from PianoBooster main menu and then choose the .mid file or the .kar file. If you put all your MIDI files in adjacent directories then each directory will appear as books that can be accessed using the -book drop down list- and then each MIDI file can be accessed from the song drop down list.
 
 ## Listen to the MIDI music
 

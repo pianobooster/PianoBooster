@@ -68,7 +68,7 @@ It's recommends to build with disabled USE_FTGL to fix notes drawing.
 
 # Build options
 
-**USE_FTGL**: link with ftgl; enabled by default; disabling disable notes localization.
+**USE_FTGL**: link with ftgl; enabled by default; disabling notes localization.
 
 **NO_DOCS**: do not install documents; disabled by default.
 
@@ -84,7 +84,7 @@ It's recommends to build with disabled USE_FTGL to fix notes drawing.
 
 **USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default.
 
-**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default.
+**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default; enable this option if your system has fluidsynth (Linux, macOS) even if you do not have plans to install fluidsynth.
 
 **USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
 

@@ -13,11 +13,11 @@ and the accompaniment was created with the [Musical MIDI Accompaniment (MMA)](ht
 
 ## Find middle C
 
-Here it is. right in the middle.
+Here it is. Right in the middle.
 
 ## Start with your thumb on Middle C
 
-Press it four times. wait for four beats then press it again.
+Press it four times. Wait for four beats then press it again.
 
 ## Next play E
 
@@ -29,7 +29,7 @@ Jump over F to get to G.
 
 ## The first five white notes
 
-We will just play the first five notes. up an down. One note for each finger. (This is the start of the C major scale)
+We will just play the first five notes. Up and down. One note for each finger. (This is the start of the C major scale)
 
 ## The C cord
 
