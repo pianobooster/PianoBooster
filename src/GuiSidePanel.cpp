@@ -83,7 +83,7 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     rhythmTappingCombo->addItem(tr("Melody"));
     //FIXME rhythmTappingCombo->addItem(tr("Drums+M"));
 
-
+    on_rhythmTappingCombo_activated(m_settings->value("SidePanel/rhythmTapping",0).toInt());
     rhythmTappingCombo->setCurrentIndex(m_song->cfg_rhythmTapping);
 
 
@@ -304,7 +304,9 @@ void GuiSidePanel::updateTranslate(){
 
 void GuiSidePanel::on_rhythmTappingCombo_activated (int index)
 {
-    switch ((rhythmTappingCombo->currentIndex()))
+    m_settings->setValue("SidePanel/rhythmTapping",index);
+
+    switch (index)
     {
         case 1 :
             m_song->cfg_rhythmTapping = PB_RHYTHM_TAP_mellodyOnly;
