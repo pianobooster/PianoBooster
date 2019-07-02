@@ -127,6 +127,12 @@ void GuiPreferencesDialog::initLanguageCombo(){
             }
         }
     }
+
+#else
+    // loading languages
+    languageCombo->clear();
+    languageCombo->addItem("English","en");
+    languageCombo->setCurrentIndex(0);
 #endif
 }
 
