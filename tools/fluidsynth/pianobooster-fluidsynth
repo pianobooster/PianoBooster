@@ -2,6 +2,7 @@
 
 # This script runs pianobooster with fluidsynth
 # It supports JACK and ALSA both
+# It switches on JACK automatically if ALSA is not available
 # License: same with Pianobooster
 # Author: Alexey Loginov <alexl@mageia.org>
 
@@ -16,6 +17,8 @@ MES6="Error: fluidsynth was not found or broken!"
 MES7="Error: /usr/bin/jackd was not found!"
 MES8="Starting fluidsynth..."
 MES9="Please wait 10 more seconds!"
+MES10="Fluidsynth does not have ALSA support!"
+MES11="Switching on using JACK..."
 
 lang=`echo $LANGUAGE|cut -d ":" -f 2`
 
@@ -35,6 +38,8 @@ case $lang in
           MES7="Ошибка: /usr/bin/jackd не был найден!"
           MES8="Запускается fluidsynth..."
           MES9="Пожалуйста, ожидайте около 10 секунд!"
+          MES10="Fluidsynth не имеет поддержки ALSA!"
+          MES11="Переключение на использование JACK..."
           ;;
      de)
           MES1="Fehler: SoundFonts FluidR3_GM.sf2 und FluidR3_GS.sf2 wurden nicht gefunden!"
@@ -122,19 +127,6 @@ then
   exit 1
 fi
 
-if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
-then
-  if [ ! -f "/usr/local/bin/jackd" ]
-  then
-    echo "$MES7"
-    if [ ! -z "$notify_send" ]
-    then
-      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES7"
-    fi
-    exit 1
-  fi
-fi
-
 if [ -z "$sf2_1" ] && [ -z "$sf2_2" ]
 then
   echo "$MES1"
@@ -175,6 +167,29 @@ then
 fi
 
 alsa=`fluidsynth -o help|grep alsa`
+
+if [ "$use_jack" = "0" ] && [ -z "$alsa" ]
+then
+  echo "$MES10" "$MES11"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES10 $MES11"
+  fi
+  use_jack="1"
+fi
+
+if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
+then
+  if [ ! -f "/usr/local/bin/jackd" ]
+  then
+    echo "$MES7"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES7"
+    fi
+    exit 1
+  fi
+fi
 
 if [ "$use_jack" = "1" ]
 then
