@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This script runs pinobooster with fluidsynth
+# This script runs pianobooster with fluidsynth
 # It supports JACK and ALSA both
 # License: same with Pianobooster
 # Author: Alexey Loginov <alexl@mageia.org>
@@ -17,7 +17,12 @@ MES7="Error: /usr/bin/jackd was not found!"
 MES8="Starting fluidsynth..."
 MES9="Please wait 10 more seconds!"
 
-lang=`echo $LANGUAGE|cut -d ":" --fields=2`
+lang=`echo $LANGUAGE|cut -d ":" -f 2`
+
+if [ -z "$lang" ]
+then
+  lang=`echo $LANG|cut -d "_" -f 1`
+fi
 
 case $lang in
      ru|be)
@@ -93,6 +98,16 @@ then
   sf2_2="/usr/share/sounds/sf2/FluidR3_GS.sf2"
 fi
 
+if [ -f "/usr/local/share/sounds/sf2/FluidR3_GM.sf2" ]
+then
+  sf2_1="/usr/local/share/sounds/sf2/FluidR3_GM.sf2"
+fi
+
+if [ -f "/usr/local/share/sounds/sf2/FluidR3_GS.sf2" ]
+then
+  sf2_2="/usr/local/share/sounds/sf2/FluidR3_GS.sf2"
+fi
+
 notify_send=`notify-send -v 2>/dev/null`
 
 fluidsynth=`fluidsynth -V 2>/dev/null`
@@ -109,12 +124,15 @@ fi
 
 if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
 then
-  echo "$MES7"
-  if [ ! -z "$notify_send" ]
+  if [ ! -f "/usr/local/bin/jackd" ]
   then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES7"
+    echo "$MES7"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES7"
+    fi
+    exit 1
   fi
-  exit 1
 fi
 
 if [ -z "$sf2_1" ] && [ -z "$sf2_2" ]
@@ -156,9 +174,16 @@ then
   fi
 fi
 
+alsa=`fluidsynth -o help|grep alsa`
+
 if [ "$use_jack" = "1" ]
 then
-  fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j $sf2_1 $sf2_2 &
+  if [ ! -z "$alsa" ]
+  then
+    fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j $sf2_1 $sf2_2 &
+  else
+    fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -j $sf2_1 $sf2_2 &
+  fi
 else
   fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
 fi
