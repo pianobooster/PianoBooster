@@ -157,15 +157,6 @@ then
   exit 1
 fi
 
-if [ "$use_jack" = "1" ]
-then
-  echo "$MES8" "$MES9"
-  if [ ! -z "$notify_send" ]
-  then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES8 $MES9"
-  fi
-fi
-
 alsa=`fluidsynth -o help|grep alsa`
 
 if [ "$use_jack" = "0" ] && [ -z "$alsa" ]
@@ -176,6 +167,15 @@ then
     notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES10 $MES11"
   fi
   use_jack="1"
+fi
+
+if [ "$use_jack" = "1" ]
+then
+  echo "$MES8" "$MES9"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES8 $MES9"
+  fi
 fi
 
 if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
