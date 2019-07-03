@@ -86,10 +86,12 @@ If your keyboard has a USB MIDI port, then a standard USB cable to the computer 
 
 If the keyboard as MIDI IN/OUT ports, then the OUTPUT port of keyboard must be connected the INPUT of the USB MIDI adapter. To hear the Piano booster output on the keyboard speakers, the OUTPUT of the USB adapter must be connected to the INPUT port on the keyboard.
 
-## How do I hear the sound on Linux?
+## How do I hear the sound on Linux, BSD Unix?
 
 To hear the sound Piano Booster needs a MIDI sound generator,
 there are two different General Midi sound generators available on Linux, 'fluidsynth' and 'timidity'.
+
+It's recommends to use 'fluidsynth' for BSD Unix.
 
 To install fluidsynth you must install the following packages 'fluidsynth' 'fluid-soundfont-gm' and
 'fluid-soundfont-gs' using your favourite package manager.
@@ -104,11 +106,15 @@ Using JACK:
 
 `fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
 
-*Note:* Path `/usr/share/sounds/sf2` is Debian, Ubuntu, OpenSuse, Slackware, etc. For Alt Linux, Arch Linux, CentOS, Fedora, Mageia, OpenMandriva, ROSA, etc. you must use path `/usr/share/soundfonts` instead.
+BSD Unix does not have ALSA, so you should use JACK:
+
+`fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -j /usr/local/share/sounds/sf2/FluidR3_GM.sf2 /usr/local/share/sounds/sf2/FluidR3_GS.sf2`
+
+*Note:* Path `/usr/share/sounds/sf2` is Debian, Ubuntu, OpenSuse, Slackware, etc. For Alt Linux, Arch Linux, CentOS, Fedora, Mageia, OpenMandriva, ROSA, etc. you must use path `/usr/share/soundfonts` instead. BSD Unix uses `/usr/local/share/sounds/sf2`.
 
 If you have a fast machine then you can leave out the flags  `-C 0 -R 0 -r 22050` which turns off the reverb, chorus and reduce the sample rate.
 
-The flags `-c 6 -z 128` control the latency try `-c 5 -z 128` for less latency
+The flags `-c 6 -z 128` control the latency try `-c 5 -z 128` for less latency,
 but at the risk of audio drop outs.
 
 The flags `-o audio.alsa.device=plughw:0` bypasses the Pulse Audio layer
