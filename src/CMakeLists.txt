@@ -26,6 +26,11 @@ ENDIF(WIN32)
 # set project's name
 PROJECT( pianobooster )
 
+
+cmake_policy(SET CMP0020 NEW)
+cmake_policy(SET CMP0043 NEW)
+
+
 # enable warnings
 add_compile_options(-Wall)
 
