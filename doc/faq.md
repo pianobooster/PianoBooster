@@ -94,7 +94,12 @@ there are two different General Midi sound generators available on Linux, 'fluid
 It's recommends to use 'fluidsynth' for BSD Unix.
 
 To install fluidsynth you must install the following packages 'fluidsynth' 'fluid-soundfont-gm' and
-'fluid-soundfont-gs' using your favourite package manager.
+'fluid-soundfont-gs' using your favourite package manager
+
+or
+
+Arch Linux: 'fluidsynth' 'soundfont-fluid'.
+BSD Unix: 'fluidsynth' 'fluid-soundfont'.
 
 To start the fluidsynth sound generator copy and paste the following command line (one very long command line).
 
