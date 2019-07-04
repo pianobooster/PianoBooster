@@ -212,6 +212,7 @@ ENDIF(WIN32)
 
 qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 
+target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS}  ${JACK_LIBRARY_DIRS})
 target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARY} ${JACK_LIBRARY})
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
