@@ -40,17 +40,17 @@
 <context>
     <name>CGLView</name>
     <message>
-        <location filename="../src/GlView.cpp" line="226"/>
+        <location filename="../src/GlView.cpp" line="237"/>
         <source>Accuracy:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="233"/>
+        <location filename="../src/GlView.cpp" line="244"/>
         <source>Song:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="256"/>
+        <location filename="../src/GlView.cpp" line="267"/>
         <source>Bar:</source>
         <translation type="unfinished"/>
     </message>
@@ -58,17 +58,17 @@
 <context>
     <name>CSettings</name>
     <message>
-        <location filename="../src/Settings.cpp" line="387"/>
+        <location filename="../src/Settings.cpp" line="393"/>
         <source>space</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="536"/>
+        <location filename="../src/Settings.cpp" line="542"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="538"/>
+        <location filename="../src/Settings.cpp" line="544"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
         <translation type="unfinished"/>
     </message>
@@ -1053,52 +1053,57 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="40"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Timing Markers</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="47"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Follow stop point:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="80"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="110"/>
         <source>Show Note Names</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="100"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="44"/>
         <source>Courtesy Accidentals</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="112"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
+        <source>Follow Through Errors</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="142"/>
         <source>Music Course</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="123"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="153"/>
         <source>Show Tutor Help Pages</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="141"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Video Settings</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="152"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
         <source>Video optimisation:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="201"/>
         <source>Language</source>
         <translation>Забон</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="179"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="209"/>
         <source>Language:</source>
         <translation>Забон:</translation>
     </message>
@@ -1231,29 +1236,29 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="57"/>
-        <location filename="../src/GuiSidePanel.cpp" line="250"/>
+        <location filename="../src/GuiSidePanel.cpp" line="82"/>
+        <location filename="../src/GuiSidePanel.cpp" line="278"/>
         <source>Drums</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="58"/>
-        <location filename="../src/GuiSidePanel.cpp" line="251"/>
+        <location filename="../src/GuiSidePanel.cpp" line="83"/>
+        <location filename="../src/GuiSidePanel.cpp" line="279"/>
         <source>Melody</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="71"/>
+        <location filename="../src/GuiSidePanel.cpp" line="96"/>
         <source>Set as Right Hand Part</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="75"/>
+        <location filename="../src/GuiSidePanel.cpp" line="100"/>
         <source>Set as Left Hand Part</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="79"/>
+        <location filename="../src/GuiSidePanel.cpp" line="104"/>
         <source>Reset Both Parts</source>
         <translation type="unfinished"/>
     </message>
@@ -1875,12 +1880,12 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="687"/>
+        <location filename="../src/QtWindow.cpp" line="689"/>
         <source>Open Midi File</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="688"/>
+        <location filename="../src/QtWindow.cpp" line="690"/>
         <source>Midi Files</source>
         <translation type="unfinished"/>
     </message>
