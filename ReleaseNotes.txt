@@ -17,16 +17,18 @@ v0.7.0:
 - Fix USE_FLUIDSYNTH flag
 - Fix incorrect drawing on ARM systems
 - Fix segfault on the next start of program after playing corrupted midi file
-- Fix midi input/output devices detection
+- Fix midi input/output devices detection and reading config file
 - RtMidi: version 4.0.0
 - Fix reading saved position of main window
 - Fix music and translations installation
 - Qmake is alternative for Cmake (Linux, Windows)
 - Fix macOS building
-- Fix file open dialog hang
+- Fix file open dialog hang by disabling timer
 - Add JACK support for tools/fluidsynth
 - Fix BSD Unix building by enabling NO_LANGS
 - Saving skill's settings in config file
+- Fixes for BSD Unix to use fluidsynth+JACK without ALSA
+- Patch for behavior similar to computer touch-typing (gtypist)
 
 v0.6.8: (11 May 2018)
 - French and Galician translations
