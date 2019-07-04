@@ -18,14 +18,6 @@ INSTALL_ALL_LANGS="ON"
 
 TRANSLATIONS = $$files(translations/*.ts)
 
-USE_FLUIDSYNTH {
-# Note The FLUIDSYNTH_INPLACE_DIR dir is used mainly used when compiling on windows
-# You normally do not need to set it
-#FLUIDSYNTH_INPLACE_DIR = ../../fluidsynth-1.0.9
-message(building using fluidsynth)
-DEFINES += PB_USE_FLUIDSYNTH
-}
-
 CONFIG(debug, debug|release): DEFINES += IS_DEBUG
 
 HEADERS   = src/QtWindow.h \
@@ -120,16 +112,21 @@ unix {
   LIBS += -lasound -lpthread -lGL
 }
 
-USE_FLUIDSYNTH {
+contains (USE_FLUIDSYNTH, ON) {
+    message("building using fluidsynth")
+    DEFINES += PB_USE_FLUIDSYNTH
+
     SOURCES   += src/MidiDeviceFluidSynth.cpp
     !isEmpty(FLUIDSYNTH_INPLACE_DIR) {
-    !exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
-       error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
-    }
-    message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
-      INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
-      win32:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a
-      unix:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a
+	!exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
+    	    error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
+	}
+	message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
+        INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
+        win32:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a
+        unix:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a
+    }else{
+	PKGCONFIG += fluidsynth
     }
 }
 
