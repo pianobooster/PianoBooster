@@ -256,12 +256,12 @@ ENDIF (WIN32)
 
 if(USE_FONT)
     INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
-endif()
+endif(USE_FONT)
 
 if(NOT USE_SYSTEM_FONT)
     INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION share/games/pianobooster/fonts)
-endif()
+endif(NOT USE_SYSTEM_FONT)
 
 if (NOT NO_LANGS)
     ADD_SUBDIRECTORY(../translations ../build/translations)
-endif(NO_LANGS)
+endif(NOT NO_LANGS)
