@@ -52,10 +52,12 @@ public:
     bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
 
     bool isTutorPagesEnabled() { return m_tutorPagesEnabled; }
+    bool isFollowThroughErrorsEnabled() { return m_followThroughErrorsEnabled; }
 
     /// Saves in the .ini file whether the user wants to show the note names
     void setNoteNamesEnabled(bool value);
     void setTutorPagesEnabled(bool value);
+    void setFollowThroughErrorsEnabled(bool value);
 
     void setCourtesyAccidentals(bool value);
     void setAdvancedMode(bool value) { m_advancedMode = value;}
@@ -63,6 +65,11 @@ public:
     /// returns true if the users wants to see the note names
     bool showNoteNames(){
         return m_noteNamesEnabled;
+    }
+
+    /// returns true if the user wants Follow Skill to ignore errors
+    bool followThroughErrors(){
+        return m_followThroughErrorsEnabled;
     }
 
     void updateTutorPage();
@@ -144,6 +151,7 @@ private:
     bool m_noteNamesEnabled;
     bool m_tutorPagesEnabled;
     bool m_advancedMode;
+    bool m_followThroughErrorsEnabled;
     QString m_bookPath;
     QString m_currentBookName;
     QString m_currentSongName;

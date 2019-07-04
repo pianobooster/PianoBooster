@@ -744,6 +744,64 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
                 m_piano->addPianistNote(hand, inputNote, false);
                 m_rating.wrongNotes(1);
+
+                if (m_settings->followThroughErrors() && m_playMode == PB_PLAY_MODE_followYou) // If the setting is checked, errors cause following too
+                  {
+                    if (m_chordDeltaTime <= -m_cfg_playZoneEarly) // We're hitting bad notes, but earlier than the zone (so ignore them)
+                      {
+                    m_piano->clear();
+                    m_savedNoteQueue->clear();
+                    m_savedNoteOffQueue->clear();
+                      }
+                    else // Hitting bad notes within the zone (so register them)
+                      {
+                    // Register the wrong note in the ratings calculation (if not as missed notes, I don't believe it's factored in)
+                    missedNotesColour(Cfg::pianoBadColour());
+                    m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
+                    setEventBits(EVENT_BITS_forceRatingRedraw);
+                    fetchNextChord(); // Skip through the wrong note and continue to the next
+
+                    // Was the next note the one keyed by accident (dyslexia)?  If so, validate it instead and continue as usual.
+                    if (m_wantedChord.searchChord(inputNote.note(), m_transpose)) // replaces validatePianistNote ignoring out-of-zone
+                      {
+                        m_goodPlayedNotes.addNote(hand, inputNote.note());
+                        m_piano->addPianistNote(hand, inputNote,true);
+                        int pianistTiming;
+                        if  ( ( cfg_timingMarkersFlag && m_followSkillAdvanced ) || m_playMode == PB_PLAY_MODE_rhythmTapping )
+                          pianistTiming = m_pianistTiming;
+                        else
+                          pianistTiming = NOT_USED;
+                        m_scoreWin->setPlayedNoteColour(inputNote.note(),
+                                    (!m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
+                            m_chordDeltaTime, pianistTiming);
+
+                        if (validatePianistChord() == true)
+                          {
+                        if (m_chordDeltaTime < 0)
+                          m_tempo.removePlayingTicks(-m_chordDeltaTime);
+
+                        m_goodPlayedNotes.clear();
+                        fetchNextChord();
+                        // count the good notes so that the live percentage looks OK
+                        m_rating.totalNotes(m_wantedChord.length());
+                        m_rating.calculateAccuracy();
+                        m_settings->pianistActive();
+                        if (m_rating.isAccuracyGood() || m_playMode == PB_PLAY_MODE_playAlong)
+                          setFollowSkillAdvanced(true); // change the skill level only when they are good enough
+                        else
+                          setFollowSkillAdvanced(false);
+                        setEventBits( EVENT_BITS_forceRatingRedraw);
+                          }
+                      }
+
+                    // Clear & ignore any further slips until in range of the next note's zone
+                    m_piano->clear();
+                    m_savedNoteQueue->clear();
+                    m_savedNoteOffQueue->clear();
+
+                      }
+                  }
+
             }
             else
                 m_piano->addPianistNote(hand, inputNote, true);

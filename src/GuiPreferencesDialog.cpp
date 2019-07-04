@@ -151,6 +151,7 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
     courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
     showTutorPagesCheck->setChecked(m_settings->isTutorPagesEnabled());
+    followThroughErrorsCheck->setChecked(m_settings->isFollowThroughErrorsEnabled());
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
 
     initLanguageCombo();
@@ -165,6 +166,7 @@ void GuiPreferencesDialog::accept()
     m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
     m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
     m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());
+    m_settings->setFollowThroughErrorsEnabled( followThroughErrorsCheck->isChecked());
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
     m_song->refreshScroll();
