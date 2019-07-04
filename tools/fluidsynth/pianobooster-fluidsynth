@@ -14,7 +14,7 @@ MES3="Error: SoundFont FluidR3_GM.sf2 was not found!"
 MES4="Error: SoundFont FluidR3_GS.sf2 was not found!"
 MES5="Please try again!"
 MES6="Error: fluidsynth was not found or broken!"
-MES7="Error: /usr/bin/jackd was not found!"
+MES7="Error: jackd was not found!"
 MES8="Starting fluidsynth..."
 MES9="Please wait 10 more seconds!"
 MES10="Fluidsynth does not have ALSA support!"
@@ -35,7 +35,7 @@ case $lang in
           MES4="Ошибка: Звуковой шрифт FluidR3_GS.sf2 не был найден!"
           MES5="Пожалуйста, попытайтесь снова!"
           MES6="Ошибка: fluidsynth не был найден, или он неработоспособен!"
-          MES7="Ошибка: /usr/bin/jackd не был найден!"
+          MES7="Ошибка: jackd не был найден!"
           MES8="Запускается fluidsynth..."
           MES9="Пожалуйста, ожидайте около 10 секунд!"
           MES10="Fluidsynth не имеет поддержки ALSA!"
@@ -48,7 +48,7 @@ case $lang in
           MES4="Fehler: SoundFont FluidR3_GS.sf2 wurde nicht gefunden!"
           MES5="Bitte erneut versuchen!"
           MES6="Fehler: Fluidsynth wurde nicht gefunden oder ist beschädigt!"
-          MES7="Fehler: /usr/bin/jackd wurde nicht gefunden!"
+          MES7="Fehler: jackd wurde nicht gefunden!"
           MES8="Fluidsynth wird gestartet..."
           MES9="Bitte noch 10 Sekunden warten!"
           ;;
@@ -169,15 +169,6 @@ then
   use_jack="1"
 fi
 
-if [ "$use_jack" = "1" ]
-then
-  echo "$MES8" "$MES9"
-  if [ ! -z "$notify_send" ]
-  then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES8 $MES9"
-  fi
-fi
-
 if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
 then
   if [ ! -f "/usr/local/bin/jackd" ]
@@ -188,6 +179,15 @@ then
       notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES7"
     fi
     exit 1
+  fi
+fi
+
+if [ "$use_jack" = "1" ]
+then
+  echo "$MES8" "$MES9"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES8 $MES9"
   fi
 fi
 
