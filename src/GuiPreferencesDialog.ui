@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>339</width>
-    <height>368</height>
+    <height>386</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -25,30 +25,40 @@
      <property name="title">
       <string>Score Settings</string>
      </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="2" column="0">
-         <widget class="QCheckBox" name="timingMarkersCheck">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Timing Markers</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
+        <item row="4" column="0">
          <widget class="QLabel" name="label">
           <property name="text">
            <string>Follow stop point:</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1">
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="courtesyAccidentalsCheck">
+          <property name="text">
+           <string>Courtesy Accidentals</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="1">
          <widget class="QComboBox" name="followStopPointCombo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -61,23 +71,10 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0">
-         <widget class="QCheckBox" name="showNoteNamesCheck">
+        <item row="3" column="0">
+         <widget class="QCheckBox" name="followThroughErrorsCheck">
           <property name="text">
-           <string>Show Note Names</string>
+           <string>Follow Through Errors</string>
           </property>
          </widget>
         </item>
@@ -94,10 +91,43 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="0">
-         <widget class="QCheckBox" name="courtesyAccidentalsCheck">
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="timingMarkersCheck">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Courtesy Accidentals</string>
+           <string>Timing Markers</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="showNoteNamesCheck">
+          <property name="text">
+           <string>Show Note Names</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <widget class="QCheckBox" name="checkBoxAAAA">
+          <property name="text">
+           <string>CheckBox</string>
           </property>
          </widget>
         </item>
@@ -209,8 +239,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>257</x>
+     <y>385</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -225,8 +255,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>325</x>
+     <y>385</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

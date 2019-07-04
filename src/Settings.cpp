@@ -68,6 +68,7 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_noteNamesEnabled = value("Score/NoteNames", true ).toBool();
     m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
+    m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", true ).toBool();
 }
 
 void CSettings::setDefaultValue(const QString & key, const QVariant & value )
@@ -102,6 +103,11 @@ void CSettings::setTutorPagesEnabled(bool value) {
 void CSettings::setCourtesyAccidentals(bool value) {
     CNotation::setCourtesyAccidentals(value);
     setValue("Score/CourtesyAccidentals", value );
+}
+
+void CSettings::setFollowThroughErrorsEnabled(bool value) {
+    m_followThroughErrorsEnabled = value;
+    setValue("Score/FollowThroughErrors", value );
 }
 
 // Open a document if it exists or else create it (also delete an duplicates

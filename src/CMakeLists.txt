@@ -26,6 +26,11 @@ ENDIF(WIN32)
 # set project's name
 PROJECT( pianobooster )
 
+
+cmake_policy(SET CMP0020 NEW)
+cmake_policy(SET CMP0043 NEW)
+
+
 # enable warnings
 add_compile_options(-Wall)
 
@@ -212,6 +217,7 @@ ENDIF(WIN32)
 
 qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 
+target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS}  ${JACK_LIBRARY_DIRS})
 target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARY} ${JACK_LIBRARY})
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
@@ -255,12 +261,12 @@ ENDIF (WIN32)
 
 if(USE_FONT)
     INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
-endif()
+endif(USE_FONT)
 
 if(NOT USE_SYSTEM_FONT)
     INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION share/games/pianobooster/fonts)
-endif()
+endif(NOT USE_SYSTEM_FONT)
 
 if (NOT NO_LANGS)
     ADD_SUBDIRECTORY(../translations ../build/translations)
-endif(NO_LANGS)
+endif(NOT NO_LANGS)
