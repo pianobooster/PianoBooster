@@ -6,6 +6,10 @@ Then type:
 
 `cmake .`
 
+or
+
+`cmake . -DCMAKE_INSTALL_PREFIX="/usr"`
+
 `make`
 
 Finally as root type:
@@ -43,8 +47,6 @@ debug or release etc.) and compile.
 
 To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
 
-It's recommends to build with disabled USE_FTGL.
-
 # BSD Unix
 
 It's recommends to build with enabled NO_LANGS.
@@ -63,8 +65,6 @@ Once this is completed type:
 `make`
 
 Or alternatively you can install QtCreator and then open the pianobooster.pro.
-
-It's recommends to build with disabled USE_FTGL to fix notes drawing.
 
 # Build options
 
