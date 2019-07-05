@@ -293,7 +293,7 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
           break;
        }
       QString note = n[item.pianoNote-1] + accident;
-      renderText(x, y, note.toLocal8Bit().data());
+      renderText(x, y, note.toUtf8().data());
      }
 #endif
 }
