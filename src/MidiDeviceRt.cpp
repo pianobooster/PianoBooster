@@ -31,8 +31,23 @@
 
 CMidiDeviceRt::CMidiDeviceRt()
 {
-    m_midiout = new RtMidiOut();
-    m_midiin = new RtMidiIn();
+    try {
+	m_midiout = new RtMidiOut();
+    }
+    catch(RtMidiError &error){
+	error.printMessage();
+	exit(1);
+    }
+
+    try {
+	m_midiin = new RtMidiIn();
+    }
+    catch(RtMidiError &error){
+	error.printMessage();
+	exit(1);
+    }
+
+
     m_midiPorts[0] = -1;
     m_midiPorts[1] = -1;
     m_rawDataIndex = 0;
