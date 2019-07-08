@@ -68,7 +68,7 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_noteNamesEnabled = value("Score/NoteNames", true ).toBool();
     m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
-    m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", true ).toBool();
+    m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", false ).toBool();
 }
 
 void CSettings::setDefaultValue(const QString & key, const QVariant & value )
