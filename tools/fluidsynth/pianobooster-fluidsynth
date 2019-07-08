@@ -79,7 +79,15 @@ case $lang in
           MES5="Моля, опитайте отново!"
           ;;
      pl)
+          MES1="Błąd: SoundFonts FluidR3_GM.sf2 i FluidR3_GS.sf2 nie zostały znalezione!"
+          MES2="Błąd: fluidsynth nie został uruchomiony!"
+          MES3="Błąd: Nie znaleziono SoundFont FluidR3_GM.sf2!"
+          MES4="Błąd: Nie znaleziono SoundFont FluidR3_GS.sf2!"
           MES5="Spróbuj ponownie!"
+          MES6="Błąd: fluidsynth nie został znaleziony lub jest uszkodzony!"
+          MES7="Błąd: jackd nie został znaleziony!"
+          MES9="Poczekaj jeszcze 10 sekund!"
+          MES10="Fluidsynth nie ma wsparcia ALSA!"
           ;;
 esac
 
