@@ -384,7 +384,7 @@ void CSettings::writeSettings()
 
 void CSettings::loadSettings()
 {
-    unzipBootserMusicBooks();
+    unzipBoosterMusicBooks();
     // Set default values
     setValue("PianoBooster/Version", PB_VERSION);
     setDefaultValue("ShortCuts/LeftHand", "F2");
@@ -407,7 +407,7 @@ void CSettings::loadSettings()
 
 }
 
-void CSettings::unzipBootserMusicBooks()
+void CSettings::unzipBoosterMusicBooks()
 {
     // Set default value
     const QString ZIPFILENAME("BoosterMusicBooks.zip");

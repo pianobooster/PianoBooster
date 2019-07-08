@@ -83,7 +83,7 @@ public:
     QStringList getSongList();
     void writeSettings();
     void loadSettings();
-    void unzipBootserMusicBooks();
+    void unzipBoosterMusicBooks();
     QString getCurrentSongLongFileName()
     {
         if (getCurrentSongName().isEmpty())
