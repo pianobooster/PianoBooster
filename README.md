@@ -127,6 +127,8 @@ You need to translate:
 
 [Script](tools/fluidsynth/pianobooster-fluidsynth)
 
+[Script](tools/fluidsynth/pianobooster-timidity)
+
 LICENSE
 =======
 
