@@ -425,7 +425,7 @@ void CSettings::unzipBoosterMusicBooks()
 
         if (!QFile::exists(resourceDir + ZIPFILENAME))
         {
-#ifdef Q_OS_LINUX
+#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
             resourceDir = QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/music/";
 #endif
 #ifdef Q_OS_DARWIN

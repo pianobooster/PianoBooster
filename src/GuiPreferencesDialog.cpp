@@ -54,7 +54,7 @@ void GuiPreferencesDialog::initLanguageCombo(){
  #ifdef Q_OS_WIN32
         QApplication::applicationDirPath() + "/translations/";
  #endif
- #ifdef Q_OS_LINUX
+ #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
         QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/translations/";
  #endif
  #ifdef Q_OS_DARWIN

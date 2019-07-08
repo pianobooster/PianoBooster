@@ -133,7 +133,7 @@ QtWindow::QtWindow()
     m_song->setLatencyFix(m_settings->value("Midi/Latency", 0).toInt());
 
 
-#ifdef Q_OS_LINUX
+#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
     m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
 #else
     m_glWidget->m_cfg_openGlOptimise = 1; //  1 is full GlOptimise
@@ -781,7 +781,7 @@ void QtWindow::refreshTranslate(){
  #ifdef Q_OS_WIN32
         QApplication::applicationDirPath() + "/translations/";
  #endif
- #ifdef Q_OS_LINUX
+ #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
         QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/translations/";
  #endif
  #ifdef Q_OS_DARWIN
