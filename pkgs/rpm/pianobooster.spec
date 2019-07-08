@@ -122,6 +122,12 @@ Requires:       timidity
 %if 0%{?fedora}
 Requires:       timidity++
 %endif
+%if 0%{?mageia} || 0%{?fedora}
+Requires:       libnotify
+%endif
+%if 0%{?suse_version}
+Requires:       libnotify-tools
+%endif
 
 %description    timidity
 This package contains a wrapper script to launch PianoBooster together with
