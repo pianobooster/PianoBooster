@@ -41,6 +41,19 @@ case $lang in
           MES10="Fluidsynth не имеет поддержки ALSA!"
           MES11="Переключение на использование JACK..."
           ;;
+     fi)
+          MES1="Virhe: FluidR3_GM.sf2 ja FluidR3_GS.sf2 ei löytynyt!"
+          MES2="Virhe: fluidsynth ei toimi!"
+          MES3="Virhe: FluidR3_GM.sf2 ei löytynyt!"
+          MES4="Virhe: FluidR3_GS.sf2 ei löytynyt!"
+          MES5="Yritä uudelleen!"
+          MES6="Virhe: fluidsynth ei löytynyt tai rikki!"
+          MES7="Virhe: jakkia ei löytynyt!"
+          MES8="Alkaa fluidsynth..."
+          MES9="Odota 10 sekuntia!"
+          MES10="Fluidsynthillä ei ole ALSA-tukea!"
+          MES11="Kytketään käyttäen JAKKI..."
+          ;;
      de)
           MES1="Fehler: SoundFonts FluidR3_GM.sf2 und FluidR3_GS.sf2 wurden nicht gefunden!"
           MES2="Fehler: Fluidsynth wurde nicht ausgeführt!"
@@ -58,6 +71,12 @@ case $lang in
           MES3="Помилка: не знайдено звукового шрифту FluidR3_GM.sf2!"
           MES4="Помилка: не знайдено звукового шрифту FluidR3_GS.sf2!"
           MES5="Будь ласка, повторіть спробу!"
+          MES6="Помилка: fluidsynth не знайдено або дані програми пошкоджено!"
+          MES7="Помилка: jackd не знайдено!"
+          MES8="Запускаємо fluidsynth..."
+          MES9="Будь ласка, зачекайте ще 10 секунд!"
+          MES10="У Fluidsynth не передбачено підтримки ALSA!"
+          MES11="Перемикаємося на використання JACK..."
           ;;
      cs)
           MES1="Chyba: Zvukové banky FluidR3_GM.sf2 a FluidR3_GS.sf2 nebyly nalezeny!"

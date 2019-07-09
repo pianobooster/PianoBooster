@@ -1006,13 +1006,13 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation type="unfinished"/>
+        <translation>Nie wybrano urządzenia wyjściowego dźwięku; Wybierz urządzenie wyjściowe Midi</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="93"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
         <source>The use of Midi Through is not recommended!</source>
-        <translation type="unfinished"/>
+        <translation>Korzystanie z Midi Through nie jest zalecane!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
@@ -1027,12 +1027,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
-        <translation type="unfinished"/>
+        <translation>Uwaga: Syntezator Microsoft GS Wavetable wprowadza niepożądane opóźnienie!.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation type="unfinished"/>
+        <translation>(Spróbuj ustalić opóźnienie 150 msc)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="223"/>
@@ -1080,12 +1080,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="142"/>
         <source>Music Course</source>
-        <translation type="unfinished"/>
+        <translation>Kurs muzyczny</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="153"/>
         <source>Show Tutor Help Pages</source>
-        <translation type="unfinished"/>
+        <translation>Pokaż strony pomocy nauczyciela</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
@@ -1095,7 +1095,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
         <source>Video optimisation:</source>
-        <translation type="unfinished"/>
+        <translation>Optymalizacja wideo:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="201"/>
@@ -1305,7 +1305,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation type="unfinished"/>
+        <translation>Kanały lewej i prawej ręki muszą być niedostępne, aby wyłączyć tę funkcję</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>

@@ -6,6 +6,8 @@
 # License: same with Pianobooster
 # Author: Alexey Loginov <alexl@mageia.org>
 
+use_jack="0"
+
 MES1="Error: timidity was not found or broken!"
 MES2="Error: timidity does not have -OO or -Os options!"
 MES3="Error: timidity does not have -iA option!"
@@ -22,6 +24,21 @@ case $lang in
           MES1="Ошибка: timidity не был найден, или он неработоспособен!"
           MES2="Ошибка: timidity не имеет опций -OO или -Os!"
           MES3="Ошибка: timidity не имеет опции -iA!"
+          ;;
+     gl)
+          MES1="Erro: Non se atopou Timidity ou está quebrado"
+          MES2="Erro: Timidity non ten as opcións -OO ou -Os"
+          MES3="Error: Timidity non ten a opción -iA"
+          ;;
+     pl)
+          MES1="Błąd: timidity nie został znaleziony lub jest uszkodzony!"
+          MES2="Błąd: timidity nie posiada opcji -OO lub -Os "
+          MES3="Błąd: timidity nie posiada opcji -iA "
+          ;;
+     uk)
+          MES1="Помилка: timidity не знайдено або дані програми пошкоджено!"
+          MES2="Помилка: у timidity немає параметрів -OO або -Os!"
+          MES3="Помилка: у timidity немає параметра -iA!"
           ;;
 esac
 
@@ -44,31 +61,36 @@ then
    exit 1
 fi
 
-if [ ! -z "`timidity -help|grep '\-iA'`" ]
+if [ "$use_jack" = "0" ]
 then
-  if [ ! -z "`timidity -help|grep '\-OO'`" ]
+  if [ ! -z "`timidity -help|grep '\-iA'`" ]
   then
-    timidity -iA -OO &
-  else
-    if [ ! -z "`timidity -help|grep '\-Os'`" ]
+    if [ ! -z "`timidity -help|grep '\-OO'`" ]
     then
-      timidity -iA -Os &
+      timidity -iA -OO &
     else
-      echo "$MES2"
-      if [ ! -z "$notify_send" ]
+      if [ ! -z "`timidity -help|grep '\-Os'`" ]
       then
-        notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES2"
+        timidity -iA -Os &
+      else
+        echo "$MES2"
+        if [ ! -z "$notify_send" ]
+        then
+          notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES2"
+        fi
+        exit 1
       fi
-      exit 1
     fi
+  else
+    echo "$MES3"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES3"
+    fi
+    exit 1
   fi
 else
-  echo "$MES3"
-  if [ ! -z "$notify_send" ]
-  then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES3"
-  fi
-  exit 1
+  exit 0
 fi
 
 PID=$!

@@ -1075,7 +1075,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"/>
+        <translation>Пройтися помилками</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="142"/>
@@ -1485,12 +1485,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Не вдалося відкрити «%1»</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"/>
+        <translation>Файл MIDI «%1» пошкоджено</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="40"/>
@@ -1543,17 +1543,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="244"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Не вдалося відкрити «%1»</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="252"/>
         <source>&quot;%1&quot; is not a Midi File</source>
-        <translation type="unfinished"/>
+        <translation>«%1» не є файлом MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="276"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
-        <translation type="unfinished"/>
+        <translation>«%1» не є коректним файлом MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="352"/>
