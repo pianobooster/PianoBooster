@@ -97,6 +97,11 @@ contains(NO_LANGS, ON){
     DEFINES += NO_LANGS
 }
 
+isEmpty(DATA_DIR){
+    DATA_DIR=share/games/pianobooster
+}
+message("DATA_DIR: " $$DATA_DIR)
+DEFINES += DATA_DIR="\\\""$$DATA_DIR"\\\""
 
 RC_FILE = src/pianobooster.rc
 
@@ -152,10 +157,10 @@ win32 {
   system($$[QT_INSTALL_BINS]\\lrelease.exe $${_PRO_FILE_})
 }
 
+isEmpty( PREFIX ) { PREFIX = /usr }
+DEFINES += PREFIX="\\\""$$PREFIX"\\\""
+
 unix {
-
-   isEmpty( PREFIX ) { PREFIX = /usr }
-
    target.path = $$PREFIX/bin
 
    contains(NO_DOCS, OFF){
@@ -203,14 +208,14 @@ unix {
 
    !contains(USE_SYSTEM_FONT, ON){
       message(building using system font)
-      font.path = $$PREFIX/share/games/pianobooster/fonts
+      font.path = $$PREFIX/$$DATA_DIR/fonts
       font.files = src/fonts/DejaVuSans.ttf
       INSTALLS += font
    }
 
    !isEmpty(USE_FONT){
       message(building with specified font)
-      myfont.path = $$PREFIX/share/games/pianobooster/fonts
+      myfont.path = $$PREFIX/$$DATA_DIR/fonts
       myfont.files = $$USE_FONT
       INSTALLS += myfont
       DEFINES += USE_FONT=$$USE_FONT
@@ -223,13 +228,13 @@ unix {
 	   updateqm.CONFIG += no_link target_predeps
 	   QMAKE_EXTRA_COMPILERS += updateqm
 	
-	   data_langs.path = $$PREFIX/share/games/pianobooster/translations
+           data_langs.path = $$PREFIX/$$DATA_DIR/translations
 	   data_langs.files = translations/*.qm translations/langs.json
 	   INSTALLS += data_langs
 	
-	   data_langs_fix.path = $$PREFIX/share/games/pianobooster/translations/
-	   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/music_blank.qm \
-	       ${INSTALL_ROOT}$$PREFIX/share/games/pianobooster/translations/pianobooster_blank.qm
+           data_langs_fix.path = $$PREFIX/$$DATA_DIR/translations/
+           data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/music_blank.qm \
+               ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/pianobooster_blank.qm
 	   INSTALLS += data_langs_fix
    }
 
@@ -245,7 +250,7 @@ unix {
    icon64.path = $$PREFIX/share/icons/hicolor/64x64/apps
    icon64.files = icons/hicolor/64x64/pianobooster.png
 
-   music.path = $$PREFIX/share/games/pianobooster/music
+   music.path = $$PREFIX/$$DATA_DIR/music
    music.files = music/BoosterMusicBooks.zip
 
    INSTALLS += target desktop icon32 icon48 icon64 music

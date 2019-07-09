@@ -433,6 +433,11 @@ void CSettings::unzipBoosterMusicBooks()
 #endif
         }
 
+        QFile fileTestResourceDir(resourceDir);
+        if (!fileTestResourceDir.exists()){
+            resourceDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/music/";
+        }
+
         ppLogInfo(qPrintable("applicationDirPath=" + QApplication::applicationDirPath()));
         ppLogTrace("resourceDir3 %s", qPrintable(resourceDir));
 
