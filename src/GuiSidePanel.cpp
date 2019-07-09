@@ -47,6 +47,7 @@ GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
 
 }
 
+
 void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar)
 {
     m_song = songObj;
@@ -86,6 +87,9 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     on_rhythmTappingCombo_activated(m_settings->value("SidePanel/rhythmTapping",0).toInt());
     rhythmTappingCombo->setCurrentIndex(m_song->cfg_rhythmTapping);
 
+
+    repeatSong->setChecked(m_settings->value("SidePanel/repeatSong",false).toBool());
+    connect(repeatSong,SIGNAL(stateChanged(int)),this,SLOT(on_repeatSong_released()));
 
     boostSlider->setMinimum(-100);
     boostSlider->setMaximum(100);
@@ -186,6 +190,11 @@ void GuiSidePanel::on_leftHandRadio_toggled (bool checked)
 {
     if (checked)
         m_settings->setActiveHand(PB_PART_left);
+}
+
+void GuiSidePanel::on_repeatSong_released(){
+    m_settings->setValue("SidePanel/repeatSong",repeatSong->isChecked());
+
 }
 
 void GuiSidePanel::autoSetMuteYourPart()
