@@ -90,4 +90,6 @@ Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
 **USE_FONT**: build with specified font; null by default.
 
+**DATA_DIR**: build with specified data directory; "share/games/pianobooster" is default.
+
 **NO_LANGS**: do not install languages; disabled by default.
