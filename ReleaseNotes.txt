@@ -4,7 +4,6 @@ v0.7.0:
 - Music courses added
 - New logo
 - Use FTGL library to draw fonts in GL context
-- Translate notes
 - Fix Qt strings localization
 - New options: INSTALL_ALL_LANGS, USE_SYSTEM_FONT, NO_DOCS, USE_SYSTEM_RTMIDI,
   WITH_MAN, WITH_TIMIDITY, WITH_FLUIDSYNTH, USE_FTGL, NO_LANGS, NO_LICENSE
@@ -28,7 +27,8 @@ v0.7.0:
 - Fix BSD Unix building by enabling NO_LANGS
 - Saving skill's settings in config file
 - Fixes for BSD Unix to use fluidsynth+JACK without ALSA
-- Patch for behavior similar to computer touch-typing (gtypist)
+- Patch for behavior similar to computer touch-typing (gtypist): "Follow Through
+  Errors" mode
 
 v0.6.8: (11 May 2018)
 - French and Galician translations

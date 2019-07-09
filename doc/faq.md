@@ -117,6 +117,8 @@ BSD Unix does not have ALSA, so you should use JACK:
 
 *Note:* Path `/usr/share/sounds/sf2` is Debian, Ubuntu, OpenSuse, Slackware, etc. For Alt Linux, Arch Linux, CentOS, Fedora, Mageia, OpenMandriva, ROSA, etc. you must use path `/usr/share/soundfonts` instead. BSD Unix uses `/usr/local/share/sounds/sf2`.
 
+*Note:* JACK in BSD Unix cannot be started realtime by user, but it starts realtime by default, user does not have permissions. Disabling realtime helps. How to disable realtime or allow user to use realtime please ask your favorite BSD Unix forum.
+
 If you have a fast machine then you can leave out the flags  `-C 0 -R 0 -r 22050` which turns off the reverb, chorus and reduce the sample rate.
 
 The flags `-c 6 -z 128` control the latency try `-c 5 -z 128` for less latency,
