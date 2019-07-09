@@ -61,6 +61,11 @@ void GuiPreferencesDialog::initLanguageCombo(){
         QApplication::applicationDirPath() + "/../Resources/translations/";
  #endif
 
+    QFile fileTestLocale(localeDirectory);
+    if (!fileTestLocale.exists()){
+        localeDirectory=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+    }
+
     // read langs.json
     QJsonObject rootLangs;
     QFile file;

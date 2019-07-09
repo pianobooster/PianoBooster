@@ -42,6 +42,15 @@ if(USE_FONT)
     add_compile_options("-DUSE_FONT=\"${USE_FONT}\"")
 endif(USE_FONT)
 
+add_compile_options("-DPREFIX=\"${CMAKE_INSTALL_PREFIX}\"")
+
+if (${DATA_DIR} EQUAL "")
+	set(DATA_DIR "share/games/pianobooster")
+endif(${DATA_DIR} EQUAL "")
+add_compile_options("-DDATA_DIR=\"${DATA_DIR}\"")
+
+
+
 FIND_PACKAGE( OpenGL REQUIRED )
 
 include(FindPkgConfig)
@@ -257,7 +266,7 @@ INSTALL ( FILES ../icons/hicolor/48x48/pianobooster.png DESTINATION share/icons/
 INSTALL ( FILES ../icons/hicolor/64x64/pianobooster.png DESTINATION share/icons/hicolor/64x64/apps )
 
 IF (UNIX AND NOT APPLE)
-    INSTALL ( FILES ../music/BoosterMusicBooks.zip DESTINATION share/games/pianobooster/music )
+    INSTALL ( FILES ../music/BoosterMusicBooks.zip DESTINATION ${DATA_DIR}/music )
 ENDIF (UNIX AND NOT APPLE)
 
 IF (WIN32)
@@ -265,11 +274,11 @@ IF (WIN32)
 ENDIF (WIN32)
 
 if(USE_FONT)
-    INSTALL ( FILES ${USE_FONT} DESTINATION share/games/pianobooster/fonts)
+    INSTALL ( FILES ${USE_FONT} DESTINATION ${DATA_DIR}/fonts)
 endif(USE_FONT)
 
 if(NOT USE_SYSTEM_FONT)
-    INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION share/games/pianobooster/fonts)
+    INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION ${DATA_DIR}/fonts)
 endif(NOT USE_SYSTEM_FONT)
 
 if (NOT NO_LANGS)

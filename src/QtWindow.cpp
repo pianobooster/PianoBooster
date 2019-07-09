@@ -788,6 +788,11 @@ void QtWindow::refreshTranslate(){
         QApplication::applicationDirPath() + "/../Resources/translations/";
  #endif
 
+    QFile fileTestLocale(localeDirectory);
+    if (!fileTestLocale.exists()){
+        localeDirectory=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+    }
+
     QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
 
     qApp->removeTranslator(&translator);

@@ -78,8 +78,8 @@ public:
         QStringList listPathFonts;
         #if defined(USE_FONT)
         listPathFonts.push_back(USE_FONT);
-        #endif
-        listPathFonts.push_back("/usr/share/games/pianobooster/fonts/DejaVuSans.ttf");
+        #endif        
+        listPathFonts.push_back(QString(PREFIX)+"/"+QString(DATA_DIR)+"/fonts/DejaVuSans.ttf");
         listPathFonts.push_back(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
         listPathFonts.push_back("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
         listPathFonts.push_back("/usr/share/fonts/dejavu/DejaVuSans.ttf");
