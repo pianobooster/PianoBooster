@@ -109,7 +109,7 @@ win32 {
 
 unix {
   DEFINES += __LINUX_ALSASEQ__
-  LIBS += -lasound -lpthread -lGL
+  LIBS += -lpthread -lGL
 }
 
 contains (USE_FLUIDSYNTH, ON) {
