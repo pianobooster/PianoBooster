@@ -77,6 +77,7 @@ SOURCES   = src/QtMain.cpp  \
 
 contains(USE_SYSTEM_RTMIDI, ON){
     message(building using system rtmidi)
+    DEFINES+=USE_SYSTEM_RTMIDI
     PKGCONFIG += rtmidi
 }else{
     message(building using bundled rtmidi)
