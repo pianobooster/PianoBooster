@@ -58,6 +58,8 @@ public:
     void setSongIndex(int index){songCombo->setCurrentIndex(index);}
     void setCurrentHand(QString hand);
 
+    bool isRepeatSong(){return repeatSong->isChecked();}
+
     void updateTranslate();
 
     void setActiveHand(whichPart_t hand)
@@ -93,6 +95,7 @@ private slots:
     void on_rightHandRadio_toggled (bool checked);
     void on_bothHandsRadio_toggled (bool checked);
     void on_leftHandRadio_toggled (bool checked);
+    void on_repeatSong_released();
 
     void on_trackListWidget_currentRowChanged(int currentRow) {
         if (m_trackList){

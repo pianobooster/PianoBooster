@@ -62,8 +62,16 @@ public:
 
     void songEventUpdated(int eventBits)
     {
-        if ((eventBits & EVENT_BITS_playingStopped) != 0)
+        if ((eventBits & EVENT_BITS_playingStopped) != 0){
+            if (m_sidePanel->isRepeatSong()){
+                m_topBar->on_playFromStartButton_clicked(true);
+            }else{
+                m_topBar->setPlayButtonState(false, true);
+            }
+        }
+        if ((eventBits & EVENT_BITS_loadSong) != 0){
             m_topBar->setPlayButtonState(false, true);
+        }
     }
 
     void loadTutorHtml(const QString & name);

@@ -44,9 +44,9 @@ endif(USE_FONT)
 
 add_compile_options("-DPREFIX=\"${CMAKE_INSTALL_PREFIX}\"")
 
-if (${DATA_DIR} EQUAL "")
-	set(DATA_DIR "share/games/pianobooster")
-endif(${DATA_DIR} EQUAL "")
+if (NOT DATA_DIR)
+    set(DATA_DIR "share/games/pianobooster")
+endif(NOT DATA_DIR)
 add_compile_options("-DDATA_DIR=\"${DATA_DIR}\"")
 
 

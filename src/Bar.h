@@ -34,11 +34,12 @@
 
 
 // The event bits can be ORed together
-#define EVENT_BITS_playingStopped          0x0001  //set when we reach the end of piece
+#define EVENT_BITS_playingStopped          0x0001 // set when we reach the end of piece
 #define EVENT_BITS_forceFullRedraw         0x0002 // force the whole screen to be redrawn
 #define EVENT_BITS_forceRatingRedraw       0x0004 // force the score to be redrawn
 #define EVENT_BITS_newBarNumber            0x0008 // force the bar number to be redrawn
 #define EVENT_BITS_UptoBarReached          0x0010 // Used for looping when playing between two bars.
+#define EVENT_BITS_loadSong                0x0020 // load song
 
 typedef unsigned long eventBits_t;
 

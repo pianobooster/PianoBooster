@@ -204,6 +204,13 @@
     </layout>
    </item>
    <item>
+    <widget class="QCheckBox" name="repeatSong">
+     <property name="text">
+      <string>Repeat song</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout">
      <item>
       <widget class="QLabel" name="label2">
