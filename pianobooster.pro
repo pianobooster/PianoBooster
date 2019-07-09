@@ -101,7 +101,7 @@ contains(NO_LANGS, ON){
 isEmpty(DATA_DIR){
     DATA_DIR=share/games/pianobooster
 }
-message("DATA_DIR: " $$DATA_DIR)
+message("DATA_DIR:" $$DATA_DIR)
 DEFINES += DATA_DIR="\\\""$$DATA_DIR"\\\""
 
 RC_FILE = src/pianobooster.rc
@@ -159,6 +159,7 @@ win32 {
 }
 
 isEmpty( PREFIX ) { PREFIX = /usr }
+message("PREFIX:" $$PREFIX)
 DEFINES += PREFIX="\\\""$$PREFIX"\\\""
 
 unix {
