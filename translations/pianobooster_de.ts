@@ -63,12 +63,12 @@
         <translation>Leertaste</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="542"/>
+        <location filename="../src/Settings.cpp" line="547"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
         <translation>FEHLER KEIN TON: Im Menu unter Setup/Midi Setup auswählen, um dies zu beheben.</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="544"/>
+        <location filename="../src/Settings.cpp" line="549"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
         <translation>FEHLER KEINE MIDI DATEI: Im Menu unter File/Open eine Datei auswählen.</translation>
     </message>
@@ -1078,32 +1078,32 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="142"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
         <source>Music Course</source>
         <translation>Musikunterricht</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="153"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="159"/>
         <source>Show Tutor Help Pages</source>
         <translation>Tutor Hilfeseiten anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="177"/>
         <source>Video Settings</source>
         <translation>Videoeinstellungen</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="188"/>
         <source>Video optimisation:</source>
         <translation>Videooptimierung:</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="201"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="207"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="209"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="215"/>
         <source>Language:</source>
         <translation>Sprache:</translation>
     </message>
@@ -1201,22 +1201,27 @@
         <translation>Passen Sie die Lautstärke ihres Klaviers an</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="211"/>
+        <location filename="../src/GuiSidePanel.ui" line="209"/>
+        <source>Repeat song</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
         <translation>Rhythmus Tapping mit:</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="223"/>
+        <location filename="../src/GuiSidePanel.ui" line="230"/>
         <source>Parts</source>
         <translation>Abschnitte</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="263"/>
+        <location filename="../src/GuiSidePanel.ui" line="270"/>
         <source>Adjust the volume of the selected part</source>
         <translation>Passen Sie die Lautstärke des ausgewählten Abschnitts an</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="229"/>
+        <location filename="../src/GuiSidePanel.ui" line="236"/>
         <source>Mute the currently selected part</source>
         <translation>Abschnitt stumm schalten</translation>
     </message>
@@ -1231,34 +1236,34 @@
         <translation>Ihnen folgen</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="232"/>
+        <location filename="../src/GuiSidePanel.ui" line="239"/>
         <source>Mute your part when playing</source>
         <translation>Ihren Abschnitt während des Spielens stumm schalten</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="82"/>
-        <location filename="../src/GuiSidePanel.cpp" line="278"/>
+        <location filename="../src/GuiSidePanel.cpp" line="83"/>
+        <location filename="../src/GuiSidePanel.cpp" line="287"/>
         <source>Drums</source>
         <translation>Schlagzeug</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="83"/>
-        <location filename="../src/GuiSidePanel.cpp" line="279"/>
+        <location filename="../src/GuiSidePanel.cpp" line="84"/>
+        <location filename="../src/GuiSidePanel.cpp" line="288"/>
         <source>Melody</source>
         <translation>Melodie</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="96"/>
+        <location filename="../src/GuiSidePanel.cpp" line="100"/>
         <source>Set as Right Hand Part</source>
         <translation>Als Teil für die Rechte Hand festlegen</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="100"/>
+        <location filename="../src/GuiSidePanel.cpp" line="104"/>
         <source>Set as Left Hand Part</source>
         <translation>Als Teil für die linke Hand festlegen</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="104"/>
+        <location filename="../src/GuiSidePanel.cpp" line="108"/>
         <source>Reset Both Parts</source>
         <translation>Beide Teile zurücksetzen</translation>
     </message>

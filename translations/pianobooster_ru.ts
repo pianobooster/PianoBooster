@@ -63,12 +63,12 @@
         <translation>пробел</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="542"/>
+        <location filename="../src/Settings.cpp" line="547"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
         <translation>ОШИБКА НЕТ ЗВУКА: Чтобы исправить это, используйте меню Настройка/Настройка Midi ...</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="544"/>
+        <location filename="../src/Settings.cpp" line="549"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
         <translation>ОШИБКА НЕТ MIDI ФАЙЛА: чтобы исправить это, используйте меню Файл/Открыть ...</translation>
     </message>
@@ -828,7 +828,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
         <source>Repeat End Bar:</source>
-        <translation>Повторить конечный такт:</translation>
+        <translation>Конечный такт повтора:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
@@ -1078,32 +1078,32 @@
         <translation>Следовать через ошибки</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="142"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
         <source>Music Course</source>
         <translation>Курс музыки</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="153"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="159"/>
         <source>Show Tutor Help Pages</source>
         <translation>Показать страницы справки репетитора</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="177"/>
         <source>Video Settings</source>
         <translation>Настройки видео</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="188"/>
         <source>Video optimisation:</source>
         <translation>Оптимизация видео:</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="201"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="207"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="209"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="215"/>
         <source>Language:</source>
         <translation>Язык:</translation>
     </message>
@@ -1201,22 +1201,27 @@
         <translation>Отрегулируйте громкость вашего пианино</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="211"/>
+        <location filename="../src/GuiSidePanel.ui" line="209"/>
+        <source>Repeat song</source>
+        <translation>Повторять песню</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
         <translation>Ритм прослушивания с:</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="223"/>
+        <location filename="../src/GuiSidePanel.ui" line="230"/>
         <source>Parts</source>
         <translation>Партии</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="263"/>
+        <location filename="../src/GuiSidePanel.ui" line="270"/>
         <source>Adjust the volume of the selected part</source>
         <translation>Отрегулируйте громкость выбранной партии</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="229"/>
+        <location filename="../src/GuiSidePanel.ui" line="236"/>
         <source>Mute the currently selected part</source>
         <translation>Приглушить выбранную в данный момент партию</translation>
     </message>
@@ -1231,34 +1236,34 @@
         <translation>Идти за тобой</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="232"/>
+        <location filename="../src/GuiSidePanel.ui" line="239"/>
         <source>Mute your part when playing</source>
         <translation>Приглушить вашу партию при игре</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="82"/>
-        <location filename="../src/GuiSidePanel.cpp" line="278"/>
+        <location filename="../src/GuiSidePanel.cpp" line="83"/>
+        <location filename="../src/GuiSidePanel.cpp" line="287"/>
         <source>Drums</source>
         <translation>Барабаны</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="83"/>
-        <location filename="../src/GuiSidePanel.cpp" line="279"/>
+        <location filename="../src/GuiSidePanel.cpp" line="84"/>
+        <location filename="../src/GuiSidePanel.cpp" line="288"/>
         <source>Melody</source>
         <translation>Мелодия</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="96"/>
+        <location filename="../src/GuiSidePanel.cpp" line="100"/>
         <source>Set as Right Hand Part</source>
         <translation>Установить как партию правой руки</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="100"/>
+        <location filename="../src/GuiSidePanel.cpp" line="104"/>
         <source>Set as Left Hand Part</source>
         <translation>Установить как партию левой руки</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="104"/>
+        <location filename="../src/GuiSidePanel.cpp" line="108"/>
         <source>Reset Both Parts</source>
         <translation>Сбросить обе партии</translation>
     </message>
