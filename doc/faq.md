@@ -220,7 +220,7 @@ so that you can hear what you are playing without a delay.
 Then aim to use the **'Play Along'** mode as much as possible.
 
 To use the **'Follow You'** mode you will need set the latency value (see the next question)
-or alternately use a realtime sound generator with low latency (recommended, For Linux see
+or alternately use a realtime sound generator with low latency (recommended, For Linux, BSD Unix see
 [fluidsynth Low Latency page](https://github.com/FluidSynth/fluidsynth/wiki/LowLatency).
 
 ## What is the latency fix?

@@ -51,8 +51,8 @@ file wherever you wish (/Application folder is suggested).
 
 [pianobooster-mac-0.6.5-alpha1.dmg](https://github.com/chrisballinger/PianoBooster/releases/tag/v0.6.5-alpha1) (not official)
 
-LINUX
-=====
+LINUX and BSD UNIX
+==================
 
 To run Piano Booster you need a MIDI Piano Keyboard and a MIDI interface for the PC. (If you
 don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'x' is
@@ -60,15 +60,15 @@ middle C - but a MIDI piano is recommend).
 
 To hear music from the computer you will need a General Midi compatible sound synthesizer.
 While there are many possible choices for the Linux (Timidity, FluidSynth), the easiest way is
-to use Timidity.
+to use Timidity. Timidity is BSD Unix is not workable, please use FluidSynth.
 
 This must be started before Pianobooster, and also allows to load custom Soundfonts.
 
-Install RPM, DEB, ARCH, etc. package.
+Install RPM, DEB, ARCH, TGZ etc. package.
 
-Packages for Linux are available in repositories of distributions [here](https://pkgs.org/download/pianobooster).
+Packages for Linux and BSD Unix are available in repositories of distributions [here](https://pkgs.org/download/pianobooster).
 
-Packages for Linux are available in OBS repository:
+Packages for Linux (not for BSD Unix) are available in OBS repository:
 
 [pianobooster](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster)
 
@@ -78,7 +78,7 @@ Packages for Linux are available in OBS repository:
 
 *Note:* The packages provided with distributions may not exist or are out of date,
 in which case you will have to compile from the source code.
-However compiling from source is quite easy on Linux.
+However compiling from source is quite easy on Linux and BSD Unix.
 
 MIDI FILES
 ==========
@@ -206,4 +206,4 @@ We are looking for musicians to make music for pianobooster. It can be education
 PLATFORMS
 =========
 
-We support Linux and Windows platforms. We do not have macOS, BSD Unix developers at the moment.
+We support Linux, BSD Unix and Windows platforms. We do not have macOS developers at the moment.

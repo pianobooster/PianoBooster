@@ -26,10 +26,8 @@ ENDIF(WIN32)
 # set project's name
 PROJECT( pianobooster )
 
-
 cmake_policy(SET CMP0020 NEW)
 cmake_policy(SET CMP0043 NEW)
-
 
 # enable warnings
 add_compile_options(-Wall)
@@ -49,9 +47,8 @@ if (NOT DATA_DIR)
 endif(NOT DATA_DIR)
 add_compile_options("-DDATA_DIR=\"${DATA_DIR}\"")
 
-MESSAGE("PREFIX:" ${CMAKE_INSTALL_PREFIX})
-MESSAGE("DATA_DIR:" ${DATA_DIR})
-
+MESSAGE("PREFIX: " ${CMAKE_INSTALL_PREFIX})
+MESSAGE("DATA_DIR: " ${DATA_DIR})
 
 FIND_PACKAGE( OpenGL REQUIRED )
 
@@ -69,7 +66,6 @@ endif(USE_FTGL)
 if (NO_LANGS)
     add_compile_options("-DNO_LANGS")
 endif(NO_LANGS)
-
 
 # Finds Qt5 libraries
 FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )

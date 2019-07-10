@@ -11,7 +11,7 @@ v0.7.0:
 - Add Piano Keyboard widget
 - Update documentation
 - Fix problem loading midi files with text events
-- New Windows installer
+- New localized Windows installer
 - Use hicolor icon theme
 - Fix USE_FLUIDSYNTH flag
 - Fix incorrect drawing on ARM systems
@@ -20,7 +20,7 @@ v0.7.0:
 - RtMidi: version 4.0.0
 - Fix reading saved position of main window
 - Fix music and translations installation
-- Qmake is alternative for Cmake (Linux, Windows)
+- Qmake is alternative for Cmake (Linux, BSD Unix, Windows)
 - Fix macOS building
 - Fix file open dialog hang by disabling timer
 - Add JACK support for tools/fluidsynth
@@ -29,6 +29,7 @@ v0.7.0:
 - Fixes for BSD Unix to use fluidsynth+JACK without ALSA
 - Patch for behavior similar to computer touch-typing (gtypist): "Follow Through
   Errors" mode
+- Add Repeat checkbox to repeat song
 
 v0.6.8: (11 May 2018)
 - French and Galician translations

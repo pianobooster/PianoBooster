@@ -1,4 +1,4 @@
-# Linux
+# Linux and BSD Unix
 
 Ensure that the build required packages are installed. Full list of them you can find [here](pkgs).
 
@@ -30,6 +30,8 @@ See [RPM](pkgs/rpm/pianobooster.spec) for more details.
 
 See [ARCH](pkgs/arch/PKGBUILD) for more details.
 
+See [TGZ](pkgs/slack) for more details.
+
 # macOS
 
 Install latest Xcode (from Apple Developer Connection, free registration required).
@@ -46,10 +48,6 @@ Open the project file in XCode, set whatever options you like (universal or sing
 debug or release etc.) and compile.
 
 To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
-
-# BSD Unix
-
-It's recommends to build with enabled NO_LANGS.
 
 # Windows
 

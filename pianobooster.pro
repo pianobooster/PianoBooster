@@ -230,12 +230,12 @@ unix {
 	   updateqm.CONFIG += no_link target_predeps
 	   QMAKE_EXTRA_COMPILERS += updateqm
 	
-           data_langs.path = $$PREFIX/$$DATA_DIR/translations
+	   data_langs.path = $$PREFIX/$$DATA_DIR/translations
 	   data_langs.files = translations/*.qm translations/langs.json
 	   INSTALLS += data_langs
 	
-           data_langs_fix.path = $$PREFIX/$$DATA_DIR/translations/
-           data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/music_blank.qm \
+	   data_langs_fix.path = $$PREFIX/$$DATA_DIR/translations/
+	   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/music_blank.qm \
                ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/pianobooster_blank.qm
 	   INSTALLS += data_langs_fix
    }
