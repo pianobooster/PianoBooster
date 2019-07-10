@@ -30,9 +30,21 @@
 #include <QApplication>
 #include <QtOpenGL>
 #include "QtWindow.h"
+#include "version.txt"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
+    QCoreApplication::setOrganizationName("PianoBooster");
+    QCoreApplication::setOrganizationDomain("https://github.com/captnfab/PianoBooster");
+    QCoreApplication::setApplicationName("Piano Booster");
+    QCoreApplication::setApplicationVersion(PB_VERSION);
+
+    QStringList argList = QCoreApplication::arguments();
+    for (QString arg:argList){
+        if (arg=="--version"){
+            fprintf(stderr, "pianobooster " PB_VERSION "\n");
+            exit(0);
+        }
+    }
 
     QApplication app(argc, argv);
 
