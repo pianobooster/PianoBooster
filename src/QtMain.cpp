@@ -38,11 +38,14 @@ int main(int argc, char *argv[]){
     QCoreApplication::setApplicationName("Piano Booster");
     QCoreApplication::setApplicationVersion(PB_VERSION);
 
-    QStringList argList = QCoreApplication::arguments();
-    for (QString arg:argList){
-        if (arg=="--version"){
-            fprintf(stderr, "pianobooster " PB_VERSION "\n");
-            exit(0);
+    {
+        QCoreApplication app(argc, argv);
+        QStringList argList = QCoreApplication::arguments();
+        for (QString arg:argList){
+            if (arg=="--version"){
+                fprintf(stderr, "pianobooster " PB_VERSION "\n");
+                exit(0);
+            }
         }
     }
 
