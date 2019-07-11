@@ -25,6 +25,11 @@ case $lang in
           MES2="Ошибка: timidity не имеет опций -OO или -Os!"
           MES3="Ошибка: timidity не имеет опции -iA!"
           ;;
+     fr)
+          MES1="Erreur : timidity n'a pas été trouvé ou est cassé !"
+          MES2="Erreur : timidity n'a pas les options -OO ou -Os !"
+          MES3="Erreur : timidity n'a pas l'option -iA !"
+          ;;
      gl)
           MES1="Erro: Non se atopou Timidity ou está quebrado"
           MES2="Erro: Timidity non ten as opcións -OO ou -Os"
