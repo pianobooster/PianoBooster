@@ -69,6 +69,16 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
     m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", false ).toBool();
+
+
+    // load Fluid settings
+
+    QStringList soundFontNames = value("Fluid/SoundFont2","").toStringList();
+    for (QString soundFontName:soundFontNames){
+        if (soundFontName.isEmpty()) continue;
+        addFluidSoundFontName(soundFontName);
+    }
+
 }
 
 void CSettings::setDefaultValue(const QString & key, const QVariant & value )

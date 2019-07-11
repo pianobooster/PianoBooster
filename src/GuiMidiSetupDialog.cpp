@@ -77,9 +77,14 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     if (i!=-1)
         sampleRateCombo->setCurrentIndex(i);
 
-    //midiSettingsSetnum
-
     updateMidiInfoText();
+
+    masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","").toInt());
+    bufferSizeSpin->setValue(m_settings->value("Fluid/bufferSizeSpin","").toInt());
+    bufferCountsSpin->setValue(m_settings->value("Fluid/bufferCountsSpin","").toInt());
+    reverbCheck->setChecked(m_settings->value("Fluid/reverbCheck","false").toBool());
+    chorusCheck->setChecked(m_settings->value("Fluid/chorusCheck","false").toBool());
+
 }
 
 void GuiMidiSetupDialog::updateMidiInfoText()
@@ -189,6 +194,15 @@ void GuiMidiSetupDialog::accept()
     }
 
 
+    // save Fluid settings
+
+    m_settings->setValue("Fluid/masterGainSpin",masterGainSpin->value());
+    m_settings->setValue("Fluid/bufferSizeSpin",bufferSizeSpin->value());
+    m_settings->setValue("Fluid/bufferCountsSpin",bufferCountsSpin->value());
+    m_settings->setValue("Fluid/reverbCheck",reverbCheck->isChecked());
+    m_settings->setValue("Fluid/chorusCheck",chorusCheck->isChecked());
+
+
     this->QDialog::accept();
 }
 
@@ -224,7 +238,9 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
     if (!soundFontName.isEmpty())
         m_settings->addFluidSoundFontName(soundFontName);
+
     updateFluidInfoText();
+    m_settings->setValue("Fluid/SoundFont2",m_settings->getFluidSoundFontNames());
 }
 
 void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked )
