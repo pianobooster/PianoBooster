@@ -281,8 +281,12 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
         m_settings->addFluidSoundFontName(soundFontName);
 
     updateFluidInfoText();
-    m_settings->setValue("Fluid/SoundFont2",m_settings->getFluidSoundFontNames());
-}
+
+    m_settings->setValue("Fluid/SoundFont2_1","");
+    m_settings->setValue("Fluid/SoundFont2_2","");
+    for (int i=0;i<m_settings->getFluidSoundFontNames().size();i++){
+        m_settings->setValue("Fluid/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
+    }}
 
 void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
     if (soundFontList->currentRow()==-1) return;
@@ -293,6 +297,11 @@ void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
     soundFontList->removeItemWidget(soundFontList->currentItem());
 
     updateFluidInfoText();
-    m_settings->setValue("Fluid/SoundFont2",m_settings->getFluidSoundFontNames());
+
+    m_settings->setValue("Fluid/SoundFont2_1","");
+    m_settings->setValue("Fluid/SoundFont2_2","");
+    for (int i=0;i<m_settings->getFluidSoundFontNames().size();i++){
+        m_settings->setValue("Fluid/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
+    }
 
 }
