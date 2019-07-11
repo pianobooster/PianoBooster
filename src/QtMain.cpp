@@ -43,7 +43,7 @@ int main(int argc, char *argv[]){
         QStringList argList = QCoreApplication::arguments();
         for (QString arg:argList){
             if (arg=="--version"){
-                fprintf(stderr, "pianobooster " PB_VERSION "\n");
+                fprintf(stdout, "pianobooster " PB_VERSION "\n");
                 exit(0);
             }
         }
