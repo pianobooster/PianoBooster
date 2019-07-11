@@ -229,10 +229,22 @@ void GuiMidiSetupDialog::updateFluidInfoText()
 
 void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
 {
-    QString lastSoundFont;
-    QStringList sfList = m_settings->getFluidSoundFontNames();
-    if (sfList.size() > 0)
-        lastSoundFont = sfList.last();
+    QStringList possibleSoundFontFolders;
+#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
+    possibleSoundFontFolders.push_back("/usr/share/soundfonts");
+    possibleSoundFontFolders.push_back("/usr/share/sounds/sf2");
+#endif
+
+    QString lastSoundFont = QDir::homePath();
+
+    for (QString soundFontFolder:possibleSoundFontFolders){
+        QDir dir(soundFontFolder);
+        if (dir.exists()){
+            lastSoundFont=soundFontFolder;
+            break;
+        }
+    }
+
 
     QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluidsynth"),
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
