@@ -79,12 +79,39 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     updateMidiInfoText();
 
+    audioDriverCombo->clear();
+    audioDriverCombo->addItem("");
+    audioDriverCombo->addItem("alsa");
+    audioDriverCombo->addItem("file");
+    audioDriverCombo->addItem("jack");
+    audioDriverCombo->addItem("oss");
+    audioDriverCombo->addItem("portaudio");
+    audioDriverCombo->addItem("pulseaudio");
+
     masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","").toInt());
     bufferSizeSpin->setValue(m_settings->value("Fluid/bufferSizeSpin","").toInt());
     bufferCountsSpin->setValue(m_settings->value("Fluid/bufferCountsSpin","").toInt());
     reverbCheck->setChecked(m_settings->value("Fluid/reverbCheck","false").toBool());
     chorusCheck->setChecked(m_settings->value("Fluid/chorusCheck","false").toBool());
 
+    audioDeviceLineEdit->setText(m_settings->value("Fluid/audioDeviceLineEdit","").toString());
+    for (int i=0;i<audioDriverCombo->count();i++){
+        if (audioDriverCombo->itemText(i)==m_settings->value("Fluid/audioDriverCombo","").toString()){
+            audioDriverCombo->setCurrentIndex(i);
+            break;
+        }
+    }
+
+    for (int i=0;i<sampleRateCombo->count();i++){
+        if (sampleRateCombo->itemText(i)==m_settings->value("Fluid/sampleRateCombo","").toString()){
+            sampleRateCombo->setCurrentIndex(i);
+            break;
+        }
+    }
+
+
+
+    updateFluidInfoText();
 }
 
 void GuiMidiSetupDialog::updateMidiInfoText()
@@ -201,7 +228,9 @@ void GuiMidiSetupDialog::accept()
     m_settings->setValue("Fluid/bufferCountsSpin",bufferCountsSpin->value());
     m_settings->setValue("Fluid/reverbCheck",reverbCheck->isChecked());
     m_settings->setValue("Fluid/chorusCheck",chorusCheck->isChecked());
-
+    m_settings->setValue("Fluid/audioDriverCombo",audioDriverCombo->currentText());
+    m_settings->setValue("Fluid/audioDeviceLineEdit",audioDeviceLineEdit->text());
+    m_settings->setValue("Fluid/sampleRateCombo",sampleRateCombo->currentText());
 
     this->QDialog::accept();
 }
