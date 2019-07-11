@@ -73,11 +73,11 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
 
     // load Fluid settings
 
-    QStringList soundFontNames = value("Fluid/SoundFont2","").toStringList();
-    for (QString soundFontName:soundFontNames){
-        if (soundFontName.isEmpty()) continue;
-        addFluidSoundFontName(soundFontName);
-    }
+    QString soundFontNames_1 = value("Fluid/SoundFont2_1","").toString();
+    if (!soundFontNames_1.isEmpty()) addFluidSoundFontName(soundFontNames_1);
+
+    QString soundFontNames_2 = value("Fluid/SoundFont2_2","").toString();
+    if (!soundFontNames_2.isEmpty()) addFluidSoundFontName(soundFontNames_2);
 
 }
 
