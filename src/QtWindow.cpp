@@ -489,7 +489,16 @@ void QtWindow::openRecentFile()
      QAction *action = qobject_cast<QAction *>(sender());
      if (action)
          m_settings->openSongFile(action->data().toString());
- }
+}
+
+void QtWindow::showMidiSetup()
+{
+    m_glWidget->stopTimerEvent();
+    GuiMidiSetupDialog midiSetupDialog(this);
+    midiSetupDialog.init(m_song, m_settings);
+    midiSetupDialog.exec();
+    m_glWidget->startTimerEvent();
+}
 
 // load the recent file list from the config file into the file menu
 void QtWindow::updateRecentFileActions()

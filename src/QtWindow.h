@@ -85,12 +85,7 @@ private slots:
     void keyboardShortcuts();
     void openRecentFile();
 
-    void showMidiSetup()
-    {
-        GuiMidiSetupDialog midiSetupDialog(this);
-        midiSetupDialog.init(m_song, m_settings);
-        midiSetupDialog.exec();
-    }
+    void showMidiSetup();
 
     void showPreferencesDialog()
     {
