@@ -11,6 +11,7 @@ use_jack="0"
 MES1="Error: timidity was not found or broken!"
 MES2="Error: timidity does not have -OO or -Os options!"
 MES3="Error: timidity does not have -iA option!"
+MES4="Error: pianobooster was not found!"
 
 lang=`echo $LANGUAGE|cut -d ":" -f 2`
 
@@ -24,11 +25,18 @@ case $lang in
           MES1="Ошибка: timidity не был найден, или он неработоспособен!"
           MES2="Ошибка: timidity не имеет опций -OO или -Os!"
           MES3="Ошибка: timidity не имеет опции -iA!"
+          MES4="Ошибка: pianobooster не был найден!"
           ;;
      fr)
           MES1="Erreur : timidity n'a pas été trouvé ou est cassé !"
           MES2="Erreur : timidity n'a pas les options -OO ou -Os !"
           MES3="Erreur : timidity n'a pas l'option -iA !"
+          ;;
+     fi)
+          MES4="Virhe: pianobooster ei löytynyt!"
+          ;;
+     de)
+          MES4="Fehler: pianobooster wurde nicht gefunden!"
           ;;
      gl)
           MES1="Erro: Non se atopou Timidity ou está quebrado"
@@ -39,17 +47,31 @@ case $lang in
           MES1="Błąd: timidity nie został znaleziony lub jest uszkodzony!"
           MES2="Błąd: timidity nie posiada opcji -OO lub -Os "
           MES3="Błąd: timidity nie posiada opcji -iA "
+          MES4="Błąd: pianobooster nie został znaleziony!"
           ;;
      uk)
           MES1="Помилка: timidity не знайдено або дані програми пошкоджено!"
           MES2="Помилка: у timidity немає параметрів -OO або -Os!"
           MES3="Помилка: у timidity немає параметра -iA!"
+          MES4="Помилка: pianobooster не знайдено!"
           ;;
 esac
 
 notify_send=`notify-send -v 2>/dev/null`
 
 timidity=`timidity -v 2>/dev/null`
+
+pianobooster=`pianobooster -v 2>/dev/null`
+
+if [ -z "$pianobooster" ]
+then
+  echo "$MES4"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES4"
+  fi
+  exit 1
+fi
 
 if [ -z "$timidity" ]
 then

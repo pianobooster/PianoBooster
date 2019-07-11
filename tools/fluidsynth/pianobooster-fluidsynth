@@ -19,6 +19,7 @@ MES8="Starting fluidsynth..."
 MES9="Please wait 10 more seconds!"
 MES10="Fluidsynth does not have ALSA support!"
 MES11="Switching on using JACK..."
+MES12="Error: pianobooster was not found!"
 
 lang=`echo $LANGUAGE|cut -d ":" -f 2`
 
@@ -40,6 +41,7 @@ case $lang in
           MES9="Пожалуйста, ожидайте около 10 секунд!"
           MES10="Fluidsynth не имеет поддержки ALSA!"
           MES11="Переключение на использование JACK..."
+          MES12="Ошибка: pianobooster не был найден!"
           ;;
      fi)
           MES1="Virhe: FluidR3_GM.sf2 ja FluidR3_GS.sf2 ei löytynyt!"
@@ -48,11 +50,12 @@ case $lang in
           MES4="Virhe: FluidR3_GS.sf2 ei löytynyt!"
           MES5="Yritä uudelleen!"
           MES6="Virhe: fluidsynth ei löytynyt tai rikki!"
-          MES7="Virhe: jakkia ei löytynyt!"
+          MES7="Virhe: jackd ei löytynyt!"
           MES8="Alkaa fluidsynth..."
           MES9="Odota 10 sekuntia!"
           MES10="Fluidsynthillä ei ole ALSA-tukea!"
-          MES11="Kytketään käyttäen JAKKI..."
+          MES11="Kytketään käyttäen JACK..."
+          MES12="Virhe: pianobooster ei löytynyt!"
           ;;
      de)
           MES1="Fehler: SoundFonts FluidR3_GM.sf2 und FluidR3_GS.sf2 wurden nicht gefunden!"
@@ -64,6 +67,7 @@ case $lang in
           MES7="Fehler: jackd wurde nicht gefunden!"
           MES8="Fluidsynth wird gestartet..."
           MES9="Bitte noch 10 Sekunden warten!"
+          MES12="Fehler: pianobooster wurde nicht gefunden!"
           ;;
      uk)
           MES1="Помилка: не знайдено звукових шрифтів FluidR3_GM.sf2 та FluidR3_GS.sf2!"
@@ -77,6 +81,7 @@ case $lang in
           MES9="Будь ласка, зачекайте ще 10 секунд!"
           MES10="У Fluidsynth не передбачено підтримки ALSA!"
           MES11="Перемикаємося на використання JACK..."
+          MES12="Помилка: pianobooster не знайдено!"
           ;;
      cs)
           MES1="Chyba: Zvukové banky FluidR3_GM.sf2 a FluidR3_GS.sf2 nebyly nalezeny!"
@@ -107,6 +112,7 @@ case $lang in
           MES7="Błąd: jackd nie został znaleziony!"
           MES9="Poczekaj jeszcze 10 sekund!"
           MES10="Fluidsynth nie ma wsparcia ALSA!"
+          MES12="Błąd: pianobooster nie został znaleziony!"
           ;;
 esac
 
@@ -143,6 +149,18 @@ fi
 notify_send=`notify-send -v 2>/dev/null`
 
 fluidsynth=`fluidsynth -V 2>/dev/null`
+
+pianobooster=`pianobooster -v 2>/dev/null`
+
+if [ -z "$pianobooster" ]
+then
+  echo "$MES12"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES12"
+  fi
+  exit 1
+fi
 
 if [ -z "$fluidsynth" ]
 then
