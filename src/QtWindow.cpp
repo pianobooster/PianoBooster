@@ -186,17 +186,17 @@ QtWindow::~QtWindow()
 //! @brief               Displays the usage
 void QtWindow::displayUsage()
 {
-    fprintf(stderr, "Usage: pianobooster [flags] [midifile]\n");
-    fprintf(stderr, "  -d, --debug             Increase the debug level.\n");
-    fprintf(stderr, "  -q, --quick-start       Quick start.\n");
-    fprintf(stderr, "      --Xnote-length      Displays the note length (experimental)\n");
-    fprintf(stderr, "      --Xtick-rate=RATE   Adjust the tick rate in mSec (experimental).\n");
-    fprintf(stderr, "                          default 4 (12 windows).\n");
-    fprintf(stderr, "  -h, --help              Displays this help message.\n");
-    fprintf(stderr, "  -v, --version           Displays version number and then exits.\n");
-    fprintf(stderr, "  -l   --log              Write debug info to the \"pb.log\" log file.\n");
-    fprintf(stderr, "       --midi-input-dump  Displays the midi input in hex.\n");
-    fprintf(stderr, "       --lights:          Turns on the keyboard lights.\n");
+    fprintf(stdout, "Usage: pianobooster [flags] [midifile]\n");
+    fprintf(stdout, "  -d, --debug             Increase the debug level.\n");
+    fprintf(stdout, "  -q, --quick-start       Quick start.\n");
+    fprintf(stdout, "      --Xnote-length      Displays the note length (experimental)\n");
+    fprintf(stdout, "      --Xtick-rate=RATE   Adjust the tick rate in mSec (experimental).\n");
+    fprintf(stdout, "                          default 4 (12 windows).\n");
+    fprintf(stdout, "  -h, --help              Displays this help message.\n");
+    fprintf(stdout, "  -v, --version           Displays version number and then exits.\n");
+    fprintf(stdout, "  -l   --log              Write debug info to the \"pb.log\" log file.\n");
+    fprintf(stdout, "       --midi-input-dump  Displays the midi input in hex.\n");
+    fprintf(stdout, "       --lights:          Turns on the keyboard lights.\n");
 }
 
 int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
@@ -316,7 +316,7 @@ void QtWindow::decodeCommandLine()
             }
             else if (arg.startsWith("-v") || arg.startsWith("--version"))
             {
-                fprintf(stderr, "pianobooster Version " PB_VERSION"\n");
+                fprintf(stdout, "pianobooster Version " PB_VERSION"\n");
                 exit(0);
             }
             else
