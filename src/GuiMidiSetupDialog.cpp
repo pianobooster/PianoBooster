@@ -229,10 +229,22 @@ void GuiMidiSetupDialog::updateFluidInfoText()
 
 void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
 {
-    QString lastSoundFont;
-    QStringList sfList = m_settings->getFluidSoundFontNames();
-    if (sfList.size() > 0)
-        lastSoundFont = sfList.last();
+    QStringList possibleSoundFontFolders;
+#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
+    possibleSoundFontFolders.push_back("/usr/share/soundfonts");
+    possibleSoundFontFolders.push_back("/usr/share/sounds/sf2");
+#endif
+
+    QString lastSoundFont = QDir::homePath();
+
+    for (QString soundFontFolder:possibleSoundFontFolders){
+        QDir dir(soundFontFolder);
+        if (dir.exists()){
+            lastSoundFont=soundFontFolder;
+            break;
+        }
+    }
+
 
     QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluidsynth"),
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
@@ -243,6 +255,15 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
     m_settings->setValue("Fluid/SoundFont2",m_settings->getFluidSoundFontNames());
 }
 
-void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked )
-{
+void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
+    if (soundFontList->currentRow()==-1) return;
+
+    QStringList soundFontNames = m_settings->getFluidSoundFontNames();
+
+    m_settings->removeFluidSoundFontName(soundFontNames.at(soundFontList->currentRow()));
+    soundFontList->removeItemWidget(soundFontList->currentItem());
+
+    updateFluidInfoText();
+    m_settings->setValue("Fluid/SoundFont2",m_settings->getFluidSoundFontNames());
+
 }
