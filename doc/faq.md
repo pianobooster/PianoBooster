@@ -134,6 +134,8 @@ Flag `-a alsa` or `-a jack`: the name of the audio driver to use.
 
 Flag `-j`: attempt to connect the jack outputs to the physical ports.
 
+Flag `-l`: don't connect to LASH server.
+
 For more information on running fluidsynth with low latency see
 [this page](https://github.com/FluidSynth/fluidsynth/wiki/LowLatency).
 
