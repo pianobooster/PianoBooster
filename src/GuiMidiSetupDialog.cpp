@@ -255,6 +255,15 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
     m_settings->setValue("Fluid/SoundFont2",m_settings->getFluidSoundFontNames());
 }
 
-void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked )
-{
+void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
+    if (soundFontList->currentRow()==-1) return;
+
+    QStringList soundFontNames = m_settings->getFluidSoundFontNames();
+
+    m_settings->removeFluidSoundFontName(soundFontNames.at(soundFontList->currentRow()));
+    soundFontList->removeItemWidget(soundFontList->currentItem());
+
+    updateFluidInfoText();
+    m_settings->setValue("Fluid/SoundFont2",m_settings->getFluidSoundFontNames());
+
 }
