@@ -40,7 +40,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     m_midiChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
 #if !PB_USE_FLUIDSYNTH
-    //midiSetupTabWidget->removeTab(1);
+    midiSetupTabWidget->removeTab(1);
 #endif
     setWindowTitle(tr("Midi Setup"));
 }
