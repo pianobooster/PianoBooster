@@ -90,27 +90,28 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
 
-    masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","0.2").toDouble());
-    bufferSizeSpin->setValue(m_settings->value("Fluid/bufferSizeSpin","").toInt());
-    bufferCountsSpin->setValue(m_settings->value("Fluid/bufferCountsSpin","").toInt());
-    reverbCheck->setChecked(m_settings->value("Fluid/reverbCheck","false").toBool());
-    chorusCheck->setChecked(m_settings->value("Fluid/chorusCheck","false").toBool());
+    if (m_settings->getFluidSoundFontNames().size()!=0){
+        masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","0.2").toDouble());
+        bufferSizeSpin->setValue(m_settings->value("Fluid/bufferSizeSpin","").toInt());
+        bufferCountsSpin->setValue(m_settings->value("Fluid/bufferCountsSpin","").toInt());
+        reverbCheck->setChecked(m_settings->value("Fluid/reverbCheck","false").toBool());
+        chorusCheck->setChecked(m_settings->value("Fluid/chorusCheck","false").toBool());
 
-    audioDeviceLineEdit->setText(m_settings->value("Fluid/audioDeviceLineEdit","").toString());
-    for (int i=0;i<audioDriverCombo->count();i++){
-        if (audioDriverCombo->itemText(i)==m_settings->value("Fluid/audioDriverCombo","").toString()){
-            audioDriverCombo->setCurrentIndex(i);
-            break;
+        audioDeviceLineEdit->setText(m_settings->value("Fluid/audioDeviceLineEdit","").toString());
+        for (int i=0;i<audioDriverCombo->count();i++){
+            if (audioDriverCombo->itemText(i)==m_settings->value("Fluid/audioDriverCombo","").toString()){
+                audioDriverCombo->setCurrentIndex(i);
+                break;
+            }
+        }
+
+        for (int i=0;i<sampleRateCombo->count();i++){
+            if (sampleRateCombo->itemText(i)==m_settings->value("Fluid/sampleRateCombo","").toString()){
+                sampleRateCombo->setCurrentIndex(i);
+                break;
+            }
         }
     }
-
-    for (int i=0;i<sampleRateCombo->count();i++){
-        if (sampleRateCombo->itemText(i)==m_settings->value("Fluid/sampleRateCombo","").toString()){
-            sampleRateCombo->setCurrentIndex(i);
-            break;
-        }
-    }
-
 
 
     updateFluidInfoText();
@@ -225,14 +226,7 @@ void GuiMidiSetupDialog::accept()
 
     // save Fluid settings
     if (m_settings->getFluidSoundFontNames().size()==0){
-        m_settings->remove("Fluid/masterGainSpin");
-        m_settings->remove("Fluid/bufferSizeSpin");
-        m_settings->remove("Fluid/bufferCountsSpin");
-        m_settings->remove("Fluid/reverbCheck");
-        m_settings->remove("Fluid/chorusCheck");
-        m_settings->remove("Fluid/audioDriverCombo");
-        m_settings->remove("Fluid/audioDeviceLineEdit");
-        m_settings->remove("Fluid/sampleRateCombo");
+        m_settings->remove("Fluid");
     }else{
         m_settings->setValue("Fluid/masterGainSpin",masterGainSpin->value());
         m_settings->setValue("Fluid/bufferSizeSpin",bufferSizeSpin->value());
@@ -320,6 +314,18 @@ void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
         m_settings->setValue("Fluid/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
     }
 
+    if (m_settings->getFluidSoundFontNames().size()==0){
+        masterGainSpin->setValue(0.2);
+        bufferSizeSpin->setValue(0);
+        bufferCountsSpin->setValue(0);
+        reverbCheck->setChecked(false);
+        chorusCheck->setChecked(false);
+        audioDriverCombo->setCurrentIndex(0);
+        audioDeviceLineEdit->setText("");
+        sampleRateCombo->setCurrentIndex(0);
+        m_settings->remove("Fluid");
+    }
+
 }
 
 void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
@@ -330,5 +336,6 @@ void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
         }
     }else{
         audioDeviceLineEdit->setEnabled(false);
+        audioDeviceLineEdit->setText("");
     }
 }
