@@ -88,6 +88,8 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     audioDriverCombo->addItem("portaudio");
     audioDriverCombo->addItem("pulseaudio");
 
+    connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
+
     masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","0.2").toDouble());
     bufferSizeSpin->setValue(m_settings->value("Fluid/bufferSizeSpin","").toInt());
     bufferCountsSpin->setValue(m_settings->value("Fluid/bufferCountsSpin","").toInt());
@@ -222,15 +224,29 @@ void GuiMidiSetupDialog::accept()
 
 
     // save Fluid settings
-
-    m_settings->setValue("Fluid/masterGainSpin",masterGainSpin->value());
-    m_settings->setValue("Fluid/bufferSizeSpin",bufferSizeSpin->value());
-    m_settings->setValue("Fluid/bufferCountsSpin",bufferCountsSpin->value());
-    m_settings->setValue("Fluid/reverbCheck",reverbCheck->isChecked());
-    m_settings->setValue("Fluid/chorusCheck",chorusCheck->isChecked());
-    m_settings->setValue("Fluid/audioDriverCombo",audioDriverCombo->currentText());
-    m_settings->setValue("Fluid/audioDeviceLineEdit",audioDeviceLineEdit->text());
-    m_settings->setValue("Fluid/sampleRateCombo",sampleRateCombo->currentText());
+    if (m_settings->getFluidSoundFontNames().size()==0){
+        m_settings->remove("Fluid/masterGainSpin");
+        m_settings->remove("Fluid/bufferSizeSpin");
+        m_settings->remove("Fluid/bufferCountsSpin");
+        m_settings->remove("Fluid/reverbCheck");
+        m_settings->remove("Fluid/chorusCheck");
+        m_settings->remove("Fluid/audioDriverCombo");
+        m_settings->remove("Fluid/audioDeviceLineEdit");
+        m_settings->remove("Fluid/sampleRateCombo");
+    }else{
+        m_settings->setValue("Fluid/masterGainSpin",masterGainSpin->value());
+        m_settings->setValue("Fluid/bufferSizeSpin",bufferSizeSpin->value());
+        m_settings->setValue("Fluid/bufferCountsSpin",bufferCountsSpin->value());
+        m_settings->setValue("Fluid/reverbCheck",reverbCheck->isChecked());
+        m_settings->setValue("Fluid/chorusCheck",chorusCheck->isChecked());
+        m_settings->setValue("Fluid/audioDriverCombo",audioDriverCombo->currentText());
+        if (audioDriverCombo->currentText()=="alsa"){
+            m_settings->setValue("Fluid/audioDeviceLineEdit",audioDeviceLineEdit->text());
+        }else{
+            m_settings->setValue("Fluid/audioDeviceLineEdit","");
+        }
+        m_settings->setValue("Fluid/sampleRateCombo",sampleRateCombo->currentText());
+    }
 
     this->QDialog::accept();
 }
@@ -304,4 +320,15 @@ void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
         m_settings->setValue("Fluid/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
     }
 
+}
+
+void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
+    if (audioDriverCombo->currentText()=="alsa"){
+        audioDeviceLineEdit->setEnabled(true);
+        if (audioDeviceLineEdit->text().isEmpty()){
+            audioDeviceLineEdit->setText("plughw:0");
+        }
+    }else{
+        audioDeviceLineEdit->setEnabled(false);
+    }
 }

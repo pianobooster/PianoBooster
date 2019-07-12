@@ -52,6 +52,7 @@ private slots:
     void on_latencyFixButton_clicked ( bool checked );
     void on_fluidAddButton_clicked ( bool checked );
     void on_fluidRemoveButton_clicked ( bool checked );
+    void on_audioDriverCombo_currentIndexChanged ( int index );
 
 
 private:
