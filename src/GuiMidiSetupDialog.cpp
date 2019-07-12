@@ -88,7 +88,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     audioDriverCombo->addItem("portaudio");
     audioDriverCombo->addItem("pulseaudio");
 
-    masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","").toInt());
+    masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","0.2").toDouble());
     bufferSizeSpin->setValue(m_settings->value("Fluid/bufferSizeSpin","").toInt());
     bufferCountsSpin->setValue(m_settings->value("Fluid/bufferCountsSpin","").toInt());
     reverbCheck->setChecked(m_settings->value("Fluid/reverbCheck","false").toBool());
