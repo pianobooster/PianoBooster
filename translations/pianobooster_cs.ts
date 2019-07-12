@@ -58,17 +58,17 @@
 <context>
     <name>CSettings</name>
     <message>
-        <location filename="../src/Settings.cpp" line="393"/>
+        <location filename="../src/Settings.cpp" line="403"/>
         <source>space</source>
         <translation>mezerník</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="547"/>
+        <location filename="../src/Settings.cpp" line="557"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
         <translation>CHYBA, ŽÁDNÝ ZVUK: Pro opravení použijte Nastavení/Nastavení MIDI...</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="549"/>
+        <location filename="../src/Settings.cpp" line="559"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
         <translation>CHYBA, ŽÁDNÝ SOUBOR MIDI: Pro opravení použijte nabídku Soubor/Otevřít...</translation>
     </message>
@@ -854,107 +854,112 @@
 <context>
     <name>GuiMidiSettingsDialog</name>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="13"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="14"/>
         <source>Dialog</source>
         <translation>Dialog</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="26"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="27"/>
         <source>MIDI input &amp;&amp; output</source>
         <translation>Vstup a výstup MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="48"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="49"/>
         <source>Select the MIDI devices</source>
         <translation>Vybrat zařízení MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="81"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="82"/>
         <source>Midi Input Device:</source>
         <translation>Zařízení pro vstup MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="94"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="95"/>
         <source>Midi Output Device:</source>
         <translation>Zařízení pro výstup MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="129"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="130"/>
         <source>FluidSynth</source>
         <translation>FluidSynth</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="135"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
         <source>Sound Fonts</source>
         <translation>Zvukové banky</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="148"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Add</source>
         <translation>Přidat</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="155"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
         <source>Remove</source>
         <translation>Odstranit</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="182"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="183"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="200"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="218"/>
         <source>Audio Device:</source>
         <translation>Zvukové zařízení:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="210"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="251"/>
         <source>Master Gain:</source>
         <translation>Hlavní zesílení:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="223"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="208"/>
         <source>Audio Driver:</source>
         <translation>Ovladač zvuku:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="236"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
         <source>Sample Rate:</source>
         <translation>Vzorkovací kmitočet:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="249"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
         <source>Buffer Size</source>
         <translation>Velikost vyrovnávací paměti</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="231"/>
         <source>Buffer counts</source>
         <translation>Množství vyrovnávací paměti</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="268"/>
         <source>Reverb</source>
         <translation>Ozvěna</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="191"/>
         <source>Chorus</source>
         <translation>Sbor</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="295"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="344"/>
+        <source>Settings on this tab will take effect after restart.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="352"/>
         <source>Latency Fix</source>
         <translation>Oprava prodlevy</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="307"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="364"/>
         <source>Latency</source>
         <translation>Prodleva</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="320"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="377"/>
         <source>0 (msec)</source>
         <translation>0 (ms)</translation>
     </message>
@@ -968,33 +973,33 @@
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="97"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="129"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="184"/>
         <source>None</source>
         <translation>Žádná</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="105"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="137"/>
         <source>Midi Output Device:</source>
         <translation>Zařízení pro výstup MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="107"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="139"/>
         <source>%1 mSec</source>
         <translation>%1 ms</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="159"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>Zadejte hodnotu pro opravu prodlevy v milisekundách</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="160"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation>Oprava prodlevy pracuje pouštěním hudby před tím, &lt;br&gt;co hrajete, aby působila proti zpoždění v tvůrci zvuku.&lt;br&gt;&lt;br&gt;Budete potřebovat  piano &lt;b&gt;s reproduktory&lt;/b&gt;, jež jsou &lt;b&gt;zesíleny&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Zadejte čas v milisekundách pro zpoždění (1000 ms = 1 s)&lt;br&gt;(Pro Microsoft GS Wavetable SW Synth zkuste hodnotu 150)&lt;br&gt;Pokud si nejste jisti, zadejte jako hodnotu nulu.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="224"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="279"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>Soubory SoundFont2 (*.sf2)</translation>
     </message>
@@ -1004,38 +1009,38 @@
         <translation>Nastavení MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="98"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="130"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>Nevybráno žádné zařízení pro výstup zvuku. Zvolte zařízení pro výstup MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="93"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="100"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="125"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="132"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation>Používání Midi Through se nedoporučuje!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="91"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="123"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
         <translation>Pokud nemáte klávesnici zařízení MIDI, můžete namísto ní používat klávesnici počítače; &apos;x&apos; je jednočárkované C.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="95"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
         <source>Midi Input Device:</source>
         <translation>Zařízení pro vstup MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="102"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="134"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
         <translation>Poznámka: Microsoft GS Wavetable Synth přináší nežádoucí zpoždění!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="103"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="135"/>
         <source>(Try a latency fix of 150msc)</source>
         <translation>(Zkuste opravu prodlevy 150 ms</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="223"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="278"/>
         <source>Open SoundFont2 File for fluidsynth</source>
         <translation>Otevřít soubor SoundFont2 pro fluidsynth</translation>
     </message>
@@ -1498,12 +1503,12 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/QtMain.cpp" line="40"/>
+        <location filename="../src/QtMain.cpp" line="55"/>
         <source>OpenGL support</source>
         <translation>Podpora pro OpenGL</translation>
     </message>
     <message>
-        <location filename="../src/QtMain.cpp" line="41"/>
+        <location filename="../src/QtMain.cpp" line="56"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
         <translation>Tento systém nepodporuje OpenGL, jež je potřeba pro běh Piano Boosteru.</translation>
     </message>
@@ -1534,368 +1539,368 @@
 <context>
     <name>QtWindow</name>
     <message>
-        <location filename="../src/QtWindow.cpp" line="63"/>
+        <location filename="../src/QtWindow.cpp" line="60"/>
         <source>Piano Booster</source>
         <translation>Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="243"/>
-        <location filename="../src/QtWindow.cpp" line="251"/>
-        <location filename="../src/QtWindow.cpp" line="275"/>
+        <location filename="../src/QtWindow.cpp" line="240"/>
+        <location filename="../src/QtWindow.cpp" line="248"/>
+        <location filename="../src/QtWindow.cpp" line="272"/>
         <source>PianoBooster Midi File Error</source>
         <translation>Chyba v souboru MIDI pro Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="244"/>
+        <location filename="../src/QtWindow.cpp" line="241"/>
         <source>Cannot open &quot;%1&quot;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="252"/>
+        <location filename="../src/QtWindow.cpp" line="249"/>
         <source>&quot;%1&quot; is not a Midi File</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="276"/>
+        <location filename="../src/QtWindow.cpp" line="273"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="352"/>
+        <location filename="../src/QtWindow.cpp" line="349"/>
         <source>&amp;Open...</source>
         <translation>&amp;Otevřít...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="353"/>
+        <location filename="../src/QtWindow.cpp" line="350"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="354"/>
+        <location filename="../src/QtWindow.cpp" line="351"/>
         <source>Open an existing file</source>
         <translation>Otevřít stávající soubor</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="357"/>
+        <location filename="../src/QtWindow.cpp" line="354"/>
         <source>E&amp;xit</source>
         <translation>&amp;Ukončit</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="358"/>
+        <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="359"/>
+        <location filename="../src/QtWindow.cpp" line="356"/>
         <source>Exit the application</source>
         <translation>Ukončit program</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="362"/>
+        <location filename="../src/QtWindow.cpp" line="359"/>
         <source>&amp;About</source>
         <translation>O &amp;programu</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="363"/>
+        <location filename="../src/QtWindow.cpp" line="360"/>
         <source>Show the application&apos;s About box</source>
         <translation>Ukázat okénko s informacemi o programu</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="366"/>
+        <location filename="../src/QtWindow.cpp" line="363"/>
         <source>&amp;PC Shortcut Keys</source>
         <translation>Klávesové &amp;zkratky</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="367"/>
+        <location filename="../src/QtWindow.cpp" line="364"/>
         <source>The PC Keyboard shortcut keys</source>
         <translation>Klávesové zkratky</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="370"/>
+        <location filename="../src/QtWindow.cpp" line="367"/>
         <source>&amp;Midi Setup ...</source>
         <translation>Nastavení &amp;MIDI...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="371"/>
-        <location filename="../src/QtWindow.cpp" line="409"/>
+        <location filename="../src/QtWindow.cpp" line="368"/>
+        <location filename="../src/QtWindow.cpp" line="406"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="372"/>
+        <location filename="../src/QtWindow.cpp" line="369"/>
         <source>Setup the Midi input and output</source>
         <translation>Nastavit vstup a výstup MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="375"/>
+        <location filename="../src/QtWindow.cpp" line="372"/>
         <source>Piano &amp;Keyboard Setting ...</source>
         <translation>Nastavení &amp;klávesnice klavíru...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="376"/>
+        <location filename="../src/QtWindow.cpp" line="373"/>
         <source>Ctrl+K</source>
         <translation>Ctrl+K</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="377"/>
+        <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Change the piano keyboard settings</source>
         <translation>Změnit nastavení klávesnice klavíru</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="380"/>
+        <location filename="../src/QtWindow.cpp" line="377"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Celá obrazovka</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="381"/>
+        <location filename="../src/QtWindow.cpp" line="378"/>
         <source>Fullscreen mode</source>
         <translation>Režim celé obrazovky</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="382"/>
+        <location filename="../src/QtWindow.cpp" line="379"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="386"/>
+        <location filename="../src/QtWindow.cpp" line="383"/>
         <source>&amp;Show the Side Panel</source>
         <translation>&amp;Ukázat postranní panel</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="387"/>
+        <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Show the Left Side Panel</source>
         <translation>Ukázat levý postranní panel</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="388"/>
+        <location filename="../src/QtWindow.cpp" line="385"/>
         <source>F12</source>
         <translation>F12</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="393"/>
+        <location filename="../src/QtWindow.cpp" line="390"/>
         <source>Show Piano &amp;Keyboard</source>
         <translation>Ukázat &amp;klávesnici klavíru</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="394"/>
+        <location filename="../src/QtWindow.cpp" line="391"/>
         <source>Show Piano Keyboard Widget</source>
         <translation>Ukázat panel s klávesnicí klavíru</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="402"/>
+        <location filename="../src/QtWindow.cpp" line="399"/>
         <source>&amp;Preferences ...</source>
         <translation>&amp;Nastavení...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="403"/>
+        <location filename="../src/QtWindow.cpp" line="400"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="404"/>
+        <location filename="../src/QtWindow.cpp" line="401"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="407"/>
+        <location filename="../src/QtWindow.cpp" line="404"/>
         <source>&amp;Song Details ...</source>
         <translation>Podrobnosti pí&amp;sně...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="408"/>
+        <location filename="../src/QtWindow.cpp" line="405"/>
         <source>Song Settings</source>
         <translation>Nastavení písně</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="413"/>
+        <location filename="../src/QtWindow.cpp" line="410"/>
         <source>Shift+F1</source>
         <translation>Shift+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="418"/>
+        <location filename="../src/QtWindow.cpp" line="415"/>
         <source>Alt+F1</source>
         <translation>Alt+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="447"/>
+        <location filename="../src/QtWindow.cpp" line="444"/>
         <source>&amp;File</source>
         <translation>&amp;Soubor</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="457"/>
+        <location filename="../src/QtWindow.cpp" line="454"/>
         <source>&amp;View</source>
         <translation>&amp;Pohled</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="463"/>
+        <location filename="../src/QtWindow.cpp" line="460"/>
         <source>&amp;Song</source>
         <translation>Pí&amp;seň</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="467"/>
+        <location filename="../src/QtWindow.cpp" line="464"/>
         <source>Set&amp;up</source>
         <translation>&amp;Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="473"/>
-        <location filename="../src/QtWindow.cpp" line="477"/>
+        <location filename="../src/QtWindow.cpp" line="470"/>
+        <location filename="../src/QtWindow.cpp" line="474"/>
         <source>&amp;Help</source>
         <translation>Nápo&amp;věda</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="478"/>
-        <location filename="../src/QtWindow.cpp" line="555"/>
+        <location filename="../src/QtWindow.cpp" line="475"/>
+        <location filename="../src/QtWindow.cpp" line="571"/>
         <source>Piano Booster Help</source>
         <translation>Nápověda k Piano Boosteru</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="482"/>
+        <location filename="../src/QtWindow.cpp" line="479"/>
         <source>&amp;Website</source>
         <translation>&amp;Webová stránka</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="483"/>
+        <location filename="../src/QtWindow.cpp" line="480"/>
         <source>Piano Booster Website</source>
         <translation>Stránky Piano Boosteru</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="506"/>
+        <location filename="../src/QtWindow.cpp" line="522"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="557"/>
+        <location filename="../src/QtWindow.cpp" line="573"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;.</source>
         <translation>&lt;h3&gt;Začínáme&lt;/h3&gt;&lt;p&gt;Potřebujete &lt;b&gt;zařízení s klávesnicí MIDI &lt;/b&gt; a &lt;b&gt;rozhraní MIDI&lt;/b&gt; pro počítač. Pokud zařízení MIDI (keyboard) nemáte, můžete pořád ještě PianoBooster vyzkoušet za použití klávesnice počítače, &apos;X&apos; je jednočárkované C.&lt;/p&gt;&lt;p&gt;Abyste slyšeli hudbu, potřebujete &lt;b&gt;syntetizátor zvuku General MIDI&lt;/b&gt;. Softwarový syntetizátor Microsoft GS Wavetable, který je dodáván společně s Windows, lze použít, ale ten přináší nepřijatelné zpoždění (prodlevu). V Linuxu můžete použít &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; nebo &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster pracuje nejlépe se soubory MIDI, jež mají samostatný levý a pravý hlas klavíru za použití kanálů MIDI 3 a 4.&lt;h3&gt;Nastavení&lt;/h3&gt;&lt;p&gt;Nejprve použijte nabídku &lt;i&gt;Nastavení/Nastavení MIDI&lt;/i&gt; a v okně dialogu vyberte rozhraní pro vstup MIDI a rozhraní pro výstup MIDI, které odpovídají vašemu vybavení. Dále použijte &lt;i&gt;Soubor/Otevřít&lt;/i&gt; k otevření souboru MIDI &quot;.mid&quot; nebo souboru karaoke &quot;.kar&quot;. Nyní zvolte, zda jen chcete &lt;i&gt;poslouchat&lt;/i&gt; hudbu, nebo &lt;i&gt;hrát&lt;/i&gt; na klávesnici klavíru nastavením úrovně &lt;i&gt;dovednosti&lt;/i&gt; v postranním panelu. Nakonec, když jste připraveni, klepněte na ikonu pro &lt;i&gt;přehrávání&lt;/i&gt; (nebo stiskněte &lt;i&gt;mezerník&lt;/i&gt;), aby hudba běžela.&lt;h3&gt;Rady ke hře na klavír&lt;/h3&gt;&lt;p&gt;Rady, jak hrát na klavír, hledejte na: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Rady pro klavír&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Další Informace&lt;/h3&gt;&lt;p&gt;Kvůli další nápovědě navštivte, prosím, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;stránky&lt;/b&gt;&lt;/a&gt;PianoBooster, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;Často kladené otázky&lt;/b&gt;&lt;/a&gt; vztahující se k PianoBoosteru a &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;uživatelské fórum&lt;/b&gt;&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="603"/>
+        <location filename="../src/QtWindow.cpp" line="619"/>
         <source>About Piano Booster</source>
         <translation>O programu Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="605"/>
+        <location filename="../src/QtWindow.cpp" line="621"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;PianoBooster - verze %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="606"/>
+        <location filename="../src/QtWindow.cpp" line="622"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;Pozvedněte&lt;/b&gt; své &lt;b&gt;dovednosti hry na klavír&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="608"/>
+        <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
         <translation>Kopírovací právo (c) L. J. Barman, 2008-2013; Všechna práva vyhrazena.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="609"/>
+        <location filename="../src/QtWindow.cpp" line="625"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation>Kopírovací právo (c) Fabien Givors, 2018-2019; Všechna práva vyhrazena.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="611"/>
+        <location filename="../src/QtWindow.cpp" line="627"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation>Tento program je dostupný za podmínek GNU General Public License verze 3, jak jsou zveřejněny Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="617"/>
+        <location filename="../src/QtWindow.cpp" line="633"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
         <translation>Tento program také obsahuje RtMIDI: třídy MIDI i/o C++ ve skutečném čase&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="618"/>
+        <location filename="../src/QtWindow.cpp" line="634"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
         <translation>Kopírovací právo (c) Gary P. Scavone, 2003-2019; Všechna práva vyhrazena.</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="627"/>
+        <location filename="../src/QtWindow.cpp" line="643"/>
         <source>space</source>
         <translation>mezerník</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="640"/>
+        <location filename="../src/QtWindow.cpp" line="656"/>
         <source>PC Keyboard ShortCuts</source>
         <translation>Klávesové zkratky</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="642"/>
+        <location filename="../src/QtWindow.cpp" line="658"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation>&lt;h2&gt;&lt;center&gt;Klávesové zkratky&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Byly stanoveny následující klávesové zkratky.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="648"/>
+        <location filename="../src/QtWindow.cpp" line="664"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation>&lt;tr&gt;&lt;th&gt;Činnost&lt;/th&gt;&lt;th&gt;Klávesa&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="654"/>
+        <location filename="../src/QtWindow.cpp" line="670"/>
         <source>Choose the right hand</source>
         <translation>Vybrat pravou ruku</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="655"/>
+        <location filename="../src/QtWindow.cpp" line="671"/>
         <source>Choose both hands</source>
         <translation>Vybrat obě ruce</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="656"/>
+        <location filename="../src/QtWindow.cpp" line="672"/>
         <source>Choose the left Hand</source>
         <translation>Vybrat levou ruku</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="657"/>
+        <location filename="../src/QtWindow.cpp" line="673"/>
         <source>Play from start toggle</source>
         <translation>Přepnutí Přehrát od začátku</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="658"/>
+        <location filename="../src/QtWindow.cpp" line="674"/>
         <source>Play Pause Toggle</source>
         <translation>Přepnutí Přehrát/Pozastavit</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="659"/>
-        <location filename="../src/QtWindow.cpp" line="660"/>
+        <location filename="../src/QtWindow.cpp" line="675"/>
+        <location filename="../src/QtWindow.cpp" line="676"/>
         <source>Increase the speed by 5%</source>
         <translation>Zvýšit rychlost o 5 %</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="661"/>
+        <location filename="../src/QtWindow.cpp" line="677"/>
         <source>Change to the Next Song</source>
         <translation>Změnit na další píseň</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="662"/>
+        <location filename="../src/QtWindow.cpp" line="678"/>
         <source>Change to the Previous Song</source>
         <translation>Změnit na předchozí píseň</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="663"/>
+        <location filename="../src/QtWindow.cpp" line="679"/>
         <source>Change to the Next Book</source>
         <translation>Změnit na další knihu</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="664"/>
+        <location filename="../src/QtWindow.cpp" line="680"/>
         <source>Change to the Previous Book</source>
         <translation>Změnit na předchozí knihu</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="666"/>
+        <location filename="../src/QtWindow.cpp" line="682"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation>&lt;tr&gt;&lt;td&gt;Nepravé klávesy klavíru&lt;/td&gt;&lt;td&gt;X je jednočárkované C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="689"/>
+        <location filename="../src/QtWindow.cpp" line="705"/>
         <source>Open Midi File</source>
         <translation>Otevřít soubor MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="690"/>
+        <location filename="../src/QtWindow.cpp" line="706"/>
         <source>Midi Files</source>
         <translation>Soubory MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="127"/>
+        <location filename="../src/QtWindow.cpp" line="124"/>
         <source>None</source>
         <translation>Žádný</translation>
     </message>
