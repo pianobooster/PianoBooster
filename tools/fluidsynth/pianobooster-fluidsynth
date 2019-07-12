@@ -196,6 +196,32 @@ then
   sf2_2="/usr/local/share/sounds/sf2/FluidR3_GS.sf2"
 fi
 
+notify_send=`notify-send -v 2>/dev/null`
+
+fluidsynth=`fluidsynth -V 2>/dev/null`
+
+pianobooster=`pianobooster -v 2>/dev/null`
+
+if [ -z "$pianobooster" ]
+then
+  echo "$MES12"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES12"
+  fi
+  exit 1
+fi
+
+if [ -z "$fluidsynth" ]
+then
+  echo "$MES6"
+  if [ ! -z "$notify_send" ]
+  then
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES6"
+  fi
+  exit 1
+fi
+
 if [ ! -z "$SoundFont2_1" ]
 then
   if [ ! -f "$SoundFont2_1" ]
@@ -244,30 +270,14 @@ then
   fi
 fi
 
-notify_send=`notify-send -v 2>/dev/null`
-
-fluidsynth=`fluidsynth -V 2>/dev/null`
-
-pianobooster=`pianobooster -v 2>/dev/null`
-
-if [ -z "$pianobooster" ]
+if [ -z "$sf2_1" ]
 then
-  echo "$MES12"
-  if [ ! -z "$notify_send" ]
-  then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES12"
-  fi
-  exit 1
-fi
-
-if [ -z "$fluidsynth" ]
-then
-  echo "$MES6"
-  if [ ! -z "$notify_send" ]
-  then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES6"
-  fi
-  exit 1
+    MES0=`echo "$MES3"|sed "s|SF|$sf2_1|g"`
+    echo "$MES0"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+    fi
 fi
 
 if [ -z "$sf2_1" ] && [ -z "$sf2_2" ]
