@@ -228,7 +228,7 @@ void GuiMidiSetupDialog::accept()
     if (m_settings->getFluidSoundFontNames().size()==0){
         m_settings->remove("Fluid");
     }else{
-        m_settings->setValue("Fluid/masterGainSpin",masterGainSpin->value());
+        m_settings->setValue("Fluid/masterGainSpin",QString::number(masterGainSpin->value(),'f',2));
         m_settings->setValue("Fluid/bufferSizeSpin",bufferSizeSpin->value());
         m_settings->setValue("Fluid/bufferCountsSpin",bufferCountsSpin->value());
         m_settings->setValue("Fluid/reverbCheck",reverbCheck->isChecked());
