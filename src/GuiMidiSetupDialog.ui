@@ -1,40 +1,41 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>GuiMidiSettingsDialog</class>
- <widget class="QDialog" name="GuiMidiSettingsDialog" >
-  <property name="geometry" >
+ <widget class="QDialog" name="GuiMidiSettingsDialog">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>465</width>
-    <height>369</height>
+    <width>471</width>
+    <height>430</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTabWidget" name="midiSetupTabWidget" >
-     <property name="tabShape" >
+    <widget class="QTabWidget" name="midiSetupTabWidget">
+     <property name="tabShape">
       <enum>QTabWidget::Rounded</enum>
      </property>
-     <property name="currentIndex" >
+     <property name="currentIndex">
       <number>1</number>
      </property>
-     <widget class="QWidget" name="tab" >
-      <attribute name="title" >
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
        <string>MIDI input &amp;&amp; output</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_6" >
+      <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
-        <spacer name="verticalSpacer_2" >
-         <property name="orientation" >
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeType" >
+         <property name="sizeType">
           <enum>QSizePolicy::Expanding</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>396</width>
            <height>28</height>
@@ -43,63 +44,63 @@
         </spacer>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox" >
-         <property name="title" >
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
           <string>Select the MIDI devices</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2" >
+         <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QTextEdit" name="midiInfoText" >
-            <property name="sizePolicy" >
-             <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+           <widget class="QTextEdit" name="midiInfoText">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="maximumSize" >
+            <property name="maximumSize">
              <size>
               <width>16777215</width>
               <height>100</height>
              </size>
             </property>
-            <property name="acceptDrops" >
+            <property name="acceptDrops">
              <bool>false</bool>
             </property>
-            <property name="readOnly" >
+            <property name="readOnly">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item>
-           <layout class="QGridLayout" name="_2" >
-            <property name="sizeConstraint" >
+           <layout class="QGridLayout" name="_2">
+            <property name="sizeConstraint">
              <enum>QLayout::SetMinimumSize</enum>
             </property>
-            <item row="0" column="0" >
-             <widget class="QLabel" name="label" >
-              <property name="text" >
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
                <string>Midi Input Device:</string>
               </property>
-              <property name="alignment" >
+              <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
-            <item row="0" column="1" >
-             <widget class="QComboBox" name="midiInputCombo" />
+            <item row="0" column="1">
+             <widget class="QComboBox" name="midiInputCombo"/>
             </item>
-            <item row="1" column="0" >
-             <widget class="QLabel" name="label_2" >
-              <property name="text" >
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
                <string>Midi Output Device:</string>
               </property>
-              <property name="alignment" >
+              <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
-            <item row="1" column="1" >
-             <widget class="QComboBox" name="midiOutputCombo" />
+            <item row="1" column="1">
+             <widget class="QComboBox" name="midiOutputCombo"/>
             </item>
            </layout>
           </item>
@@ -107,14 +108,14 @@
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer" >
-         <property name="orientation" >
+        <spacer name="verticalSpacer">
+         <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeType" >
+         <property name="sizeType">
           <enum>QSizePolicy::Expanding</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>396</width>
            <height>28</height>
@@ -124,44 +125,44 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_2" >
-      <attribute name="title" >
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
        <string>FluidSynth</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_3" >
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QGroupBox" name="groupBox_3" >
-         <property name="title" >
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
           <string>Sound Fonts</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_7" >
+         <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout" >
+           <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QListWidget" name="soundFontList" />
+             <widget class="QListWidget" name="soundFontList"/>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_5" >
+             <layout class="QVBoxLayout" name="verticalLayout_5">
               <item>
-               <widget class="QPushButton" name="fluidAddButton" >
-                <property name="text" >
+               <widget class="QPushButton" name="fluidAddButton">
+                <property name="text">
                  <string>Add</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="fluidRemoveButton" >
-                <property name="text" >
+               <widget class="QPushButton" name="fluidRemoveButton">
+                <property name="text">
                  <string>Remove</string>
                 </property>
                </widget>
               </item>
               <item>
-               <spacer name="verticalSpacer_3" >
-                <property name="orientation" >
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
                  <enum>Qt::Vertical</enum>
                 </property>
-                <property name="sizeHint" stdset="0" >
+                <property name="sizeHint" stdset="0">
                  <size>
                   <width>20</width>
                   <height>40</height>
@@ -177,16 +178,66 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="fluidSettingsGroupBox" >
-         <property name="title" >
+        <widget class="QGroupBox" name="fluidSettingsGroupBox">
+         <property name="title">
           <string>Settings</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4" >
+         <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <layout class="QGridLayout" name="gridLayout" >
-            <item row="1" column="4" >
-             <widget class="QLineEdit" name="audioDeviceLineEdit" >
-              <property name="minimumSize" >
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="chorusCheck">
+              <property name="text">
+               <string>Chorus</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Sample Rate:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Audio Driver:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Audio Device:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="4">
+             <widget class="QComboBox" name="sampleRateCombo"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Buffer counts</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLineEdit" name="audioDeviceLineEdit">
+              <property name="minimumSize">
                <size>
                 <width>150</width>
                 <height>0</height>
@@ -194,92 +245,54 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="2" >
-             <widget class="QLabel" name="label_7" >
-              <property name="text" >
-               <string>Audio Device:</string>
-              </property>
-              <property name="alignment" >
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" >
-             <widget class="QLabel" name="label_18" >
-              <property name="text" >
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
                <string>Master Gain:</string>
               </property>
-              <property name="alignment" >
+              <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
-            <item row="0" column="1" >
-             <widget class="QSpinBox" name="masterGainSpin" />
-            </item>
-            <item row="0" column="2" >
-             <widget class="QLabel" name="label_8" >
-              <property name="text" >
-               <string>Audio Driver:</string>
-              </property>
-              <property name="alignment" >
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="bufferSizeSpin">
+              <property name="maximum">
+               <number>999999999</number>
               </property>
              </widget>
             </item>
-            <item row="0" column="4" >
-             <widget class="QComboBox" name="audioDriverCombo" />
-            </item>
-            <item row="2" column="2" >
-             <widget class="QLabel" name="label_9" >
-              <property name="text" >
-               <string>Sample Rate:</string>
-              </property>
-              <property name="alignment" >
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4" >
-             <widget class="QComboBox" name="sampleRateCombo" />
-            </item>
-            <item row="1" column="0" >
-             <widget class="QLabel" name="label_3" >
-              <property name="text" >
-               <string>Buffer Size</string>
-              </property>
-              <property name="alignment" >
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1" >
-             <widget class="QSpinBox" name="bufferSizeSpin" />
-            </item>
-            <item row="2" column="0" >
-             <widget class="QLabel" name="label_4" >
-              <property name="text" >
-               <string>Buffer counts</string>
-              </property>
-              <property name="alignment" >
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1" >
-             <widget class="QSpinBox" name="bufferCountsSpin" />
-            </item>
-            <item row="3" column="0" >
-             <widget class="QCheckBox" name="reverbCheck" >
-              <property name="text" >
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="reverbCheck">
+              <property name="text">
                <string>Reverb</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="1" >
-             <widget class="QCheckBox" name="chorusCheck" >
-              <property name="text" >
-               <string>Chorus</string>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Buffer Size</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QComboBox" name="audioDriverCombo"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QSpinBox" name="bufferCountsSpin">
+              <property name="maximum">
+               <number>999999999</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="masterGainSpin">
+              <property name="maximum">
+               <double>10.000000000000000</double>
               </property>
              </widget>
             </item>
@@ -288,14 +301,58 @@
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="palette">
+          <palette>
+           <active>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>160</red>
+               <green>162</green>
+               <blue>162</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="text">
+          <string>Settings on this tab will take effect after restart.</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_3" >
-      <attribute name="title" >
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
        <string>Latency Fix</string>
       </attribute>
-      <widget class="QPushButton" name="latencyFixButton" >
-       <property name="geometry" >
+      <widget class="QPushButton" name="latencyFixButton">
+       <property name="geometry">
         <rect>
          <x>40</x>
          <y>120</y>
@@ -303,12 +360,12 @@
          <height>29</height>
         </rect>
        </property>
-       <property name="text" >
+       <property name="text">
         <string>Latency</string>
        </property>
       </widget>
-      <widget class="QLabel" name="latencyFixLabel" >
-       <property name="geometry" >
+      <widget class="QLabel" name="latencyFixLabel">
+       <property name="geometry">
         <rect>
          <x>200</x>
          <y>130</y>
@@ -316,10 +373,10 @@
          <height>17</height>
         </rect>
        </property>
-       <property name="text" >
+       <property name="text">
         <string>0 (msec)</string>
        </property>
-       <property name="alignment" >
+       <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
@@ -327,11 +384,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox" >
-     <property name="orientation" >
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="standardButtons" >
+     <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
@@ -348,11 +405,11 @@
    <receiver>GuiMidiSettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>248</x>
      <y>254</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>157</x>
      <y>274</y>
     </hint>
@@ -364,11 +421,11 @@
    <receiver>GuiMidiSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>316</x>
      <y>260</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
     </hint>
