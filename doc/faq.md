@@ -105,15 +105,15 @@ To start the fluidsynth sound generator copy and paste the following command lin
 
 Using ALSA:
 
-`fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
+`fluidsynth -i -s -g 0.4 -C 0 -R 0 -r 44100 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
 
 Using JACK:
 
-`fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
+`fluidsynth -i -s -g 0.4 -C 0 -R 0 -r 44100 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j /usr/share/sounds/sf2/FluidR3_GM.sf2 /usr/share/sounds/sf2/FluidR3_GS.sf2`
 
 BSD Unix does not have ALSA, so you should use JACK:
 
-`fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -j /usr/local/share/sounds/sf2/FluidR3_GM.sf2 /usr/local/share/sounds/sf2/FluidR3_GS.sf2`
+`fluidsynth -i -s -g 0.4 -C 0 -R 0 -r 44100 -c 6 -z 128 -l -a jack -j /usr/local/share/sounds/sf2/FluidR3_GM.sf2 /usr/local/share/sounds/sf2/FluidR3_GS.sf2`
 
 *Note:* Path `/usr/share/sounds/sf2` is Debian, Ubuntu, OpenSuse, Slackware, etc. For Alt Linux, Arch Linux, CentOS, Fedora, Mageia, OpenMandriva, ROSA, etc. you must use path `/usr/share/soundfonts` instead. BSD Unix uses `/usr/local/share/sounds/sf2`.
 

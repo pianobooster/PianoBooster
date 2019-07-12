@@ -7,11 +7,63 @@
 # Author: Alexey Loginov <alexl@mageia.org>
 
 use_jack="0"
+audioDevice="plughw:0"
+bufferCounts="6"
+bufferSize="128"
+chorus="0"
+masterGain="0.4"
+reverb="0"
+sampleRate="44100"
 
-MES1="Error: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 were not found!"
+if [ -f ~/.config/PianoBooster/"Piano Booster.ini" ]
+then
+  . ~/.config/PianoBooster/"Piano Booster.ini" 2>/dev/null
+fi
+
+if [ ! -z "$audioDeviceLineEdit" ]
+then
+  audioDevice="$audioDeviceLineEdit"
+fi
+
+if [ ! -z "$bufferCountsSpin" ]
+then
+  bufferCounts="$bufferCountsSpin"
+fi
+
+if [ ! -z "$bufferSizeSpin" ]
+then
+  bufferSize="$bufferSizeSpin"
+fi
+
+if [ ! -z "$masterGainSpin" ]
+then
+  masterGain="$masterGainSpin"
+fi
+
+if [ ! -z "$sampleRateCombo" ]
+then
+  sampleRate="$sampleRateCombo"
+fi
+
+if [ "$audioDriverCombo" = "jack" ]
+then
+  use_jack="1"
+fi
+
+if [ "$chorusCheck" = "true" ]
+then
+  chorus="1"
+fi
+
+if [ "$reverbCheck" = "true" ]
+then
+  reverb="1"
+fi
+
+MES1="Error: SoundFonts SF1 and SF2 were not found!"
 MES2="Error: fluidsynth was not run!"
-MES3="Error: SoundFont FluidR3_GM.sf2 was not found!"
-MES4="Error: SoundFont FluidR3_GS.sf2 was not found!"
+MES3="Error: SoundFont SF was not found!"
+MES4="Supported audio drivers are jack, alsa!"
 MES5="Please try again!"
 MES6="Error: fluidsynth was not found or broken!"
 MES7="Error: jackd was not found!"
@@ -20,6 +72,8 @@ MES9="Please wait 10 more seconds!"
 MES10="Fluidsynth does not have ALSA support!"
 MES11="Switching on using JACK..."
 MES12="Error: pianobooster was not found!"
+MES13="Error: No support for audio driver:"
+MES14="Ignoring..."
 
 lang=`echo $LANGUAGE|cut -d ":" -f 2`
 
@@ -30,10 +84,10 @@ fi
 
 case $lang in
      ru|be)
-          MES1="Ошибка: Звуковые шрифты FluidR3_GM.sf2 и FluidR3_GS.sf2 не были найдены!"
+          MES1="Ошибка: Звуковые шрифты SF1 и SF2 не были найдены!"
           MES2="Ошибка: fluidsynth не был запущен!"
-          MES3="Ошибка: Звуковой шрифт FluidR3_GM.sf2 не был найден!"
-          MES4="Ошибка: Звуковой шрифт FluidR3_GS.sf2 не был найден!"
+          MES3="Ошибка: Звуковой шрифт SF не был найден!"
+          MES4="Поддерживаемые аудио драйверы - jack, alsa!"
           MES5="Пожалуйста, попытайтесь снова!"
           MES6="Ошибка: fluidsynth не был найден, или он неработоспособен!"
           MES7="Ошибка: jackd не был найден!"
@@ -42,12 +96,13 @@ case $lang in
           MES10="Fluidsynth не имеет поддержки ALSA!"
           MES11="Переключение на использование JACK..."
           MES12="Ошибка: pianobooster не был найден!"
+          MES13="Ошибка: Нет поддержки для аудио драйвера:"
+          MES14="Игнорирование..."
           ;;
      fi)
-          MES1="Virhe: FluidR3_GM.sf2 ja FluidR3_GS.sf2 ei löytynyt!"
+          MES1="Virhe: SF1 ja SF2 ei löytynyt!"
           MES2="Virhe: fluidsynth ei toimi!"
-          MES3="Virhe: FluidR3_GM.sf2 ei löytynyt!"
-          MES4="Virhe: FluidR3_GS.sf2 ei löytynyt!"
+          MES3="Virhe: SF ei löytynyt!"
           MES5="Yritä uudelleen!"
           MES6="Virhe: fluidsynth ei löytynyt tai rikki!"
           MES7="Virhe: jackd ei löytynyt!"
@@ -58,10 +113,9 @@ case $lang in
           MES12="Virhe: pianobooster ei löytynyt!"
           ;;
      de)
-          MES1="Fehler: SoundFonts FluidR3_GM.sf2 und FluidR3_GS.sf2 wurden nicht gefunden!"
+          MES1="Fehler: SoundFonts SF1 und SF2 wurden nicht gefunden!"
           MES2="Fehler: Fluidsynth wurde nicht ausgeführt!"
-          MES3="Fehler: SoundFont FluidR3_GM.sf2 wurde nicht gefunden!"
-          MES4="Fehler: SoundFont FluidR3_GS.sf2 wurde nicht gefunden!"
+          MES3="Fehler: SoundFont SF wurde nicht gefunden!"
           MES5="Bitte erneut versuchen!"
           MES6="Fehler: Fluidsynth wurde nicht gefunden oder ist beschädigt!"
           MES7="Fehler: jackd wurde nicht gefunden!"
@@ -70,10 +124,9 @@ case $lang in
           MES12="Fehler: pianobooster wurde nicht gefunden!"
           ;;
      uk)
-          MES1="Помилка: не знайдено звукових шрифтів FluidR3_GM.sf2 та FluidR3_GS.sf2!"
+          MES1="Помилка: не знайдено звукових шрифтів SF1 та SF2!"
           MES2="Помилка: fluidsynth не запущено!"
-          MES3="Помилка: не знайдено звукового шрифту FluidR3_GM.sf2!"
-          MES4="Помилка: не знайдено звукового шрифту FluidR3_GS.sf2!"
+          MES3="Помилка: не знайдено звукового шрифту SF!"
           MES5="Будь ласка, повторіть спробу!"
           MES6="Помилка: fluidsynth не знайдено або дані програми пошкоджено!"
           MES7="Помилка: jackd не знайдено!"
@@ -84,29 +137,26 @@ case $lang in
           MES12="Помилка: pianobooster не знайдено!"
           ;;
      cs)
-          MES1="Chyba: Zvukové banky FluidR3_GM.sf2 a FluidR3_GS.sf2 nebyly nalezeny!"
+          MES1="Chyba: Zvukové banky SF1 a SF2 nebyly nalezeny!"
           MES2="Chyba: fluidsynth nebyl spuštěn!"
-          MES3="Chyba: Zvuková banka FluidR3_GM.sf2 nebyla nalezena!"
-          MES4="Chyba: Zvuková banka FluidR3_GS.sf2 nebyla nalezena!"
+          MES3="Chyba: Zvuková banka SF nebyla nalezena!"
           MES5="Zkuste to, prosím, znovu!"
           ;;
      gl)
-          MES1="Erro: Non se atopou  SoundFonts FluidR3_GM.sf2 e FluidR3_GS.sf2!"
+          MES1="Erro: Non se atopou SoundFonts SF1 e SF2!"
           MES2="Erro: o fluidsynth non foi executado!"
-          MES3="Erro: Non se atopou SoundFont FluidR3_GM.sf2!"
-          MES4="Erro: Non se atopou SoundFont FluidR3_GS.sf2!"
+          MES3="Erro: Non se atopou SoundFont SF!"
           MES5="Tenteo de novo!"
           ;;
      bg)
-          MES1="Грешка: SoundFonts FluidR3_GM.sf2 and FluidR3_GS.sf2 не бяха намерени!"
+          MES1="Грешка: SoundFonts SF1 и SF2 не бяха намерени!"
           MES2="Грешка: Не намирам fluidsynth!"
           MES5="Моля, опитайте отново!"
           ;;
      pl)
-          MES1="Błąd: SoundFonts FluidR3_GM.sf2 i FluidR3_GS.sf2 nie zostały znalezione!"
+          MES1="Błąd: SoundFonts SF1 i SF2 nie zostały znalezione!"
           MES2="Błąd: fluidsynth nie został uruchomiony!"
-          MES3="Błąd: Nie znaleziono SoundFont FluidR3_GM.sf2!"
-          MES4="Błąd: Nie znaleziono SoundFont FluidR3_GS.sf2!"
+          MES3="Błąd: Nie znaleziono SoundFont SF!"
           MES5="Spróbuj ponownie!"
           MES6="Błąd: fluidsynth nie został znaleziony lub jest uszkodzony!"
           MES7="Błąd: jackd nie został znaleziony!"
@@ -146,6 +196,54 @@ then
   sf2_2="/usr/local/share/sounds/sf2/FluidR3_GS.sf2"
 fi
 
+if [ ! -z "$SoundFont2_1" ]
+then
+  if [ ! -f "$SoundFont2_1" ]
+  then
+    MES0=`echo "$MES3"|sed "s|SF|$SoundFont2_1|g"`
+    echo "$MES0"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+    fi
+  else
+    sf2_1="$SoundFont2_1"
+    sf2_2=""
+  fi
+fi
+
+if [ ! -z "$SoundFont2_2" ]
+then
+  if [ ! -f "$SoundFont2_2" ]
+  then
+    MES0=`echo "$MES3"|sed "s|SF|$SoundFont2_2|g"`
+    echo "$MES0"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+    fi
+  else
+    sf2_1=""
+    sf2_2="$SoundFont2_2"
+  fi
+fi
+
+if [ ! -z "$SoundFont2_1" ] && [ ! -z "$SoundFont2_2" ]
+then
+  if [ ! -f "$SoundFont2_1" ] && [ ! -f "$SoundFont2_2" ]
+  then
+    MES0=`echo "$MES1"|sed "s|SF1|$sf2_1|g"|sed "s|SF2|$sf2_2|g"`
+    echo "$MES0"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+    fi
+  else
+    sf2_1="$SoundFont2_1"
+    sf2_2="$SoundFont2_2"
+  fi
+fi
+
 notify_send=`notify-send -v 2>/dev/null`
 
 fluidsynth=`fluidsynth -V 2>/dev/null`
@@ -174,32 +272,50 @@ fi
 
 if [ -z "$sf2_1" ] && [ -z "$sf2_2" ]
 then
-  echo "$MES1"
+  MES0=`echo "$MES1"|sed "s|SF1|$sf2_1|g"|sed "s|SF2|$sf2_2|g"`
+  echo "$MES0"
   if [ ! -z "$notify_send" ]
   then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES1"
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
   fi
   exit 1
 fi
 
-if [ -z "$sf2_1" ]
+if [ ! "$audioDriverCombo" = "jack" ] && [ ! "$audioDriverCombo" = "alsa" ] && [ ! -z "$audioDriverCombo" ]
 then
-  echo "$MES3"
+  echo "$MES13" "$audioDriverCombo". "$MES4" "$MES14"
   if [ ! -z "$notify_send" ]
   then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES3"
+    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES13 $audioDriverCombo. $MES4 $MES14"
   fi
-  exit 1
 fi
 
-if [ -z "$sf2_2" ]
+if [ ! -z "$sf2_1" ] && [ -z "$sf2_2" ]
 then
-  echo "$MES4"
-  if [ ! -z "$notify_send" ]
+  if [ ! -f "$sf2_1" ]
   then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES4"
+    MES0=`echo "$MES3"|sed "s|SF|$sf2_1|g"`
+    echo "$MES0"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+    fi
+    exit 1
   fi
-  exit 1
+fi
+
+if [ -z "$sf2_1" ] && [ ! -z "$sf2_2" ]
+then
+  if [ ! -f "$sf2_2" ]
+  then
+    MES0=`echo "$MES3"|sed "s|SF|$sf2_2|g"`
+    echo "$MES0"
+    if [ ! -z "$notify_send" ]
+    then
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+    fi
+    exit 1
+  fi
 fi
 
 alsa=`fluidsynth -o help|grep alsa`
@@ -212,6 +328,7 @@ then
     notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES10 $MES11"
   fi
   use_jack="1"
+  sed -i "s|audioDriverCombo=.*|audioDriverCombo=jack|g" "~/.config/PianoBooster/Piano Booster.ini" 2>/dev/null
 fi
 
 if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
@@ -240,12 +357,12 @@ if [ "$use_jack" = "1" ]
 then
   if [ ! -z "$alsa" ]
   then
-    fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -o midi.alsa_seq.id=fs -j $sf2_1 $sf2_2 &
+    fluidsynth -i -s -g $masterGain -C $chorus -R $reverb -r $sampleRate -c $bufferCounts -z $bufferSize -l -a jack -o midi.alsa_seq.id=fs -j $sf2_1 $sf2_2 &
   else
-    fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a jack -j $sf2_1 $sf2_2 &
+    fluidsynth -i -s -g $masterGain -C $chorus -R $reverb -r $sampleRate -c $bufferCounts -z $bufferSize -l -a jack -j $sf2_1 $sf2_2 &
   fi
 else
-  fluidsynth -i -s -g 1 -C 0 -R 0 -r 22050 -c 6 -z 128 -l -a alsa -o audio.alsa.device=plughw:0 -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
+  fluidsynth -i -s -g $masterGain -C $chorus -R $reverb -r $sampleRate -c $bufferCounts -z $bufferSize -l -a alsa -o audio.alsa.device=$audioDevice -o midi.alsa_seq.id=fs $sf2_1 $sf2_2 &
 fi
 
 PID=$!
