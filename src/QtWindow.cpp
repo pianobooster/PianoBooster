@@ -491,13 +491,23 @@ void QtWindow::openRecentFile()
          m_settings->openSongFile(action->data().toString());
 }
 
-void QtWindow::showMidiSetup()
-{
+void QtWindow::showMidiSetup(){
+    bool isPlaying=false;
+
+    if(m_song->playingMusic()){
+        isPlaying=true;
+        m_topBar->on_playButton_clicked(true);
+    }
+
     m_glWidget->stopTimerEvent();
     GuiMidiSetupDialog midiSetupDialog(this);
     midiSetupDialog.init(m_song, m_settings);
     midiSetupDialog.exec();
-    m_glWidget->startTimerEvent();
+
+    m_glWidget->startTimerEvent();    
+    if (isPlaying){
+        m_topBar->on_playButton_clicked(true);
+    }
 }
 
 // load the recent file list from the config file into the file menu
