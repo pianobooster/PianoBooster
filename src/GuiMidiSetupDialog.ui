@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>471</width>
-    <height>407</height>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -256,7 +256,11 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QSpinBox" name="bufferSizeSpin"/>
+             <widget class="QSpinBox" name="bufferSizeSpin">
+              <property name="maximum">
+               <number>999999999</number>
+              </property>
+             </widget>
             </item>
             <item row="3" column="0">
              <widget class="QCheckBox" name="reverbCheck">
@@ -279,7 +283,11 @@
              <widget class="QComboBox" name="audioDriverCombo"/>
             </item>
             <item row="2" column="1">
-             <widget class="QSpinBox" name="bufferCountsSpin"/>
+             <widget class="QSpinBox" name="bufferCountsSpin">
+              <property name="maximum">
+               <number>999999999</number>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QDoubleSpinBox" name="masterGainSpin">
