@@ -231,10 +231,10 @@ then
   if [ ! -f "$SoundFont2_1" ]
   then
     MES0=`echo "$MES3"|sed "s|SF|$SoundFont2_1|g"`
-    echo "$MES0"
+    echo "$MES0" "$MES14"
     if [ ! -z "$notify_send" ]
     then
-      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0 $MES14"
     fi
   else
     sf2_1="$SoundFont2_1"
@@ -247,10 +247,10 @@ then
   if [ ! -f "$SoundFont2_2" ]
   then
     MES0=`echo "$MES3"|sed "s|SF|$SoundFont2_2|g"`
-    echo "$MES0"
+    echo "$MES0" "$MES14"
     if [ ! -z "$notify_send" ]
     then
-      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0 $MES14"
     fi
   else
     sf2_1=""
@@ -263,10 +263,10 @@ then
   if [ ! -f "$SoundFont2_1" ] && [ ! -f "$SoundFont2_2" ]
   then
     MES0=`echo "$MES1"|sed "s|SF1|$sf2_1|g"|sed "s|SF2|$sf2_2|g"`
-    echo "$MES0"
+    echo "$MES0" "$MES14"
     if [ ! -z "$notify_send" ]
     then
-      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
+      notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0 $MES14"
     fi
   else
     sf2_1="$SoundFont2_1"
@@ -282,17 +282,7 @@ then
     then
       notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
     fi
-fi
-
-if [ -z "$sf2_1" ] && [ -z "$sf2_2" ]
-then
-  MES0=`echo "$MES1"|sed "s|SF1|$sf2_1|g"|sed "s|SF2|$sf2_2|g"`
-  echo "$MES0"
-  if [ ! -z "$notify_send" ]
-  then
-    notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES0"
-  fi
-  exit 1
+    exit 1
 fi
 
 if [ ! "$audioDriverCombo" = "jack" ] && [ ! "$audioDriverCombo" = "alsa" ] && [ ! -z "$audioDriverCombo" ]
@@ -342,7 +332,7 @@ then
     notify-send -a pianobooster -i pianobooster "PianoBooster" "$MES10 $MES11"
   fi
   use_jack="1"
-  sed -i "s|audioDriverCombo=.*|audioDriverCombo=jack|g" "~/.config/PianoBooster/Piano Booster.ini" 2>/dev/null
+  sed -i "s|audioDriverCombo=.*|audioDriverCombo=jack|g" ~/.config/PianoBooster/"Piano Booster.ini" 2>/dev/null
 fi
 
 if [ ! -f "/usr/bin/jackd" ] && [ "$use_jack" = "1" ]
