@@ -53,7 +53,7 @@ private slots:
     void on_fluidAddButton_clicked ( bool checked );
     void on_fluidRemoveButton_clicked ( bool checked );
     void on_audioDriverCombo_currentIndexChanged ( int index );
-
+    void on_enableFluidSynth_stateChanged(int status);
 
 private:
 

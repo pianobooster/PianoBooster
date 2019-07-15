@@ -40,7 +40,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     m_midiChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
 #if !PB_USE_FLUIDSYNTH
-    midiSetupTabWidget->removeTab(1);
+    //midiSetupTabWidget->removeTab(1);
 #endif
     setWindowTitle(tr("Midi Setup"));
 }
@@ -89,6 +89,9 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     audioDriverCombo->addItem("pulseaudio");
 
     connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
+
+    enableFluidSynth->setChecked(m_settings->value("Fluid/enable","true").toBool());
+    connect(enableFluidSynth,SIGNAL(stateChanged(int)),this,SLOT(on_enableFluidSynth_stateChanged(int)));
 
     if (m_settings->getFluidSoundFontNames().size()!=0){
         masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","0.2").toDouble());
@@ -224,6 +227,9 @@ void GuiMidiSetupDialog::accept()
     }
 
 
+
+    m_settings->setValue("Fluid/enable",enableFluidSynth->isChecked());
+
     // save Fluid settings
     if (m_settings->getFluidSoundFontNames().size()==0){
         m_settings->remove("Fluid");
@@ -338,4 +344,7 @@ void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
         audioDeviceLineEdit->setEnabled(false);
         audioDeviceLineEdit->setText("");
     }
+}
+
+void GuiMidiSetupDialog::on_enableFluidSynth_stateChanged(int status){
 }
