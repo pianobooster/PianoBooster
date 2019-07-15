@@ -276,7 +276,7 @@ fi
 
 if [ -z "$sf2_1" ]
 then
-    MES0=`echo "$MES3"|sed "s|SF|$sf2_1|g"`
+    MES0=`echo "$MES3"|sed "s|SF|FluidR3_GM.sf2|g"`
     echo "$MES0"
     if [ ! -z "$notify_send" ]
     then
@@ -348,6 +348,15 @@ then
   fi
 fi
 
+if [ "$use_jack" = "1" ] && [ ! -z `uname -s|grep BSD` ]
+then
+  if [ ! -f ~/.jackdrc ]
+  then
+    echo "/usr/local/bin/jackd -r -d oss" > ~/.jackdrc
+    touch ~/.pianobooster
+  fi
+fi
+
 if [ "$use_jack" = "1" ]
 then
   echo "$MES8" "$MES9"
@@ -397,4 +406,10 @@ kill $PID
 if [ "$use_jack" = "1" ]
 then
   sleep 5
+fi
+
+if [ -f ~/.pianobooster ]
+then
+  rm -f ~/.jackdrc
+  rm -f ~/.pianobooster
 fi
