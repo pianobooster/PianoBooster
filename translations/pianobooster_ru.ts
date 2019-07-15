@@ -890,7 +890,6 @@
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="190"/>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="421"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
@@ -915,22 +914,32 @@
         <translation>Размер буфера:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="408"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="368"/>
         <source>Enable TiMidity</source>
         <translation>Включить TiMidity</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="436"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="387"/>
+        <source>Interface</source>
+        <translation>Интерфейс</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="415"/>
+        <source>Output mode</source>
+        <translation>Режим вывода</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="421"/>
         <source>Libao mode</source>
         <translation>Режим Libao</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="443"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="428"/>
         <source>ALSA pcm device</source>
         <translation>Устройство ALSA pcm</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="450"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="393"/>
         <source>ALSA sequencer interface</source>
         <translation>Интерфейс секвенсора ALSA</translation>
     </message>
@@ -961,21 +970,22 @@
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="354"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="488"/>
         <source>Settings on this tab will take effect after restart.</source>
         <translation>Настройки на этой вкладке вступят в силу после перезапуска.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="362"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="496"/>
         <source>Latency Fix</source>
         <translation>Исправление задержки</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="374"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="508"/>
         <source>Latency</source>
         <translation>Задержка</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="387"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="521"/>
         <source>0 (msec)</source>
         <translation>0 (мс)</translation>
     </message>
@@ -989,33 +999,33 @@
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="70"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="205"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="209"/>
         <source>None</source>
         <translation>Нету</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="162"/>
         <source>Midi Output Device:</source>
         <translation>Устройство вывода Midi:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="160"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="164"/>
         <source>%1 mSec</source>
         <translation>%1 мс</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="180"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="184"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>Введите значение для исправления задержки в миллисекундах</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="181"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="185"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation>Устранение задержек работает путём запуска музыки впереди того, что вы играете, чтобы нейтрализовать задержку в звуковом генераторе. &lt;br&gt;&lt;br&gt;Вам понадобится пианино &lt;b&gt;с динамиками&lt;/b&gt;, которые &lt;b&gt;включены&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Введите время в миллисекундах для задержки (1000 мс = 1 с)&lt;br&gt;(Для Microsoft GS Wavetable SW Synth попробуйте значение 150)&lt;br&gt;Если Вы не уверены, введите значение ноль.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="323"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="331"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>Файлы SoundFont2 (*.sf2)</translation>
     </message>
@@ -1025,38 +1035,38 @@
         <translation>Настройка Midi</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>Не выбрано устройство вывода звука; Выберите выходное устройство Midi</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="146"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation>Использование Midi Through не рекомендуется!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
         <translation>Если у вас нет MIDI-клавиатуры, вы можете использовать клавиатуру ПК; &apos;Х&apos; - С в середине.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>Midi Input Device:</source>
         <translation>Устройство ввода Midi:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="159"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
         <translation>Примечание: Microsoft GS Wavetable Synth вводит нежелательную задержку!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="160"/>
         <source>(Try a latency fix of 150msc)</source>
         <translation>(Попробуйте исправление задержки в 150 мс)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="322"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="330"/>
         <source>Open SoundFont2 File for fluidsynth</source>
         <translation>Открыть файл SoundFont2 для fluidsynth</translation>
     </message>
