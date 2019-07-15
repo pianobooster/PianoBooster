@@ -95,7 +95,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
 
-    enableFluidSynth->setChecked(m_settings->value("Fluid/enable","true").toBool());
+    enableFluidSynth->setChecked(m_settings->value("Fluid/enable","false").toBool());
     connect(enableFluidSynth,SIGNAL(stateChanged(int)),this,SLOT(on_enableFluidSynth_stateChanged(int)));
 
     if (m_settings->getFluidSoundFontNames().size()!=0){
@@ -131,9 +131,9 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     // disabled checkbox timiditySequencerInterface
     timiditySequencerInterface->setEnabled(false);
 
-    enableTimidity->setChecked(m_settings->value("timidity/enable","true").toBool());
+    enableTimidity->setChecked(m_settings->value("timidity/enable","false").toBool());
     timiditySequencerInterface->setChecked(m_settings->value("timidity/timiditySequencerInterface","true").toBool());
-    timidityLibaoMode->setChecked(m_settings->value("timidity/timidityLibaoMode","false").toBool());
+    timidityLibaoMode->setChecked(m_settings->value("timidity/timidityLibaoMode","true").toBool());
     timidityPcmDevice->setChecked(m_settings->value("timidity/timidityPcmDevice","false").toBool());
 
     on_enableTimidity_stateChanged(enableTimidity->isChecked());
