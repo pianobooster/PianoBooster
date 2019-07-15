@@ -20,7 +20,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -357,6 +357,139 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string notr="true">TiMidity</string>
+      </attribute>
+      <widget class="QCheckBox" name="enableTimidity">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>431</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Enable TiMidity</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="timiditySettingsGroupBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>431</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Interface</string>
+       </property>
+       <widget class="QCheckBox" name="timiditySequencerInterface">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>411</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ALSA sequencer interface</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="timiditySettingsGroupBox2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>431</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Output mode</string>
+       </property>
+       <widget class="QCheckBox" name="timidityLibaoMode">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>411</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Libao mode</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="timidityPcmDevice">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>411</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ALSA pcm device</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>335</y>
+         <width>429</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="WindowText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>160</red>
+             <green>162</green>
+             <blue>162</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="text">
+        <string>Settings on this tab will take effect after restart.</string>
+       </property>
+      </widget>
+     </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
        <string>Latency Fix</string>
@@ -389,79 +522,6 @@
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="tab_4">
-      <attribute name="title">
-       <string notr="true">TiMidity</string>
-      </attribute>
-      <widget class="QCheckBox" name="enableTimidity">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>431</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Enable TiMidity</string>
-       </property>
-      </widget>
-      <widget class="QGroupBox" name="timiditySettingsGroupBox">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>40</y>
-         <width>431</width>
-         <height>161</height>
-        </rect>
-       </property>
-       <property name="title">
-        <string>Settings</string>
-       </property>
-       <widget class="QWidget" name="gridLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>411</width>
-          <height>101</height>
-         </rect>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_10">
-           <property name="text">
-            <string>Libao mode</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>ALSA pcm device</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>ALSA sequencer interface</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="timidityLibaoMode"/>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="timiditySequencerInterface"/>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="timidityPcmDevice"/>
-         </item>
-        </layout>
-       </widget>
       </widget>
      </widget>
     </widget>
