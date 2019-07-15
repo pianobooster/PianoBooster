@@ -900,9 +900,19 @@
         <translation>音频设备：</translation>
     </message>
     <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
+        <source>Buffer Counts:</source>
+        <translation>缓存数量:</translation>
+    </message>
+    <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="258"/>
         <source>Master Gain:</source>
         <translation>主增益：</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
+        <source>Buffer Size:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="408"/>
@@ -933,16 +943,6 @@
         <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
         <source>Sample Rate:</source>
         <translation>采样率：</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
-        <source>Buffer Size</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
-        <source>Buffer counts</source>
-        <translation>缓存数量</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>

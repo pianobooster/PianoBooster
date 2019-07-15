@@ -900,9 +900,19 @@
         <translation>Dispositivo de Audio:</translation>
     </message>
     <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
+        <source>Buffer Counts:</source>
+        <translation>Conteos de búfer:</translation>
+    </message>
+    <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="258"/>
         <source>Master Gain:</source>
         <translation>Ganancia Principal:</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
+        <source>Buffer Size:</source>
+        <translation>Tamaño del Buffer:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="408"/>
@@ -933,16 +943,6 @@
         <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
         <source>Sample Rate:</source>
         <translation>Frecuencia de Muestreo:</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
-        <source>Buffer Size</source>
-        <translation>Tamaño del Buffer</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
-        <source>Buffer counts</source>
-        <translation>Conteos de búfer</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>

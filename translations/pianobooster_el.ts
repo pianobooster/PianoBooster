@@ -900,8 +900,18 @@
         <translation>Συσκευή Ήχου:</translation>
     </message>
     <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
+        <source>Buffer Counts:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="258"/>
         <source>Master Gain:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
+        <source>Buffer Size:</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -933,16 +943,6 @@
         <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
         <source>Sample Rate:</source>
         <translation>Ρυθμός δειγματοληψίας/ Sample rate:</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
-        <source>Buffer Size</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
-        <source>Buffer counts</source>
-        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>

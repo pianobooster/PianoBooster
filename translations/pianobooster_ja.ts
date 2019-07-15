@@ -900,9 +900,19 @@
         <translation>オーディオデバイス:</translation>
     </message>
     <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
+        <source>Buffer Counts:</source>
+        <translation>バッファ数:</translation>
+    </message>
+    <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="258"/>
         <source>Master Gain:</source>
         <translation>マスターゲイン:</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
+        <source>Buffer Size:</source>
+        <translation>バッファサイズ:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="408"/>
@@ -933,16 +943,6 @@
         <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
         <source>Sample Rate:</source>
         <translation>サンプルレート:</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
-        <source>Buffer Size</source>
-        <translation>バッファサイズ</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
-        <source>Buffer counts</source>
-        <translation>バッファ数</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
