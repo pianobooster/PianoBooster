@@ -41,7 +41,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     midiSetupTabWidget->setCurrentIndex(0);
 
 #ifndef PB_USE_FLUIDSYNTH
-    //midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
+    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
 #ifndef PB_USE_TIMIDITY
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_4));
