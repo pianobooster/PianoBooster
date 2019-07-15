@@ -4,6 +4,7 @@ SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 option(USE_FTGL "build with ftgl" ON)
+option(USE_TIMIDITY "build use timidity" ON)
 
 #SET(USE_FLUIDSYNTH OFF)
 
@@ -151,6 +152,11 @@ ELSE(USE_SYSTEM_RTMIDI)
     SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
     SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
 ENDIF(USE_SYSTEM_RTMIDI)
+
+if(USE_TIMIDITY)
+    ADD_DEFINITIONS(-DPB_USE_TIMIDITY)
+ENDIF(USE_TIMIDITY)
+
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
