@@ -95,26 +95,26 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
 
-    enableFluidSynth->setChecked(m_settings->value("Fluid/enableFluid","false").toBool());
+    enableFluidSynth->setChecked(m_settings->value("FluidSynth/enableFluidSynth","false").toBool());
     connect(enableFluidSynth,SIGNAL(stateChanged(int)),this,SLOT(on_enableFluidSynth_stateChanged(int)));
 
     if (m_settings->getFluidSoundFontNames().size()!=0){
-        masterGainSpin->setValue(m_settings->value("Fluid/masterGainSpin","0.2").toDouble());
-        bufferSizeSpin->setValue(m_settings->value("Fluid/bufferSizeSpin","").toInt());
-        bufferCountsSpin->setValue(m_settings->value("Fluid/bufferCountsSpin","").toInt());
-        reverbCheck->setChecked(m_settings->value("Fluid/reverbCheck","false").toBool());
-        chorusCheck->setChecked(m_settings->value("Fluid/chorusCheck","false").toBool());
+        masterGainSpin->setValue(m_settings->value("FluidSynth/masterGainSpin","0.2").toDouble());
+        bufferSizeSpin->setValue(m_settings->value("FluidSynth/bufferSizeSpin","").toInt());
+        bufferCountsSpin->setValue(m_settings->value("FluidSynth/bufferCountsSpin","").toInt());
+        reverbCheck->setChecked(m_settings->value("FluidSynth/reverbCheck","false").toBool());
+        chorusCheck->setChecked(m_settings->value("FluidSynth/chorusCheck","false").toBool());
 
-        audioDeviceLineEdit->setText(m_settings->value("Fluid/audioDeviceLineEdit","").toString());
+        audioDeviceLineEdit->setText(m_settings->value("FluidSynth/audioDeviceLineEdit","").toString());
         for (int i=0;i<audioDriverCombo->count();i++){
-            if (audioDriverCombo->itemText(i)==m_settings->value("Fluid/audioDriverCombo","").toString()){
+            if (audioDriverCombo->itemText(i)==m_settings->value("FluidSynth/audioDriverCombo","").toString()){
                 audioDriverCombo->setCurrentIndex(i);
                 break;
             }
         }
 
         for (int i=0;i<sampleRateCombo->count();i++){
-            if (sampleRateCombo->itemText(i)==m_settings->value("Fluid/sampleRateCombo","").toString()){
+            if (sampleRateCombo->itemText(i)==m_settings->value("FluidSynth/sampleRateCombo","").toString()){
                 sampleRateCombo->setCurrentIndex(i);
                 break;
             }
@@ -128,11 +128,11 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     connect(enableTimidity,SIGNAL(stateChanged(int)),this,SLOT(on_enableTimidity_stateChanged(int)));
 
 
-    // disabled checkbox timiditySequencerInterface
-    timiditySequencerInterface->setEnabled(false);
+    // disabled checkbox timidityAlsa
+    timidityAlsa->setEnabled(false);
 
     enableTimidity->setChecked(m_settings->value("timidity/enableTimidity","false").toBool());
-    timiditySequencerInterface->setChecked(m_settings->value("timidity/timiditySequencerInterface","true").toBool());
+    timidityAlsa->setChecked(m_settings->value("timidity/timidityAlsa","true").toBool());
     timidityLibaoMode->setChecked(m_settings->value("timidity/timidityLibaoMode","true").toBool());
     timidityPcmDevice->setChecked(m_settings->value("timidity/timidityPcmDevice","false").toBool());
 
@@ -247,24 +247,24 @@ void GuiMidiSetupDialog::accept()
 
 
 
-    // save Fluid settings
+    // save FluidSynth settings
     if (m_settings->getFluidSoundFontNames().size()==0){
-        m_settings->remove("Fluid");
+        m_settings->remove("FluidSynth");
     }else{
-        m_settings->setValue("Fluid/masterGainSpin",QString::number(masterGainSpin->value(),'f',2));
-        m_settings->setValue("Fluid/bufferSizeSpin",bufferSizeSpin->value());
-        m_settings->setValue("Fluid/bufferCountsSpin",bufferCountsSpin->value());
-        m_settings->setValue("Fluid/reverbCheck",reverbCheck->isChecked());
-        m_settings->setValue("Fluid/chorusCheck",chorusCheck->isChecked());
-        m_settings->setValue("Fluid/audioDriverCombo",audioDriverCombo->currentText());
+        m_settings->setValue("FluidSynth/masterGainSpin",QString::number(masterGainSpin->value(),'f',2));
+        m_settings->setValue("FluidSynth/bufferSizeSpin",bufferSizeSpin->value());
+        m_settings->setValue("FluidSynth/bufferCountsSpin",bufferCountsSpin->value());
+        m_settings->setValue("FluidSynth/reverbCheck",reverbCheck->isChecked());
+        m_settings->setValue("FluidSynth/chorusCheck",chorusCheck->isChecked());
+        m_settings->setValue("FluidSynth/audioDriverCombo",audioDriverCombo->currentText());
         if (audioDriverCombo->currentText()=="alsa"){
-            m_settings->setValue("Fluid/audioDeviceLineEdit",audioDeviceLineEdit->text());
+            m_settings->setValue("FluidSynth/audioDeviceLineEdit",audioDeviceLineEdit->text());
         }else{
-            m_settings->setValue("Fluid/audioDeviceLineEdit","");
+            m_settings->setValue("FluidSynth/audioDeviceLineEdit","");
         }
-        m_settings->setValue("Fluid/sampleRateCombo",sampleRateCombo->currentText());
+        m_settings->setValue("FluidSynth/sampleRateCombo",sampleRateCombo->currentText());
     }
-    m_settings->setValue("Fluid/enableFluid",enableFluidSynth->isChecked());
+    m_settings->setValue("FluidSynth/enableFluidSynth",enableFluidSynth->isChecked());
 
 
 
@@ -272,7 +272,7 @@ void GuiMidiSetupDialog::accept()
     if (!enableTimidity->isChecked()){
         m_settings->remove("timidity");
     }else{
-        m_settings->setValue("timidity/timiditySequencerInterface",timiditySequencerInterface->isChecked());
+        m_settings->setValue("timidity/timidityAlsa",timidityAlsa->isChecked());
         m_settings->setValue("timidity/timidityLibaoMode",timidityLibaoMode->isChecked());
         m_settings->setValue("timidity/timidityPcmDevice",timidityPcmDevice->isChecked());
     }
@@ -334,10 +334,10 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
 
     updateFluidInfoText();
 
-    m_settings->setValue("Fluid/SoundFont2_1","");
-    m_settings->setValue("Fluid/SoundFont2_2","");
+    m_settings->setValue("FluidSynth/SoundFont2_1","");
+    m_settings->setValue("FluidSynth/SoundFont2_2","");
     for (int i=0;i<m_settings->getFluidSoundFontNames().size();i++){
-        m_settings->setValue("Fluid/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
+        m_settings->setValue("FluidSynth/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
     }}
 
 void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
@@ -350,10 +350,10 @@ void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
 
     updateFluidInfoText();
 
-    m_settings->setValue("Fluid/SoundFont2_1","");
-    m_settings->setValue("Fluid/SoundFont2_2","");
+    m_settings->setValue("FluidSynth/SoundFont2_1","");
+    m_settings->setValue("FluidSynth/SoundFont2_2","");
     for (int i=0;i<m_settings->getFluidSoundFontNames().size();i++){
-        m_settings->setValue("Fluid/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
+        m_settings->setValue("FluidSynth/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
     }
 
     if (m_settings->getFluidSoundFontNames().size()==0){

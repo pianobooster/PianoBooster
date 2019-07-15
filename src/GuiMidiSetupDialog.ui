@@ -374,31 +374,27 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>52</height>
+           <height>60</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>52</height>
+           <height>60</height>
           </size>
          </property>
          <property name="title">
           <string>Interface</string>
          </property>
-         <widget class="QCheckBox" name="timiditySequencerInterface">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>411</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>ALSA sequencer interface</string>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QCheckBox" name="timidityAlsa">
+            <property name="text">
+             <string>ALSA sequencer interface</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item>
@@ -406,13 +402,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>75</height>
+           <height>80</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>75</height>
+           <height>80</height>
           </size>
          </property>
          <property name="title">
