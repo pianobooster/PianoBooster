@@ -78,9 +78,6 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     sampleRateCombo->addItem("44100");
     sampleRateCombo->addItem("22050");
-    i = sampleRateCombo->findText(m_settings->value("Fliudsynth/SampleRate").toString());
-    if (i!=-1)
-        sampleRateCombo->setCurrentIndex(i);
 
     updateMidiInfoText();
 
@@ -112,13 +109,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
                 break;
             }
         }
-
-        for (int i=0;i<sampleRateCombo->count();i++){
-            if (sampleRateCombo->itemText(i)==m_settings->value("FluidSynth/sampleRateCombo","").toString()){
-                sampleRateCombo->setCurrentIndex(i);
-                break;
-            }
-        }
+        sampleRateCombo->setCurrentText(m_settings->value("FluidSynth/sampleRateCombo").toString());
     }
 
     on_enableFluidSynth_stateChanged(enableFluidSynth->isChecked());
