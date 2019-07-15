@@ -127,10 +127,14 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     // load timidity settings
     connect(enableTimidity,SIGNAL(stateChanged(int)),this,SLOT(on_enableTimidity_stateChanged(int)));
 
+
+    // disabled checkbox timiditySequencerInterface
+    timiditySequencerInterface->setEnabled(false);
+
     enableTimidity->setChecked(m_settings->value("timidity/enable","true").toBool());
-    timiditySequencerInterface->setText(m_settings->value("timidity/timiditySequencerInterface","").toString());
-    timidityLibaoMode->setText(m_settings->value("timidity/timidityLibaoMode","").toString());
-    timidityPcmDevice->setText(m_settings->value("timidity/timidityPcmDevice","").toString());
+    timiditySequencerInterface->setChecked(m_settings->value("timidity/timiditySequencerInterface","true").toBool());
+    timidityLibaoMode->setChecked(m_settings->value("timidity/timidityLibaoMode","false").toBool());
+    timidityPcmDevice->setChecked(m_settings->value("timidity/timidityPcmDevice","false").toBool());
 
     on_enableTimidity_stateChanged(enableTimidity->isChecked());
 }
@@ -244,7 +248,7 @@ void GuiMidiSetupDialog::accept()
 
 
     // save Fluid settings
-    if (m_settings->getFluidSoundFontNames().size()==0 or !enableFluidSynth->isChecked()){
+    if (m_settings->getFluidSoundFontNames().size()==0){
         m_settings->remove("Fluid");
     }else{
         m_settings->setValue("Fluid/masterGainSpin",QString::number(masterGainSpin->value(),'f',2));
@@ -268,9 +272,9 @@ void GuiMidiSetupDialog::accept()
     if (!enableTimidity->isChecked()){
         m_settings->remove("timidity");
     }else{
-        m_settings->setValue("timidity/timiditySequencerInterface",timiditySequencerInterface->text());
-        m_settings->setValue("timidity/timidityLibaoMode",timidityLibaoMode->text());
-        m_settings->setValue("timidity/timidityPcmDevice",timidityPcmDevice->text());
+        m_settings->setValue("timidity/timiditySequencerInterface",timiditySequencerInterface->isChecked());
+        m_settings->setValue("timidity/timidityLibaoMode",timidityLibaoMode->isChecked());
+        m_settings->setValue("timidity/timidityPcmDevice",timidityPcmDevice->isChecked());
     }
     m_settings->setValue("timidity/enable",enableTimidity->isChecked());
 
@@ -295,7 +299,11 @@ void GuiMidiSetupDialog::updateFluidInfoText()
     fluidRemoveButton->setEnabled(fontLoaded);
 
     fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
-    fluidSettingsGroupBox->setEnabled(fontLoaded);
+
+    bool enableGroups = (fontLoaded and enableFluidSynth->isChecked()) ? true : false;
+
+    fluidSettingsGroupBox->setEnabled(enableGroups);
+    groupBox_3->setEnabled(enableGroups);
 
 }
 
@@ -387,7 +395,9 @@ void GuiMidiSetupDialog::on_enableFluidSynth_stateChanged(int status){
 void GuiMidiSetupDialog::on_enableTimidity_stateChanged(int status){
     if (enableTimidity->isChecked()){
         timiditySettingsGroupBox->setEnabled(true);
+        timiditySettingsGroupBox2->setEnabled(true);
     }else{
         timiditySettingsGroupBox->setEnabled(false);
+        timiditySettingsGroupBox2->setEnabled(false);
     }
 }
