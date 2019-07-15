@@ -6,6 +6,7 @@ CONFIG += link_pkgconfig
 
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
+isEmpty(USE_TIMIDITY): USE_TIMIDITY="ON"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
 isEmpty(NO_LICENSE): NO_LICENSE="OFF"
 isEmpty(WITH_MAN): WITH_MAN="OFF"
@@ -85,8 +86,7 @@ contains(USE_SYSTEM_RTMIDI, ON){
     SOURCES+= src/3rdparty/rtmidi/RtMidi.cpp
 }
 
-contains(WITH_TIMIDITY, ON){
-    message(building with timidity)
+contains(USE_TIMIDITY, ON){
     DEFINES += PB_USE_TIMIDITY
 }
 contains(USE_FTGL, ON){
@@ -192,6 +192,8 @@ unix {
    }
 
    contains(WITH_TIMIDITY, ON){
+      message(building with timidity)
+
       timidity.path = $$PREFIX/bin
       timidity.files = tools/timidity/pianobooster-timidity
       INSTALLS += timidity

@@ -4,6 +4,7 @@ SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 option(USE_FTGL "build with ftgl" ON)
+option(USE_TIMIDITY "build use timidity" ON)
 
 #SET(USE_FLUIDSYNTH OFF)
 
@@ -142,9 +143,9 @@ ELSE(USE_SYSTEM_RTMIDI)
     SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
 ENDIF(USE_SYSTEM_RTMIDI)
 
-if(WITH_TIMIDITY)
+if(USE_TIMIDITY)
     ADD_DEFINITIONS(-DPB_USE_TIMIDITY)
-ENDIF(WITH_TIMIDITY)
+ENDIF(USE_TIMIDITY)
 
 
 # with SET() command you can change variables or define new ones
