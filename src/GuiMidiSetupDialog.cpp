@@ -41,7 +41,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     midiSetupTabWidget->setCurrentIndex(0);
 
 #ifndef PB_USE_FLUIDSYNTH
-    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
+    //midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
 #ifndef PB_USE_TIMIDITY
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_4));
@@ -121,6 +121,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
         }
     }
 
+    on_enableFluidSynth_stateChanged(enableFluidSynth->isChecked());
     updateFluidInfoText();
 
     // load timidity settings
@@ -374,7 +375,13 @@ void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
 }
 
 void GuiMidiSetupDialog::on_enableFluidSynth_stateChanged(int status){
-
+    if (!enableFluidSynth->isChecked()){
+        fluidSettingsGroupBox->setEnabled(false);
+        groupBox_3->setEnabled(false);
+    }else{
+        if (m_settings->getFluidSoundFontNames().size()>0) fluidSettingsGroupBox->setEnabled(true);
+        groupBox_3->setEnabled(true);
+    }
 }
 
 void GuiMidiSetupDialog::on_enableTimidity_stateChanged(int status){
