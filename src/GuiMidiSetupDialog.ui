@@ -131,6 +131,13 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
+        <widget class="QCheckBox" name="enableFluidSynth">
+         <property name="text">
+          <string>Enable FluidSynth</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
           <string>Sound Fonts</string>
