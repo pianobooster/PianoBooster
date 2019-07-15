@@ -142,6 +142,11 @@ ELSE(USE_SYSTEM_RTMIDI)
     SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
 ENDIF(USE_SYSTEM_RTMIDI)
 
+if(WITH_TIMIDITY)
+    ADD_DEFINITIONS(-DPB_USE_TIMIDITY)
+ENDIF(WITH_TIMIDITY)
+
+
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
 # note that we don't need \ at the end of line

@@ -39,9 +39,14 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     m_latencyChanged = false;
     m_midiChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
-#if !PB_USE_FLUIDSYNTH
-    midiSetupTabWidget->removeTab(1);
+
+#ifndef PB_USE_FLUIDSYNTH
+    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
+#ifndef PB_USE_TIMIDITY
+    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_4));
+#endif
+
     setWindowTitle(tr("Midi Setup"));
 }
 
@@ -116,8 +121,17 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
         }
     }
 
-
     updateFluidInfoText();
+
+    // load timidity settings
+    connect(enableTimidity,SIGNAL(stateChanged(int)),this,SLOT(on_enableTimidity_stateChanged(int)));
+
+    enableTimidity->setChecked(m_settings->value("timidity/enable","true").toBool());
+    timiditySequencerInterface->setText(m_settings->value("timidity/timiditySequencerInterface","").toString());
+    timidityLibaoMode->setText(m_settings->value("timidity/timidityLibaoMode","").toString());
+    timidityPcmDevice->setText(m_settings->value("timidity/timidityPcmDevice","").toString());
+
+    on_enableTimidity_stateChanged(enableTimidity->isChecked());
 }
 
 void GuiMidiSetupDialog::updateMidiInfoText()
@@ -228,10 +242,8 @@ void GuiMidiSetupDialog::accept()
 
 
 
-    m_settings->setValue("Fluid/enable",enableFluidSynth->isChecked());
-
     // save Fluid settings
-    if (m_settings->getFluidSoundFontNames().size()==0){
+    if (m_settings->getFluidSoundFontNames().size()==0 or !enableFluidSynth->isChecked()){
         m_settings->remove("Fluid");
     }else{
         m_settings->setValue("Fluid/masterGainSpin",QString::number(masterGainSpin->value(),'f',2));
@@ -247,6 +259,21 @@ void GuiMidiSetupDialog::accept()
         }
         m_settings->setValue("Fluid/sampleRateCombo",sampleRateCombo->currentText());
     }
+    m_settings->setValue("Fluid/enable",enableFluidSynth->isChecked());
+
+
+
+    // save timidity settings
+    if (!enableTimidity->isChecked()){
+        m_settings->remove("timidity");
+    }else{
+        m_settings->setValue("timidity/timiditySequencerInterface",timiditySequencerInterface->text());
+        m_settings->setValue("timidity/timidityLibaoMode",timidityLibaoMode->text());
+        m_settings->setValue("timidity/timidityPcmDevice",timidityPcmDevice->text());
+    }
+    m_settings->setValue("timidity/enable",enableTimidity->isChecked());
+
+
 
     this->QDialog::accept();
 }
@@ -347,4 +374,13 @@ void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
 }
 
 void GuiMidiSetupDialog::on_enableFluidSynth_stateChanged(int status){
+
+}
+
+void GuiMidiSetupDialog::on_enableTimidity_stateChanged(int status){
+    if (enableTimidity->isChecked()){
+        timiditySettingsGroupBox->setEnabled(true);
+    }else{
+        timiditySettingsGroupBox->setEnabled(false);
+    }
 }

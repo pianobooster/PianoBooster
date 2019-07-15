@@ -85,6 +85,10 @@ contains(USE_SYSTEM_RTMIDI, ON){
     SOURCES+= src/3rdparty/rtmidi/RtMidi.cpp
 }
 
+contains(WITH_TIMIDITY, ON){
+    message(building with timidity)
+    DEFINES += PB_USE_TIMIDITY
+}
 contains(USE_FTGL, ON){
     message(building using ftgl)
     PKGCONFIG += ftgl
@@ -117,6 +121,7 @@ unix {
   DEFINES += __LINUX_ALSASEQ__
   LIBS += -lpthread -lGL
 }
+
 
 contains (USE_FLUIDSYNTH, ON) {
     message("building using fluidsynth")
@@ -187,7 +192,6 @@ unix {
    }
 
    contains(WITH_TIMIDITY, ON){
-      message(building with timidity)
       timidity.path = $$PREFIX/bin
       timidity.files = tools/timidity/pianobooster-timidity
       INSTALLS += timidity
