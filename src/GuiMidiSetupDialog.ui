@@ -127,7 +127,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>FluidSynth</string>
+       <string notr="true">FluidSynth</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -393,7 +393,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Timidity</string>
+       <string notr="true">TiMidity</string>
       </attribute>
       <widget class="QCheckBox" name="enableTimidity">
        <property name="geometry">
@@ -405,7 +405,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Enable Timidity</string>
+        <string>Enable TiMidity</string>
        </property>
       </widget>
       <widget class="QGroupBox" name="timiditySettingsGroupBox">

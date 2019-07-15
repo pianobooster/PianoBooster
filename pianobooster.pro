@@ -6,7 +6,7 @@ CONFIG += link_pkgconfig
 
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
-isEmpty(USE_TIMIDITY): USE_TIMIDITY="ON"
+isEmpty(USE_TIMIDITY): USE_TIMIDITY="OFF"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
 isEmpty(NO_LICENSE): NO_LICENSE="OFF"
 isEmpty(WITH_MAN): WITH_MAN="OFF"

@@ -854,11 +854,6 @@
 <context>
     <name>GuiMidiSettingsDialog</name>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="14"/>
-        <source>Dialog</source>
-        <translation>Samskiptagluggi</translation>
-    </message>
-    <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="27"/>
         <source>MIDI input &amp;&amp; output</source>
         <translation>MIDI-inntak &amp;&amp; úttak</translation>
@@ -879,87 +874,108 @@
         <translation>MIDI-úttakstæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="130"/>
-        <source>FluidSynth</source>
-        <translation>FluidSynth</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="143"/>
         <source>Sound Fonts</source>
         <translation>Hljóðletur</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
         <source>Add</source>
         <translation>Bæta við</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="163"/>
         <source>Remove</source>
         <translation>Fjarlægja</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="183"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="190"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="421"/>
         <source>Settings</source>
         <translation>Stillingar</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="218"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="225"/>
         <source>Audio Device:</source>
         <translation>Hljóðtæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="251"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="258"/>
         <source>Master Gain:</source>
         <translation>Aðal-mögnun:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="208"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="408"/>
+        <source>Enable TiMidity</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="436"/>
+        <source>Libao mode</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="443"/>
+        <source>ALSA pcm device</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="450"/>
+        <source>ALSA sequencer interface</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="215"/>
         <source>Audio Driver:</source>
         <translation>Hljóðkortsrekill:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
         <source>Sample Rate:</source>
         <translation>Safntíðni:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
         <source>Buffer Size</source>
         <translation>Stærð biðminnis</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="231"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
         <source>Buffer counts</source>
         <translation>Fjöldi í biðminni</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="268"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
         <source>Reverb</source>
         <translation>Eftirómur</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="191"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
         <source>Chorus</source>
         <translation>Kórus</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="344"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
+        <source>Enable FluidSynth</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="354"/>
         <source>Settings on this tab will take effect after restart.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="352"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="362"/>
         <source>Latency Fix</source>
         <translation>Lagfæring á biðtíma</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="364"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="374"/>
         <source>Latency</source>
         <translation>Biðtími</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="377"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="387"/>
         <source>0 (msec)</source>
         <translation>0 (msek)</translation>
     </message>
@@ -967,80 +983,80 @@
 <context>
     <name>GuiMidiSetupDialog</name>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="59"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="64"/>
         <source>None (PC Keyboard)</source>
         <translation>Ekkert (lyklaborð tölvu)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="65"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="129"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="184"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="70"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="205"/>
         <source>None</source>
         <translation>Ekkert</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="137"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
         <source>Midi Output Device:</source>
         <translation>MIDI-úttakstæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="139"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="160"/>
         <source>%1 mSec</source>
         <translation>%1 msek</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="159"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="180"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>Settu inn gildi fyrir lagfæringu á biðtíma í millísekúndum</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="160"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="181"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="279"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="323"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>SoundFont2-skrár (*.sf2)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="45"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="50"/>
         <source>Midi Setup</source>
         <translation>Uppsetning MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="130"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>Ekkert hljóðúttakstæki valið; veldu MIDI-úttakstæki</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="125"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="132"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="146"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="123"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
         <translation>Ef þú ert ekki með MIDI-hljómborð geturðu notað lyklaborð tölvunnar; &apos;X&apos; er miðju-C.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
         <source>Midi Input Device:</source>
         <translation>MIDI-inntakstæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="134"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="135"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>(Try a latency fix of 150msc)</source>
         <translation>(prófaðu lagfæringu á biðtíma um 150 msek)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="278"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="322"/>
         <source>Open SoundFont2 File for fluidsynth</source>
         <translation type="unfinished"/>
     </message>
