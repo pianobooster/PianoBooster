@@ -57,6 +57,10 @@ FIND_PACKAGE( PkgConfig REQUIRED )
 
 if(USE_FTGL)
    pkg_check_modules(FTGL ftgl)
+   if(NOT FTGL_FOUND)
+      MESSAGE(FATAL_ERROR "FTGL not found")
+   endif(NOT FTGL_FOUND)
+
    SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
    SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
 else(USE_FTGL)
