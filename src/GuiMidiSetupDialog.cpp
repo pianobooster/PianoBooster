@@ -41,7 +41,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     midiSetupTabWidget->setCurrentIndex(0);
 
 #ifndef PB_USE_FLUIDSYNTH
-    //midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
+    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
 #ifndef PB_USE_TIMIDITY
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_4));
@@ -89,6 +89,8 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     audioDriverCombo->addItem("oss");
     audioDriverCombo->addItem("portaudio");
     audioDriverCombo->addItem("pulseaudio");
+
+    setDefaultFluidSynth();
 
     connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
 
@@ -298,6 +300,24 @@ void GuiMidiSetupDialog::updateFluidInfoText()
 
 }
 
+void GuiMidiSetupDialog::setDefaultFluidSynth(){
+    masterGainSpin->setValue(0.4);
+    bufferSizeSpin->setValue(128);
+    bufferCountsSpin->setValue(6);
+    reverbCheck->setChecked(false);
+    chorusCheck->setChecked(false);
+    #if defined (Q_OS_LINUX)
+    audioDriverCombo->setCurrentIndex(1);
+    audioDeviceLineEdit->setText("plughw:0");
+    #endif
+    #if defined (Q_OS_UNIX)
+    audioDriverCombo->setCurrentIndex(3);
+    audioDeviceLineEdit->setText("");
+    #endif
+    sampleRateCombo->setCurrentIndex(0);
+
+}
+
 
 void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
 {
@@ -322,24 +342,7 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
     if (soundFontName.isEmpty()) return;
 
-    m_settings->addFluidSoundFontName(soundFontName);
-
-    if (m_settings->getFluidSoundFontNames().size()==1){
-        masterGainSpin->setValue(0.4);
-        bufferSizeSpin->setValue(128);
-        bufferCountsSpin->setValue(6);
-        reverbCheck->setChecked(false);
-        chorusCheck->setChecked(false);
-        #if defined (Q_OS_LINUX)
-        audioDriverCombo->setCurrentIndex(1);
-        audioDeviceLineEdit->setText("plughw:0");
-        #endif
-        #if defined (Q_OS_UNIX)
-        audioDriverCombo->setCurrentIndex(3);
-        audioDeviceLineEdit->setText("");
-        #endif
-        sampleRateCombo->setCurrentIndex(0);
-    }
+    m_settings->addFluidSoundFontName(soundFontName);    
 
     updateFluidInfoText();
 
@@ -366,14 +369,7 @@ void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
     }
 
     if (m_settings->getFluidSoundFontNames().size()==0){
-        masterGainSpin->setValue(0.2);
-        bufferSizeSpin->setValue(0);
-        bufferCountsSpin->setValue(0);
-        reverbCheck->setChecked(false);
-        chorusCheck->setChecked(false);
-        audioDriverCombo->setCurrentIndex(0);
-        audioDeviceLineEdit->setText("");
-        sampleRateCombo->setCurrentIndex(0);
+        setDefaultFluidSynth();
         m_settings->remove("Fluid");
     }
 
