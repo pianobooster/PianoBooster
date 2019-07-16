@@ -78,6 +78,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     sampleRateCombo->addItem("44100");
     sampleRateCombo->addItem("22050");
+    sampleRateCombo->setValidator(new QIntValidator(0, 999999, this));
 
     updateMidiInfoText();
 
