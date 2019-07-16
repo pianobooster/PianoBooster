@@ -125,10 +125,10 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     // disabled checkbox timidityAlsa
     timidityAlsa->setEnabled(false);
 
-    enableTimidity->setChecked(m_settings->value("timidity/enableTimidity","false").toBool());
-    timidityAlsa->setChecked(m_settings->value("timidity/timidityAlsa","true").toBool());
-    timidityLibaoMode->setChecked(m_settings->value("timidity/timidityLibaoMode","true").toBool());
-    timidityPcmDevice->setChecked(m_settings->value("timidity/timidityPcmDevice","false").toBool());
+    enableTimidity->setChecked(m_settings->value("TiMidity/enableTimidity","false").toBool());
+    timidityAlsa->setChecked(m_settings->value("TiMidity/timidityAlsa","true").toBool());
+    timidityLibaoMode->setChecked(m_settings->value("TiMidity/timidityLibaoMode","true").toBool());
+    timidityPcmDevice->setChecked(m_settings->value("TiMidity/timidityPcmDevice","false").toBool());
 
     on_enableTimidity_stateChanged(enableTimidity->isChecked());
 }
@@ -264,13 +264,13 @@ void GuiMidiSetupDialog::accept()
 
     // save timidity settings
     if (!enableTimidity->isChecked()){
-        m_settings->remove("timidity");
+        m_settings->remove("TiMidity");
     }else{
-        m_settings->setValue("timidity/timidityAlsa",timidityAlsa->isChecked());
-        m_settings->setValue("timidity/timidityLibaoMode",timidityLibaoMode->isChecked());
-        m_settings->setValue("timidity/timidityPcmDevice",timidityPcmDevice->isChecked());
+        m_settings->setValue("TiMidity/timidityAlsa",timidityAlsa->isChecked());
+        m_settings->setValue("TiMidity/timidityLibaoMode",timidityLibaoMode->isChecked());
+        m_settings->setValue("TiMidity/timidityPcmDevice",timidityPcmDevice->isChecked());
     }
-    m_settings->setValue("timidity/enableTimidity",enableTimidity->isChecked());
+    m_settings->setValue("TiMidity/enableTimidity",enableTimidity->isChecked());
 
 
 
