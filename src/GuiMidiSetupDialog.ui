@@ -429,7 +429,7 @@
           <item>
            <widget class="QRadioButton" name="timidityPcmDevice">
             <property name="text">
-             <string>ALSA pcm device</string>
+             <string>ALSA PCM device</string>
             </property>
            </widget>
           </item>

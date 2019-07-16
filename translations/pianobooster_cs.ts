@@ -899,47 +899,42 @@
         <translation>Zvukové zařízení:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="238"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="242"/>
         <source>Buffer Counts:</source>
         <translation>Množství vyrovnávací paměti:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="258"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Master Gain:</source>
         <translation>Hlavní zesílení:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="282"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
         <source>Buffer Size:</source>
         <translation>Velikost vyrovnávací paměti:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="368"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="372"/>
         <source>Enable TiMidity</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="387"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="391"/>
         <source>Interface</source>
         <translation>Rozhraní</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="415"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="419"/>
         <source>Output mode</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="421"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="425"/>
         <source>Libao mode</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="428"/>
-        <source>ALSA pcm device</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="393"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="397"/>
         <source>ALSA sequencer interface</source>
         <translation type="unfinished"/>
     </message>
@@ -954,7 +949,7 @@
         <translation>Vzorkovací kmitočet:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="275"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
         <source>Reverb</source>
         <translation>Ozvěna</translation>
     </message>
@@ -969,23 +964,28 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="354"/>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="488"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="358"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="492"/>
         <source>Settings on this tab will take effect after restart.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="496"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="432"/>
+        <source>ALSA PCM device</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="500"/>
         <source>Latency Fix</source>
         <translation>Oprava prodlevy</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="508"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="512"/>
         <source>Latency</source>
         <translation>Prodleva</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="521"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="525"/>
         <source>0 (msec)</source>
         <translation>0 (ms)</translation>
     </message>
@@ -999,33 +999,33 @@
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="70"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="209"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="147"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="202"/>
         <source>None</source>
         <translation>Žádná</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="162"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
         <source>Midi Output Device:</source>
         <translation>Zařízení pro výstup MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="164"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
         <source>%1 mSec</source>
         <translation>%1 ms</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="184"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="177"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>Zadejte hodnotu pro opravu prodlevy v milisekundách</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="185"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="178"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation>Oprava prodlevy pracuje pouštěním hudby před tím, &lt;br&gt;co hrajete, aby působila proti zpoždění v tvůrci zvuku.&lt;br&gt;&lt;br&gt;Budete potřebovat  piano &lt;b&gt;s reproduktory&lt;/b&gt;, jež jsou &lt;b&gt;zesíleny&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Zadejte čas v milisekundách pro zpoždění (1000 ms = 1 s)&lt;br&gt;(Pro Microsoft GS Wavetable SW Synth zkuste hodnotu 150)&lt;br&gt;Pokud si nejste jisti, zadejte jako hodnotu nulu.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="331"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="342"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>Soubory SoundFont2 (*.sf2)</translation>
     </message>
@@ -1035,38 +1035,38 @@
         <translation>Nastavení MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>Nevybráno žádné zařízení pro výstup zvuku. Zvolte zařízení pro výstup MIDI</translation>
     </message>
     <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="143"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation>Používání Midi Through se nedoporučuje!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="141"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
         <translation>Pokud nemáte klávesnici zařízení MIDI, můžete namísto ní používat klávesnici počítače; &apos;x&apos; je jednočárkované C.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="145"/>
         <source>Midi Input Device:</source>
         <translation>Zařízení pro vstup MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="159"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
         <translation>Poznámka: Microsoft GS Wavetable Synth přináší nežádoucí zpoždění!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="160"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
         <source>(Try a latency fix of 150msc)</source>
         <translation>(Zkuste opravu prodlevy 150 ms</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="330"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="341"/>
         <source>Open SoundFont2 File for fluidsynth</source>
         <translation>Otevřít soubor SoundFont2 pro fluidsynth</translation>
     </message>
