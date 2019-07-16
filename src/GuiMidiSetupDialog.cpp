@@ -306,13 +306,13 @@ void GuiMidiSetupDialog::setDefaultFluidSynth(){
     bufferCountsSpin->setValue(6);
     reverbCheck->setChecked(false);
     chorusCheck->setChecked(false);
+    #if defined (Q_OS_UNIX) || defined (Q_OS_DARWIN)
+    audioDriverCombo->setCurrentIndex(3);
+    audioDeviceLineEdit->setText("");
+    #endif
     #if defined (Q_OS_LINUX)
     audioDriverCombo->setCurrentIndex(1);
     audioDeviceLineEdit->setText("plughw:0");
-    #endif
-    #if defined (Q_OS_UNIX)
-    audioDriverCombo->setCurrentIndex(3);
-    audioDeviceLineEdit->setText("");
     #endif
     sampleRateCombo->setCurrentIndex(0);
 
