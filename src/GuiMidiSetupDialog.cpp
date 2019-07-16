@@ -41,7 +41,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     midiSetupTabWidget->setCurrentIndex(0);
 
 #ifndef PB_USE_FLUIDSYNTH
-    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
+    //midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
 #ifndef PB_USE_TIMIDITY
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_4));
@@ -291,10 +291,10 @@ void GuiMidiSetupDialog::updateFluidInfoText()
 
     fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
 
-    bool enableGroups = (fontLoaded and enableFluidSynth->isChecked()) ? true : false;
+    bool enableGroups = (enableFluidSynth->isChecked()) ? true : false;
 
-    fluidSettingsGroupBox->setEnabled(enableGroups);
     groupBox_3->setEnabled(enableGroups);
+    fluidSettingsGroupBox->setEnabled(fontLoaded);
 
 }
 
@@ -320,8 +320,26 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
 
     QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluidsynth"),
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
-    if (!soundFontName.isEmpty())
-        m_settings->addFluidSoundFontName(soundFontName);
+    if (soundFontName.isEmpty()) return;
+
+    m_settings->addFluidSoundFontName(soundFontName);
+
+    if (m_settings->getFluidSoundFontNames().size()==1){
+        masterGainSpin->setValue(0.4);
+        bufferSizeSpin->setValue(128);
+        bufferCountsSpin->setValue(6);
+        reverbCheck->setChecked(false);
+        chorusCheck->setChecked(false);
+        #if defined (Q_OS_LINUX)
+        audioDriverCombo->setCurrentIndex(1);
+        audioDeviceLineEdit->setText("plughw:0");
+        #endif
+        #if defined (Q_OS_UNIX)
+        audioDriverCombo->setCurrentIndex(3);
+        audioDeviceLineEdit->setText("");
+        #endif
+        sampleRateCombo->setCurrentIndex(0);
+    }
 
     updateFluidInfoText();
 
