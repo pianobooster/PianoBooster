@@ -6,6 +6,21 @@
 # License: same with Pianobooster
 # Author: Alexey Loginov <alexl@mageia.org>
 
+MES1="Error: SoundFonts SF1 and SF2 were not found!"
+MES2="Error: fluidsynth was not run!"
+MES3="Error: SoundFont SF was not found!"
+MES4="Supported audio drivers are jack, alsa!"
+MES5="Please try again!"
+MES6="Error: fluidsynth was not found or broken!"
+MES7="Error: jackd was not found!"
+MES8="Starting fluidsynth..."
+MES9="Please wait 10 more seconds!"
+MES10="Fluidsynth does not have ALSA support!"
+MES11="Switching on using JACK..."
+MES12="Error: pianobooster was not found!"
+MES13="Error: No support for audio driver:"
+MES14="Ignoring..."
+
 use_jack="0"
 audioDevice="plughw:0"
 bufferCounts="6"
@@ -17,7 +32,15 @@ sampleRate="44100"
 
 if [ -f ~/.config/PianoBooster/"Piano Booster.ini" ]
 then
-  . ~/.config/PianoBooster/"Piano Booster.ini" 2>/dev/null
+  cp -f ~/.config/PianoBooster/"Piano Booster.ini" ~/.config/PianoBooster/PianoBooster.ini
+  sed -i '/\[/d' ~/.config/PianoBooster/PianoBooster.ini
+  sed -i '/^$/d' ~/.config/PianoBooster/PianoBooster.ini
+  sed -i "s|=|=\'|g" ~/.config/PianoBooster/PianoBooster.ini
+  sed -i "s|$|\'|g" ~/.config/PianoBooster/PianoBooster.ini
+  sed -i "s|''|'|g" ~/.config/PianoBooster/PianoBooster.ini
+  sed -i "s|'\"='\"'|'='|g" ~/.config/PianoBooster/PianoBooster.ini
+  . ~/.config/PianoBooster/PianoBooster.ini 2>/dev/null
+  rm -f ~/.config/PianoBooster/PianoBooster.ini
 fi
 
 if [ ! -z "$audioDeviceLineEdit" ]
@@ -59,21 +82,6 @@ if [ "$reverbCheck" = "true" ]
 then
   reverb="1"
 fi
-
-MES1="Error: SoundFonts SF1 and SF2 were not found!"
-MES2="Error: fluidsynth was not run!"
-MES3="Error: SoundFont SF was not found!"
-MES4="Supported audio drivers are jack, alsa!"
-MES5="Please try again!"
-MES6="Error: fluidsynth was not found or broken!"
-MES7="Error: jackd was not found!"
-MES8="Starting fluidsynth..."
-MES9="Please wait 10 more seconds!"
-MES10="Fluidsynth does not have ALSA support!"
-MES11="Switching on using JACK..."
-MES12="Error: pianobooster was not found!"
-MES13="Error: No support for audio driver:"
-MES14="Ignoring..."
 
 lang=`echo $LANGUAGE|cut -d ":" -f 2`
 
