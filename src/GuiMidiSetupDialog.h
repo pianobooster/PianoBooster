@@ -60,6 +60,7 @@ private:
 
     void updateMidiInfoText();
     void updateFluidInfoText();
+    void setDefaultFluidSynth();
     CSettings* m_settings;
     CSong* m_song;
     int m_latencyFix;

@@ -90,6 +90,8 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     audioDriverCombo->addItem("portaudio");
     audioDriverCombo->addItem("pulseaudio");
 
+    setDefaultFluidSynth();
+
     connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
 
     enableFluidSynth->setChecked(m_settings->value("FluidSynth/enableFluidSynth","false").toBool());
@@ -291,10 +293,28 @@ void GuiMidiSetupDialog::updateFluidInfoText()
 
     fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
 
-    bool enableGroups = (fontLoaded and enableFluidSynth->isChecked()) ? true : false;
+    bool enableGroups = (enableFluidSynth->isChecked()) ? true : false;
 
-    fluidSettingsGroupBox->setEnabled(enableGroups);
     groupBox_3->setEnabled(enableGroups);
+    fluidSettingsGroupBox->setEnabled(fontLoaded);
+
+}
+
+void GuiMidiSetupDialog::setDefaultFluidSynth(){
+    masterGainSpin->setValue(0.4);
+    bufferSizeSpin->setValue(128);
+    bufferCountsSpin->setValue(6);
+    reverbCheck->setChecked(false);
+    chorusCheck->setChecked(false);
+    #if defined (Q_OS_LINUX)
+    audioDriverCombo->setCurrentIndex(1);
+    audioDeviceLineEdit->setText("plughw:0");
+    #endif
+    #if defined (Q_OS_UNIX)
+    audioDriverCombo->setCurrentIndex(3);
+    audioDeviceLineEdit->setText("");
+    #endif
+    sampleRateCombo->setCurrentIndex(0);
 
 }
 
@@ -320,8 +340,9 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
 
     QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluidsynth"),
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
-    if (!soundFontName.isEmpty())
-        m_settings->addFluidSoundFontName(soundFontName);
+    if (soundFontName.isEmpty()) return;
+
+    m_settings->addFluidSoundFontName(soundFontName);    
 
     updateFluidInfoText();
 
@@ -348,14 +369,7 @@ void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
     }
 
     if (m_settings->getFluidSoundFontNames().size()==0){
-        masterGainSpin->setValue(0.2);
-        bufferSizeSpin->setValue(0);
-        bufferCountsSpin->setValue(0);
-        reverbCheck->setChecked(false);
-        chorusCheck->setChecked(false);
-        audioDriverCombo->setCurrentIndex(0);
-        audioDeviceLineEdit->setText("");
-        sampleRateCombo->setCurrentIndex(0);
+        setDefaultFluidSynth();
         m_settings->remove("Fluid");
     }
 
