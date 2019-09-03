@@ -128,12 +128,17 @@ case $lang in
           MES1="Fehler: SoundFonts SF1 und SF2 wurden nicht gefunden!"
           MES2="Fehler: Fluidsynth wurde nicht ausgeführt!"
           MES3="Fehler: SoundFont SF wurde nicht gefunden!"
+          MES4="Unterstützte Audio-Treiber sind JACK und ALSA!"
           MES5="Bitte erneut versuchen!"
           MES6="Fehler: Fluidsynth wurde nicht gefunden oder ist beschädigt!"
           MES7="Fehler: jackd wurde nicht gefunden!"
           MES8="Fluidsynth wird gestartet..."
           MES9="Bitte noch 10 Sekunden warten!"
+          MES10="Fluidsynth bietet keine ALSA-Unterstützung!"
+          MES11="Es wird zu JACK gewechselt..."
           MES12="Fehler: pianobooster wurde nicht gefunden!"
+          MES13="Fehler: Keine Unterstützung für den Audio-Treiber."
+          MES14="Ignorieren..."
           ;;
      uk)
           MES1="Помилка: не знайдено звукових шрифтів SF1 та SF2!"
@@ -169,12 +174,17 @@ case $lang in
           MES1="Błąd: SoundFonts SF1 i SF2 nie zostały znalezione!"
           MES2="Błąd: fluidsynth nie został uruchomiony!"
           MES3="Błąd: Nie znaleziono SoundFont SF!"
+          MES4="Wspierane sterowniki dźwięku to: JACK, ALSA!"
           MES5="Spróbuj ponownie!"
           MES6="Błąd: fluidsynth nie został znaleziony lub jest uszkodzony!"
           MES7="Błąd: jackd nie został znaleziony!"
+          MES8="Uruchamianie fludsynth..."
           MES9="Poczekaj jeszcze 10 sekund!"
           MES10="Fluidsynth nie ma wsparcia ALSA!"
+          MES11="Przełączanie na JACK..."
           MES12="Błąd: pianobooster nie został znaleziony!"
+          MES13="Błąd: Brak wsparcia dla sterownika dźwięku."
+          MES14="Ignorowanie..."
           ;;
 esac
 

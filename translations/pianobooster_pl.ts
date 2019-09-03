@@ -52,7 +52,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="267"/>
         <source>Bar:</source>
-        <translation type="unfinished"/>
+        <translation>Takt:</translation>
     </message>
 </context>
 <context>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation type="unfinished"/>
+        <translation>Marimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -373,7 +373,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation type="unfinished"/>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -563,7 +563,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>FX 1 (rain)</source>
-        <translation type="unfinished"/>
+        <translation>FX 1 (deszcz)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
@@ -608,7 +608,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation type="unfinished"/>
+        <translation>Banjo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
@@ -623,7 +623,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation type="unfinished"/>
+        <translation>Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -815,7 +815,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation type="unfinished"/>
+        <translation>Ups, masz &lt;b&gt;0 nut&lt;/b&gt; na swojej klawiaturze!</translation>
     </message>
 </context>
 <context>
@@ -916,7 +916,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="372"/>
         <source>Enable TiMidity</source>
-        <translation type="unfinished"/>
+        <translation>Włącz TiMidity</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="391"/>
@@ -926,7 +926,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="419"/>
         <source>Output mode</source>
-        <translation type="unfinished"/>
+        <translation>Tryb wyjściowy</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="425"/>
@@ -961,18 +961,18 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
         <source>Enable FluidSynth</source>
-        <translation type="unfinished"/>
+        <translation>Włącz FluidSynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="358"/>
         <location filename="../src/GuiMidiSetupDialog.ui" line="492"/>
         <source>Settings on this tab will take effect after restart.</source>
-        <translation type="unfinished"/>
+        <translation>Ustawienia z tej karty będą działać po ponownym uruchomieniu.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="432"/>
         <source>ALSA PCM device</source>
-        <translation type="unfinished"/>
+        <translation>Urządzenie ALSA PCM</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="500"/>
@@ -1106,7 +1106,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"/>
+        <translation>Błędy podążania</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
@@ -1151,12 +1151,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>On the Beat</source>
-        <translation type="unfinished"/>
+        <translation>Na uderzeniu</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>After the Beat</source>
-        <translation type="unfinished"/>
+        <translation>Po uderzeniu</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="46"/>
@@ -1234,7 +1234,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="209"/>
         <source>Repeat song</source>
-        <translation type="unfinished"/>
+        <translation>Powtórz piosenkę</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
@@ -1275,13 +1275,13 @@
         <location filename="../src/GuiSidePanel.cpp" line="83"/>
         <location filename="../src/GuiSidePanel.cpp" line="287"/>
         <source>Drums</source>
-        <translation type="unfinished"/>
+        <translation>Bębny</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="84"/>
         <location filename="../src/GuiSidePanel.cpp" line="288"/>
         <source>Melody</source>
-        <translation type="unfinished"/>
+        <translation>Melodia</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="100"/>
@@ -1291,7 +1291,7 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="104"/>
         <source>Set as Left Hand Part</source>
-        <translation type="unfinished"/>
+        <translation>Ustaw jako część dla lewej ręki</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="108"/>
@@ -1341,7 +1341,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation>Kanały lewej i prawej ręki muszą być niedostępne, aby wyłączyć tę funkcję</translation>
+        <translation>Kanały lewej i prawej ręki muszą być wyłączone, aby wyłączyć tę funkcję</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
@@ -1417,7 +1417,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
         <source>Gb</source>
-        <translation type="unfinished"/>
+        <translation>Gb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="90"/>
@@ -1439,7 +1439,7 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>Bb</source>
-        <translation type="unfinished"/>
+        <translation>Bb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
@@ -1516,27 +1516,27 @@
         <location filename="../src/MidiFile.cpp" line="92"/>
         <location filename="../src/MidiFile.cpp" line="99"/>
         <source>Midi File Error</source>
-        <translation type="unfinished"/>
+        <translation>Error pliku Midi</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Nie można otworzyć &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"/>
+        <translation>Plik Midi &quot;%1&quot; jest uszkodzony</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="55"/>
         <source>OpenGL support</source>
-        <translation type="unfinished"/>
+        <translation>Obsługa OpenGL</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="56"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation type="unfinished"/>
+        <translation>Ten system nie obsługuje OpenGL, które jest potrzebne to uruchomienia Piano Booster.</translation>
     </message>
 </context>
 <context>
@@ -1554,7 +1554,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="343"/>
         <source>Drums</source>
-        <translation type="unfinished"/>
+        <translation>Bębny</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="346"/>
@@ -1574,17 +1574,17 @@
         <location filename="../src/QtWindow.cpp" line="248"/>
         <location filename="../src/QtWindow.cpp" line="272"/>
         <source>PianoBooster Midi File Error</source>
-        <translation type="unfinished"/>
+        <translation>PianoBooster Error pliku Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="241"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Nie można otworzyć &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="249"/>
         <source>&quot;%1&quot; is not a Midi File</source>
-        <translation type="unfinished"/>
+        <translation>&quot;%1&quot; nie jest plikiem Midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="273"/>
@@ -1670,7 +1670,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Change the piano keyboard settings</source>
-        <translation type="unfinished"/>
+        <translation>Zmień ustawienia klawiatury pianina</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="377"/>
@@ -1787,7 +1787,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="480"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"/>
+        <translation>Strona Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="522"/>
@@ -1817,12 +1817,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="625"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="627"/>
@@ -1837,7 +1837,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="634"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation type="unfinished"/>
+        <translation>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="643"/>

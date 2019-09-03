@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sk" version="2.1">
 <context>
     <name>CDraw</name>
     <message>
@@ -100,7 +98,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
         <source>Honky-tonk Piano</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
@@ -120,12 +118,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -240,7 +238,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
         <source>Guitar harmonics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
@@ -335,12 +333,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
         <source>SynthStrings 1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>SynthStrings 2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
@@ -680,7 +678,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
         <source>Reverse Cymbal</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="476"/>

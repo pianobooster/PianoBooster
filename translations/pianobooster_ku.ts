@@ -1224,7 +1224,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Left</source>
-        <translation>Çep</translation>
+        <translation>چەپ</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="188"/>

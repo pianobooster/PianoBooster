@@ -59,9 +59,17 @@ case $lang in
           MES11="Извините, но JACK ещё не поддерживается!"
           ;;
      fr)
-          MES1="Erreur : timidity n'a pas été trouvé ou est cassé !"
-          MES2="Erreur : timidity n'a pas les options -OO ou -Os !"
-          MES3="Erreur : timidity n'a pas l'option -iA !"
+          MES1="Erreur : timidity n’a pas été trouvé ou est cassé !"
+          MES2="Erreur : timidity n’a pas les options -OO ou -Os !"
+          MES3="Erreur : timidity n’a pas l’option -iA !"
+          MES4="Erreur : pianobooster n’a pas été trouvé !"
+          MES5="Erreur : timidity n’a pas l’option -OO !"
+          MES6="Erreur : timidity n’a pas l’option -Os !"
+          MES7="Le mode Libao est désactivé !"
+          MES8="Le mode Périphérique ALSA PCM est désactivé !"
+          MES9="Les modes Libao et périphérique ALSA PCM sont désactivés !"
+          MES10="Erreur : timidity n’a pas été démarré !"
+          MES11="Désolé, JACK n’est pas encore supporté !"
           ;;
      fi)
           MES4="Virhe: pianobooster ei löytynyt!"
@@ -74,7 +82,7 @@ case $lang in
      gl)
           MES1="Erro: Non se atopou Timidity ou está quebrado"
           MES2="Erro: Timidity non ten as opcións -OO ou -Os"
-          MES3="Error: Timidity non ten a opción -iA"
+          MES3="Erro: Timidity non ten a opción -iA"
           MES10="Erro: o timidity non foi executado!"
           ;;
      pl)
@@ -82,7 +90,13 @@ case $lang in
           MES2="Błąd: timidity nie posiada opcji -OO lub -Os "
           MES3="Błąd: timidity nie posiada opcji -iA "
           MES4="Błąd: pianobooster nie został znaleziony!"
+          MES5="Błąd: timidity nie posiada opcji -OO "
+          MES6="Błąd: timidity nie posiada opcji -Os "
+          MES7="Tryb Libao jest wyłączony!"
+          MES8="Tryb urządzenia ALSA PCM jest wyłączony!"
+          MES9="Tryb Libao i tryb urządzenia ALSA PCM jest wyłączony!"
           MES10="Błąd: timidity nie został uruchomiony!"
+          MES11="Wybacz, ale JACK nie jest jeszcze obsługiwany!"
           ;;
      uk)
           MES1="Помилка: timidity не знайдено або дані програми пошкоджено!"

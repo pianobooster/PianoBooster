@@ -916,27 +916,27 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="372"/>
         <source>Enable TiMidity</source>
-        <translation type="unfinished"/>
+        <translation>Activer TiMidity</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="391"/>
         <source>Interface</source>
-        <translation type="unfinished"/>
+        <translation>Interface</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="419"/>
         <source>Output mode</source>
-        <translation type="unfinished"/>
+        <translation>Mode de sortie</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="425"/>
         <source>Libao mode</source>
-        <translation type="unfinished"/>
+        <translation>Mode Libao</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="397"/>
         <source>ALSA sequencer interface</source>
-        <translation type="unfinished"/>
+        <translation>Interface du séquenceur ALSA</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="215"/>
@@ -961,18 +961,18 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
         <source>Enable FluidSynth</source>
-        <translation type="unfinished"/>
+        <translation>Activer FluidSynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="358"/>
         <location filename="../src/GuiMidiSetupDialog.ui" line="492"/>
         <source>Settings on this tab will take effect after restart.</source>
-        <translation type="unfinished"/>
+        <translation>Les paramètres modifiés ici prendront effet après le redémarrage. </translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="432"/>
         <source>ALSA PCM device</source>
-        <translation type="unfinished"/>
+        <translation>Périphérique ALSA PCM</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="500"/>
@@ -1106,7 +1106,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"/>
+        <translation>Poursuivre malgré les erreurs</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
@@ -1234,7 +1234,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="209"/>
         <source>Repeat song</source>
-        <translation type="unfinished"/>
+        <translation>Répéter le morceau</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
@@ -1521,12 +1521,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Impossible d’ouvrir &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"/>
+        <translation>Le fichier midi &quot;%1&quot; est corrompu</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="55"/>
@@ -1579,17 +1579,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="241"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Impossible d’ouvrir &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="249"/>
         <source>&quot;%1&quot; is not a Midi File</source>
-        <translation type="unfinished"/>
+        <translation>&quot;%1&quot; n’est pas un fichier midi</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="273"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
-        <translation type="unfinished"/>
+        <translation>&quot;%1&quot; n’est pas un fichier midi valide</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
