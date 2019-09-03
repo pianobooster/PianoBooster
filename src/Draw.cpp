@@ -578,13 +578,13 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                     case 0: //note::PitchLabel::C:
                         colour = CColour(1.0, 0.0, 0.0); //Red
                       break;
-                    case 1: //note::PitchLabel::CS:
+                    case 1: //note::PitchLabel::C♯:
                         colour = CColour(1.0, 0.25, 0.0); //Red
                       break;
                     case 2: //note::PitchLabel::D:
                         colour = CColour(1.0, 0.5, 0.0); //Orange
                       break;
-                    case 3: //note::PitchLabel::DS:
+                    case 3: //note::PitchLabel::D♯:
                         colour = CColour(1.0, 0.75, 0.0); //Orange
                       break;
                     case 4: //note::PitchLabel::E:
@@ -593,19 +593,19 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                     case 5: //note::PitchLabel::F:
                         colour = CColour(0.0, 1.0, 0.0); //Green
                       break;
-                    case 6: //note::PitchLabel::FS:
+                    case 6: //note::PitchLabel::F♯:
                         colour = CColour(0.0, 0.5, 0.5); //Green
                       break;
                     case 7: //note::PitchLabel::G:
                         colour = CColour(0.0, 0.0, 1.0); //Blue
                       break;
-                    case 8: //note::PitchLabel::GS:
+                    case 8: //note::PitchLabel::G♯:
                         colour = CColour(0.290, 0.0, 0.903); //Blue
                       break;
                     case 9: //note::PitchLabel::A:
                         colour = CColour(0.580, 0.0, 0.827); //Dark Violet #9400D3
                       break;
-                    case 10: //note::PitchLabel::AS:
+                    case 10: //note::PitchLabel::A♯:
                         colour = CColour(0.790, 0.0, 0.903); //Dark Violet #9400D3
                       break;
                     case 11: //note::PitchLabel::B:
@@ -613,7 +613,6 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                       break;
                 }
             }
-
 #endif
             drColour(colour);
             glBegin(GL_POLYGON);
