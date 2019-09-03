@@ -72,6 +72,8 @@ Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
 **NO_LICENSE**: do not install license; disabled by default.
 
+**NO_CHANGELOG**: do not install changelog; disabled by default.
+
 **WITH_MAN**: install man page; disabled by default.
 
 **WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default.

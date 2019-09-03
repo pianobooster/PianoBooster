@@ -157,7 +157,7 @@ Section "Install Section"
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc
     File FilesForRelease\README.md
-    File FilesForRelease\ReleaseNotes.txt
+    File FilesForRelease\Changelog.txt
     File FilesForRelease\doc\faq.md
     File FilesForRelease\license.txt
     File FilesForRelease\gplv3.txt
@@ -180,7 +180,7 @@ Section "Install Section"
         CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Piano Booster.lnk" "$INSTDIR\pianobooster.exe" "" "$INSTDIR\pianobooster.exe" 0
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\ReadMe.lnk" "$INSTDIR\doc\ReadMe.md" "" "$INSTDIR\doc\ReadMe.md" 0
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\ReleaseNotes.lnk" "$INSTDIR\doc\ReleaseNotes.txt" "" "$INSTDIR\doc\ReleaseNotes.txt" 0
+        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\ReleaseNotes.lnk" "$INSTDIR\doc\Changelog.txt" "" "$INSTDIR\doc\Changelog.txt" 0
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\FAQ.lnk" "$INSTDIR\doc\faq.md" "" "$INSTDIR\doc\faq.md" 0
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
 
@@ -208,7 +208,7 @@ Section "Uninstall"
     ; Remove files and uninstaller
     Delete $INSTDIR\*.*
     Delete $INSTDIR\doc\README.md
-    Delete $INSTDIR\doc\ReleaseNotes.txt
+    Delete $INSTDIR\doc\Changelog.txt
     Delete $INSTDIR\doc\faq.md
     Delete $INSTDIR\doc\license.txt
     Delete $INSTDIR\doc\gplv3.txt

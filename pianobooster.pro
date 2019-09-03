@@ -9,6 +9,7 @@ isEmpty(USE_FTGL): USE_FTGL="ON"
 isEmpty(USE_TIMIDITY): USE_TIMIDITY="OFF"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
 isEmpty(NO_LICENSE): NO_LICENSE="OFF"
+isEmpty(NO_CHANGELOG): NO_CHANGELOG="OFF"
 isEmpty(WITH_MAN): WITH_MAN="OFF"
 isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
 isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
@@ -173,7 +174,7 @@ unix {
    contains(NO_DOCS, OFF){
       message(building with docs)
       docs.path = $$PREFIX/share/doc/pianobooster
-      docs.files = README.md ReleaseNotes.txt doc/faq.md
+      docs.files = README.md doc/faq.md
       INSTALLS += docs
    }
 
@@ -182,6 +183,12 @@ unix {
       license.path = $$PREFIX/share/licenses/pianobooster
       license.files = license.txt
       INSTALLS += license
+
+   contains(NO_CHANGELOG, OFF){
+      message(building with changelog)
+      changelog.path = $$PREFIX/share/doc/pianobooster
+      changelog.files = Changelog.txt
+      INSTALLS += changelog
    }
 
    contains(WITH_MAN, ON){

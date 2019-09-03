@@ -62,6 +62,7 @@ cmake \
     -DUSE_SYSTEM_FONT=ON \
     -DNO_DOCS=ON \
     -DNO_LICENSE=ON \
+    -DNO_CHANGELOG=ON \
     -DINSTALL_ALL_LANGS=ON \
     -DUSE_SYSTEM_RTMIDI=OFF \
     -DWITH_MAN=ON \
@@ -76,7 +77,7 @@ make install/strip DESTDIR=$PKG
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
-  README.md ReleaseNotes.txt doc/faq.md license.txt \
+  README.md Changelog.txt doc/faq.md license.txt \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

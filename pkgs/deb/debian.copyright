@@ -46,10 +46,17 @@ Copyright:
 License: CC-BY
  These pieces of music have been created to work with PianoBooster and
  have the creative commons copyright.
+ .
+ The complete text of this License can be found in
+ `/usr/share/common-licenses/CC0-1.0'.
+ .
+ See https://creativecommons.org/2014/01/07/plaintext-versions-of-creative-commons-4-0-licenses/
 
 Files: debian/*
 Copyright:
  2009, Miriam Ruiz <little_miry@yahoo.es>
+ 2018, Olivier Humbert <trebmuh@tuxfamily.org>
+ 2019, Barak A. Pearlmutter <bap@debian.org>
 License: GPL-3+
 
 License: GPL-3+

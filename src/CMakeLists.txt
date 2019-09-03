@@ -262,12 +262,15 @@ INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 if(NOT NO_DOCS)
     INSTALL( FILES ../README.md DESTINATION share/doc/pianobooster/ )
-    INSTALL( FILES ../ReleaseNotes.txt DESTINATION share/doc/pianobooster/ )
     INSTALL( FILES ../doc/faq.md DESTINATION share/doc/pianobooster/ )
 endif()
 
 if(NOT NO_LICENSE)
     INSTALL( FILES ../license.txt DESTINATION share/licenses/pianobooster/ )
+endif()
+
+if(NOT NO_CHANGELOG)
+    INSTALL( FILES ../Changelog.txt DESTINATION share/doc/pianobooster/ )
 endif()
 
 if(WITH_MAN)

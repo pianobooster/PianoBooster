@@ -3,86 +3,33 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
-CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
-CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
-LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
-LDFLAGS2:=-Wl,-z,defs -Wl,-as-needed -Wl,--no-undefined
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-BUILD_TREE=$(CURDIR)/build
+%:
+	dh $@
 
-config: config-stamp
-config-stamp:
-	dh_testdir
-	# Perform an out-of-tree build to keep a clean source tree
-	mkdir -p $(BUILD_TREE)
-	dh_auto_configure --builddirectory=$(BUILD_TREE) --sourcedirectory=. -- \
-		--debug-output \
-		-DCMAKE_BUILD_TYPE=Debug \
-		-DCMAKE_C_FLAGS:STRING="$(CFLAGS) $(CPPFLAGS)" \
-		-DCMAKE_CXX_FLAGS:STRING="$(CXXFLAGS) $(CPPFLAGS)" \
-		-DBUILD_STATIC:BOOL=ON \
-		-DCMAKE_SHARED_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="$(LDFLAGS) $(LDFLAGS2)" \
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_INSTALL_BINDIR=/usr/games \
 		-DUSE_SYSTEM_FONT=ON \
 		-DINSTALL_ALL_LANGS=ON \
 		-DUSE_SYSTEM_RTMIDI=ON \
 		-DWITH_MAN=ON \
-		-DWITH_TIMIDITY=ON \
 		-DWITH_FLUIDSYNTH=ON \
+		-DWITH_TIMIDITY=ON \
 		-DUSE_FLUIDSYNTH=ON \
 		-DUSE_TIMIDITY=ON \
-		-DCMAKE_INSTALL_PREFIX="$(CURDIR)/usr"
-	touch $@
+		-DNO_LICENSE=ON \
+		-DNO_CHANGELOG=ON
 
-build-stamp: config
+override_dh_installchangelogs:
+	dh_installchangelogs Changelog.txt
+
+# Not much benefit from compressing the little markdown documentation files.
+override_dh_compress:
+	dh_compress --exclude=.md
+
+refresh-tr:
 	dh_testdir
-	cd $(BUILD_TREE); $(MAKE)
-	touch $@
-
-build-indep:
-
-build-arch: build-stamp
-
-build: build-arch build-indep
-
-clean:
-	dh_testdir
-	dh_testroot
-	rm -fv build-stamp config-stamp
-	rm -fvr $(BUILD_TREE)
-	dh_clean
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_prep
-	dh_installdirs
-
-# Build architecture-independent files here.
-binary-indep:
-
-# Build architecture-dependent files here.
-binary-arch: install
-	dh_testdir
-	dh_testroot
-	$(MAKE) install -C $(BUILD_TREE)
-	dh_installchangelogs
-	dh_installdocs
-	dh_installexamples
-	dh_install
-	dh_installmenu
-	dh_installman
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-	[ ! -e /usr/bin/dh_buildinfo ] || dh_buildinfo
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep binary-arch
-.PHONY: config build build-indep build-arch clean binary-indep binary-arch binary install
+	@echo Update translations
+	lupdate -verbose pianobooster.pro

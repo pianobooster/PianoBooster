@@ -185,7 +185,7 @@ DOCUMENTATION
 
 [Documentation](doc/README.md)
 
-[Release Notes](ReleaseNotes.txt)
+[Changelog](Changelog.txt)
 
 BUGTRACKER
 ==========

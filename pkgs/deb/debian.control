@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Alexey Loginov <alexl@mageia.org>
 Build-Depends:
  cmake,
- debhelper (>= 10),
+ debhelper-compat (= 12),
  hicolor-icon-theme,
  libasound2-dev,
  libfluidsynth-dev,
@@ -15,7 +15,7 @@ Build-Depends:
  librtmidi-dev,
  qtbase5-dev,
  qttools5-dev
-Standards-Version: 4.1.4
+Standards-Version: 4.4.0
 Homepage: https://github.com/captnfab/PianoBooster
 
 Package: pianobooster

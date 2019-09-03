@@ -5,10 +5,10 @@ Architecture: any
 Version: 0.7.0
 Maintainer: Alexey Loginov <alexl@mageia.org>
 Homepage: https://github.com/captnfab/PianoBooster
-Standards-Version: 4.1.4
+Standards-Version: 4.4.0
 Build-Depends:
  cmake,
- debhelper (>= 10),
+ debhelper-compat (= 12),
  hicolor-icon-theme,
  libasound2-dev,
  libfluidsynth-dev,

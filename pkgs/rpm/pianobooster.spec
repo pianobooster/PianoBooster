@@ -84,7 +84,7 @@ PianoBooster, using the PC keyboard ('x' is middle C), but a MIDI piano
 is really recommended.
 
 %files
-%doc README.md ReleaseNotes.txt doc/faq.md
+%doc README.md Changelog.txt doc/faq.md
 %license license.txt
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
@@ -188,6 +188,7 @@ even without a plugged-in MIDI keyboard.
        -DUSE_SYSTEM_FONT=ON \
        -DNO_DOCS=ON \
        -DNO_LICENSE=ON \
+       -DNO_CHANGELOG=ON \
        -DINSTALL_ALL_LANGS=ON \
        -DUSE_SYSTEM_RTMIDI=ON \
        -DWITH_MAN=ON \
@@ -200,6 +201,7 @@ even without a plugged-in MIDI keyboard.
        USE_SYSTEM_FONT=ON \
        NO_DOCS=ON \
        NO_LICENSE=ON \
+       NO_CHANGELOG=ON \
        INSTALL_ALL_LANGS=ON \
        USE_SYSTEM_RTMIDI=ON \
        WITH_MAN=ON \

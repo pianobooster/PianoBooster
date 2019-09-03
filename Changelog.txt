@@ -7,7 +7,7 @@ v0.7.0:
 - Fix Qt strings localization
 - New options: INSTALL_ALL_LANGS, USE_SYSTEM_FONT, NO_DOCS, USE_SYSTEM_RTMIDI,
   WITH_MAN, WITH_TIMIDITY, WITH_FLUIDSYNTH, USE_FTGL, NO_LANGS, NO_LICENSE,
-  DATA_DIR, USE_TIMIDITY
+  DATA_DIR, USE_TIMIDITY, NO_CHANGELOG
 - Allow to switch between languages within a session
 - Add Piano Keyboard widget
 - Update documentation

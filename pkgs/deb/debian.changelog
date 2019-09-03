@@ -4,6 +4,8 @@ pianobooster (0.7.0) unstable; urgency=medium
   * Update dependencies
   * Update copyright
   * Update description
+  * Bump policy, dh12
+  * Shorten debian/rules
 
  -- Alexey Loginov <alexl@mageia.org>  Wed, 19 Jun 2019 01:08:17 +0100
 
