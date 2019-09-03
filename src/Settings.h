@@ -47,7 +47,7 @@ public:
 
     void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
 
-    /// returns true if the users wants to see the note names
+    /// returns true if the user wants to see the note names
     bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
     bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
 
