@@ -2,7 +2,7 @@
 Name=Piano Booster (FluidSynth)
 Comment=A MIDI file player that teaches you how to play the piano, with FluidSynth sequencer
 GenericName=Piano Teacher
-Exec=pianobooster-fluidsynth
+Exec=pianobooster-fluidsynth %f
 Icon=pianobooster
 Terminal=false
 Type=Application

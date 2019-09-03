@@ -2,7 +2,7 @@
 Name=Piano Booster (TiMidity)
 Comment=A MIDI file player that teaches you how to play the piano, with TiMidity sequencer
 GenericName=Piano Teacher
-Exec=pianobooster-timidity
+Exec=pianobooster-timidity %f
 Icon=pianobooster
 Terminal=false
 Type=Application
