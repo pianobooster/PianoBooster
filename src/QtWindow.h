@@ -130,6 +130,10 @@ private slots:
             showNormal();
     }
 
+    void onColouredNotes () {
+      m_settings->colouredNotes(m_colouredNotes->isChecked());
+    }
+
     void enableFollowTempo()
     {
         CTempo::enableFollowTempo(Cfg::experimentalTempo);
@@ -214,6 +218,7 @@ private:
     QAction *m_setupKeyboardAct;
     QAction *m_sidePanelStateAct;
     QAction *m_viewPianoKeyboard;
+    QAction *m_colouredNotes;
     QAction *m_fullScreenStateAct;
     QAction *m_setupPreferencesAct;
     QAction *m_songDetailsAct;
