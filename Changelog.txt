@@ -1,4 +1,4 @@
-v0.7.0:
+v0.7.0: (03 September 2019)
 - Switch on Qt5
 - Localization on many languages
 - Music courses added
