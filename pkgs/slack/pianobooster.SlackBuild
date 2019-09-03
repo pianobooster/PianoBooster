@@ -9,6 +9,7 @@
 # Licensed under the WTFPL. See http://www.wtfpl.net/txt/copying/ for details.
 
 PRGNAM=pianobooster
+ORIGNAM=PianoBooster
 VERSION=${VERSION:-0.7.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
@@ -46,7 +47,8 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-src-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xvf $CWD/$ORIGNAM-$VERSION.tar.gz
+mv -f "$ORIGNAM-$VERSION" "$PRGNAM-$VERSION"
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \

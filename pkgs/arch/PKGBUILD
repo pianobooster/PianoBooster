@@ -4,6 +4,7 @@
 build_with_cmake="1"
 
 pkgdesc='A MIDI file player that teaches you how to play the piano'
+origname='PianoBooster'
 pkgname='pianobooster'
 pkgver=0.7.0
 pkgrel=1
@@ -14,10 +15,11 @@ arch=('x86_64')
 groups=('qt5')
 url='https://github.com/captnfab/PianoBooster'
 license=('GPL3+')
-source=("pianobooster-${pkgver}.tar.gz")
+source=("${origname}-${pkgver}.tar.gz")
 md5sums=('SKIP')
 
 build () {
+    mv -f "${origname}-${pkgver}" "${pkgname}-${pkgver}"
     cd "${pkgname}-${pkgver}"
 if [ "$build_with_cmake" = "1" ]
 then

@@ -1,5 +1,7 @@
 %define build_with_cmake 1
 
+%define orig_name PianoBooster
+
 %if 0%{?suse_version}
 %define qmake_qt5 qmake-qt5
 %endif
@@ -24,7 +26,7 @@ License:        GPLv3+
 License:        GPL-3.0-or-later
 %endif
 Url:            https://github.com/captnfab/PianoBooster
-Source0:        %{name}-%{version}.tar.gz
+Source0:        %{orig_name}-%{version}.tar.gz
 
 %if %{build_with_cmake}
 BuildRequires:  cmake
@@ -180,7 +182,7 @@ even without a plugged-in MIDI keyboard.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n %{orig_name}-%{version}
 
 %build
 %if %{build_with_cmake}
