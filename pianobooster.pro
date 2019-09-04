@@ -183,6 +183,7 @@ unix {
       license.path = $$PREFIX/share/licenses/pianobooster
       license.files = license.txt
       INSTALLS += license
+   }
 
    contains(NO_CHANGELOG, OFF){
       message(building with changelog)
