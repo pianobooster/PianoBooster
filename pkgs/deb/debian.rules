@@ -22,6 +22,7 @@ override_dh_auto_configure:
 		-DNO_LICENSE=ON \
 		-DNO_CHANGELOG=ON
 
+# Workaround for OpenSuse Build Service
 override_dh_installchangelogs:
 	dh_installchangelogs Changelog.txt
 
