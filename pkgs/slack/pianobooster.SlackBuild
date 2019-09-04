@@ -10,7 +10,7 @@
 
 PRGNAM=pianobooster
 ORIGNAM=PianoBooster
-VERSION=${VERSION:-0.7.0}
+VERSION=${VERSION:-0.7.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 

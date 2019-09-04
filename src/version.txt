@@ -1,2 +1,2 @@
-#define PB_VERSION "0.7.0"
+#define PB_VERSION "0.7.1"
 #define MUSIC_RELEASE 3
