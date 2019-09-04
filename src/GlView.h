@@ -72,7 +72,7 @@ private:
     void updateMidiTask();
 
 
-    QColor m_backgroundColour;
+    QColor m_backgroundColor;
     QtWindow* m_qtWindow;  // The parent Window
     CSettings* m_settings;
     CSong* m_song;

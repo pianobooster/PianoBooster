@@ -102,11 +102,11 @@ void CPiano::drawPianoInputNoteNames()
     }
 }
 
-void CPiano::drawPianoInputLines(CChord* chord, CColour colour, int lineLength)
+void CPiano::drawPianoInputLines(CChord* chord, CColor color, int lineLength)
 {
     int i;
 
-    drColour(colour);
+    drColor(color);
 
     CStavePos stavePos;
 
@@ -295,10 +295,10 @@ void CPiano::drawPianoInput()
     int lineLength = (showNoteName) ? PIANO_LINE_LENGTH_SHORT : PIANO_LINE_LENGTH_LONG;
 
     if (m_goodChord.length() > 0)
-        drawPianoInputLines(&m_goodChord, Cfg::pianoGoodColour(), lineLength);
+        drawPianoInputLines(&m_goodChord, Cfg::pianoGoodColor(), lineLength);
 
     if (m_badChord.length() > 0)
-        drawPianoInputLines(&m_badChord, Cfg::pianoBadColour(), lineLength);
+        drawPianoInputLines(&m_badChord, Cfg::pianoBadColor(), lineLength);
 
     if (showNoteName)
         drawPianoInputNoteNames();

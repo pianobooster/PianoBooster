@@ -74,7 +74,7 @@ public:
 
 private:
     void spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex);
-    void drawPianoInputLines(CChord* chord, CColour colour, int lineLength);
+    void drawPianoInputLines(CChord* chord, CColor color, int lineLength);
     void drawPianoInputNoteNames();
     void spaceNoteNames();
     void addNoteNameItem(float posY, int pitch, int type);
@@ -85,7 +85,7 @@ private:
     savedNoteOffChord_t m_savedChordLookUp[20];
     unsigned int m_noteNameListLength;
 
-    CChord m_goodChord;  // The coloured note lines that appear on the score when the pianist plays
+    CChord m_goodChord;  // The colored note lines that appear on the score when the pianist plays
     CChord m_badChord;
     bool m_rhythmTapping;
 };

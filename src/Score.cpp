@@ -73,7 +73,7 @@ void CScore::drawScroll(bool refresh)
     {
         float topY = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY();
         float bottomY = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY();
-        drColour (Cfg::backgroundColour());
+        drColor (Cfg::backgroundColor());
         glRectf(Cfg::scrollStartX(), topY, Cfg::getAppWidth(), bottomY);
     }
 
@@ -135,9 +135,9 @@ void CScore::drawPianoKeyboard(){
 
             float xKeySize = this->xKeySize / 1.5;
 
-            CDraw::drColour (CColour(0.0, 0.0, 0.0));
-            if(state[k]==1) CDraw::drColour(stopped ? Cfg::playedStoppedColour() : Cfg::noteColour());
-            if(state[k]==2) CDraw::drColour(Cfg::playedBadColour());
+            CDraw::drColor (CColor(0.0, 0.0, 0.0));
+            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
+            if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
             glBegin(GL_QUADS);
             glVertex2f(0, yBlackSize);
             glVertex2f(xKeySize, yBlackSize);
@@ -154,9 +154,9 @@ void CScore::drawPianoKeyboard(){
             glScalef(1, 1.4, 1);
             glTranslatef(Cfg::staveStartX() + xPlaceSize * i++, yStart, 0.0);
 
-            CDraw::drColour (CColour(1.0, 1.0, 1.0));
-            if(state[k]==1) CDraw::drColour(stopped ? Cfg::playedStoppedColour() : Cfg::noteColour());
-            if(state[k]==2) CDraw::drColour(Cfg::playedBadColour());
+            CDraw::drColor (CColor(1.0, 1.0, 1.0));
+            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
+            if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
             glBegin(GL_QUADS);
             glVertex2f(0, ySize);
             glVertex2f(xKeySize, ySize);
@@ -231,7 +231,7 @@ void CScore::drawScore()
             m_scoreDisplayListId = glGenLists (1);
 
         glNewList (m_scoreDisplayListId, GL_COMPILE_AND_EXECUTE);
-            drColour (Cfg::staveColour());
+            drColor (Cfg::staveColor());
 
             drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_right, -1)), Cfg::clefX()); // The Treble Clef
             drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());

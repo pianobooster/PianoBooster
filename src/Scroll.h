@@ -64,7 +64,7 @@ public:
     void scrollDeltaTime(int ticks);
     void transpose(int transpose);
     void refresh();
-    void setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming);
+    void setPlayedNoteColor(int note, CColor color, int wantedDelta, int pianistTimming);
     void setChannel(int chan)
     {
         m_notation->setChannel( chan );
@@ -96,7 +96,7 @@ private:
     bool insertSlots();
     void removeSlots();
     void removeEarlyTimingMakers();
-    int findWantedChord(int note, CColour colour, int wantedDelta);
+    int findWantedChord(int note, CColor color, int wantedDelta);
 
     int m_id;      // There are lots of these class running but each class has a unique id
     CNotation *m_notation;

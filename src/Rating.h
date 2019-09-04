@@ -59,7 +59,7 @@ public:
     void calculateAccuracy();
 
     float getAccuracyValue(){ return m_currentAccuracy; }
-    CColour getAccuracyColour() { return m_currentColour; }
+    CColor getAccuracyColor() { return m_currentColor; }
     bool isAccuracyGood() { return m_goodAccuracyFlag; }
 
 private:
@@ -70,7 +70,7 @@ private:
     int m_wrongNoteCount;
     float m_currentAccuracy;
     float m_factor;
-    CColour m_currentColour;
+    CColor m_currentColor;
     bool m_goodAccuracyFlag;
 
 };

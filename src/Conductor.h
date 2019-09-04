@@ -253,7 +253,7 @@ private:
     void updatePianoSounds();
 
     void followPlaying();
-    void missedNotesColour(CColour colour);
+    void missedNotesColor(CColor color);
 
     int calcBoostVolume(int chan, int volume);
 

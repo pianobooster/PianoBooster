@@ -56,7 +56,7 @@ public:
 
     /// Saves in the .ini file whether the user wants to show the note names
     void setNoteNamesEnabled(bool value);
-    void setColouredNotes(bool value);
+    void setColoredNotes(bool value);
     void setTutorPagesEnabled(bool value);
     void setFollowThroughErrorsEnabled(bool value);
 
@@ -68,13 +68,13 @@ public:
         return m_noteNamesEnabled;
     }
 
-    /// returns true if the user wants to see colour-coded notes
-    bool colouredNotes(){
-        return m_colouredNotes;
+    /// returns true if the user wants to see color-coded notes
+    bool coloredNotes(){
+        return m_coloredNotes;
     }
 
-    void colouredNotes(bool b){
-        m_colouredNotes = b;
+    void coloredNotes(bool b){
+        m_coloredNotes = b;
     }
 
     /// returns true if the user wants Follow Skill to ignore errors
@@ -159,7 +159,7 @@ private:
     GuiSidePanel* m_guiSidePanel;
     GuiTopBar* m_guiTopBar;
     bool m_noteNamesEnabled;
-    bool m_colouredNotes;
+    bool m_coloredNotes;
     bool m_tutorPagesEnabled;
     bool m_advancedMode;
     bool m_followThroughErrorsEnabled;

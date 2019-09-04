@@ -396,14 +396,14 @@ void QtWindow::createActions()
     }
     connect(m_viewPianoKeyboard, SIGNAL(triggered()), this, SLOT(onViewPianoKeyboard()));
 
-    m_colouredNotes = new QAction(tr("Color Coded Notes"), this);
-    m_colouredNotes->setToolTip(tr("Color Code Notes in Score"));
-    m_colouredNotes->setCheckable(true);
-    m_colouredNotes->setChecked(false);
-    if (m_settings->value("View/ColouredNotes").toString()=="on"){
-        m_colouredNotes->setChecked(true);
+    m_coloredNotes = new QAction(tr("Color Coded Notes"), this);
+    m_coloredNotes->setToolTip(tr("Color Code Notes in Score"));
+    m_coloredNotes->setCheckable(true);
+    m_coloredNotes->setChecked(false);
+    if (m_settings->value("View/ColoredNotes").toString()=="on"){
+        m_coloredNotes->setChecked(true);
     }
-    connect(m_colouredNotes, SIGNAL(triggered()), this, SLOT(onColouredNotes()));
+    connect(m_coloredNotes, SIGNAL(triggered()), this, SLOT(onColoredNotes()));
 
     m_setupPreferencesAct = new QAction(tr("&Preferences ..."), this);
     m_setupPreferencesAct->setToolTip(tr("Settings"));
@@ -465,7 +465,7 @@ void QtWindow::createMenus()
     m_viewMenu->addAction(m_sidePanelStateAct);
     m_viewMenu->addAction(m_fullScreenStateAct);
     m_viewMenu->addAction(m_viewPianoKeyboard);
-    m_viewMenu->addAction(m_colouredNotes);
+    m_viewMenu->addAction(m_coloredNotes);
 
     m_songMenu = menuBar()->addMenu(tr("&Song"));
     m_songMenu->setToolTipsVisible(true);
