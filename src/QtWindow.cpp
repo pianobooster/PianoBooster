@@ -396,8 +396,8 @@ void QtWindow::createActions()
     }
     connect(m_viewPianoKeyboard, SIGNAL(triggered()), this, SLOT(onViewPianoKeyboard()));
 
-    m_colouredNotes = new QAction(tr("Colour Coded Notes"), this);
-    m_colouredNotes->setToolTip(tr("Colour Code Notes in Score"));
+    m_colouredNotes = new QAction(tr("Color Coded Notes"), this);
+    m_colouredNotes->setToolTip(tr("Color Code Notes in Score"));
     m_colouredNotes->setCheckable(true);
     m_colouredNotes->setChecked(false);
     if (m_settings->value("View/ColouredNotes").toString()=="on"){
