@@ -41,13 +41,13 @@
 #endif
 
 
-class CColour
+class CColor
 {
 public:
-    CColour() { red = green = blue = 0; }
+    CColor() { red = green = blue = 0; }
 
 
-    CColour(double r, double g, double b)
+    CColor(double r, double g, double b)
     {
         red = static_cast<float>(r);
         green = static_cast<float>(g);
@@ -55,9 +55,9 @@ public:
     }
     float red, green, blue;
 
-    bool operator==(CColour colour)
+    bool operator==(CColor color)
     {
-        if (red == colour.red && green == colour.green && blue == colour.blue)
+        if (red == color.red && green == color.green && blue == color.blue)
             return true;
         return false;
     }
@@ -87,24 +87,24 @@ public:
     static int chordMaxLength()    {return 20;} // the max time between the start and end of a cord
 
 
-    static CColour menuColour()        {return CColour(0.1, 0.6, 0.6);}
-    static CColour menuSelectedColour(){return CColour(0.7, 0.7, 0.1);}
+    static CColor menuColor()        {return CColor(0.1, 0.6, 0.6);}
+    static CColor menuSelectedColor(){return CColor(0.7, 0.7, 0.1);}
 
 
-    static CColour staveColour()           {return CColour(0.1, 0.7, 0.1);} // green
-    static CColour staveColourDim()        {return CColour(0.15, 0.40, 0.15);} // grey
-    static CColour noteColour()            {return CColour(0.1, 0.9, 0.1);} // green
-    static CColour noteColourDim()         {return CColour(0.25, 0.45, 0.25);} // green
-    //static CColour playedGoodColour()    {return CColour(0.6, 0.6, 1.0);} // grey
-    static CColour playedGoodColour()      {return CColour(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
-    static CColour playedBadColour()       {return CColour(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
-    static CColour playedStoppedColour()   {return CColour(1.0, 0.8, 0.0);} // bright orange
-    static CColour backgroundColour()      {return CColour(0.0, 0.0, 0.0);} // black
-    static CColour barMarkerColour()       {return CColour(0.3, 0.25, 0.25);} // grey
-    static CColour beatMarkerColour()      {return CColour(0.25, 0.2, 0.2);} // grey
-    static CColour pianoGoodColour()      {return playedGoodColour();}
-    static CColour pianoBadColour()       {return CColour(1.0, 0.0, 0.0);}
-    static CColour noteNameColour()       {return CColour(1.0, 1.0, 1.0);}
+    static CColor staveColor()           {return CColor(0.1, 0.7, 0.1);} // green
+    static CColor staveColorDim()        {return CColor(0.15, 0.40, 0.15);} // grey
+    static CColor noteColor()            {return CColor(0.1, 0.9, 0.1);} // green
+    static CColor noteColorDim()         {return CColor(0.25, 0.45, 0.25);} // green
+    //static CColor playedGoodColor()    {return CColor(0.6, 0.6, 1.0);} // grey
+    static CColor playedGoodColor()      {return CColor(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
+    static CColor playedBadColor()       {return CColor(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
+    static CColor playedStoppedColor()   {return CColor(1.0, 0.8, 0.0);} // bright orange
+    static CColor backgroundColor()      {return CColor(0.0, 0.0, 0.0);} // black
+    static CColor barMarkerColor()       {return CColor(0.3, 0.25, 0.25);} // grey
+    static CColor beatMarkerColor()      {return CColor(0.25, 0.2, 0.2);} // grey
+    static CColor pianoGoodColor()      {return playedGoodColor();}
+    static CColor pianoBadColor()       {return CColor(1.0, 0.0, 0.0);}
+    static CColor noteNameColor()       {return CColor(1.0, 1.0, 1.0);}
 
     static void setDefaults() {
     #ifdef _WIN32

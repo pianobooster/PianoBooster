@@ -56,9 +56,9 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool pl
     whichPart_t hand = symbol.getStavePos().getHand();
 
     if (playable)
-        drColour(Cfg::staveColour());
+        drColor(Cfg::staveColor());
     else
-        drColour(Cfg::staveColourDim());
+        drColor(Cfg::staveColorDim());
 
     glLineWidth (Cfg::staveThickness());
     glBegin(GL_LINES);
@@ -97,7 +97,7 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
 
     staveLookup_t item = CStavePos::midiNote2Name(midiNote);
 
-    drColour(Cfg::noteNameColour());
+    drColor(Cfg::noteNameColor());
 
     glLineWidth (1.0);
 
@@ -329,7 +329,7 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
 
     if (accidental != 0)
     {
-        //drColour (Cfg::lineColour());
+        //drColor (Cfg::lineColor());
         if (accidental == 1)
             drawSymbol(CSymbol(PB_SYMBOL_sharp, symbol.getStavePos()), x - xGap, y);
         else if (accidental == -1)
@@ -340,7 +340,7 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
 }
 
 
-bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour colour, bool playable)
+bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColor color, bool playable)
 {
     const float stemLength  = 34.0;
     float noteWidth  = 6.0;
@@ -348,11 +348,11 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour col
     //ppLogTrace("PB_SYMBOL_noteHead x %f y %f", x, y);
     if (!CChord::isNotePlayable(symbol->getNote(), 0))
     {
-        colour = Cfg::noteColourDim();
+        color = Cfg::noteColorDim();
         playable = false;
     }
     drawStaveExtentsion(*symbol, x, 16, playable);
-    drColour(colour);
+    drColor(color);
     bool solidNoteHead = false;
     bool showNoteStem = false;
     int stemFlagCount = 0;
@@ -436,15 +436,15 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour col
 
 void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
 {
-    CColour colour = symbol.getColour();
+    CColor color = symbol.getColor();
     bool playable = true;
 
     if (m_displayHand != symbol.getHand() && m_displayHand != PB_PART_both)
     {
-        if (colour == Cfg::noteColour())
-            colour = Cfg::noteColourDim();
-        if (colour == Cfg::staveColour())
-            colour = Cfg::staveColourDim();
+        if (color == Cfg::noteColor())
+            color = Cfg::noteColorDim();
+        if (color == Cfg::staveColor())
+            color = Cfg::staveColorDim();
         playable = false;
     }
 
@@ -452,7 +452,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
     {
          case PB_SYMBOL_gClef: // The Treble Clef
             y += 4;
-            drColour(colour);
+            drColor(color);
             glLineWidth (3.0);
             glBegin(GL_LINE_STRIP);
             glVertex2f( -0.011922  + x,   -16.11494  + y);  //  1
@@ -510,7 +510,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
             break;
 
        case PB_SYMBOL_fClef: // The Base Clef
-            drColour(colour);
+            drColor(color);
             glLineWidth (3.0);
             glBegin(GL_LINE_STRIP);
                 glVertex2f( -15.370325  + x,   -17.42068  + y);  //  1
@@ -562,7 +562,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
             //ppLogTrace("PB_SYMBOL_noteHead x %f y %f", x, y);
             if (!CChord::isNotePlayable(symbol.getNote(), 0))
             {
-                colour = Cfg::noteColourDim();
+                color = Cfg::noteColorDim();
                 playable = false;
             }
             drawStaveExtentsion(symbol, x, 16, playable);
@@ -570,51 +570,51 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
 	    // See forum post at link below from PianoBooster forum user Kory.
 	    // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html
 	    // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html#a7572676
-            if (m_settings->colouredNotes() && colour == Cfg::noteColour()) //KORY added
+            if (m_settings->coloredNotes() && color == Cfg::noteColor()) //KORY added
             {
                 int note = symbol.getNote() % MIDI_OCTAVE;
                 switch (note)
                 {
                     case 0: //note::PitchLabel::C:
-                        colour = CColour(1.0, 0.0, 0.0); //Red
+                        color = CColor(1.0, 0.0, 0.0); //Red
                       break;
                     case 1: //note::PitchLabel::C♯:
-                        colour = CColour(1.0, 0.25, 0.0); //Red
+                        color = CColor(1.0, 0.25, 0.0); //Red
                       break;
                     case 2: //note::PitchLabel::D:
-                        colour = CColour(1.0, 0.5, 0.0); //Orange
+                        color = CColor(1.0, 0.5, 0.0); //Orange
                       break;
                     case 3: //note::PitchLabel::D♯:
-                        colour = CColour(1.0, 0.75, 0.0); //Orange
+                        color = CColor(1.0, 0.75, 0.0); //Orange
                       break;
                     case 4: //note::PitchLabel::E:
-                        colour = CColour(1.0, 1.0, 0.0); //Yellow
+                        color = CColor(1.0, 1.0, 0.0); //Yellow
                       break;
                     case 5: //note::PitchLabel::F:
-                        colour = CColour(0.0, 1.0, 0.0); //Green
+                        color = CColor(0.0, 1.0, 0.0); //Green
                       break;
                     case 6: //note::PitchLabel::F♯:
-                        colour = CColour(0.0, 0.5, 0.5); //Green
+                        color = CColor(0.0, 0.5, 0.5); //Green
                       break;
                     case 7: //note::PitchLabel::G:
-                        colour = CColour(0.0, 0.0, 1.0); //Blue
+                        color = CColor(0.0, 0.0, 1.0); //Blue
                       break;
                     case 8: //note::PitchLabel::G♯:
-                        colour = CColour(0.290, 0.0, 0.903); //Blue
+                        color = CColor(0.290, 0.0, 0.903); //Blue
                       break;
                     case 9: //note::PitchLabel::A:
-                        colour = CColour(0.580, 0.0, 0.827); //Dark Violet #9400D3
+                        color = CColor(0.580, 0.0, 0.827); //Dark Violet #9400D3
                       break;
                     case 10: //note::PitchLabel::A♯:
-                        colour = CColour(0.790, 0.0, 0.903); //Dark Violet #9400D3
+                        color = CColor(0.790, 0.0, 0.903); //Dark Violet #9400D3
                       break;
                     case 11: //note::PitchLabel::B:
-                        colour = CColour(1.0, 0.0, 1.0); //Magenta
+                        color = CColor(1.0, 0.0, 1.0); //Magenta
                       break;
                 }
             }
 
-            drColour(colour);
+            drColor(color);
             glBegin(GL_POLYGON);
                 glVertex2f(-7.0 + x,  2.0 + y); // 1
                 glVertex2f(-5.0 + x,  4.0 + y); // 2
@@ -633,12 +633,12 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
             /*
             // shows the MIDI Duration (but not very useful)
             glLineWidth(4.0);
-            drColour(CColour(0.3, 0.4, 0.4));
+            drColor(CColor(0.3, 0.4, 0.4));
             glBegin(GL_LINE_STRIP);
                 glVertex2f(x,  y);
                 glVertex2f(x + CMidiFile::ppqnAdjust(symbol.getMidiDuration()) * HORIZONTAL_SPACING_FACTOR, y);
             glEnd();
-            drColour(colour);
+            drColor(color);
             */
 
             checkAccidental(symbol, x, y);
@@ -646,8 +646,8 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
 
         case PB_SYMBOL_drum:
             if (!CChord::isNotePlayable(symbol.getNote(), 0))
-                colour = Cfg::noteColourDim();
-            drColour(colour);
+                color = Cfg::noteColorDim();
+            drColor(color);
             glLineWidth (3.0);
             glBegin(GL_LINES);
                 glVertex2f( 5.0 + x,-5.0 + y);
@@ -709,16 +709,16 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
         case PB_SYMBOL_barLine:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
             glLineWidth (4.0);
-            drColour ((m_displayHand == PB_PART_left) ? Cfg::staveColourDim() : Cfg::staveColour());
+            drColor ((m_displayHand == PB_PART_left) ? Cfg::staveColorDim() : Cfg::staveColor());
             oneLine(x, CStavePos(PB_PART_right, 4).getPosYRelative(), x, CStavePos(PB_PART_right, -4).getPosYRelative());
-            drColour ((m_displayHand == PB_PART_right) ? Cfg::staveColourDim() : Cfg::staveColour());
+            drColor ((m_displayHand == PB_PART_right) ? Cfg::staveColorDim() : Cfg::staveColor());
             oneLine(x, CStavePos(PB_PART_left, 4).getPosYRelative(), x, CStavePos(PB_PART_left, -4).getPosYRelative());
             break;
 
         case PB_SYMBOL_barMarker:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
             glLineWidth (5.0);
-            drColour(Cfg::barMarkerColour());
+            drColor(Cfg::barMarkerColor());
             oneLine(x, CStavePos(PB_PART_right, m_beatMarkerHeight).getPosYRelative(), x, CStavePos(PB_PART_left, -m_beatMarkerHeight).getPosYRelative());
             glDisable (GL_LINE_STIPPLE);
             break;
@@ -726,7 +726,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
         case PB_SYMBOL_beatMarker:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
             glLineWidth (4.0);
-            drColour(Cfg::beatMarkerColour());
+            drColor(Cfg::beatMarkerColor());
             oneLine(x, CStavePos(PB_PART_right, m_beatMarkerHeight).getPosYRelative(), x, CStavePos(PB_PART_left, -m_beatMarkerHeight).getPosYRelative());
             glDisable (GL_LINE_STIPPLE);
             break;
@@ -753,7 +753,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
        default:
 
             if (symbol.getType() >= PB_SYMBOL_noteHead)
-                playable = drawNote(&symbol, x, y, slot, colour, playable);
+                playable = drawNote(&symbol, x, y, slot, color, playable);
             else
                 ppDEBUG(("ERROR drawSymbol unhandled symbol\n"));
             break;
@@ -765,7 +765,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
         if ( pianistX != NOT_USED)
         {
             pianistX =  x + pianistX * HORIZONTAL_SPACING_FACTOR;
-            drColour(CColour(1.0, 1.0, 1.0));
+            drColor(CColor(1.0, 1.0, 1.0));
             glLineWidth (2.0);
             glBegin(GL_LINES);
             glVertex2f( 4.0 + pianistX, 4.0 + y);
@@ -807,8 +807,8 @@ void CDraw::drawStaves(float startX, float endX)
 
     glLineWidth (Cfg::staveThickness());
 
-    /* select colour for all lines  */
-    drColour ((m_displayHand != PB_PART_left) ? Cfg::staveColour() : Cfg::staveColourDim());
+    /* select color for all lines  */
+    drColor ((m_displayHand != PB_PART_left) ? Cfg::staveColor() : Cfg::staveColorDim());
     glBegin(GL_LINES);
 
     for (i = -4; i <= 4; i+=2 )
@@ -817,7 +817,7 @@ void CDraw::drawStaves(float startX, float endX)
         glVertex2f (startX, pos.getPosY());
         glVertex2f (endX, pos.getPosY());
     }
-    drColour ((m_displayHand != PB_PART_right) ? Cfg::staveColour() : Cfg::staveColourDim());
+    drColor ((m_displayHand != PB_PART_right) ? Cfg::staveColor() : Cfg::staveColorDim());
     for (i = -4; i <= 4; i+=2 )
     {
         CStavePos pos = CStavePos(PB_PART_left, i);
@@ -848,13 +848,13 @@ void CDraw::drawKeySignature(int key)
         {
             if (i < arraySize(sharpLookUpRight))
             {
-                drColour ((m_displayHand != PB_PART_left) ? Cfg::noteColour() : Cfg::noteColourDim());
+                drColor ((m_displayHand != PB_PART_left) ? Cfg::noteColor() : Cfg::noteColorDim());
                 pos = CStavePos(PB_PART_right, sharpLookUpRight[i]);
                 drawSymbol( CSymbol(PB_SYMBOL_sharp, pos), Cfg::keySignatureX() + gapX*i );
             }
             if (i < arraySize(sharpLookUpLeft))
             {
-                drColour ((m_displayHand != PB_PART_right) ? Cfg::noteColour() : Cfg::noteColourDim());
+                drColor ((m_displayHand != PB_PART_right) ? Cfg::noteColor() : Cfg::noteColorDim());
                 pos = CStavePos(PB_PART_left, sharpLookUpLeft[i]);
                 drawSymbol( CSymbol(PB_SYMBOL_sharp, pos), Cfg::keySignatureX() + gapX*i );
             }
@@ -864,13 +864,13 @@ void CDraw::drawKeySignature(int key)
         {
             if (i < arraySize(flatLookUpRight))
             {
-                drColour ((m_displayHand != PB_PART_left) ? Cfg::noteColour() : Cfg::noteColourDim());
+                drColor ((m_displayHand != PB_PART_left) ? Cfg::noteColor() : Cfg::noteColorDim());
                 pos = CStavePos(PB_PART_right, flatLookUpRight[i]);
                 drawSymbol( CSymbol(PB_SYMBOL_flat, pos), Cfg::keySignatureX() + gapX*i );
             }
             if (i < arraySize(flatLookUpLeft))
             {
-                drColour ((m_displayHand != PB_PART_right) ? Cfg::noteColour() : Cfg::noteColourDim());
+                drColor ((m_displayHand != PB_PART_right) ? Cfg::noteColor() : Cfg::noteColorDim());
                 pos = CStavePos(PB_PART_left, flatLookUpLeft[i]);
                 drawSymbol( CSymbol(PB_SYMBOL_flat, pos), Cfg::keySignatureX() + gapX*i );
             }

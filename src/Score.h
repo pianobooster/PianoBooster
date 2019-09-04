@@ -102,10 +102,10 @@ public:
 
     CPiano* getPianoObject() { return m_piano;}
 
-    void setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming = NOT_USED)
+    void setPlayedNoteColor(int note, CColor color, int wantedDelta, int pianistTimming = NOT_USED)
     {
         if (m_activeScroll>=0)
-            m_scroll[m_activeScroll]->setPlayedNoteColour(note, colour, wantedDelta, pianistTimming);
+            m_scroll[m_activeScroll]->setPlayedNoteColor(note, color, wantedDelta, pianistTimming);
     }
 
 

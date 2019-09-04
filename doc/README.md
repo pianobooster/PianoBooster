@@ -41,7 +41,7 @@ Piano Booster main screen
 
 *PianoBooster* has been designed to allow you to play along on a midi piano
 keyboard with the scrolling notes shown on the screen. The notes you press on
-the keyboard appear as coloured lines on the musical stave, the colour of which
+the keyboard appear as colored lines on the musical stave, the color of which
 depends whether you have pressed the right or wrong note.
 
 A different musical instrument sound is used for your playing depending whether

@@ -55,7 +55,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_forceBarRedraw = 0;
     m_allowedTimerEvent = true;
 
-    m_backgroundColour = QColor(0, 0, 0);
+    m_backgroundColor = QColor(0, 0, 0);
 
     m_song = new CSong();
     m_score = new CScore(m_settings);
@@ -155,14 +155,14 @@ void CGLView::drawTimeSignature()
 
     x = Cfg::timeSignatureX();
 
-    CDraw::drColour ((CDraw::getDisplayHand() != PB_PART_left) ? Cfg::noteColour() : Cfg::noteColourDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_left) ? Cfg::noteColor() : Cfg::noteColorDim());
 
     y = CStavePos(PB_PART_right,  0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
     y = CStavePos(PB_PART_right, -3).getPosY() - 2;
     renderText(x,y, 0, bufferBottom, m_timeSigFont);
 
-    CDraw::drColour ((CDraw::getDisplayHand() != PB_PART_right) ? Cfg::noteColour() : Cfg::noteColourDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_right) ? Cfg::noteColor() : Cfg::noteColorDim());
 
     y = CStavePos(PB_PART_left,   0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
@@ -181,7 +181,7 @@ void CGLView::drawAccurracyBar()
 
 
     float accuracy;
-    CColour colour;
+    CColor color;
 
     float y = Cfg::getAppHeight() - 14;
     const float x = 120;
@@ -191,15 +191,15 @@ void CGLView::drawAccurracyBar()
     m_rating->calculateAccuracy();
 
     accuracy = m_rating->getAccuracyValue();
-    colour = m_rating->getAccuracyColour();
-    CDraw::drColour (colour);
+    color = m_rating->getAccuracyColor();
+    CDraw::drColor (color);
     glRectf(x, y - lineWidth, x + width * accuracy, y + lineWidth);
-    CDraw::drColour (Cfg::backgroundColour());
+    CDraw::drColor (Cfg::backgroundColor());
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
 
 
     glLineWidth (1);
-    CDraw::drColour (CColour(1.0, 1.0, 1.0));
+    CDraw::drColor (CColor(1.0, 1.0, 1.0));
     glBegin(GL_LINE_LOOP);
     glVertex2f (x, y + lineWidth);
     glVertex2f (x+ width, y  + lineWidth);
@@ -260,8 +260,8 @@ void CGLView::drawBarNumber()
     float y = Cfg::getAppHeight() - m_titleHeight - 34;
     float x = 30;
 
-    //CDraw::drColour (Cfg::backgroundColour());
-    //CDraw::drColour (Cfg::noteColourDim());
+    //CDraw::drColor (Cfg::backgroundColor());
+    //CDraw::drColor (Cfg::noteColorDim());
     //glRectf(x+30+10, y-2, x + 80, y + 16);
     glColor3f(1.0,1.0,1.0);
     renderText(x, y, 0, tr("Bar:") + " " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
@@ -322,8 +322,8 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 
 void CGLView::initializeGL()
 {
-    CColour colour = Cfg::backgroundColour();
-    glClearColor (colour.red, colour.green, colour.blue, 0.0);
+    CColor color = Cfg::backgroundColor();
+    glClearColor (color.red, color.green, color.blue, 0.0);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
     glShadeModel (GL_FLAT);
     //glEnable(GL_TEXTURE_2D);                        // Enable Texture Mapping

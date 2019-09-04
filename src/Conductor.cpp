@@ -321,16 +321,16 @@ void CConductor::setActiveHand(whichPart_t hand)
     int note;
     int i;
 
-    // Reset the note colours
+    // Reset the note colors
     for(i = 0; i < m_savedWantedChord.length(); i++)
     {
         note = m_savedWantedChord.getNote(i).pitch();
-        m_scoreWin->setPlayedNoteColour(note, Cfg::noteColour(), m_chordDeltaTime);
+        m_scoreWin->setPlayedNoteColor(note, Cfg::noteColor(), m_chordDeltaTime);
     }
     for(i = 0; i < m_wantedChord.length(); i++)
     {
         note = m_wantedChord.getNote(i).pitch();
-        m_scoreWin->setPlayedNoteColour(note, Cfg::playedStoppedColour(), m_chordDeltaTime);
+        m_scoreWin->setPlayedNoteColor(note, Cfg::playedStoppedColor(), m_chordDeltaTime);
     }
     findSplitPoint();
     forceScoreRedraw();
@@ -714,8 +714,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 pianistTiming = m_pianistTiming;
             else
                 pianistTiming = NOT_USED;
-            m_scoreWin->setPlayedNoteColour(inputNote.note(),
-                        (!m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
+            m_scoreWin->setPlayedNoteColor(inputNote.note(),
+                        (!m_followPlayingTimeOut)? Cfg::playedGoodColor():Cfg::playedBadColor(),
                         m_chordDeltaTime, pianistTiming);
 
             if (validatePianistChord() == true)
@@ -756,7 +756,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                     else // Hitting bad notes within the zone (so register them)
                       {
                     // Register the wrong note in the ratings calculation (if not as missed notes, I don't believe it's factored in)
-                    missedNotesColour(Cfg::pianoBadColour());
+                    missedNotesColor(Cfg::pianoBadColor());
                     m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
                     setEventBits(EVENT_BITS_forceRatingRedraw);
                     fetchNextChord(); // Skip through the wrong note and continue to the next
@@ -771,8 +771,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                           pianistTiming = m_pianistTiming;
                         else
                           pianistTiming = NOT_USED;
-                        m_scoreWin->setPlayedNoteColour(inputNote.note(),
-                                    (!m_followPlayingTimeOut)? Cfg::playedGoodColour():Cfg::playedBadColour(),
+                        m_scoreWin->setPlayedNoteColor(inputNote.note(),
+                                    (!m_followPlayingTimeOut)? Cfg::playedGoodColor():Cfg::playedBadColor(),
                             m_chordDeltaTime, pianistTiming);
 
                         if (validatePianistChord() == true)
@@ -814,8 +814,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         bool hasNote = m_goodPlayedNotes.removeNote(inputNote.note());
 
         if (hasNote)
-            m_scoreWin->setPlayedNoteColour(inputNote.note(),
-                    (!m_followPlayingTimeOut)? Cfg::noteColour():Cfg::playedStoppedColour(),
+            m_scoreWin->setPlayedNoteColor(inputNote.note(),
+                    (!m_followPlayingTimeOut)? Cfg::noteColor():Cfg::playedStoppedColor(),
                     m_chordDeltaTime);
 
         outputSavedNotesOff();
@@ -921,7 +921,7 @@ void CConductor::followPlaying()
     {
         if (m_chordDeltaTime > m_cfg_playZoneLate )
         {
-            missedNotesColour(Cfg::playedStoppedColour());
+            missedNotesColor(Cfg::playedStoppedColor());
             fetchNextChord();
             m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
             setEventBits( EVENT_BITS_forceRatingRedraw);
@@ -957,7 +957,7 @@ void CConductor::findImminentNotesOff()
     }
 }
 
-void CConductor::missedNotesColour(CColour colour)
+void CConductor::missedNotesColor(CColor color)
 {
     int i;
     CNote note;
@@ -965,7 +965,7 @@ void CConductor::missedNotesColour(CColour colour)
     {
         note = m_wantedChord.getNote(i);
         if (m_goodPlayedNotes.searchChord(note.pitch(),m_transpose) == false)
-            m_scoreWin->setPlayedNoteColour(note.pitch() + m_transpose, colour, m_chordDeltaTime);
+            m_scoreWin->setPlayedNoteColor(note.pitch() + m_transpose, color, m_chordDeltaTime);
     }
 }
 
@@ -1009,7 +1009,7 @@ void CConductor::realTimeEngine(int mSecTicks)
                 m_rating.lateNotes(m_wantedChord.length() - m_goodPlayedNotes.length());
                 setEventBits( EVENT_BITS_forceRatingRedraw);
 
-                missedNotesColour(Cfg::playedStoppedColour());
+                missedNotesColor(Cfg::playedStoppedColor());
                 findImminentNotesOff();
                 // Don't keep any saved notes off if there are no notes down
                 if (m_piano->pianistAllNotesDown() == 0)

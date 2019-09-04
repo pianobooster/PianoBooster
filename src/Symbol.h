@@ -91,12 +91,12 @@ public:
         init();
     }
 
-    CSymbol(musicalSymbol_t type,  CStavePos stavePos, CColour colour = Cfg::noteColour())
+    CSymbol(musicalSymbol_t type,  CStavePos stavePos, CColor color = Cfg::noteColor())
     {
         init();
         m_symbolType = type;
         m_stavePos = stavePos;
-        m_colour = colour;
+        m_color = color;
         m_hand = stavePos.getHand();
     }
 
@@ -131,8 +131,8 @@ public:
     //@brief get the Stave Position
     CStavePos getStavePos(){return m_stavePos;}
 
-    void setColour(CColour colour){ m_colour = colour;}
-    CColour getColour(){return m_colour;}
+    void setColor(CColor color){ m_color = color;}
+    CColor getColor(){return m_color;}
     void setPianistTiming(int timing){ m_pianistTiming = timing;}
     int getPianistTiming(){ return m_pianistTiming; }
 
@@ -184,7 +184,7 @@ private:
     int m_midiDuration;
     whichPart_t m_hand;
 
-    CColour m_colour;
+    CColor m_color;
     int m_pianistTiming;
     int m_index;  // the number of the note per hand starting from the bottom.
     int m_total;  // the number of the notes per hand;

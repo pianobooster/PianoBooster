@@ -206,9 +206,9 @@ bool CScroll::validPianistChord(int index)
     return false;
 }
 
-int CScroll::findWantedChord(int note, CColour colour, int wantedDelta)
+int CScroll::findWantedChord(int note, CColor color, int wantedDelta)
 {
-    if (colour == Cfg::playedBadColour()) // fixme should be an enum
+    if (color == Cfg::playedBadColor()) // fixme should be an enum
         return m_wantedIndex;
     {
         while ( m_wantedIndex + 1 < m_scrollQueue->length())
@@ -225,14 +225,14 @@ int CScroll::findWantedChord(int note, CColour colour, int wantedDelta)
     return m_wantedIndex;
 }
 
-void CScroll::setPlayedNoteColour(int note, CColour colour, int wantedDelta, int pianistTimming)
+void CScroll::setPlayedNoteColor(int note, CColor color, int wantedDelta, int pianistTimming)
 {
     int index;
     if (m_wantedIndex >= m_scrollQueue->length())
         return;
-    index = findWantedChord(note, colour, wantedDelta);
+    index = findWantedChord(note, color, wantedDelta);
     note -= m_transpose;
-    m_scrollQueue->indexPtr(index)->setNoteColour(note, colour);
+    m_scrollQueue->indexPtr(index)->setNoteColor(note, color);
     if (pianistTimming != NOT_USED)
     {
         pianistTimming = deltaAdjust(pianistTimming) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
@@ -263,7 +263,7 @@ bool CScroll::getKeyboardInfo(int *notes)
         CSlot* slot = &info;
         for(int j=0; j<slot->length(); ++j) {
             if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
-            if(slot->getSymbol(j).getColour() == Cfg::playedStoppedColour()) {
+            if(slot->getSymbol(j).getColor() == Cfg::playedStoppedColor()) {
                 stoppedScrollIdx = i;
                 break;
             }
@@ -278,7 +278,7 @@ bool CScroll::getKeyboardInfo(int *notes)
             CSlot* slot = &info;
             for(int j=0; j<slot->length(); ++j) {
                 if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
-                slot->getSymbolPtr(j)->setColour(Cfg::playedGoodColour());
+                slot->getSymbolPtr(j)->setColor(Cfg::playedGoodColor());
             }
         }
     }
@@ -293,10 +293,10 @@ bool CScroll::getKeyboardInfo(int *notes)
         for(int j=0; j<slot->length(); ++j) {
             if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
 
-            if(slot->getSymbol(j).getColour() == Cfg::noteColour() ||
-               slot->getSymbol(j).getColour() == Cfg::playedStoppedColour())
+            if(slot->getSymbol(j).getColor() == Cfg::noteColor() ||
+               slot->getSymbol(j).getColor() == Cfg::playedStoppedColor())
                 *(note++) = slot->getSymbol(j).getNote();
-            if(slot->getSymbol(j).getColour() == Cfg::playedStoppedColour()) stopped = true;
+            if(slot->getSymbol(j).getColor() == Cfg::playedStoppedColor()) stopped = true;
         }
         if(note != notes) return stopped;
     }

@@ -131,7 +131,7 @@ public:
         m_forceCompileRedraw = 1;
     }
     static whichPart_t getDisplayHand()    {return m_displayHand;}
-    static void drColour(CColour colour) { glColor3f(colour.red, colour.green, colour.blue);}
+    static void drColor(CColor color) { glColor3f(color.red, color.green, color.blue);}
     static void forceCompileRedraw(int value = 1) {    m_forceCompileRedraw = value; }
 
 protected:
@@ -150,7 +150,7 @@ protected:
 private:
     Q_OBJECT
     void drawStaveNoteName(CSymbol symbol, float x, float y);
-    bool drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColour colour, bool playable);
+    bool drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColor color, bool playable);
 
     void checkAccidental(CSymbol symbol, float x, float y);
     void drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool playable);
