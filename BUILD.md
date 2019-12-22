@@ -38,7 +38,7 @@ Install latest Xcode (from Apple Developer Connection, free registration require
 
 Install CMake and QT libraries via Homebrew:
 
-`$ brew install cmake qt5`
+`$ brew install cmake qt5 ftgl jack`
 
 Generate XCode project file via CMake:
 
