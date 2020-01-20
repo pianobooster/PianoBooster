@@ -4,6 +4,9 @@ SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 option(USE_FTGL "build with ftgl" ON)
+option(USE_ALSA "build with ALSA" ON)
+option(USE_FLUIDSYNTH "build with builtin fluidsynth" OFF)
+option(USE_JACK "build with Jack (NOT recommended)" OFF)
 
 #SET(USE_FLUIDSYNTH OFF)
 #SET(USE_TIMIDITY OFF)
@@ -131,6 +134,12 @@ SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h)
 
+
+if(USE_ALSA)
+ADD_DEFINITIONS(-D__LINUX_ALSA__)
+ENDIF(USE_ALSA)
+
+if(USE_JACK)
 # Check for Jack
 find_library(JACK_LIB jack)
 pkg_check_modules(JACK jack)
@@ -143,6 +152,7 @@ SET(JACK_LIBRARY ${JACK_LIBRARIES})
 IF (JACK_FOUND)
 ADD_DEFINITIONS(-D__UNIX_JACK__)
 ENDIF(JACK_FOUND)
+ENDIF(USE_JACK)
 
 IF (USE_SYSTEM_RTMIDI)
     add_compile_options("-DUSE_SYSTEM_RTMIDI")
