@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
     <name>CDraw</name>
     <message>
@@ -876,7 +878,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="143"/>
         <source>Sound Fonts</source>
-        <translation>Zvukové banky</translation>
+        <translation>Zvukové styly</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
@@ -906,7 +908,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
         <source>Master Gain:</source>
-        <translation>Hlavní zesílení:</translation>
+        <translation>Hlavní zesilovač:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
@@ -916,7 +918,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="372"/>
         <source>Enable TiMidity</source>
-        <translation type="unfinished"/>
+        <translation>Zapnout TiMidity</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="391"/>
@@ -926,17 +928,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="419"/>
         <source>Output mode</source>
-        <translation type="unfinished"/>
+        <translation>Výstupní režim</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="425"/>
         <source>Libao mode</source>
-        <translation type="unfinished"/>
+        <translation>Libao mód</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="397"/>
         <source>ALSA sequencer interface</source>
-        <translation type="unfinished"/>
+        <translation>Rozhraní sekvenceru ALSA</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="215"/>
@@ -961,18 +963,18 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
         <source>Enable FluidSynth</source>
-        <translation type="unfinished"/>
+        <translation>Zapnout FluidSynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="358"/>
         <location filename="../src/GuiMidiSetupDialog.ui" line="492"/>
         <source>Settings on this tab will take effect after restart.</source>
-        <translation type="unfinished"/>
+        <translation>Změny provedené v této záložce se provedou až po restartování aplikace.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="432"/>
         <source>ALSA PCM device</source>
-        <translation type="unfinished"/>
+        <translation>Zařízení s podporou ALSA PCM</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="500"/>
@@ -1043,7 +1045,7 @@
         <location filename="../src/GuiMidiSetupDialog.cpp" line="143"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
         <source>The use of Midi Through is not recommended!</source>
-        <translation>Používání Midi Through se nedoporučuje!</translation>
+        <translation>Používání MIDI Through se nedoporučuje!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="141"/>
@@ -1063,7 +1065,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation>(Zkuste opravu prodlevy 150 ms</translation>
+        <translation>(Zkuste opravu prodlevy 150 ms)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="341"/>
@@ -1106,12 +1108,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"/>
+        <translation>Pokračovat skrze chyby</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
         <source>Music Course</source>
-        <translation>Hudební kurs</translation>
+        <translation>Hudební kurz</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="159"/>
@@ -1204,7 +1206,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
         <source>Play Along</source>
-        <translation>Hrát</translation>
+        <translation>Hrát pospolu</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="151"/>
@@ -1234,7 +1236,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="209"/>
         <source>Repeat song</source>
-        <translation type="unfinished"/>
+        <translation>Hrát opakovavně</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
@@ -1341,12 +1343,12 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation>Pro zakázání této funkce nesmí být ani kanál pro levou ruku ani kanál pro pravou ruku</translation>
+        <translation>Pro zakázání této funkce nesmí být nastavený žádný kanal pro levou ani pravou ruku</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation>nastavit kanály MIDI k použití pro hlasy klavíru levé a pravé ruky:</translation>
+        <translation>Nastavit kanály MIDI k použití pro hlasy klavíru levé a pravé ruky:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
@@ -1521,12 +1523,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Nelze otevřít &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"/>
+        <translation>MIDI soubor &quot;%1&quot; je poškozený</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="55"/>
@@ -1536,7 +1538,7 @@
     <message>
         <location filename="../src/QtMain.cpp" line="56"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation>Tento systém nepodporuje OpenGL, jež je potřeba pro běh Piano Boosteru.</translation>
+        <translation>Tento systém nepodporuje OpenGL, jenž je potřeba pro spuštění Piano Boosteru.</translation>
     </message>
 </context>
 <context>
@@ -1579,17 +1581,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="241"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation>Nelze otevřít &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="249"/>
         <source>&quot;%1&quot; is not a Midi File</source>
-        <translation type="unfinished"/>
+        <translation>&quot;%1&quot; není soubor MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="273"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
-        <translation type="unfinished"/>
+        <translation>&quot;%1&quot; není platný soubor MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
@@ -1604,7 +1606,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
         <source>Open an existing file</source>
-        <translation>Otevřít stávající soubor</translation>
+        <translation>Otevřít existující soubor</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
@@ -1797,7 +1799,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="573"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Začínáme&lt;/h3&gt;&lt;p&gt;Potřebujete &lt;b&gt;zařízení s klávesnicí MIDI &lt;/b&gt; a &lt;b&gt;rozhraní MIDI&lt;/b&gt; pro počítač. Pokud zařízení MIDI (keyboard) nemáte, můžete pořád ještě PianoBooster vyzkoušet za použití klávesnice počítače, &apos;X&apos; je jednočárkované C.&lt;/p&gt;&lt;p&gt;Abyste slyšeli hudbu, potřebujete &lt;b&gt;syntetizátor zvuku General MIDI&lt;/b&gt;. Softwarový syntetizátor Microsoft GS Wavetable, který je dodáván společně s Windows, lze použít, ale ten přináší nepřijatelné zpoždění (prodlevu). V Linuxu můžete použít &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; nebo &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster pracuje nejlépe se soubory MIDI, jež mají samostatný levý a pravý hlas klavíru za použití kanálů MIDI 3 a 4.&lt;h3&gt;Nastavení&lt;/h3&gt;&lt;p&gt;Nejprve použijte nabídku &lt;i&gt;Nastavení/Nastavení MIDI&lt;/i&gt; a v okně dialogu vyberte rozhraní pro vstup MIDI a rozhraní pro výstup MIDI, které odpovídají vašemu vybavení. Dále použijte &lt;i&gt;Soubor/Otevřít&lt;/i&gt; k otevření souboru MIDI &quot;.mid&quot; nebo souboru karaoke &quot;.kar&quot;. Nyní zvolte, zda jen chcete &lt;i&gt;poslouchat&lt;/i&gt; hudbu, nebo &lt;i&gt;hrát&lt;/i&gt; na klávesnici klavíru nastavením úrovně &lt;i&gt;dovednosti&lt;/i&gt; v postranním panelu. Nakonec, když jste připraveni, klepněte na ikonu pro &lt;i&gt;přehrávání&lt;/i&gt; (nebo stiskněte &lt;i&gt;mezerník&lt;/i&gt;), aby hudba běžela.&lt;h3&gt;Rady ke hře na klavír&lt;/h3&gt;&lt;p&gt;Rady, jak hrát na klavír, hledejte na: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Rady pro klavír&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Další Informace&lt;/h3&gt;&lt;p&gt;Kvůli další nápovědě navštivte, prosím, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;stránky&lt;/b&gt;&lt;/a&gt;PianoBooster, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;Často kladené otázky&lt;/b&gt;&lt;/a&gt; vztahující se k PianoBoosteru a &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;uživatelské fórum&lt;/b&gt;&lt;/a&gt;.</translation>
+        <translation>&lt;h3&gt;Začínáme&lt;/h3&gt;&lt;p&gt;Potřebujete &lt;b&gt;zařízení s klávesnicí MIDI &lt;/b&gt; a &lt;b&gt;rozhraní MIDI&lt;/b&gt; pro počítač. Pokud zařízení MIDI (klávesy) nemáte, můžete pořád PianoBooster vyzkoušet za použití klávesnice počítače, &apos;X&apos; je jednočárkované C.&lt;/p&gt;&lt;p&gt;Abyste slyšeli hudbu, potřebujete &lt;b&gt;syntetizátor zvuku General MIDI&lt;/b&gt;. Softwarový syntetizátor Microsoft GS Wavetable, který je dodáván společně s Windows, lze použít, ale ten přináší nepřijatelné zpoždění (prodlevu). V Linuxu můžete použít &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; nebo &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster pracuje nejlépe se soubory MIDI, jež mají samostatný levý a pravý hlas klavíru za použití kanálů MIDI 3 a 4.&lt;h3&gt;Nastavení&lt;/h3&gt;&lt;p&gt;Nejprve použijte nabídku &lt;i&gt;Nastavení/Nastavení MIDI&lt;/i&gt; a v okně dialogu vyberte rozhraní pro vstup MIDI a rozhraní pro výstup MIDI, které odpovídají vašemu vybavení. Dále použijte &lt;i&gt;Soubor/Otevřít&lt;/i&gt; k otevření souboru MIDI &quot;.mid&quot; nebo souboru karaoke &quot;.kar&quot;. Nyní zvolte, zda jen chcete &lt;i&gt;poslouchat&lt;/i&gt; hudbu, nebo &lt;i&gt;hrát&lt;/i&gt; na klávesnici klavíru nastavením úrovně &lt;i&gt;dovednosti&lt;/i&gt; v postranním panelu. Nakonec, když jste připraveni, klepněte na ikonu pro &lt;i&gt;přehrávání&lt;/i&gt; (nebo stiskněte &lt;i&gt;mezerník&lt;/i&gt;), aby hudba běžela.&lt;h3&gt;Rady ke hře na klavír&lt;/h3&gt;&lt;p&gt;Rady, jak hrát na klavír, hledejte na: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Rady pro klavír&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Další Informace&lt;/h3&gt;&lt;p&gt;Kvůli další nápovědě navštivte, prosím, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;stránky&lt;/b&gt;&lt;/a&gt;PianoBooster, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;Často kladené otázky&lt;/b&gt;&lt;/a&gt; vztahující se k PianoBoosteru a &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;uživatelské fórum&lt;/b&gt;&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="619"/>
