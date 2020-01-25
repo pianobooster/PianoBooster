@@ -32,19 +32,19 @@
 CMidiDeviceRt::CMidiDeviceRt()
 {
     try {
-	m_midiout = new RtMidiOut();
+        m_midiout = new RtMidiOut();
     }
     catch(RtMidiError &error){
-	error.printMessage();
-	exit(1);
+        error.printMessage();
+        exit(1);
     }
 
     try {
-	m_midiin = new RtMidiIn();
+        m_midiin = new RtMidiIn();
     }
     catch(RtMidiError &error){
-	error.printMessage();
-	exit(1);
+        error.printMessage();
+        exit(1);
     }
 
 

@@ -68,8 +68,8 @@ public:
     midiErrors_t getMidiError() { return m_midiError;}
     
 private:
-   	bool checkMidiEventFromStream(int streamIdx);
-	CMidiEvent fetchMidiEventFromStream(int streamIdx);
+    bool checkMidiEventFromStream(int streamIdx);
+    CMidiEvent fetchMidiEventFromStream(int streamIdx);
     void midiError(midiErrors_t error) {m_midiError = error;}
     fstream m_file;
     static int m_ppqn;
