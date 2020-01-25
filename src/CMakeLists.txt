@@ -5,8 +5,8 @@ SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 option(USE_FTGL "build with ftgl" ON)
 option(USE_ALSA "build with ALSA" ON)
-option(USE_FLUIDSYNTH "build with builtin fluidsynth" OFF)
-option(USE_JACK "build with Jack (NOT recommended)" OFF)
+option(USE_FLUIDSYNTH "build with builtin fluidsynth (NOT tested)" OFF)
+option(USE_JACK "build with Jack (NOT tested)" OFF)
 
 #SET(USE_FLUIDSYNTH OFF)
 #SET(USE_TIMIDITY OFF)
