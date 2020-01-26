@@ -46,12 +46,12 @@ void  CMerge::initMergedEvents()
 int CMerge::nextMergedEvent()
 {
     int nearestIndex = 0;
-	
+    
     int i;
     CMidiEvent* nearestEvent;
     int deltaTime;
 
-	nearestEvent = 0;
+    nearestEvent = 0;
     // find the first active slot
     for( i = 0; i < m_mergeEvents.size(); i++)
     {
@@ -103,8 +103,8 @@ CMidiEvent CMerge::readMidiEvent()
     event = m_mergeEvents[mergeIdx];
 
     m_mergeEvents[mergeIdx].clear();
-	if (checkMidiEventFromStream(mergeIdx) )
-		m_mergeEvents[mergeIdx] = fetchMidiEventFromStream(mergeIdx);
+    if (checkMidiEventFromStream(mergeIdx) )
+        m_mergeEvents[mergeIdx] = fetchMidiEventFromStream(mergeIdx);
     if (event.type() == MIDI_NONE)
         event.setType(MIDI_PB_EOF);
     return event;

@@ -66,7 +66,7 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_advancedMode = false;
     m_pianistActive = false;
     m_noteNamesEnabled = value("Score/NoteNames", true ).toBool();
-    m_coloredNotes = value("Score/ColoredNotes", true ).toBool();
+    m_coloredNotes = value("Score/ColoredNotes", false ).toBool();
     m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
     m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", false ).toBool();
@@ -292,8 +292,8 @@ void CSettings::updateTutorPage()
 
     if (m_tutorPagesEnabled)
     {
-		QFileInfo tutorFile;
- 		tutorFile.setFile(fileBase + locale + EXTN);
+        QFileInfo tutorFile;
+        tutorFile.setFile(fileBase + locale + EXTN);
         if (tutorFile.exists())
         {
             m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
@@ -304,7 +304,7 @@ void CSettings::updateTutorPage()
         if (n > 0)
         {
             locale = locale.left(n);
- 			tutorFile.setFile(fileBase + locale + EXTN);
+            tutorFile.setFile(fileBase + locale + EXTN);
             if (tutorFile.exists())
             {
                 m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
@@ -313,7 +313,7 @@ void CSettings::updateTutorPage()
         }
 
         locale = "en";
- 		tutorFile.setFile(fileBase + locale + EXTN);
+        tutorFile.setFile(fileBase + locale + EXTN);
         if (tutorFile.exists())
         {
             m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
@@ -461,16 +461,16 @@ void CSettings::unzipBoosterMusicBooks()
         QFileInfo zipFile(resourceDir +  ZIPFILENAME);
         ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
         
-		QDir destMusicDir;
-		
+        QDir destMusicDir;
+        
 #ifdef _WIN32
         const QString MUSIC_DIR_NAME("My Music");
-		QSettings settings(QSettings::UserScope, "Microsoft", "Windows");
-		settings.beginGroup("CurrentVersion/Explorer/Shell Folders");
-		destMusicDir.setPath(QDir::fromNativeSeparators(settings.value("Personal").toString()));
+        QSettings settings(QSettings::UserScope, "Microsoft", "Windows");
+        settings.beginGroup("CurrentVersion/Explorer/Shell Folders");
+        destMusicDir.setPath(QDir::fromNativeSeparators(settings.value("Personal").toString()));
 #else
         const QString MUSIC_DIR_NAME("Music");
-		destMusicDir.setPath(QDir::homePath() );
+        destMusicDir.setPath(QDir::homePath() );
 #endif
          
         if (!QDir(destMusicDir.absolutePath() + "/" + MUSIC_DIR_NAME).exists())
@@ -481,7 +481,7 @@ void CSettings::unzipBoosterMusicBooks()
 
 #ifndef _WIN32
 
-		// on windows the the installer does the unzipping
+        // on windows the the installer does the unzipping
         if (!zipFile.exists() )
         {
             ppLogError(qPrintable("Cannot find " + ZIPFILENAME));
@@ -510,10 +510,10 @@ void CSettings::unzipBoosterMusicBooks()
              return;
         }
 #endif       
-		QString fileName(destMusicDir.absolutePath() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Booster Music/01-ClairDeLaLune.mid");
-		openSongFile(fileName);
-		m_mainWindow->setCurrentFile(fileName);
-		setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
+        QString fileName(destMusicDir.absolutePath() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "BeginnerCourse/01-StartWithMiddleC.mid");
+        openSongFile(fileName);
+        m_mainWindow->setCurrentFile(fileName);
+        setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);
     }
 }
 

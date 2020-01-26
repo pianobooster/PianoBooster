@@ -43,7 +43,7 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     followStopPointCombo->addItem(tr("Automatic (Recommended)"));
     followStopPointCombo->addItem(tr("On the Beat"));
     followStopPointCombo->addItem(tr("After the Beat"));
-    videoOptimiseCombo->addItem(tr("Full (Recommended)"));
+    videoOptimiseCombo->addItem(tr("Full"));
     videoOptimiseCombo->addItem(tr("Medium"));
     videoOptimiseCombo->addItem(tr("None"));
 }

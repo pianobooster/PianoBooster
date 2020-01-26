@@ -131,9 +131,9 @@ QtWindow::QtWindow()
 
 
 #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-    m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
+    m_glWidget->m_cfg_openGlOptimise = 0; //  two is full GlOptimise
 #else
-    m_glWidget->m_cfg_openGlOptimise = 1; //  1 is full GlOptimise
+    m_glWidget->m_cfg_openGlOptimise = 0; //  1 is full GlOptimise
 #endif
 
     if  (m_settings->value("Display/OpenGlOptimise").toString() == "true") // this used to be true for backward compatability
@@ -789,10 +789,15 @@ void QtWindow::loadTutorHtml(const QString & name)
 
         QTextStream out(&file);
         out.setCodec("UTF-8");
+        
+        QString htmlheader = "<head><style>body {background-color:#FFFFC0;color: black}p{font-size: 20px;} #hint{color: #ff0000;}</style></head>";
 
-	QString text=out.readAll();
-        m_tutorWindow->setHtml(tr(text.toUtf8().data()));
-        m_tutorWindow->setFixedHeight(130);
+        QString text = htmlheader + out.readAll();
+        m_tutorWindow->setHtml(text.toUtf8().data());
+        
+        // TODO get this working again on small screens
+        //_tutorWindow->setFixedHeight(130);
+        m_tutorWindow->setFixedHeight(200);
 
         m_tutorWindow->show();
 

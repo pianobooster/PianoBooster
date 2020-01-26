@@ -133,7 +133,6 @@ int CMidiDevice::checkMidiInput()
     if (m_selectedMidiInputDevice == 0)
         return 0;
 
-    m_selectedMidiInputDevice->checkMidiInput();
     return m_selectedMidiInputDevice->checkMidiInput();
 }
 
