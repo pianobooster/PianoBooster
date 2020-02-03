@@ -30,7 +30,6 @@ then
        -DWITH_MAN=ON \
        -DWITH_TIMIDITY=OFF \
        -DWITH_FLUIDSYNTH=ON \
-       -DUSE_FLUIDSYNTH=ON \
        -DUSE_TIMIDITY=ON \
        -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr"
 else
@@ -41,7 +40,6 @@ else
         WITH_MAN=ON \
         WITH_TIMIDITY=OFF \
         WITH_FLUIDSYNTH=ON \
-        USE_FLUIDSYNTH=ON \
         USE_TIMIDITY=ON
     make
 fi

@@ -84,8 +84,6 @@ Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
 **USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default.
 
-**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default; enable this option if your system has fluidsynth (Linux, BSD Unix, macOS) even if you do not have plans to install fluidsynth.
-
 **USE_TIMIDITY**: enable setting for timidity in GUI; disabled by default; enable this option if your system has timidity (Linux, BSD Unix(?)) even if you do not have plans to install timidity.
 
 **USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.

@@ -1,4 +1,3 @@
-#CONFIG += USE_FLUIDSYNTH
 CONFIG += release
 #CONFIG += console
 
@@ -124,21 +123,21 @@ unix {
 }
 
 
-contains (USE_FLUIDSYNTH, ON) {
+contains (EXPERIMENTAL_USE_FLUIDSYNTH, ON) {
     message("building using fluidsynth")
-    DEFINES += PB_USE_FLUIDSYNTH
+    DEFINES += EXPERIMENTAL_USE_FLUIDSYNTH
 
     SOURCES   += src/MidiDeviceFluidSynth.cpp
     !isEmpty(FLUIDSYNTH_INPLACE_DIR) {
-	!exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
-    	    error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
-	}
-	message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
+    !exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
+            error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
+    }
+    message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
         INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
         win32:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a
         unix:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a
     }else{
-	PKGCONFIG += fluidsynth
+    PKGCONFIG += fluidsynth
     }
 }
 
@@ -238,20 +237,20 @@ unix {
    }
 
    contains(NO_LANGS, OFF){
-	   updateqm.input = TRANSLATIONS
-	   updateqm.output = translations/${QMAKE_FILE_BASE}.qm
-	   updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
-	   updateqm.CONFIG += no_link target_predeps
-	   QMAKE_EXTRA_COMPILERS += updateqm
-	
-	   data_langs.path = $$PREFIX/$$DATA_DIR/translations
-	   data_langs.files = translations/*.qm translations/langs.json
-	   INSTALLS += data_langs
-	
-	   data_langs_fix.path = $$PREFIX/$$DATA_DIR/translations/
-	   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/music_blank.qm \
+       updateqm.input = TRANSLATIONS
+       updateqm.output = translations/${QMAKE_FILE_BASE}.qm
+       updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
+       updateqm.CONFIG += no_link target_predeps
+       QMAKE_EXTRA_COMPILERS += updateqm
+
+       data_langs.path = $$PREFIX/$$DATA_DIR/translations
+       data_langs.files = translations/*.qm translations/langs.json
+       INSTALLS += data_langs
+
+       data_langs_fix.path = $$PREFIX/$$DATA_DIR/translations/
+       data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/music_blank.qm \
                ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/pianobooster_blank.qm
-	   INSTALLS += data_langs_fix
+       INSTALLS += data_langs_fix
    }
 
    desktop.path = $$PREFIX/share/applications

@@ -153,7 +153,7 @@ void ppLogWarn(const char *msg, ...)
 
 void ppLogTrace(const char *msg, ...)
 {
-#ifdef IS_DEBUG
+#ifdef DEBUG_LOG_TRACE
     va_list ap;
 
     openLogFile();
@@ -199,7 +199,7 @@ void ppLogError(const char *msg, ...)
 
 void ppTiming(const char *msg, ...)
 {
-#ifdef IS_DEBUG
+#ifdef DEBUG_LOG_TIMING
     va_list ap;
 
     openLogFile();

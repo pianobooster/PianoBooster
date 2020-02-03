@@ -196,7 +196,6 @@ even without a plugged-in MIDI keyboard.
        -DWITH_MAN=ON \
        -DWITH_TIMIDITY=ON \
        -DWITH_FLUIDSYNTH=ON \
-       -DUSE_FLUIDSYNTH=ON \
        -DUSE_TIMIDITY=ON
 %else
 %qmake_qt5 \
@@ -209,7 +208,6 @@ even without a plugged-in MIDI keyboard.
        WITH_MAN=ON \
        WITH_TIMIDITY=ON \
        WITH_FLUIDSYNTH=ON \
-       USE_FLUIDSYNTH=ON \
        USE_TIMIDITY=ON
 %endif
 %make_build

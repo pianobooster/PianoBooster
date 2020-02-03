@@ -50,7 +50,7 @@
 #include "version.txt"
 
 
-#define OPTION_DEBUG_SETTINGS     0
+#define OPTION_DEBUG_SETTINGS   0
 #if OPTION_DEBUG_SETTINGS
 #define debugSettings(args)     qDebug args
 #else
@@ -433,25 +433,20 @@ void CSettings::unzipBoosterMusicBooks()
     {
         QString resourceDir = QApplication::applicationDirPath() + "/../music/";
 
-        ppLogTrace("resourceDir1 %s", qPrintable(resourceDir));
+        ppLogTrace("unzipBoosterMusicBooks resourceDir1 %s", qPrintable(resourceDir));
 
         if (!QFile::exists(resourceDir + ZIPFILENAME))
             resourceDir = QApplication::applicationDirPath() + "/../../music/";
-        ppLogTrace("resourceDir2 %s", qPrintable(resourceDir));
+        ppLogTrace("unzipBoosterMusicBooks resourceDir2 %s", qPrintable(resourceDir));
 
         if (!QFile::exists(resourceDir + ZIPFILENAME))
         {
 #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-            resourceDir = QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/music/";
+           resourceDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/music/";
 #endif
 #ifdef Q_OS_DARWIN
             resourceDir = QApplication::applicationDirPath() + "/../Resources/music/";
 #endif
-        }
-
-        QFile fileTestResourceDir(resourceDir);
-        if (!fileTestResourceDir.exists()){
-            resourceDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/music/";
         }
 
         ppLogInfo(qPrintable("applicationDirPath=" + QApplication::applicationDirPath()));
@@ -460,9 +455,9 @@ void CSettings::unzipBoosterMusicBooks()
 
         QFileInfo zipFile(resourceDir +  ZIPFILENAME);
         ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
-        
+
         QDir destMusicDir;
-        
+
 #ifdef _WIN32
         const QString MUSIC_DIR_NAME("My Music");
         QSettings settings(QSettings::UserScope, "Microsoft", "Windows");
@@ -472,7 +467,7 @@ void CSettings::unzipBoosterMusicBooks()
         const QString MUSIC_DIR_NAME("Music");
         destMusicDir.setPath(QDir::homePath() );
 #endif
-         
+
         if (!QDir(destMusicDir.absolutePath() + "/" + MUSIC_DIR_NAME).exists())
         {
             destMusicDir.mkdir(MUSIC_DIR_NAME);
@@ -509,8 +504,8 @@ void CSettings::unzipBoosterMusicBooks()
              ppLogError("unzip failed");
              return;
         }
-#endif       
-        QString fileName(destMusicDir.absolutePath() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "BeginnerCourse/01-StartWithMiddleC.mid");
+#endif
+        QString fileName(destMusicDir.absolutePath() + "/BoosterMusicBooks" + QString::number(MUSIC_RELEASE) + "/Beginner Course/01-StartWithMiddleC.mid");
         openSongFile(fileName);
         m_mainWindow->setCurrentFile(fileName);
         setValue("PianoBooster/MusicRelease", MUSIC_RELEASE);

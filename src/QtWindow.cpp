@@ -129,22 +129,6 @@ QtWindow::QtWindow()
 
     m_song->setLatencyFix(m_settings->value("Midi/Latency", 0).toInt());
 
-
-#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-    m_glWidget->m_cfg_openGlOptimise = 0; //  two is full GlOptimise
-#else
-    m_glWidget->m_cfg_openGlOptimise = 0; //  1 is full GlOptimise
-#endif
-
-    if  (m_settings->value("Display/OpenGlOptimise").toString() == "true") // this used to be true for backward compatability
-        m_settings->setValue("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise );
-    if  (m_settings->value("Display/OpenGlOptimise").toString() == "false") // this used to be boolean for backward compatability
-    {
-        m_glWidget->m_cfg_openGlOptimise = 0;
-        m_settings->setValue("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise );
-    }
-
-    m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toInt();
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
     m_song->cfg_rhythmTapping = static_cast<rhythmTapping_t> (m_settings->value("Score/RtyhemTappingMode", m_song->cfg_rhythmTapping ).toInt());
@@ -160,7 +144,6 @@ QtWindow::QtWindow()
         if (!songName.isEmpty())
             m_settings->openSongFile( songName );
     });
-
 
 }
 
@@ -396,15 +379,6 @@ void QtWindow::createActions()
     }
     connect(m_viewPianoKeyboard, SIGNAL(triggered()), this, SLOT(onViewPianoKeyboard()));
 
-    m_coloredNotes = new QAction(tr("Color Coded Notes"), this);
-    m_coloredNotes->setToolTip(tr("Color Code Notes in Score"));
-    m_coloredNotes->setCheckable(true);
-    m_coloredNotes->setChecked(false);
-    if (m_settings->value("View/ColoredNotes").toString()=="on"){
-        m_coloredNotes->setChecked(true);
-    }
-    connect(m_coloredNotes, SIGNAL(triggered()), this, SLOT(onColoredNotes()));
-
     m_setupPreferencesAct = new QAction(tr("&Preferences ..."), this);
     m_setupPreferencesAct->setToolTip(tr("Settings"));
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
@@ -465,7 +439,6 @@ void QtWindow::createMenus()
     m_viewMenu->addAction(m_sidePanelStateAct);
     m_viewMenu->addAction(m_fullScreenStateAct);
     m_viewMenu->addAction(m_viewPianoKeyboard);
-    m_viewMenu->addAction(m_coloredNotes);
 
     m_songMenu = menuBar()->addMenu(tr("&Song"));
     m_songMenu->setToolTipsVisible(true);
@@ -514,7 +487,7 @@ void QtWindow::showMidiSetup(){
     midiSetupDialog.init(m_song, m_settings);
     midiSetupDialog.exec();
 
-    m_glWidget->startTimerEvent();    
+    m_glWidget->startTimerEvent();
     if (isPlaying){
         m_topBar->on_playButton_clicked(true);
     }
@@ -725,7 +698,7 @@ void QtWindow::open()
 void QtWindow::readSettings()
 {
     QPoint pos = m_settings->value("Window/Pos", QPoint(25, 25)).toPoint();
-    QSize size = m_settings->value("Window/Size", QSize(800, 600)).toSize();
+    QSize size = m_settings->value("Window/Size", QSize(1200, 800)).toSize();
     resize(size);
     move(pos);
 }
@@ -789,15 +762,15 @@ void QtWindow::loadTutorHtml(const QString & name)
 
         QTextStream out(&file);
         out.setCodec("UTF-8");
-        
-        QString htmlheader = "<head><style>body {background-color:#FFFFC0;color: black}p{font-size: 20px;} #hint{color: #ff0000;}</style></head>";
+
+        QString htmlheader = "<head><style>body {background-color:#FFFFC0;color: black}p{font-size: 18px;} #hint{color: #ff0000;}</style></head>";
 
         QString text = htmlheader + out.readAll();
         m_tutorWindow->setHtml(text.toUtf8().data());
-        
+
         // TODO get this working again on small screens
         //_tutorWindow->setFixedHeight(130);
-        m_tutorWindow->setFixedHeight(200);
+        m_tutorWindow->setFixedHeight(180);
 
         m_tutorWindow->show();
 
@@ -808,21 +781,6 @@ void QtWindow::loadTutorHtml(const QString & name)
 
 void QtWindow::refreshTranslate(){
 #ifndef NO_LANGS
-    QString localeDirectory =
- #ifdef Q_OS_WIN32
-        QApplication::applicationDirPath() + "/translations/";
- #endif
- #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-        QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/translations/";
- #endif
- #ifdef Q_OS_DARWIN
-        QApplication::applicationDirPath() + "/../Resources/translations/";
- #endif
-
-    QFile fileTestLocale(localeDirectory);
-    if (!fileTestLocale.exists()){
-        localeDirectory=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
-    }
 
     QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
 
@@ -851,17 +809,28 @@ void QtWindow::refreshTranslate(){
             m["text"]=w->text();
             listActionsRetranslateUi[w]=m;
         }
-
     }
 
+    QString translationsDir = QApplication::applicationDirPath() + "/translations/";
+
+    QFile fileTestLocale(translationsDir);
+    if (!fileTestLocale.exists()){
+ #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
+        translationsDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+ #endif
+ #ifdef Q_OS_DARWIN
+        QApplication::applicationDirPath() + "/../Resources/translations/";
+ #endif
+    }
+    ppLogInfo("Translations loaded from '%s'",  qPrintable(translationsDir));
+
     // set translator for app
-    if (!translator.load(QSTR_APPNAME + QString("_") + locale , localeDirectory))
-       if (!translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath()  + "/translations/"))
-           translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
+    if (!translator.load(QSTR_APPNAME + QString("_") + locale , translationsDir))
+        translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translator);
 
     // set translator for music
-    if (!translatorMusic.load(QString("music_") + locale , localeDirectory))
+    if (!translatorMusic.load(QString("music_") + locale , translationsDir))
        if (!translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath()  + "/translations/"))
            translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translatorMusic);
@@ -869,7 +838,7 @@ void QtWindow::refreshTranslate(){
 
     // set translator for default widget's text (for example: QMessageBox's buttons)
 #ifdef __WIN32
-    qtTranslator.load("qt_"+locale,localeDirectory);
+    qtTranslator.load("qt_"+locale,translationsDir);
 #else
     qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
