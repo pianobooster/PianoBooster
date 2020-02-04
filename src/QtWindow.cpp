@@ -545,7 +545,7 @@ void QtWindow::setCurrentFile(const QString &fileName)
 
 void QtWindow::website()
 {
-    QDesktopServices::openUrl(QUrl("https://github.com/captnfab/PianoBooster/tree/master/doc"));
+    QDesktopServices::openUrl(QUrl("http://pianobooster.sourceforge.net/"));
 }
 
 void QtWindow::help()
@@ -555,7 +555,6 @@ void QtWindow::help()
     msgBox.setText(
             tr(
    "<h3>Getting Started</h3>"
-
 
    "<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
    "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
@@ -583,12 +582,12 @@ void QtWindow::help()
 
    "<h3>Hints on Playing the Piano</h3>"
    "<p>For hints on how to play the piano see: "
-   "<a href=\"https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md\" ><b>Piano Hints</b></a></p>"
+   "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>Piano Hints</b></a></p>"
 
    "<h3>More Information</h3>"
    "<p>For more help please visit the PianoBooster "
-   "<a href=\"https://github.com/captnfab/PianoBooster/tree/master/doc\" ><b>website</b></a>, "
-   "the PianoBooster <a href=\"https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md\" ><b>FAQ</b></a> "
+   "<a href=\"http://pianobooster.sourceforge.net\" ><b>website</b></a>, "
+   "the PianoBooster <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>FAQ</b></a> "
    "and the <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>."
 
                 ));
@@ -603,7 +602,7 @@ void QtWindow::about()
     msgBox.setText(
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
-            "<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>" +
+            "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net/</b></a><br><br>" +
             tr("Copyright(c) L. J. Barman, 2008-2013; All rights reserved.<br>") +
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
             "<br>" +
@@ -611,11 +610,10 @@ void QtWindow::about()
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
             )
-            #if !defined(USE_SYSTEM_RTMIDI)
              +
             tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>") +
             tr("Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.")
-            #endif
+
     );
     msgBox.setMinimumWidth(600);
     msgBox.exec();

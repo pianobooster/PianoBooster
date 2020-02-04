@@ -42,7 +42,6 @@ BuildRequires:  pkgconfig(Qt5Help)
 BuildRequires:  pkgconfig(Qt5OpenGL)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Xml)
-BuildRequires:  pkgconfig(rtmidi)
 BuildRequires:  pkgconfig(fluidsynth)
 BuildRequires:  hicolor-icon-theme
 
@@ -58,7 +57,6 @@ Requires:       dejavu-sans-fonts
 Requires:       unzip
 Requires:       hicolor-icon-theme
 
-Recommends:     %{name}-timidity
 #Recommends:     %%{name}-fluidsynth
 %if 0%{?mageia}
 Recommends:     qttranslations5
@@ -102,8 +100,6 @@ is really recommended.
 
 #----------------------------------------------------------------------------
 
-%package        timidity
-Summary:        Wrapper to launch PianoBooster with TiMidity as MIDI sequencer
 %if 0%{?mageia}
 Group:          Sound/Midi
 %endif
@@ -115,69 +111,13 @@ Group:          Productivity/Multimedia/Sound/Midi
 %endif
 
 Requires:       %{name} = %{version}-%{release}
-%if 0%{?mageia}
-Requires:       TiMidity++
-%endif
-%if 0%{?suse_version}
-Requires:       timidity
-%endif
-%if 0%{?fedora}
-Requires:       timidity++
-%endif
+
 %if 0%{?mageia} || 0%{?fedora}
 Requires:       libnotify
 %endif
 %if 0%{?suse_version}
 Requires:       libnotify-tools
 %endif
-
-%description    timidity
-This package contains a wrapper script to launch PianoBooster together with
-TiMidity in ALSA server mode. This makes it possible to play the MIDI files
-even without a plugged-in MIDI keyboard.
-
-%files          timidity
-%{_bindir}/%{name}-timidity
-%{_datadir}/applications/%{name}-timidity.desktop
-
-#----------------------------------------------------------------------------
-
-%package        fluidsynth
-Summary:        Wrapper to launch PianoBooster with FluidSynth as MIDI sequencer
-%if 0%{?mageia}
-Group:          Sound/Midi
-%endif
-%if 0%{?fedora}
-Group:          Applications/Sound
-%endif
-%if 0%{?suse_version}
-Group:          Productivity/Multimedia/Sound/Midi
-%endif
-
-Requires:       %{name} = %{version}-%{release}
-Requires:       fluidsynth
-Requires:       fluid-soundfont-gm
-Requires:       fluid-soundfont-gs
-%if 0%{?mageia} || 0%{?fedora}
-Requires:       libnotify
-%endif
-%if 0%{?suse_version}
-Requires:       libnotify-tools
-%endif
-%if 0%{?suse_version}
-# workaround for missing /usr/bin/jackd dependency, but to recommend it
-# while use_jack flag of pianobooster-fluidsynth script is not enabled
-Recommends:     jack
-%endif
-
-%description    fluidsynth
-This package contains a wrapper script to launch PianoBooster together with
-FluidSynth in ALSA server mode. This makes it possible to play the MIDI files
-even without a plugged-in MIDI keyboard.
-
-%files          fluidsynth
-%{_bindir}/%{name}-fluidsynth
-%{_datadir}/applications/%{name}-fluidsynth.desktop
 
 #----------------------------------------------------------------------------
 
@@ -192,11 +132,7 @@ even without a plugged-in MIDI keyboard.
        -DNO_LICENSE=ON \
        -DNO_CHANGELOG=ON \
        -DINSTALL_ALL_LANGS=ON \
-       -DUSE_SYSTEM_RTMIDI=ON \
-       -DWITH_MAN=ON \
-       -DWITH_TIMIDITY=ON \
-       -DWITH_FLUIDSYNTH=ON \
-       -DUSE_TIMIDITY=ON
+       -DWITH_MAN=ON
 %else
 %qmake_qt5 \
        USE_SYSTEM_FONT=ON \
@@ -204,11 +140,7 @@ even without a plugged-in MIDI keyboard.
        NO_LICENSE=ON \
        NO_CHANGELOG=ON \
        INSTALL_ALL_LANGS=ON \
-       USE_SYSTEM_RTMIDI=ON \
-       WITH_MAN=ON \
-       WITH_TIMIDITY=ON \
-       WITH_FLUIDSYNTH=ON \
-       USE_TIMIDITY=ON
+       WITH_MAN=ON
 %endif
 %make_build
 

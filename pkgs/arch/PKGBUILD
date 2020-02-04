@@ -8,8 +8,8 @@ origname='PianoBooster'
 pkgname='pianobooster'
 pkgver=0.7.1
 pkgrel=1
-makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'rtmidi' 'jack' 'fluidsynth' 'hicolor-icon-theme')
-depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'rtmidi' 'jack' 'libffado' 'fluidsynth' 'soundfont-fluid' 'libnotify')
+makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'jack' 'fluidsynth' 'hicolor-icon-theme')
+depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'jack' 'libffado' 'fluidsynth' 'soundfont-fluid' 'libnotify')
 optdepends=('qt5-translations')
 arch=('x86_64')
 groups=('qt5')
@@ -26,21 +26,13 @@ then
     cmake . \
        -DUSE_SYSTEM_FONT=ON \
        -DINSTALL_ALL_LANGS=ON \
-       -DUSE_SYSTEM_RTMIDI=ON \
        -DWITH_MAN=ON \
-       -DWITH_TIMIDITY=OFF \
-       -DWITH_FLUIDSYNTH=ON \
-       -DUSE_TIMIDITY=ON \
        -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr"
 else
      qmake-qt5 \
         USE_SYSTEM_FONT=ON \
         INSTALL_ALL_LANGS=ON \
-        USE_SYSTEM_RTMIDI=ON \
-        WITH_MAN=ON \
-        WITH_TIMIDITY=OFF \
-        WITH_FLUIDSYNTH=ON \
-        USE_TIMIDITY=ON
+        WITH_MAN=ON
     make
 fi
 }

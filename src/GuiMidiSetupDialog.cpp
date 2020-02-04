@@ -43,9 +43,6 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
 #ifndef EXPERIMENTAL_USE_FLUIDSYNTH
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
-#ifndef PB_USE_TIMIDITY
-    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_4));
-#endif
 
     setWindowTitle(tr("Midi Setup"));
 }
@@ -113,20 +110,6 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     }
 
     updateFluidInfoText();
-
-    // load timidity settings
-    connect(enableTimidity,SIGNAL(stateChanged(int)),this,SLOT(on_enableTimidity_stateChanged(int)));
-
-
-    // disabled checkbox timidityAlsa
-    timidityAlsa->setEnabled(false);
-
-    enableTimidity->setChecked(m_settings->value("TiMidity/enableTimidity","false").toBool());
-    timidityAlsa->setChecked(m_settings->value("TiMidity/timidityAlsa","true").toBool());
-    timidityLibaoMode->setChecked(m_settings->value("TiMidity/timidityLibaoMode","true").toBool());
-    timidityPcmDevice->setChecked(m_settings->value("TiMidity/timidityPcmDevice","false").toBool());
-
-    on_enableTimidity_stateChanged(enableTimidity->isChecked());
 }
 
 void GuiMidiSetupDialog::updateMidiInfoText()
@@ -255,16 +238,6 @@ void GuiMidiSetupDialog::accept()
         m_settings->setValue("FluidSynth/sampleRateCombo",sampleRateCombo->currentText());
     }
 
-    // save timidity settings
-    if (!enableTimidity->isChecked()){
-        m_settings->remove("TiMidity");
-    }else{
-        m_settings->setValue("TiMidity/timidityAlsa",timidityAlsa->isChecked());
-        m_settings->setValue("TiMidity/timidityLibaoMode",timidityLibaoMode->isChecked());
-        m_settings->setValue("TiMidity/timidityPcmDevice",timidityPcmDevice->isChecked());
-    }
-    m_settings->setValue("TiMidity/enableTimidity",enableTimidity->isChecked());
-
     this->QDialog::accept();
 }
 
@@ -372,15 +345,5 @@ void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
     }else{
         audioDeviceLineEdit->setEnabled(false);
         audioDeviceLineEdit->setText("");
-    }
-}
-
-void GuiMidiSetupDialog::on_enableTimidity_stateChanged(int status){
-    if (enableTimidity->isChecked()){
-        timiditySettingsGroupBox->setEnabled(true);
-        timiditySettingsGroupBox2->setEnabled(true);
-    }else{
-        timiditySettingsGroupBox->setEnabled(false);
-        timiditySettingsGroupBox2->setEnabled(false);
     }
 }

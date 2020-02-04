@@ -34,7 +34,7 @@ macOS
 =====
 
 To run Piano Booster you need a MIDI Piano Keyboard and a MIDI-USB interface if the keyboard
-does not have a USB interface. (If you don't have a MIDI keyboard you can still try out 
+does not have a USB interface. (If you don't have a MIDI keyboard you can still try out
 PianoBooster using the computer's keyboard, 'x' is middle C).
 
 To hear music from the computer you will need a General Midi compatible sound synthesizer.
@@ -59,26 +59,12 @@ don't have a MIDI keyboard you can still try out PianoBooster using the PC keybo
 middle C - but a MIDI piano is recommend).
 
 To hear music from the computer you will need a General Midi compatible sound synthesizer.
-While there are many possible choices for the Linux (Timidity, FluidSynth), the easiest way is
-to use Timidity. Timidity is BSD Unix is not workable, please use FluidSynth.
 
-This must be started before Pianobooster, and also allows to load custom Soundfonts.
+On Linux to start fluidsynth type the following on a terminal window.
 
-Install RPM, DEB, ARCH, TGZ etc. package.
-
-Packages for Linux and BSD Unix are available in repositories of distributions [here](https://pkgs.org/download/pianobooster).
-
-Packages for Linux (not for BSD Unix) are available in OBS repository:
-
-[pianobooster](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster)
-
-[pianobooster-timidity](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-timidity)
-
-[pianobooster-fluidsynth](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-fluidsynth)
-
-*Note:* The packages provided with distributions may not exist or are out of date,
-in which case you will have to compile from the source code.
-However compiling from source is quite easy on Linux and BSD Unix.
+```
+fluidsynth -g 1.0 -a alsa -o midi.alsa_seq.id=fs2 /usr/share/sounds/sf2/FluidR3_GM.sf2
+```
 
 MIDI FILES
 ==========
@@ -121,13 +107,6 @@ You need to translate:
 
 [Desktop file #1](pianobooster.desktop)
 
-[Desktop file #2](tools/timidity/pianobooster-timidity.desktop)
-
-[Desktop file #3](tools/fluidsynth/pianobooster-fluidsynth.desktop)
-
-[Script](tools/fluidsynth/pianobooster-fluidsynth)
-
-[Script](tools/fluidsynth/pianobooster-timidity)
 
 LICENSE
 =======
@@ -162,7 +141,7 @@ instructions on how to build the source code.
 DEBUGGING
 =========
 
-To get a backtrace, build Piano Booster with DEBUG option 
+To get a backtrace, build Piano Booster with DEBUG option
 
 type:
 

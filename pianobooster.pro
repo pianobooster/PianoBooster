@@ -5,13 +5,10 @@ CONFIG += link_pkgconfig
 
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
-isEmpty(USE_TIMIDITY): USE_TIMIDITY="OFF"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
 isEmpty(NO_LICENSE): NO_LICENSE="OFF"
 isEmpty(NO_CHANGELOG): NO_CHANGELOG="OFF"
 isEmpty(WITH_MAN): WITH_MAN="OFF"
-isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
-isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
 isEmpty(NO_LANGS): NO_LANGS="OFF"
 
 # install all languages always
@@ -76,19 +73,10 @@ SOURCES   = src/QtMain.cpp  \
             src/Settings.cpp \
             src/Merge.cpp
 
-contains(USE_SYSTEM_RTMIDI, ON){
-    message(building using system rtmidi)
-    DEFINES+=USE_SYSTEM_RTMIDI
-    PKGCONFIG += rtmidi
-}else{
-    message(building using bundled rtmidi)
-    INCLUDEPATH += src/3rdparty
-    SOURCES+= src/3rdparty/rtmidi/RtMidi.cpp
-}
 
-contains(USE_TIMIDITY, ON){
-    DEFINES += PB_USE_TIMIDITY
-}
+INCLUDEPATH += src/3rdparty
+SOURCES+= src/3rdparty/rtmidi/RtMidi.cpp
+
 contains(USE_FTGL, ON){
     message(building using ftgl)
     PKGCONFIG += ftgl
@@ -196,29 +184,6 @@ unix {
       man.path = $$PREFIX/share/man/man6/
       man.files = pianobooster.6
       INSTALLS += man
-   }
-
-   contains(WITH_TIMIDITY, ON){
-      message(building with timidity)
-
-      timidity.path = $$PREFIX/bin
-      timidity.files = tools/timidity/pianobooster-timidity
-      INSTALLS += timidity
-
-      timidity_desktop.path = $$PREFIX/share/applications
-      timidity_desktop.files = tools/timidity/pianobooster-timidity.desktop
-      INSTALLS += timidity_desktop
-   }
-
-   contains(WITH_FLUIDSYNTH, ON){
-      message(building with fluidsynth)
-      fluidsynth.path = $$PREFIX/bin
-      fluidsynth.files = tools/fluidsynth/pianobooster-fluidsynth
-      INSTALLS += fluidsynth
-
-      fluidsynth_desktop.path = $$PREFIX/share/applications
-      fluidsynth_desktop.files = tools/fluidsynth/pianobooster-fluidsynth.desktop
-      INSTALLS += fluidsynth_desktop
    }
 
    !contains(USE_SYSTEM_FONT, ON){

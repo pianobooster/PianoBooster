@@ -133,24 +133,9 @@ if(USE_JACK)
     endif(JACK_FOUND)
 endif(USE_JACK)
 
-if(USE_SYSTEM_RTMIDI)
-    add_compile_options("-DUSE_SYSTEM_RTMIDI")
-    pkg_check_modules(RTMIDI rtmidi)
-    if(NOT RTMIDI_FOUND)
-        MESSAGE(FATAL_ERROR "RTMIDI was not found")
-    endif(NOT RTMIDI_FOUND)
-    SET(RTMIDI_INCLUDE_DIR ${RTMIDI_INCLUDE_DIRS})
-    SET(RTMIDI_LIBRARY ${RTMIDI_LIBRARIES})
-else(USE_SYSTEM_RTMIDI)
-    INCLUDE_DIRECTORIES("3rdparty")
-    SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
-    SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
-endif(USE_SYSTEM_RTMIDI)
-
-if(USE_TIMIDITY)
-    ADD_DEFINITIONS(-DPB_USE_TIMIDITY)
-endif(USE_TIMIDITY)
-
+INCLUDE_DIRECTORIES("3rdparty")
+SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
+SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
@@ -244,7 +229,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.13.0")
 else()
     target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS} ${JACK_LIBRARY_DIRS})
 endif()
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARY} ${JACK_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${JACK_LIBRARY})
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
@@ -264,16 +249,6 @@ endif()
 
 if(WITH_MAN)
     INSTALL( FILES ../pianobooster.6  DESTINATION share/man/man6/ )
-endif()
-
-if(WITH_TIMIDITY)
-    INSTALL( FILES ../tools/timidity/pianobooster-timidity PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ DESTINATION ${CMAKE_INSTALL_BINDIR} )
-    INSTALL( FILES ../tools/timidity/pianobooster-timidity.desktop DESTINATION share/applications )
-endif()
-
-if(WITH_FLUIDSYNTH)
-    INSTALL( FILES ../tools/fluidsynth/pianobooster-fluidsynth PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ DESTINATION ${CMAKE_INSTALL_BINDIR} )
-    INSTALL( FILES ../tools/fluidsynth/pianobooster-fluidsynth.desktop DESTINATION share/applications )
 endif()
 
 INSTALL ( FILES ../icons/hicolor/32x32/pianobooster.png DESTINATION share/icons/hicolor/32x32/apps )
