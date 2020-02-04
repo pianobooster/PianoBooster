@@ -1,7 +1,6 @@
 # Cmake File for Piano Booster
 # for the debug build type cmake -DCMAKE_BUILD_TYPE=Debug
 SET(CMAKE_BUILD_TYPE Release)
-SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 option(USE_FTGL "build with ftgl" ON)
 
