@@ -1,7 +1,7 @@
 # Cmake File for Piano Booster
 
 option(USE_FTGL "build with ftgl" ON)
-option(USE_JACK "build with Jack (Only required of BSD linux)" OFF)
+option(USE_JACK "build with Jack (Only required of BSD Unix)" OFF)
 option(USE_SYSTEM_FONT "build with system font" OFF)
 
 cmake_minimum_required(VERSION 2.4)

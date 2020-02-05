@@ -65,7 +65,6 @@ cmake \
     -DNO_DOCS=ON \
     -DNO_LICENSE=ON \
     -DNO_CHANGELOG=ON \
-    -DINSTALL_ALL_LANGS=ON \
     -DWITH_MAN=ON \
     -DCMAKE_BUILD_TYPE=Release .
 

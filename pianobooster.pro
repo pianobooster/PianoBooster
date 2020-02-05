@@ -12,7 +12,6 @@ isEmpty(WITH_MAN): WITH_MAN="OFF"
 isEmpty(NO_LANGS): NO_LANGS="OFF"
 
 # install all languages always
-INSTALL_ALL_LANGS="ON"
 
 TRANSLATIONS = $$files(translations/*.ts)
 

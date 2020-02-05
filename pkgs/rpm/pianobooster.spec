@@ -131,7 +131,6 @@ Requires:       libnotify-tools
        -DNO_DOCS=ON \
        -DNO_LICENSE=ON \
        -DNO_CHANGELOG=ON \
-       -DINSTALL_ALL_LANGS=ON \
        -DWITH_MAN=ON
 %else
 %qmake_qt5 \
@@ -139,7 +138,6 @@ Requires:       libnotify-tools
        NO_DOCS=ON \
        NO_LICENSE=ON \
        NO_CHANGELOG=ON \
-       INSTALL_ALL_LANGS=ON \
        WITH_MAN=ON
 %endif
 %make_build

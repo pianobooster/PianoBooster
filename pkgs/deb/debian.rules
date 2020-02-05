@@ -12,7 +12,6 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
 		-DCMAKE_INSTALL_BINDIR=/usr/games \
 		-DUSE_SYSTEM_FONT=ON \
-		-DINSTALL_ALL_LANGS=ON \
 		-DWITH_MAN=ON \
 		-DNO_LICENSE=ON \
 		-DNO_CHANGELOG=ON

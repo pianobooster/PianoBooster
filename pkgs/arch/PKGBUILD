@@ -25,13 +25,11 @@ if [ "$build_with_cmake" = "1" ]
 then
     cmake . \
        -DUSE_SYSTEM_FONT=ON \
-       -DINSTALL_ALL_LANGS=ON \
        -DWITH_MAN=ON \
        -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr"
 else
      qmake-qt5 \
         USE_SYSTEM_FONT=ON \
-        INSTALL_ALL_LANGS=ON \
         WITH_MAN=ON
     make
 fi
