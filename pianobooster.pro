@@ -105,8 +105,8 @@ win32 {
 }
 
 unix {
-  DEFINES += __LINUX_ALSASEQ__
-  LIBS += -lpthread -lGL
+  DEFINES += __LINUX_ALSA__
+  LIBS += -lpthread -lGL -lasound
 }
 
 
@@ -144,7 +144,7 @@ isEmpty(QMAKE_LRELEASE) {
 }
 
 !win32 {
-  system($${QMAKE_LRELEASE} -silent $${_PRO_FILE_} 2> /dev/null)
+  system($${QMAKE_LRELEASE} $${_PRO_FILE_} 2> /dev/null)
 }
 win32 {
   system($$[QT_INSTALL_BINS]\\lrelease.exe $${_PRO_FILE_})
@@ -203,7 +203,7 @@ unix {
    contains(NO_LANGS, OFF){
        updateqm.input = TRANSLATIONS
        updateqm.output = translations/${QMAKE_FILE_BASE}.qm
-       updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
+       updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
        updateqm.CONFIG += no_link target_predeps
        QMAKE_EXTRA_COMPILERS += updateqm
 

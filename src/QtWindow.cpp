@@ -553,44 +553,35 @@ void QtWindow::help()
     QMessageBox msgBox(this);
     msgBox.setWindowTitle (tr("Piano Booster Help"));
     msgBox.setText(
-            tr(
-   "<h3>Getting Started</h3>"
+    tr("<h3>Getting Started</h3>") +
+    tr("<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
+       "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
+       "middle C.</p>") +
+    tr("<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
+       "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
+       "but it introduces an unacceptable delay (latency). In Linux you can use ") +
+       "<a href=\"http://www.fluidsynth.org\">FluidSynth</a> " +
+    tr("or") +
+    " <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>" +
+    tr("<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
+       "using MIDI channels 3 and 4.") +
+    tr("<h3>Setting Up</h3>") +
+    tr("<p>First use the <i>Setup/Midi Setup</i> menu and in the dialog box select the MIDI input and MIDI "
+       "output interfaces that match your hardware. ") +
+    tr("Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
+       "Now select whether you want to just <i>listen</i> to the music or "
+       "<i>play along</i> on the piano keyboard by setting the <i>skill</i> level on the side panel. Finally when "
+       "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music.") +
+    tr("<h3>Hints on Playing the Piano</h3>"
+       "<p>For hints on how to play the piano see: ") +
+       "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>" + tr("Piano Hints") + "</b></a></p>" +
+    tr("<h3>More Information</h3>"
+       "<p>For more help please visit the PianoBooster ") +
+       "<a href=\"http://pianobooster.sourceforge.net\" ><b>" + tr("website") + "</b></a>, " +
+    tr("the PianoBooster") + " <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b> " + tr("FAQ") + "</b></a> " +
+    tr("and the") + " <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\"><b>" +tr("user forum") +"</b></a>."
+    );
 
-   "<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
-   "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
-   "middle C.</p>"
-
-   "<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
-   "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
-   "but it introduces an unacceptable delay (latency). In Linux you can use "
-   "<a href=\"http://www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
-
-
-   "<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
-   "using MIDI channels 3 and 4."
-
-   "<h3>Setting Up</h3>"
-
-
-   "<p>First use the <i>Setup/Midi Setup</i> menu and in the dialog box select the MIDI input and MIDI "
-   "output interfaces that match your hardware. "
-
-   "Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
-   "Now select whether you want to just <i>listen</i> to the music or "
-   "<i>play along</i> on the piano keyboard by setting the <i>skill</i> level on the side panel. Finally when "
-   "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music."
-
-   "<h3>Hints on Playing the Piano</h3>"
-   "<p>For hints on how to play the piano see: "
-   "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>Piano Hints</b></a></p>"
-
-   "<h3>More Information</h3>"
-   "<p>For more help please visit the PianoBooster "
-   "<a href=\"http://pianobooster.sourceforge.net\" ><b>website</b></a>, "
-   "the PianoBooster <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b>FAQ</b></a> "
-   "and the <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>."
-
-                ));
     msgBox.setMinimumWidth(600);
     msgBox.exec();
 }

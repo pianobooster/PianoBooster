@@ -26,9 +26,6 @@ unacceptable delay (latency) between pressing a note and hearing the sound. For 
 the use of "Microsoft GS Wavetable software synthesizer" is not recommend. Please see the
 forum for possible solutions.
 
-Double Click on the EXE file of Windows installer for installation.
-
-[PianoBoosterInstall-0-6-4.exe](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.4/PianoBoosterInstall-0-6-4.exe/download) (obsoleted)
 
 macOS
 =====
@@ -47,8 +44,6 @@ This must be started before Pianobooster, and also allows to load custom Soundfo
 Double Click on the DMG file containing PianoBooster, then just drag the pianobooster.app
 file wherever you wish (/Application folder is suggested).
 
-[pianobooster-mac-0.6.2.dmg](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.2/pianobooster-mac-0.6.2.dmg/download) (obsoleted)
-
 [pianobooster-mac-0.6.5-alpha1.dmg](https://github.com/chrisballinger/PianoBooster/releases/tag/v0.6.5-alpha1) (not official)
 
 LINUX and BSD UNIX
@@ -64,6 +59,11 @@ On Linux to start fluidsynth type the following on a terminal window.
 
 ```
 fluidsynth -g 1.0 -a alsa -o midi.alsa_seq.id=fs2 /usr/share/sounds/sf2/FluidR3_GM.sf2
+```
+An alternatively you can used TiMidity by type the following on a terminal window.
+
+```
+timidity -iA -B2,8 -Os -EFreverb=0
 ```
 
 MIDI FILES
@@ -92,21 +92,7 @@ TRANSLATIONS
 ============
 
 PianoBooster isn't translated in your language? Help us, and we will gladly ship
-new translations with it. Use our
-[Collaborative Translation Platform](https://www.transifex.com/Magic/pianobooster)
-(Transifex) to add your favorite languages.
-
-Using Transifex is not mandatory.
-You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls).
-
-You need to translate:
-
-[Main program](translations/pianobooster_blank.ts)
-
-[Courses](translations/music_blank.ts)
-
-[Desktop file #1](pianobooster.desktop)
-
+new translations with it.
 
 LICENSE
 =======
