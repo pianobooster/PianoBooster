@@ -2,6 +2,7 @@
 
 option(USE_FTGL "build with ftgl" ON)
 option(USE_JACK "build with Jack (Only required of BSD Unix)" OFF)
+option(USE_BUNDLED_RTMIDI "build with bundled rtmidi (for older distributions only)" OFF)
 option(USE_SYSTEM_FONT "build with system font" OFF)
 
 cmake_minimum_required(VERSION 2.4)
@@ -110,7 +111,7 @@ endif(EXPERIMENTAL_USE_FLUIDSYNTH)
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
-INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} ${FTGL_INCLUDE_DIR} ${RTMIDI_INCLUDE_DIR})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INCLUDE_DIR} ${FTGL_INCLUDE_DIR})
 
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp ${PB_BASE_SRCS})
@@ -133,9 +134,17 @@ if(USE_JACK)
     endif(JACK_FOUND)
 endif(USE_JACK)
 
-INCLUDE_DIRECTORIES("3rdparty")
-SET (PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
-SET (PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
+if(USE_BUNDLED_RTMIDI)
+    message(STATUS "Building using bundled rtmidi")
+    add_compile_options("-DUSE_BUNDLED_RTMIDI")
+    include_directories("3rdparty")
+    set(PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
+    set(PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
+else()
+    pkg_check_modules(RTMIDI REQUIRED rtmidi)
+    include_directories(${RTMIDI_INCLUDE_DIRS})
+    link_directories(${RTMIDI_LIBRARY_DIRS})
+endif()
 
 # with SET() command you can change variables or define new ones
 # here we define PIANOBOOSTER_SRCS variable that contains a list of all .cpp files
@@ -229,7 +238,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.13.0")
 else()
     target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS} ${JACK_LIBRARY_DIRS})
 endif()
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${JACK_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY})
 
 INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
 INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

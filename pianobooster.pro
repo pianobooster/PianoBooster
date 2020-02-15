@@ -72,9 +72,15 @@ SOURCES   = src/QtMain.cpp  \
             src/Settings.cpp \
             src/Merge.cpp
 
-
-INCLUDEPATH += src/3rdparty
-SOURCES+= src/3rdparty/rtmidi/RtMidi.cpp
+contains(USE_BUNDLED_RTMIDI, ON){
+    message(building using bundled rtmidi)
+    DEFINES += USE_BUNDLED_RTMIDI
+    INCLUDEPATH += src/3rdparty
+    SOURCES += src/3rdparty/rtmidi/RtMidi.cpp
+}else{
+    message(building using system rtmidi)
+    PKGCONFIG += rtmidi
+}
 
 contains(USE_FTGL, ON){
     message(building using ftgl)

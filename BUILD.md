@@ -78,6 +78,9 @@ Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
 **INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and always enabled for qmake.
 
+**USE_BUNDLED_RTMIDI**: build with bundled (not system) rtmidi. This is only required
+for older distributions that do not include the system rtmidi; disabled by default.
+
 **USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
 
 **USE_FONT**: build with specified font; null by default.
