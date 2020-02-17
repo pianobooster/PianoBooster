@@ -100,7 +100,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
         <source>Honky-tonk Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Honky-tonk Piano</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
@@ -120,12 +120,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation>Clavichord</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation type="unfinished"></translation>
+        <translation>Celesta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -240,7 +240,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
         <source>Guitar harmonics</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrabas (prsty - pizzicato)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
@@ -335,12 +335,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
         <source>SynthStrings 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntetické sláčíky 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>SynthStrings 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntetické sláčíky 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
@@ -680,7 +680,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
         <source>Reverse Cymbal</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvuk činelu pospiatky</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="476"/>
@@ -1072,12 +1072,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
         <source>Show color coded notes on the score</source>
-        <translation type="unfinished"></translation>
+        <translation>Označiť noty farbami</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
         <source>Color Coded Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Farebne označené noty</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
@@ -1743,82 +1743,82 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="556"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Začíname&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="557"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Budete potrebovať &lt;b&gt; klávesy s podporou MIDI &lt;/b&gt; a &lt;b&gt; MIDI rozhrania &lt;/b&gt; pre Váš počítač.Pokud nemáte klávesy, ktoré toto rozhranie podporujú, môžete PianoBooster vyskúšať na klávesnici vášho počítača, &apos;X&apos; je jednočiarkované C. &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="560"/>
         <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Na to, aby ste mohli počul zvuk budete potrebovať &lt;b&gt; Syntezátor zvuku MIDI &lt;/b&gt;. Operačný systém windows obsahuje &quot;Microsoft GS Wavetable software synthesizer&quot;, bohužiaľ tento software dosahuje vysokého oneskorenie (latencie). Na linuxu môžete použiť </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="564"/>
         <source>or</source>
-        <translation type="unfinished"></translation>
+        <translation>alebo</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; PianoBooster pracuje najlepšie s MIDI súbory, ktoré majú rozdelené časti na pravú a ľavú ruku používajúce MIDI kanály 3 a 4.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Počiatočné nastavenie&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Po prvé bežťe do menu &lt;i&gt; Nastavenia / Nastavenia MIDI &lt;/i&gt; a vyberte také rozhranie, ktoré podporuje váš hardware. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ďalej použijeme &lt;i&gt; Súbor / Otvoriť &lt;/ &gt; pre otvorenie MIDI súborov s príponou &quot;.mid&quot; alebo karaoke súborov s príponou &quot;.kar&quot;. Potom si vyberte či chcete hudbu len &lt;i&gt; počúvať &lt;/i&gt; alebo aby vás program&lt;i&gt; následoval&lt;/i&gt; na Vašich klávesoch. Je možné tiež nastaviť &lt;i&gt; úrovne &lt;/i&gt; obtiažnosti na ľavom paneli. Až budete pripravení kliknite na tlačidlo s &lt;i&gt; ikonou play &lt;/i&gt; (alebo stlačte &lt;i&gt; medzerník &lt;/i&gt;) na spustenie hudby.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt; Rady ako hrať na klavír &lt;/h3&gt; &lt;p&gt; Pre rady ako hrať na klavír sa pozrite na: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Rady na klavír</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="578"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt; Pre viac informácií &lt;/h3&gt; &lt;p&gt; Pre viac informácií prosím navštívte </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="580"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>webovú stránku PianoBoosteru alebo</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="581"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation>často kladené otázky PianoBoosteru</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="581"/>
         <source>FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>FAQ</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="582"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>a</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="582"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>užívateľské fórum</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
