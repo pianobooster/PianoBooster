@@ -63,7 +63,6 @@ private:
     CSong* m_song;
     int m_latencyFix;
     bool m_latencyChanged;
-    bool m_midiChanged;
 };
 
 #endif //__GUIMIDISETUPDIALOG_H__

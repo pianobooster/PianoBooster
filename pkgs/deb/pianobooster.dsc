@@ -16,6 +16,7 @@ Build-Depends:
  libglu1-mesa-dev,
  libjack-dev,
  libqt5opengl5-dev,
+ librtmidi-dev,
  qtbase5-dev,
  qttools5-dev
 Package-List:

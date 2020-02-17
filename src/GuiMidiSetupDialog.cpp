@@ -37,7 +37,6 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     setupUi(this);
     m_latencyFix = 0;
     m_latencyChanged = false;
-    m_midiChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
 
 #ifndef EXPERIMENTAL_USE_FLUIDSYNTH
@@ -141,13 +140,11 @@ void GuiMidiSetupDialog::updateMidiInfoText()
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
 {
-    m_midiChanged = true;
     updateMidiInfoText();
 }
 
 void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 {
-    m_midiChanged = true;
     updateMidiInfoText();
 }
 
@@ -174,27 +171,22 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
 
 void GuiMidiSetupDialog::accept()
 {
-    if (m_midiChanged)
-    {
+    m_settings->setValue("Midi/Input", midiInputCombo->currentText());
+    m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
+    if (midiInputCombo->currentText().startsWith(tr("None")))
+        CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
+    else
+        CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
+                          m_settings->value("Keyboard/HighestNote", 127).toInt());
 
-        m_settings->setValue("Midi/Input", midiInputCombo->currentText());
-        m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
-        if (midiInputCombo->currentText().startsWith(tr("None")))
-            CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
-        else
-            CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
-                              m_settings->value("Keyboard/HighestNote", 127).toInt());
-
-        if (midiOutputCombo->currentIndex()==0){
-            m_settings->setValue("Midi/Output", "");
-            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,"");
-        }else{
-            m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
-            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
-        }
-        m_settings->updateWarningMessages();
-        m_midiChanged = false;
+    if (midiOutputCombo->currentIndex()==0){
+        m_settings->setValue("Midi/Output", "");
+        m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,"");
+    }else{
+        m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
+        m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
     }
+    m_settings->updateWarningMessages();
 
     m_settings->setValue("Midi/Latency", m_latencyFix);
     m_song->setLatencyFix(m_latencyFix);

@@ -42,6 +42,7 @@ BuildRequires:  pkgconfig(Qt5Help)
 BuildRequires:  pkgconfig(Qt5OpenGL)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Xml)
+BuildRequires:  pkgconfig(rtmidi)
 BuildRequires:  pkgconfig(fluidsynth)
 BuildRequires:  hicolor-icon-theme
 
