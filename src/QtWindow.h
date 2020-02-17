@@ -130,10 +130,6 @@ private slots:
             showNormal();
     }
 
-    void onColoredNotes () {
-      m_settings->coloredNotes(m_coloredNotes->isChecked());
-    }
-
     void enableFollowTempo()
     {
         CTempo::enableFollowTempo(Cfg::experimentalTempo);
@@ -218,7 +214,6 @@ private:
     QAction *m_setupKeyboardAct;
     QAction *m_sidePanelStateAct;
     QAction *m_viewPianoKeyboard;
-    QAction *m_coloredNotes;
     QAction *m_fullScreenStateAct;
     QAction *m_setupPreferencesAct;
     QAction *m_songDetailsAct;
@@ -233,7 +228,7 @@ private:
     CScore* m_score;
     QAction *m_separatorAct;
 
-    enum { MAX_RECENT_FILES = 10 };
+    enum { MAX_RECENT_FILES = 20 };
     QAction *m_recentFileActs[MAX_RECENT_FILES];
 
 };

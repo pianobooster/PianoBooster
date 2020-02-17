@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="is" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="is">
 <context>
     <name>CDraw</name>
     <message>
@@ -58,17 +60,17 @@
 <context>
     <name>CSettings</name>
     <message>
-        <location filename="../src/Settings.cpp" line="403"/>
+        <location filename="../src/Settings.cpp" line="409"/>
         <source>space</source>
         <translation>bil</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="557"/>
+        <location filename="../src/Settings.cpp" line="558"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
         <translation>VILLA EKKERT HLJÓÐ: Til að laga þetta, farðu í valmyndina Uppsetning/Uppsetning MIDI ...</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="559"/>
+        <location filename="../src/Settings.cpp" line="560"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
         <translation>VILLA ENGIN MIDI-SKRÁ: Til að laga þetta, farðu í valmyndina Skrá/Opna ...</translation>
     </message>
@@ -183,7 +185,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
         <source>Reed Organ</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="377"/>
@@ -303,12 +305,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="400"/>
         <source>Tremolo Strings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="401"/>
         <source>Pizzicato Strings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="402"/>
@@ -358,7 +360,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Orchestra Hit</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
@@ -483,122 +485,122 @@
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
         <source>Lead 1 (square)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="437"/>
         <source>Lead 2 (sawtooth)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Lead 3 (calliope)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
         <source>Lead 4 (chiff)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="440"/>
         <source>Lead 5 (charang)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="441"/>
         <source>Lead 6 (voice)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="442"/>
         <source>Lead 7 (fifths)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="443"/>
         <source>Lead 8 (bass + lead)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="444"/>
         <source>Pad 1 (new age)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="445"/>
         <source>Pad 2 (warm)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="446"/>
         <source>Pad 3 (polysynth)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="447"/>
         <source>Pad 4 (choir)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="448"/>
         <source>Pad 5 (bowed)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="449"/>
         <source>Pad 6 (metallic)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="450"/>
         <source>Pad 7 (halo)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="451"/>
         <source>Pad 8 (sweep)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>FX 1 (rain)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>FX 2 (soundtrack)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
         <source>FX 3 (crystal)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="455"/>
         <source>FX 4 (atmosphere)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="456"/>
         <source>FX 5 (brightness)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="457"/>
         <source>FX 6 (goblins)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="458"/>
         <source>FX 7 (echoes)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
         <source>FX 8 (sci-fi)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
@@ -643,7 +645,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
         <source>Tinkle Bell</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
@@ -658,32 +660,32 @@
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
         <source>Woodblock</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="472"/>
         <source>Taiko Drum</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="473"/>
         <source>Melodic Tom</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="474"/>
         <source>Synth Drum</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="475"/>
         <source>Reverse Cymbal</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="476"/>
         <source>Guitar Fret Noise</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="477"/>
@@ -828,12 +830,12 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
         <source>Repeat End Bar:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
         <source>Repeat Bar is disabled</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
@@ -843,12 +845,12 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
         <source>End bar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -874,118 +876,77 @@
         <translation>MIDI-úttakstæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="143"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
         <source>Sound Fonts</source>
         <translation>Hljóðletur</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Add</source>
         <translation>Bæta við</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="163"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
         <source>Remove</source>
         <translation>Fjarlægja</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="190"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="183"/>
         <source>Settings</source>
         <translation>Stillingar</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="225"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="218"/>
         <source>Audio Device:</source>
         <translation>Hljóðtæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="242"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="235"/>
         <source>Buffer Counts:</source>
         <translation>Fjöldi í biðminni:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="255"/>
         <source>Master Gain:</source>
         <translation>Aðal-mögnun:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
         <source>Buffer Size:</source>
         <translation>Stærð biðminnis:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="372"/>
-        <source>Enable TiMidity</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="391"/>
-        <source>Interface</source>
-        <translation>Viðmót</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="419"/>
-        <source>Output mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="425"/>
-        <source>Libao mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="397"/>
-        <source>ALSA sequencer interface</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="215"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="208"/>
         <source>Audio Driver:</source>
         <translation>Hljóðkortsrekill:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
         <source>Sample Rate:</source>
         <translation>Safntíðni:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="272"/>
         <source>Reverb</source>
         <translation>Eftirómur</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="191"/>
         <source>Chorus</source>
         <translation>Kórus</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
-        <source>Enable FluidSynth</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="358"/>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="492"/>
-        <source>Settings on this tab will take effect after restart.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="432"/>
-        <source>ALSA PCM device</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="500"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="315"/>
         <source>Latency Fix</source>
         <translation>Lagfæring á biðtíma</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="512"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
         <source>Latency</source>
         <translation>Biðtími</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="525"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="340"/>
         <source>0 (msec)</source>
         <translation>0 (msek)</translation>
     </message>
@@ -993,82 +954,82 @@
 <context>
     <name>GuiMidiSetupDialog</name>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="64"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="61"/>
         <source>None (PC Keyboard)</source>
         <translation>Ekkert (lyklaborð tölvu)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="70"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="147"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="202"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="67"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="182"/>
         <source>None</source>
         <translation>Ekkert</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="135"/>
         <source>Midi Output Device:</source>
         <translation>MIDI-úttakstæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="137"/>
         <source>%1 mSec</source>
         <translation>%1 msek</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="177"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>Settu inn gildi fyrir lagfæringu á biðtíma í millísekúndum</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="178"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="342"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="303"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>SoundFont2-skrár (*.sf2)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="50"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="47"/>
         <source>Midi Setup</source>
         <translation>Uppsetning MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>Ekkert hljóðúttakstæki valið; veldu MIDI-úttakstæki</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="143"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="123"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="130"/>
         <source>The use of Midi Through is not recommended!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="141"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="121"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
         <translation>Ef þú ert ekki með MIDI-hljómborð geturðu notað lyklaborð tölvunnar; &apos;X&apos; er miðju-C.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="145"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="125"/>
         <source>Midi Input Device:</source>
         <translation>MIDI-inntakstæki:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="132"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="133"/>
         <source>(Try a latency fix of 150msc)</source>
         <translation>(prófaðu lagfæringu á biðtíma um 150 msek)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="341"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="302"/>
         <source>Open SoundFont2 File for fluidsynth</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1081,60 +1042,60 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
         <source>Score Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="96"/>
         <source>Timing Markers</source>
         <translation>Tímasetningarmerki</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="57"/>
         <source>Follow stop point:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="110"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
         <translation>Birta nöfn á nótum</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="44"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
+        <source>Show color coded notes on the score</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
+        <source>Color Coded Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Music Course</source>
         <translation>Tónlistarnámskeið</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="159"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
         <source>Show Tutor Help Pages</source>
         <translation>Birta kennslusíður</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="177"/>
-        <source>Video Settings</source>
-        <translation>Myndstillingar</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="188"/>
-        <source>Video optimisation:</source>
-        <translation>Bestun myndmerkis:</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="207"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="194"/>
         <source>Language</source>
         <translation>Tungumál</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="215"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="202"/>
         <source>Language:</source>
         <translation>Tungumál:</translation>
     </message>
@@ -1158,21 +1119,6 @@
         <source>After the Beat</source>
         <translation>Á eftir slaginu</translation>
     </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="46"/>
-        <source>Full (Recommended)</source>
-        <translation>Fullt (mælt er með þessu)</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
-        <source>Medium</source>
-        <translation>Miðlungs</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
-        <source>None</source>
-        <translation>Ekkert</translation>
-    </message>
 </context>
 <context>
     <name>GuiSidePanel</name>
@@ -1192,54 +1138,54 @@
         <translation>Lag:</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="108"/>
+        <location filename="../src/GuiSidePanel.ui" line="115"/>
         <source>Skill</source>
         <translation>Geta</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="114"/>
+        <location filename="../src/GuiSidePanel.ui" line="121"/>
         <source>Listen</source>
         <translation>Hlusta</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="135"/>
+        <location filename="../src/GuiSidePanel.ui" line="142"/>
         <source>Play Along</source>
         <translation>Spila með</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="151"/>
+        <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Hands</source>
         <translation>Hendur</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="159"/>
+        <location filename="../src/GuiSidePanel.ui" line="166"/>
         <source>Right</source>
         <translation>Hægri</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="166"/>
+        <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Both</source>
         <translation>Bæði</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="173"/>
+        <location filename="../src/GuiSidePanel.ui" line="180"/>
         <source>Left</source>
         <translation>Vinstri</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="188"/>
+        <location filename="../src/GuiSidePanel.ui" line="195"/>
         <source>Adjust the volume of your piano</source>
         <translation>Stilla hljóðstyrk píanósins þíns</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="209"/>
+        <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
@@ -1254,22 +1200,22 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="236"/>
         <source>Mute the currently selected part</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiSidePanel.ui" line="121"/>
-        <source>Rhythm Tap</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="128"/>
+        <source>Rhythm Tap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.ui" line="135"/>
         <source>Follow You</source>
         <translation>Fylgja þér</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="239"/>
         <source>Mute your part when playing</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="83"/>
@@ -1341,22 +1287,22 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1521,12 +1467,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="55"/>
@@ -1570,358 +1516,433 @@
         <translation>Píanó Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="240"/>
-        <location filename="../src/QtWindow.cpp" line="248"/>
-        <location filename="../src/QtWindow.cpp" line="272"/>
+        <location filename="../src/QtWindow.cpp" line="223"/>
+        <location filename="../src/QtWindow.cpp" line="231"/>
+        <location filename="../src/QtWindow.cpp" line="255"/>
         <source>PianoBooster Midi File Error</source>
         <translation>Villa í PianoBooster MIDI-skrá</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="241"/>
+        <location filename="../src/QtWindow.cpp" line="224"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="249"/>
+        <location filename="../src/QtWindow.cpp" line="232"/>
         <source>&quot;%1&quot; is not a Midi File</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="273"/>
+        <location filename="../src/QtWindow.cpp" line="256"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="349"/>
+        <location filename="../src/QtWindow.cpp" line="332"/>
         <source>&amp;Open...</source>
         <translation>&amp;Opna...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="350"/>
+        <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="351"/>
+        <location filename="../src/QtWindow.cpp" line="334"/>
         <source>Open an existing file</source>
         <translation>Opna fyrirliggjandi skrá</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="354"/>
+        <location filename="../src/QtWindow.cpp" line="337"/>
         <source>E&amp;xit</source>
         <translation>&amp;Hætta</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="355"/>
+        <location filename="../src/QtWindow.cpp" line="338"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="356"/>
+        <location filename="../src/QtWindow.cpp" line="339"/>
         <source>Exit the application</source>
         <translation>Hætta í forritinu</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="359"/>
+        <location filename="../src/QtWindow.cpp" line="342"/>
         <source>&amp;About</source>
         <translation>Um &amp;hugbúnaðinn</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="360"/>
+        <location filename="../src/QtWindow.cpp" line="343"/>
         <source>Show the application&apos;s About box</source>
         <translation>Birta upplýsingaglugga forritsins</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="363"/>
+        <location filename="../src/QtWindow.cpp" line="346"/>
         <source>&amp;PC Shortcut Keys</source>
         <translation>&amp;Flýtilyklar á lyklaborði tölvunnar</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="364"/>
+        <location filename="../src/QtWindow.cpp" line="347"/>
         <source>The PC Keyboard shortcut keys</source>
         <translation>Flýtilyklar á lyklaborði tölvunnar</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="367"/>
+        <location filename="../src/QtWindow.cpp" line="350"/>
         <source>&amp;Midi Setup ...</source>
         <translation>Uppsetning &amp;MIDI ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="368"/>
-        <location filename="../src/QtWindow.cpp" line="406"/>
+        <location filename="../src/QtWindow.cpp" line="351"/>
+        <location filename="../src/QtWindow.cpp" line="389"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="369"/>
+        <location filename="../src/QtWindow.cpp" line="352"/>
         <source>Setup the Midi input and output</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="372"/>
+        <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Piano &amp;Keyboard Setting ...</source>
         <translation>Stillingar &amp;nótnaborðs á píanói ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="373"/>
+        <location filename="../src/QtWindow.cpp" line="356"/>
         <source>Ctrl+K</source>
         <translation>Ctrl+K</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="374"/>
+        <location filename="../src/QtWindow.cpp" line="357"/>
         <source>Change the piano keyboard settings</source>
         <translation>Breyta stillingum nótnaborðs á píanói</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="377"/>
+        <location filename="../src/QtWindow.cpp" line="360"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Fylla skjáinn</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="378"/>
+        <location filename="../src/QtWindow.cpp" line="361"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="379"/>
+        <location filename="../src/QtWindow.cpp" line="362"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="383"/>
+        <location filename="../src/QtWindow.cpp" line="366"/>
         <source>&amp;Show the Side Panel</source>
         <translation>&amp;Birta hliðarspjaldið</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="384"/>
+        <location filename="../src/QtWindow.cpp" line="367"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="385"/>
+        <location filename="../src/QtWindow.cpp" line="368"/>
         <source>F12</source>
         <translation>F12</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="390"/>
+        <location filename="../src/QtWindow.cpp" line="373"/>
         <source>Show Piano &amp;Keyboard</source>
         <translation>Birta &amp;nótnaborð á píanói</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="391"/>
+        <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="399"/>
+        <location filename="../src/QtWindow.cpp" line="382"/>
         <source>&amp;Preferences ...</source>
         <translation>&amp;Kjörstillingar ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="400"/>
+        <location filename="../src/QtWindow.cpp" line="383"/>
         <source>Settings</source>
         <translation>Stillingar</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="401"/>
+        <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="404"/>
+        <location filename="../src/QtWindow.cpp" line="387"/>
         <source>&amp;Song Details ...</source>
         <translation>Nánar um &amp;lagið ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="405"/>
+        <location filename="../src/QtWindow.cpp" line="388"/>
         <source>Song Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="410"/>
+        <location filename="../src/QtWindow.cpp" line="393"/>
         <source>Shift+F1</source>
         <translation>Shift+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="415"/>
+        <location filename="../src/QtWindow.cpp" line="398"/>
         <source>Alt+F1</source>
         <translation>Alt+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="444"/>
+        <location filename="../src/QtWindow.cpp" line="427"/>
         <source>&amp;File</source>
         <translation>&amp;Skrá</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="454"/>
+        <location filename="../src/QtWindow.cpp" line="437"/>
         <source>&amp;View</source>
         <translation>S&amp;koða</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="460"/>
+        <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;Song</source>
         <translation>&amp;Lag</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="464"/>
+        <location filename="../src/QtWindow.cpp" line="447"/>
         <source>Set&amp;up</source>
         <translation>&amp;Uppsetning</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="470"/>
-        <location filename="../src/QtWindow.cpp" line="474"/>
+        <location filename="../src/QtWindow.cpp" line="453"/>
+        <location filename="../src/QtWindow.cpp" line="457"/>
         <source>&amp;Help</source>
         <translation>&amp;Hjálp</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="475"/>
-        <location filename="../src/QtWindow.cpp" line="571"/>
+        <location filename="../src/QtWindow.cpp" line="458"/>
+        <location filename="../src/QtWindow.cpp" line="554"/>
         <source>Piano Booster Help</source>
         <translation>Aðstoð við notkun Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="479"/>
+        <location filename="../src/QtWindow.cpp" line="462"/>
         <source>&amp;Website</source>
         <translation>&amp;Vefsvæði</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="480"/>
+        <location filename="../src/QtWindow.cpp" line="463"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="522"/>
+        <location filename="../src/QtWindow.cpp" line="505"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="573"/>
-        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <location filename="../src/QtWindow.cpp" line="556"/>
+        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="619"/>
+        <location filename="../src/QtWindow.cpp" line="557"/>
+        <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="560"/>
+        <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="564"/>
+        <source>or</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="566"/>
+        <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="568"/>
+        <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="569"/>
+        <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="571"/>
+        <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="575"/>
+        <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="577"/>
+        <source>Piano Hints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="578"/>
+        <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="580"/>
+        <source>website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="581"/>
+        <source>the PianoBooster</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="581"/>
+        <source>FAQ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="582"/>
+        <source>and the</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="582"/>
+        <source>user forum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="592"/>
         <source>About Piano Booster</source>
         <translation>Um Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="621"/>
+        <location filename="../src/QtWindow.cpp" line="594"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;PianoBooster - Útgáfa %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="622"/>
+        <location filename="../src/QtWindow.cpp" line="595"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;Bættu&lt;/b&gt; hæfileika þína til að spila á &lt;b&gt;píanó&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="624"/>
+        <location filename="../src/QtWindow.cpp" line="597"/>
         <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
         <translation>Höfundarréttur (c) L. J. Barman, 2008-2013; Öll réttindi áskilin.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="625"/>
+        <location filename="../src/QtWindow.cpp" line="598"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation>Höfundarréttur (c) Fabien Givors, 2018-2019; Öll réttindi áskilin.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="627"/>
+        <location filename="../src/QtWindow.cpp" line="600"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation>Þetta er frjáls hugbúnaður; þú mátt dreifa honum og/eða breyta samkvæmt skilmálum í almenna GNU GPL3 notkunarleyfinu eins og það er gefið út af Frjálsu hugbúnaðarstofnuninni.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="633"/>
+        <location filename="../src/QtWindow.cpp" line="605"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
         <translation>Þetta forrit inniheldur einnig RtMIDI: rauntíma MIDI i/o C++ klasa&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="634"/>
+        <location filename="../src/QtWindow.cpp" line="606"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
         <translation>Höfundarréttur (c) Gary P. Scavone, 2003-2019; Öll réttindi áskilin.</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="643"/>
+        <location filename="../src/QtWindow.cpp" line="615"/>
         <source>space</source>
         <translation>bil</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="656"/>
+        <location filename="../src/QtWindow.cpp" line="628"/>
         <source>PC Keyboard ShortCuts</source>
         <translation>Lyklaborðsstyttingar</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="658"/>
+        <location filename="../src/QtWindow.cpp" line="630"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation>&lt;h2&gt;&lt;center&gt;Flýtileiðir á lyklaborði&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Eftirfarandi flýtilyklasamsetningar hafa verið skilgreindar.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="664"/>
+        <location filename="../src/QtWindow.cpp" line="636"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="670"/>
+        <location filename="../src/QtWindow.cpp" line="642"/>
         <source>Choose the right hand</source>
         <translation>Veldu hægri hendina</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="671"/>
+        <location filename="../src/QtWindow.cpp" line="643"/>
         <source>Choose both hands</source>
         <translation>Veldu báðar hendurnar</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="672"/>
+        <location filename="../src/QtWindow.cpp" line="644"/>
         <source>Choose the left Hand</source>
         <translation>Veldu vinstri hendina</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="673"/>
+        <location filename="../src/QtWindow.cpp" line="645"/>
         <source>Play from start toggle</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="674"/>
+        <location filename="../src/QtWindow.cpp" line="646"/>
         <source>Play Pause Toggle</source>
         <translation>Víxla afpilun/bið</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="675"/>
-        <location filename="../src/QtWindow.cpp" line="676"/>
+        <location filename="../src/QtWindow.cpp" line="647"/>
+        <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Increase the speed by 5%</source>
         <translation>Auka hraðann um 5%</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="677"/>
+        <location filename="../src/QtWindow.cpp" line="649"/>
         <source>Change to the Next Song</source>
         <translation>Skipta yfir í næsta lag</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="678"/>
+        <location filename="../src/QtWindow.cpp" line="650"/>
         <source>Change to the Previous Song</source>
         <translation>Skipta yfir í fyrra lag</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="679"/>
+        <location filename="../src/QtWindow.cpp" line="651"/>
         <source>Change to the Next Book</source>
         <translation>Skipta yfir í næsta lagahefti</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="680"/>
+        <location filename="../src/QtWindow.cpp" line="652"/>
         <source>Change to the Previous Book</source>
         <translation>Skipta yfir í fyrra lagahefti</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="682"/>
+        <location filename="../src/QtWindow.cpp" line="654"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="705"/>
+        <location filename="../src/QtWindow.cpp" line="677"/>
         <source>Open Midi File</source>
         <translation>Opna MIDI-skrá</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="706"/>
+        <location filename="../src/QtWindow.cpp" line="678"/>
         <source>Midi Files</source>
         <translation>MIDI-skrár</translation>
     </message>

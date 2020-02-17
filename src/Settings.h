@@ -53,6 +53,7 @@ public:
 
     bool isTutorPagesEnabled() { return m_tutorPagesEnabled; }
     bool isFollowThroughErrorsEnabled() { return m_followThroughErrorsEnabled; }
+    bool isColoredNotesEnabled() { return m_coloredNotes; }
 
     /// Saves in the .ini file whether the user wants to show the note names
     void setNoteNamesEnabled(bool value);

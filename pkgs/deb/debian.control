@@ -28,10 +28,8 @@ Depends:
  fluidsynth,
  fonts-dejavu-core,
  hicolor-icon-theme,
- timidity,
  unzip
 Recommends:
- jackd2,
  qttranslations5-l10n
 Description: Learn the piano just by playing a game
  A MIDI file player/game that displays the musical notes AND teaches you how

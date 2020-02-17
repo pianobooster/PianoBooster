@@ -742,21 +742,5 @@
     "pt_BR": {
         "name": "Brazilian Portuguese",
         "nativeName": "português do Brasil"
-    },
-    "crh": {
-        "name": "Crimean Tatar",
-        "nativeName": "къырымтатарджа"
-    },
-    "csb": {
-        "name": "Kashubian",
-        "nativeName": "kaszёbizna"
-    },
-    "frp": {
-        "name": "Arpitan",
-        "nativeName": "francoprovençâl"
-    },
-    "mai": {
-        "name": "Maithili",
-        "nativeName": "मैथिली"
     }
 }

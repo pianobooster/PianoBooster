@@ -65,13 +65,7 @@ cmake \
     -DNO_DOCS=ON \
     -DNO_LICENSE=ON \
     -DNO_CHANGELOG=ON \
-    -DINSTALL_ALL_LANGS=ON \
-    -DUSE_SYSTEM_RTMIDI=OFF \
     -DWITH_MAN=ON \
-    -DWITH_TIMIDITY=OFF \
-    -DWITH_FLUIDSYNTH=ON \
-    -DUSE_FLUIDSYNTH=ON \
-    -DUSE_TIMIDITY=ON \
     -DCMAKE_BUILD_TYPE=Release .
 
 make VERBOSE=1
@@ -87,7 +81,7 @@ if [ -d $PKG/usr/share/man ]; then
   ( cd $PKG/usr/share/man
   find . -type f -exec gzip -9 {} \;
   for i in $(find . -type l) ; do ln -s $(readlink $i).gz $i.gz ; rm $i ; done
-  ) 
+  )
 fi
 
 mkdir -p $PKG/install

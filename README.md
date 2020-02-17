@@ -26,15 +26,12 @@ unacceptable delay (latency) between pressing a note and hearing the sound. For 
 the use of "Microsoft GS Wavetable software synthesizer" is not recommend. Please see the
 forum for possible solutions.
 
-Double Click on the EXE file of Windows installer for installation.
-
-[PianoBoosterInstall-0-6-4.exe](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.4/PianoBoosterInstall-0-6-4.exe/download) (obsoleted)
 
 macOS
 =====
 
 To run Piano Booster you need a MIDI Piano Keyboard and a MIDI-USB interface if the keyboard
-does not have a USB interface. (If you don't have a MIDI keyboard you can still try out 
+does not have a USB interface. (If you don't have a MIDI keyboard you can still try out
 PianoBooster using the computer's keyboard, 'x' is middle C).
 
 To hear music from the computer you will need a General Midi compatible sound synthesizer.
@@ -47,8 +44,6 @@ This must be started before Pianobooster, and also allows to load custom Soundfo
 Double Click on the DMG file containing PianoBooster, then just drag the pianobooster.app
 file wherever you wish (/Application folder is suggested).
 
-[pianobooster-mac-0.6.2.dmg](https://sourceforge.net/projects/pianobooster/files/pianobooster/0.6.2/pianobooster-mac-0.6.2.dmg/download) (obsoleted)
-
 [pianobooster-mac-0.6.5-alpha1.dmg](https://github.com/chrisballinger/PianoBooster/releases/tag/v0.6.5-alpha1) (not official)
 
 LINUX and BSD UNIX
@@ -59,26 +54,17 @@ don't have a MIDI keyboard you can still try out PianoBooster using the PC keybo
 middle C - but a MIDI piano is recommend).
 
 To hear music from the computer you will need a General Midi compatible sound synthesizer.
-While there are many possible choices for the Linux (Timidity, FluidSynth), the easiest way is
-to use Timidity. Timidity is BSD Unix is not workable, please use FluidSynth.
 
-This must be started before Pianobooster, and also allows to load custom Soundfonts.
+On Linux to start fluidsynth type the following on a terminal window.
 
-Install RPM, DEB, ARCH, TGZ etc. package.
+```
+fluidsynth -g 1.0 -a alsa -o midi.alsa_seq.id=fs2 /usr/share/sounds/sf2/FluidR3_GM.sf2
+```
+An alternatively you can used TiMidity by type the following on a terminal window.
 
-Packages for Linux and BSD Unix are available in repositories of distributions [here](https://pkgs.org/download/pianobooster).
-
-Packages for Linux (not for BSD Unix) are available in OBS repository:
-
-[pianobooster](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster)
-
-[pianobooster-timidity](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-timidity)
-
-[pianobooster-fluidsynth](https://software.opensuse.org/download.html?project=home%3Aloginov_alex_valer&package=pianobooster-fluidsynth)
-
-*Note:* The packages provided with distributions may not exist or are out of date,
-in which case you will have to compile from the source code.
-However compiling from source is quite easy on Linux and BSD Unix.
+```
+timidity -iA -B2,8 -Os -EFreverb=0
+```
 
 MIDI FILES
 ==========
@@ -106,28 +92,7 @@ TRANSLATIONS
 ============
 
 PianoBooster isn't translated in your language? Help us, and we will gladly ship
-new translations with it. Use our
-[Collaborative Translation Platform](https://www.transifex.com/Magic/pianobooster)
-(Transifex) to add your favorite languages.
-
-Using Transifex is not mandatory.
-You can translate by [Pull Request](https://github.com/captnfab/PianoBooster/pulls).
-
-You need to translate:
-
-[Main program](translations/pianobooster_blank.ts)
-
-[Courses](translations/music_blank.ts)
-
-[Desktop file #1](pianobooster.desktop)
-
-[Desktop file #2](tools/timidity/pianobooster-timidity.desktop)
-
-[Desktop file #3](tools/fluidsynth/pianobooster-fluidsynth.desktop)
-
-[Script](tools/fluidsynth/pianobooster-fluidsynth)
-
-[Script](tools/fluidsynth/pianobooster-timidity)
+new translations with it.
 
 LICENSE
 =======
@@ -162,7 +127,7 @@ instructions on how to build the source code.
 DEBUGGING
 =========
 
-To get a backtrace, build Piano Booster with DEBUG option 
+To get a backtrace, build Piano Booster with DEBUG option
 
 type:
 

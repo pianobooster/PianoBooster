@@ -129,22 +129,6 @@ QtWindow::QtWindow()
 
     m_song->setLatencyFix(m_settings->value("Midi/Latency", 0).toInt());
 
-
-#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-    m_glWidget->m_cfg_openGlOptimise = 2; //  two is full GlOptimise
-#else
-    m_glWidget->m_cfg_openGlOptimise = 1; //  1 is full GlOptimise
-#endif
-
-    if  (m_settings->value("Display/OpenGlOptimise").toString() == "true") // this used to be true for backward compatability
-        m_settings->setValue("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise );
-    if  (m_settings->value("Display/OpenGlOptimise").toString() == "false") // this used to be boolean for backward compatability
-    {
-        m_glWidget->m_cfg_openGlOptimise = 0;
-        m_settings->setValue("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise );
-    }
-
-    m_glWidget->m_cfg_openGlOptimise = m_settings->value("Display/OpenGlOptimise", m_glWidget->m_cfg_openGlOptimise ).toInt();
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
     m_song->cfg_rhythmTapping = static_cast<rhythmTapping_t> (m_settings->value("Score/RtyhemTappingMode", m_song->cfg_rhythmTapping ).toInt());
@@ -160,7 +144,6 @@ QtWindow::QtWindow()
         if (!songName.isEmpty())
             m_settings->openSongFile( songName );
     });
-
 
 }
 
@@ -396,15 +379,6 @@ void QtWindow::createActions()
     }
     connect(m_viewPianoKeyboard, SIGNAL(triggered()), this, SLOT(onViewPianoKeyboard()));
 
-    m_coloredNotes = new QAction(tr("Color Coded Notes"), this);
-    m_coloredNotes->setToolTip(tr("Color Code Notes in Score"));
-    m_coloredNotes->setCheckable(true);
-    m_coloredNotes->setChecked(false);
-    if (m_settings->value("View/ColoredNotes").toString()=="on"){
-        m_coloredNotes->setChecked(true);
-    }
-    connect(m_coloredNotes, SIGNAL(triggered()), this, SLOT(onColoredNotes()));
-
     m_setupPreferencesAct = new QAction(tr("&Preferences ..."), this);
     m_setupPreferencesAct->setToolTip(tr("Settings"));
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
@@ -465,7 +439,6 @@ void QtWindow::createMenus()
     m_viewMenu->addAction(m_sidePanelStateAct);
     m_viewMenu->addAction(m_fullScreenStateAct);
     m_viewMenu->addAction(m_viewPianoKeyboard);
-    m_viewMenu->addAction(m_coloredNotes);
 
     m_songMenu = menuBar()->addMenu(tr("&Song"));
     m_songMenu->setToolTipsVisible(true);
@@ -514,7 +487,7 @@ void QtWindow::showMidiSetup(){
     midiSetupDialog.init(m_song, m_settings);
     midiSetupDialog.exec();
 
-    m_glWidget->startTimerEvent();    
+    m_glWidget->startTimerEvent();
     if (isPlaying){
         m_topBar->on_playButton_clicked(true);
     }
@@ -572,7 +545,7 @@ void QtWindow::setCurrentFile(const QString &fileName)
 
 void QtWindow::website()
 {
-    QDesktopServices::openUrl(QUrl("https://github.com/captnfab/PianoBooster/tree/master/doc"));
+    QDesktopServices::openUrl(QUrl("http://pianobooster.sourceforge.net/"));
 }
 
 void QtWindow::help()
@@ -580,45 +553,35 @@ void QtWindow::help()
     QMessageBox msgBox(this);
     msgBox.setWindowTitle (tr("Piano Booster Help"));
     msgBox.setText(
-            tr(
-   "<h3>Getting Started</h3>"
+    tr("<h3>Getting Started</h3>") +
+    tr("<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
+       "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
+       "middle C.</p>") +
+    tr("<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
+       "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
+       "but it introduces an unacceptable delay (latency). In Linux you can use ") +
+       "<a href=\"http://www.fluidsynth.org\">FluidSynth</a> " +
+    tr("or") +
+    " <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>" +
+    tr("<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
+       "using MIDI channels 3 and 4.") +
+    tr("<h3>Setting Up</h3>") +
+    tr("<p>First use the <i>Setup/Midi Setup</i> menu and in the dialog box select the MIDI input and MIDI "
+       "output interfaces that match your hardware. ") +
+    tr("Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
+       "Now select whether you want to just <i>listen</i> to the music or "
+       "<i>play along</i> on the piano keyboard by setting the <i>skill</i> level on the side panel. Finally when "
+       "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music.") +
+    tr("<h3>Hints on Playing the Piano</h3>"
+       "<p>For hints on how to play the piano see: ") +
+       "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>" + tr("Piano Hints") + "</b></a></p>" +
+    tr("<h3>More Information</h3>"
+       "<p>For more help please visit the PianoBooster ") +
+       "<a href=\"http://pianobooster.sourceforge.net\" ><b>" + tr("website") + "</b></a>, " +
+    tr("the PianoBooster") + " <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b> " + tr("FAQ") + "</b></a> " +
+    tr("and the") + " <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\"><b>" +tr("user forum") +"</b></a>."
+    );
 
-
-   "<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
-   "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
-   "middle C.</p>"
-
-   "<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
-   "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
-   "but it introduces an unacceptable delay (latency). In Linux you can use "
-   "<a href=\"http://www.fluidsynth.org\">FluidSynth</a> or <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>"
-
-
-   "<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
-   "using MIDI channels 3 and 4."
-
-   "<h3>Setting Up</h3>"
-
-
-   "<p>First use the <i>Setup/Midi Setup</i> menu and in the dialog box select the MIDI input and MIDI "
-   "output interfaces that match your hardware. "
-
-   "Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
-   "Now select whether you want to just <i>listen</i> to the music or "
-   "<i>play along</i> on the piano keyboard by setting the <i>skill</i> level on the side panel. Finally when "
-   "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music."
-
-   "<h3>Hints on Playing the Piano</h3>"
-   "<p>For hints on how to play the piano see: "
-   "<a href=\"https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md\" ><b>Piano Hints</b></a></p>"
-
-   "<h3>More Information</h3>"
-   "<p>For more help please visit the PianoBooster "
-   "<a href=\"https://github.com/captnfab/PianoBooster/tree/master/doc\" ><b>website</b></a>, "
-   "the PianoBooster <a href=\"https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md\" ><b>FAQ</b></a> "
-   "and the <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\" ><b>user forum</b></a>."
-
-                ));
     msgBox.setMinimumWidth(600);
     msgBox.exec();
 }
@@ -630,7 +593,7 @@ void QtWindow::about()
     msgBox.setText(
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
-            "<a href=\"https://github.com/captnfab/PianoBooster\" ><b>https://github.com/captnfab/PianoBooster</b></a><br><br>" +
+            "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net/</b></a><br><br>" +
             tr("Copyright(c) L. J. Barman, 2008-2013; All rights reserved.<br>") +
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
             "<br>" +
@@ -638,7 +601,7 @@ void QtWindow::about()
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
             )
-            #if !defined(USE_SYSTEM_RTMIDI)
+            #ifdef USE_BUNDLED_RTMIDI
              +
             tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>") +
             tr("Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.")
@@ -725,7 +688,7 @@ void QtWindow::open()
 void QtWindow::readSettings()
 {
     QPoint pos = m_settings->value("Window/Pos", QPoint(25, 25)).toPoint();
-    QSize size = m_settings->value("Window/Size", QSize(800, 600)).toSize();
+    QSize size = m_settings->value("Window/Size", QSize(1200, 800)).toSize();
     resize(size);
     move(pos);
 }
@@ -790,9 +753,14 @@ void QtWindow::loadTutorHtml(const QString & name)
         QTextStream out(&file);
         out.setCodec("UTF-8");
 
-	QString text=out.readAll();
-        m_tutorWindow->setHtml(tr(text.toUtf8().data()));
-        m_tutorWindow->setFixedHeight(130);
+        QString htmlheader = "<head><style>body {background-color:#FFFFC0;color: black}p{font-size: 18px;} #hint{color: #ff0000;}</style></head>";
+
+        QString text = htmlheader + out.readAll();
+        m_tutorWindow->setHtml(text.toUtf8().data());
+
+        // TODO get this working again on small screens
+        //_tutorWindow->setFixedHeight(130);
+        m_tutorWindow->setFixedHeight(180);
 
         m_tutorWindow->show();
 
@@ -803,21 +771,6 @@ void QtWindow::loadTutorHtml(const QString & name)
 
 void QtWindow::refreshTranslate(){
 #ifndef NO_LANGS
-    QString localeDirectory =
- #ifdef Q_OS_WIN32
-        QApplication::applicationDirPath() + "/translations/";
- #endif
- #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-        QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/translations/";
- #endif
- #ifdef Q_OS_DARWIN
-        QApplication::applicationDirPath() + "/../Resources/translations/";
- #endif
-
-    QFile fileTestLocale(localeDirectory);
-    if (!fileTestLocale.exists()){
-        localeDirectory=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
-    }
 
     QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
 
@@ -846,17 +799,28 @@ void QtWindow::refreshTranslate(){
             m["text"]=w->text();
             listActionsRetranslateUi[w]=m;
         }
-
     }
 
+    QString translationsDir = QApplication::applicationDirPath() + "/translations/";
+
+    QFile fileTestLocale(translationsDir);
+    if (!fileTestLocale.exists()){
+ #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
+        translationsDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+ #endif
+ #ifdef Q_OS_DARWIN
+        QApplication::applicationDirPath() + "/../Resources/translations/";
+ #endif
+    }
+    ppLogInfo("Translations loaded from '%s'",  qPrintable(translationsDir));
+
     // set translator for app
-    if (!translator.load(QSTR_APPNAME + QString("_") + locale , localeDirectory))
-       if (!translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath()  + "/translations/"))
-           translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
+    if (!translator.load(QSTR_APPNAME + QString("_") + locale , translationsDir))
+        translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translator);
 
     // set translator for music
-    if (!translatorMusic.load(QString("music_") + locale , localeDirectory))
+    if (!translatorMusic.load(QString("music_") + locale , translationsDir))
        if (!translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath()  + "/translations/"))
            translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translatorMusic);
@@ -864,7 +828,7 @@ void QtWindow::refreshTranslate(){
 
     // set translator for default widget's text (for example: QMessageBox's buttons)
 #ifdef __WIN32
-    qtTranslator.load("qt_"+locale,localeDirectory);
+    qtTranslator.load("qt_"+locale,translationsDir);
 #else
     qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif

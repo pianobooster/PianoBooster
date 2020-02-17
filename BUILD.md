@@ -76,17 +76,10 @@ Or alternatively you can install QtCreator and then open the pianobooster.pro.
 
 **WITH_MAN**: install man page; disabled by default.
 
-**WITH_TIMIDITY**: install desktop file and wrapper script for timidity; disabled by default.
-
-**WITH_FLUIDSYNTH**: install desktop file and wrapper script for fluidsynth; disabled by default.
-
 **INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and always enabled for qmake.
 
-**USE_SYSTEM_RTMIDI**: build with system (not bundled) rtmidi; disabled by default.
-
-**USE_FLUIDSYNTH**: enable setting for fluidsynth in GUI; disabled by default; enable this option if your system has fluidsynth (Linux, BSD Unix, macOS) even if you do not have plans to install fluidsynth.
-
-**USE_TIMIDITY**: enable setting for timidity in GUI; disabled by default; enable this option if your system has timidity (Linux, BSD Unix(?)) even if you do not have plans to install timidity.
+**USE_BUNDLED_RTMIDI**: build with bundled (not system) rtmidi. This is only required
+for older distributions that do not include the system rtmidi; disabled by default.
 
 **USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
 

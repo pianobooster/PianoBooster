@@ -1,3 +1,17 @@
+v0.7.2 (17 Feb 2020)
+- Fixed a problem that prevented a connected MIDI piano keyboard from working.
+- cmake with no options now works correctly (cmake .. && make).
+- Removed the video optimisation setting.
+- Translation can now be tested in-place without doing a make install.
+- Moved the colour coded notes to the preferences dialogue.
+- Added the USE_JACK option (default OFF) which is only needed for BSD Unix.
+- Changed USE_FLUIDSYNTH to EXPERIMENTAL_USE_FLUIDSYNTH as this option is not working yet.
+- Deleted the cmake options: WITH_FLUIDSYNTH, WITH_TIMIDITY, USE_TIMIDITY.
+- Renamed USE_SYSTEM_RTMIDI to USE_BUNDLED_RTMIDI and inverted the logic.
+- Removed the runtime Depends: timidity and no longer recommend jack2.
+- Reverted the URLs in the help and about dialogues URLs so they now point to the main PianoBooster website.
+- Removed the desktop scripts pianobooster-timity and pianobooster-fluidsynth.
+
 v0.7.1
 - Color-coded notes toggle
 

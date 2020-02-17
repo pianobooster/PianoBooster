@@ -28,7 +28,7 @@
 
 #include "MidiDevice.h"
 #include "MidiDeviceRt.h"
-#if PB_USE_FLUIDSYNTH
+#if EXPERIMENTAL_USE_FLUIDSYNTH
     #include "MidiDeviceFluidSynth.h"
 #endif
 
@@ -38,7 +38,7 @@
 CMidiDevice::CMidiDevice()
 {
     m_rtMidiDevice = new CMidiDeviceRt();
-#if PB_USE_FLUIDSYNTH
+#if EXPERIMENTAL_USE_FLUIDSYNTH
     m_fluidSynthMidiDevice = new CMidiDeviceFluidSynth();
 #endif
     m_selectedMidiInputDevice = m_rtMidiDevice;
@@ -49,7 +49,7 @@ CMidiDevice::CMidiDevice()
 CMidiDevice::~CMidiDevice()
 {
     delete m_rtMidiDevice;
-#if PB_USE_FLUIDSYNTH
+#if EXPERIMENTAL_USE_FLUIDSYNTH
     delete m_fluidSynthMidiDevice;
 #endif
 }
@@ -63,7 +63,7 @@ void CMidiDevice::init()
 QStringList CMidiDevice::getMidiPortList(midiType_t type)
 {
     QStringList list;
-#if PB_USE_FLUIDSYNTH
+#if EXPERIMENTAL_USE_FLUIDSYNTH
     list <<  m_fluidSynthMidiDevice->getMidiPortList(type);
 #endif
     list <<  m_rtMidiDevice->getMidiPortList(type);
@@ -94,7 +94,7 @@ bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
             m_validOutput = true;
             return true;
         }
-#if PB_USE_FLUIDSYNTH
+#if EXPERIMENTAL_USE_FLUIDSYNTH
         if ( m_fluidSynthMidiDevice->openMidiPort(type, portName) )
         {
             m_selectedMidiOutputDevice = m_fluidSynthMidiDevice;
@@ -133,7 +133,6 @@ int CMidiDevice::checkMidiInput()
     if (m_selectedMidiInputDevice == 0)
         return 0;
 
-    m_selectedMidiInputDevice->checkMidiInput();
     return m_selectedMidiInputDevice->checkMidiInput();
 }
 

@@ -1,4 +1,3 @@
-#CONFIG += USE_FLUIDSYNTH
 CONFIG += release
 #CONFIG += console
 
@@ -6,17 +5,13 @@ CONFIG += link_pkgconfig
 
 # default
 isEmpty(USE_FTGL): USE_FTGL="ON"
-isEmpty(USE_TIMIDITY): USE_TIMIDITY="OFF"
 isEmpty(NO_DOCS): NO_DOCS="OFF"
 isEmpty(NO_LICENSE): NO_LICENSE="OFF"
 isEmpty(NO_CHANGELOG): NO_CHANGELOG="OFF"
 isEmpty(WITH_MAN): WITH_MAN="OFF"
-isEmpty(WITH_TIMIDITY): WITH_TIMIDITY="OFF"
-isEmpty(WITH_FLUIDSYNTH): WITH_FLUIDSYNTH="OFF"
 isEmpty(NO_LANGS): NO_LANGS="OFF"
 
 # install all languages always
-INSTALL_ALL_LANGS="ON"
 
 TRANSLATIONS = $$files(translations/*.ts)
 
@@ -77,19 +72,16 @@ SOURCES   = src/QtMain.cpp  \
             src/Settings.cpp \
             src/Merge.cpp
 
-contains(USE_SYSTEM_RTMIDI, ON){
-    message(building using system rtmidi)
-    DEFINES+=USE_SYSTEM_RTMIDI
-    PKGCONFIG += rtmidi
-}else{
+contains(USE_BUNDLED_RTMIDI, ON){
     message(building using bundled rtmidi)
+    DEFINES += USE_BUNDLED_RTMIDI
     INCLUDEPATH += src/3rdparty
-    SOURCES+= src/3rdparty/rtmidi/RtMidi.cpp
+    SOURCES += src/3rdparty/rtmidi/RtMidi.cpp
+}else{
+    message(building using system rtmidi)
+    PKGCONFIG += rtmidi
 }
 
-contains(USE_TIMIDITY, ON){
-    DEFINES += PB_USE_TIMIDITY
-}
 contains(USE_FTGL, ON){
     message(building using ftgl)
     PKGCONFIG += ftgl
@@ -119,26 +111,26 @@ win32 {
 }
 
 unix {
-  DEFINES += __LINUX_ALSASEQ__
-  LIBS += -lpthread -lGL
+  DEFINES += __LINUX_ALSA__
+  LIBS += -lpthread -lGL -lasound
 }
 
 
-contains (USE_FLUIDSYNTH, ON) {
+contains (EXPERIMENTAL_USE_FLUIDSYNTH, ON) {
     message("building using fluidsynth")
-    DEFINES += PB_USE_FLUIDSYNTH
+    DEFINES += EXPERIMENTAL_USE_FLUIDSYNTH
 
     SOURCES   += src/MidiDeviceFluidSynth.cpp
     !isEmpty(FLUIDSYNTH_INPLACE_DIR) {
-	!exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
-    	    error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
-	}
-	message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
+    !exists( $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h ) {
+            error( "No $${FLUIDSYNTH_INPLACE_DIR}/include/fluidsynth.h file found" )
+    }
+    message(fluidsynth FLUIDSYNTH_INPLACE_DIR = $${FLUIDSYNTH_INPLACE_DIR})
         INCLUDEPATH += $${FLUIDSYNTH_INPLACE_DIR}/include/
         win32:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a
         unix:LIBS += $${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.a
     }else{
-	PKGCONFIG += fluidsynth
+    PKGCONFIG += fluidsynth
     }
 }
 
@@ -158,7 +150,7 @@ isEmpty(QMAKE_LRELEASE) {
 }
 
 !win32 {
-  system($${QMAKE_LRELEASE} -silent $${_PRO_FILE_} 2> /dev/null)
+  system($${QMAKE_LRELEASE} $${_PRO_FILE_} 2> /dev/null)
 }
 win32 {
   system($$[QT_INSTALL_BINS]\\lrelease.exe $${_PRO_FILE_})
@@ -199,29 +191,6 @@ unix {
       INSTALLS += man
    }
 
-   contains(WITH_TIMIDITY, ON){
-      message(building with timidity)
-
-      timidity.path = $$PREFIX/bin
-      timidity.files = tools/timidity/pianobooster-timidity
-      INSTALLS += timidity
-
-      timidity_desktop.path = $$PREFIX/share/applications
-      timidity_desktop.files = tools/timidity/pianobooster-timidity.desktop
-      INSTALLS += timidity_desktop
-   }
-
-   contains(WITH_FLUIDSYNTH, ON){
-      message(building with fluidsynth)
-      fluidsynth.path = $$PREFIX/bin
-      fluidsynth.files = tools/fluidsynth/pianobooster-fluidsynth
-      INSTALLS += fluidsynth
-
-      fluidsynth_desktop.path = $$PREFIX/share/applications
-      fluidsynth_desktop.files = tools/fluidsynth/pianobooster-fluidsynth.desktop
-      INSTALLS += fluidsynth_desktop
-   }
-
    !contains(USE_SYSTEM_FONT, ON){
       message(building using system font)
       font.path = $$PREFIX/$$DATA_DIR/fonts
@@ -238,20 +207,20 @@ unix {
    }
 
    contains(NO_LANGS, OFF){
-	   updateqm.input = TRANSLATIONS
-	   updateqm.output = translations/${QMAKE_FILE_BASE}.qm
-	   updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
-	   updateqm.CONFIG += no_link target_predeps
-	   QMAKE_EXTRA_COMPILERS += updateqm
-	
-	   data_langs.path = $$PREFIX/$$DATA_DIR/translations
-	   data_langs.files = translations/*.qm translations/langs.json
-	   INSTALLS += data_langs
-	
-	   data_langs_fix.path = $$PREFIX/$$DATA_DIR/translations/
-	   data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/music_blank.qm \
+       updateqm.input = TRANSLATIONS
+       updateqm.output = translations/${QMAKE_FILE_BASE}.qm
+       updateqm.commands = $$QMAKE_LRELEASE ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
+       updateqm.CONFIG += no_link target_predeps
+       QMAKE_EXTRA_COMPILERS += updateqm
+
+       data_langs.path = $$PREFIX/$$DATA_DIR/translations
+       data_langs.files = translations/*.qm translations/langs.json
+       INSTALLS += data_langs
+
+       data_langs_fix.path = $$PREFIX/$$DATA_DIR/translations/
+       data_langs_fix.extra = rm ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/music_blank.qm \
                ${INSTALL_ROOT}$$PREFIX/$$DATA_DIR/translations/pianobooster_blank.qm
-	   INSTALLS += data_langs_fix
+       INSTALLS += data_langs_fix
    }
 
    desktop.path = $$PREFIX/share/applications

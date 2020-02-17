@@ -12,13 +12,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
 		-DCMAKE_INSTALL_BINDIR=/usr/games \
 		-DUSE_SYSTEM_FONT=ON \
-		-DINSTALL_ALL_LANGS=ON \
-		-DUSE_SYSTEM_RTMIDI=ON \
 		-DWITH_MAN=ON \
-		-DWITH_FLUIDSYNTH=ON \
-		-DWITH_TIMIDITY=ON \
-		-DUSE_FLUIDSYNTH=ON \
-		-DUSE_TIMIDITY=ON \
 		-DNO_LICENSE=ON \
 		-DNO_CHANGELOG=ON
 
@@ -33,4 +27,4 @@ override_dh_compress:
 refresh-tr:
 	dh_testdir
 	@echo Update translations
-	lupdate -verbose pianobooster.pro
+	lupdate -verbose pianobooster.pro -ts translations/pianobooster_*.ts

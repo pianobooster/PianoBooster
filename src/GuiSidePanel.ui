@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>424</height>
+    <height>443</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -81,6 +81,13 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="repeatSong">
+     <property name="text">
+      <string>Repeat song</string>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout">
@@ -202,13 +209,6 @@
       </widget>
      </item>
     </layout>
-   </item>
-   <item>
-    <widget class="QCheckBox" name="repeatSong">
-     <property name="text">
-      <string>Repeat song</string>
-     </property>
-    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout">

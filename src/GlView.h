@@ -83,6 +83,7 @@ private:
     CRating* m_rating;
     QFont m_timeSigFont;
     QFont m_timeRatingFont;
+    // TODO remove these as no longer required
     bool m_fullRedrawFlag;
     int m_forcefullRedraw;
     int m_forceRatingRedraw;

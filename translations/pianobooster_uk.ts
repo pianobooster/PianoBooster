@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="uk" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="uk">
 <context>
     <name>CDraw</name>
     <message>
@@ -58,17 +60,17 @@
 <context>
     <name>CSettings</name>
     <message>
-        <location filename="../src/Settings.cpp" line="403"/>
+        <location filename="../src/Settings.cpp" line="409"/>
         <source>space</source>
         <translation>пробіл</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="557"/>
+        <location filename="../src/Settings.cpp" line="558"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
         <translation>ПОМИЛКА, НЕМАЄ ЗВУКУ: щоб виправити це, скористайтеся пунктом меню «Налаштування/Налаштувати MIDI»…</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="559"/>
+        <location filename="../src/Settings.cpp" line="560"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
         <translation>ПОМИЛКА, НЕМАЄ ФАЙЛА MIDI: щоб виправити це, скористайтеся пунктом меню «Файл -&gt; Відкрити»...</translation>
     </message>
@@ -874,118 +876,77 @@
         <translation>Пристрій виведення MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="143"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
         <source>Sound Fonts</source>
         <translation>Звукові шрифти</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Add</source>
         <translation>Додати</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="163"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
         <source>Remove</source>
         <translation>Видалити</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="190"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="183"/>
         <source>Settings</source>
         <translation>Параметри</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="225"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="218"/>
         <source>Audio Device:</source>
         <translation>Звуковий пристрій:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="242"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="235"/>
         <source>Buffer Counts:</source>
         <translation>Кількість буферів:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="255"/>
         <source>Master Gain:</source>
         <translation>Підсилення основного каналу:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
         <source>Buffer Size:</source>
         <translation>Розмір буфера:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="372"/>
-        <source>Enable TiMidity</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="391"/>
-        <source>Interface</source>
-        <translation>Інтерфейс</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="419"/>
-        <source>Output mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="425"/>
-        <source>Libao mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="397"/>
-        <source>ALSA sequencer interface</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="215"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="208"/>
         <source>Audio Driver:</source>
         <translation>Звуковий драйвер:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
         <source>Sample Rate:</source>
         <translation>Частота семплювання:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="272"/>
         <source>Reverb</source>
         <translation>Реверберація</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="191"/>
         <source>Chorus</source>
         <translation>Хорус</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
-        <source>Enable FluidSynth</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="358"/>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="492"/>
-        <source>Settings on this tab will take effect after restart.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="432"/>
-        <source>ALSA PCM device</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="500"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="315"/>
         <source>Latency Fix</source>
         <translation>Виправлення затримки</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="512"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
         <source>Latency</source>
         <translation>Затримка</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="525"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="340"/>
         <source>0 (msec)</source>
         <translation>0 (мс)</translation>
     </message>
@@ -993,80 +954,80 @@
 <context>
     <name>GuiMidiSetupDialog</name>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="64"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="61"/>
         <source>None (PC Keyboard)</source>
         <translation>Немає (клавіатура ПК)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="70"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="147"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="202"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="67"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="182"/>
         <source>None</source>
         <translation>Немає</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="135"/>
         <source>Midi Output Device:</source>
         <translation>Пристрій виведення MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="137"/>
         <source>%1 mSec</source>
         <translation>%1 мс</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="177"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>Введіть значення для виправлення затримки у мілісекундах</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="178"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation>Виправлення затримки виконується за рахунок випереджального&lt;br&gt;відтворення для компенсації затримки у засобі відтворення звукових даних.&lt;br&gt;&lt;br&gt;Вам потрібне буде піаніно &lt;b&gt;із гучномовцями&lt;/b&gt;, які &lt;b&gt;розвернуто вгору&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Вкажіть час затримки у мілісекундах (1000 мс = 1 секунда)&lt;br&gt;(Для Microsoft GS Wavetable SW Synth рекомендуємо значення 150)&lt;br&gt;Якщо не певні, чи це потрібно, вкажіть нульове значення.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="342"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="303"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>файли SoundFont2 (*.sf2)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="50"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="47"/>
         <source>Midi Setup</source>
         <translation>Налаштування MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>Не вибрано пристрою для виведення звуку; виберіть пристрій для виведення MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="143"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="123"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="130"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation>Не рекомендуємо використовувати MIDI Through!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="141"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="121"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
         <translation>Якщо у вас немає MIDI-клавіатури, можете скористатися звичайною; «X» — середня нота до.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="145"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="125"/>
         <source>Midi Input Device:</source>
         <translation>Пристрій введення MIDI:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="132"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
         <translation>Зауваження: використання Microsoft GS Wavetable Synth додає небажану затримку!.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="133"/>
         <source>(Try a latency fix of 150msc)</source>
         <translation>(Спробуйте виправлення затримки у 150 мс)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="341"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="302"/>
         <source>Open SoundFont2 File for fluidsynth</source>
         <translation>Відкрити файл SoundFont2 для fluidsynth</translation>
     </message>
@@ -1084,57 +1045,57 @@
         <translation>Параметри нотного стану</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="96"/>
         <source>Timing Markers</source>
         <translation>Позначки часу</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="57"/>
         <source>Follow stop point:</source>
         <translation>Стеження за поточною позицією:</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="110"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
         <translation>Показувати назви нот</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="44"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
         <translation>Пробачати випадкові помилки</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
         <source>Follow Through Errors</source>
         <translation>Пройтися помилками</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
+        <source>Show color coded notes on the score</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
+        <source>Color Coded Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Music Course</source>
         <translation>Музичний курс</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="159"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
         <source>Show Tutor Help Pages</source>
         <translation>Показувати сторінки навчальної довідки</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="177"/>
-        <source>Video Settings</source>
-        <translation>Параметри відео</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="188"/>
-        <source>Video optimisation:</source>
-        <translation>Оптимізація відео:</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="207"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="194"/>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="215"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="202"/>
         <source>Language:</source>
         <translation>Мова:</translation>
     </message>
@@ -1158,21 +1119,6 @@
         <source>After the Beat</source>
         <translation>Після такту</translation>
     </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="46"/>
-        <source>Full (Recommended)</source>
-        <translation>Повна (рекомендовано)</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
-        <source>Medium</source>
-        <translation>Середній</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
-        <source>None</source>
-        <translation>Немає</translation>
-    </message>
 </context>
 <context>
     <name>GuiSidePanel</name>
@@ -1192,49 +1138,49 @@
         <translation>Пісня:</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="108"/>
+        <location filename="../src/GuiSidePanel.ui" line="115"/>
         <source>Skill</source>
         <translation>Майстерність</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="114"/>
+        <location filename="../src/GuiSidePanel.ui" line="121"/>
         <source>Listen</source>
         <translation>Прослуховування</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="135"/>
+        <location filename="../src/GuiSidePanel.ui" line="142"/>
         <source>Play Along</source>
         <translation>Самостійна гра</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="151"/>
+        <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Hands</source>
         <translation>Руки</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="159"/>
+        <location filename="../src/GuiSidePanel.ui" line="166"/>
         <source>Right</source>
         <translation>Права</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="166"/>
+        <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Both</source>
         <translation>Обидві</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="173"/>
+        <location filename="../src/GuiSidePanel.ui" line="180"/>
         <source>Left</source>
         <translation>Ліва</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="188"/>
+        <location filename="../src/GuiSidePanel.ui" line="195"/>
         <source>Adjust the volume of your piano</source>
         <translation>Скоригуйте гучність вашого піаніно</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="209"/>
+        <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
@@ -1257,12 +1203,12 @@
         <translation>Вимкнути звук для поточної вибраної частини</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="121"/>
+        <location filename="../src/GuiSidePanel.ui" line="128"/>
         <source>Rhythm Tap</source>
         <translation>Відбиття ритму</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="128"/>
+        <location filename="../src/GuiSidePanel.ui" line="135"/>
         <source>Follow You</source>
         <translation>Стеження</translation>
     </message>
@@ -1570,358 +1516,433 @@
         <translation>Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="240"/>
-        <location filename="../src/QtWindow.cpp" line="248"/>
-        <location filename="../src/QtWindow.cpp" line="272"/>
+        <location filename="../src/QtWindow.cpp" line="223"/>
+        <location filename="../src/QtWindow.cpp" line="231"/>
+        <location filename="../src/QtWindow.cpp" line="255"/>
         <source>PianoBooster Midi File Error</source>
         <translation>Помилка із файлом MIDI у Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="241"/>
+        <location filename="../src/QtWindow.cpp" line="224"/>
         <source>Cannot open &quot;%1&quot;</source>
         <translation>Не вдалося відкрити «%1»</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="249"/>
+        <location filename="../src/QtWindow.cpp" line="232"/>
         <source>&quot;%1&quot; is not a Midi File</source>
         <translation>«%1» не є файлом MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="273"/>
+        <location filename="../src/QtWindow.cpp" line="256"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
         <translation>«%1» не є коректним файлом MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="349"/>
+        <location filename="../src/QtWindow.cpp" line="332"/>
         <source>&amp;Open...</source>
         <translation>&amp;Відкрити...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="350"/>
+        <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="351"/>
+        <location filename="../src/QtWindow.cpp" line="334"/>
         <source>Open an existing file</source>
         <translation>Відкрити існуючий файл</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="354"/>
+        <location filename="../src/QtWindow.cpp" line="337"/>
         <source>E&amp;xit</source>
         <translation>Ви&amp;йти</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="355"/>
+        <location filename="../src/QtWindow.cpp" line="338"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="356"/>
+        <location filename="../src/QtWindow.cpp" line="339"/>
         <source>Exit the application</source>
         <translation>Завершити роботу програми</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="359"/>
+        <location filename="../src/QtWindow.cpp" line="342"/>
         <source>&amp;About</source>
         <translation>&amp;Про програму</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="360"/>
+        <location filename="../src/QtWindow.cpp" line="343"/>
         <source>Show the application&apos;s About box</source>
         <translation>Показати панель з інформацією про програму</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="363"/>
+        <location filename="../src/QtWindow.cpp" line="346"/>
         <source>&amp;PC Shortcut Keys</source>
         <translation>&amp;Клавіші клавіатури комп&apos;ютера</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="364"/>
+        <location filename="../src/QtWindow.cpp" line="347"/>
         <source>The PC Keyboard shortcut keys</source>
         <translation>Клавіатурні скорочення на клавіатурі комп&apos;ютера</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="367"/>
+        <location filename="../src/QtWindow.cpp" line="350"/>
         <source>&amp;Midi Setup ...</source>
         <translation>&amp;Налаштувати MIDI…</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="368"/>
-        <location filename="../src/QtWindow.cpp" line="406"/>
+        <location filename="../src/QtWindow.cpp" line="351"/>
+        <location filename="../src/QtWindow.cpp" line="389"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="369"/>
+        <location filename="../src/QtWindow.cpp" line="352"/>
         <source>Setup the Midi input and output</source>
         <translation>Налаштувати введення і виведення даних MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="372"/>
+        <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Piano &amp;Keyboard Setting ...</source>
         <translation>Налаштувати &amp;клавіатуру піаніно…</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="373"/>
+        <location filename="../src/QtWindow.cpp" line="356"/>
         <source>Ctrl+K</source>
         <translation>Ctrl+K</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="374"/>
+        <location filename="../src/QtWindow.cpp" line="357"/>
         <source>Change the piano keyboard settings</source>
         <translation>Змінити параметри клавіатури піаніно</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="377"/>
+        <location filename="../src/QtWindow.cpp" line="360"/>
         <source>&amp;Fullscreen</source>
         <translation>Повний екр&amp;ан</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="378"/>
+        <location filename="../src/QtWindow.cpp" line="361"/>
         <source>Fullscreen mode</source>
         <translation>Повноекранний режим</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="379"/>
+        <location filename="../src/QtWindow.cpp" line="362"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="383"/>
+        <location filename="../src/QtWindow.cpp" line="366"/>
         <source>&amp;Show the Side Panel</source>
         <translation>&amp;Показати бічну панель</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="384"/>
+        <location filename="../src/QtWindow.cpp" line="367"/>
         <source>Show the Left Side Panel</source>
         <translation>Показувати ліву бічну панель</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="385"/>
+        <location filename="../src/QtWindow.cpp" line="368"/>
         <source>F12</source>
         <translation>F12</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="390"/>
+        <location filename="../src/QtWindow.cpp" line="373"/>
         <source>Show Piano &amp;Keyboard</source>
         <translation>Показати &amp;клавіатуру піаніно</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="391"/>
+        <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Show Piano Keyboard Widget</source>
         <translation>Показувати віджет клавіатури піаніно</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="399"/>
+        <location filename="../src/QtWindow.cpp" line="382"/>
         <source>&amp;Preferences ...</source>
         <translation>&amp;Налаштування…</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="400"/>
+        <location filename="../src/QtWindow.cpp" line="383"/>
         <source>Settings</source>
         <translation>Параметри</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="401"/>
+        <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="404"/>
+        <location filename="../src/QtWindow.cpp" line="387"/>
         <source>&amp;Song Details ...</source>
         <translation>П&amp;араметри пісні…</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="405"/>
+        <location filename="../src/QtWindow.cpp" line="388"/>
         <source>Song Settings</source>
         <translation>Параметри композиції</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="410"/>
+        <location filename="../src/QtWindow.cpp" line="393"/>
         <source>Shift+F1</source>
         <translation>Shift+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="415"/>
+        <location filename="../src/QtWindow.cpp" line="398"/>
         <source>Alt+F1</source>
         <translation>Alt+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="444"/>
+        <location filename="../src/QtWindow.cpp" line="427"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="454"/>
+        <location filename="../src/QtWindow.cpp" line="437"/>
         <source>&amp;View</source>
         <translation>П&amp;ерегляд</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="460"/>
+        <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;Song</source>
         <translation>&amp;Пісня</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="464"/>
+        <location filename="../src/QtWindow.cpp" line="447"/>
         <source>Set&amp;up</source>
         <translation>На&amp;лаштування</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="470"/>
-        <location filename="../src/QtWindow.cpp" line="474"/>
+        <location filename="../src/QtWindow.cpp" line="453"/>
+        <location filename="../src/QtWindow.cpp" line="457"/>
         <source>&amp;Help</source>
         <translation>&amp;Довідка</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="475"/>
-        <location filename="../src/QtWindow.cpp" line="571"/>
+        <location filename="../src/QtWindow.cpp" line="458"/>
+        <location filename="../src/QtWindow.cpp" line="554"/>
         <source>Piano Booster Help</source>
         <translation>Довідка з Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="479"/>
+        <location filename="../src/QtWindow.cpp" line="462"/>
         <source>&amp;Website</source>
         <translation>С&amp;айт</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="480"/>
+        <location filename="../src/QtWindow.cpp" line="463"/>
         <source>Piano Booster Website</source>
         <translation>Сайт Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="522"/>
+        <location filename="../src/QtWindow.cpp" line="505"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="573"/>
-        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Початкові зауваження&lt;/h3&gt;&lt;p&gt;Вам знадобиться &lt;b&gt;MIDI-клавіатура піаніно&lt;/b&gt; та &lt;b&gt;MIDI-інтерфейс&lt;/b&gt; на персональному комп&apos;ютері. Якщо у вас немає MIDI-клавіатури, можете спробувати скористатися звичайною клавіатурою для комп&apos;ютерів; «X» — середня нота до.&lt;/p&gt;&lt;p&gt;Для відтворення музики вам знадобиться &lt;b&gt;типовий звуковий синтезатор MIDI&lt;/b&gt;. Можна скористатися «Microsoft GS Wavetable software synthesizer», який постачається разом із Windows, але цей синтезатор додає неприйнятну затримку (латентність). У Linux ви можете скористатися &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; або &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Найкращими для PianoBooster є файли MIDI, у яких партії для піаніно поділено на ліву і праву частини за допомогою каналів MIDI 3 та 4.&lt;h3&gt;Налаштовування&lt;/h3&gt;&lt;p&gt;Спочатку, скористайтеся пунктом меню &lt;i&gt;Налаштування/Налаштувати MIDI&lt;/i&gt;. У діалоговому вікні виберіть інтерфейси введення та виведення MIDI, які відповідають вашому обладнанню. Далі, скористайтеся пунктом меню &lt;i&gt;Файл/Відкрити&lt;/i&gt;, щоб відкрити файл MIDI «.mid» або караоке «.kar». Далі, виберіть, щочете ви просто &lt;i&gt;прослухати&lt;/i&gt; музику або &lt;i&gt;самостійно відтворити&lt;/i&gt; музичний твір на клавіатурі піаніно встановленням рівня &lt;i&gt;навичок&lt;/i&gt; на бічній панелі. Нарешті, коли будете готові, натисніть &lt;i&gt;піктограму відтворення&lt;/i&gt; (або клавішу &lt;i&gt;пробіл&lt;/i&gt;) для відтворення музики.&lt;h3&gt;Підказки щодо гри на піаніно&lt;/h3&gt;&lt;p&gt;Настанови щодо гри на піаніно можна знайти тут: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Підказки щодо гри на піаніно&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Додаткові відомості&lt;/h3&gt;&lt;p&gt;Щоб дізнатися більше, відвідайте &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;сайт&lt;/b&gt;&lt;/a&gt;, &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;список поширених питань та відповідей на них&lt;/b&gt;&lt;/a&gt; або &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;форум користувачів&lt;/b&gt;&lt;/a&gt; PianoBooster.</translation>
+        <location filename="../src/QtWindow.cpp" line="556"/>
+        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="619"/>
+        <location filename="../src/QtWindow.cpp" line="557"/>
+        <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="560"/>
+        <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="564"/>
+        <source>or</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="566"/>
+        <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="568"/>
+        <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="569"/>
+        <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="571"/>
+        <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="575"/>
+        <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="577"/>
+        <source>Piano Hints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="578"/>
+        <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="580"/>
+        <source>website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="581"/>
+        <source>the PianoBooster</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="581"/>
+        <source>FAQ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="582"/>
+        <source>and the</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="582"/>
+        <source>user forum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="592"/>
         <source>About Piano Booster</source>
         <translation>Про Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="621"/>
+        <location filename="../src/QtWindow.cpp" line="594"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;PianoBooster — версія %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="622"/>
+        <location filename="../src/QtWindow.cpp" line="595"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;Удоскональте&lt;/b&gt; ваші навички гри на &lt;b&gt;піаніно&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="624"/>
+        <location filename="../src/QtWindow.cpp" line="597"/>
         <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
         <translation>© L. J. Barman, 2008-2013; усі права захищено.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="625"/>
+        <location filename="../src/QtWindow.cpp" line="598"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation>© Fabien Givors, 2018-2019; усі права захищено.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="627"/>
+        <location filename="../src/QtWindow.cpp" line="600"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation>Цю програму випущено за умов дотримання Загальної громадської ліцензії GNU (GNU General Public License) версії 3, з текстом, який оприлюднено Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="633"/>
+        <location filename="../src/QtWindow.cpp" line="605"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
         <translation>До коду цієї програми включено код RtMIDI: класи обробки вхідних-вихідних даних MIDI мовою C++&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="634"/>
+        <location filename="../src/QtWindow.cpp" line="606"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
         <translation>© Gary P. Scavone, 2003-2019; усі права захищено.</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="643"/>
+        <location filename="../src/QtWindow.cpp" line="615"/>
         <source>space</source>
         <translation>пробіл</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="656"/>
+        <location filename="../src/QtWindow.cpp" line="628"/>
         <source>PC Keyboard ShortCuts</source>
         <translation>Комбінації клавіш на клавіатурі</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="658"/>
+        <location filename="../src/QtWindow.cpp" line="630"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation>&lt;h2&gt;&lt;center&gt;Комбінації клавіш&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Визначено вказані нижче комбінації клавіш на клавіатурі комп&apos;ютера.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="664"/>
+        <location filename="../src/QtWindow.cpp" line="636"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation>&lt;tr&gt;&lt;th&gt;Дія&lt;/th&gt;&lt;th&gt;Клавіші&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="670"/>
+        <location filename="../src/QtWindow.cpp" line="642"/>
         <source>Choose the right hand</source>
         <translation>Вибрати праву руку</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="671"/>
+        <location filename="../src/QtWindow.cpp" line="643"/>
         <source>Choose both hands</source>
         <translation>Вибрати обидві руки</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="672"/>
+        <location filename="../src/QtWindow.cpp" line="644"/>
         <source>Choose the left Hand</source>
         <translation>Вибрати ліву руку</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="673"/>
+        <location filename="../src/QtWindow.cpp" line="645"/>
         <source>Play from start toggle</source>
         <translation>Перемикач відтворення від початку</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="674"/>
+        <location filename="../src/QtWindow.cpp" line="646"/>
         <source>Play Pause Toggle</source>
         <translation>Перемикач відтворення/пауза</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="675"/>
-        <location filename="../src/QtWindow.cpp" line="676"/>
+        <location filename="../src/QtWindow.cpp" line="647"/>
+        <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Increase the speed by 5%</source>
         <translation>Збільшити швидкість на 5%</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="677"/>
+        <location filename="../src/QtWindow.cpp" line="649"/>
         <source>Change to the Next Song</source>
         <translation>Перейти до наступної пісні</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="678"/>
+        <location filename="../src/QtWindow.cpp" line="650"/>
         <source>Change to the Previous Song</source>
         <translation>Перейти до попередньої пісні</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="679"/>
+        <location filename="../src/QtWindow.cpp" line="651"/>
         <source>Change to the Next Book</source>
         <translation>Перейти до наступної книги</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="680"/>
+        <location filename="../src/QtWindow.cpp" line="652"/>
         <source>Change to the Previous Book</source>
         <translation>Перейти до попередньої книги</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="682"/>
+        <location filename="../src/QtWindow.cpp" line="654"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation>&lt;tr&gt;&lt;td&gt;Клавіші імітатора піаніно&lt;/td&gt;&lt;td&gt;X — середня нота до&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="705"/>
+        <location filename="../src/QtWindow.cpp" line="677"/>
         <source>Open Midi File</source>
         <translation>Відкриття файла MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="706"/>
+        <location filename="../src/QtWindow.cpp" line="678"/>
         <source>Midi Files</source>
         <translation>MIDI файли</translation>
     </message>

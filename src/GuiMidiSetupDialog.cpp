@@ -37,14 +37,10 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     setupUi(this);
     m_latencyFix = 0;
     m_latencyChanged = false;
-    m_midiChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
 
-#ifndef PB_USE_FLUIDSYNTH
+#ifndef EXPERIMENTAL_USE_FLUIDSYNTH
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
-#endif
-#ifndef PB_USE_TIMIDITY
-    midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_4));
 #endif
 
     setWindowTitle(tr("Midi Setup"));
@@ -95,9 +91,6 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
 
-    enableFluidSynth->setChecked(m_settings->value("FluidSynth/enableFluidSynth","false").toBool());
-    connect(enableFluidSynth,SIGNAL(stateChanged(int)),this,SLOT(on_enableFluidSynth_stateChanged(int)));
-
     if (m_settings->getFluidSoundFontNames().size()!=0){
         masterGainSpin->setValue(m_settings->value("FluidSynth/masterGainSpin","0.2").toDouble());
         bufferSizeSpin->setValue(m_settings->value("FluidSynth/bufferSizeSpin","").toInt());
@@ -115,22 +108,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
         sampleRateCombo->setCurrentText(m_settings->value("FluidSynth/sampleRateCombo").toString());
     }
 
-    on_enableFluidSynth_stateChanged(enableFluidSynth->isChecked());
     updateFluidInfoText();
-
-    // load timidity settings
-    connect(enableTimidity,SIGNAL(stateChanged(int)),this,SLOT(on_enableTimidity_stateChanged(int)));
-
-
-    // disabled checkbox timidityAlsa
-    timidityAlsa->setEnabled(false);
-
-    enableTimidity->setChecked(m_settings->value("TiMidity/enableTimidity","false").toBool());
-    timidityAlsa->setChecked(m_settings->value("TiMidity/timidityAlsa","true").toBool());
-    timidityLibaoMode->setChecked(m_settings->value("TiMidity/timidityLibaoMode","true").toBool());
-    timidityPcmDevice->setChecked(m_settings->value("TiMidity/timidityPcmDevice","false").toBool());
-
-    on_enableTimidity_stateChanged(enableTimidity->isChecked());
 }
 
 void GuiMidiSetupDialog::updateMidiInfoText()
@@ -162,13 +140,11 @@ void GuiMidiSetupDialog::updateMidiInfoText()
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
 {
-    m_midiChanged = true;
     updateMidiInfoText();
 }
 
 void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 {
-    m_midiChanged = true;
     updateMidiInfoText();
 }
 
@@ -195,27 +171,22 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
 
 void GuiMidiSetupDialog::accept()
 {
-    if (m_midiChanged)
-    {
+    m_settings->setValue("Midi/Input", midiInputCombo->currentText());
+    m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
+    if (midiInputCombo->currentText().startsWith(tr("None")))
+        CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
+    else
+        CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
+                          m_settings->value("Keyboard/HighestNote", 127).toInt());
 
-        m_settings->setValue("Midi/Input", midiInputCombo->currentText());
-        m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
-        if (midiInputCombo->currentText().startsWith(tr("None")))
-            CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
-        else
-            CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
-                              m_settings->value("Keyboard/HighestNote", 127).toInt());
-
-        if (midiOutputCombo->currentIndex()==0){
-            m_settings->setValue("Midi/Output", "");
-            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,"");
-        }else{
-            m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
-            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
-        }
-        m_settings->updateWarningMessages();
-        m_midiChanged = false;
+    if (midiOutputCombo->currentIndex()==0){
+        m_settings->setValue("Midi/Output", "");
+        m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,"");
+    }else{
+        m_settings->setValue("Midi/Output", midiOutputCombo->currentText());
+        m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, midiOutputCombo->currentText() );
     }
+    m_settings->updateWarningMessages();
 
     m_settings->setValue("Midi/Latency", m_latencyFix);
     m_song->setLatencyFix(m_latencyFix);
@@ -258,21 +229,6 @@ void GuiMidiSetupDialog::accept()
         }
         m_settings->setValue("FluidSynth/sampleRateCombo",sampleRateCombo->currentText());
     }
-    m_settings->setValue("FluidSynth/enableFluidSynth",enableFluidSynth->isChecked());
-
-
-
-    // save timidity settings
-    if (!enableTimidity->isChecked()){
-        m_settings->remove("TiMidity");
-    }else{
-        m_settings->setValue("TiMidity/timidityAlsa",timidityAlsa->isChecked());
-        m_settings->setValue("TiMidity/timidityLibaoMode",timidityLibaoMode->isChecked());
-        m_settings->setValue("TiMidity/timidityPcmDevice",timidityPcmDevice->isChecked());
-    }
-    m_settings->setValue("TiMidity/enableTimidity",enableTimidity->isChecked());
-
-
 
     this->QDialog::accept();
 }
@@ -294,11 +250,7 @@ void GuiMidiSetupDialog::updateFluidInfoText()
 
     fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
 
-    bool enableGroups = (enableFluidSynth->isChecked()) ? true : false;
-
-    groupBox_3->setEnabled(enableGroups);
     fluidSettingsGroupBox->setEnabled(fontLoaded);
-
 }
 
 void GuiMidiSetupDialog::setDefaultFluidSynth(){
@@ -343,7 +295,7 @@ void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
                             lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
     if (soundFontName.isEmpty()) return;
 
-    m_settings->addFluidSoundFontName(soundFontName);    
+    m_settings->addFluidSoundFontName(soundFontName);
 
     updateFluidInfoText();
 
@@ -385,25 +337,5 @@ void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
     }else{
         audioDeviceLineEdit->setEnabled(false);
         audioDeviceLineEdit->setText("");
-    }
-}
-
-void GuiMidiSetupDialog::on_enableFluidSynth_stateChanged(int status){
-    if (!enableFluidSynth->isChecked()){
-        fluidSettingsGroupBox->setEnabled(false);
-        groupBox_3->setEnabled(false);
-    }else{
-        if (m_settings->getFluidSoundFontNames().size()>0) fluidSettingsGroupBox->setEnabled(true);
-        groupBox_3->setEnabled(true);
-    }
-}
-
-void GuiMidiSetupDialog::on_enableTimidity_stateChanged(int status){
-    if (enableTimidity->isChecked()){
-        timiditySettingsGroupBox->setEnabled(true);
-        timiditySettingsGroupBox2->setEnabled(true);
-    }else{
-        timiditySettingsGroupBox->setEnabled(false);
-        timiditySettingsGroupBox2->setEnabled(false);
     }
 }

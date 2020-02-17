@@ -43,27 +43,19 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     followStopPointCombo->addItem(tr("Automatic (Recommended)"));
     followStopPointCombo->addItem(tr("On the Beat"));
     followStopPointCombo->addItem(tr("After the Beat"));
-    videoOptimiseCombo->addItem(tr("Full (Recommended)"));
-    videoOptimiseCombo->addItem(tr("Medium"));
-    videoOptimiseCombo->addItem(tr("None"));
 }
 
 void GuiPreferencesDialog::initLanguageCombo(){
 #ifndef NO_LANGS
-    QString localeDirectory =
- #ifdef Q_OS_WIN32
-        QApplication::applicationDirPath() + "/translations/";
- #endif
- #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-        QApplication::applicationDirPath() + "/../share/games/" + QSTR_APPNAME + "/translations/";
- #endif
- #ifdef Q_OS_DARWIN
-        QApplication::applicationDirPath() + "/../Resources/translations/";
- #endif
+
+    QString localeDirectory = QApplication::applicationDirPath() + "/translations/";
 
     QFile fileTestLocale(localeDirectory);
     if (!fileTestLocale.exists()){
         localeDirectory=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+ #ifdef Q_OS_DARWIN
+        localeDirectory=QApplication::applicationDirPath() + "/../Resources/translations/";
+ #endif
     }
 
     // read langs.json
@@ -147,16 +139,13 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     m_settings = settings;
     m_glView = glView;
 
-
-    int index = videoOptimiseCombo->count() - (m_glView->m_cfg_openGlOptimise + 1);
-    if (index < 0 || index >= videoOptimiseCombo->count())
-        index = 0;
-    videoOptimiseCombo->setCurrentIndex(index);
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
     courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
     showTutorPagesCheck->setChecked(m_settings->isTutorPagesEnabled());
     followThroughErrorsCheck->setChecked(m_settings->isFollowThroughErrorsEnabled());
+    showColoredNotesCheck->setChecked(m_settings->isColoredNotesEnabled());
+
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
 
     initLanguageCombo();
@@ -164,19 +153,19 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
 
 void GuiPreferencesDialog::accept()
 {
-    m_glView->m_cfg_openGlOptimise = videoOptimiseCombo->count() - (videoOptimiseCombo->currentIndex() + 1 );
-    m_settings->setValue("Display/OpenGlOptimise", m_glView->m_cfg_openGlOptimise );
     m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
     m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
     m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
     m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
     m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());
     m_settings->setFollowThroughErrorsEnabled( followThroughErrorsCheck->isChecked());
+    m_settings->setColoredNotes( showColoredNotesCheck->isChecked());
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
-    m_song->refreshScroll();
 
     m_settings->setValue("General/lang",languageCombo->currentData().toString());
+
+    m_song->refreshScroll();
 
     this->QDialog::accept();
 }

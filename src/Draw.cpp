@@ -567,9 +567,9 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
             }
             drawStaveExtentsion(symbol, x, 16, playable);
 
-	    // See forum post at link below from PianoBooster forum user Kory.
-	    // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html
-	    // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html#a7572676
+            // See forum post at link below from PianoBooster forum user Kory.
+            // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html
+            // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html#a7572676
             if (m_settings->coloredNotes() && color == Cfg::noteColor()) //KORY added
             {
                 int note = symbol.getNote() % MIDI_OCTAVE;

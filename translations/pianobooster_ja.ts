@@ -1,40 +1,42 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ja">
 <context>
     <name>CDraw</name>
     <message>
         <location filename="../src/Draw.cpp" line="271"/>
         <source>C</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="272"/>
         <source>D</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="273"/>
         <source>E</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="274"/>
         <source>F</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="275"/>
         <source>G</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="276"/>
         <source>A</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="277"/>
         <source>B</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -58,19 +60,19 @@
 <context>
     <name>CSettings</name>
     <message>
-        <location filename="../src/Settings.cpp" line="403"/>
+        <location filename="../src/Settings.cpp" line="409"/>
         <source>space</source>
         <translation>スペース</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="557"/>
+        <location filename="../src/Settings.cpp" line="558"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="559"/>
+        <location filename="../src/Settings.cpp" line="560"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,17 +85,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
@@ -248,12 +250,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
@@ -828,7 +830,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
         <source>Repeat End Bar:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
@@ -874,118 +876,77 @@
         <translation>MIDI出力デバイス:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="143"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
         <source>Sound Fonts</source>
         <translation>サウンドフォント</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="163"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
         <source>Remove</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="190"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="183"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="225"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="218"/>
         <source>Audio Device:</source>
         <translation>オーディオデバイス:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="242"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="235"/>
         <source>Buffer Counts:</source>
         <translation>バッファ数:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="262"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="255"/>
         <source>Master Gain:</source>
         <translation>マスターゲイン:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
         <source>Buffer Size:</source>
         <translation>バッファサイズ:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="372"/>
-        <source>Enable TiMidity</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="391"/>
-        <source>Interface</source>
-        <translation>インタフェース</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="419"/>
-        <source>Output mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="425"/>
-        <source>Libao mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="397"/>
-        <source>ALSA sequencer interface</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="215"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="208"/>
         <source>Audio Driver:</source>
         <translation>オーディオドライバ:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="205"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
         <source>Sample Rate:</source>
         <translation>サンプルレート:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="272"/>
         <source>Reverb</source>
         <translation>リバーブ</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="191"/>
         <source>Chorus</source>
         <translation>コーラス</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
-        <source>Enable FluidSynth</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="358"/>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="492"/>
-        <source>Settings on this tab will take effect after restart.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="432"/>
-        <source>ALSA PCM device</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="500"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="315"/>
         <source>Latency Fix</source>
         <translation>遅延補正</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="512"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
         <source>Latency</source>
         <translation>遅延</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="525"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="340"/>
         <source>0 (msec)</source>
         <translation>0 (ミリ秒)</translation>
     </message>
@@ -993,80 +954,80 @@
 <context>
     <name>GuiMidiSetupDialog</name>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="64"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="61"/>
         <source>None (PC Keyboard)</source>
         <translation>なし (PCキーボード)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="70"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="147"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="202"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="67"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="182"/>
         <source>None</source>
         <translation>なし</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="155"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="135"/>
         <source>Midi Output Device:</source>
         <translation>MIDI出力デバイス:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="137"/>
         <source>%1 mSec</source>
         <translation>%1 ミリ秒</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="177"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>遅延の補正値をミリ秒で入力します</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="178"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation>遅延補正は、あなたの演奏より早く音楽を流すことで&lt;br&gt;サウンド出力の遅延を打ち消します。&lt;br&gt;&lt;br&gt;ピアノは&lt;b&gt;スピーカー付&lt;/b&gt;で&lt;b&gt;調律済み&lt;/b&gt;のものをご用意ください。&lt;br&gt;&lt;br&gt;ミリ秒単位で数値を入力してください。(1000ミリ秒 = 1秒)&lt;br&gt;(Microsoft GS Wavetable SW Synthでは150で試してみてください)&lt;br&gt;よくわからない場合はゼロを入れてください。</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="342"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="303"/>
         <source>SoundFont2 Files (*.sf2)</source>
         <translation>SoundFont2ファイル(*.sf2)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="50"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="47"/>
         <source>Midi Setup</source>
         <translation>MIDI設定</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="148"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
         <translation>MIDI出力先が設定されていません。出力デバイスを選択してください</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="143"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="150"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="123"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="130"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation>MIDIスルー設定は推奨されません!</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="141"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="121"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
         <translation>MIDIキーボードがない場合、パソコンのキーボードも使えます。&apos;x&apos;がミドルCです。</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="145"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="125"/>
         <source>Midi Input Device:</source>
         <translation>MIDI入力デバイス:</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="132"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="133"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="341"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="302"/>
         <source>Open SoundFont2 File for fluidsynth</source>
         <translation>fluidsynth用のSoundFont2ファイルを開く</translation>
     </message>
@@ -1084,59 +1045,59 @@
         <translation>スコア設定</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="96"/>
         <source>Timing Markers</source>
         <translation>タイミングマーカー</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="57"/>
         <source>Follow stop point:</source>
         <translation>停止ポイントで止まる:</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="110"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
         <translation>音調を表示</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="44"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
         <translation>親切臨時記号</translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="77"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="148"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
+        <source>Show color coded notes on the score</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
+        <source>Color Coded Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Music Course</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="159"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
         <source>Show Tutor Help Pages</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="177"/>
-        <source>Video Settings</source>
-        <translation>ビデオ設定</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="188"/>
-        <source>Video optimisation:</source>
-        <translation>ビデオ最適化:</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="207"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="194"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiPreferencesDialog.ui" line="215"/>
+        <location filename="../src/GuiPreferencesDialog.ui" line="202"/>
         <source>Language:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
@@ -1151,27 +1112,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>On the Beat</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>After the Beat</source>
         <translation>遅れぎみ</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="46"/>
-        <source>Full (Recommended)</source>
-        <translation>フル（推奨）</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
-        <source>Medium</source>
-        <translation>中間</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
-        <source>None</source>
-        <translation>なし</translation>
     </message>
 </context>
 <context>
@@ -1192,54 +1138,54 @@
         <translation>歌曲:</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="108"/>
+        <location filename="../src/GuiSidePanel.ui" line="115"/>
         <source>Skill</source>
         <translation>スキル</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="114"/>
+        <location filename="../src/GuiSidePanel.ui" line="121"/>
         <source>Listen</source>
         <translation>聴く</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="135"/>
+        <location filename="../src/GuiSidePanel.ui" line="142"/>
         <source>Play Along</source>
         <translation>一緒に弾く</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="151"/>
+        <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Hands</source>
         <translation>手</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="159"/>
+        <location filename="../src/GuiSidePanel.ui" line="166"/>
         <source>Right</source>
         <translation>右</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="166"/>
+        <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Both</source>
         <translation>両手</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="173"/>
+        <location filename="../src/GuiSidePanel.ui" line="180"/>
         <source>Left</source>
         <translation>左</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="188"/>
+        <location filename="../src/GuiSidePanel.ui" line="195"/>
         <source>Adjust the volume of your piano</source>
         <translation>ピアノの音量</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="209"/>
+        <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
@@ -1257,14 +1203,14 @@
         <translation>選択されたパートをミュート</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="121"/>
+        <location filename="../src/GuiSidePanel.ui" line="128"/>
         <source>Rhythm Tap</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.ui" line="128"/>
+        <location filename="../src/GuiSidePanel.ui" line="135"/>
         <source>Follow You</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="239"/>
@@ -1281,7 +1227,7 @@
         <location filename="../src/GuiSidePanel.cpp" line="84"/>
         <location filename="../src/GuiSidePanel.cpp" line="288"/>
         <source>Melody</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="100"/>
@@ -1417,12 +1363,12 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
         <source>Gb</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="90"/>
         <source>Db</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="91"/>
@@ -1445,7 +1391,7 @@
         <location filename="../src/GuiTopBar.cpp" line="95"/>
         <location filename="../src/GuiTopBar.cpp" line="108"/>
         <source>C</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="101"/>
@@ -1457,37 +1403,37 @@
         <location filename="../src/GuiTopBar.cpp" line="94"/>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>F</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
         <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>G</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="97"/>
         <location filename="../src/GuiTopBar.cpp" line="110"/>
         <source>D</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="98"/>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>A</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="99"/>
         <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>E</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>B</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
@@ -1521,12 +1467,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="93"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="100"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="55"/>
@@ -1570,358 +1516,433 @@
         <translation>Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="240"/>
-        <location filename="../src/QtWindow.cpp" line="248"/>
-        <location filename="../src/QtWindow.cpp" line="272"/>
+        <location filename="../src/QtWindow.cpp" line="223"/>
+        <location filename="../src/QtWindow.cpp" line="231"/>
+        <location filename="../src/QtWindow.cpp" line="255"/>
         <source>PianoBooster Midi File Error</source>
         <translation>PianoBooster MIDIファイルエラー</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="241"/>
+        <location filename="../src/QtWindow.cpp" line="224"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="249"/>
+        <location filename="../src/QtWindow.cpp" line="232"/>
         <source>&quot;%1&quot; is not a Midi File</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="273"/>
+        <location filename="../src/QtWindow.cpp" line="256"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="349"/>
+        <location filename="../src/QtWindow.cpp" line="332"/>
         <source>&amp;Open...</source>
         <translation>開く(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="350"/>
+        <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="351"/>
+        <location filename="../src/QtWindow.cpp" line="334"/>
         <source>Open an existing file</source>
         <translation>既存ファイルを開く</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="354"/>
+        <location filename="../src/QtWindow.cpp" line="337"/>
         <source>E&amp;xit</source>
         <translation>終了(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="355"/>
+        <location filename="../src/QtWindow.cpp" line="338"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="356"/>
+        <location filename="../src/QtWindow.cpp" line="339"/>
         <source>Exit the application</source>
         <translation>アプリを閉じる</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="359"/>
+        <location filename="../src/QtWindow.cpp" line="342"/>
         <source>&amp;About</source>
         <translation>このソフトについて(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="360"/>
+        <location filename="../src/QtWindow.cpp" line="343"/>
         <source>Show the application&apos;s About box</source>
         <translation>ソフトの説明</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="363"/>
+        <location filename="../src/QtWindow.cpp" line="346"/>
         <source>&amp;PC Shortcut Keys</source>
         <translation>ショートカット(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="364"/>
+        <location filename="../src/QtWindow.cpp" line="347"/>
         <source>The PC Keyboard shortcut keys</source>
         <translation>ショートカットキー一覧</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="367"/>
+        <location filename="../src/QtWindow.cpp" line="350"/>
         <source>&amp;Midi Setup ...</source>
         <translation>&amp;MIDI設定 。。。</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="368"/>
-        <location filename="../src/QtWindow.cpp" line="406"/>
+        <location filename="../src/QtWindow.cpp" line="351"/>
+        <location filename="../src/QtWindow.cpp" line="389"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="369"/>
+        <location filename="../src/QtWindow.cpp" line="352"/>
         <source>Setup the Midi input and output</source>
         <translation>MIDI入力と出力設定</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="372"/>
+        <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Piano &amp;Keyboard Setting ...</source>
         <translation>ピアノ鍵盤設定(&amp;K) 。。。</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="373"/>
+        <location filename="../src/QtWindow.cpp" line="356"/>
         <source>Ctrl+K</source>
         <translation>Ctrl+K</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="374"/>
+        <location filename="../src/QtWindow.cpp" line="357"/>
         <source>Change the piano keyboard settings</source>
         <translation>ピアノの鍵盤設定の変更</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="377"/>
+        <location filename="../src/QtWindow.cpp" line="360"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="378"/>
+        <location filename="../src/QtWindow.cpp" line="361"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="379"/>
+        <location filename="../src/QtWindow.cpp" line="362"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="383"/>
+        <location filename="../src/QtWindow.cpp" line="366"/>
         <source>&amp;Show the Side Panel</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="384"/>
+        <location filename="../src/QtWindow.cpp" line="367"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="385"/>
+        <location filename="../src/QtWindow.cpp" line="368"/>
         <source>F12</source>
         <translation>F12</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="390"/>
+        <location filename="../src/QtWindow.cpp" line="373"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="391"/>
+        <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="399"/>
+        <location filename="../src/QtWindow.cpp" line="382"/>
         <source>&amp;Preferences ...</source>
         <translation>オプション設定(&amp;P) 。。。</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="400"/>
+        <location filename="../src/QtWindow.cpp" line="383"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="401"/>
+        <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="404"/>
+        <location filename="../src/QtWindow.cpp" line="387"/>
         <source>&amp;Song Details ...</source>
         <translation>歌曲詳細(&amp;S) 。。。</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="405"/>
+        <location filename="../src/QtWindow.cpp" line="388"/>
         <source>Song Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="410"/>
+        <location filename="../src/QtWindow.cpp" line="393"/>
         <source>Shift+F1</source>
         <translation>Shift+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="415"/>
+        <location filename="../src/QtWindow.cpp" line="398"/>
         <source>Alt+F1</source>
         <translation>Alt+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="444"/>
+        <location filename="../src/QtWindow.cpp" line="427"/>
         <source>&amp;File</source>
         <translation>ファイル(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="454"/>
+        <location filename="../src/QtWindow.cpp" line="437"/>
         <source>&amp;View</source>
         <translation>表示(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="460"/>
+        <location filename="../src/QtWindow.cpp" line="443"/>
         <source>&amp;Song</source>
         <translation>歌曲(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="464"/>
+        <location filename="../src/QtWindow.cpp" line="447"/>
         <source>Set&amp;up</source>
         <translation>セットアップ(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="470"/>
-        <location filename="../src/QtWindow.cpp" line="474"/>
+        <location filename="../src/QtWindow.cpp" line="453"/>
+        <location filename="../src/QtWindow.cpp" line="457"/>
         <source>&amp;Help</source>
         <translation>ヘルプ(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="475"/>
-        <location filename="../src/QtWindow.cpp" line="571"/>
+        <location filename="../src/QtWindow.cpp" line="458"/>
+        <location filename="../src/QtWindow.cpp" line="554"/>
         <source>Piano Booster Help</source>
         <translation>Piano Boosterヘルプ</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="479"/>
+        <location filename="../src/QtWindow.cpp" line="462"/>
         <source>&amp;Website</source>
         <translation>ウェブサイト(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="480"/>
+        <location filename="../src/QtWindow.cpp" line="463"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="522"/>
+        <location filename="../src/QtWindow.cpp" line="505"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="573"/>
-        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use &lt;a href=&quot;http://www.fluidsynth.org&quot;&gt;FluidSynth&lt;/a&gt; or &lt;a href=&quot;http://timidity.sourceforge.net/&quot;&gt;Timidity&lt;/a&gt;&lt;/p&gt;&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.&lt;h3&gt;Setting Up&lt;/h3&gt;&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;Piano Hints&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;website&lt;/b&gt;&lt;/a&gt;, the PianoBooster &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt; and the &lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;user forum&lt;/b&gt;&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;はじめに&lt;/h3&gt;&lt;p&gt;まず&lt;b&gt;MIDIピアノキーボード&lt;/b&gt;とパソコンに&lt;b&gt;MIDIインターフェイス&lt;/b&gt;を用意してください。もしMIDIキーボードをお持ちでなくても、パソコンのキーボードでPanoBoosterを楽しめます。&apos;X&apos;がミドルCです。&lt;/p&gt;&lt;p&gt;音を聴くには&lt;b&gt;一般的なMIDIサウンドシンセサイザー&lt;/b&gt;が必要です。Windows付属の&quot;Microsoft GS Wavetable software synthesizer&quot;も使用できますが、遅延（レイテンシ）が大きすぎます。&lt;/p&gt;&lt;p&gt;PianoBoosterは、右手と左手のパートが分かれていて、MIDIチャンネル3と4を使っているMIDIファイルで最も効果的に使えます。&lt;h3&gt;初期設定&lt;/h3&gt;&lt;p&gt;まず&lt;i&gt;設定/MIDI設定&lt;/i&gt;メニューを選んで、MIDI入力と出力インターフェイスを選択します。次に&lt;i&gt;ファイル/開く&lt;/i&gt;で&quot;.mid&quot;拡張子のMIDIファイルや、&quot;.kar&quot;拡張子のカラオケファイルを開きます。次にサイドパネル上で曲をただ&lt;i&gt;聞く&lt;/i&gt;のか&lt;i&gt;一緒に弾く&lt;/i&gt;など&lt;i&gt;スキル&lt;/i&gt;レベルを設定します。最後に&lt;i&gt;Playアイコン&lt;/i&gt; (または&lt;i&gt;スペースバー&lt;/i&gt;)で演奏を始めます。&lt;h3&gt;ピアノ演奏のヒント&lt;/h3&gt;&lt;p&gt;ピアノ演奏のヒントは、 &lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/pianohints.md&quot; &gt;&lt;b&gt;ピアノヒント&lt;/b&gt;&lt;/a&gt;を見てください。&lt;/p&gt;&lt;h3&gt;詳しい情報&lt;/h3&gt;&lt;p&gt;その他詳しい情報についてはPianoBoosterの&lt;a href=&quot;https://github.com/captnfab/PianoBooster/tree/master/doc&quot; &gt;&lt;b&gt;ウェブサイト&lt;/b&gt;&lt;/a&gt;や&lt;a href=&quot;https://github.com/captnfab/PianoBooster/blob/master/doc/faq.md&quot; &gt;&lt;b&gt;FAQ&lt;/b&gt;&lt;/a&gt;、&lt;a href=&quot;http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html&quot; &gt;&lt;b&gt;ユーザフォーラムuser forum&lt;/b&gt;&lt;/a&gt;を見てください。</translation>
+        <location filename="../src/QtWindow.cpp" line="556"/>
+        <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="619"/>
+        <location filename="../src/QtWindow.cpp" line="557"/>
+        <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="560"/>
+        <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="564"/>
+        <source>or</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="566"/>
+        <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="568"/>
+        <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="569"/>
+        <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="571"/>
+        <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="575"/>
+        <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="577"/>
+        <source>Piano Hints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="578"/>
+        <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="580"/>
+        <source>website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="581"/>
+        <source>the PianoBooster</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="581"/>
+        <source>FAQ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="582"/>
+        <source>and the</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="582"/>
+        <source>user forum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="592"/>
         <source>About Piano Booster</source>
         <translation>Piano Boosterについて</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="621"/>
+        <location filename="../src/QtWindow.cpp" line="594"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="622"/>
+        <location filename="../src/QtWindow.cpp" line="595"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="624"/>
+        <location filename="../src/QtWindow.cpp" line="597"/>
         <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="625"/>
+        <location filename="../src/QtWindow.cpp" line="598"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="627"/>
+        <location filename="../src/QtWindow.cpp" line="600"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="633"/>
+        <location filename="../src/QtWindow.cpp" line="605"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="634"/>
+        <location filename="../src/QtWindow.cpp" line="606"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="643"/>
+        <location filename="../src/QtWindow.cpp" line="615"/>
         <source>space</source>
         <translation>スペース</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="656"/>
+        <location filename="../src/QtWindow.cpp" line="628"/>
         <source>PC Keyboard ShortCuts</source>
         <translation>PCキーボードショートカット</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="658"/>
+        <location filename="../src/QtWindow.cpp" line="630"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation>&lt;h2&gt;&lt;center&gt;キーボードショートカット&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;以下のショートカットが使えます。&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="664"/>
+        <location filename="../src/QtWindow.cpp" line="636"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation>&lt;tr&gt;&lt;th&gt;アクション&lt;/th&gt;&lt;th&gt;キー&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="670"/>
+        <location filename="../src/QtWindow.cpp" line="642"/>
         <source>Choose the right hand</source>
         <translation>右手を選ぶ</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="671"/>
+        <location filename="../src/QtWindow.cpp" line="643"/>
         <source>Choose both hands</source>
         <translation>両手を選ぶ</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="672"/>
+        <location filename="../src/QtWindow.cpp" line="644"/>
         <source>Choose the left Hand</source>
         <translation>左手を選ぶ</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="673"/>
+        <location filename="../src/QtWindow.cpp" line="645"/>
         <source>Play from start toggle</source>
         <translation>スタート点から演奏</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="674"/>
+        <location filename="../src/QtWindow.cpp" line="646"/>
         <source>Play Pause Toggle</source>
         <translation>再生/静止ボタン</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="675"/>
-        <location filename="../src/QtWindow.cpp" line="676"/>
+        <location filename="../src/QtWindow.cpp" line="647"/>
+        <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Increase the speed by 5%</source>
         <translation>速度を5%ずつ増加</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="677"/>
+        <location filename="../src/QtWindow.cpp" line="649"/>
         <source>Change to the Next Song</source>
         <translation>次の曲へ変更</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="678"/>
+        <location filename="../src/QtWindow.cpp" line="650"/>
         <source>Change to the Previous Song</source>
         <translation>前の曲へ変更</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="679"/>
+        <location filename="../src/QtWindow.cpp" line="651"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="680"/>
+        <location filename="../src/QtWindow.cpp" line="652"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="682"/>
+        <location filename="../src/QtWindow.cpp" line="654"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation>&lt;tr&gt;&lt;td&gt;仮想ピアノ鍵盤&lt;/td&gt;&lt;td&gt;XがミドルC&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="705"/>
+        <location filename="../src/QtWindow.cpp" line="677"/>
         <source>Open Midi File</source>
         <translation>MIDIファイルを開く</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="706"/>
+        <location filename="../src/QtWindow.cpp" line="678"/>
         <source>Midi Files</source>
         <translation>MIDI ファイル</translation>
     </message>

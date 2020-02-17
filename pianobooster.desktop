@@ -5,6 +5,7 @@ GenericName=Piano Teacher
 Comment=Learn the piano just by playing a game
 Icon=pianobooster
 Exec=pianobooster %f
+StartupNotify=true
 Terminal=false
 MimeType=audio/x-karaoke;audio/x-midi;audio/midi;
 Categories=Music;Education;
