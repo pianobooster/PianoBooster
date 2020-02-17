@@ -1743,82 +1743,82 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="556"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Erste Schritte&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="557"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Sie benötigen ein &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; und ein &lt;b&gt;MIDI Interface&lt;/b&gt; für Ihren Computer. Wenn Sie kein MIDI Keyboard haben können Sie PianoBooster mit der Tastatur Ihres Computers ausprobieren, &apos;X&apos; ist C3.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="560"/>
         <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Um den Ton zu hören benötigen Sie einen &lt;b&gt;MIDI Sound Synthesizer&lt;/b&gt;. Der &quot;Microsoft GS Wavetable software synthesizer&quot; welcher unter Windows vorinstalliert ist, kann verwendet werden, verursacht aber eine unerwünschte Verzögerung/Latenz. Unter Linux können </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="564"/>
         <source>or</source>
-        <translation type="unfinished"></translation>
+        <translation>oder</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster funktioniert am Besten mit MIDI Dateien, welche separate Abschnitte für die linke und die rechte Hand beinhalten, welche die MIDI Kanäle 3 and 4 verwenden.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Installation&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Verwenden Sie als erstes den Menupunkt &lt;i&gt;Setup/Midi Setup&lt;/i&gt; und wählen Sie damit den MIDI Eingang und Ausgang, welche ihrer Hardware entsprechen. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Als nächstes mit &lt;i&gt;Datei/Öffnen&lt;/i&gt; eine MIDI Datei (&quot;.mid&quot;) oder eine Karaoke Datei (&quot;.kar&quot;) öffnen. Wählen Sie nun, ob Sie die Musik nur &lt;i&gt;hören&lt;/i&gt; oder mit dem Klavier &lt;i&gt;dazu spielen&lt;/i&gt; wollen, indem Sie den &lt;i&gt;Niveau&lt;/i&gt; Level im Side Panel festlegen. Wenn Sie bereit sind, klicken Sie auf das &lt;i&gt;Spielen Icon&lt;/i&gt; (oder drücken Sie die &lt;i&gt;Leertaste&lt;/i&gt;) um die Musik abzuspielen.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Hinweise zum Klavierpsielen&lt;/h3&gt;&lt;p&gt;Um Hinweise zum Klavierspielen zu erhalten, besuchen Sie: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Hints</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="578"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Mehr Informationen&lt;/h3&gt;&lt;p&gt;Für mehr Hilfe besuchen Sie bitte die PianoBooster </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="580"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>Website</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="581"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation>die PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="581"/>
         <source>FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>FAQ</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="582"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>und das</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="582"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzerforum</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
