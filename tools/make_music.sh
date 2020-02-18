@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -eu -o pipefail
 
 # This script creates BoosterMusicBooks.zip and generates music_blank.ts
 # License: same with Pianobooster
@@ -42,7 +43,7 @@ for file in `find ./music/src -name ??-*.md`
 do
   file_html=`echo $file|sed "s|_en.md|_en.html|g"|sed "s|./music/src|music/BoosterMusicBooks$version|g"|sed "s|/0|/InfoPages/0|g"`
   markdown $file > $file_html
-  awk 'NR>1{printf "\n"} {printf $0}' $file_html > "$file_html"_tmp
+  awk 'NR>1{printf "\n"} {printf "%s", $0}' $file_html > "$file_html"_tmp
   mv -f "$file_html"_tmp $file_html
   sed -i 's|<p><strong>Hint:|<font color="#ff0000"><p><strong>Hint:|g' $file_html
   printf "</font>" >> $file_html
