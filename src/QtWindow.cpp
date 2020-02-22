@@ -384,9 +384,9 @@ void QtWindow::createActions()
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
     connect(m_setupPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
 
-    m_songDetailsAct = new QAction(tr("&Song Details ..."), this);
+    m_songDetailsAct = new QAction(tr("Song &Details ..."), this);
     m_songDetailsAct->setToolTip(tr("Song Settings"));
-    m_songDetailsAct->setShortcut(tr("Ctrl+S"));
+    m_songDetailsAct->setShortcut(tr("Ctrl+D"));
     connect(m_songDetailsAct, SIGNAL(triggered()), this, SLOT(showSongDetailsDialog()));
 
     QAction* act = new QAction(this);
