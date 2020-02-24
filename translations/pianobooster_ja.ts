@@ -1675,7 +1675,7 @@
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="387"/>
-        <source>&amp;Song Details ...</source>
+        <source>Song &amp;Details ...</source>
         <translation>歌曲詳細(&amp;S) 。。。</translation>
     </message>
     <message>
