@@ -66,6 +66,8 @@ private:
     RtMidiOut *m_midiout;
     RtMidiIn *m_midiin;
 
+    double m_stamp;
+
     // 0 for input, 1 for output
     int m_midiPorts[2];      // select which MIDI output port to open
     std::vector<unsigned char> m_inputMessage;

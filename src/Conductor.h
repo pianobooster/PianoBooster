@@ -296,6 +296,7 @@ private:
     CChord m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts
     CChord m_goodPlayedNotes;  // The good notes the pianist plays
     CTempo m_tempo;
+    bool m_KeyboardLightsOn;
 
 
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef

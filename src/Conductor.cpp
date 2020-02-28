@@ -539,6 +539,11 @@ void CConductor::turnOnKeyboardLights(bool on)
     if (Cfg::keyboardLightsChan == -1)
         return;
 
+    // exit if keybaord light are allready on
+    if (m_KeyboardLightsOn && on)
+        return;
+
+    m_KeyboardLightsOn = on;
     for(i = 0; i < m_wantedChord.length(); i++)
     {
         note = m_wantedChord.getNote(i).pitch();
@@ -549,7 +554,6 @@ void CConductor::turnOnKeyboardLights(bool on)
        playMidiEvent( event ); // don't use the track  settings
     }
 }
-
 
 void CConductor::fetchNextChord()
 {
@@ -577,10 +581,7 @@ void CConductor::fetchNextChord()
 
     // now find the split point
     findSplitPoint();
-    turnOnKeyboardLights(true);
-
 }
-
 
 bool CConductor::validatePianistNote( const CMidiEvent & inputNote)
 {
@@ -927,6 +928,8 @@ void CConductor::followPlaying()
             setEventBits( EVENT_BITS_forceRatingRedraw);
         }
     }
+    if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
+        turnOnKeyboardLights(true);
 }
 
 void CConductor::outputSavedNotesOff()

@@ -232,7 +232,7 @@ int CMidiDeviceRt::checkMidiInput()
 {
     if (m_midiPorts[0] < 0)
         return 0;
-    m_midiin->getMessage( &m_inputMessage );
+    m_stamp = m_midiin->getMessage( &m_inputMessage );
     return m_inputMessage.size();
 }
 
@@ -249,7 +249,7 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
 
         for (unsigned int i = 0; i < m_inputMessage.size(); i++)
             str += " 0x" + QString::number(m_inputMessage[i], 16) + ',';
-        ppLogInfo("midi input %s", qPrintable(str));
+        ppLogInfo("midi input %f : %s", m_stamp, qPrintable(str));
     }
 
     channel = m_inputMessage[0] & 0x0f;
