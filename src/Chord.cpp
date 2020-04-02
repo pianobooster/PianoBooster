@@ -68,7 +68,6 @@ whichPart_t CNote::findHand(int midiNote, int midiChannel, int whichChannel, whi
     return hand;
 }
 
-
 void CChord::addNote(whichPart_t part, int note, int duration)
 {
     if (m_length >= MAX_CHORD_NOTES)
@@ -165,7 +164,6 @@ bool CFindChord::findChord(CMidiEvent midi, int channel, whichPart_t part)
     }
 
     m_noteGapTime += midi.deltaTime();
-
 
     if ((m_noteGapTime >= m_cfg_ChordNoteGap || m_cordSpanGapTime > m_cfg_ChordMaxLength)
             && m_currentChord.length() > 0 )

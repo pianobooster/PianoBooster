@@ -40,8 +40,6 @@
 #include "GuiLoopingPopup.h"
 #include "Settings.h"
 
-
-
 class CGLView;
 class QAction;
 class QMenu;
@@ -183,7 +181,6 @@ private:
     void updateRecentFileActions();
     QString strippedName(const QString &fullFileName);
     void refreshTranslate();
-
 
     void displayUsage();
     void createActions();

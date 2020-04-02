@@ -42,13 +42,12 @@
 
 #define REDRAW_COUNT ((m_cfg_openGlOptimise >= 2) ? 1 : 2) // there are two gl buffers but redrawing once is best (set 2 with buggy gl drivers)
 
-
 CGLView::CGLView(QtWindow* parent, CSettings* settings)
     : QGLWidget(parent)
 {
     m_qtWindow = parent;
     m_settings = settings;
-    m_rating = 0;
+    m_rating = nullptr;
     m_fullRedrawFlag = true;
     m_forcefullRedraw = 0;
     m_forceRatingRedraw = 0;
@@ -127,7 +126,6 @@ void CGLView::paintGL()
     m_score->drawScroll(m_forcefullRedraw);
     BENCHMARK(10, "drawScroll");
 
-
     if (m_forcefullRedraw) m_forcefullRedraw--;
     BENCHMARK(11, "exit");
     BENCHMARK_RESULTS();
@@ -144,7 +142,7 @@ void CGLView::drawTimeSignature()
     float x,y;
     int topNumber, bottomNumber;
 
-    if (m_song == 0) return;
+    if (m_song == nullptr) return;
 
     m_song->getTimeSig(&topNumber, &bottomNumber);
     if (topNumber == 0 ) return;
@@ -179,7 +177,6 @@ void CGLView::drawAccurracyBar()
         return;
     m_forceRatingRedraw--;
 
-
     float accuracy;
     CColor color;
 
@@ -197,7 +194,6 @@ void CGLView::drawAccurracyBar()
     CDraw::drColor (Cfg::backgroundColor());
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
 
-
     glLineWidth (1);
     CDraw::drColor (CColor(1.0, 1.0, 1.0));
     glBegin(GL_LINE_LOOP);
@@ -210,7 +206,7 @@ void CGLView::drawAccurracyBar()
 
 void CGLView::drawDisplayText()
 {
-    if (m_rating == 0)
+    if (m_rating == nullptr)
     {
         m_rating = m_song->getRating();
         return; // don't run this func the first time it is called
@@ -328,7 +324,6 @@ void CGLView::initializeGL()
     glShadeModel (GL_FLAT);
     //glEnable(GL_TEXTURE_2D);                        // Enable Texture Mapping
 
-
     //from initCheck();
     glShadeModel(GL_FLAT);
     //glEnable(GL_DEPTH_TEST);
@@ -364,7 +359,6 @@ void CGLView::initializeGL()
 
     m_song->regenerateChordQueue();
 
-
     // increased the tick time for Midi handling
 
     m_timer.start(Cfg::tickRate, this );
@@ -392,7 +386,6 @@ void CGLView::timerEvent(QTimerEvent *event)
          QWidget::timerEvent(event);
          return;
     }
-
 
     updateMidiTask();
     BENCHMARK(1, "m_song task");

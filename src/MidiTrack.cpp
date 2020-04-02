@@ -42,7 +42,7 @@ int CMidiTrack::m_logLevel;
 
 CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
 {
-    m_trackEventQueue = 0;
+    m_trackEventQueue = nullptr;
     m_savedRunningStatus = 0;
     m_trackLengthCounter = 0;
     m_deltaTime = 0;
@@ -51,7 +51,7 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
 
     for ( int chan = 0; chan <MAX_MIDI_CHANNELS; chan++ )
     {
-        m_noteOnEventPtr[chan] = 0;
+        m_noteOnEventPtr[chan] = nullptr;
     }
 
     int i;
@@ -75,8 +75,6 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
     m_trackEventQueue = new CQueue<CMidiEvent>(m_trackLength/3); // The minimum bytes per event is 3
 }
 
-
-
 void CMidiTrack::ppDebugTrack(int level, const char *msg, ...)
 {
     va_list ap;
@@ -90,7 +88,6 @@ void CMidiTrack::ppDebugTrack(int level, const char *msg, ...)
     va_end(ap);
     fputc('\n', stdout);
 }
-
 
 dword_t CMidiTrack::readVarLen()
 {
@@ -247,8 +244,6 @@ void CMidiTrack::readKeySignatureEvent()
         CStavePos::setKeySignature(event.data1(), event.data2());
 }
 
-
-
 void CMidiTrack::readMetaEvent(byte_t type)
 {
     string text;
@@ -368,7 +363,6 @@ void CMidiTrack::readMetaEvent(byte_t type)
     }
 }
 
-
 void CMidiTrack::decodeSystemMessage( byte_t status, byte_t data1 )
 {
     switch ( status )
@@ -408,8 +402,7 @@ void CMidiTrack::noteOffEvent(CMidiEvent &event, int deltaTime, int channel, int
     {
         ppLogWarn("Missing note off duration Chan %d Note off %d", channel + 1, pitch);
     }
-    m_noteOnEventPtr[channel][pitch] = 0;
-
+    m_noteOnEventPtr[channel][pitch] = nullptr;
 
     event.noteOffEvent(deltaTime, channel, pitch, velocity);
 

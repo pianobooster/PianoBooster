@@ -106,5 +106,3 @@ void CRating::calculateAccuracy()
     }
 }
 
-
-

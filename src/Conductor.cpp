@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -33,7 +33,6 @@
 #define ppDEBUG_CONDUCTOR(args)
 #endif
 
-
 #include "Conductor.h"
 #include "Score.h"
 #include "Piano.h"
@@ -45,9 +44,9 @@ CConductor::CConductor()
 {
     int i;
 
-    m_scoreWin = 0;
-    m_settings = 0;
-    m_piano = 0;
+    m_scoreWin = nullptr;
+    m_settings = nullptr;
+    m_piano = nullptr;
 
     m_songEventQueue = new CQueue<CMidiEvent>(1000);
     m_wantedChordQueue = new CQueue<CChord>(1000);
@@ -103,7 +102,6 @@ void CConductor::reset()
             mapTrack2Channel(i, -1);
     }
 }
-
 
 //! add a midi event to be analysed and displayed on the score
 void CConductor::midiEventInsert(CMidiEvent event)
@@ -181,7 +179,6 @@ void CConductor::mutePart(int part, bool state)
         muteChannel(part, state);
         return;
     }
-
 
     for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
     {
@@ -346,7 +343,6 @@ void CConductor::setPlayMode(playMode_t mode)
     m_piano->setRhythmTapping(m_playMode == PB_PLAY_MODE_rhythmTapping);
 }
 
-
 void CConductor::setActiveChannel(int channel)
 {
     m_activeChannel = channel;
@@ -355,7 +351,6 @@ void CConductor::setActiveChannel(int channel)
     fetchNextChord();
     activatePianistMutePart();
 }
-
 
 void CConductor::outputPianoVolume()
 {
@@ -485,7 +480,7 @@ void CConductor::resetWantedChord()
 // switch modes if we are playing well enough (i.e. don't slow down if we are playing late)
 void CConductor::setFollowSkillAdvanced(bool enable)
 {
-    if (m_settings==0 || m_scoreWin == 0)
+    if (m_settings==nullptr || m_scoreWin == nullptr)
         return;
 
     m_settings-> setAdvancedMode(enable);
@@ -506,7 +501,6 @@ void CConductor::setFollowSkillAdvanced(bool enable)
     m_followSkillAdvanced = enable;
     m_stopPoint = (enable) ? m_cfg_stopPointAdvanced: m_cfg_stopPointBeginner ;
 }
-
 
 void CConductor::findSplitPoint()
 {
@@ -637,7 +631,6 @@ void CConductor::expandPianistInput(CMidiEvent inputNote)
             CChord chordForOneHand;
             int notesFound = 0;
 
-
             if (inputNote.type() == MIDI_NOTE_OFF)
             {
                 chord = m_piano->removeSavedChord(inputNote.note());
@@ -691,7 +684,6 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
     // inputNote.transpose(+12); fixme
 
-
     if (m_testWrongNoteSound)
         goodSound = false;
 
@@ -701,7 +693,6 @@ void CConductor::pianistInput(CMidiEvent inputNote)
     // for rhythm tapping
     if ( inputNote.channel() == MIDI_DRUM_CHANNEL)
         hand = (inputNote.note() >= MIDDLE_C) ? PB_PART_right : PB_PART_left;
-
 
     if (inputNote.type() == MIDI_NOTE_ON)
     {
@@ -867,7 +858,6 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         playTrackEvent( inputNote );
     }
 
-
     /*
     // use the same channel for the right and wrong note
     int pianoSound = (goodSound == true) ? m_cfg_rightNoteSound : m_cfg_wrongNoteSound;
@@ -1001,7 +991,6 @@ void CConductor::realTimeEngine(int mSecTicks)
 
         m_tempo.insertPlayingTicks(ticks);
 
-
         if (m_pianistTiming > m_cfg_playZoneLate)
         {
             if (m_followPlayingTimeOut == false)
@@ -1031,7 +1020,6 @@ void CConductor::realTimeEngine(int mSecTicks)
         ticks = 0;
 
     m_tempo.adjustTempo(&ticks);
-
 
     ticks = m_bar.addDeltaTime(ticks);
 
@@ -1164,6 +1152,7 @@ void CConductor::init2(CScore * scoreWin, CSettings* settings)
 
     m_scoreWin = scoreWin;
     m_settings = settings;
+    setQSettings(settings);
 
     setFollowSkillAdvanced(false);
 
@@ -1178,7 +1167,6 @@ void CConductor::init2(CScore * scoreWin, CSettings* settings)
         m_scoreWin->setRatingObject(&m_rating);
         m_piano = m_scoreWin->getPianoObject();
     }
-
 
     rewind();
 }

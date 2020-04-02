@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -32,9 +32,6 @@
     #include "MidiDeviceFluidSynth.h"
 #endif
 
-
-
-
 CMidiDevice::CMidiDevice()
 {
     m_rtMidiDevice = new CMidiDeviceRt();
@@ -54,10 +51,12 @@ CMidiDevice::~CMidiDevice()
 #endif
 }
 
-
-
 void CMidiDevice::init()
 {
+#if EXPERIMENTAL_USE_FLUIDSYNTH
+    m_fluidSynthMidiDevice->setQSettings(qsettings);
+#endif
+
 }
 
 QStringList CMidiDevice::getMidiPortList(midiType_t type)
@@ -108,29 +107,27 @@ bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
 
 void CMidiDevice::closeMidiPort(midiType_t type, int index)
 {
-    if (m_selectedMidiOutputDevice == 0)
+    if (m_selectedMidiOutputDevice == nullptr)
         return;
 
     m_selectedMidiOutputDevice->closeMidiPort(type, index);
-
-    m_selectedMidiOutputDevice = 0;
+    m_selectedMidiOutputDevice = nullptr;
 }
 
 //! add a midi event to be played immediately
 void CMidiDevice::playMidiEvent(const CMidiEvent & event)
 {
-    if (m_selectedMidiOutputDevice == 0)
+    if (m_selectedMidiOutputDevice == nullptr)
         return;
 
     m_selectedMidiOutputDevice->playMidiEvent(event);
     //event.printDetails(); // useful for debugging
 }
 
-
 // Return the number of events waiting to be read from the midi device
 int CMidiDevice::checkMidiInput()
 {
-    if (m_selectedMidiInputDevice == 0)
+    if (m_selectedMidiInputDevice == nullptr)
         return 0;
 
     return m_selectedMidiInputDevice->checkMidiInput();
@@ -141,7 +138,6 @@ CMidiEvent CMidiDevice::readMidiInput()
 {
     return m_selectedMidiInputDevice->readMidiInput();
 }
-
 
 int CMidiDevice::midiSettingsSetStr(QString name, QString str)
 {

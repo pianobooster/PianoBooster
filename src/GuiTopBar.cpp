@@ -32,13 +32,12 @@
 #include "TrackList.h"
 #include "GuiLoopingPopup.h"
 
-
 GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
     : QWidget(parent), m_settings(settings)
 {
 
     m_atTheEndOfTheSong = false;
-    m_song = 0;
+    m_song = nullptr;
     setupUi(this);
 
     parent->installEventFilter(this);
@@ -206,7 +205,6 @@ void GuiTopBar::updateTranslate(){
     retranslateUi(this);
 }
 
-
 void GuiTopBar::on_playButton_clicked(bool clicked)
 {
     if (!m_song) return;
@@ -246,15 +244,12 @@ void GuiTopBar::on_startBarSpin_valueChanged(double bar)
     m_song->setPlayFromBar( bar);
 }
 
-
-
 void GuiTopBar::on_saveBarButton_clicked(bool clicked)
 {
     if (!m_song) return;
     double barNumber = m_song->getCurrentBarPos();
     startBarSpin->setValue(barNumber);
 }
-
 
 void GuiTopBar::on_loopingBarsPopupButton_clicked(bool clicked)
 {

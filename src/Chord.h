@@ -47,7 +47,6 @@ typedef enum
     PB_PART_none,
 } whichPart_t;
 
-
 #define MAX_CHORD_NOTES    20  // The maximum notes in a chord well we only have 10 fingers
 
 class CNote
@@ -127,7 +126,6 @@ public:
     bool searchChord(int note, int transpose = 0);
     int trimOutOfRangeNotes(int transpose);
 
-
     void transpose(int amount)
     {
         for (int i = 0; i < m_length; i++)
@@ -165,9 +163,7 @@ private:
     int m_length;
     static int m_cfg_highestPianoNote; // The highest note on the users piano keyboard;
     static int m_cfg_lowestPianoNote;
-
 };
-
 
 // Define a chord
 class CFindChord
@@ -187,7 +183,6 @@ public:
         m_cfg_ChordNoteGap = CMidiFile::ppqnAdjust(Cfg::chordNoteGap());
         m_cfg_ChordMaxLength = CMidiFile::ppqnAdjust(Cfg::chordMaxLength());
     }
-
 
     CChord getChord()
     {

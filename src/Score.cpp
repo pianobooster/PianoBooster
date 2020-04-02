@@ -35,7 +35,7 @@ CScore::CScore(CSettings* settings) : CDraw(settings)
 {
     size_t i;
     m_piano = new CPiano(settings);
-    m_rating = 0;
+    m_rating = nullptr;
     for (i=0; i< arraySize(m_scroll); i++)
     {
         m_scroll[i] = new CScroll(i, settings);
@@ -242,6 +242,3 @@ void CScore::drawScore()
     else
         glCallList(m_scoreDisplayListId);
 }
-
-
-

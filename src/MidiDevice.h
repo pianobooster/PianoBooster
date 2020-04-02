@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -63,7 +63,6 @@ public:
     virtual int     midiSettingsGetInt(QString name);
 
 private:
-
     CMidiDeviceBase* m_rtMidiDevice;
 #if EXPERIMENTAL_USE_FLUIDSYNTH
     CMidiDeviceBase* m_fluidSynthMidiDevice;

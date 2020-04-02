@@ -63,13 +63,11 @@ typedef enum {
     PB_RHYTHM_TAP_drumsAndMellody
 } rhythmTapping_t;
 
-
 typedef enum {
     PB_STOP_POINT_MODE_automatic,
     PB_STOP_POINT_MODE_onTheBeat,
     PB_STOP_POINT_MODE_afterTheBeat
 } stopPointMode_t;
-
 
 /*!
  * @brief   xxxxx.
@@ -81,7 +79,6 @@ public:
     ~CConductor();
 
     void init2(CScore * scoreWin, CSettings* settings);
-
 
     //! add a midi event to be analysed and played
     void midiEventInsert(CMidiEvent event);
@@ -207,7 +204,6 @@ public:
     stopPointMode_t cfg_stopPointMode;
     rhythmTapping_t cfg_rhythmTapping;
 
-
 protected:
     CScore* m_scoreWin;
     CSettings* m_settings;
@@ -223,17 +219,12 @@ protected:
     void resetWantedChord();
     void playWantedChord (CChord chord, CMidiEvent inputNote);
 
-
     bool validatePianistNote( const CMidiEvent& inputNote);
     bool validatePianistChord();
 
     bool seekingBarNumber() { return m_bar.seekingBarNumber();}
 
     int track2Channel(int track) {return m_track2ChannelLookUp[track];}
-
-
-
-
 
 private:
     void allSoundOff();
@@ -297,7 +288,6 @@ private:
     CChord m_goodPlayedNotes;  // The good notes the pianist plays
     CTempo m_tempo;
     bool m_KeyboardLightsOn;
-
 
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef
     bool m_followSkillAdvanced;

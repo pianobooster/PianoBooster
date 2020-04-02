@@ -143,7 +143,6 @@ private slots:
         autoSetMuteYourPart();
     }
 
-
     void on_rhythmTappingCombo_activated (int index);
 
     void on_muteYourPartCheck_toggled (bool checked)
@@ -169,14 +168,12 @@ private slots:
         m_song->refreshScroll();
     }
 
-
     void clearTrackPart() {
         int row = trackListWidget->currentRow();
         m_trackList->setActiveHandsIndex( -1, -1);
         trackListWidget->setCurrentRow(row);
         m_song->refreshScroll();
     }
-
 
 private:
     void autoSetMuteYourPart();

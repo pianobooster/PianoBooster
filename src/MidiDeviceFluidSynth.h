@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -29,11 +29,9 @@
 #ifndef __MIDI_DEVICE_FLUIDSYNTH_H__
 #define __MIDI_DEVICE_FLUIDSYNTH_H__
 
-
 #include "MidiDeviceBase.h"
 
 #include <fluidsynth.h>
-
 
 class CMidiDeviceFluidSynth : public CMidiDeviceBase
 {
@@ -59,9 +57,13 @@ public:
     CMidiDeviceFluidSynth();
     ~CMidiDeviceFluidSynth();
 
+    static QString getFluidInternalName()
+    {
+        return QString(tr("Internal Sound") + " " + FLUID_NAME );
+    }
 
 private:
-
+    static constexpr const char* FLUID_NAME = "(FluidSynth)";
     unsigned char m_savedRawBytes[40]; // Raw data is used for used for a SYSTEM_EVENT
     unsigned int m_rawDataIndex;
 
@@ -69,8 +71,6 @@ private:
     fluid_synth_t* m_synth;
     fluid_audio_driver_t* m_audioDriver;
     int m_soundFontId;
-
-
 };
 
 #endif //__MIDI_DEVICE_FLUIDSYNTH_H__

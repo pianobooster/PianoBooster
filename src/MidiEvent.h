@@ -47,7 +47,6 @@
 #define MIDI_ALL_SOUND_OFF          120
 #define MIDI_ALL_NOTES_OFF          123 //0x7B  channel mode message
 
-
 // now define some of our own events
 #define MIDI_NONE                   0x0ff0
 #define MIDI_ERROR                  0x0ff1
@@ -82,10 +81,7 @@
 #define METAKEYSIG              0x59
 #define METASEQEVENT            0x7F
 
-
-
 #define GM_PIANO_PATCH        0 // The default grand piano sound
-
 
 /*!
  * @brief   xxxxx.
@@ -292,7 +288,6 @@ public:
          return r;
        }
 
-
     void printDetails()
     {
         if (type() == MIDI_NOTE_ON) {
@@ -315,6 +310,5 @@ private:
     int m_velocity;
     int m_duration;
 };
-
 
 #endif //__MIDI_EVENT_H__

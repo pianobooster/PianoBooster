@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -52,7 +52,6 @@ static int set_realtime_priority(int policy, int prio)
 }
 #endif
 
-
 QtWindow::QtWindow()
 {
     m_settings = new CSettings(this);
@@ -73,9 +72,8 @@ QtWindow::QtWindow()
     }
 
     for (int i = 0; i < MAX_RECENT_FILES; ++i)
-         m_recentFileActs[i] = 0;
-    m_separatorAct = 0;
-
+         m_recentFileActs[i] = nullptr;
+    m_separatorAct = nullptr;
 
 #if USE_REALTIME_PRIORITY
     int rt_prio = sched_get_priority_max(SCHED_FIFO);
@@ -87,7 +85,6 @@ QtWindow::QtWindow()
 
     m_song = m_glWidget->getSongObject();
     m_score = m_glWidget->getScoreObject();
-
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
     QVBoxLayout *columnLayout = new QVBoxLayout;
@@ -132,7 +129,6 @@ QtWindow::QtWindow()
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
     m_song->cfg_rhythmTapping = static_cast<rhythmTapping_t> (m_settings->value("Score/RtyhemTappingMode", m_song->cfg_rhythmTapping ).toInt());
-
 
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
     m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("Midi/Output").toString());
@@ -220,7 +216,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
 
     if (!fileInfo.exists() )
     {
-        QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
+        QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
                  tr("Cannot open \"%1\"").arg(QString(fileInfo.absoluteFilePath())));
         exit(1);
     }
@@ -228,7 +224,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
              fileInfo.fileName().endsWith(".midi", Qt::CaseInsensitive ) ||
              fileInfo.fileName().endsWith(".kar", Qt::CaseInsensitive )) )
     {
-        QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
+        QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
                  tr("\"%1\" is not a Midi File").arg(QString(fileInfo.fileName())));
         exit(1);
     }
@@ -252,7 +248,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
             m_settings->setValue("CurrentSong", fileInfo.absoluteFilePath());
         else
         {
-            QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
+            QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
                  tr("\"%1\" is not a valid Midi file").arg(QString(fileInfo.absoluteFilePath())));
             exit(1);
         }
@@ -411,15 +407,12 @@ void QtWindow::createActions()
     addShortcutAction("ShortCuts/NextBook",         SLOT(on_nextBook()));
     addShortcutAction("ShortCuts/PreviousBook",     SLOT(on_previousBook()));
 
-
      for (int i = 0; i < MAX_RECENT_FILES; ++i) {
          m_recentFileActs[i] = new QAction(this);
          m_recentFileActs[i]->setVisible(false);
          connect(m_recentFileActs[i], SIGNAL(triggered()),
                  this, SLOT(openRecentFile()));
      }
-
-
 }
 
 void QtWindow::createMenus()
@@ -467,9 +460,10 @@ void QtWindow::createMenus()
     m_helpMenu->addAction(m_shortcutAct);
     m_helpMenu->addAction(m_aboutAct);
 }
+
 void QtWindow::openRecentFile()
- {
-     QAction *action = qobject_cast<QAction *>(sender());
+{
+    QAction *action = qobject_cast<QAction *>(sender());
      if (action)
          m_settings->openSongFile(action->data().toString());
 }
@@ -503,7 +497,7 @@ void QtWindow::updateRecentFileActions()
 
     for (int i = 0; i < numRecentFiles; ++i) {
         QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
-        if (m_recentFileActs[i] == 0)
+        if (m_recentFileActs[i] == nullptr)
             break;
         m_recentFileActs[i]->setText(text);
         m_recentFileActs[i]->setData(files[i]);
@@ -511,7 +505,7 @@ void QtWindow::updateRecentFileActions()
     }
 
     for (int j = numRecentFiles; j < MAX_RECENT_FILES; ++j) {
-        if (m_recentFileActs[j] == 0)
+        if (m_recentFileActs[j] == nullptr)
             break;
         m_recentFileActs[j]->setVisible(false);
     }
@@ -662,7 +656,6 @@ void QtWindow::keyboardShortcuts()
     msgBox.exec();
 }
 
-
 void QtWindow::open()
 {
     m_glWidget->stopTimerEvent();
@@ -709,7 +702,6 @@ void QtWindow::closeEvent(QCloseEvent *event)
 
     writeSettings();
 }
-
 
 void QtWindow::keyPressEvent ( QKeyEvent * event )
 {
@@ -771,8 +763,8 @@ void QtWindow::loadTutorHtml(const QString & name)
 
 void QtWindow::refreshTranslate(){
 #ifndef NO_LANGS
-
-    QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
+    QString appImagePath = qgetenv("APPIMAGE");
+    QString locale = m_settings->selectedLangauge();
 
     qApp->removeTranslator(&translator);
     qApp->removeTranslator(&translatorMusic);
@@ -806,7 +798,7 @@ void QtWindow::refreshTranslate(){
     QFile fileTestLocale(translationsDir);
     if (!fileTestLocale.exists()){
  #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-        translationsDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+        translationsDir=Util::dataDir()+"/translations/";
  #endif
  #ifdef Q_OS_DARWIN
         QApplication::applicationDirPath() + "/../Resources/translations/";
@@ -825,15 +817,13 @@ void QtWindow::refreshTranslate(){
            translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translatorMusic);
 
-
     // set translator for default widget's text (for example: QMessageBox's buttons)
 #ifdef __WIN32
-    qtTranslator.load("qt_"+locale,translationsDir);
+    qtTranslator.load("qt_"+locale, translationsDir);
 #else
-    qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qtTranslator.load("qt_"+locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
     qApp->installTranslator(&qtTranslator);
-
 
     // retranslate UI
     QList<QWidget*> l2 = this->findChildren<QWidget *>();

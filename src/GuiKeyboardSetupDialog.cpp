@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -36,7 +36,7 @@
 GuiKeyboardSetupDialog::GuiKeyboardSetupDialog(QWidget *parent)
     : QDialog(parent)
 {
-    m_song = 0;
+    m_song = nullptr;
     setupUi(this);
     setWindowTitle(tr("Piano Keyboard Settings"));
 }

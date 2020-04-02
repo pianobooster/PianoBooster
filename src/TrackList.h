@@ -49,7 +49,6 @@ public:
     int midiChannel;
 };
 
-
 class CTrackList : public QObject
 {
 Q_OBJECT
@@ -68,7 +67,6 @@ public:
 
     // Find an unused channel
     int findFreeChannel(int startChannel);
-
 
     void currentRowChanged(int currentRow);
     void examineMidiEvent(CMidiEvent event);

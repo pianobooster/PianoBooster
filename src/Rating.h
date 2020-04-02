@@ -72,8 +72,6 @@ private:
     float m_factor;
     CColor m_currentColor;
     bool m_goodAccuracyFlag;
-
 };
-
 
 #endif //__RATING_H__

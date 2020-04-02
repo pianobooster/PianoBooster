@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -28,7 +28,6 @@
 
 #include "Song.h"
 #include "Score.h"
-
 
 void CSong::init2(CScore * scoreWin, CSettings* settings)
 {
@@ -71,7 +70,6 @@ void CSong::loadSong(const QString & filename)
         m_songTitle = m_midiFile->getSongTitle();
 
 }
-
 
 // read the file ahead to collect info about the song first
 void CSong::midiFileInfo()
@@ -117,7 +115,6 @@ void CSong::setActiveHand(whichPart_t hand)
 
     m_scoreWin->setDisplayHand(hand);
 }
-
 
 void CSong::setActiveChannel(int chan)
 {
@@ -165,7 +162,6 @@ eventBits_t CSong::task(int ticks)
 {
     realTimeEngine(ticks);
 
-
     while (true)
     {
         if (m_reachedMidiEof == true)
@@ -196,7 +192,6 @@ eventBits_t CSong::task(int ticks)
             // send the events to the other end
             midiEventInsert(event);
 
-
             if (event.type() == MIDI_PB_EOF)
             {
                 m_reachedMidiEof = true;
@@ -212,7 +207,6 @@ eventBits_t CSong::task(int ticks)
         }
         else
             break;
-
     }
 
 exitTask:
@@ -258,7 +252,6 @@ bool CSong::pcKeyPress(int key, bool down)
 
     if (key == 't') // the tab key on the PC fakes good notes
     {
-
         if (down)
             m_fakeChord = getWantedChord();
         for (i = 0; i < m_fakeChord.length(); i++)

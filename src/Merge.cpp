@@ -28,9 +28,6 @@
 
 #include "Merge.h"
 
-
-
-
 void  CMerge::initMergedEvents()
 {
     int i;
@@ -42,16 +39,15 @@ void  CMerge::initMergedEvents()
     }
 }
 
-
 int CMerge::nextMergedEvent()
 {
     int nearestIndex = 0;
-    
+
     int i;
     CMidiEvent* nearestEvent;
     int deltaTime;
 
-    nearestEvent = 0;
+    nearestEvent = nullptr;
     // find the first active slot
     for( i = 0; i < m_mergeEvents.size(); i++)
     {
@@ -62,7 +58,7 @@ int CMerge::nextMergedEvent()
             break;
         }
     }
-    if (nearestEvent == 0)
+    if (nearestEvent == nullptr)
         return 0;
 
     // now search the remaining active slots
@@ -89,10 +85,9 @@ int CMerge::nextMergedEvent()
         if (m_mergeEvents[i].type() != MIDI_NONE)
             m_mergeEvents[i].addDeltaTime( deltaTime );
     }
-  
+
     return nearestIndex;
 }
-
 
 CMidiEvent CMerge::readMidiEvent()
 {

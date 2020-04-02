@@ -26,9 +26,6 @@
 */
 /*********************************************************************************/
 
-
-
-
 #include "Cfg.h"
 
 float Cfg::m_staveEndX;
@@ -49,8 +46,3 @@ int Cfg::tickRate;
 
 const int Cfg::m_playZoneEarly = 25; // Was 25
 const int Cfg::m_playZoneLate = 25;
-
-
-
-
-

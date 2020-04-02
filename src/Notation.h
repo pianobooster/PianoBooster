@@ -37,7 +37,6 @@
 #include "Chord.h"
 #include "Bar.h"
 
-
 #define MAX_SYMBOLS    20  // The maximum number of symbols that can be stored in one slot
 
 class CSlot
@@ -78,7 +77,6 @@ public:
         setDeltaTime(delta);
         addSymbol(symbol);
     }
-
 
     void transpose(int amount)
     {
@@ -152,7 +150,6 @@ public:
     void setBackLink(CNoteState * link){m_backLink = link;}
     CNoteState * getBackLink(){return m_backLink;}
 
-
 private:
     int m_barChangeCounter;
     accidentalModifer_t m_accidentalState;
@@ -191,7 +188,6 @@ public:
 
     void setChannel(int channel) {m_displayChannel = channel;}
 
-
     CSlot nextSlot();
     void midiEventInsert(CMidiEvent event);
 
@@ -199,7 +195,6 @@ public:
 
     static void setCourtesyAccidentals(bool setting){m_cfg_displayCourtesyAccidentals = setting;}
     static bool displayCourtesyAccidentals(){return m_cfg_displayCourtesyAccidentals; }
-
 
 private:
     CSlot nextBeatMarker();
@@ -210,7 +205,6 @@ private:
     void setupNotationParamaters();
 
     void calculateScoreNoteLength();
-
 
     CQueue<CSlot>* m_slotQueue;             // Queue of symbol slots that have not been read yet
     CQueue<CMidiEvent>* m_midiInputQueue;   // A Queue of midi events

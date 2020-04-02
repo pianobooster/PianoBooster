@@ -76,8 +76,6 @@ public:
         playMusic(true);
     }
 
-
-
     void setActiveHand(whichPart_t hand);
     whichPart_t getActiveHand(){return CNote::getActiveHand();}
 
@@ -86,12 +84,10 @@ public:
     CTrackList* getTrackList() {return m_trackList;}
     void refreshScroll();
 
-
     QString getSongTitle() {return m_songTitle;}
 
 private:
     void midiFileInfo();
-
 
     CMidiFile * m_midiFile;
     CFindChord m_findChord;

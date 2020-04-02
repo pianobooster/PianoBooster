@@ -1,3 +1,8 @@
+v0.7.3 (25 Feb 2020)
+- Integrated fluidsynth as an build option.
+- Changes necessary for AppImage.
+- Added <System Language> to the manual langage selection.
+
 v0.7.2b (25 Feb 2020)
 - Fixed a problem that prevented a connected MIDI piano keyboard from working.
 - cmake with no options now works correctly (cmake .. && make).

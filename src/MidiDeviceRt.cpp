@@ -28,7 +28,6 @@
 
 #include "MidiDeviceRt.h"
 
-
 CMidiDeviceRt::CMidiDeviceRt()
 {
     try {
@@ -46,7 +45,6 @@ CMidiDeviceRt::CMidiDeviceRt()
         error.printMessage();
         exit(1);
     }
-
 
     m_midiPorts[0] = -1;
     m_midiPorts[1] = -1;
@@ -97,7 +95,6 @@ QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
          portNameList << name;
     }
 
-
     return portNameList;
 }
 
@@ -106,7 +103,6 @@ bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
     unsigned int nPorts;
     QString name;
     RtMidi* midiDevice;
-
 
     if (portName.length() == 0)
         return false;
@@ -151,7 +147,6 @@ void CMidiDeviceRt::closeMidiPort(midiType_t type, int index)
     else
         m_midiout->closePort();
 }
-
 
 //! add a midi event to be played immediately
 void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
@@ -218,14 +213,13 @@ void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
 
         default:
             return;
-            break;
+
     }
 
     m_midiout->sendMessage( &message );
 
     //event.printDetails(); // useful for debugging
 }
-
 
 // Return the number of events waiting to be read from the midi device
 int CMidiDeviceRt::checkMidiInput()
@@ -241,7 +235,6 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
 {
     CMidiEvent midiEvent;
     unsigned int channel;
-
 
     if (Cfg::midiInputDump)
     {
@@ -297,7 +290,6 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
     m_inputMessage.clear();
     return midiEvent;
 }
-
 
 int CMidiDeviceRt::midiSettingsSetStr(QString name, QString str)
 {

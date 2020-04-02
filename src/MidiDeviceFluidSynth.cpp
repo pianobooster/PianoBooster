@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -28,15 +28,11 @@
 
 #include "MidiDeviceFluidSynth.h"
 
-#include <QString>
-#include <QDir>
-#include <string>
-
 CMidiDeviceFluidSynth::CMidiDeviceFluidSynth()
 {
-    m_synth = 0;
-    m_fluidSettings = 0;
-    m_audioDriver = 0;
+    m_synth = nullptr;
+    m_fluidSettings = nullptr;
+    m_audioDriver = nullptr;
     m_rawDataIndex = 0;
 }
 
@@ -45,35 +41,24 @@ CMidiDeviceFluidSynth::~CMidiDeviceFluidSynth()
     closeMidiPort(MIDI_OUTPUT, -1);
 }
 
-
-
 void CMidiDeviceFluidSynth::init()
 {
 }
 
-
 QStringList CMidiDeviceFluidSynth::getMidiPortList(midiType_t type)
 {
-
     if (type != MIDI_OUTPUT) // Only has an output
         return QStringList();
 
-    //debugSettings(("getSongList %s + %d", qPrintable(getCurrentBookName()), qPrintable(m_bookPath)));
-    QDir dirSoundFont("soundfont");
-    dirSoundFont.setFilter(QDir::Files);
-    QStringList fileNames = dirSoundFont.entryList();
+    if (qsettings==nullptr)
+        return QStringList();
 
-    QStringList portNames;
+    QStringList fontList = qsettings->value("FluidSynth/SoundFont").toStringList();
 
-    for (int i = 0; i < fileNames.size(); i++)
-    {
-        if ( fileNames.at(i).endsWith(".sf2", Qt::CaseInsensitive ) )
-        {
-            portNames  +=  fileNames.at(i);
-        }
+    if (fontList.size() > 0){
+        return QStringList(getFluidInternalName());
     }
-
-    return portNames;
+    return fontList;
 }
 
 bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
@@ -85,51 +70,47 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
 
     if (type == MIDI_INPUT)
         return false;
-        
+
+    if (!portName.endsWith(FLUID_NAME)) return false;
+
     if (getMidiPortList(type).size()==0) return false;
 
-    /* Create the settings. */
+    // Load a SoundFont
+    QStringList fontList = qsettings->value("FluidSynth/SoundFont").toStringList();
+    if (fontList.size() == 0) return false;
+
+    // Create the settings.
     m_fluidSettings = new_fluid_settings();
 
-    /* Change the settings if necessary*/
+    // Change the settings if necessary
+    fluid_settings_setnum(m_fluidSettings, "synth.sample-rate", qsettings->value("FluidSynth/sampleRateCombo",22050).toInt());
+    fluid_settings_setint(m_fluidSettings, "audio.period-size", qsettings->value("FluidSynth/bufferSizeCombo", 128).toInt());
+    fluid_settings_setint(m_fluidSettings, "audio.periods", qsettings->value("FluidSynth/bufferCountCombo", 4).toInt());
 
-    fluid_settings_setnum(m_fluidSettings, (char *)"synth.sample-rate", 22050.0);
-    fluid_settings_setint(m_fluidSettings, "audio.periods", 5);
-    fluid_settings_setint(m_fluidSettings, "audio.period-size", 128);
+#if defined (Q_OS_LINUX)
+    fluid_settings_setstr(m_fluidSettings, "audio.driver", qsettings->value("FluidSynth/audioDriverCombo", "alsa").toString().toStdString().c_str());
+#endif
 
-    fluid_settings_setstr(m_fluidSettings, "audio.alsa.device",        "plughw:0");
-
-
-
-
-
-    /* Create the synthesizer. */
+    // Create the synthesizer.
     m_synth = new_fluid_synth(m_fluidSettings);
 
     fluid_synth_set_reverb_on(m_synth, 0);
     fluid_synth_set_chorus_on(m_synth, 0);
 
-
-    /* Create the audio driver. The synthesizer starts playing as soon
-    as the driver is created. */
+    // Create the audio driver.
     m_audioDriver = new_fluid_audio_driver(m_fluidSettings, m_synth);
 
-    /* Load a SoundFont*/
-    m_soundFontId = fluid_synth_sfload(m_synth, "FluidR3_GM.sf2", 0);
-    //m_soundFontId = fluid_synth_sfload(m_synth, "VintageDreamsWaves-v2.sf2", 0);
-
-    /* Select bank 0 and preset 0 in the SoundFont we just loaded on
-    channel 0 */
-    //fluid_synth_program_select(m_synth, 0, m_soundFontId, 0, 0);
-
+    QString pathName = fontList.at(0);
+    ppLogDebug("Sound font %s", qPrintable(pathName));
+    m_soundFontId = fluid_synth_sfload(m_synth, qPrintable(pathName), 0);
+    if (m_soundFontId == -1)
+        return false;
 
     for (int channel = 0; channel < MAX_MIDI_CHANNELS ; channel++)
     {
-        //fluid_synth_program_select(m_synth, channel, m_soundFontId, 0, GM_PIANO_PATCH);
-        fluid_synth_program_change(m_synth, channel, GM_PIANO_PATCH);
+         fluid_synth_program_change(m_synth, channel, GM_PIANO_PATCH);
     }
-    fluid_synth_set_gain(m_synth, 0.4);
-
+    fluid_synth_set_gain(m_synth, qsettings->value("FluidSynth/masterGainSpin", 40).toFloat()/100.0f );
     return true;
 }
 
@@ -138,14 +119,14 @@ void CMidiDeviceFluidSynth::closeMidiPort(midiType_t type, int index)
     if (type != MIDI_OUTPUT)
         return;
 
-    if (m_fluidSettings == 0)
+    if (m_fluidSettings == nullptr)
         return;
 
     /* Clean up */
     delete_fluid_audio_driver(m_audioDriver);
     delete_fluid_synth(m_synth);
     delete_fluid_settings(m_fluidSettings);
-    m_fluidSettings = 0;
+    m_fluidSettings = nullptr;
     m_rawDataIndex = 0;
 
 }
@@ -153,11 +134,10 @@ void CMidiDeviceFluidSynth::closeMidiPort(midiType_t type, int index)
 //! add a midi event to be played immediately
 void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
 {
-
-    if (m_synth == 0)
+    if (m_synth == nullptr)
         return;
 
-    unsigned int channel;
+    int channel;
 
     channel = event.channel() & 0x0f;
 
@@ -212,7 +192,6 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
     //event.printDetails(); // useful for debugging
 }
 
-
 // Return the number of events waiting to be read from the midi device
 int CMidiDeviceFluidSynth::checkMidiInput()
 {
@@ -225,8 +204,6 @@ CMidiEvent CMidiDeviceFluidSynth::readMidiInput()
     CMidiEvent midiEvent;
     return midiEvent;
 }
-
-
 
 int CMidiDeviceFluidSynth::midiSettingsSetStr(QString name, QString str)
 {
