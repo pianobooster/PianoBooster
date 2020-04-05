@@ -1,2 +1,2 @@
-#define PB_VERSION "0.7.3-SNAPSHOT"
+#define PB_VERSION "0.7.3-PREVIEW1"
 #define MUSIC_RELEASE 3

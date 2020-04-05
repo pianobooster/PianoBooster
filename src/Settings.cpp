@@ -49,7 +49,7 @@
 #include "QtWindow.h"
 #include "version.txt"
 
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
 #include "MidiDeviceFluidSynth.h"
 #endif
 
@@ -544,31 +544,57 @@ void CSettings::updateWarningMessages()
 }
 
 void CSettings::setupDefaultSoundFont(){
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
 
-    if (getFluidSoundFontNames().empty() && !m_song->validMidiOutput())
+    QFileInfo defaultSoundFont = QFileInfo();
+
+    if (getFluidSoundFontNames().empty() && !m_song->validMidiOutput() && !contains("LastSoundFontDir"))
     {
         QString appPath = qEnvironmentVariable("APPIMAGE");
-        if (appPath.isEmpty())
+        if (!appPath.isEmpty())
         {
+            appPath= QFileInfo(appPath).path();
+        }
+        else {
             appPath = QApplication::applicationDirPath();
         }
 
         QDir directory(appPath);
-        directory.cd("SoundFont");
+        directory.cd("soundfont");
         QStringList dirList = directory.entryList(QStringList(),QDir::AllEntries);
         foreach(QString filename, dirList)
         {
             // Find the first sound fount file
             if ( filename.endsWith(".sf2", Qt::CaseInsensitive ) )
             {
-                setFluidSoundFontNames(directory.filePath(filename));
-                setValue("Midi/Output",CMidiDeviceFluidSynth::getFluidInternalName() );
-                setValue("LastSoundFontDir", directory.path());
-                saveSoundFontSettings();
-                m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, CMidiDeviceFluidSynth::getFluidInternalName());
+                defaultSoundFont.setFile(directory.path(), filename);
                 break;
             }
+        }
+
+#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
+        if (!defaultSoundFont.isFile())
+        {
+            QStringList possibleSoundFontFolders = {"/usr/share/soundfonts","/usr/share/sounds/sf2"};
+            for (QString soundFontFolder:possibleSoundFontFolders)
+            {
+                // fluid-soundfont-gm Fluid (R3) General MIDI SoundFont (GM) package
+                QFileInfo foundSoundFont(soundFontFolder, "FluidR3_GM.sf2");
+                if (foundSoundFont.isFile())
+                {
+                       defaultSoundFont=foundSoundFont;
+                       break;
+                }
+            }
+        }
+#endif
+
+        if (defaultSoundFont.isFile()) {
+            setFluidSoundFontNames(defaultSoundFont.filePath());
+            setValue("Midi/Output",CMidiDeviceFluidSynth::getFluidInternalName() );
+            setValue("LastSoundFontDir", defaultSoundFont.path());
+            saveSoundFontSettings();
+            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, CMidiDeviceFluidSynth::getFluidInternalName());
         }
     }
 #endif

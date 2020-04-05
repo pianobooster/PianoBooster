@@ -8,6 +8,7 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
 else()
    option(USE_BUNDLED_RTMIDI "build with bundled rtmidi" ON)
 endif()
+option(WITH_INTERNAL_FLUIDSYNTH "build with an internal FluidSynth sound generator" OFF)
 
 cmake_minimum_required(VERSION 2.4)
 if(COMMAND cmake_policy)
@@ -92,8 +93,8 @@ if(${CMAKE_SYSTEM} MATCHES "Darwin")
     LINK_LIBRARIES("-framework CoreMidi -framework CoreAudio -framework CoreFoundation -framework OpenGL")
 endif(${CMAKE_SYSTEM} MATCHES "Darwin")
 
-if(EXPERIMENTAL_USE_FLUIDSYNTH)
-    ADD_DEFINITIONS(-DEXPERIMENTAL_USE_FLUIDSYNTH)
+if(WITH_INTERNAL_FLUIDSYNTH)
+    ADD_DEFINITIONS(-DWITH_INTERNAL_FLUIDSYNTH)
     MESSAGE("Building using fluidsynth")
     SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
 
@@ -110,7 +111,7 @@ if(EXPERIMENTAL_USE_FLUIDSYNTH)
         endif(NOT FLUIDSYNTH_FOUND)
         LINK_LIBRARIES(fluidsynth)
     endif()
-endif(EXPERIMENTAL_USE_FLUIDSYNTH)
+endif(WITH_INTERNAL_FLUIDSYNTH)
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)

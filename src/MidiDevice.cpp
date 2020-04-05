@@ -28,14 +28,14 @@
 
 #include "MidiDevice.h"
 #include "MidiDeviceRt.h"
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     #include "MidiDeviceFluidSynth.h"
 #endif
 
 CMidiDevice::CMidiDevice()
 {
     m_rtMidiDevice = new CMidiDeviceRt();
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     m_fluidSynthMidiDevice = new CMidiDeviceFluidSynth();
 #endif
     m_selectedMidiInputDevice = m_rtMidiDevice;
@@ -46,14 +46,14 @@ CMidiDevice::CMidiDevice()
 CMidiDevice::~CMidiDevice()
 {
     delete m_rtMidiDevice;
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     delete m_fluidSynthMidiDevice;
 #endif
 }
 
 void CMidiDevice::init()
 {
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     m_fluidSynthMidiDevice->setQSettings(qsettings);
 #endif
 
@@ -62,7 +62,7 @@ void CMidiDevice::init()
 QStringList CMidiDevice::getMidiPortList(midiType_t type)
 {
     QStringList list;
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     list <<  m_fluidSynthMidiDevice->getMidiPortList(type);
 #endif
     list <<  m_rtMidiDevice->getMidiPortList(type);
@@ -93,7 +93,7 @@ bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
             m_validOutput = true;
             return true;
         }
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
         if ( m_fluidSynthMidiDevice->openMidiPort(type, portName) )
         {
             m_selectedMidiOutputDevice = m_fluidSynthMidiDevice;

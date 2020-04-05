@@ -28,7 +28,7 @@
 
 #include "GuiMidiSetupDialog.h"
 
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
 #include "MidiDeviceFluidSynth.h"
 #endif
 
@@ -42,7 +42,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     m_latencyChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
 
-#ifndef EXPERIMENTAL_USE_FLUIDSYNTH
+#ifndef WITH_INTERNAL_FLUIDSYNTH
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
 
@@ -270,7 +270,7 @@ void GuiMidiSetupDialog::updateFluidInfoStatus()
 
 void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
 {
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     QString lastSoundFont = m_settings->value("LastSoundFontDir","").toString();
 
      if (lastSoundFont.isEmpty()) {
@@ -313,7 +313,7 @@ void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
 }
 
 void GuiMidiSetupDialog::on_fluidClearButton_clicked( bool checked ){
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     m_settings->clearFluidSoundFontNames();
     int i = midiOutputCombo->findText(CMidiDeviceFluidSynth::getFluidInternalName());
     if (i>=0)

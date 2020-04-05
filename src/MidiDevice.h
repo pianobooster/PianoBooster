@@ -64,7 +64,7 @@ public:
 
 private:
     CMidiDeviceBase* m_rtMidiDevice;
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     CMidiDeviceBase* m_fluidSynthMidiDevice;
 #endif
     CMidiDeviceBase* m_selectedMidiInputDevice;
