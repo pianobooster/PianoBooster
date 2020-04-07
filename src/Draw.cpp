@@ -795,7 +795,9 @@ void CDraw::drawSlot(CSlot* slot)
         stavePos.notePos(slot->getSymbol(i).getHand(), slot->getSymbol(i).getNote());
         //ppLogTrace ("compileSlot len %d id %2d next %2d time %2d type %2d note %2d", slot->length(), slot->m_displayListId,
         //slot->m_nextDisplayListId, slot->getDeltaTime(), slot->getSymbol(i).getType(), slot->getSymbol(i).getNote());
-
+        printf("Symboltype: %d\n", slot->getSymbolType(i));
+        if(slot->getSymbolType(i) == PB_SYMBOL_noteHead)
+            printf("It is a note head!\n");
         drawSymbol(slot->getSymbol(i), 0.0, stavePos.getPosYRelative()); // we add this  back when drawing this symbol
     }
 }

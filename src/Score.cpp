@@ -94,10 +94,12 @@ void CScore::drawScroll(bool refresh)
     else
         glCallList(m_stavesDisplayListId);
 
+    drawScrollingSymbols(true);
+
     if (m_settings->value("View/PianoKeyboard").toString()=="on"){
         drawPianoKeyboard();
     }
-    drawScrollingSymbols(true);
+
     m_piano->drawPianoInput();
 }
 
@@ -112,6 +114,7 @@ void CScore::drawPianoKeyboard(){
         float xPlaceSize;
         float xKeySize;
         char state[keysCount];
+        float position[keysCount];
         bool stopped;
 
         PianoKeyboard() {
@@ -123,6 +126,8 @@ void CScore::drawPianoKeyboard(){
             xPlaceSize = xSize / 52.0f;
             xKeySize = xPlaceSize - xPlaceSize * 0.1f;
             stopped = false;
+            for(int i = 0; i < keysCount; i++)
+                position[i] = 1.0;
         }
 
         void drawBlackKey(int i, int k) {
@@ -155,11 +160,17 @@ void CScore::drawPianoKeyboard(){
             glTranslatef(Cfg::staveStartX() + xPlaceSize * i++, yStart, 0.0);
 
             CDraw::drColor (CColor(1.0, 1.0, 1.0));
-            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
-            if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
             glBegin(GL_QUADS);
             glVertex2f(0, ySize);
             glVertex2f(xKeySize, ySize);
+            glVertex2f(xKeySize, 0);
+            glVertex2f(0, 0);
+            glEnd();
+            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
+            if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
+            glBegin(GL_QUADS);
+            glVertex2f(0, ySize*position[k]);
+            glVertex2f(xKeySize, ySize*position[k]);
             glVertex2f(xKeySize, 0);
             glVertex2f(0, 0);
             glEnd();
@@ -210,13 +221,29 @@ void CScore::drawPianoKeyboard(){
 
     for(size_t i=0; i<arraySize(m_scroll); ++i) {
         int notes[64];
+        float positions[64];
         memset(notes, 0, sizeof(notes));
-        bool stopped = m_scroll[i]->getKeyboardInfo(notes);
-        for(int *note=notes; *note; ++note) {
+        memset(positions, 0, sizeof(positions));
+        bool stopped = m_scroll[i]->getKeyboardInfo(notes, positions);
+        float *position = positions;
+        for(int *note = notes; *note; ++note, ++position) {
             pianoKeyboard.stopped = stopped;
             int k = *note - 21;
             k = k < 0 ? 0 : (k >= keysCount ? (keysCount-1) : k);
+            float pos = 1.0 - *position;
+            if(pianoKeyboard.state[k] == 1) {
+                pos = pos > pianoKeyboard.position[k] ? pos : pianoKeyboard.position[k];
+            }
             pianoKeyboard.state[k] = 1;
+            pianoKeyboard.position[k] = pos;
+            /*if(pianoKeyboard.position[k] != 1.0) {
+                pianoKeyboard.position[k] = pianoKeyboard.position[k] < pos ?
+                                            pos :
+                                            pianoKeyboard.position[k];
+            } else {
+                pianoKeyboard.position[k] = pos;
+                pianoKeyboard.state[k] = 0;
+            }*/
         }
     }
 

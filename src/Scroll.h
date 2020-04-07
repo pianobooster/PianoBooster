@@ -53,6 +53,7 @@ public:
         m_noteSpacingFactor = 1.0;
         m_ppqnFactor = 1.0;
         m_transpose = 0;
+        m_ticks = 0;
     }
 
     ~CScroll()
@@ -78,13 +79,17 @@ public:
 
     void drawScrollingSymbols(bool show);
     void showScroll(bool show);
-    bool getKeyboardInfo(int *notes);
+    bool getKeyboardInfo(int *notes, float *positions);
+
+    int m_ticks;
 
 private:
     class CSlotDisplayList : public CSlot
     {
         public:
-        CSlotDisplayList(): m_displayListId(0){};
+        int m_ticks;
+        int m_deltaHead;
+        CSlotDisplayList(): m_displayListId(0){m_ticks = 0;};
         CSlotDisplayList(const CSlot &slot, GLuint displayListId, GLuint nextDisplayListId);
 
         GLuint m_displayListId; // the open GL display list id for this slot

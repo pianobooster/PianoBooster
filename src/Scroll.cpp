@@ -42,7 +42,10 @@ void CScroll::compileSlot(CSlotDisplayList info)
         return;
 
     glNewList (info.m_displayListId, GL_COMPILE);
+    glPushMatrix();
+//    glTranslatef (10/*info.getDeltaTime() * m_noteSpacingFactor*/, 0.0, 0.0); /*  move position  */
     glTranslatef (info.getDeltaTime() * m_noteSpacingFactor, 0.0, 0.0); /*  move position  */
+    printf("dt1: %d\n", info.getDeltaTime());
 
     info.transpose(m_transpose);
     drawSlot(&info);
@@ -60,6 +63,7 @@ void CScroll::compileSlot(CSlotDisplayList info)
     }
     */
     glCallList (info.m_nextDisplayListId);    /* Automatically draw the next slot even if it is not there yet */
+    glPopMatrix();
     glEndList ();
 }
 
@@ -101,7 +105,12 @@ bool CScroll::insertSlots()
 
         compileSlot(info);
 
+        info.m_ticks = m_ticks;
         m_scrollQueue->push(info);
+        printf("Inserted info on queue\n");
+        printf("deltaTime: %d\n", info.getDeltaTime());
+        printf("deltaHead after insertion: %d\n", m_deltaHead);
+        info.m_deltaHead = m_deltaHead;
         m_symbolID  = nextListId;
 
         m_headSlot = m_notation->nextSlot();
@@ -167,6 +176,7 @@ void CScroll::drawScrollingSymbols(bool show)
 
     glPushMatrix();
     glTranslatef (Cfg::playZoneX() + deltaAdjust(m_deltaTail) * m_noteSpacingFactor, CStavePos::getStaveCenterY(), 0.0);
+//    glTranslatef (0/*Cfg::playZoneX() + deltaAdjust(m_deltaTail) * m_noteSpacingFactor*/, CStavePos::getStaveCenterY(), 0.0);
 
     BENCHMARK(8, "glTranslatef");
 
@@ -180,6 +190,7 @@ void CScroll::drawScrollingSymbols(bool show)
 
 void CScroll::scrollDeltaTime(int ticks)
 {
+    m_ticks += ticks;
     m_deltaHead -= ticks;
     m_deltaTail -= ticks;
     m_wantedDelta -= ticks;
@@ -253,7 +264,7 @@ void CScroll::refresh()
         compileSlot(m_scrollQueue->index(i));
 }
 
-bool CScroll::getKeyboardInfo(int *notes)
+bool CScroll::getKeyboardInfo(int *notes, float *positions)
 {
     int stoppedScrollIdx = -1;
     for(int i=0; i<m_scrollQueue->length(); ++i) {
@@ -283,6 +294,7 @@ bool CScroll::getKeyboardInfo(int *notes)
         }
     }
 
+    bool ret = false;
     int *note = notes;
     for(int i=0; i<m_scrollQueue->length(); ++i) {
         CSlotDisplayList &info = *m_scrollQueue->indexPtr(i);
@@ -290,17 +302,34 @@ bool CScroll::getKeyboardInfo(int *notes)
 
         CSlot* slot = &info;
         bool stopped = false;
-        for(int j=0; j<slot->length(); ++j) {
+        //printf("deltahead: %d\n", m_deltaHead);
+        //printf("deltaTail: %d\n", m_deltaTail);
+        for(int j=0; j < slot->length(); ++j) {
             if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
 
             if(slot->getSymbol(j).getColor() == Cfg::noteColor() ||
-               slot->getSymbol(j).getColor() == Cfg::playedStoppedColor())
+               slot->getSymbol(j).getColor() == Cfg::playedStoppedColor()){
                 *(note++) = slot->getSymbol(j).getNote();
+                printf("i: %d\n", i);
+                printf("m_ticks: %d\n", m_ticks);
+                printf("info m_ticks: %d\n", info.m_ticks);
+                printf("diff: %d\n", m_ticks - info.m_ticks);
+                printf("info deltaHead: %d\n", info.m_deltaHead);
+                int position = info.m_deltaHead - (m_ticks - info.m_ticks);
+                float scaled_position = (float)position/(float)m_deltaHead;
+                scaled_position = scaled_position < 0.0 ? 0.0 : scaled_position;
+                printf("position: %d\n", info.m_deltaHead - (m_ticks - info.m_ticks));
+                printf("scaled_position: %.3f\n", scaled_position);
+                *(positions++) = scaled_position;
+                //printf("delta: %d\n", info.getDeltaTime() * SPEED_ADJUST_FACTOR + m_deltaHead);
+                //printf("timing: %d\n", slot->getSymbol(j).getPianistTiming());
+            }
             if(slot->getSymbol(j).getColor() == Cfg::playedStoppedColor()) stopped = true;
         }
-        if(note != notes) return stopped;
+        //if(note != notes) return stopped;
+        if(note != notes) ret = true;
     }
-    return false;
+    return ret;
 }
 
 void CScroll::transpose(int transpose)
