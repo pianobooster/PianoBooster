@@ -90,6 +90,7 @@ endif(${CMAKE_SYSTEM} MATCHES "Windows")
 
 if(${CMAKE_SYSTEM} MATCHES "Darwin")
     ADD_DEFINITIONS(-D__MACOSX_CORE__)
+    ADD_DEFINITIONS(-std=c++11)
     LINK_LIBRARIES("-framework CoreMidi -framework CoreAudio -framework CoreFoundation -framework OpenGL")
 endif(${CMAKE_SYSTEM} MATCHES "Darwin")
 
@@ -220,9 +221,30 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # here we instruct CMake to build "pianobooster" executable from all of the source files
 if(APPLE)
-    ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE ${PIANOBOOSTER_SRCS}
+    # the property added the pianobooster icon to Info.plist
+    set(MACOSX_BUNDLE_ICON_FILE pianobooster.icns)
+
+    # Tells CMake where to find and install the pianobooster icon
+    set(pianobooster_ICON ${CMAKE_CURRENT_SOURCE_DIR}/../icons/MacOS/pianobooster.icns)
+    set_source_files_properties(${pianobooster_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+
+    set(pianobooster_TRANSLATIONS ${CMAKE_CURRENT_BINARY_DIR}/translations/langs.json)
+    set_source_files_properties(${pianobooster_TRANSLATIONS} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/translations")
+
+    set(pianobooster_MUSIC ${CMAKE_CURRENT_SOURCE_DIR}/../music/BoosterMusicBooks.zip)
+    set_source_files_properties(${pianobooster_MUSIC} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/music")
+    set(pianobooster_FONT ${CMAKE_CURRENT_SOURCE_DIR}/fonts/DejaVuSans.ttf)
+    set_source_files_properties(${pianobooster_FONT} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/fonts")
+
+    ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE
+        ${pianobooster_ICON} ${pianobooster_TRANSLATIONS}
+        ${pianobooster_MUSIC} ${pianobooster_FONT}
+        ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
+
+    add_custom_target(install-translations cp -R -v ${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.app/Contents/Resources/translations)
+
 endif(APPLE)
 
 if(UNIX)

@@ -79,7 +79,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
     audioDriverCombo->clear();
 
 #if defined (Q_OS_LINUX)
-    audioDriverCombo->addItems({"alsa","pulseaudio"});
+    audioDriverCombo->addItems({"pulseaudio", "alsa"});
 #elif defined (Q_OS_UNIX) || defined (Q_OS_DARWIN)
     audioDriverCombo->addItems({"pulseaudio"});
 #endif
@@ -88,7 +88,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
         masterGainSpin->setValue(m_settings->value("FluidSynth/masterGainSpin","40").toInt());
         reverbCheck->setChecked(m_settings->value("FluidSynth/reverbCheck","false").toBool());
         chorusCheck->setChecked(m_settings->value("FluidSynth/chorusCheck","false").toBool());
-        setComboFromSetting(audioDriverCombo, "FluidSynth/audioDriverCombo","alsa");
+        setComboFromSetting(audioDriverCombo, "FluidSynth/audioDriverCombo","pulseaudio");
         setComboFromSetting(sampleRateCombo, "FluidSynth/sampleRateCombo","22050");
         setComboFromSetting(bufferSizeCombo, "FluidSynth/bufferSizeCombo","128");
         setComboFromSetting(bufferCountCombo, "FluidSynth/bufferCountCombo","4");

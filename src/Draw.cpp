@@ -46,16 +46,17 @@ CDraw::CDraw(CSettings* settings)
     QStringList listPathFonts;
 
 #if defined(USE_FONT)
-    listPathFonts.push_back(USE_FONT);
+    listPathFonts.append(USE_FONT);
 #endif
-    listPathFonts.push_back(Util::dataDir()+"/fonts/DejaVuSans.ttf");
-    listPathFonts.push_back(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
-    listPathFonts.push_back("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
-    listPathFonts.push_back("/usr/share/fonts/dejavu/DejaVuSans.ttf");
-    listPathFonts.push_back("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
-    listPathFonts.push_back("/usr/share/fonts/TTF/DejaVuSans.ttf");
-    listPathFonts.push_back("/usr/share/fonts/truetype/DejaVuSans.ttf");
-    listPathFonts.push_back("/usr/local/share/fonts/dejavu/DejaVuSans.ttf");
+    listPathFonts.append(Util::dataDir()+"/fonts/DejaVuSans.ttf");
+    listPathFonts.append(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
+    listPathFonts.append(QApplication::applicationDirPath() + "/../Resources/fonts/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/dejavu/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/TTF/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/truetype/DejaVuSans.ttf");
+    listPathFonts.append("/usr/local/share/fonts/dejavu/DejaVuSans.ttf");
 
     for (int i=0;i<listPathFonts.size();i++){
         QFile file(listPathFonts.at(i));

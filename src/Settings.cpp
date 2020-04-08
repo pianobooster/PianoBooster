@@ -435,10 +435,9 @@ void CSettings::unzipBoosterMusicBooks()
         }
 
         ppLogInfo(qPrintable("applicationDirPath=" + QApplication::applicationDirPath()));
-        ppLogTrace("resourceDir3 %s", qPrintable(resourceDir));
+        ppLogTrace("resourceDir %s", qPrintable(resourceDir));
 
         QFileInfo zipFile(resourceDir +  ZIPFILENAME);
-        ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
 
         QDir destMusicDir;
 
@@ -550,10 +549,10 @@ void CSettings::setupDefaultSoundFont(){
 
     if (getFluidSoundFontNames().empty() && !m_song->validMidiOutput() && !contains("LastSoundFontDir"))
     {
-        QString appPath = qEnvironmentVariable("APPIMAGE");
+        QString appPath = qgetenv("APPIMAGE");
         if (!appPath.isEmpty())
         {
-            appPath= QFileInfo(appPath).path();
+             appPath= QFileInfo(appPath).path();
         }
         else {
             appPath = QApplication::applicationDirPath();

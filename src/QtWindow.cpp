@@ -588,7 +588,7 @@ void QtWindow::about()
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
             "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net/</b></a><br><br>" +
-            tr("Copyright(c) L. J. Barman, 2008-2013; All rights reserved.<br>") +
+            tr("Copyright(c) L. J. Barman, 2008-2020; All rights reserved.<br>") +
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
             "<br>" +
             tr("This program is made available "
@@ -801,7 +801,7 @@ void QtWindow::refreshTranslate(){
         translationsDir=Util::dataDir()+"/translations/";
  #endif
  #ifdef Q_OS_DARWIN
-        QApplication::applicationDirPath() + "/../Resources/translations/";
+        translationsDir=QApplication::applicationDirPath() + "/../Resources/translations/";
  #endif
     }
     ppLogInfo("Translations loaded from '%s'",  qPrintable(translationsDir));
