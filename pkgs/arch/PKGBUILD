@@ -15,7 +15,7 @@ arch=('x86_64')
 groups=('qt5')
 url='https://github.com/captnfab/PianoBooster'
 license=('GPL3+')
-source=("${origname}-${pkgver}.tar.gz")
+source=("${origname}-${pkgver}.tar.gz::https://github.com/captnfab/PianoBooster/archive/v${pkgver}.tar.gz")
 md5sums=('SKIP')
 
 build () {
