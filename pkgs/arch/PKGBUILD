@@ -6,16 +6,16 @@ build_with_cmake="1"
 pkgdesc='A MIDI file player that teaches you how to play the piano'
 origname='PianoBooster'
 pkgname='pianobooster'
-pkgver=0.7.1
+pkgver=0.7.2b
 pkgrel=1
-makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'jack' 'fluidsynth' 'hicolor-icon-theme')
-depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'jack' 'libffado' 'fluidsynth' 'soundfont-fluid' 'libnotify')
+makedepends=('cmake' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'qt5-tools' 'jack' 'fluidsynth' 'hicolor-icon-theme' 'rtmidi')
+depends=('ttf-dejavu' 'unzip' 'hicolor-icon-theme' 'alsa-lib' 'freetype2' 'ftgl' 'mesa' 'glu' 'qt5-base' 'jack' 'libffado' 'fluidsynth' 'soundfont-fluid' 'libnotify' 'rtmidi')
 optdepends=('qt5-translations')
 arch=('x86_64')
 groups=('qt5')
 url='https://github.com/captnfab/PianoBooster'
 license=('GPL3+')
-source=("${origname}-${pkgver}.tar.gz")
+source=("${origname}-${pkgver}.tar.gz::https://github.com/captnfab/PianoBooster/archive/v${pkgver}.tar.gz")
 md5sums=('SKIP')
 
 build () {
