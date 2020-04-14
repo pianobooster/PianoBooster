@@ -128,7 +128,7 @@ void GuiMidiSetupDialog::updateMidiInfoText()
     else if (midiOutputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
     else if (midiOutputCombo->currentText().contains("Microsoft GS Wavetable", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.") + "\n"
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!") + "\n"
                                 + tr("(Try a latency fix of 150msc)") + "</span>");
     else
         midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device:") + " " + midiOutputCombo->currentText() +"</span>");
