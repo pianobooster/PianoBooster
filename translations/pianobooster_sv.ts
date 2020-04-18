@@ -6,37 +6,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="311"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="312"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="314"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="315"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="316"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
 </context>
 <context>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="233"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>Noggrannhet:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="240"/>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>FEL INGET LJUD: För att åtgärda detta använd menyn Installation/Midi-installation...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel INGEN MIDI-FIL: För att åtgärda detta använd menyn Arkiv/Öppna ...</translation>
     </message>
 </context>
 <context>
@@ -90,12 +90,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
         <source>Bright Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Ljust piano</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektrisk Grand</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation type="unfinished"></translation>
+        <translation>Marimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
@@ -365,7 +365,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Trumpet</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
@@ -375,7 +375,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Oboe</source>
-        <translation type="unfinished"></translation>
+        <translation>Oboe</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
@@ -470,7 +470,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
         <source>Shakuhachi</source>
-        <translation type="unfinished"></translation>
+        <translation>Shakuhachi</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
@@ -600,7 +600,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
         <source>FX 8 (sci-fi)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 8 (sci-fi)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
@@ -610,22 +610,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation type="unfinished"></translation>
+        <translation>Banjo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation type="unfinished"></translation>
+        <translation>Shamisen</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation type="unfinished"></translation>
+        <translation>Koto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -650,7 +650,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>Agogo</source>
-        <translation type="unfinished"></translation>
+        <translation>Agogo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
@@ -733,7 +733,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
@@ -771,7 +771,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Keyboardets tonräckvidd</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
@@ -802,12 +802,12 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj rätt och fel ljud för ditt spelande.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan använda PC-tangentbordet istället för en MIDI-keyboard; &apos;x&apos; är mitt C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
@@ -888,7 +888,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>
         <source>Buffer Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Buffertstorlek:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
@@ -903,17 +903,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Sound Font</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Rensa</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -928,7 +928,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Buffertantal:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
@@ -963,7 +963,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Obs: Microsoft GS Wavetable Synth introducerar en oönskad försening!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -988,33 +988,33 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
         <source>Open SoundFont File for fluidsynth</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna SoundFont-fil för fluidsynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>SoundFont-filer (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
         <source>Midi Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Midi-installation</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="147"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen ljudutgångsenhet vald; Välj en Midi-utgångsenhet</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="142"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="149"/>
         <source>The use of Midi Through is not recommended!</source>
-        <translation type="unfinished"></translation>
+        <translation>Användning av Midi Through rekommenderas inte!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="140"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om du inte har en MIDI-keyboard kan du använda PC-tangentbordet; &quot;X&quot; är mitt C.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
@@ -1037,7 +1037,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
         <source>Score Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Betygsinställningar</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="96"/>
@@ -1047,12 +1047,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="57"/>
         <source>Follow stop point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Följ stoppunkt:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa notnamn</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
@@ -1067,22 +1067,22 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
         <source>Show color coded notes on the score</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa färgkodade noter på poängen</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
         <source>Color Coded Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Färgkodade noter</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Music Course</source>
-        <translation type="unfinished"></translation>
+        <translation>Musikkurs</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
         <source>Show Tutor Help Pages</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa hjälpsidor för lärare</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="194"/>
@@ -1102,22 +1102,22 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Automatic (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk (rekommenderas)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>On the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>På takten</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>After the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>Efter takten</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemspråk</translation>
     </message>
 </context>
 <context>
@@ -1180,7 +1180,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"></translation>
+        <translation>Upprepa låten</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
