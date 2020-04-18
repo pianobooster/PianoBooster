@@ -7,7 +7,7 @@
 %endif
 
 Name:           pianobooster
-Version:        0.7.1
+Version:        0.7.2b
 Release:        %mkrel 1
 Summary:        A MIDI file player that teaches you how to play the piano
 %if 0%{?mageia}

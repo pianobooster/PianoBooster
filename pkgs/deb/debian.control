@@ -1,7 +1,7 @@
 Source: pianobooster
 Section: games
 Priority: optional
-Maintainer: Alexey Loginov <alexl@mageia.org>
+Maintainer: Louis Barman <louisjbarman@gmail.com>
 Build-Depends:
  cmake,
  debhelper-compat (= 12),

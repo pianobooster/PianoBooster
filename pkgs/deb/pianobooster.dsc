@@ -2,8 +2,8 @@ Format: 3.0 (quilt)
 Source: pianobooster
 Binary: pianobooster
 Architecture: any
-Version: 0.7.1
-Maintainer: Alexey Loginov <alexl@mageia.org>
+Version: 0.7.2b
+Maintainer: Louis Barman <louisjbarman@gmail.com>
 Homepage: https://github.com/captnfab/PianoBooster
 Standards-Version: 4.4.0
 Build-Depends:
@@ -22,4 +22,4 @@ Build-Depends:
 Package-List:
  pianobooster deb games optional arch=any
 Files:
- 7e32ca7fc4eb65ac39a5bc5d95cd5709 8511345 PianoBooster-0.7.1.tar.gz
+ 7e32ca7fc4eb65ac39a5bc5d95cd5709 8511345 PianoBooster-v0.7.2b.tar.gz

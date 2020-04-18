@@ -1,3 +1,6 @@
+pianobooster (v0.7.2b) unstable; urgency=medium
+
+
 pianobooster (0.7.0) unstable; urgency=medium
 
   * Better installation by 'make install'
