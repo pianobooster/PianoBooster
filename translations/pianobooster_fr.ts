@@ -807,12 +807,12 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation>Vous pouvez utiliser le clavier alphanumérique à la place du clavier-MIDI;  &apos;x&apos; est le Do du milieu.</translation>
+        <translation>Vous pouvez utiliser le clavier alphanumérique à la place du clavier MIDI ; &apos;x&apos; est le Do du milieu.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation>L&apos;étendue de votre clavier est de &lt;b&gt;%1 octaves&lt;/b&gt; et &lt;b&gt;%2 demi-tons&lt;/b&gt;; 60 est le Do du milieu.</translation>
+        <translation>L&apos;étendue de votre clavier est de &lt;b&gt;%1 octaves&lt;/b&gt; et &lt;b&gt;%2 demi-tons&lt;/b&gt; ; 60 est le Do du milieu.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
@@ -903,7 +903,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="235"/>
         <source>Buffer Counts:</source>
-        <translation>Compteurs du tampon:</translation>
+        <translation>Compteurs du tampon :</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="255"/>
@@ -913,7 +913,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
         <source>Buffer Size:</source>
-        <translation>Taille du tampon:</translation>
+        <translation>Taille du tampon :</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="208"/>
@@ -998,7 +998,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation>Pas de périphérique de sortie audio sélectionnée; choisissez un périphérique de sortie MIDI</translation>
+        <translation>Pas de périphérique de sortie audio sélectionné ; choisissez un périphérique de sortie MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="123"/>
@@ -1009,7 +1009,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="121"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
-        <translation>Si vous n&apos;avez pas de clavier-piano MIDI, vous pouvez utiliser le clavier alphanumérique; &apos;X&apos; est le Do du milieu.</translation>
+        <translation>Si vous n&apos;avez pas de clavier MIDI, vous pouvez utiliser le clavier alphanumérique ; &apos;X&apos; est le Do du milieu.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="125"/>
@@ -1838,12 +1838,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="597"/>
         <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation>Copyright(c) L. J. Barman, 2008-2013; Tout droits réservés.&lt;br&gt;</translation>
+        <translation>Copyright(c) L. J. Barman, 2008-2013 ; Tous droits réservés.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="598"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation>Copyright(c) Fabien Givors, 2018-2019; Tout droits réservés.&lt;br&gt;</translation>
+        <translation>Copyright(c) Fabien Givors, 2018-2019 ; Tous droits réservés.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
@@ -1858,7 +1858,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="606"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation>Copyright(c) Gary P. Scavone, 2003-2019; Tout droits réservés.</translation>
+        <translation>Copyright(c) Gary P. Scavone, 2003-2019 ; Tous droits réservés.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="615"/>

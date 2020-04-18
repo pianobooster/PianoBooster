@@ -1611,7 +1611,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="356"/>
         <source>Ctrl+K</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+K</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="357"/>
@@ -1626,12 +1626,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="361"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Fullskjermsmodus</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="362"/>
         <source>F11</source>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="366"/>
@@ -1646,7 +1646,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="368"/>
         <source>F12</source>
-        <translation type="unfinished"></translation>
+        <translation>F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="373"/>
@@ -1691,7 +1691,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="398"/>
         <source>Alt+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="427"/>
@@ -1758,7 +1758,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="564"/>
         <source>or</source>
-        <translation type="unfinished"></translation>
+        <translation>eller</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
@@ -1768,7 +1768,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;Oppsett&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
@@ -1798,7 +1798,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="580"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>nettside</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="581"/>
@@ -1808,17 +1808,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="581"/>
         <source>FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>O-S-S</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="582"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>og</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="582"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>forumet</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
@@ -1909,7 +1909,7 @@
         <location filename="../src/QtWindow.cpp" line="647"/>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Increase the speed by 5%</source>
-        <translation type="unfinished"></translation>
+        <translation>Øk hastigheten med 5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
