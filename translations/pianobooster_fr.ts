@@ -1057,7 +1057,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
-        <translation>Amabilité des accidents</translation>
+        <translation>altérations de précaution</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
