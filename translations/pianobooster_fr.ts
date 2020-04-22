@@ -903,17 +903,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Banque de son</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettoyer</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -928,7 +928,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de tampons :</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
@@ -963,7 +963,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Note : le Microsoft GS Wavetable Synth introduit un retard indésirable !</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -988,12 +988,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
         <source>Open SoundFont File for fluidsynth</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le fichier SoundFont pour fluidsynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers de banque de son (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
@@ -1117,7 +1117,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Langue système</translation>
     </message>
 </context>
 <context>
@@ -1685,7 +1685,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="389"/>
@@ -1842,12 +1842,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="591"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished">Copyright(c) L. J. Barman, 2008-2013 ; Tous droits réservés.&lt;br&gt; {2008-2020;?}</translation>
+        <translation>Copyright(c) L. J. Barman, 2008-2020 ; tous droits réservés.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation>Copyright(c) Fabien Givors, 2018-2019 ; Tous droits réservés.&lt;br&gt;</translation>
+        <translation>Copyright(c) Fabien Givors, 2018-2019 ; tous droits réservés.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="594"/>
@@ -1862,7 +1862,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="601"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation>Copyright(c) Gary P. Scavone, 2003-2019 ; Tous droits réservés.</translation>
+        <translation>Copyright(c) Gary P. Scavone, 2003-2019 ; tous droits réservés.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="610"/>
