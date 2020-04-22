@@ -1052,7 +1052,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
-        <translation>Affiche le nom des notes</translation>
+        <translation>Afficher le nom des notes</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
