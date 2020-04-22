@@ -943,7 +943,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="352"/>
         <source>0 (msec)</source>
-        <translation>0 (msec)</translation>
+        <translation>0 (ms)</translation>
     </message>
 </context>
 <context>
@@ -973,7 +973,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>%1 mSec</source>
-        <translation>%1 mSec</translation>
+        <translation>%1 ms</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="174"/>
@@ -1024,7 +1024,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation>(Essayez une correction de latence de 150msc)</translation>
+        <translation>(Essayez une correction de latence de 150 ms)</translation>
     </message>
 </context>
 <context>
