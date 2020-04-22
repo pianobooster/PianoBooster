@@ -67,7 +67,9 @@
         <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Start With Middle C&lt;/strong&gt; is an extremely easy piece. Just find &lt;strong&gt;middle C&lt;/strong&gt; on the piano and then play that note four times using your &lt;strong&gt;thumb&lt;/strong&gt; on your &lt;strong&gt;right hand&lt;/strong&gt;. The first half of the piece has &lt;strong&gt;middle C&lt;/strong&gt; in the &lt;strong&gt;Treble Clef&lt;/strong&gt;, then for the second half of the piece the same &lt;strong&gt;middle C&lt;/strong&gt; note is shown the &lt;strong&gt;Bass Clef&lt;/strong&gt;. Play this using your &lt;strong&gt;thumb&lt;/strong&gt; on your &lt;strong&gt;left hand&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;Try to remember where &lt;strong&gt;Middle C&lt;/strong&gt; is on the piano - this is the most &lt;strong&gt;important note&lt;/strong&gt;!&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Start With Middle C&lt;/strong&gt; est une pièce extrêmement facile. Il suffit de trouver le &lt;strong&gt;do moyen&lt;/strong&gt; sur le piano et de jouer cette note quatre fois en utilisant le &lt;strong&gt;pouce&lt;/strong&gt; de votre &lt;strong&gt;main droite&lt;/strong&gt;. La première moitié de la pièce comporte un &lt;strong&gt;Do central&lt;/strong&gt; en &lt;strong&gt;clef de Sol&lt;/strong&gt;, puis pour la deuxième moitié de la pièce, la même note de &lt;strong&gt;Do central&lt;/strong&gt; est indiquée en &lt;strong&gt;clef de Fa&lt;/strong&gt;. Jouez cette note en utilisant le &lt;strong&gt;pouce&lt;/strong&gt; de votre &lt;strong&gt;main gauche&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Astuce :&lt;/strong&gt; &lt;em&gt;essayez de vous rappeler où se trouve le &lt;strong&gt;Do moyen&lt;/strong&gt; sur le piano - c&apos;est la &lt;strong&gt;note la plus importante&lt;/strong&gt;!&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
     <message>
         <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;The &lt;strong&gt;Chord of C Major&lt;/strong&gt; piece, introduces you to the chord of &lt;strong&gt;C Major&lt;/strong&gt; which has three notes &lt;strong&gt;Middle C&lt;/strong&gt;, &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;G&lt;/strong&gt;.&lt;/p&gt;
@@ -75,7 +77,11 @@
 &lt;p&gt;Use your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;C&lt;/strong&gt;, your &lt;strong&gt;middle finger&lt;/strong&gt; for &lt;strong&gt;E&lt;/strong&gt; and your &lt;strong&gt;little finger&lt;/strong&gt; for &lt;strong&gt;G&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;If you don&apos;t know the names of the notes on the score then turn on &lt;strong&gt;Show Note Names&lt;/strong&gt; from the PianoBooster &lt;strong&gt;Setup/Preferences&lt;/strong&gt; menu.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;La pièce &lt;strong&gt; Accord de Do majeur&lt;/strong&gt;, vous introduit à l&apos;accord de &lt;strong&gt;Do majeur&lt;/strong&gt; qui possède trois notes &lt;strong&gt;Do central&lt;/strong&gt;, &lt;strong&gt;Mi&lt;/strong&gt; et &lt;strong&gt;Sol&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Utilisez votre &lt;strong&gt;pouce&lt;/strong&gt; pour le &lt;strong&gt;Do&lt;/strong&gt;, votre &lt;strong&gt;majeur&lt;/strong&gt; pour le &lt;strong&gt;Mi&lt;/strong&gt; et votre &lt;strong&gt;auriculaire&lt;/strong&gt; pour le &lt;strong&gt;Sol&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Astuce :&lt;/strong&gt; &lt;em&gt;Si vous ne connaissez pas les noms des notes de la partition, alors activez l&apos;option &lt;strong&gt;Afficher le nom des notes&lt;/strong&gt; dans le menu &lt;strong&gt;Paramétrage/Préférences&lt;/strong&gt; de PianoBooster.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
     <message>
         <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Up And Down&lt;/strong&gt; uses all the fingers of your right hand to play the first five notes of the &lt;strong&gt;scale of C major&lt;/strong&gt;.&lt;/p&gt;
@@ -83,13 +89,19 @@
 &lt;p&gt;Use your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;C&lt;/strong&gt;, your &lt;strong&gt;index finger&lt;/strong&gt; for &lt;strong&gt;D&lt;/strong&gt;, . . . , all the way up to your &lt;strong&gt;little finger&lt;/strong&gt; for &lt;strong&gt;G&lt;/strong&gt;. Make sure you keep using the correct finger for each note.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;If you don&apos;t know the notes on the piano then &lt;strong&gt;label the piano keys&lt;/strong&gt; using the PianoBooster &lt;strong&gt;Note Chart&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Up And Down&lt;/strong&gt; utilise tous les doigts de votre main droite pour jouer les cinq premières notes de la &lt;strong&gt;gamme de Do majeur&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Utilisez votre &lt;strong&gt;pouce&lt;/strong&gt; pour le &lt;strong&gt;Do&lt;/strong&gt;, votre &lt;strong&gt;index finger&lt;/strong&gt; pour le &lt;strong&gt;Ré&lt;/strong&gt;, . . . , jusqu&apos;à votre &lt;strong&gt;auriculaire&lt;/strong&gt; pour le &lt;strong&gt;Sol&lt;/strong&gt;. Assurez-vous de toujours utiliser le bon doigt pour chaque note.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Astuce :&lt;/strong&gt; &lt;em&gt; si vous ne connaissez pas les notes du piano, alors &lt;strong&gt;étiquetez les touches du piano&lt;/strong&gt; à l&apos;aide du &lt;strong&gt;tableau de notes&lt;/strong&gt; de PianoBooster.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
     <message>
         <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;This is a simplified version of &lt;strong&gt;Clair De La Lune&lt;/strong&gt; that uses just three notes &lt;strong&gt;C D&lt;/strong&gt; and &lt;strong&gt;E&lt;/strong&gt; from your right hand. First find &lt;strong&gt;middle C&lt;/strong&gt; and always use your &lt;strong&gt;thumb&lt;/strong&gt; for this note, then for &lt;strong&gt;D&lt;/strong&gt; use your &lt;strong&gt;first finger&lt;/strong&gt; and for &lt;strong&gt;E&lt;/strong&gt; use &lt;strong&gt;middle finger&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;Remember the fingering: Use your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;middle C&lt;/strong&gt;, your &lt;strong&gt;first finger&lt;/strong&gt; for &lt;strong&gt;D&lt;/strong&gt; and &lt;strong&gt;middle finger&lt;/strong&gt; for &lt;strong&gt;E&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Il s&apos;agit d&apos;une version simplifiée de &lt;strong&gt; Au clair de la lune&lt;/strong&gt; qui utilise seulement trois notes &lt;strong&gt;Do, Ré&lt;/strong&gt; et &lt;strong&gt;Mi&lt;/strong&gt; de votre main droite. Trouvez d&apos;abord le &lt;strong&gt;Do central&lt;/strong&gt; et utilisez toujours votre &lt;strong&gt;pouce&lt;/strong&gt; pour cette note, puis pour le &lt;strong&gt;Ré&lt;/strong&gt; utilisez votre &lt;strong&gt;premier doigt&lt;/strong&gt; et pour le &lt;strong&gt;Mi&lt;/strong&gt; utilisez le &lt;strong&gt;majeur&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Astuce :&lt;/strong&gt; &lt;em&gt;souvenez vous du doigté : utilisez votre &lt;strong&gt;pouce&lt;/strong&gt; pour le &lt;strong&gt;Do central&lt;/strong&gt;, votre &lt;strong&gt;premier doigt&lt;/strong&gt; pour le &lt;strong&gt;Ré&lt;/strong&gt; et le &lt;strong&gt;majeur&lt;/strong&gt; pour le &lt;strong&gt;Mi&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
     <message>
         <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Now we are going to play using your &lt;strong&gt;left hand&lt;/strong&gt; the &lt;strong&gt;F major chord&lt;/strong&gt;. The three notes of a chord are called a triad and this chord has the same shape as the C major chord we played earlier but played on a different part of the piano.&lt;/p&gt;
@@ -97,7 +109,11 @@
 &lt;p&gt;Use your &lt;strong&gt;little finger&lt;/strong&gt; on the left hand for &lt;strong&gt;F&lt;/strong&gt;, your &lt;strong&gt;middle finger&lt;/strong&gt; for &lt;strong&gt;A&lt;/strong&gt; and your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;C&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;If you don&apos;t know the names of the notes on the score then turn on &lt;strong&gt;Show Note Names&lt;/strong&gt; from the PianoBooster &lt;strong&gt;Setup/Preferences&lt;/strong&gt; menu.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;Nous allons maintenant jouer de la &lt;strong&gt;main gauche&lt;/strong&gt; l&apos;&lt;strong&gt;accord en Fa majeur&lt;/strong&gt;. Les trois notes d&apos;un accord sont appelées une triade et cet accord a la même forme que l&apos;accord de Do majeur que nous avons joué précédemment mais sur une partie différente du piano.&lt;/p&gt;
+
+&lt;p&gt;Utilisez votre &lt;strong&gt;petit doigt&lt;/strong&gt; de la main gauche pour &lt;strong&gt;le Fa&lt;/strong&gt;, votre &lt;strong&gt;majeur&lt;/strong&gt; pour le &lt;strong&gt;La&lt;/strong&gt; et votre &lt;strong&gt;pouce&lt;/strong&gt; puor le &lt;strong&gt;Do&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Astuce : &lt;/strong&gt; &lt;em&gt;si vous ne connaissez pas les noms des notes de la partition, activez l&apos;option &lt;strong&gt;Afficher le nom des notes&lt;/strong&gt; dans le menu &lt;strong&gt;Paramètre/Préférences&lt;/strong&gt; de PianoBooster.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
     <message>
         <source>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Down And Up&lt;/strong&gt; is mirror version of the Up And Down piece we played earlier but this version uses your &lt;strong&gt;left hand&lt;/strong&gt;. These are the top five notes of the scale of C major. Again try to use all your fingers.&lt;/p&gt;
@@ -105,7 +121,11 @@
 &lt;p&gt;Use your &lt;strong&gt;thumb&lt;/strong&gt; for &lt;strong&gt;C&lt;/strong&gt;, your &lt;strong&gt;index finger&lt;/strong&gt; for &lt;strong&gt;B&lt;/strong&gt;, . . . , all the way down to your &lt;strong&gt;little finger&lt;/strong&gt; for &lt;strong&gt;F&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;em&gt;Make sure you use &lt;strong&gt;every finger&lt;/strong&gt; on your &lt;strong&gt;left hand&lt;/strong&gt; when playing this piece.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;body bgcolor=&quot;#FFFFC0&quot;&gt;&lt;p&gt;&lt;strong&gt;Down And Up&lt;/strong&gt; est une version miroir du morceau Up And Down que nous avons joué plus tôt, mais cette version utilise votre &lt;strong&gt;main gauche&lt;/strong&gt;. Ce sont les cinq premières notes de la gamme de Do majeur. Essayez à nouveau d&apos;utiliser tous vos doigts.&lt;/p&gt;
+
+&lt;p&gt;Utilisez votre &lt;strong&gt;pouce&lt;/strong&gt; pour le &lt;strong&gt;Do&lt;/strong&gt;, votre &lt;strong&gt;index&lt;/strong&gt; pour le &lt;strong&gt;Si&lt;/strong&gt;, . . . , jusqu&apos;à votre &lt;strong&gt;auriculaire&lt;/strong&gt; pour le &lt;strong&gt;Fa&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;#ff0000&quot;&gt;&lt;p&gt;&lt;strong&gt;Astuce :&lt;/strong&gt; &lt;em&gt; assurez-vous d&apos;utiliser &lt;strong&gt;tous les doigts&lt;/strong&gt; de votre &lt;strong&gt;main gauche&lt;/strong&gt; lorsque vous jouez ce morceau.&lt;/em&gt;&lt;/p&gt;&lt;/font&gt;&lt;/body&gt;</translation>
     </message>
 </context>
 </TS>
