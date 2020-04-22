@@ -282,7 +282,7 @@ private:
     CPiano* m_piano;
 
     CBar m_bar;
-    int m_leadLagAdjust; // Synchronise the sound the the video
+    int m_leadLagAdjust; // Synchronise the sound with the video
     int m_silenceTimeOut; // used to create silence if the student stops for toooo long
     CChord m_wantedChord;  // The chord the pianist needs to play
     CChord m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts

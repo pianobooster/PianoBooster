@@ -59,7 +59,7 @@ void CPiano::spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex)
         if  (gap < minNameGap)
         {
             gap = (minNameGap - gap)/2;
-            m_noteNameList[midPoint].posY += gap; // then move the middle two notes apart by the same amout
+            m_noteNameList[midPoint].posY += gap; // then move the middle two notes apart by the same amount
             m_noteNameList[midPoint-1].posY -= gap;
         }
     }
