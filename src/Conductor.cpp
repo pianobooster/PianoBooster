@@ -1075,7 +1075,7 @@ void CConductor::realTimeEngine(int mSecTicks)
         {
             int channel = m_nextMidiEvent.channel();
 
-            // Is this this channel_muted
+            // Is this channel_muted
             if (!hasPianistKeyboardChannel(channel))
             {
                 if (getfollowState() >= PB_FOLLOW_earlyNotes &&

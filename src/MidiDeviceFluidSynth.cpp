@@ -192,7 +192,7 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
             break;
 
         case MIDI_PITCH_BEND: //PITCH_BEND:
-            // a 14 bit number LSB first 0x4000 is the off posintions
+            // a 14 bit number LSB first 0x4000 is the off positions
             fluid_synth_pitch_bend(m_synth, channel, (event.data2() << 7) | event.data1());
                 break;
 

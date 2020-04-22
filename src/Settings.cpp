@@ -133,7 +133,7 @@ QDomElement CSettings::openDomElement(QDomElement parent, const QString & elemen
 
     debugSettings(("openDomElement1 %s %s %s", qPrintable(parent.tagName()), qPrintable(elementName), qPrintable(elementName)));
     // There should be only a single element without a name
-    // there should be lots of elemens but only one with this tag name
+    // there should be lots of elements but only one with this tag name
 
     QDomNode n = parent.firstChild();
     while(!n.isNull())
@@ -157,7 +157,7 @@ QDomElement CSettings::openDomElement(QDomElement parent, const QString & elemen
 
     if (wantedElement.isNull())
     {
-        // Create the element because it does not exsist
+        // Create the element because it does not exist
         wantedElement = m_domDocument.createElement(elementName);
         if (!attributeName.isEmpty() )
             wantedElement.setAttribute("name", attributeName);
@@ -476,7 +476,7 @@ void CSettings::unzipBoosterMusicBooks()
 
 #ifndef _WIN32
 
-        // on windows the the installer does the unzipping
+        // on windows the installer does the unzipping
         if (!zipFile.exists() )
         {
             ppLogError(qPrintable("Cannot find " + ZIPFILENAME));

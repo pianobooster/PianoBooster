@@ -60,7 +60,7 @@ bool CSlot::addSymbol(CSymbol symbol)
                 return true;
             break;
         }
-        // move the previous entry up one possition
+        // move the previous entry up one position
         m_symbols[i+1] = m_symbols[i];
     }
     m_symbols[i+1] = symbol;
