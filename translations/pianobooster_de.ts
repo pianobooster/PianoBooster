@@ -908,7 +908,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Laden</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
@@ -1024,7 +1024,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation>(Probieren Sie eine Latenzkorrektur von 150ms aus)</translation>
+        <translation>(Probieren Sie eine Latenzkorrektur von 150 ms aus)</translation>
     </message>
 </context>
 <context>
@@ -1117,7 +1117,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemsprache</translation>
     </message>
 </context>
 <context>
@@ -1180,7 +1180,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"></translation>
+        <translation>Lied wiederholen</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
@@ -1287,7 +1287,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="68"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation>Die Kanäle der linken und der rechten Hand müssen auf &quot;Kein&quot; gesetzt sein, um dieses Feature zu deaktivieren</translation>
+        <translation>Die Kanäle der linken und der rechten Hand müssen auf „Kein“ gesetzt sein, um dieses Feature zu deaktivieren</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="71"/>
@@ -1321,7 +1321,7 @@
         <location filename="../src/GuiTopBar.ui" line="78"/>
         <location filename="../src/GuiTopBar.cpp" line="173"/>
         <source>Start and stop playing music</source>
-        <translation>Starten und stoppen die Musik zu spielen</translation>
+        <translation>Musikwiedergabe starten und stoppen</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
@@ -1467,12 +1467,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="91"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation>Kann &quot;%1&quot; nicht öffnen</translation>
+        <translation>Kann „%1“ nicht öffnen</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="98"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation>MIDI-Datei &quot;%1&quot; ist beschädigt</translation>
+        <translation>MIDI-Datei „%1“ ist beschädigt</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="55"/>
