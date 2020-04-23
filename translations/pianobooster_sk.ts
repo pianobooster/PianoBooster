@@ -963,7 +963,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Poznámka: Microsoft GS Wavetable Synth prináša nežiaduce oneskorenie!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -988,12 +988,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
         <source>Open SoundFont File for fluidsynth</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvoriť súbor SoundFont pre fluidsynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Súbory SoundFont (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
@@ -1117,7 +1117,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyk systému</translation>
     </message>
 </context>
 <context>
@@ -1685,7 +1685,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="389"/>
@@ -1842,7 +1842,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="591"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished">Kopírovacie právo (c) L. J. Barman, 2008-2013; Všetky práva vyhradené.&lt;br&gt; {2008-2020;?}</translation>
+        <translation>Kopírovacie právo (c) L. J. Barman, 2008-2020; Všetky práva vyhradené.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
