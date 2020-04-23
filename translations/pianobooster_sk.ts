@@ -928,7 +928,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation>Množstvo vyrovnávajúcej pamäte:</translation>
+        <translation>Množstvo vyrovnávacej pamäte:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
