@@ -903,17 +903,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zvuková banka</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Načíst</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčistit</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -928,7 +928,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Množství vyrovnávací paměti:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
@@ -963,7 +963,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Poznámka: GS Wavetable Synth od Microsoftu přináší nechtěné opožení!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -988,12 +988,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
         <source>Open SoundFont File for fluidsynth</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít soubory typu SoundFont pro fluidsynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory typu SoundFont (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
@@ -1117,7 +1117,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Systémový jazyk</translation>
     </message>
 </context>
 <context>
@@ -1685,7 +1685,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="389"/>
@@ -1842,7 +1842,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="591"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished">Kopírovací právo (c) L. J. Barman, 2008-2013; Všechna práva vyhrazena.&lt;br&gt; {2008-2020;?}</translation>
+        <translation>Kopírovací právo (c) L. J. Barman, 2008-2020; Všechna práva vyhrazena.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
