@@ -54,7 +54,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="263"/>
         <source>Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra:</translation>
     </message>
 </context>
 <context>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ERRO SEM SOM: para corrigi-lo use o menu Configurações / Configurações Midi ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ERRO NENHUM ARQUIVO MIDI: para corrigi-lo isso use o menu Ficheiro/Abrir ...</translation>
     </message>
 </context>
 <context>
@@ -120,12 +120,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="363"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation>Clavi</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="364"/>
         <source>Celesta</source>
-        <translation type="unfinished"></translation>
+        <translation>Celesta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
@@ -250,12 +250,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baixo Elétrico (dedo)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baixo Elétrico (pick)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation type="unfinished"></translation>
+        <translation>Viola</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="402"/>
         <source>Orchestral Harp</source>
-        <translation type="unfinished"></translation>
+        <translation>Harpa Orquestral</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
@@ -355,7 +355,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Synth Voice</source>
-        <translation type="unfinished"></translation>
+        <translation>Sintetizador De Voz</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
@@ -370,12 +370,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation type="unfinished"></translation>
+        <translation>Trombone</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -480,7 +480,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Ocarina</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocarina</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
