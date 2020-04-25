@@ -265,12 +265,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="392"/>
         <source>Slap Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>El-bass (slap 1)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="393"/>
         <source>Slap Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>El-bass (slap 2)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="394"/>
@@ -525,7 +525,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="444"/>
         <source>Pad 1 (new age)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lydplate 1 (new age)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="445"/>
@@ -535,7 +535,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="446"/>
         <source>Pad 3 (polysynth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lydplate 3 (polysynth)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="447"/>
@@ -555,12 +555,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="450"/>
         <source>Pad 7 (halo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lydplate 7 (glorie)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="451"/>
         <source>Pad 8 (sweep)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lydplate 8 (sveip)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
@@ -615,17 +615,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation type="unfinished"></translation>
+        <translation>Samisen</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation type="unfinished"></translation>
+        <translation>Koto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -749,7 +749,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="140"/>
         <source>sound:</source>
-        <translation type="unfinished"></translation>
+        <translation>lyd:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
@@ -973,7 +973,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>%1 mSec</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ms</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="174"/>
@@ -993,7 +993,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>SoundFont-filer (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
@@ -1267,7 +1267,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="33"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-kanaler for venstre- og høyrehåndspianodeler</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="45"/>
@@ -1655,7 +1655,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis pianoklaviatur-miniprogram</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="378"/>
@@ -1675,7 +1675,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
         <source>Song &amp;Details ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spor og detaljer …</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="384"/>
@@ -1792,7 +1792,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Pianohint</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="572"/>
@@ -1842,12 +1842,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="591"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opphavsrett © L. J. Barman, 2008-2020.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opphavsrett © Fabien Givors, 2018-2019.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="594"/>
@@ -1857,17 +1857,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dette programmer inneholder også RtMIDI: Sanntids MIDI-I/O-C++ classes&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="601"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opphavsrett © Gary P. Scavone, 2003-2019.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="610"/>
         <source>space</source>
-        <translation type="unfinished"></translation>
+        <translation>mellomrom</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
