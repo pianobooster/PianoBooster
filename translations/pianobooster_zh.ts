@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>F</source>
-        <translation>E</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="314"/>
@@ -1680,7 +1680,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Song Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>歌曲设置</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
@@ -1802,7 +1802,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="574"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>网站</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
