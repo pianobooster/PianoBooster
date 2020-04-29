@@ -235,7 +235,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="386"/>
         <source>Distortion Guitar</source>
-        <translation>Розладнана  гітара</translation>
+        <translation>Розладнана гітара</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="387"/>
@@ -1752,12 +1752,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="551"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Вам знадобиться &lt;b&gt;клавіатура MIDI піаніно &lt;/b&gt; та &lt;b&gt;інтерфейс MIDI&lt;/b&gt; для ПК. Якщо у вас немає MIDI-клавіатури, ви можете спробувати користуватися PianoBooster за допомогою клавіатури комп&apos;ютера — «X» — середня «до».&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="554"/>
         <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Щоб чути музику, вам потрібен &lt;b&gt;Типовий звуковий синтезатор MIDI&lt;/b&gt;. Можна скористатися «Програмним синтезатором Microsoft GS Wavetable», який постачається разом із Windows, але його використання призводить до неприйнятної затримки відтворення (латентності). У Linux ви можете скористатися </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="558"/>
@@ -1767,62 +1767,62 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="560"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster дає найкращі результати з файлами MIDI, у який відокремлено ліву і праву частину піаніно на основі використання каналів MIDI 3 та 4.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="562"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Налаштовування&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="563"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Спочатку скористайтеся пунктом меню &lt;i&gt;Налаштування/Налаштувати MIDI&lt;/i&gt;. У діалоговому вікні виберіть вхідний та вихідний інтерфейси MIDI, які відповідають вашому обладнанню. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="565"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation type="unfinished"></translation>
+        <translation>Далі, скористайтеся пунктом меню &lt;i&gt;Файл/Відкрити&lt;/i&gt;, щоб відкрити файл MIDI «.mid» або файл караоке «.kar». Тепер виберіть, хочете ви просто &lt;i&gt;прослухати&lt;/i&gt; музику, чи &lt;i&gt;зіграти&lt;/i&gt; її на клавіатурі, встановивши рівень &lt;i&gt;майстерності&lt;/i&gt; на бічній панелі. Нарешті, коли будете готові, натисніть &lt;i&gt;піктограму відтворення&lt;/i&gt; (або клавішу &lt;i&gt;Пробіл&lt;/i&gt;), щоб почати вправу.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Підказки щодо гри на піаніно&lt;/h3&gt;&lt;p&gt;Підказки щодо гри на піаніно можна знайти тут: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Підказки щодо піаніно</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="572"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Докладніші відомості&lt;/h3&gt;&lt;p&gt;Щоб дізнатися більше, будь ласка, відвідайте </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="574"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>сайт PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="575"/>
         <source>FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Поширені питання щодо PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="576"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>та</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="576"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>форум користувачів</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="586"/>
@@ -1842,7 +1842,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="591"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished">© L. J. Barman, 2008-2013; усі права захищено.&lt;br&gt; {2008-2020;?}</translation>
+        <translation>© L. J. Barman, 2008-2020; усі права захищено.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>

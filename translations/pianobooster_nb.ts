@@ -49,12 +49,12 @@
     <message>
         <location filename="../src/GlView.cpp" line="240"/>
         <source>Song:</source>
-        <translation type="unfinished">Sang:</translation>
+        <translation>Spor:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="263"/>
         <source>Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Takt:</translation>
     </message>
 </context>
 <context>
@@ -62,17 +62,17 @@
     <message>
         <location filename="../src/Settings.cpp" line="393"/>
         <source>space</source>
-        <translation type="unfinished"></translation>
+        <translation>mellomrom</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Feil, ingen lyd: For å fikse dette bruk &quot;Oppsett&quot; → &quot;MIDI-oppsett&quot; fra menyen.</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil, ingen MIDI-fil: For å fikse dette bruk &quot;Fil&quot; → &quot;Åpne&quot; fra menyen.</translation>
     </message>
 </context>
 <context>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="358"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektrisk klaver</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
@@ -160,7 +160,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="371"/>
         <source>Dulcimer</source>
-        <translation type="unfinished"></translation>
+        <translation>Dulcimer</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="372"/>
@@ -265,12 +265,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="392"/>
         <source>Slap Bass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>El-bass (slap 1)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="393"/>
         <source>Slap Bass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>El-bass (slap 2)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="394"/>
@@ -295,7 +295,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
         <source>Cello</source>
-        <translation type="unfinished"></translation>
+        <translation>Cello</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
@@ -525,7 +525,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="444"/>
         <source>Pad 1 (new age)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lydplate 1 (new age)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="445"/>
@@ -535,7 +535,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="446"/>
         <source>Pad 3 (polysynth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lydplate 3 (polysynth)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="447"/>
@@ -555,12 +555,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="450"/>
         <source>Pad 7 (halo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lydplate 7 (glorie)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="451"/>
         <source>Pad 8 (sweep)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lydplate 8 (sveip)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
@@ -605,27 +605,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="460"/>
         <source>Sitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Banjo</source>
-        <translation type="unfinished"></translation>
+        <translation>Banjo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
         <source>Shamisen</source>
-        <translation type="unfinished"></translation>
+        <translation>Samisen</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="463"/>
         <source>Koto</source>
-        <translation type="unfinished"></translation>
+        <translation>Koto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="464"/>
         <source>Kalimba</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
@@ -728,7 +728,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstillinger for piano-tangentbord</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
@@ -738,7 +738,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Sett opp ditt piano-klaviatur</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
@@ -749,7 +749,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="140"/>
         <source>sound:</source>
-        <translation type="unfinished"></translation>
+        <translation>lyd:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
@@ -766,28 +766,28 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Feilaktige noter</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Kebyoard-notespennvidde</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Laveste note:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation type="unfinished"></translation>
+        <translation>Notenummer mellom 0 og 127</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Høyeste note:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
@@ -802,22 +802,22 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg riktig og feil lyd for spillingen din.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Du kan  bruke PC-tastatur istedenfor et MIDI-keyboard; &quot;x&quot; er midt-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tastaturtoneområdet er &lt;b&gt;oktaver %1&lt;/b&gt; og &lt;b&gt;halvtoner %2&lt;/b&gt;; 60 er midt-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Oida, du har &lt;b&gt;0 noter&lt;/b&gt; på tangentbordet.</translation>
     </message>
 </context>
 <context>
@@ -825,7 +825,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="37"/>
         <source>Continuous Looping</source>
-        <translation type="unfinished"></translation>
+        <translation>Evig gjentagelse</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
@@ -850,7 +850,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
         <source>End bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Slutt-takt</translation>
     </message>
 </context>
 <context>
@@ -858,7 +858,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="27"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-inngang og utgang</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="49"/>
@@ -888,7 +888,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>
         <source>Buffer Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mellomlagerstørrelse:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
@@ -903,17 +903,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Lydskrift</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Last inn</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Tøm</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -928,12 +928,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mellomlagerantall:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
         <source>Latency Fix</source>
-        <translation type="unfinished"></translation>
+        <translation>Forsinkelsesfiks</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="339"/>
@@ -951,7 +951,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="115"/>
         <source>None (PC Keyboard)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen (PC-tastatur)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
@@ -973,12 +973,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>%1 mSec</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ms</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="174"/>
         <source>Enter a value for the latency fix in milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn antall millisekunders forsinkelsesverdi</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="175"/>
@@ -993,7 +993,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>SoundFont-filer (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
@@ -1052,7 +1052,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis notenavn</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
@@ -1072,7 +1072,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
         <source>Color Coded Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargekodede noter</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
@@ -1107,17 +1107,17 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>On the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>På takten</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>After the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>Etter takten</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemspråk</translation>
     </message>
 </context>
 <context>
@@ -1180,7 +1180,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjenta spor</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
@@ -1210,12 +1210,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
         <source>Follow You</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Følger deg</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="239"/>
         <source>Mute your part when playing</source>
-        <translation type="unfinished"></translation>
+        <translation>Forstum din del under avspilling</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="79"/>
@@ -1267,42 +1267,42 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="33"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-kanaler for venstre- og høyrehåndspianodeler</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="45"/>
         <source>Right Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Høyrehånds-MIDI-kanal:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="68"/>
         <source>Left Hand MIDI Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Venstrehånds-MIDI-kanal:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="65"/>
         <source>The left and right hand channels must be different</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre- og høyrehåndskanaler må være forskjellige</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="68"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Både venstre- og høyrehåndskanaler må være &quot;Ingen&quot; for å skru av denne funksjonen</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="71"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Velg MIDI-kanaler å bruke for venstre- og høyre- pianohåndsdeler:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="72"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">venstrehåndspianodel bruker MIDI-kanal 1</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation type="unfinished"></translation>
+        <translation>høyrehåndspianodel bruker MIDI-kanal 1</translation>
     </message>
 </context>
 <context>
@@ -1341,12 +1341,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Starttakt:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre dette taktnummeret</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="54"/>
@@ -1467,12 +1467,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="91"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke åpne &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="98"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-filen &quot;%1&quot; er skadet</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="55"/>
@@ -1525,17 +1525,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="220"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke åpne &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="228"/>
         <source>&quot;%1&quot; is not a Midi File</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; er ikke en MIDI-fil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="252"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; er ikke en gyldig MIDI-fil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="328"/>
@@ -1600,7 +1600,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Setup the Midi input and output</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Velg MIDI-inngang og utgang</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="351"/>
@@ -1655,7 +1655,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis pianoklaviatur-miniprogram</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="378"/>
@@ -1675,22 +1675,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="383"/>
         <source>Song &amp;Details ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spor og detaljer …</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="384"/>
         <source>Song Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Spor-innstillinger</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="385"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="389"/>
         <source>Shift+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="394"/>
@@ -1710,7 +1710,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="436"/>
         <source>&amp;Song</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Spor</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="440"/>
@@ -1727,7 +1727,7 @@
         <location filename="../src/QtWindow.cpp" line="451"/>
         <location filename="../src/QtWindow.cpp" line="548"/>
         <source>Piano Booster Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Booster-hjelp</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="455"/>
@@ -1737,7 +1737,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="456"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Booster-nettside</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="499"/>
@@ -1792,7 +1792,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Pianohint</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="572"/>
@@ -1842,12 +1842,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="591"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opphavsrett © L. J. Barman, 2008-2020.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="592"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opphavsrett © Fabien Givors, 2018-2019.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="594"/>
@@ -1857,17 +1857,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dette programmer inneholder også RtMIDI: Sanntids MIDI-I/O-C++ classes&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="601"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opphavsrett © Gary P. Scavone, 2003-2019.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="610"/>
         <source>space</source>
-        <translation type="unfinished"></translation>
+        <translation>mellomrom</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
@@ -1887,17 +1887,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="637"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg høyre hånd</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="638"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg begge hender</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="639"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg venstre hånd</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="640"/>
@@ -1907,7 +1907,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="641"/>
         <source>Play Pause Toggle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Veksle avspilling og pause</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="642"/>
