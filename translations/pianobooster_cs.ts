@@ -903,7 +903,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation type="unfinished">Zvuková banka</translation>
+        <translation>Zvuková banka</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
@@ -963,7 +963,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation>Poznámka: GS Wavetable Synth od Microsoftu přináší nechtěné opožení!</translation>
+        <translation>Poznámka: GS Wavetable Synth od Microsoftu přináší nechtěné zpoždění!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -1757,7 +1757,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="554"/>
         <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
-        <translation>&lt;p&gt;Na to, aby jste mohli slyšel zvuk budete potřebovat  &lt;b&gt;Syntezátor zvuku MIDI&lt;/b&gt;. Operační systém windows obsahuje &quot;Microsoft GS Wavetable software synthesizer&quot;, bohužel tento software dosahuje vysokého spoždění (latence). Na linuxu můžete použít </translation>
+        <translation>&lt;p&gt;Na to, abyste mohli slyšet zvuk budete potřebovat  &lt;b&gt;Syntezátor zvuku MIDI&lt;/b&gt;. Operační systém Windows obsahuje &quot;Microsoft GS Wavetable software synthesizer&quot;. Bohužel tento software dosahuje nepřijatelně vysokého zpoždění (prodlevy, latence). Na Linuxu můžete použít </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="558"/>
