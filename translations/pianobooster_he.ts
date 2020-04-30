@@ -1913,27 +1913,27 @@
         <location filename="../src/QtWindow.cpp" line="642"/>
         <location filename="../src/QtWindow.cpp" line="643"/>
         <source>Increase the speed by 5%</source>
-        <translation type="unfinished"></translation>
+        <translation>הגברת המהירות ב־5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="644"/>
         <source>Change to the Next Song</source>
-        <translation type="unfinished"></translation>
+        <translation>מעבר לשיר הבא</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="645"/>
         <source>Change to the Previous Song</source>
-        <translation type="unfinished"></translation>
+        <translation>מעבר לשיר הקודם</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="646"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"></translation>
+        <translation>מעבר לספר הבא</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="647"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"></translation>
+        <translation>מעבר לספר הקודם</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
