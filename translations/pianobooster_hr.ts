@@ -6,37 +6,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="311"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="312"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="314"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="315"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="316"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
 </context>
 <context>
@@ -44,17 +44,17 @@
     <message>
         <location filename="../src/GlView.cpp" line="233"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>Točnost:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="240"/>
         <source>Song:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pjesma:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="263"/>
         <source>Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Takt:</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="393"/>
         <source>space</source>
-        <translation type="unfinished"></translation>
+        <translation>spacija</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
@@ -80,12 +80,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="355"/>
         <source>(None)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Ništa)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="356"/>
         <source>Grand Piano</source>
-        <translation>Koncertni glasovir</translation>
+        <translation>Koncertni klavir</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="357"/>
@@ -100,17 +100,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="359"/>
         <source>Honky-tonk Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Honky-tonk klavir</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="360"/>
         <source>Electric Piano 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Električni klavir 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="361"/>
         <source>Electric Piano 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Električni klavir 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="362"/>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="365"/>
         <source>Glockenspiel</source>
-        <translation type="unfinished"></translation>
+        <translation>Orkestralna zvona</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="366"/>
@@ -145,12 +145,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="368"/>
         <source>Marimba</source>
-        <translation type="unfinished"></translation>
+        <translation>Marimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="369"/>
         <source>Xylophone</source>
-        <translation type="unfinished"></translation>
+        <translation>Ksilofon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="370"/>
@@ -170,17 +170,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="373"/>
         <source>Percussive Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Udarne orgulje</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="374"/>
         <source>Rock Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Rock orgulja</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="375"/>
         <source>Church Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Crkvena orgulja</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="378"/>
         <source>Harmonica</source>
-        <translation type="unfinished"></translation>
+        <translation>Usna harmonika</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="379"/>
@@ -205,27 +205,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="380"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Akustična gitara (najlon)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="381"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation type="unfinished"></translation>
+        <translation>Akustična gitara (čelik)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="382"/>
         <source>Electric Guitar (jazz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Električna gitara (jazz)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="383"/>
         <source>Electric Guitar (clean)</source>
-        <translation type="unfinished"></translation>
+        <translation>Električna gitara (nepojačana)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="384"/>
         <source>Electric Guitar (muted)</source>
-        <translation type="unfinished"></translation>
+        <translation>Električna gitara (utišana)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="385"/>
@@ -245,17 +245,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="388"/>
         <source>Acoustic Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Akustični bas</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="389"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"></translation>
+        <translation>Električni bas (prsti)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="390"/>
         <source>Electric Bass (pick)</source>
-        <translation type="unfinished"></translation>
+        <translation>Električni bas (plektron)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="391"/>
@@ -290,12 +290,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="397"/>
         <source>Viola</source>
-        <translation type="unfinished"></translation>
+        <translation>Viola</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="398"/>
         <source>Cello</source>
-        <translation type="unfinished"></translation>
+        <translation>Violončelo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="399"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="402"/>
         <source>Orchestral Harp</source>
-        <translation type="unfinished"></translation>
+        <translation>Orkestralna harfa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="403"/>
@@ -365,22 +365,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Truba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
         <source>Trombone</source>
-        <translation type="unfinished"></translation>
+        <translation>Trombon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Tuba</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
         <source>Muted Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Stišana truba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
@@ -405,22 +405,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
         <source>Soprano Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Soprano saksofon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="421"/>
         <source>Alto Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt saksofon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="422"/>
         <source>Tenor Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Tenor saksofon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Baritone Sax</source>
-        <translation type="unfinished"></translation>
+        <translation>Bariton saksofon</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
@@ -440,12 +440,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
         <source>Clarinet</source>
-        <translation type="unfinished"></translation>
+        <translation>Klarinet</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
         <source>Piccolo</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikolo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
@@ -455,17 +455,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Rekorder</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Pan Flute</source>
-        <translation type="unfinished"></translation>
+        <translation>Panova flauta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Blown Bottle</source>
-        <translation type="unfinished"></translation>
+        <translation>Puhana boca</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
@@ -475,7 +475,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
         <source>Whistle</source>
-        <translation type="unfinished"></translation>
+        <translation>Fučkaljka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
@@ -695,7 +695,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="478"/>
         <source>Seashore</source>
-        <translation type="unfinished"></translation>
+        <translation>Morska obala</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="479"/>
@@ -705,22 +705,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="480"/>
         <source>Telephone Ring</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefonsko zvono</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="481"/>
         <source>Helicopter</source>
-        <translation type="unfinished"></translation>
+        <translation>Helikopter</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="482"/>
         <source>Applause</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplaus</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="483"/>
         <source>Gunshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Pucanj</translation>
     </message>
 </context>
 <context>
@@ -728,34 +728,34 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavke klavijature</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dijaloški okvir</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Podesi klavijaturu</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
         <source>Right Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Točne note</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="140"/>
         <source>sound:</source>
-        <translation>Sound:</translation>
+        <translation>zvuk:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="163"/>
         <source>volume:</source>
-        <translation type="unfinished"></translation>
+        <translation>glasnoća:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
@@ -766,28 +766,28 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Krive note</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Notni opseg klavijature</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Najniža nota:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation type="unfinished"></translation>
+        <translation>Notni broj između 0 i 127</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Najviša nota:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
@@ -802,7 +802,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberi ispravni i krivi zvuk za tvoje sviranje.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
@@ -817,7 +817,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation type="unfinished"></translation>
+        <translation>Opa, imaš &lt;b&gt;0 nota&lt;/b&gt; na klavijaturi!</translation>
     </message>
 </context>
 <context>
@@ -825,7 +825,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="37"/>
         <source>Continuous Looping</source>
-        <translation type="unfinished"></translation>
+        <translation>Neprekidno ponavljanje</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
@@ -858,22 +858,22 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="27"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI ulaz &amp;i izlaz</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="49"/>
         <source>Select the MIDI devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberi MIDI uređaj</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="82"/>
         <source>Midi Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulazni Midi uređaj:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="95"/>
         <source>Midi Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izlazni Midi uređaj:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="203"/>
@@ -908,12 +908,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Učitaj</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -943,7 +943,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="352"/>
         <source>0 (msec)</source>
-        <translation type="unfinished"></translation>
+        <translation>0 (ms)</translation>
     </message>
 </context>
 <context>
@@ -951,7 +951,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="115"/>
         <source>None (PC Keyboard)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nijedan (PC tastatura)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
@@ -968,12 +968,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
         <source>Midi Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izlazni Midi uređaj:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>%1 mSec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ms</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="174"/>
@@ -993,12 +993,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>SoundFont datoteke (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
         <source>Midi Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Midi postavke</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="147"/>
@@ -1019,7 +1019,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
         <source>Midi Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulazni Midi uređaj:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
@@ -1032,7 +1032,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dijaloški okvir</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
