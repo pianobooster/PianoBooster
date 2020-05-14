@@ -52,7 +52,7 @@ public:
 
     void setSpeed(int value){ speedSpin->setValue(value); }
     int getSpeed(){return speedSpin->value();}
-
+    void stopMuiscPlaying();
     void updateTranslate();
 
 public slots:

@@ -51,9 +51,6 @@ public:
     CScore* getScoreObject() {return m_score;}
     int m_cfg_openGlOptimise;
 
-    void stopTimerEvent();
-    void startTimerEvent();
-
 protected:
     void timerEvent(QTimerEvent *event);
     void mediaTimerEvent(int ticks);
@@ -92,7 +89,7 @@ private:
     int m_forceBarRedraw;
     int m_titleHeight;
     eventBits_t m_eventBits;
-    bool m_allowedTimerEvent;
+
 };
 
 #endif // __GLVIEW_H__

@@ -238,11 +238,18 @@ void GuiTopBar::on_startBarSpin_valueChanged(double bar)
 {
     if (!m_song) return;
 
-    // Stop the muisc playing
-    m_song->playMusic(false);
-    setPlayButtonState(false);
+    stopMuiscPlaying();
 
     m_song->setPlayFromBar( bar);
+}
+
+// Stop the muisc playing
+void GuiTopBar::stopMuiscPlaying()
+{
+    if (!m_song) return;
+
+    m_song->playMusic(false);
+    setPlayButtonState(false);
 }
 
 void GuiTopBar::on_saveBarButton_clicked(bool clicked)

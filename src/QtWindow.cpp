@@ -454,22 +454,12 @@ void QtWindow::openRecentFile()
 }
 
 void QtWindow::showMidiSetup(){
-    bool isPlaying=false;
 
-    if(m_song->playingMusic()){
-        isPlaying=true;
-        m_topBar->on_playButton_clicked(true);
-    }
+    m_topBar->stopMuiscPlaying();
 
-    m_glWidget->stopTimerEvent();
     GuiMidiSetupDialog midiSetupDialog(this);
     midiSetupDialog.init(m_song, m_settings);
     midiSetupDialog.exec();
-
-    m_glWidget->startTimerEvent();
-    if (isPlaying){
-        m_topBar->on_playButton_clicked(true);
-    }
 }
 
 // load the recent file list from the config file into the file menu
@@ -643,8 +633,6 @@ void QtWindow::keyboardShortcuts()
 
 void QtWindow::open()
 {
-    m_glWidget->stopTimerEvent();
-
     QFileInfo currentSong = m_settings->getCurrentSongLongFileName();
 
     QString dir;
@@ -660,7 +648,6 @@ void QtWindow::open()
         m_settings->openSongFile(fileName);
         setCurrentFile(fileName);
     }
-    m_glWidget->startTimerEvent();
 }
 
 void QtWindow::readSettings()
