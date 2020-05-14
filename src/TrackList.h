@@ -71,6 +71,7 @@ public:
     void currentRowChanged(int currentRow);
     void examineMidiEvent(CMidiEvent event);
     bool pianoPartConvetionTest();
+    bool findLeftAndRightPianoParts();
     int guessKeySignature(int chanA, int chanB);
 
     // The programme name now starts at 1 with 0 = "(none)"
@@ -86,6 +87,18 @@ public:
 
     void changeListWidgetItemView(unsigned int index, QListWidgetItem* listWidgetItem);
 
+    double averageNotePitch(int chan) {
+        int totalNoteCount = 0;
+        double sumOffAllPitches = 0.0;
+
+        for (int note = 0; note < MAX_MIDI_NOTES; note++) {
+            int frequency = m_noteFrequency[chan][note];
+            totalNoteCount += frequency;
+            sumOffAllPitches += frequency * note;
+        }
+        return sumOffAllPitches / totalNoteCount;
+    }
+
 private:
     QString getChannelProgramName(int chan);
 
@@ -95,6 +108,7 @@ private:
     bool m_midiActiveChannels[MAX_MIDI_CHANNELS];
     int m_midiFirstPatchChannels[MAX_MIDI_CHANNELS];
     int m_noteFrequency[MAX_MIDI_CHANNELS][MAX_MIDI_NOTES];
+    float m_averagePitch[MAX_MIDI_CHANNELS];
 };
 
 #endif //__TRACK_LIST_H__

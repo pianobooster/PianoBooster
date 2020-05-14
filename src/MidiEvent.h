@@ -82,6 +82,7 @@
 #define METASEQEVENT            0x7F
 
 #define GM_PIANO_PATCH        0 // The default grand piano sound
+#define isPianoOrOrganPatch(p)   (((p) >= 0 && (p) <=7) || ((p) >= 16 && (p) <= 23 ))
 
 /*!
  * @brief   xxxxx.
@@ -107,6 +108,7 @@ public:
 
     int deltaTime(){return m_deltaTime;}
     void addDeltaTime(int delta){m_deltaTime +=delta;}
+    void subtractDeltaTime(int delta){m_deltaTime -=delta;}
     void setDeltaTime(int delta){m_deltaTime = delta;}
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -231,6 +233,33 @@ public:
     ////////////////////////////////////////////////////////////////////////////////
     //@brief how long the midi note was played for
     long getDuration(){return m_duration;}
+
+
+    /**
+     * This merges two MidiEvents (this and the other MidiEvent)
+     * The MidiEvent that happens first (has the lowest delta time)
+     * then a COPY of that MidiEvent is returned.
+     * The original is then cleared so that  it type is set to MIDI_NONE
+     * The MidiEvent that happens second will have it delta time reduced
+     * using the delta time form the first MidiEvent.
+     * NOTE Both this and the otherMidiEvent will be altered when call this method.
+     */
+    CMidiEvent getNextMergedEvent(CMidiEvent &otherMidiEvent)
+    {
+        CMidiEvent result;
+        int thisDelta = deltaTime();
+        int otherDelta = otherMidiEvent.deltaTime();
+        if ( thisDelta <= otherDelta ) {
+            result = *this;
+            otherMidiEvent.subtractDeltaTime(thisDelta);
+            clear();
+        } else {
+            result = otherMidiEvent;
+            subtractDeltaTime(otherDelta);
+            otherMidiEvent.clear();
+        }
+        return result;
+    }
 
     std::string event_type_str(int atype)
        {

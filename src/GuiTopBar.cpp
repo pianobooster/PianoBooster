@@ -128,6 +128,7 @@ void GuiTopBar::on_transposeSpin_valueChanged(int value)
 {
     unsigned int i;         //C  Db  D  Eb  E  F   F# G  Ab  A  Bb  B
     const int nextKey[] = {   0, -5, 2, -3, 4, -1, 6, 1, -4, 3, -2, 5};
+    const int nextKeySize = arraySize(nextKey);
     if (!m_song) return;
     int diff = value - m_song->getTranspose();
     int oldValue = CStavePos::getKeySignature();
@@ -135,13 +136,13 @@ void GuiTopBar::on_transposeSpin_valueChanged(int value)
             oldValue = 6; // if key is Eb change to D#
 
     // Find the old value in the table
-    for (i=0; i < arraySize(nextKey); i++)
+    for (i=0; i < nextKeySize; i++)
     {
         if (oldValue == nextKey[i])
             break;
     }
 
-    int newValue = nextKey[(diff  + i + arraySize(nextKey)) % arraySize(nextKey) ];
+    int newValue = nextKey[(diff  + i + nextKeySize) % nextKeySize ];
 
     CStavePos::setKeySignature( newValue, 0 );
 

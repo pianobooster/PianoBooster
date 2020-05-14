@@ -89,20 +89,44 @@ void CTrackList::examineMidiEvent(CMidiEvent event)
 // Returns true if there is a piano part on channels 3 & 4
 bool CTrackList::pianoPartConvetionTest()
 {
-    if ((m_midiFirstPatchChannels[CONVENTION_LEFT_HAND_CHANNEL] == GM_PIANO_PATCH &&
+    if (m_midiFirstPatchChannels[CONVENTION_LEFT_HAND_CHANNEL] == GM_PIANO_PATCH &&
          m_midiActiveChannels[CONVENTION_LEFT_HAND_CHANNEL] == true &&
-         m_midiFirstPatchChannels[CONVENTION_RIGHT_HAND_CHANNEL]  <= GM_PIANO_PATCH))
+         m_midiFirstPatchChannels[CONVENTION_RIGHT_HAND_CHANNEL] <= GM_PIANO_PATCH)
             return true;
 
     if (m_midiFirstPatchChannels[CONVENTION_RIGHT_HAND_CHANNEL] == GM_PIANO_PATCH &&
          m_midiActiveChannels[CONVENTION_RIGHT_HAND_CHANNEL] == true &&
-         m_midiFirstPatchChannels[CONVENTION_LEFT_HAND_CHANNEL]  <= GM_PIANO_PATCH)
+         m_midiFirstPatchChannels[CONVENTION_LEFT_HAND_CHANNEL] <= GM_PIANO_PATCH)
             return true;
 
-    if (m_midiFirstPatchChannels[CONVENTION_LEFT_HAND_CHANNEL] == GM_PIANO_PATCH &&
-        m_midiActiveChannels[CONVENTION_LEFT_HAND_CHANNEL] == true &&
-        m_midiFirstPatchChannels[CONVENTION_RIGHT_HAND_CHANNEL] <= GM_PIANO_PATCH)
-            return true;
+    return false;
+}
+
+bool CTrackList::findLeftAndRightPianoParts()
+{
+    int patchA = -1;
+    int chanA = -1;
+
+    for (int chan = 0 ; chan < MAX_MIDI_CHANNELS; chan++) {
+        if (m_midiActiveChannels[chan]) {
+            int patch = m_midiFirstPatchChannels[chan];
+            if (isPianoOrOrganPatch(patch)) {
+                if (patchA == -1) {
+                    patchA = patch;
+                    chanA = chan;
+                } else {
+                    if (patchA == patch) {
+                        if (averageNotePitch(chan) < averageNotePitch(chanA)) {
+                            CNote::setChannelHands(chan, chanA);
+                        } else {
+                            CNote::setChannelHands(chanA, chan);
+                        }
+                        return true;
+                    }
+                }
+            }
+        }
+    }
     return false;
 }
 
@@ -210,6 +234,9 @@ void CTrackList::refresh()
             CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
         m_song->setActiveChannel(CNote::bothHandsChan());
         ppLogInfo("Active both");
+    }
+    else if (findLeftAndRightPianoParts()) {
+        m_song->setActiveChannel(CNote::bothHandsChan());
     }
     else
     {

@@ -229,7 +229,7 @@ void CGLView::drawDisplayText()
         if (accuracyBarStart == 0) {
             QFontMetrics fm(m_timeRatingFont);
             accuracyText = tr("Accuracy:");
-            accuracyBarStart=fm.horizontalAdvance(accuracyText + "  ") + TEXT_LEFT_MARGIN;
+            accuracyBarStart=fm.boundingRect(accuracyText + "  ").right() + TEXT_LEFT_MARGIN;
        }
 
         renderText(TEXT_LEFT_MARGIN, y-4,0 ,accuracyText, m_timeRatingFont);
