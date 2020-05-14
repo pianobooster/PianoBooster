@@ -49,7 +49,8 @@ public:
     void playMidiEvent(const CMidiEvent & event);
     int checkMidiInput();
     CMidiEvent readMidiInput();
-    bool validMidiOutput() { return m_validOutput; }
+    bool validMidiOutput();
+    virtual bool validMidiConnection() {return validMidiOutput();}
 
     QStringList getMidiPortList(midiType_t type);
     bool openMidiPort(midiType_t type, QString portName);

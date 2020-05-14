@@ -45,6 +45,8 @@ class CMidiDeviceFluidSynth : public CMidiDeviceBase
     virtual bool openMidiPort(midiType_t type, QString portName);
     virtual void closeMidiPort(midiType_t type, int index);
 
+    virtual bool validMidiConnection() {return m_validConnection;}
+
     // based on the fluid synth settings
     virtual int     midiSettingsSetStr(QString name, QString str);
     virtual int     midiSettingsSetNum(QString name, double val);
@@ -71,6 +73,7 @@ private:
     fluid_synth_t* m_synth;
     fluid_audio_driver_t* m_audioDriver;
     int m_soundFontId;
+    bool m_validConnection;
 };
 
 #endif //__MIDI_DEVICE_FLUIDSYNTH_H__

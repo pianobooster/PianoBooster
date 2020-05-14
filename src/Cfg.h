@@ -130,7 +130,6 @@ public:
     static int defaultRightPatch() {return 1;} // Starts at 1
 
     static int logLevel;
-    static bool quickStart;
     static bool experimentalTempo;
     static bool experimentalNoteLength;
     static int experimentalSwapInterval;

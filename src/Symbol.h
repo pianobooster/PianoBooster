@@ -172,7 +172,7 @@ private:
 
     CStavePos m_stavePos;
     musicalSymbol_t m_symbolType;
-    byte m_midiNote;
+    byte_t m_midiNote;
     accidentalModifer_t m_accidentalModifer; // Used to suppress the second sharp in the same bar
     int m_midiDuration;
     whichPart_t m_hand;

@@ -125,7 +125,7 @@ private:
     CScrollProperties m_scrollPropertiesHorizontal;
     CScrollProperties m_scrollPropertiesVertical;
 #ifndef NO_USE_FTGL
-    FTGLPixmapFont *font;
+    FTFont *font;
 #endif
 };
 

@@ -139,6 +139,14 @@ CMidiEvent CMidiDevice::readMidiInput()
     return m_selectedMidiInputDevice->readMidiInput();
 }
 
+bool CMidiDevice::validMidiOutput()
+{
+    if (m_validOutput) {
+        return m_selectedMidiOutputDevice->validMidiConnection();
+    }
+    return m_validOutput;
+}
+
 int CMidiDevice::midiSettingsSetStr(QString name, QString str)
 {
     if (m_selectedMidiOutputDevice)

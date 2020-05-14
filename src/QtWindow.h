@@ -92,6 +92,7 @@ private slots:
         preferencesDialog.exec();
 
         refreshTranslate();
+        m_score->refreshScroll();
     }
 
     void showSongDetailsDialog()

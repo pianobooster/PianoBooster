@@ -284,7 +284,7 @@ void CMidiTrack::readMetaEvent(byte_t type)
 
     case METATEMPO:                        /* Set Tempo */
     {
-        byte b1,b2, b3;
+        byte_t b1,b2, b3;
         int tempo;
 
         b1 = readVarLen();

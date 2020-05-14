@@ -117,21 +117,13 @@ QtWindow::QtWindow()
     m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", Cfg::defaultRightPatch()).toInt() - 1,
                                  m_settings->value("Keyboard/WrongSound", Cfg::defaultWrongPatch()).toInt() - 1, true);
 
-    QString midiInputName = m_settings->value("Midi/Input").toString();
-    if (midiInputName.startsWith(tr("None")))
-        CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
-    else
-        CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
-                          m_settings->value("Keyboard/HighestNote", 127).toInt());
-
     m_song->setLatencyFix(m_settings->value("Midi/Latency", 0).toInt());
 
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
     m_song->cfg_rhythmTapping = static_cast<rhythmTapping_t> (m_settings->value("Score/RtyhemTappingMode", m_song->cfg_rhythmTapping ).toInt());
 
-    m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
-    m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("Midi/Output").toString());
+    m_song->reconnectMidi();
 
     readSettings();
 
@@ -140,7 +132,6 @@ QtWindow::QtWindow()
         if (!songName.isEmpty())
             m_settings->openSongFile( songName );
     });
-
 }
 
 void QtWindow::init()
@@ -167,10 +158,7 @@ void QtWindow::displayUsage()
 {
     fprintf(stdout, "Usage: pianobooster [flags] [midifile]\n");
     fprintf(stdout, "  -d, --debug             Increase the debug level.\n");
-    fprintf(stdout, "  -q, --quick-start       Quick start.\n");
     fprintf(stdout, "      --Xnote-length      Displays the note length (experimental)\n");
-    fprintf(stdout, "      --Xtick-rate=RATE   Adjust the tick rate in mSec (experimental).\n");
-    fprintf(stdout, "                          default 4 (12 windows).\n");
     fprintf(stdout, "  -h, --help              Displays this help message.\n");
     fprintf(stdout, "  -v, --version           Displays version number and then exits.\n");
     fprintf(stdout, "  -l   --log              Write debug info to the \"pb.log\" log file.\n");
@@ -267,8 +255,6 @@ void QtWindow::decodeCommandLine()
         {
             if (arg.startsWith("-d") || arg.startsWith("--debug"))
                 Cfg::logLevel++;
-            else if (arg.startsWith("-q") || arg.startsWith("--quick-start"))
-                Cfg::quickStart = true;
             else if (arg.startsWith("--Xnote-length"))
                 Cfg::experimentalNoteLength = true;
             else if (arg.startsWith("--Xtick-rate")) {
@@ -279,7 +265,6 @@ void QtWindow::decodeCommandLine()
                 Cfg::useLogFile = true;
             else if (arg.startsWith("--midi-input-dump"))
                 Cfg::midiInputDump = true;
-
             else if (arg.startsWith("-X1"))
                 Cfg::experimentalTempo = true;
             else if (arg.startsWith("-Xswap"))

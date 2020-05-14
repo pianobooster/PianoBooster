@@ -34,6 +34,7 @@ CMidiDeviceFluidSynth::CMidiDeviceFluidSynth()
     m_fluidSettings = nullptr;
     m_audioDriver = nullptr;
     m_rawDataIndex = 0;
+    m_validConnection = false;
 }
 
 CMidiDeviceFluidSynth::~CMidiDeviceFluidSynth()
@@ -71,13 +72,13 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
     if (type == MIDI_INPUT)
         return false;
 
-    if (!portName.endsWith(FLUID_NAME)) return false;
+    if (!portName.endsWith(FLUID_NAME)) {return false;}
 
-    if (getMidiPortList(type).size()==0) return false;
+    if (getMidiPortList(type).size()==0) {return false;}
 
     // Load a SoundFont
     QStringList fontList = qsettings->value("FluidSynth/SoundFont").toStringList();
-    if (fontList.size() == 0) return false;
+    if (fontList.size() == 0) {return false;}
 
     // Create the settings.
     m_fluidSettings = new_fluid_settings();
@@ -110,12 +111,15 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
     {
          fluid_synth_program_change(m_synth, channel, GM_PIANO_PATCH);
     }
-    fluid_synth_set_gain(m_synth, qsettings->value("FluidSynth/masterGainSpin", 40).toFloat()/100.0f );
+    fluid_synth_set_gain(m_synth, qsettings->value("FluidSynth/masterGainSpin", 80).toFloat()/100.0f );
+    m_validConnection = true;
     return true;
 }
 
 void CMidiDeviceFluidSynth::closeMidiPort(midiType_t type, int index)
 {
+    m_validConnection = false;
+
     if (type != MIDI_OUTPUT)
         return;
 

@@ -100,6 +100,7 @@ public:
     void realTimeEngine(int mSecTicks);
     void playMusic(bool start);
     bool playingMusic() {return m_playing;}
+    void reconnectMidi();
 
     float getSpeed() {return m_tempo.getSpeed();}
     void setSpeed(float speed)

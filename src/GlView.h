@@ -71,6 +71,9 @@ private:
     void drawBarNumber();
     void updateMidiTask();
 
+    QString accuracyText;
+    int accuracyBarStart = 0;
+
     QColor m_backgroundColor;
     QtWindow* m_qtWindow;  // The parent Window
     CSettings* m_settings;

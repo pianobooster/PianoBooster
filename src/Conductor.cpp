@@ -388,8 +388,25 @@ void CConductor::testWrongNoteSound(bool enable)
     updatePianoSounds();
 }
 
+void CConductor::reconnectMidi()
+{
+    if (!validMidiOutput()) {
+        QString midiInputName = m_settings->value("Midi/Input").toString();
+        if (midiInputName.startsWith(tr("None"))) {
+            CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
+        } else {
+            CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
+                             m_settings->value("Keyboard/HighestNote", 127).toInt());
+        }
+        openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
+        openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("Midi/Output").toString());
+    }
+    m_settings->updateWarningMessages();
+}
+
 void CConductor::playMusic(bool start)
 {
+    reconnectMidi();
     m_playing = start;
     allSoundOff();
     if (start)

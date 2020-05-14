@@ -50,6 +50,8 @@ public:
     virtual QStringList getMidiPortList(midiType_t type) = 0;
 
     virtual bool openMidiPort(midiType_t type, QString portName) = 0;
+    virtual bool validMidiConnection() = 0;
+
     virtual void closeMidiPort(midiType_t type, int index) = 0;
 
     // based on the fluid synth settings

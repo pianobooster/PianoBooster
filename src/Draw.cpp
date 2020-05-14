@@ -2,7 +2,7 @@
 /*!
 @file           Draw.cpp
 
-@brief          xxxxx.
+
 
 @author         L. J. Barman
 
@@ -61,7 +61,7 @@ CDraw::CDraw(CSettings* settings)
     for (int i=0;i<listPathFonts.size();i++){
         QFile file(listPathFonts.at(i));
         if (file.exists()){
-            font = new FTGLPixmapFont(listPathFonts.at(i).toStdString().c_str());
+            font = new FTBitmapFont(listPathFonts.at(i).toStdString().c_str());
             break;
         }
     }

@@ -1,6 +1,10 @@
 # Cmake File for Piano Booster
 
-option(USE_FTGL "build with ftgl" ON)
+if(WIN32)
+    option(USE_FTGL "build with ftgl" OFF)
+else()
+    option(USE_FTGL "build with ftgl" ON)
+endif()
 option(USE_JACK "build with Jack (Only required for BSD Unix)" OFF)
 option(USE_SYSTEM_FONT "build with system font" OFF)
 if(${CMAKE_SYSTEM} MATCHES "Linux")
@@ -55,13 +59,16 @@ if(NOT WIN32)
 endif()
 
 if(USE_FTGL)
-   pkg_check_modules(FTGL ftgl)
-   if(NOT FTGL_FOUND)
-      MESSAGE(FATAL_ERROR "FTGL was not found")
-   endif(NOT FTGL_FOUND)
-
-   SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
-   SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+   if(NOT WIN32)
+      pkg_check_modules(FTGL ftgl)
+      if(NOT FTGL_FOUND)
+         MESSAGE(FATAL_ERROR "FTGL was not found")
+      endif(NOT FTGL_FOUND)
+      SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
+      SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+   else()
+      FIND_PACKAGE( ftgl REQUIRED )
+   endif()
 else(USE_FTGL)
     add_compile_options("-DNO_USE_FTGL")
 endif(USE_FTGL)
@@ -95,23 +102,18 @@ if(${CMAKE_SYSTEM} MATCHES "Darwin")
 endif(${CMAKE_SYSTEM} MATCHES "Darwin")
 
 if(WITH_INTERNAL_FLUIDSYNTH)
-    ADD_DEFINITIONS(-DWITH_INTERNAL_FLUIDSYNTH)
-    MESSAGE("Building using fluidsynth")
-    SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
-
-    if(DEFINED ENV{FLUIDSYNTH_INPLACE_DIR})
-        SET (FLUIDSYNTH_INPLACE_DIR = $ENV{FLUIDSYNTH_INPLACE_DIR})
-        INCLUDE_DIRECTORIES(${FLUIDSYNTH_INPLACE_DIR}/include/)
-        if(WIN32)
-            LINK_LIBRARIES( $ENV{FLUIDSYNTH_INPLACE_DIR}/lib/libfluidsynth.dll.a)
-        endif(WIN32)
-    else()
+    if(NOT WIN32)
         pkg_check_modules(FLUIDSYNTH fluidsynth)
         if(NOT FLUIDSYNTH_FOUND)
-            MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
+           MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
         endif(NOT FLUIDSYNTH_FOUND)
         LINK_LIBRARIES(fluidsynth)
+    else()
+        FIND_PACKAGE( fluidsynth REQUIRED )
     endif()
+    ADD_DEFINITIONS(-DWITH_INTERNAL_FLUIDSYNTH)
+    MESSAGE("Building with internal fluidsynth")
+    SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
 endif(WITH_INTERNAL_FLUIDSYNTH)
 
 # we need this to be able to include headers produced by uic in our code
@@ -122,7 +124,6 @@ SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp ${PB_BASE_SRCS})
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h)
-
 
 if(USE_JACK)
     # Check for Jack
@@ -254,7 +255,7 @@ if(UNIX)
 endif(UNIX)
 
 if(WIN32)
-    ADD_EXECUTABLE( pianobooster WIN32 ${PIANOBOOSTER_SRCS}
+    ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
     SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
@@ -306,7 +307,8 @@ if(USE_FONT)
 endif(USE_FONT)
 
 if(NOT USE_SYSTEM_FONT)
-    INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION ${DATA_DIR}/fonts)
+    configure_file(fonts/DejaVuSans.ttf ${CMAKE_CURRENT_BINARY_DIR}/fonts/DejaVuSans.ttf COPYONLY)
+    INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION ${DATA_DIR}/fonts/)
 endif(NOT USE_SYSTEM_FONT)
 
 if(NOT NO_LANGS)
