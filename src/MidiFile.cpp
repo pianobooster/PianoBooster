@@ -100,6 +100,7 @@ void CMidiFile::openMidiFile(string filename)
 
 void CMidiFile::rewind()
 {
+    m_numberOfTracks = 0;
     size_t ntrks;
     size_t trk;
     dword_t trackLength;
@@ -123,6 +124,7 @@ void CMidiFile::rewind()
         ppLogError("Too many tracks in SMF file");
         return;
     }
+    m_numberOfTracks = ntrks;
     for (trk = 0; trk < arraySize(m_tracks); trk++)
     {
         if (m_tracks[trk]!= nullptr)
@@ -163,7 +165,7 @@ bool CMidiFile::checkMidiEventFromStream(int streamIdx)
     return false;
 }
 
-CMidiEvent CMidiFile::fetchMidiEventFromStream(int streamIdx)
+CMidiEvent CMidiFile::fetchMidiEventFromStream(int trackNo)
 {
-    return m_tracks[streamIdx]->pop();
+    return m_tracks[trackNo]->pop(trackNo);
 }

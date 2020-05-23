@@ -163,7 +163,7 @@ void QtWindow::displayUsage()
     fprintf(stdout, "  -v, --version           Displays version number and then exits.\n");
     fprintf(stdout, "  -l   --log              Write debug info to the \"pb.log\" log file.\n");
     fprintf(stdout, "       --midi-input-dump  Displays the midi input in hex.\n");
-    fprintf(stdout, "       --lights:          Turns on the keyboard lights.\n");
+    fprintf(stdout, "       --lights           Turns on the keyboard lights.\n");
 }
 
 int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
@@ -641,7 +641,7 @@ void QtWindow::open()
     else
         dir = QDir::homePath();
 
-    QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Midi File"),
                             dir, tr("Midi Files") + " (*.mid *.MID *.midi *.MIDI *.kar *.KAR)");
     if (!fileName.isEmpty()) {
 

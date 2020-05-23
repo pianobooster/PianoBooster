@@ -78,8 +78,9 @@ public:
     midiErrors_t getMidiError() { return m_midiError;}
 
     int length() {return m_trackEventQueue->length();}
-    CMidiEvent pop() {
+    CMidiEvent pop(int trackNo) {
         CMidiEvent m = m_trackEventQueue->pop();
+        m.setTrack(trackNo);
         m.printDetails();
         return m;
     }

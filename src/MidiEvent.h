@@ -126,6 +126,8 @@ public:
     int data1() const {return m_note;} // Meta data is stored here
     int data2() const {return m_velocity;}
     void setDatat2(int value) {m_velocity = value;}
+    void setTrack(int track) {m_track = track;}
+    int track() {return m_track;}
 
     void noteOffEvent( int deltaTime, int channel, int note, int velocity)
     {
@@ -338,6 +340,7 @@ private:
     int m_note;
     int m_velocity;
     int m_duration;
+    int m_track;
 };
 
 #endif //__MIDI_EVENT_H__

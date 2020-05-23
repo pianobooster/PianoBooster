@@ -283,7 +283,7 @@ void CConductor::transpose(int transpose)
 void CConductor::activatePianistMutePart()
 {
     mutePart(PB_PART_all, false);
-    if (m_playMode != PB_PLAY_MODE_listen && m_mutePianistPart == true)
+    if (shouldMutePianistPart())
     {
         if (CNote::hasPianoPart(m_activeChannel))
         {
@@ -451,9 +451,9 @@ void CConductor::playTransposeEvent(CMidiEvent event)
                 (event.type() == MIDI_NOTE_ON || event.type() == MIDI_NOTE_OFF) )
         event.transpose(m_transpose);
 
-    if (event.type() == MIDI_NOTE_ON && isChannelMuted(event.channel()) == true &&
-                                CChord::isNotePlayable(event.note(), m_transpose) == true)
+     if (event.type() == MIDI_NOTE_ON && CChord::isPianistNote(event, m_transpose, getActiveChannel()) && shouldMutePianistPart()) {
         return; // mute the note by not playing it
+     }
 
     // boost any volume events
     if (event.type() == MIDI_CONTROL_CHANGE && event.data1() == MIDI_MAIN_VOLUME)

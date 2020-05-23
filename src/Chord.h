@@ -42,7 +42,6 @@ typedef enum
     PB_PART_both    = 200, // keep well clear of real midi channels
     PB_PART_right,
     PB_PART_left,
-    PB_PART_accump,
     PB_PART_all,
     PB_PART_none,
 } whichPart_t;
@@ -65,6 +64,9 @@ public:
         m_pitch = note;
         m_duration = duration;
     }
+
+    static void reset();
+
     void transpose(int amount)
     {
         m_pitch += amount;
@@ -73,12 +75,13 @@ public:
     whichPart_t part() {return m_part;}
     void setPart(whichPart_t part) {m_part = part;}
 
-    static whichPart_t findHand(int midiNote, int midiChannel, int whichChannel, whichPart_t whichPart);
+    static whichPart_t findHand(CMidiEvent midi, int whichChannel, whichPart_t whichPart);
 
-    static whichPart_t findHand(CMidiEvent midi, int channel, whichPart_t part)
-    {
-        return findHand(midi.note(), midi.channel(), channel, part);
+    static void setRightHandTrack(int channel, int rightHandTrackNumber) {
+        m_rightHandTrack[channel] = rightHandTrackNumber;
     }
+
+    static int rightHandTrack(int channel) { return m_rightHandTrack[channel]; }
 
     static void setChannelHands(int left, int right);
     static void setActiveHand(whichPart_t hand){m_activeHand = hand;}
@@ -97,7 +100,8 @@ private:
     static int m_leftHandChannel;
     static int m_rightHandChannel;
     static whichPart_t m_activeHand;
-
+    // -1 means there is a single track and no separate left and right hand parts
+    static int m_rightHandTrack[MAX_MIDI_CHANNELS];
 };
 
 class CNoteRange
@@ -145,6 +149,19 @@ public:
         if (note >=  m_cfg_lowestPianoNote && note <= m_cfg_highestPianoNote)
             return true;
         return false;
+    }
+
+    static bool isPianistNote(CMidiEvent midi, int transpose,  int whichChannel)
+    {
+        whichPart_t whichPart = CNote::getActiveHand();
+
+        int note = midi.note();
+        whichPart_t hand = CNote::findHand( midi,   whichChannel, whichPart );
+        if (hand == PB_PART_none) {
+            return false;
+        }
+
+        return CChord::isNotePlayable(note, transpose);
     }
 
     static bool isHandPlayable(whichPart_t hand)

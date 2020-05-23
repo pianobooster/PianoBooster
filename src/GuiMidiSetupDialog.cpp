@@ -291,7 +291,7 @@ void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
         }
     }
 
-    QFileInfo soundFontInfo = QFileDialog::getOpenFileName(this,tr("Open SoundFont File for fluidsynth"),
+    QFileInfo soundFontInfo = QFileDialog::getOpenFileName(this, tr("Open SoundFont File for fluidsynth"),
                             lastSoundFont, tr("SoundFont Files (*.sf2 *.sf3)"));
     if (!soundFontInfo.isFile()) return;
 

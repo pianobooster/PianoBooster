@@ -302,10 +302,7 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
         break;
 
     case MIDI_NOTE_PRESSURE: //MIDI_CMD_NOTE_PRESSURE: //POLY_AFTERTOUCH:
-        // fixme fill in the blanks
-        //midi_input_bytes[midi_input_length++] = channel | MIDI_CMD_NOTE_PRESSURE;
-        //midi_input_bytes[midi_input_length++] = ev->data.note.note;
-        //midi_input_bytes[midi_input_length++] = ev->data.note.velocity;
+        midiEvent.notePressure(0, channel, m_inputMessage[1], m_inputMessage[2]);
         break;
 
     case MIDI_CONTROL_CHANGE:  //CONTROL_CHANGE:
@@ -313,19 +310,15 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
         break;
 
     case MIDI_PROGRAM_CHANGE: //PROGRAM_CHANGE:
-        //midiEvent.programChangeEvent(0, ev->data.control.channel, ev->data.control.value);
+        midiEvent.programChangeEvent(0, channel, m_inputMessage[1]);
         break;
 
     case MIDI_CHANNEL_PRESSURE: //AFTERTOUCH:
-        // fixme fill in the blanks
-        //midi_input_bytes[midi_input_length++] = ev->data.control.channel | MIDI_CMD_CHANNEL_PRESSURE;
-        //midi_input_bytes[midi_input_length++] = ev->data.control.value;
+        midiEvent.channelPressure(0, channel, m_inputMessage[1]);
         break;
 
     case MIDI_PITCH_BEND: //PITCH_BEND:
-        // fixme fill in the blanks
-        //midi_input_bytes[midi_input_length++] = ev->data.control.channel | MIDI_CMD_CHANNEL_PRESSURE;
-        //midi_input_bytes[midi_input_length++] = ev->data.control.value;
+        midiEvent.pitchBendEvent(0, channel, m_inputMessage[1], m_inputMessage[2]);
         break;
     }
 

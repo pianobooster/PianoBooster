@@ -155,9 +155,7 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
             break;
 
         case MIDI_NOTE_PRESSURE: //POLY_AFTERTOUCH: 3 bytes
-            //message.push_back( channel | MIDI_NOTE_PRESSURE);
-            //message.push_back( event.data1());
-            //message.push_back( event.data2());
+            //fluid_synth_key_pressure(m_synth, channel, event.data1(), event.data2());
             break;
 
         case MIDI_CONTROL_CHANGE: //CONTROL_CHANGE:
@@ -170,15 +168,13 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
             break;
 
         case MIDI_CHANNEL_PRESSURE: //AFTERTOUCH: 2 bytes only
-            //message.push_back( channel | MIDI_CHANNEL_PRESSURE);
-            //message.push_back( event.data1());
-            // FIXME missing
+            fluid_synth_channel_pressure(m_synth, channel, event.programme());
             break;
 
         case MIDI_PITCH_BEND: //PITCH_BEND:
             // a 14 bit number LSB first 0x4000 is the off positions
             fluid_synth_pitch_bend(m_synth, channel, (event.data2() << 7) | event.data1());
-                break;
+            break;
 
         case  MIDI_PB_collateRawMidiData: //used for a SYSTEM_EVENT
             if (m_rawDataIndex < arraySize(m_savedRawBytes))
@@ -192,7 +188,6 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
             // FIXME missing
             break;
     }
-
     //event.printDetails(); // useful for debugging
 }
 

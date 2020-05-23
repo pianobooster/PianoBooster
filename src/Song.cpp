@@ -32,7 +32,7 @@
 void CSong::init2(CScore * scoreWin, CSettings* settings)
 {
 
-    CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
+    CNote::reset();
 
     this->CConductor::init2(scoreWin, settings);
 
@@ -44,7 +44,7 @@ void CSong::init2(CScore * scoreWin, CSettings* settings)
 
 void CSong::loadSong(const QString & filename)
 {
-    CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
+    CNote::reset();
 
     m_songTitle = filename;
     int index = m_songTitle.lastIndexOf("/");
@@ -74,7 +74,7 @@ void CSong::loadSong(const QString & filename)
 // read the file ahead to collect info about the song first
 void CSong::midiFileInfo()
 {
-    m_trackList->clear();
+    m_trackList->reset(m_midiFile->numberOfTracks());
     setTimeSig(0,0);
     CStavePos::setKeySignature( NOT_USED, 0 );
 
