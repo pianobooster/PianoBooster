@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sl">
 <context>
+    <name>CConductor</name>
+    <message>
+        <location filename="../src/Conductor.cpp" line="335"/>
+        <source>None</source>
+        <translation type="unfinished">Noben</translation>
+    </message>
+</context>
+<context>
     <name>CDraw</name>
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
@@ -42,17 +50,17 @@
 <context>
     <name>CGLView</name>
     <message>
-        <location filename="../src/GlView.cpp" line="233"/>
+        <location filename="../src/GlView.cpp" line="229"/>
         <source>Accuracy:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="240"/>
+        <location filename="../src/GlView.cpp" line="241"/>
         <source>Song:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="263"/>
+        <location filename="../src/GlView.cpp" line="264"/>
         <source>Bar:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -78,647 +86,647 @@
 <context>
     <name>CTrackList</name>
     <message>
-        <location filename="../src/TrackList.cpp" line="355"/>
+        <location filename="../src/TrackList.cpp" line="388"/>
         <source>(None)</source>
         <translation>(Noben)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="356"/>
+        <location filename="../src/TrackList.cpp" line="389"/>
         <source>Grand Piano</source>
         <translation>Koncertni klavir</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="357"/>
+        <location filename="../src/TrackList.cpp" line="390"/>
         <source>Bright Piano</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="358"/>
+        <location filename="../src/TrackList.cpp" line="391"/>
         <source>Electric Grand</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="359"/>
+        <location filename="../src/TrackList.cpp" line="392"/>
         <source>Honky-tonk Piano</source>
         <translation>Honky-tonk klavir</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="360"/>
+        <location filename="../src/TrackList.cpp" line="393"/>
         <source>Electric Piano 1</source>
         <translation>Električni klavir 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="361"/>
+        <location filename="../src/TrackList.cpp" line="394"/>
         <source>Electric Piano 2</source>
         <translation>Električni klavir 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="362"/>
+        <location filename="../src/TrackList.cpp" line="395"/>
         <source>Harpsichord</source>
         <translation>Čembalo</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="363"/>
+        <location filename="../src/TrackList.cpp" line="396"/>
         <source>Clavi</source>
         <translation>Klavikord</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="364"/>
+        <location filename="../src/TrackList.cpp" line="397"/>
         <source>Celesta</source>
         <translation>Čelesta</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="365"/>
+        <location filename="../src/TrackList.cpp" line="398"/>
         <source>Glockenspiel</source>
         <translation>Zvončki</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="366"/>
+        <location filename="../src/TrackList.cpp" line="399"/>
         <source>Music Box</source>
         <translation>Lajna</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="367"/>
+        <location filename="../src/TrackList.cpp" line="400"/>
         <source>Vibraphone</source>
         <translation>Vibrafon</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="368"/>
+        <location filename="../src/TrackList.cpp" line="401"/>
         <source>Marimba</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="369"/>
+        <location filename="../src/TrackList.cpp" line="402"/>
         <source>Xylophone</source>
         <translation>Ksilofon</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="370"/>
+        <location filename="../src/TrackList.cpp" line="403"/>
         <source>Tubular Bells</source>
         <translation>Cevasti zvonovi</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="371"/>
+        <location filename="../src/TrackList.cpp" line="404"/>
         <source>Dulcimer</source>
         <translation>Čembalo 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="372"/>
+        <location filename="../src/TrackList.cpp" line="405"/>
         <source>Drawbar Organ</source>
         <translation>Orgle 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="373"/>
+        <location filename="../src/TrackList.cpp" line="406"/>
         <source>Percussive Organ</source>
         <translation>Udarne orgle</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="374"/>
+        <location filename="../src/TrackList.cpp" line="407"/>
         <source>Rock Organ</source>
         <translation>Orgle 3</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="375"/>
+        <location filename="../src/TrackList.cpp" line="408"/>
         <source>Church Organ</source>
         <translation>Orgle cerkvene</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="376"/>
+        <location filename="../src/TrackList.cpp" line="409"/>
         <source>Reed Organ</source>
         <translation>Orgle 4</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="377"/>
+        <location filename="../src/TrackList.cpp" line="410"/>
         <source>Accordion</source>
         <translation>Harmonika</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="378"/>
+        <location filename="../src/TrackList.cpp" line="411"/>
         <source>Harmonica</source>
         <translation>Orglice</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="379"/>
+        <location filename="../src/TrackList.cpp" line="412"/>
         <source>Tango Accordion</source>
         <translation>Tango akordeon</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="380"/>
+        <location filename="../src/TrackList.cpp" line="413"/>
         <source>Acoustic Guitar (nylon)</source>
         <translation>Kitara akustična (najlonske strune)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="381"/>
+        <location filename="../src/TrackList.cpp" line="414"/>
         <source>Acoustic Guitar (steel)</source>
         <translation>Kitara akustična (jeklene strune)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="382"/>
+        <location filename="../src/TrackList.cpp" line="415"/>
         <source>Electric Guitar (jazz)</source>
         <translation>Kitara električna (jazz)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="383"/>
+        <location filename="../src/TrackList.cpp" line="416"/>
         <source>Electric Guitar (clean)</source>
         <translation>Kitara električna (neojačana)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="384"/>
+        <location filename="../src/TrackList.cpp" line="417"/>
         <source>Electric Guitar (muted)</source>
         <translation>Kitara električna (utišana)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="385"/>
+        <location filename="../src/TrackList.cpp" line="418"/>
         <source>Overdriven Guitar</source>
         <translation>Kitara električna (overdriven)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="386"/>
+        <location filename="../src/TrackList.cpp" line="419"/>
         <source>Distortion Guitar</source>
         <translation>Kitara električna (distortion)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="387"/>
+        <location filename="../src/TrackList.cpp" line="420"/>
         <source>Guitar harmonics</source>
         <translation>Kitara električna (harmonije)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="388"/>
+        <location filename="../src/TrackList.cpp" line="421"/>
         <source>Acoustic Bass</source>
         <translation>Akustična bas kitara</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="389"/>
+        <location filename="../src/TrackList.cpp" line="422"/>
         <source>Electric Bass (finger)</source>
         <translation>Električni bas 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="390"/>
+        <location filename="../src/TrackList.cpp" line="423"/>
         <source>Electric Bass (pick)</source>
         <translation>Električni bas 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="391"/>
+        <location filename="../src/TrackList.cpp" line="424"/>
         <source>Fretless Bass</source>
         <translation>Električni bas 3</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="392"/>
+        <location filename="../src/TrackList.cpp" line="425"/>
         <source>Slap Bass 1</source>
         <translation>Slap bas 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="393"/>
+        <location filename="../src/TrackList.cpp" line="426"/>
         <source>Slap Bass 2</source>
         <translation>Slap bas 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="394"/>
+        <location filename="../src/TrackList.cpp" line="427"/>
         <source>Synth Bass 1</source>
         <translation>Synth bas 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="395"/>
+        <location filename="../src/TrackList.cpp" line="428"/>
         <source>Synth Bass 2</source>
         <translation>Synth bas 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="396"/>
+        <location filename="../src/TrackList.cpp" line="429"/>
         <source>Violin</source>
         <translation>Violina</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="397"/>
+        <location filename="../src/TrackList.cpp" line="430"/>
         <source>Viola</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="398"/>
+        <location filename="../src/TrackList.cpp" line="431"/>
         <source>Cello</source>
         <translation>Čelo</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="399"/>
+        <location filename="../src/TrackList.cpp" line="432"/>
         <source>Contrabass</source>
         <translation>Kontrabas</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="400"/>
+        <location filename="../src/TrackList.cpp" line="433"/>
         <source>Tremolo Strings</source>
         <translation>Tremolo godala</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="401"/>
+        <location filename="../src/TrackList.cpp" line="434"/>
         <source>Pizzicato Strings</source>
         <translation>Pizzicato godala</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="402"/>
+        <location filename="../src/TrackList.cpp" line="435"/>
         <source>Orchestral Harp</source>
         <translation>Harfa</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="403"/>
+        <location filename="../src/TrackList.cpp" line="436"/>
         <source>Timpani</source>
         <translation>Pavke</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="404"/>
+        <location filename="../src/TrackList.cpp" line="437"/>
         <source>String Ensemble 1</source>
         <translation>Ansambel godal 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="405"/>
+        <location filename="../src/TrackList.cpp" line="438"/>
         <source>String Ensemble 2</source>
         <translation>Ansambel godal 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="406"/>
+        <location filename="../src/TrackList.cpp" line="439"/>
         <source>SynthStrings 1</source>
         <translation>Synth godala 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="407"/>
+        <location filename="../src/TrackList.cpp" line="440"/>
         <source>SynthStrings 2</source>
         <translation>Synth godala 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="408"/>
+        <location filename="../src/TrackList.cpp" line="441"/>
         <source>Choir Aahs</source>
         <translation>Zborovski &quot;aaa&quot;</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="409"/>
+        <location filename="../src/TrackList.cpp" line="442"/>
         <source>Voice Oohs</source>
         <translation>Pevski &quot;ooo&quot;</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="410"/>
+        <location filename="../src/TrackList.cpp" line="443"/>
         <source>Synth Voice</source>
         <translation>Synth glas</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="411"/>
+        <location filename="../src/TrackList.cpp" line="444"/>
         <source>Orchestra Hit</source>
         <translation>Orkestralni udarec</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="412"/>
+        <location filename="../src/TrackList.cpp" line="445"/>
         <source>Trumpet</source>
         <translation>Trobenta</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="413"/>
+        <location filename="../src/TrackList.cpp" line="446"/>
         <source>Trombone</source>
         <translation>Pozavna</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="414"/>
+        <location filename="../src/TrackList.cpp" line="447"/>
         <source>Tuba</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="415"/>
+        <location filename="../src/TrackList.cpp" line="448"/>
         <source>Muted Trumpet</source>
         <translation>Utišana trobenta</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="416"/>
+        <location filename="../src/TrackList.cpp" line="449"/>
         <source>French Horn</source>
         <translation>Francoski rog</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="417"/>
+        <location filename="../src/TrackList.cpp" line="450"/>
         <source>Brass Section</source>
         <translation>Trobila</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="418"/>
+        <location filename="../src/TrackList.cpp" line="451"/>
         <source>SynthBrass 1</source>
         <translation>Synth trobila 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="419"/>
+        <location filename="../src/TrackList.cpp" line="452"/>
         <source>SynthBrass 2</source>
         <translation>Synth trobila 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="420"/>
+        <location filename="../src/TrackList.cpp" line="453"/>
         <source>Soprano Sax</source>
         <translation>Saksofon sopran</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="421"/>
+        <location filename="../src/TrackList.cpp" line="454"/>
         <source>Alto Sax</source>
         <translation>Saksofon alt</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="422"/>
+        <location filename="../src/TrackList.cpp" line="455"/>
         <source>Tenor Sax</source>
         <translation>Saksofon tenor</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="423"/>
+        <location filename="../src/TrackList.cpp" line="456"/>
         <source>Baritone Sax</source>
         <translation>Saksofon bariton</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="424"/>
+        <location filename="../src/TrackList.cpp" line="457"/>
         <source>Oboe</source>
         <translation>Oboa</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="425"/>
+        <location filename="../src/TrackList.cpp" line="458"/>
         <source>English Horn</source>
         <translation>Angleški rog</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="426"/>
+        <location filename="../src/TrackList.cpp" line="459"/>
         <source>Bassoon</source>
         <translation>Fagot</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="427"/>
+        <location filename="../src/TrackList.cpp" line="460"/>
         <source>Clarinet</source>
         <translation>Klarinet</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="428"/>
+        <location filename="../src/TrackList.cpp" line="461"/>
         <source>Piccolo</source>
         <translation>Mala flavta</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="429"/>
+        <location filename="../src/TrackList.cpp" line="462"/>
         <source>Flute</source>
         <translation>Flavta</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="430"/>
+        <location filename="../src/TrackList.cpp" line="463"/>
         <source>Recorder</source>
         <translation>Kljunasta flavta</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="431"/>
+        <location filename="../src/TrackList.cpp" line="464"/>
         <source>Pan Flute</source>
         <translation>Panova piščal</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="432"/>
+        <location filename="../src/TrackList.cpp" line="465"/>
         <source>Blown Bottle</source>
         <translation>Pihanje v steklenico</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="433"/>
+        <location filename="../src/TrackList.cpp" line="466"/>
         <source>Shakuhachi</source>
         <translation>Šakuhači</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="434"/>
+        <location filename="../src/TrackList.cpp" line="467"/>
         <source>Whistle</source>
         <translation>Žvižganje</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="435"/>
+        <location filename="../src/TrackList.cpp" line="468"/>
         <source>Ocarina</source>
         <translation>Okarina</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="436"/>
+        <location filename="../src/TrackList.cpp" line="469"/>
         <source>Lead 1 (square)</source>
         <translation>Lead 1 (pravilen val)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="437"/>
+        <location filename="../src/TrackList.cpp" line="470"/>
         <source>Lead 2 (sawtooth)</source>
         <translation>Lead 2 (melodični val)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="438"/>
+        <location filename="../src/TrackList.cpp" line="471"/>
         <source>Lead 3 (calliope)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="439"/>
+        <location filename="../src/TrackList.cpp" line="472"/>
         <source>Lead 4 (chiff)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="440"/>
+        <location filename="../src/TrackList.cpp" line="473"/>
         <source>Lead 5 (charang)</source>
         <translation>Lead 5 (šarang)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="441"/>
+        <location filename="../src/TrackList.cpp" line="474"/>
         <source>Lead 6 (voice)</source>
         <translation>Lead 6 (glasovi)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="442"/>
+        <location filename="../src/TrackList.cpp" line="475"/>
         <source>Lead 7 (fifths)</source>
         <translation>Lead 7 (kvinte)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="443"/>
+        <location filename="../src/TrackList.cpp" line="476"/>
         <source>Lead 8 (bass + lead)</source>
         <translation>Lead 8 (bas + lead)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="444"/>
+        <location filename="../src/TrackList.cpp" line="477"/>
         <source>Pad 1 (new age)</source>
         <translation>Pad 1 (nova doba)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="445"/>
+        <location filename="../src/TrackList.cpp" line="478"/>
         <source>Pad 2 (warm)</source>
         <translation>Pad 2 (topli)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="446"/>
+        <location filename="../src/TrackList.cpp" line="479"/>
         <source>Pad 3 (polysynth)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="447"/>
+        <location filename="../src/TrackList.cpp" line="480"/>
         <source>Pad 4 (choir)</source>
         <translation>Pad 4 (zbor)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="448"/>
+        <location filename="../src/TrackList.cpp" line="481"/>
         <source>Pad 5 (bowed)</source>
         <translation>Pad 5 (steklovina)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="449"/>
+        <location filename="../src/TrackList.cpp" line="482"/>
         <source>Pad 6 (metallic)</source>
         <translation>Pad 6 (kovinski)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="450"/>
+        <location filename="../src/TrackList.cpp" line="483"/>
         <source>Pad 7 (halo)</source>
         <translation>Pad 7 (žareč)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="451"/>
+        <location filename="../src/TrackList.cpp" line="484"/>
         <source>Pad 8 (sweep)</source>
         <translation>Pad 8 (izčiščen)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="452"/>
+        <location filename="../src/TrackList.cpp" line="485"/>
         <source>FX 1 (rain)</source>
         <translation>FX 1 (dež)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="453"/>
+        <location filename="../src/TrackList.cpp" line="486"/>
         <source>FX 2 (soundtrack)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="454"/>
+        <location filename="../src/TrackList.cpp" line="487"/>
         <source>FX 3 (crystal)</source>
         <translation>FX 3 (kristal)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="455"/>
+        <location filename="../src/TrackList.cpp" line="488"/>
         <source>FX 4 (atmosphere)</source>
         <translation>FX 4 (atmosfera)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="456"/>
+        <location filename="../src/TrackList.cpp" line="489"/>
         <source>FX 5 (brightness)</source>
         <translation>FX 5 (svetloba)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="457"/>
+        <location filename="../src/TrackList.cpp" line="490"/>
         <source>FX 6 (goblins)</source>
         <translation>FX 6 (goblini)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="458"/>
+        <location filename="../src/TrackList.cpp" line="491"/>
         <source>FX 7 (echoes)</source>
         <translation>FX 7 (odmevi)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="459"/>
+        <location filename="../src/TrackList.cpp" line="492"/>
         <source>FX 8 (sci-fi)</source>
         <translation>FX 8 (fantastika)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="460"/>
+        <location filename="../src/TrackList.cpp" line="493"/>
         <source>Sitar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="461"/>
+        <location filename="../src/TrackList.cpp" line="494"/>
         <source>Banjo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="462"/>
+        <location filename="../src/TrackList.cpp" line="495"/>
         <source>Shamisen</source>
         <translation>Šamisen</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="463"/>
+        <location filename="../src/TrackList.cpp" line="496"/>
         <source>Koto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="464"/>
+        <location filename="../src/TrackList.cpp" line="497"/>
         <source>Kalimba</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="465"/>
+        <location filename="../src/TrackList.cpp" line="498"/>
         <source>Bag pipe</source>
         <translation>Dude irske</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="466"/>
+        <location filename="../src/TrackList.cpp" line="499"/>
         <source>Fiddle</source>
         <translation>Gosli</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="467"/>
+        <location filename="../src/TrackList.cpp" line="500"/>
         <source>Shanai</source>
         <translation>Šanai</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="468"/>
+        <location filename="../src/TrackList.cpp" line="501"/>
         <source>Tinkle Bell</source>
         <translation>Zvončki otroški</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="469"/>
+        <location filename="../src/TrackList.cpp" line="502"/>
         <source>Agogo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="470"/>
+        <location filename="../src/TrackList.cpp" line="503"/>
         <source>Steel Drums</source>
         <translation>Jeklene plošče</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="471"/>
+        <location filename="../src/TrackList.cpp" line="504"/>
         <source>Woodblock</source>
         <translation>Tolkala lesena</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="472"/>
+        <location filename="../src/TrackList.cpp" line="505"/>
         <source>Taiko Drum</source>
         <translation>Taiko boben</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="473"/>
+        <location filename="../src/TrackList.cpp" line="506"/>
         <source>Melodic Tom</source>
         <translation>Tom</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="474"/>
+        <location filename="../src/TrackList.cpp" line="507"/>
         <source>Synth Drum</source>
         <translation>Tolkala synth</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="475"/>
+        <location filename="../src/TrackList.cpp" line="508"/>
         <source>Reverse Cymbal</source>
         <translation>Obrnjene činele</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="476"/>
+        <location filename="../src/TrackList.cpp" line="509"/>
         <source>Guitar Fret Noise</source>
         <translation>Praskanje strune kitare</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="477"/>
+        <location filename="../src/TrackList.cpp" line="510"/>
         <source>Breath Noise</source>
         <translation>Vdih</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="478"/>
+        <location filename="../src/TrackList.cpp" line="511"/>
         <source>Seashore</source>
         <translation>Obala</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="479"/>
+        <location filename="../src/TrackList.cpp" line="512"/>
         <source>Bird Tweet</source>
         <translation>Ptiči</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="480"/>
+        <location filename="../src/TrackList.cpp" line="513"/>
         <source>Telephone Ring</source>
         <translation>Telefon</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="481"/>
+        <location filename="../src/TrackList.cpp" line="514"/>
         <source>Helicopter</source>
         <translation>Helikopter</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="482"/>
+        <location filename="../src/TrackList.cpp" line="515"/>
         <source>Applause</source>
         <translation>Aplavz</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="483"/>
+        <location filename="../src/TrackList.cpp" line="516"/>
         <source>Gunshot</source>
         <translation>Pištola</translation>
     </message>
@@ -1219,13 +1227,13 @@
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="79"/>
-        <location filename="../src/GuiSidePanel.cpp" line="277"/>
+        <location filename="../src/GuiSidePanel.cpp" line="274"/>
         <source>Drums</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="80"/>
-        <location filename="../src/GuiSidePanel.cpp" line="278"/>
+        <location filename="../src/GuiSidePanel.cpp" line="275"/>
         <source>Melody</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1319,7 +1327,7 @@
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="78"/>
-        <location filename="../src/GuiTopBar.cpp" line="173"/>
+        <location filename="../src/GuiTopBar.cpp" line="174"/>
         <source>Start and stop playing music</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1350,13 +1358,13 @@
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="54"/>
-        <location filename="../src/GuiTopBar.cpp" line="201"/>
+        <location filename="../src/GuiTopBar.cpp" line="202"/>
         <source>Major</source>
         <translation>Velika</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="55"/>
-        <location filename="../src/GuiTopBar.cpp" line="202"/>
+        <location filename="../src/GuiTopBar.cpp" line="203"/>
         <source>Minor</source>
         <translation>Mala</translation>
     </message>
@@ -1451,7 +1459,7 @@
         <translation>d#</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="174"/>
+        <location filename="../src/GuiTopBar.cpp" line="175"/>
         <source>Playing music from the beginning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1459,18 +1467,18 @@
 <context>
     <name>QMessageBox</name>
     <message>
-        <location filename="../src/MidiFile.cpp" line="90"/>
-        <location filename="../src/MidiFile.cpp" line="97"/>
+        <location filename="../src/MidiFile.cpp" line="88"/>
+        <location filename="../src/MidiFile.cpp" line="95"/>
         <source>Midi File Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MidiFile.cpp" line="91"/>
+        <location filename="../src/MidiFile.cpp" line="89"/>
         <source>Cannot open &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MidiFile.cpp" line="98"/>
+        <location filename="../src/MidiFile.cpp" line="96"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1488,22 +1496,22 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/TrackList.cpp" line="268"/>
+        <location filename="../src/TrackList.cpp" line="301"/>
         <source>L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="270"/>
+        <location filename="../src/TrackList.cpp" line="303"/>
         <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="343"/>
+        <location filename="../src/TrackList.cpp" line="376"/>
         <source>Drums</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="346"/>
+        <location filename="../src/TrackList.cpp" line="379"/>
         <source>Unknown</source>
         <translation>Neznano</translation>
     </message>
@@ -1516,444 +1524,439 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="219"/>
-        <location filename="../src/QtWindow.cpp" line="227"/>
-        <location filename="../src/QtWindow.cpp" line="251"/>
+        <location filename="../src/QtWindow.cpp" line="207"/>
+        <location filename="../src/QtWindow.cpp" line="215"/>
+        <location filename="../src/QtWindow.cpp" line="239"/>
         <source>PianoBooster Midi File Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="220"/>
+        <location filename="../src/QtWindow.cpp" line="208"/>
         <source>Cannot open &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="228"/>
+        <location filename="../src/QtWindow.cpp" line="216"/>
         <source>&quot;%1&quot; is not a Midi File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="252"/>
+        <location filename="../src/QtWindow.cpp" line="240"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="328"/>
+        <location filename="../src/QtWindow.cpp" line="313"/>
         <source>&amp;Open...</source>
         <translation>&amp;Odpri ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="329"/>
+        <location filename="../src/QtWindow.cpp" line="314"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="330"/>
+        <location filename="../src/QtWindow.cpp" line="315"/>
         <source>Open an existing file</source>
         <translation>Odpri obstoječo datoteko</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="333"/>
+        <location filename="../src/QtWindow.cpp" line="318"/>
         <source>E&amp;xit</source>
         <translation>Konča&amp;j</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="334"/>
+        <location filename="../src/QtWindow.cpp" line="319"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="335"/>
+        <location filename="../src/QtWindow.cpp" line="320"/>
         <source>Exit the application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="338"/>
+        <location filename="../src/QtWindow.cpp" line="323"/>
         <source>&amp;About</source>
         <translation>&amp;O programu</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="339"/>
+        <location filename="../src/QtWindow.cpp" line="324"/>
         <source>Show the application&apos;s About box</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="342"/>
+        <location filename="../src/QtWindow.cpp" line="327"/>
         <source>&amp;PC Shortcut Keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="343"/>
+        <location filename="../src/QtWindow.cpp" line="328"/>
         <source>The PC Keyboard shortcut keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="346"/>
+        <location filename="../src/QtWindow.cpp" line="331"/>
         <source>&amp;Midi Setup ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="347"/>
+        <location filename="../src/QtWindow.cpp" line="332"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="348"/>
+        <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the Midi input and output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="351"/>
+        <location filename="../src/QtWindow.cpp" line="336"/>
         <source>Piano &amp;Keyboard Setting ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="352"/>
+        <location filename="../src/QtWindow.cpp" line="337"/>
         <source>Ctrl+K</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="353"/>
+        <location filename="../src/QtWindow.cpp" line="338"/>
         <source>Change the piano keyboard settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="356"/>
+        <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Fullscreen</source>
         <translation>Celo&amp;zaslonski način</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="357"/>
+        <location filename="../src/QtWindow.cpp" line="342"/>
         <source>Fullscreen mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="358"/>
+        <location filename="../src/QtWindow.cpp" line="343"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="362"/>
+        <location filename="../src/QtWindow.cpp" line="347"/>
         <source>&amp;Show the Side Panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="363"/>
+        <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Show the Left Side Panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="364"/>
+        <location filename="../src/QtWindow.cpp" line="349"/>
         <source>F12</source>
         <translation>F12</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="369"/>
+        <location filename="../src/QtWindow.cpp" line="354"/>
         <source>Show Piano &amp;Keyboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="370"/>
+        <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Show Piano Keyboard Widget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="378"/>
+        <location filename="../src/QtWindow.cpp" line="363"/>
         <source>&amp;Preferences ...</source>
         <translation>&amp;Nastavitve ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="379"/>
+        <location filename="../src/QtWindow.cpp" line="364"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="380"/>
+        <location filename="../src/QtWindow.cpp" line="365"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="383"/>
+        <location filename="../src/QtWindow.cpp" line="368"/>
         <source>Song &amp;Details ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="384"/>
+        <location filename="../src/QtWindow.cpp" line="369"/>
         <source>Song Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="385"/>
+        <location filename="../src/QtWindow.cpp" line="370"/>
         <source>Ctrl+D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="389"/>
+        <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Shift+F1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="394"/>
+        <location filename="../src/QtWindow.cpp" line="379"/>
         <source>Alt+F1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="420"/>
+        <location filename="../src/QtWindow.cpp" line="405"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="430"/>
+        <location filename="../src/QtWindow.cpp" line="415"/>
         <source>&amp;View</source>
         <translation>&amp;Videz</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="436"/>
+        <location filename="../src/QtWindow.cpp" line="421"/>
         <source>&amp;Song</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="440"/>
+        <location filename="../src/QtWindow.cpp" line="425"/>
         <source>Set&amp;up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="446"/>
-        <location filename="../src/QtWindow.cpp" line="450"/>
+        <location filename="../src/QtWindow.cpp" line="431"/>
+        <location filename="../src/QtWindow.cpp" line="435"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomoč</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="451"/>
-        <location filename="../src/QtWindow.cpp" line="548"/>
+        <location filename="../src/QtWindow.cpp" line="436"/>
+        <location filename="../src/QtWindow.cpp" line="526"/>
         <source>Piano Booster Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="455"/>
+        <location filename="../src/QtWindow.cpp" line="440"/>
         <source>&amp;Website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="456"/>
+        <location filename="../src/QtWindow.cpp" line="441"/>
         <source>Piano Booster Website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="499"/>
+        <location filename="../src/QtWindow.cpp" line="477"/>
         <source>&amp;%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="550"/>
+        <location filename="../src/QtWindow.cpp" line="528"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="551"/>
+        <location filename="../src/QtWindow.cpp" line="529"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="554"/>
+        <location filename="../src/QtWindow.cpp" line="532"/>
         <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="558"/>
+        <location filename="../src/QtWindow.cpp" line="536"/>
         <source>or</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="560"/>
+        <location filename="../src/QtWindow.cpp" line="538"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="562"/>
+        <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="563"/>
+        <location filename="../src/QtWindow.cpp" line="541"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="565"/>
+        <location filename="../src/QtWindow.cpp" line="543"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="569"/>
+        <location filename="../src/QtWindow.cpp" line="547"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="571"/>
+        <location filename="../src/QtWindow.cpp" line="549"/>
         <source>Piano Hints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="572"/>
+        <location filename="../src/QtWindow.cpp" line="550"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="574"/>
+        <location filename="../src/QtWindow.cpp" line="552"/>
         <source>website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="575"/>
+        <location filename="../src/QtWindow.cpp" line="553"/>
         <source>the PianoBooster</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="575"/>
+        <location filename="../src/QtWindow.cpp" line="553"/>
         <source>FAQ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="576"/>
+        <location filename="../src/QtWindow.cpp" line="554"/>
         <source>and the</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="576"/>
+        <location filename="../src/QtWindow.cpp" line="554"/>
         <source>user forum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="586"/>
+        <location filename="../src/QtWindow.cpp" line="564"/>
         <source>About Piano Booster</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="588"/>
+        <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="589"/>
+        <location filename="../src/QtWindow.cpp" line="567"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="591"/>
+        <location filename="../src/QtWindow.cpp" line="569"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="592"/>
+        <location filename="../src/QtWindow.cpp" line="570"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="594"/>
+        <location filename="../src/QtWindow.cpp" line="572"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="600"/>
+        <location filename="../src/QtWindow.cpp" line="578"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="601"/>
+        <location filename="../src/QtWindow.cpp" line="579"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="610"/>
+        <location filename="../src/QtWindow.cpp" line="588"/>
         <source>space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="623"/>
+        <location filename="../src/QtWindow.cpp" line="601"/>
         <source>PC Keyboard ShortCuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="625"/>
+        <location filename="../src/QtWindow.cpp" line="603"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="631"/>
+        <location filename="../src/QtWindow.cpp" line="609"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="637"/>
+        <location filename="../src/QtWindow.cpp" line="615"/>
         <source>Choose the right hand</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="638"/>
+        <location filename="../src/QtWindow.cpp" line="616"/>
         <source>Choose both hands</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="639"/>
+        <location filename="../src/QtWindow.cpp" line="617"/>
         <source>Choose the left Hand</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="640"/>
+        <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play from start toggle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="641"/>
+        <location filename="../src/QtWindow.cpp" line="619"/>
         <source>Play Pause Toggle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="642"/>
-        <location filename="../src/QtWindow.cpp" line="643"/>
+        <location filename="../src/QtWindow.cpp" line="620"/>
+        <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Increase the speed by 5%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="644"/>
+        <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Change to the Next Song</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="645"/>
+        <location filename="../src/QtWindow.cpp" line="623"/>
         <source>Change to the Previous Song</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="646"/>
+        <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Change to the Next Book</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="647"/>
+        <location filename="../src/QtWindow.cpp" line="625"/>
         <source>Change to the Previous Book</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="649"/>
+        <location filename="../src/QtWindow.cpp" line="627"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="671"/>
+        <location filename="../src/QtWindow.cpp" line="649"/>
         <source>Open Midi File</source>
         <translation>Odpri Midi datoteka</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="672"/>
+        <location filename="../src/QtWindow.cpp" line="650"/>
         <source>Midi Files</source>
         <translation>Datoteke MIDI</translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="121"/>
-        <source>None</source>
-        <translation>Noben</translation>
     </message>
 </context>
 </TS>
