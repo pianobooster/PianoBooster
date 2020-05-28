@@ -87,14 +87,6 @@ public:
 
    int firstPatch() {return m_firstPatch;}
 
-   QString trackInfo() { // ZZ not required
-       QString info = QString("No of tracks %1 : ").arg( QString::number(m_noteFrequencyByTrack.size()) );
-       for (int i = 0; i < m_noteCountByTrack.size(); i++) {
-            info += QString(" track %1 note count %2 " ).arg(QString::number(i),QString::number(m_noteCountByTrack[i]));
-       }
-       return info;
-   }
-
    int trackCount() {
        int acitveTracks = 0;
        for (int track = 0; track < m_noteCountByTrack.size(); track++) {

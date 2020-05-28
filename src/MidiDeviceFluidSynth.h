@@ -33,6 +33,8 @@
 
 #include <fluidsynth.h>
 
+#define FLUID_DEFAULT_GAIN 80
+
 class CMidiDeviceFluidSynth : public CMidiDeviceBase
 {
     virtual void init();

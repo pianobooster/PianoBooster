@@ -457,9 +457,12 @@ void QtWindow::showMidiSetup(){
 
     m_topBar->stopMuiscPlaying();
 
+    m_glWidget->stopTimerEvent();
     GuiMidiSetupDialog midiSetupDialog(this);
     midiSetupDialog.init(m_song, m_settings);
     midiSetupDialog.exec();
+    m_song->flushMidiInput();
+    m_glWidget->startTimerEvent();
 }
 
 // load the recent file list from the config file into the file menu
@@ -633,6 +636,8 @@ void QtWindow::keyboardShortcuts()
 
 void QtWindow::open()
 {
+    m_glWidget->stopTimerEvent();
+
     QFileInfo currentSong = m_settings->getCurrentSongLongFileName();
 
     QString dir;
@@ -641,13 +646,15 @@ void QtWindow::open()
     else
         dir = QDir::homePath();
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Midi File"),
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
                             dir, tr("Midi Files") + " (*.mid *.MID *.midi *.MIDI *.kar *.KAR)");
     if (!fileName.isEmpty()) {
 
         m_settings->openSongFile(fileName);
         setCurrentFile(fileName);
     }
+    m_song->flushMidiInput();
+    m_glWidget->startTimerEvent();
 }
 
 void QtWindow::readSettings()

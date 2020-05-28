@@ -26,7 +26,6 @@
 */
 /*********************************************************************************/
 
-#include <stdarg.h>
 #include "MidiTrack.h"
 #include "Util.h"
 #include "StavePosition.h"

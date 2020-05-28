@@ -63,6 +63,13 @@ public:
     virtual double  midiSettingsGetNum(QString name);
     virtual int     midiSettingsGetInt(QString name);
 
+    void flushMidiInput()
+    {
+        while (checkMidiInput() > 0) {
+            readMidiInput();
+        }
+    }
+
 private:
     CMidiDeviceBase* m_rtMidiDevice;
 #if WITH_INTERNAL_FLUIDSYNTH

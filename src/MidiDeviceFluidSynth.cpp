@@ -111,7 +111,7 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
     {
          fluid_synth_program_change(m_synth, channel, GM_PIANO_PATCH);
     }
-    fluid_synth_set_gain(m_synth, qsettings->value("FluidSynth/masterGainSpin", 80).toFloat()/100.0f );
+    fluid_synth_set_gain(m_synth, qsettings->value("FluidSynth/masterGainSpin", FLUID_DEFAULT_GAIN).toFloat()/100.0f );
     m_validConnection = true;
     return true;
 }

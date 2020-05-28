@@ -29,7 +29,6 @@
 #ifndef __MIDI_EVENT_H__
 #define __MIDI_EVENT_H__
 
-#include <stdio.h>
 #include <string>
 #include "Util.h"
 
@@ -236,14 +235,13 @@ public:
     //@brief how long the midi note was played for
     long getDuration(){return m_duration;}
 
-
     /**
      * This merges two MidiEvents (this and the other MidiEvent)
      * The MidiEvent that happens first (has the lowest delta time)
      * then a COPY of that MidiEvent is returned.
      * The original is then cleared so that  it type is set to MIDI_NONE
      * The MidiEvent that happens second will have it delta time reduced
-     * using the delta time form the first MidiEvent.
+     * using the delta time from the first MidiEvent.
      * NOTE Both this and the otherMidiEvent will be altered when call this method.
      */
     CMidiEvent getNextMergedEvent(CMidiEvent &otherMidiEvent)

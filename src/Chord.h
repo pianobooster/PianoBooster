@@ -42,7 +42,6 @@ typedef enum
     PB_PART_both    = 200, // keep well clear of real midi channels
     PB_PART_right,
     PB_PART_left,
-    PB_PART_all,
     PB_PART_none,
 } whichPart_t;
 
@@ -220,4 +219,3 @@ private:
 };
 
 #endif  // __CHORD_H__
-

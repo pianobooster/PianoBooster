@@ -185,14 +185,11 @@ void GuiSidePanel::on_leftHandRadio_toggled (bool checked)
 
 void GuiSidePanel::on_repeatSong_released(){
     m_settings->setValue("SidePanel/repeatSong",repeatSong->isChecked());
-
 }
 
 void GuiSidePanel::autoSetMuteYourPart()
 {
-    bool checked = false;
-    if ( CNote::hasPianoPart(m_song->getActiveChannel()))
-        checked =  true;
+    bool checked = true;
     if (m_song->getPlayMode() == PB_PLAY_MODE_rhythmTapping)
     {
         if (m_song->cfg_rhythmTapping == PB_RHYTHM_TAP_drumsOnly)

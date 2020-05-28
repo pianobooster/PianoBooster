@@ -61,7 +61,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     refreshMidiInputCombo();
     refreshMidiOutputCombo();
-    masterGainSpin->setValue(40);
+    masterGainSpin->setValue(FLUID_DEFAULT_GAIN);
     reverbCheck->setChecked(false);
     chorusCheck->setChecked(false);
 

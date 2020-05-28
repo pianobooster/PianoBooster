@@ -115,8 +115,6 @@ public:
     }
     int getLatencyFix() { return m_latencyFix; }
 
-    void muteChannel(int channel, bool state);
-    void mutePart(int channel, bool state);
     void transpose(int transpose);
 
     int getTranspose() {return m_transpose;}
@@ -217,7 +215,6 @@ protected:
     eventBits_t m_realTimeEventBits; //used to signal real time events to the caller of task()
 
     void outputSavedNotes();
-    void activatePianistMutePart();
 
     void resetWantedChord();
     void playWantedChord (CChord chord, CMidiEvent inputNote);
@@ -236,7 +233,6 @@ private:
     void outputPianoVolume();
 
     void channelSoundOff(int channel);
-    void trackSoundOff(int trackNumber);
 
     void findSplitPoint();
     void fetchNextChord();
@@ -272,13 +268,6 @@ private:
     CQueue<CMidiEvent>* m_savedNoteQueue;
     CQueue<CMidiEvent>* m_savedNoteOffQueue;
     CMidiEvent m_nextMidiEvent;
-    bool m_muteChannels[MAX_MIDI_CHANNELS];
-    bool isChannelMuted(int chan)
-    {
-        if (chan < 0 || chan >= MAX_MIDI_CHANNELS)
-            return true;
-        return m_muteChannels[chan];
-    }
     void setFollowSkillAdvanced(bool enable);
 
     CPiano* m_piano;
@@ -316,7 +305,7 @@ private:
     bool m_testWrongNoteSound;
     int m_boostVolume;
     int m_pianoVolume;
-    int m_activeChannel; // The current part that is being displayed (used for boost and activatePianistMutePart)
+    int m_activeChannel; // The current part that is being displayed (used for boost)
     int m_savedMainVolume[MAX_MIDI_CHANNELS];
     static playMode_t m_playMode;
     int m_skill;

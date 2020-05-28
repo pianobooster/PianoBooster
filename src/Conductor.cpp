@@ -42,8 +42,6 @@ playMode_t CConductor::m_playMode = PB_PLAY_MODE_listen;
 
 CConductor::CConductor()
 {
-    int i;
-
     m_scoreWin = nullptr;
     m_settings = nullptr;
     m_piano = nullptr;
@@ -75,10 +73,6 @@ CConductor::CConductor()
     setPianoSoundPatches(1-1, 7-1); // 6-1
     m_tempo.setSavedWantedChord(&m_savedWantedChord);
 
-    for ( i = 0; i < MAX_MIDI_CHANNELS; i++)
-    {
-        m_muteChannels[i] = false;
-    }
     reset();
     rewind();
     testWrongNoteSound(false);
@@ -115,6 +109,7 @@ int CConductor::midiEventSpace()
     return m_songEventQueue->space();
 
 }
+
 void CConductor::channelSoundOff(int channel)
 {
     if (channel < 0 || channel >= MAX_MIDI_CHANNELS)
@@ -128,11 +123,6 @@ void CConductor::channelSoundOff(int channel)
     // remove the sustain pedal as well
     midi.controlChangeEvent(0, channel, MIDI_SUSTAIN, 0);
     playMidiEvent(midi);
-}
-
-void CConductor::trackSoundOff(int trackNumber)
-{
-        channelSoundOff( track2Channel( trackNumber ));
 }
 
 void CConductor::allSoundOff()
@@ -158,35 +148,6 @@ void CConductor::resetAllChannels()
         midi.controlChangeEvent(0, channel, MIDI_RESET_ALL_CONTROLLERS, 0);
         playMidiEvent(midi);
     }
-}
-
-void CConductor::muteChannel(int channel, bool state)
-{
-    if (channel < 0 || channel >= MAX_MIDI_CHANNELS)
-        return;
-
-    m_muteChannels[ channel] = state;
-    if (state == true)
-        trackSoundOff(channel); // fixme this is called too often
-}
-
-void CConductor::mutePart(int part, bool state)
-{
-    int channel;
-
-    if ( part < MAX_MIDI_CHANNELS)
-    {
-        muteChannel(part, state);
-        return;
-    }
-
-    for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
-    {
-        muteChannel( channel, state);
-    }
-
-    if (state == true)
-        trackSoundOff(channel);
 }
 
 /* calculate the new solo_volume */
@@ -280,27 +241,9 @@ void CConductor::transpose(int transpose)
     }
 }
 
-void CConductor::activatePianistMutePart()
-{
-    mutePart(PB_PART_all, false);
-    if (shouldMutePianistPart())
-    {
-        if (CNote::hasPianoPart(m_activeChannel))
-        {
-            if (CNote::getActiveHand() == PB_PART_both || CNote::getActiveHand() == PB_PART_left)
-                mutePart(CNote::leftHandChan(), true);
-            if (CNote::getActiveHand() == PB_PART_both || CNote::getActiveHand() == PB_PART_right)
-                mutePart(CNote::rightHandChan(), true);
-        }
-        else
-            mutePart(m_activeChannel, true);
-    }
-}
-
 void CConductor::mutePianistPart(bool state)
 {
     m_mutePianistPart = state;
-    activatePianistMutePart();
 }
 
 void CConductor::setActiveHand(whichPart_t hand)
@@ -308,7 +251,6 @@ void CConductor::setActiveHand(whichPart_t hand)
     if (CNote::getActiveHand() == hand)
         return;
     CNote::setActiveHand(hand);
-    activatePianistMutePart();
     outputBoostVolume();
     m_wantedChord = m_savedWantedChord;
 
@@ -338,7 +280,6 @@ void CConductor::setPlayMode(playMode_t mode)
     m_playMode = mode;
     if ( m_playMode == PB_PLAY_MODE_listen )
         resetWantedChord();
-    activatePianistMutePart();
     outputBoostVolume();
     m_piano->setRhythmTapping(m_playMode == PB_PLAY_MODE_rhythmTapping);
 }
@@ -349,7 +290,6 @@ void CConductor::setActiveChannel(int channel)
     outputBoostVolume();
     resetWantedChord();
     fetchNextChord();
-    activatePianistMutePart();
 }
 
 void CConductor::outputPianoVolume()
@@ -412,7 +352,6 @@ void CConductor::playMusic(bool start)
     if (start)
     {
         resetAllChannels();
-        activatePianistMutePart();
 
         testWrongNoteSound(false);
         outputBoostVolume();
@@ -435,6 +374,7 @@ void CConductor::playMusic(bool start)
 
 // This will allow us to map midi tracks onto midi channels
 // tacks will eventually allow for more than the 16 midi channels (eg with two mid devices)
+// At the moment tracks are only used to remap midi events from channel 0 when using the keyboard lights.
 void CConductor::playTrackEvent(CMidiEvent event)
 {
     int track = event.channel();
@@ -1165,8 +1105,6 @@ void CConductor::rewind()
 
 void CConductor::init2(CScore * scoreWin, CSettings* settings)
 {
-    int channel;
-
     m_scoreWin = scoreWin;
     m_settings = settings;
     setQSettings(settings);
@@ -1175,8 +1113,6 @@ void CConductor::init2(CScore * scoreWin, CSettings* settings)
 
     m_followState = PB_FOLLOW_searching;
     this->CMidiDevice::init();
-    for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
-        muteChannel(channel, false);
 
     assert(m_scoreWin);
     if (m_scoreWin)

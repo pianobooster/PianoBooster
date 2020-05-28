@@ -85,16 +85,14 @@ void CTrackList::examineMidiEvent(CMidiEvent event)
 // Returns true if there is a piano part on channels 3 & 4
 bool CTrackList::pianoPartConvetionTest()
 {
-    if (m_midiChannels[CONVENTION_LEFT_HAND_CHANNEL].firstPatch() == GM_PIANO_PATCH &&
-         m_midiChannels[CONVENTION_LEFT_HAND_CHANNEL].active() &&
-         m_midiChannels[CONVENTION_RIGHT_HAND_CHANNEL].firstPatch() <= GM_PIANO_PATCH)
+    AnalyseItem left = m_midiChannels[CONVENTION_LEFT_HAND_CHANNEL];
+    AnalyseItem right = m_midiChannels[CONVENTION_RIGHT_HAND_CHANNEL];
+    if (left.active() && right.active()) {
+        if (left.firstPatch() == right.firstPatch() && isPianoOrOrganPatch(left.firstPatch())) {
+            CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
             return true;
-
-    if (m_midiChannels[CONVENTION_RIGHT_HAND_CHANNEL].firstPatch() == GM_PIANO_PATCH &&
-         m_midiChannels[CONVENTION_RIGHT_HAND_CHANNEL].active() &&
-         m_midiChannels[CONVENTION_LEFT_HAND_CHANNEL].firstPatch() <= GM_PIANO_PATCH)
-            return true;
-
+        }
+    }
     return false;
 }
 
@@ -186,12 +184,6 @@ int CTrackList::guessKeySignature(int chanA, int chanB)
             highScore = score;
             keySignature = keyLookUp[i].key;
         }
-        /*
-        printf("key %2d score %3d :: ", keyLookUp[i].key, score);
-        for (int j=0; j < MIDI_OCTAVE; j++)
-            printf(" %d", scale[(keyLookUp[i].offset + j)%MIDI_OCTAVE]);
-        printf("\n");
-        */
     }
     return keySignature;
 }
@@ -226,21 +218,33 @@ void CTrackList::refresh()
             rowCount++;
         }
     }
-    if (pianoPartConvetionTest())
-    {
-        if (CNote::bothHandsChan() == -2 ) // -2 for not set -1 for not used
-            CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
+
+    if (CNote::bothHandsChan() != -2   ) { // -2 for not set -1 for not used
+        m_song->setActiveChannel(CNote::bothHandsChan());
+    } else if (pianoPartConvetionTest()) {
         m_song->setActiveChannel(CNote::bothHandsChan());
         ppLogInfo("Active both");
     }
     else if (findLeftAndRightPianoParts()) {
         m_song->setActiveChannel(CNote::bothHandsChan());
-    }
-    else
-    {
-        if (m_partsList.count() > 0)
-        {
+    } else {
+        if (m_partsList.count() > 0) {
+            // for the case when there is no piano or organ patch
             m_song->setActiveChannel(m_partsList[0].midiChannel());
+        }
+    }
+
+    for (int chan = 0; chan < MAX_MIDI_CHANNELS; chan++)
+    {
+        AnalyseItem item  = m_midiChannels[chan];
+        if (item.active())
+        {
+            if (item.firstPatch() == GM_PIANO_PATCH) {
+                // For those midi files that do not include ANY patch we want to set it piano
+                CMidiEvent midi;
+                midi.programChangeEvent(0, chan, GM_PIANO_PATCH);
+                m_song->playMidiEvent(midi);
+            }
         }
     }
 
@@ -264,7 +268,6 @@ void CTrackList::refresh()
         m_song->mapTrack2Channel(Cfg::keyboardLightsChan,  spareChan);
     for (int chan = 0; chan < MAX_MIDI_CHANNELS; chan++) {
         AnalyseItem item  = m_midiChannels[chan];
-        ppLogInfo("ZZ track notes %d tracks %s", item.noteCount(), qPrintable(item.trackInfo()));
         CNote::setRightHandTrack(chan, item.rightHandTrack());
     }
 }

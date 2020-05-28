@@ -1,4 +1,4 @@
 /build*/
 /debug*/
 /release*/
-CMakeLists.txt.user
+CMakeLists.txt.user*

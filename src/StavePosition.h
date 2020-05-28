@@ -32,9 +32,6 @@
 #include "Util.h"
 #include "Chord.h"
 
-#include <stdio.h>
-#include <stdint.h>
-
 typedef  struct {
     int pianoNote;   // 1 is Middle C, 2 is D
     int accidental;
