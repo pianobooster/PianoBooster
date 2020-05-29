@@ -62,7 +62,7 @@ public:
 
    void addNoteEvent(CMidiEvent event){
        m_noteCount++;
-        int trackNo = event.track();
+       int trackNo = event.track();
        m_noteCountByTrack[trackNo]++;
        int *noteFrequency = m_noteFrequencyByTrack[trackNo].data();
        int note = event.note();
@@ -71,7 +71,7 @@ public:
            (*(noteFrequency + note))++;
        }
        // If we have a note and no patch then default to grand piano patch
-       if (m_firstPatch == -1) {
+       if (m_firstPatch == -1 && event.channel() != MIDI_DRUM_CHANNEL) {
            m_firstPatch = GM_PIANO_PATCH;
        }
    }
@@ -129,7 +129,7 @@ public:
    }
 
 private:
-    int m_noteCount;
+    int m_noteCount = 0;
     int m_firstPatch = -1;
     QVector<QSharedPointer<int>> m_noteFrequencyByTrack;
     QVector<int> m_noteCountByTrack;

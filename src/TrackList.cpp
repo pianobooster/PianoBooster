@@ -87,8 +87,23 @@ bool CTrackList::pianoPartConvetionTest()
 {
     AnalyseItem left = m_midiChannels[CONVENTION_LEFT_HAND_CHANNEL];
     AnalyseItem right = m_midiChannels[CONVENTION_RIGHT_HAND_CHANNEL];
+    // Both hands on channels 3 & 4
     if (left.active() && right.active()) {
-        if (left.firstPatch() == right.firstPatch() && isPianoOrOrganPatch(left.firstPatch())) {
+        if (left.firstPatch() == right.firstPatch() && isPianoOrOrganPatch(right.firstPatch())) {
+            CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
+            return true;
+        }
+    }
+    // Right hand only channel 4 and no left hand on channel 3
+    if (right.active() && !left.active()) {
+        if (isPianoOrOrganPatch(right.firstPatch())) {
+            CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
+            return true;
+        }
+    }
+    // Left hand only channel 3 and no right hand on channel 4
+    if (left.active() && !right.active()) {
+        if (isPianoOrOrganPatch(left.firstPatch())) {
             CNote::setChannelHands(CONVENTION_LEFT_HAND_CHANNEL, CONVENTION_RIGHT_HAND_CHANNEL);
             return true;
         }
@@ -102,6 +117,9 @@ bool CTrackList::findLeftAndRightPianoParts()
     int chanA = -1;
 
     for (int chan = 0 ; chan < MAX_MIDI_CHANNELS; chan++) {
+        if (chan == MIDI_DRUM_CHANNEL) {
+            continue;
+        }
         if (m_midiChannels[chan].active()) {
             int patch = m_midiChannels[chan].firstPatch();
             if (isPianoOrOrganPatch(patch)) {

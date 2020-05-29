@@ -252,25 +252,8 @@ void CConductor::setActiveHand(whichPart_t hand)
         return;
     CNote::setActiveHand(hand);
     outputBoostVolume();
-    m_wantedChord = m_savedWantedChord;
+    resetWantedChord();
 
-    if (m_wantedChord.trimOutOfRangeNotes(m_transpose)==0)
-        fetchNextChord();
-
-    int note;
-    int i;
-
-    // Reset the note colors
-    for(i = 0; i < m_savedWantedChord.length(); i++)
-    {
-        note = m_savedWantedChord.getNote(i).pitch();
-        m_scoreWin->setPlayedNoteColor(note, Cfg::noteColor(), m_chordDeltaTime);
-    }
-    for(i = 0; i < m_wantedChord.length(); i++)
-    {
-        note = m_wantedChord.getNote(i).pitch();
-        m_scoreWin->setPlayedNoteColor(note, Cfg::playedStoppedColor(), m_chordDeltaTime);
-    }
     findSplitPoint();
     forceScoreRedraw();
 }

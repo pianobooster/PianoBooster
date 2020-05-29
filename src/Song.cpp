@@ -112,6 +112,7 @@ void CSong::setActiveHand(whichPart_t hand)
         hand = PB_PART_left;
 
     this->CConductor::setActiveHand(hand);
+    regenerateChordQueue();
 
     m_scoreWin->setDisplayHand(hand);
 }
