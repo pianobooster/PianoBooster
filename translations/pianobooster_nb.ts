@@ -815,7 +815,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation type="unfinished">Du kan  bruke PC-tastatur istedenfor et MIDI-keyboard; &quot;x&quot; er midt-C.</translation>
+        <translation>Du kan bruke PC-tastatur istedenfor et MIDI-keyboard; &quot;x&quot; er midt-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
