@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Accordion</source>
-        <translation>Аккордеон</translation>
+        <translation>Акордеон</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
