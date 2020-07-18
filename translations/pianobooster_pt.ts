@@ -80,7 +80,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation>ERRO NENHUM ARQUIVO MIDI: para corrigi-lo isso use o menu Ficheiro/Abrir ...</translation>
+        <translation>ERRO NENHUM FICHEIRO MIDI: para corrigi-lo isso use o menu Ficheiro/Abrir ...</translation>
     </message>
 </context>
 <context>
