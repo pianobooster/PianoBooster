@@ -1835,7 +1835,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="564"/>
         <source>About Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Booster туралы</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
@@ -1956,7 +1956,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="650"/>
         <source>Midi Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI файлдары</translation>
     </message>
 </context>
 </TS>
