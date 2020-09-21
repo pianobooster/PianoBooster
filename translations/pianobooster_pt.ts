@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Conductor.cpp" line="335"/>
         <source>None</source>
-        <translation type="unfinished">Nenhum</translation>
+        <translation>Nenhum</translation>
     </message>
 </context>
 <context>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
-        <translation>ERRO SEM SOM: para corrigi-lo use o menu Configurações / Configurações Midi ...</translation>
+        <translation>ERRO SEM SOM: para corrigi-lo use o menu Configurações/Configurações Midi ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="540"/>
