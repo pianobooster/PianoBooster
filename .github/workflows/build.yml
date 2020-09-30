@@ -14,7 +14,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DWITH_INTERNAL_FLUIDSYNTH=ON
+          cmake ..
           make
           find .
   macos-build:
@@ -28,6 +28,6 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DWITH_INTERNAL_FLUIDSYNTH=ON -DCMAKE_PREFIX_PATH=$(brew --prefix qt)
+          cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix qt)
           make
           find .
