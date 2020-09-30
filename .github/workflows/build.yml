@@ -28,6 +28,6 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix qt)
+          cmake .. -DWITH_INTERNAL_FLUIDSYNTH=ON -DCMAKE_PREFIX_PATH=$(brew --prefix qt)
           make
           find .
