@@ -103,13 +103,14 @@ endif(${CMAKE_SYSTEM} MATCHES "Darwin")
 
 if(WITH_INTERNAL_FLUIDSYNTH)
     if(NOT WIN32)
-        pkg_check_modules(FLUIDSYNTH fluidsynth)
-        if(NOT FLUIDSYNTH_FOUND)
-           MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
-        endif(NOT FLUIDSYNTH_FOUND)
-        include_directories (${FLUIDSYNTH_INCLUDE_DIRS})
-        target_link_libraries(${FLUIDSYNTH_LIBRARIES})
-        LINK_LIBRARIES(fluidsynth)
+        FIND_PATH(FLUIDSYNTH_INCLUDE_DIR fluidsynth.h)
+
+        FIND_LIBRARY(FLUIDSYNTH_LIBRARIES NAMES fluidsynth )
+        MARK_AS_ADVANCED( FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR )
+
+        INCLUDE(FindPackageHandleStandardArgs)
+        FIND_PACKAGE_HANDLE_STANDARD_ARGS(FluidSynth DEFAULT_MSG FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR)
+
     else()
         FIND_PACKAGE( fluidsynth REQUIRED )
     endif()
