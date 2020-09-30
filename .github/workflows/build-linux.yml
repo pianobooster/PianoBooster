@@ -16,4 +16,4 @@ jobs:
           cd build
           cmake .. -DWITH_INTERNAL_FLUIDSYNTH=ON
           make
-          ls -la
+          find .
