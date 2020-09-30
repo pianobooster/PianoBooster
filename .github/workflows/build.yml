@@ -13,6 +13,7 @@ jobs:
       - name: Build
         run: |
           mkdir build
+          cd build
           cmake .. -DWITH_INTERNAL_FLUIDSYNTH=ON
           make
           ls -la
