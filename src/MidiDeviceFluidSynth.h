@@ -31,7 +31,7 @@
 
 #include "MidiDeviceBase.h"
 
-#include "fluidsynth.h"
+#include <fluidsynth.h>
 
 #define FLUID_DEFAULT_GAIN 80
 
