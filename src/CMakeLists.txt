@@ -103,7 +103,7 @@ endif(${CMAKE_SYSTEM} MATCHES "Darwin")
 
 if(WITH_INTERNAL_FLUIDSYNTH)
     if(NOT WIN32)
-        pkg_check_modules(FLUIDSYNTH fluidsynth)
+        pkg_check_modules(FLUIDSYNTH_DEPS, FLUIDSYNTH fluidsynth)
         if(NOT FLUIDSYNTH_FOUND)
            MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
         endif(NOT FLUIDSYNTH_FOUND)
