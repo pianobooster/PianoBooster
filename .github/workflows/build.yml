@@ -29,7 +29,7 @@ jobs:
           brew install glib gobject-introspection libsndfile pkg-config jack dbus-glib pulseaudio portaudio sdl2
       - name: install fluidsynth
         run: |
-          git clone git@github.com:FluidSynth/fluidsynth.git
+          git clone https://github.com/FluidSynth/fluidsynth.git
           cd fluidsynth
           mkdir build && cd build
           cmake -Werror=dev -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=1 -DNO_GUI=1 ..
