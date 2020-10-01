@@ -4,7 +4,7 @@ on: push
 
 jobs:
   linux-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
@@ -22,19 +22,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
-        #- name: fluidsynth dependencies
-        #  run: |
-        #    brew update || brew update
-        #    brew upgrade
-        #    brew install glib gobject-introspection libsndfile pkg-config jack dbus-glib pulseaudio portaudio sdl2
-        #- name: install fluidsynth
-        #  run: |
-        #    git clone https://github.com/FluidSynth/fluidsynth.git
-        #    cd fluidsynth
-        #    mkdir build && cd build
-        #    cmake -Werror=dev -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=1 -DNO_GUI=1 ..
-        #    make
-        #    sudo make install
       - name: Install dependencies
         run: |
           brew update || brew update
@@ -47,3 +34,18 @@ jobs:
           cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix qt)
           make
           find .
+  windows-build:
+    runs-on: windows-latest
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Install dependencies
+        uses: lukka/run-vcpkg@v4
+        with:
+          vcpkgDirectory: ${{ github.workspace }}/vcpkg
+          vcpkgArguments: mingw fluidsynth qt5-base qtcreator
+          vcpkgGitUrl: 'https://github.com/microsoft/vcpkg.git'
+          vcpkgGitCommitId: '56fffbe49dfb4dd8fae0940f272c5fd2b86be991'
+      - name:
+        run: find .
+        shell: bash
+
