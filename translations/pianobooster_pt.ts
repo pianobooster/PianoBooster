@@ -1628,7 +1628,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Fullscreen</source>
-        <translation>Tela C&amp;heia</translation>
+        <translation>Ecrã C&amp;heio</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
@@ -1951,12 +1951,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>Open Midi File</source>
-        <translation>Abrir Arquivo MIDI</translation>
+        <translation>Abrir ficheiro MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="650"/>
         <source>Midi Files</source>
-        <translation>Arquivos MIDI</translation>
+        <translation>Ficheiros MIDI</translation>
     </message>
 </context>
 </TS>
