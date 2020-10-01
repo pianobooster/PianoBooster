@@ -49,7 +49,6 @@ jobs:
           vcpkgTriplet: x64-windows
       - name:
         run: |
-          find .
           mkdir build
           cd build
           cmake ..
