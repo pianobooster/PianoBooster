@@ -28,6 +28,10 @@
 #ifndef __DRAW_H__
 #define __DRAW_H__
 
+#ifdef _WIN32
+  #include <windows.h>
+#endif
+
 #ifdef __APPLE__
   #include <OpenGL/gl.h>
   #include <OpenGL/glu.h>
