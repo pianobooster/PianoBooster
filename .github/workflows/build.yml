@@ -49,12 +49,10 @@ jobs:
           vcpkgTriplet: x64-windows
       - name:
         run: |
-          PATH=$PATH:${GITHUB_WORKSPACE}/vcpkg/installed/x64-windows/lib/
-
           mkdir build
           cd build
 
-          cmake .. -DCMAKE_PREFIX_PATH=../vcpkg/installed/x64-windows/lib/
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=${GITHUB_WORKSPACE}/vcpkg/scripts/buildsystems/vcpkg.cmake
           find .
           cmake --build
           find .
