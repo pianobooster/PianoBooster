@@ -48,6 +48,13 @@ jobs:
           vcpkgGitCommitId: '56fffbe49dfb4dd8fae0940f272c5fd2b86be991'
           vcpkgTriplet: x64-windows
       - name:
-        run: find .
+        run: |
+          find .
+          mkdir build
+          cd build
+          cmake ..
+          find .
+          cmake --build
+          find .
         shell: bash
 
