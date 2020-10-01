@@ -51,9 +51,7 @@ jobs:
         run: |
           mkdir build
           cd build
-
           cmake .. -DWITH_INTERNAL_FLUIDSYNTH=OFF -DCMAKE_TOOLCHAIN_FILE=${GITHUB_WORKSPACE}/vcpkg/scripts/buildsystems/vcpkg.cmake
-          find .
           cmake --build .
           find .
         shell: bash
