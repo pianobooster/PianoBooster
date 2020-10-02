@@ -118,7 +118,7 @@ void GuiPreferencesDialog::initLanguageCombo(){
 
             languageName[0]=languageName[0].toUpper();
 
-            if (languageName.isEmpty() or languageName=="C"){
+            if (languageName.isEmpty() || languageName=="C"){
                     languageName=lang_code;
             }
 
