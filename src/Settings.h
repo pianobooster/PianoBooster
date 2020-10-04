@@ -152,6 +152,10 @@ public:
         QString locale = value("General/lang","").toString();
         if (locale.isEmpty()) {
             locale = QLocale::system().bcp47Name();
+            int n = locale.indexOf("_");
+            if ((n > 0)) {
+                locale = locale.left(n);
+            }
         }
         return locale;
     }

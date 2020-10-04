@@ -2,4 +2,4 @@
 
 Use your **thumb** for **C**, your **index finger** for **D**, . . . , all the way up to your **little finger** for **G**. Make sure you keep using the correct finger for each note.
 
-**Hint:** _If you don't know the notes on the piano then **label the piano keys** using the PianoBooster **Note Chart**._
+> **Hint:** _If you don't know the notes on the piano then **label the piano keys** using the PianoBooster **Note Chart**._

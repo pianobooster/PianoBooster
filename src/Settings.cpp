@@ -274,34 +274,32 @@ void CSettings::updateTutorPage()
     QFileInfo fileInfo(getCurrentSongLongFileName());
     const char* EXTN = ".html";
 
-    QString fileBase = fileInfo.absolutePath() + "/InfoPages/" + fileInfo.completeBaseName() + "_";
 
-    QString locale = selectedLangauge();
 
     if (m_tutorPagesEnabled)
     {
+        QString locale = selectedLangauge();
+
+        QString tutorFilePath = fileInfo.absolutePath() + "/InfoPages/" + locale + "/";
         QFileInfo tutorFile;
-        tutorFile.setFile(fileBase + locale + EXTN);
+        tutorFile.setFile(tutorFilePath + fileInfo.completeBaseName() + EXTN);
         if (tutorFile.exists())
         {
             m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
             return;
         }
-        int n = locale.indexOf("_");
 
-        if (n > 0)
+        tutorFilePath = fileInfo.absolutePath() + "/InfoPages/en/";
+        tutorFile.setFile(tutorFilePath + fileInfo.completeBaseName() + EXTN);
+
+        if (tutorFile.exists())
         {
-            locale = locale.left(n);
-            tutorFile.setFile(fileBase + locale + EXTN);
-            if (tutorFile.exists())
-            {
-                m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
-                return;
-            }
+            m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
+            return;
         }
 
-        locale = "en";
-        tutorFile.setFile(fileBase + locale + EXTN);
+        // The previous location of the tutor pages English only
+        tutorFile.setFile(fileInfo.absolutePath() + "/InfoPages/" + fileInfo.completeBaseName() + "_en" + EXTN);
         if (tutorFile.exists())
         {
             m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
@@ -416,18 +414,14 @@ void CSettings::unzipBoosterMusicBooks()
 
     if (value("PianoBooster/MusicRelease", 0).toInt() < MUSIC_RELEASE)
     {
-        QString resourceDir = QApplication::applicationDirPath() + "/../music/";
+        QString musicSrcDir = QApplication::applicationDirPath() + "/";
 
-        ppLogTrace("unzipBoosterMusicBooks resourceDir1 %s", qPrintable(resourceDir));
+        ppLogTrace("unzipBoosterMusicBooks resourceDir1 %s", qPrintable(musicSrcDir));
 
-        if (!QFile::exists(resourceDir + ZIPFILENAME))
-            resourceDir = QApplication::applicationDirPath() + "/../../music/";
-        ppLogTrace("unzipBoosterMusicBooks resourceDir2 %s", qPrintable(resourceDir));
-
-        if (!QFile::exists(resourceDir + ZIPFILENAME))
+        if (!QFile::exists(musicSrcDir + ZIPFILENAME))
         {
 #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-           resourceDir=Util::dataDir()+"/music/";
+           musicSrcDir=Util::dataDir()+"/music/";
 #endif
 #ifdef Q_OS_DARWIN
             resourceDir = QApplication::applicationDirPath() + "/../Resources/music/";
@@ -435,9 +429,9 @@ void CSettings::unzipBoosterMusicBooks()
         }
 
         ppLogInfo(qPrintable("applicationDirPath=" + QApplication::applicationDirPath()));
-        ppLogTrace("resourceDir %s", qPrintable(resourceDir));
+        ppLogTrace("resourceDir %s", qPrintable(musicSrcDir));
 
-        QFileInfo zipFile(resourceDir +  ZIPFILENAME);
+        QFileInfo zipFile(musicSrcDir +  ZIPFILENAME);
 
         QDir destMusicDir;
 

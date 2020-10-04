@@ -13,7 +13,11 @@ V: LH1 clef=bass
 %%MIDI gchordoff
 %
 [V: RH1] CCCD | E2D2 | CEDD | C4 |
+[V: LH1]  z4  | z4   | z4   | z4 |
 [V: RH1] CCCD | E2D2 | CEDD | C4 |
+[V: LH1] z4   | z4   | z4   | z4 |
 [V: RH1] DDDD | E2E2 | EEDD | C4 |
+[V: LH1] z4   | z4   | z4   | z4 |
 [V: RH1] CCCD | E2D2 | CEDD | C4 |
+[V: LH1] z4   | z4   | z4   | z4 |
 %

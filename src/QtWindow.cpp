@@ -724,10 +724,11 @@ void QtWindow::loadTutorHtml(const QString & name)
         QTextStream out(&file);
         out.setCodec("UTF-8");
 
-        QString htmlheader = "<head><style>body {background-color:#FFFFC0;color: black}p{font-size: 18px;} #hint{color: #ff0000;}</style></head>";
-
-        QString text = htmlheader + out.readAll();
-        m_tutorWindow->setHtml(text.toUtf8().data());
+        QString htmlStart = "<head><style> body{background-color:#FFFFC0;color: black} p{font-size: 18px;} blockquote{color: #ff0000;}</style></head><body>";
+        QString htmlBody = out.readAll();
+        QString htmlEnd = "</body>";
+        QString htmlText = htmlStart + htmlBody + htmlEnd;
+        m_tutorWindow->setHtml(htmlText.toUtf8().data());
 
         // TODO get this working again on small screens
         //_tutorWindow->setFixedHeight(130);

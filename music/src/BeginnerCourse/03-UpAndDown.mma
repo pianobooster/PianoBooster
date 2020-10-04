@@ -79,6 +79,6 @@ Groove Second
     C                   {1c++;}
     C C Am:5 Am:5       {4c++;4d++;4e++;4f++;}
     G:8 G:8 Am:5 Am:5   {4g++;4f++;4e++;4d++;}
-    C                   {1+2c++;}
+    C                   {1+2c++~;}
     C z! z! z!
 

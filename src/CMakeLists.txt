@@ -323,3 +323,5 @@ if(DEBUG_LOG_TIMING)
     ADD_DEFINITIONS(-DPB_LOG_TIMING)
 endif()
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../music/BoosterMusicBooks.zip ${CMAKE_CURRENT_BINARY_DIR}/ COPYONLY)
+

@@ -2,4 +2,4 @@
 
 Use your **thumb** for **C**, your **index finger** for **B**, . . . , all the way down to your **little finger** for **F**.
 
-**Hint:** _Make sure you use **every finger** on your **left hand** when playing this piece._
+> **Hint:** _Make sure you use **every finger** on your **left hand** when playing this piece._
