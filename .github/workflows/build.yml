@@ -29,6 +29,7 @@ jobs:
           ../linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
           find .
           echo "Done!"
+          chmod +x *AppImage
           mv *AppImage ../PianoBooster-x86_64.AppImage
           ls -lh ../PianoBooster-x86_64.AppImage
       - name: Upload Linux Build
