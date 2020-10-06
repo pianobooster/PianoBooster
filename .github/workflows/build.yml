@@ -118,7 +118,7 @@ jobs:
     - name: Download build
       uses: actions/download-artifact@v2
       with:
-        name: ${ARTIFACT}
+        name: ${{ env.ARTIFACT }}
     - name: Snapshot Release
       uses: WebFreak001/deploy-nightly@v1.0.1
       env:
@@ -126,9 +126,9 @@ jobs:
       with:
         upload_url: https://uploads.github.com/repos/winder/PianoBooster/releases/32197618/assets{?name,label}
         release_id: 32197618
-        asset_path: ${ASSET_PATH}
-        asset_name: ${ASSET_NAME}
-        asset_content_type: ${ASSET_CONTENT_TYPE}
+        asset_path: ${{ env.ASSET_PATH }}
+        asset_name: ${{ env.ASSET_NAME }}
+        asset_content_type: ${{ env.ASSET_CONTENT_TYPE }}
         max_releases: 30
 
 #    - name: Create release
