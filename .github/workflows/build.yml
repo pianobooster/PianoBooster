@@ -109,16 +109,16 @@ jobs:
           }
     env: ${{ matrix.env }}
     steps:
-    - name: Download build
-      uses: actions/download-artifact@v2
-      with:
-        name: ${ARTIFACT}
     - name: Publish snapshot build
       #if: contains(github.ref, 'develop')
       run: |
         find .
         ls -la
         set
+    - name: Download build
+      uses: actions/download-artifact@v2
+      with:
+        name: ${ARTIFACT}
     - name: Snapshot Release
       uses: WebFreak001/deploy-nightly@v1.0.1
       env:
