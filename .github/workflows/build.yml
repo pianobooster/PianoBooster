@@ -1,0 +1,138 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  linux-build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Install dependencies
+        run: sudo apt-get install build-essential cmake pkg-config libftgl-dev qtbase5-dev qttools5-dev librtmidi-dev fluid-soundfont-gm libfluidsynth-dev
+      - name: Install linuxdeploy
+        run: |
+          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x linuxdeploy*.AppImage
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+          make -j$(nproc)
+          make install DESTDIR=AppDir
+          # Package
+          export QT_SELECT=5
+          export QML_SOURCES_PATHS="${GITHUB_WORKSPACE}"/src
+          # initialize AppDir, bundle shared libraries for PianoBooster, use Qt plugin to bundle additional resources, and build AppImage, all in one single command
+          ../linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
+          find .
+          echo "Done!"
+          mv *AppImage ../PianoBooster-x86_64.AppImage
+          ls -lh ../PianoBooster-x86_64.AppImage
+      - name: Upload Linux Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux-build
+          path: PianoBooster-x86_64.AppImage
+
+  macos-build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Install dependencies
+        run: |
+          brew update || brew update
+          brew upgrade
+          brew install cmake qt5 ftgl jack pkg-config fluid-synth
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt)"
+          make
+          make install-translations
+          $(brew --prefix qt)/bin/macdeployqt build/pianobooster.app -dmg
+          find .
+          echo "Done!"
+          mv build/*dmg ../PianoBooster.dmg
+          ls -lh ../PianoBooster.dmg
+      - name: Upload Mac Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: mac-build
+          path: PianoBooster.dmg
+
+#  windows-build:
+#    runs-on: windows-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2.0.0
+#      - name: Install dependencies
+#        uses: lukka/run-vcpkg@v4
+#        with:
+#          vcpkgDirectory: ${{ github.workspace }}/vcpkg
+#          vcpkgArguments: fluidsynth qt5-base qt5-tools freetype ftgl
+#          vcpkgGitUrl: 'https://github.com/microsoft/vcpkg.git'
+#          vcpkgGitCommitId: '56fffbe49dfb4dd8fae0940f272c5fd2b86be991'
+#          vcpkgTriplet: x64-windows
+#      - name:
+#        run: |
+#          mkdir build
+#          cd build
+#          cmake .. -DWITH_INTERNAL_FLUIDSYNTH=OFF -DCMAKE_TOOLCHAIN_FILE="${GITHUB_WORKSPACE}"/vcpkg/scripts/buildsystems/vcpkg.cmake
+#          cmake --build .
+#          find .
+#        shell: bash
+#
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [macos-build, linux-build]
+    steps:
+    - name: Download linux build
+      uses: actions/download-artifact@v2
+      with:
+        name: linux-build
+    - name: Download mac build
+      uses: actions/download-artifact@v2
+      with:
+        name: mac-build
+    - name: Publish snapshot build
+      #if: contains(github.ref, 'develop')
+      run: |
+        find .
+        ls -la
+    - name: Linux Snapshot Release
+      uses: WebFreak001/deploy-nightly@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by github actions
+      with:
+        # find out this value by opening https://api.github.com/repos/<owner>/<repo>/releases in your browser and copy the full "upload_url" value including the {?name,label} part
+        upload_url: https://uploads.github.com/repos/winder/PianoBooster/releases/32197618/assets{?name,label}
+        release_id: 32197618 # same as above (id can just be taken out the upload_url, it's used to find old releases)
+        asset_path: PianoBooster-x86_64.AppImage # path to archive to upload
+        asset_name: PianoBooster-x86_64-$$.AppImage # name to upload the release as, use $$ to insert date (YYYYMMDD) and 6 letter commit hash
+        asset_content_type: application/dmg # required by GitHub API
+        max_releases: 30 # optional, if there are more releases than this matching the asset_name, the oldest ones are going to be deleted
+    - name: Mac Snapshot Release
+      uses: WebFreak001/deploy-nightly@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by github actions
+      with:
+        # find out this value by opening https://api.github.com/repos/<owner>/<repo>/releases in your browser and copy the full "upload_url" value including the {?name,label} part
+        upload_url: https://uploads.github.com/repos/winder/PianoBooster/releases/32197618/assets{?name,label}
+        release_id: 32197618 # same as above (id can just be taken out the upload_url, it's used to find old releases)
+        asset_path: PianoBooster.dmg # path to archive to upload
+        asset_name: PianoBooster_$$.dmg # name to upload the release as, use $$ to insert date (YYYYMMDD) and 6 letter commit hash
+        asset_content_type: application/dmg # required by GitHub API
+        max_releases: 30 # optional, if there are more releases than this matching the asset_name, the oldest ones are going to be deleted
+#    - name: Create release
+#      if: contains(github.ref, 'master')
+#      run: |
+#        find .
+#        ls -la
+
+

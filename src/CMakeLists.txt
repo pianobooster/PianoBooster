@@ -47,6 +47,7 @@ MESSAGE("CMAKE_INSTALL_BINDIR: " ${CMAKE_INSTALL_BINDIR})
 FIND_PACKAGE( OpenGL REQUIRED )
 
 if(NOT WIN32)
+   # the `pkg_check_modules` function is created with this call
    include(FindPkgConfig)
    FIND_PACKAGE( PkgConfig REQUIRED )
 endif()
@@ -97,6 +98,7 @@ endif(${CMAKE_SYSTEM} MATCHES "Darwin")
 if(WITH_INTERNAL_FLUIDSYNTH)
     if(NOT WIN32)
         pkg_check_modules(FLUIDSYNTH fluidsynth)
+
         if(NOT FLUIDSYNTH_FOUND)
            MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
         endif(NOT FLUIDSYNTH_FOUND)
@@ -245,7 +247,11 @@ if(UNIX AND NOT APPLE)
     ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
+<<<<<<< HEAD
 endif(UNIX AND NOT APPLE)
+=======
+    endif(UNIX AND NOT APPLE)
+>>>>>>> Add build automation.
 
 if(WIN32)
     ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
@@ -263,6 +269,10 @@ else()
 endif()
 target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY} ${FLUIDSYNTH_LIBRARY} ${RTMIDI_LIBRARY})
 
+<<<<<<< HEAD
+=======
+#  Apple didn't like this.
+>>>>>>> Add build automation.
 if(NOT APPLE)
     INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
     INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
