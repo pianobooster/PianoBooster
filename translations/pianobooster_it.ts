@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Conductor.cpp" line="335"/>
         <source>None</source>
-        <translation type="unfinished">Nessuno</translation>
+        <translation>Nessuno</translation>
     </message>
 </context>
 <context>
