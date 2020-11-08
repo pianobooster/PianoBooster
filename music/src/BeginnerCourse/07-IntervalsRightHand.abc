@@ -1,0 +1,22 @@
+X:1
+T:Intervals Right Hand
+M:4/4
+L:1/4
+K:Cmaj
+V: RH1 clef=treble
+%%MIDI channel 4
+%%MIDI program 1 4
+%%MIDI gchordoff
+V: LH1 clef=bass
+%%MIDI channel 3
+%%MIDI program 1 3
+%%MIDI gchordoff
+%
+% This melody with 26 notes contains the 25 = 5*5 intervals that can be obtained
+% by combining the 5 notes C, D, E, F, G.
+%
+[V: RH1]   CCDD | E2CE  | GFED  | C2F2 |
+[V: LH1]   z4   | z4    | z4    | z4   |
+[V: RH1]   GGE2 | E2FD  | G2DF  | FCG2 | C4   |
+[V: LH1]   z4   | z4    | z4    | z4   | z4   |
+%
