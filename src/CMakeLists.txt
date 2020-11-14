@@ -1,10 +1,6 @@
 # Cmake File for Piano Booster
 
-if(WIN32)
-    option(USE_FTGL "build with ftgl" OFF)
-else()
-    option(USE_FTGL "build with ftgl" ON)
-endif()
+option(USE_FTGL "build with ftgl" ON)
 option(WITH_INTERNAL_FLUIDSYNTH "build with an internal FluidSynth sound generator" ON)
 option(USE_JACK "build with Jack (Only required for BSD Unix)" OFF)
 option(USE_SYSTEM_FONT "build with system font" OFF)
@@ -107,7 +103,8 @@ if(WITH_INTERNAL_FLUIDSYNTH)
         if(NOT FLUIDSYNTH_FOUND)
            MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
         endif(NOT FLUIDSYNTH_FOUND)
-        LINK_LIBRARIES(fluidsynth)
+        INCLUDE_DIRECTORIES(${FLUIDSYNTH_INCLUDE_DIRS})
+        SET(FLUIDSYNTH_LIBRARY ${FLUIDSYNTH_LIBRARIES})
     else()
         FIND_PACKAGE( fluidsynth REQUIRED )
     endif()
@@ -152,7 +149,6 @@ else()
         MESSAGE(FATAL_ERROR "rtmidi not found (Try building with option USE_BUNDLED_RTMIDI=ON)")
     endif(NOT RTMIDI_FOUND)
     include_directories(${RTMIDI_INCLUDE_DIRS})
-    link_directories(${RTMIDI_LIBRARY_DIRS})
 endif()
 
 # with SET() command you can change variables or define new ones
@@ -248,11 +244,11 @@ if(APPLE)
 
 endif(APPLE)
 
-if(UNIX)
+if(UNIX AND NOT APPLE)
     ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
-endif(UNIX)
+endif(UNIX AND NOT APPLE)
 
 if(WIN32)
     ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
@@ -266,12 +262,14 @@ qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 if(${CMAKE_VERSION} VERSION_LESS "3.13.0")
     message("Please consider to switch to CMake 3.13.0")
 else()
-    target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS} ${JACK_LIBRARY_DIRS})
+    target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS} ${JACK_LIBRARY_DIRS} ${FLUIDSYNTH_LIBRARY_DIRS})
 endif()
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY} ${FLUIDSYNTH_LIBRARY} ${RTMIDI_LIBRARY})
 
-INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
-INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+if(NOT APPLE)
+    INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
+    INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+endif(NOT APPLE)
 
 if(NOT NO_DOCS)
     INSTALL( FILES ../README.md DESTINATION share/doc/pianobooster/ )

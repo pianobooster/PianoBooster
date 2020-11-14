@@ -2,3 +2,8 @@
 /debug*/
 /release*/
 CMakeLists.txt.user*
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt

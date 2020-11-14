@@ -19,6 +19,10 @@
 
 ****************************************************************************/
 
+#ifdef _WIN32
+  #include <windows.h>
+#endif
+
 #ifdef __APPLE__
   #include <OpenGL/gl.h>
   #include <OpenGL/glu.h>
@@ -30,7 +34,7 @@
 #include <QApplication>
 #include <QtOpenGL>
 #include "QtWindow.h"
-#include "version.txt"
+#include "version.h"
 
 int main(int argc, char *argv[]){
     QCoreApplication::setOrganizationName("PianoBooster");

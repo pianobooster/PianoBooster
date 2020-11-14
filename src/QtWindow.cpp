@@ -26,7 +26,7 @@
 
 #include "GlView.h"
 #include "QtWindow.h"
-#include "version.txt"
+#include "version.h"
 
 #ifdef __linux__
 #ifndef USE_REALTIME_PRIORITY

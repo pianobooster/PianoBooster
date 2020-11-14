@@ -133,7 +133,6 @@ private:
     int m_firstPatch = -1;
     QVector<QSharedPointer<int>> m_noteFrequencyByTrack;
     QVector<int> m_noteCountByTrack;
-    int m_noteFrequencyByChannel[MAX_MIDI_NOTES];
 };
 
 class CTrackListItem
