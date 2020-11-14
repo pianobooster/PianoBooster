@@ -15,7 +15,17 @@ jobs:
           wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
           wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
           chmod +x linuxdeploy*.AppImage
+      - name: Define variables
+        run: |
+          pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
+          pb_app_name="PianoBooster-${pb_ver}-x86_64"
+          echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}"
+
       - name: Build
+        env:
+          pb_app_name: ${{ env.PB_APP_NAME }}
         run: |
           mkdir build
           cd build
@@ -30,13 +40,18 @@ jobs:
           find .
           echo "Done!"
           chmod +x *AppImage
-          mv *AppImage ../PianoBooster-x86_64.AppImage
-          ls -lh ../PianoBooster-x86_64.AppImage
+          mv *AppImage ../${pb_app_name}.AppImage
+          cd ..
+          ls -lh ${pb_app_name}.AppImage
+          md5sum ${pb_app_name}.AppImage >checksum.txt
+          cat checksum.txt
       - name: Upload Linux Build
         uses: actions/upload-artifact@v2
         with:
-          name: linux-build
-          path: PianoBooster-x86_64.AppImage
+          name: pianobooster-${{ env.PB_VERSION }}-linux
+          path: |
+             ${{ env.PB_APP_NAME }}.AppImage
+             checksum.txt
 
   macos-build:
     runs-on: macos-latest
@@ -47,8 +62,17 @@ jobs:
         run: |
           brew update || brew update
           brew upgrade
-          brew install cmake qt5 ftgl jack pkg-config fluid-synth
+          brew install cmake qt5 ftgl pkg-config fluid-synth
+      - name: Define variables
+        run: |
+          pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
+          pb_app_name="PianoBooster-${pb_ver}"
+          echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}"
       - name: Build
+        env:
+          pb_app_name: ${{ env.PB_APP_NAME }}
         run: |
           mkdir build
           cd build
@@ -58,13 +82,19 @@ jobs:
           $(brew --prefix qt)/bin/macdeployqt build/pianobooster.app -dmg
           find .
           echo "Done!"
-          mv build/*dmg ../PianoBooster.dmg
-          ls -lh ../PianoBooster.dmg
+          mv build/*dmg ../${pb_app_name}.dmg
+          cd ..
+          ls -lh ${pb_app_name}.dmg
+          md5 -r ${pb_app_name}.dmg > checksum.txt
+          cat checksum.txt
       - name: Upload Mac Build
         uses: actions/upload-artifact@v2
         with:
-          name: mac-build
-          path: PianoBooster.dmg
+          name: pianobooster-${{ env.PB_VERSION }}-macos
+          path: |
+            ${{ env.PB_APP_NAME }}.dmg
+            checksum.txt
+
 
 #  windows-build:
 #    runs-on: windows-latest
@@ -88,53 +118,3 @@ jobs:
 #          find .
 #        shell: bash
 #
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [macos-build, linux-build]
-    strategy:
-      matrix:
-        env:
-          - {
-            ARTIFACT: linux-build,
-            ASSET_PATH: PianoBooster-x86_64.AppImage,
-            ASSET_NAME: PianoBooster-x86_64-$$.AppImage,
-            ASSET_CONTENT_TYPE: application/appimage
-          }
-          - {
-            ARTIFACT: mac-build,
-            ASSET_PATH: PianoBooster.dmg,
-            ASSET_NAME: PianoBooster_$$.dmg,
-            ASSET_CONTENT_TYPE: application/dmg
-          }
-    env: ${{ matrix.env }}
-    steps:
-    - name: Publish snapshot build
-      #if: contains(github.ref, 'develop')
-      run: |
-        find .
-        ls -la
-        set
-    - name: Download build
-      uses: actions/download-artifact@v2
-      with:
-        name: ${{ env.ARTIFACT }}
-    - name: Snapshot Release
-      uses: WebFreak001/deploy-nightly@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: https://uploads.github.com/repos/winder/PianoBooster/releases/32197618/assets{?name,label}
-        release_id: 32197618
-        asset_path: ${{ env.ASSET_PATH }}
-        asset_name: ${{ env.ASSET_NAME }}
-        asset_content_type: ${{ env.ASSET_CONTENT_TYPE }}
-        max_releases: 30
-
-#    - name: Create release
-#      if: contains(github.ref, 'master')
-#      run: |
-#        find .
-#        ls -la
-
-
