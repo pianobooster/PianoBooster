@@ -60,17 +60,17 @@ z
 
 Groove First
 
-midiInc file=08-IntervalsLeftHand.solo.mid Solo-Left=3 Solo-Right=4  Volume=120
+midiInc file=08-IntervalsLeftHand.solo.mid Solo-Left=3 Solo-Right=4  Volume=80
 
 Groove Second
 
-C / CM7 /
-Am/C / Am /
-F/C / F /
-Am7 / G/B /
-Dm / F /
-FM7/C / G/B /
-Bdim / Em /
-G/B / C /
-G7 / C /
-C z! z! z!
+Cmaj7 /
+Am /
+G9 /
+Fsus2 /
+F /
+G7 /
+G7 /
+C /
+G / C /
+C / z! /

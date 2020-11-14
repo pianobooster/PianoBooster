@@ -15,8 +15,8 @@ V: LH1 clef=bass
 % This melody with 26 notes contains the 25 = 5*5 intervals that can be obtained
 % by combining the 5 notes C, D, E, F, G.
 %
-[V: RH1]   CCDD | E2CE  | GFED  | C2F2 |
+[V: RH1]   CCDD | E2CE  | GFED  | C2FC |
 [V: LH1]   z4   | z4    | z4    | z4   |
-[V: RH1]   GGE2 | E2FD  | G2DF  | FCG2 | C4   |
-[V: LH1]   z4   | z4    | z4    | z4   | z4   |
+[V: RH1]   G2DF | FGE2  | EFDG  | G2C2 |
+[V: LH1]   z4   | z4    | z4    | z4   |
 %
