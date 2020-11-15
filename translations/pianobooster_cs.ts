@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Conductor.cpp" line="335"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádný</translation>
     </message>
 </context>
 <context>
@@ -991,7 +991,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="175"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation>Oprava prodlevy pracuje pouštěním hudby před tím, &lt;br&gt;co hrajete, aby působila proti zpoždění v tvůrci zvuku.&lt;br&gt;&lt;br&gt;Budete potřebovat  piano &lt;b&gt;s reproduktory&lt;/b&gt;, jež jsou &lt;b&gt;zesíleny&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Zadejte čas v milisekundách pro zpoždění (1000 ms = 1 s)&lt;br&gt;(Pro Microsoft GS Wavetable SW Synth zkuste hodnotu 150)&lt;br&gt;Pokud si nejste jisti, zadejte jako hodnotu nulu.</translation>
+        <translation>Oprava prodlevy pracuje pouštěním hudby před tím, &lt;br&gt;co hrajete, aby působila proti zpoždění v tvůrci zvuku.&lt;br&gt;&lt;br&gt;Budete potřebovat piano &lt;b&gt;s reproduktory&lt;/b&gt;, jež jsou &lt;b&gt;zesíleny&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Zadejte čas v milisekundách pro zpoždění (1000 ms = 1 s)&lt;br&gt;(Pro Microsoft GS Wavetable SW Synth zkuste hodnotu 150)&lt;br&gt;Pokud si nejste jisti, zadejte jako hodnotu nulu.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
@@ -1765,7 +1765,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="532"/>
         <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
-        <translation>&lt;p&gt;Na to, abyste mohli slyšet zvuk budete potřebovat  &lt;b&gt;Syntezátor zvuku MIDI&lt;/b&gt;. Operační systém Windows obsahuje &quot;Microsoft GS Wavetable software synthesizer&quot;. Bohužel tento software dosahuje nepřijatelně vysokého zpoždění (prodlevy, latence). Na Linuxu můžete použít </translation>
+        <translation>&lt;p&gt;Na to, abyste mohli slyšet zvuk budete potřebovat &lt;b&gt;Syntezátor zvuku MIDI&lt;/b&gt;. Operační systém Windows obsahuje &quot;Microsoft GS Wavetable software synthesizer&quot;. Bohužel tento software dosahuje nepřijatelně vysokého zpoždění (prodlevy, latence). Na Linuxu můžete použít </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="536"/>
