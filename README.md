@@ -4,7 +4,7 @@
 # INTRODUCTION
 
 Piano Booster is a MIDI file player that displays the musical notes AND teaches you how to
-play the piano.  
+play the piano.
 The difference between playing along to a CD or a standard MIDI file
 is that Piano Booster listens and reacts to what you are playing on a
 MIDI piano keyboard.
@@ -75,21 +75,21 @@ The Piano Booster Documentation and Music are released under the Creative Common
 # SOURCE CODE
 
 As part of GNU General Public License the source code for PianoBooster is available from
-the GitHub site  <https://github.com/captnfab/PianoBooster>. See the [BUILD.md](BUILD.md) for
+the GitHub site  <https://github.com/pianobooster/PianoBooster>. See the [BUILD.md](BUILD.md) for
 instructions on how to build the source code.
 
 
 # BUGTRACKER
 
-[Issues](https://github.com/captnfab/PianoBooster/issues)
+[Issues](https://github.com/pianobooster/PianoBooster/issues)
 
 # CONTRIBUTING
 
 PianoBooster is community developing project. You're welcome with patches:
 
-[Pull Requests](https://github.com/captnfab/PianoBooster/pulls)
+[Pull Requests](https://github.com/pianobooster/PianoBooster/pulls)
 
-We have many [issues](https://github.com/captnfab/PianoBooster/issues) always.
+We have many [issues](https://github.com/pianobooster/PianoBooster/issues) always.
 
 We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src).
 

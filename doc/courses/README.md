@@ -2,7 +2,7 @@
 
 These pieces of music have been created to work with _PianoBooster_ and
 have the creative commons copyright.
-All the music is available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
+All the music is available [here](https://github.com/pianobooster/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
 
 _Please add to the music on this page  - everyone can help._ For more information see this
 [forum post](http://piano-booster.2625608.n2.nabble.com/Creating-music-for-PianoBooster-using-MMA-Everyone-can-help-td4167350.html).
@@ -189,5 +189,5 @@ For **Frere Jacques** introduces the use of playing both hands together with a v
 
 [midi file](BoosterMusic/07-AmazingGrace.mid)
 
-All the music on this page is available [here](https://github.com/captnfab/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
+All the music on this page is available [here](https://github.com/pianobooster/PianoBooster/raw/master/music/BoosterMusicBooks.zip).
 This free sheet music can be used for beginner piano lessons with _PianoBooster_.
