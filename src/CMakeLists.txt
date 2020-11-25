@@ -1,13 +1,13 @@
 # Cmake File for Piano Booster
 
-option(USE_FTGL "build with ftgl" ON)
-option(WITH_INTERNAL_FLUIDSYNTH "build with an internal FluidSynth sound generator" ON)
-option(USE_JACK "build with Jack (Only required for BSD Unix)" OFF)
-option(USE_SYSTEM_FONT "build with system font" OFF)
+option(WITH_INTERNAL_FLUIDSYNTH "Build with an internal FluidSynth sound generator" ON)
+option(USE_FTGL "Build with ftgl for notes localization" ON)
+option(USE_SYSTEM_FONT "Build with system font" OFF)
+option(USE_JACK "Build with Jack (Only required for BSD Unix)" OFF)
 if(${CMAKE_SYSTEM} MATCHES "Linux")
-   option(USE_BUNDLED_RTMIDI "build with bundled rtmidi (for older distributions only)" OFF)
+   option(USE_BUNDLED_RTMIDI "Build with bundled rtmidi (for older distributions only)" OFF)
 else()
-   option(USE_BUNDLED_RTMIDI "build with bundled rtmidi" ON)
+   option(USE_BUNDLED_RTMIDI "Build with bundled rtmidi" ON)
 endif()
 
 cmake_minimum_required(VERSION 2.4)
@@ -28,9 +28,6 @@ cmake_policy(SET CMP0043 NEW)
 # enable warnings
 add_compile_options(-Wall)
 
-if(USE_FONT)
-    add_compile_options("-DUSE_FONT=\"${USE_FONT}\"")
-endif()
 
 add_compile_options("-DPREFIX=\"${CMAKE_INSTALL_PREFIX}\"")
 
@@ -299,10 +296,6 @@ endif(UNIX AND NOT APPLE)
 if(WIN32)
     INSTALL( FILES ../music/BoosterMusicBooks.zip DESTINATION . )
 endif(WIN32)
-
-if(USE_FONT)
-    INSTALL ( FILES ${USE_FONT} DESTINATION ${DATA_DIR}/fonts)
-endif(USE_FONT)
 
 if(NOT USE_SYSTEM_FONT)
     configure_file(fonts/DejaVuSans.ttf ${CMAKE_CURRENT_BINARY_DIR}/fonts/DejaVuSans.ttf COPYONLY)
