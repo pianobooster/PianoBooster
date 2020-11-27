@@ -1,3 +1,9 @@
+# == THE URL HAS CHANGED ==
+
+This Piano Booster repository has now been transferred to @pianobooster as the new owner.
+
+Please update all your bookmarks and [update](https://docs.github.com/en/free-pro-team@latest/github/using-git/changing-a-remotes-url) any existing local clones to point to the new repository URL https://github.com/pianobooster/PianoBooster
+
 ![logo](logo/Logotype_horizontal.png)
 
 
