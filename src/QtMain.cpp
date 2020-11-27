@@ -38,7 +38,7 @@
 
 int main(int argc, char *argv[]){
     QCoreApplication::setOrganizationName("PianoBooster");
-    QCoreApplication::setOrganizationDomain("https://github.com/captnfab/PianoBooster");
+    QCoreApplication::setOrganizationDomain("https://github.com/pianobooster/PianoBooster");
     QCoreApplication::setApplicationName("Piano Booster");
     QCoreApplication::setApplicationVersion(PB_VERSION);
 
