@@ -64,12 +64,12 @@ midiInc file=07-IntervalsRightHand.solo.mid Solo-Left=3 Solo-Right=4  Volume=80
 
 Groove Second
 
-Dm7 /
+C / G/B /
 Am /
-Em7b9 /
-F
-G7 /
-G7sus4 /
-Em7b9 /
-G / C /
+G7 / Am /
+C / F/C /
+G / F/A /
+F/A / Am /
+Am / G/B /
+G7 / C /
 C / z! /
