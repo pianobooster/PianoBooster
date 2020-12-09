@@ -1895,22 +1895,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="615"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>오른손을 선택하세요</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="616"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>양손을 선택하세요</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="617"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>왼손을 선택하세요</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play from start toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>시작점에서 연주</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="619"/>
