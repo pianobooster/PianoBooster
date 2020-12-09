@@ -127,7 +127,7 @@ def create_book_markdown(src_dir, book_name, song):
 
     web_md_path_name = build_web_dir + book_name + ".md"
 
-    execute_command("abcm2ps -i -g -c \"{0}.abc\" -O \"{1}.svg\"".format(ps_name, web_svg_path_name))
+    execute_command("abcm2ps -i -g \"{0}.abc\" -O \"{1}.svg\"".format(ps_name, web_svg_path_name))
 
     fix_svg_bug(web_svg_path_name)
 
@@ -144,7 +144,7 @@ def create_book_markdown(src_dir, book_name, song):
     if in_file == 0:
         sys.exit("Open Error: " + src_path_name)
 
-    md_text = "\n![{0}]({1}fixed.svg)\n\n".format(song, src_path_name)
+    md_text = "\n![]({0}fixed.svg)\n\n".format(src_path_name)
     md_text += in_file.read()
     in_file.close()
     out_file.write(md_text)
@@ -154,10 +154,8 @@ def create_book_markdown(src_dir, book_name, song):
 def create_pandoc_pdf(web_dir, book_name):
     output_dir = build_zip_dir + book_name
     execute_command(
-        "cd {0};pandoc -r markdown '{2}.md' -V geometry:\"top=1.5cm, bottom=1.5cm, left=2cm, right=2cm\" -fmarkdown-implicit_figures -o '../../{1}/{2}.pdf'"
+        "cd {0};pandoc --from=markdown+raw_html+yaml_metadata_block '{2}.md' -V geometry:\"top=1.5cm, bottom=1.5cm, left=2cm, right=2cm\" -o '../../{1}/{2}.pdf'"
         .format(web_dir, output_dir, book_name))
-
-
 
 
 def process_songs(src_dir, book_name, all_song_names):
@@ -187,6 +185,7 @@ def process_book(src_dir, book_name):
 
 
 def create_zip_file():
+    os.system(f'cp "../../doc/images/pianobooster-note-chart.pdf" "{build_dir}/{zip_file_name + music_release}/"')
     rm_file("{0}/{1}.zip".format(build_dir, zip_file_name))
     execute_command("cd {0};zip -r {1}.zip \"{2}\" ".format(build_dir, zip_file_name, zip_file_name + music_release))
 
