@@ -170,8 +170,13 @@ Section "Install Section"
 
     CreateDirectory $INSTDIR\translations
     SetOutPath $INSTDIR\translations
-    File "${PB_BUILT_DIR}\translations\*.*"
+    File "${PB_BUILT_DIR}\translations\*.qm"
+    File "${PB_BUILT_DIR}\translations\langs.json"
 
+    CreateDirectory $INSTDIR\fonts
+    SetOutPath $INSTDIR\fonts
+    File "${PB_BUILT_DIR}\fonts\*.ttf"
+    
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc
     File license.txt
@@ -180,7 +185,7 @@ Section "Install Section"
     CreateDirectory "$DOCUMENTS\My Music"
     SetOutPath "$DOCUMENTS\My Music"
     ; Temporary fix
-    File /r "${PB_BUILT_DIR}\BoosterMusicBooks\BoosterMusicBooks3"
+    File /r "${PB_BUILT_DIR}\BoosterMusicBooks\BoosterMusicBooks4"
 
     SetOutPath $INSTDIR
 

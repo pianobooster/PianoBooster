@@ -32,8 +32,6 @@
 #include "Util.h"
 #include "Cfg.h"
 
-static QTime s_realtime;
-
 static  FILE * logInfoFile = nullptr;
 static  FILE * logErrorFile = nullptr;
 
@@ -189,6 +187,10 @@ void ppLogError(const char *msg, ...)
     fputc('\n', logErrorFile);
     flushLogs();
 }
+
+#ifdef DEBUG_LOG_TIMING
+static QTime s_realtime;
+#endif
 
 void ppTiming(const char *msg, ...)
 {

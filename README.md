@@ -1,6 +1,6 @@
 # == THE URL HAS CHANGED ==
 
-This Piano Booster repository has now been transferred to @pianobooster as the new owner.
+This **PianoBooster** repository has now been transferred to @pianobooster as the new owner.
 
 Please update all your bookmarks and [update](https://docs.github.com/en/free-pro-team@latest/github/using-git/changing-a-remotes-url) any existing local clones to point to the new repository URL https://github.com/pianobooster/PianoBooster
 
@@ -9,15 +9,15 @@ Please update all your bookmarks and [update](https://docs.github.com/en/free-pr
 
 # INTRODUCTION
 
-Piano Booster is a MIDI file player that displays the musical notes AND teaches you how to
+**PianoBooster** is a MIDI file player that displays the musical notes AND teaches you how to
 play the piano.
 The difference between playing along to a CD or a standard MIDI file
 is that Piano Booster listens and reacts to what you are playing on a
 MIDI piano keyboard.
-You can play along to any track in the MIDI file and PianoBooster will
+You can play along to any track in the MIDI file and Piano Booster will
 follow your playing. Piano Booster makes learning to sight read fun!
 
-Piano Booster is a free (Open Source) program, available from: <http://pianobooster.sourceforge.net/>
+Piano Booster is a free (Open Source) program, available from: <https://www.pianobooster.org/>
 
 # FEATURES
 
@@ -35,16 +35,19 @@ Piano Booster is a free (Open Source) program, available from: <http://pianoboos
 
 # GETTING STARTED
 
-Binary executable version of Piano Booster are available for Windows, MacOS and Linux, which can be downloaded from the [Piano Booster website](<http://pianobooster.sourceforge.net/>). Piano booster now includes a built in version of the FluidSynth sound generator. In order for FluidSynth to work and to hear sound a `.sf2` (sound font) file is required which must be loaded using the MIDI Setup/Fluidsynth menu of Piano Booster. A recommended General Midi (GM) sound font file is the `FluidR3_GM.sf2`
+Binary executable version of **PianoBooster** are available for Windows, MacOS and Linux, which can be downloaded from the [Piano Booster website](<https://www.pianobooster.org/>).
+Piano Booster now includes a built in version of the FluidSynth sound generator.
+In order for FluidSynth to work and to hear sound a `.sf2` (sound font) file is required which must be loaded using the MIDI Setup/Fluidsynth menu of Piano Booster.
+A recommended General Midi (GM) sound font file is the `FluidR3_GM.sf2`
 
-To play along with Piano Booster you will need a MIDI Piano Keyboard.
-If you don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'x' is middle C - but a MIDI piano is highly recommended.
+To play along with **PianoBooster** you will need a MIDI Piano Keyboard.
+If you don't have a MIDI keyboard you can still try out Piano Booster using the PC keyboard, 'x' is middle C - but a MIDI piano is highly recommended.
 After connecting the MIDI keyboard you need to setup the midi input device using
 the Piano Booster MIDI setup menu.
 
-Piano Booster now comes with a music teaching course called Booster Music.
+**PianoBooster** now comes with a music teaching course called Booster Music.
 The MIDI files for this course are in a folder called `BoosterMusicBooks` located in the `Music` folder on your PC.
-The Booster Music teaching course is also available on the [Piano Booster website](<http://pianobooster.sourceforge.net/>).
+The Booster Music teaching course is also available on the [Piano Booster website](<https://www.pianobooster.org/>).
 Use the File/Open from the Piano Booster menu to load the MIDI file ".mid" or a karaoke ".kar" file.
 
 Finally choose the skill level, if you want to
@@ -54,7 +57,7 @@ start.
 
 # TRANSLATIONS
 
-PianoBooster isn't translated in your language? Help us, and we will gladly ship
+**PianoBooster** isn't translated in your language? Help us, and we will gladly ship
 new translations with it.
 
 Please see the [Web-based continuous localisation](https://hosted.weblate.org/projects/pianobooster/) (Weblate) to contribute to the language translations.
@@ -63,26 +66,28 @@ The translation required for the Piano Booster app are located [here](https://ho
 
 # LICENSE
 
-Piano Booster is fully copyrighted by the authors and all rights are reserved.
+**PianoBooster** is fully copyrighted by the authors and all rights are reserved.
 
-PianoBooster is free software (Open Source software): you can redistribute it and/or modify
+**PianoBooster** is free software (Open Source software): you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by the Free Software
 Foundation, either version 3 of the License, or (at your option) any later version.
 
-PianoBooster is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+**PianoBooster** is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the GNU General Public License in the file "gplv3.txt" or from the web site
 <http://www.gnu.org/licenses/> or [gplv3.txt](gplv3.txt).
 
-The Piano Booster Documentation and Music are released under the Creative Commons License (CC-BY).
+The **PianoBooster** documentation and music are released under the Creative Commons License (CC-BY).
 
 [PianoBooster License](license.txt)
 
 # SOURCE CODE
 
-As part of GNU General Public License the source code for PianoBooster is available from
+As part of GNU General Public License the source code for **PianoBooster** is available from
 the GitHub site  <https://github.com/pianobooster/PianoBooster>. See the [BUILD.md](BUILD.md) for
 instructions on how to build the source code.
+
+This source code URL has recently changed so please update all your bookmarks and change any existing local clones to point to the new repository URL.
 
 
 # BUGTRACKER
@@ -91,7 +96,7 @@ instructions on how to build the source code.
 
 # CONTRIBUTING
 
-PianoBooster is community developing project. You're welcome with patches:
+**PianoBooster** is community developing project. You're welcome with patches:
 
 [Pull Requests](https://github.com/pianobooster/PianoBooster/pulls)
 

@@ -17,7 +17,8 @@ To compile the PianoBooster source code type:
 
 `make -j$(nproc)`
 
-The pianobooster binary executable is now in a new build subdirectory. Piano Booster is designed to run in place so you can type `build/pianobooster` to start running the program.
+The pianobooster binary executable is now in a new build subdirectory.
+PianoBooster is designed to run in place so you can type `build/pianobooster` to start running the program.
 
 (Optional) If you wish to install PianoBooster as root type:
 
@@ -74,7 +75,7 @@ Or alternatively you can install QtCreator and then open the `CMakeLists.txt`.
 # Build options
 
 Using `cmake` without any flags defaults to the recommended build options.
-However the following build options below can be changed by using the `-D` flag to `cmake`.    
+However the following build options below can be changed by using the `-D` flag to `cmake`.
 
 **WITH_INTERNAL_FLUIDSYNTH:** build with an internal FluidSynth sound generator [Default:ON]
 

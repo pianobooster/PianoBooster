@@ -517,7 +517,7 @@ void QtWindow::setCurrentFile(const QString &fileName)
 
 void QtWindow::website()
 {
-    QDesktopServices::openUrl(QUrl("http://pianobooster.sourceforge.net/"));
+    QDesktopServices::openUrl(QUrl("https://www.pianobooster.org/"));
 }
 
 void QtWindow::help()
@@ -546,11 +546,11 @@ void QtWindow::help()
        "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music.") +
     tr("<h3>Hints on Playing the Piano</h3>"
        "<p>For hints on how to play the piano see: ") +
-       "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>" + tr("Piano Hints") + "</b></a></p>" +
+       "<a href=\"https://www.pianobooster.org/music-info.html\" ><b>" + tr("Piano Hints") + "</b></a></p>" +
     tr("<h3>More Information</h3>"
        "<p>For more help please visit the PianoBooster ") +
-       "<a href=\"http://pianobooster.sourceforge.net\" ><b>" + tr("website") + "</b></a>, " +
-    tr("the PianoBooster") + " <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b> " + tr("FAQ") + "</b></a> " +
+       "<a href=\"https://www.pianobooster.org\" ><b>" + tr("website") + "</b></a>, " +
+    tr("the PianoBooster") + " <a href=\"https://www.pianobooster.org/faq.html\" ><b> " + tr("FAQ") + "</b></a> " +
     tr("and the") + " <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\"><b>" +tr("user forum") +"</b></a>."
     );
 
@@ -565,7 +565,7 @@ void QtWindow::about()
     msgBox.setText(
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
-            "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net/</b></a><br><br>" +
+            "<a href=\"https://www.pianobooster.org/\" ><b>https://www.pianobooster.org/</b></a><br><br>" +
             tr("Copyright(c) L. J. Barman, 2008-2020; All rights reserved.<br>") +
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
             "<br>" +
