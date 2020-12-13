@@ -1,3 +1,14 @@
+1.0.0 (13 Dec 2020)
+- Integrated fluidsynth as a build option.
+- Changes necessary for building an AppImage.
+- Added <System Language> to the manual language selection.
+- Fixes required for the Windows build
+- Fixes required for the Mac OS build
+- Now reads left and right hand parts if held in different MIDI tracks.
+- Automaticity detects the left and right hand piano parts.
+- Now defaults to enabling the option mute your part when playing.
+- Added more space for notes at the top of the page.
+
 v0.7.2b (25 Feb 2020)
 - Fixed a problem that prevented a connected MIDI piano keyboard from working.
 - cmake with no options now works correctly (cmake .. && make).

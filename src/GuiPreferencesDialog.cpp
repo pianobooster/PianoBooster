@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -36,9 +36,9 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     : QDialog(parent)
 {
     setupUi(this);
-    m_song = 0;
-    m_settings = 0;
-    m_glView = 0;
+    m_song = nullptr;
+    m_settings = nullptr;
+    m_glView = nullptr;
     setWindowTitle(tr("Preferences"));
     followStopPointCombo->addItem(tr("Automatic (Recommended)"));
     followStopPointCombo->addItem(tr("On the Beat"));
@@ -52,7 +52,7 @@ void GuiPreferencesDialog::initLanguageCombo(){
 
     QFile fileTestLocale(localeDirectory);
     if (!fileTestLocale.exists()){
-        localeDirectory=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+        localeDirectory=Util::dataDir()+"/translations/";
  #ifdef Q_OS_DARWIN
         localeDirectory=QApplication::applicationDirPath() + "/../Resources/translations/";
  #endif
@@ -80,13 +80,17 @@ void GuiPreferencesDialog::initLanguageCombo(){
 
     // loading languages
     languageCombo->clear();
+    languageCombo->addItem("<"+tr("System Language")+">","");
     languageCombo->addItem("English","en");
+    if (m_settings->value("General/lang","").toString()=="en"){
+        languageCombo->setCurrentIndex(languageCombo->count()-1);
+    }
 
     QDir dirLang(localeDirectory);
     dirLang.setFilter(QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot);
     QFileInfoList listLang = dirLang.entryInfoList();
-    for (int i = 0; i < listLang.size(); ++i) {
-        QFileInfo fileInfo = listLang.at(i);
+    for (QFileInfo fileInfo : listLang) {
+
         QRegExp rx("(pianobooster_)(.*)(.qm)");
         if (rx.indexIn(fileInfo.fileName())!=-1){
             QString lang_code = rx.cap(2);
@@ -114,12 +118,12 @@ void GuiPreferencesDialog::initLanguageCombo(){
 
             languageName[0]=languageName[0].toUpper();
 
-            if (languageName.isEmpty() or languageName=="C"){
+            if (languageName.isEmpty() || languageName=="C"){
                     languageName=lang_code;
             }
 
             languageCombo->addItem(languageName,lang_code);
-            if (m_settings->value("General/lang",QLocale::system().bcp47Name()).toString()==lang_code){
+            if (m_settings->value("General/lang","").toString()==lang_code){
                 languageCombo->setCurrentIndex(languageCombo->count()-1);
             }
         }
@@ -163,7 +167,7 @@ void GuiPreferencesDialog::accept()
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
 
-    m_settings->setValue("General/lang",languageCombo->currentData().toString());
+    m_settings->setValue("General/lang", languageCombo->currentData().toString());
 
     m_song->refreshScroll();
 

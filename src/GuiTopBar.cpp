@@ -32,13 +32,12 @@
 #include "TrackList.h"
 #include "GuiLoopingPopup.h"
 
-
 GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
     : QWidget(parent), m_settings(settings)
 {
 
     m_atTheEndOfTheSong = false;
-    m_song = 0;
+    m_song = nullptr;
     setupUi(this);
 
     parent->installEventFilter(this);
@@ -129,6 +128,7 @@ void GuiTopBar::on_transposeSpin_valueChanged(int value)
 {
     unsigned int i;         //C  Db  D  Eb  E  F   F# G  Ab  A  Bb  B
     const int nextKey[] = {   0, -5, 2, -3, 4, -1, 6, 1, -4, 3, -2, 5};
+    const int nextKeySize = arraySize(nextKey);
     if (!m_song) return;
     int diff = value - m_song->getTranspose();
     int oldValue = CStavePos::getKeySignature();
@@ -136,13 +136,13 @@ void GuiTopBar::on_transposeSpin_valueChanged(int value)
             oldValue = 6; // if key is Eb change to D#
 
     // Find the old value in the table
-    for (i=0; i < arraySize(nextKey); i++)
+    for (i=0; i < nextKeySize; i++)
     {
         if (oldValue == nextKey[i])
             break;
     }
 
-    int newValue = nextKey[(diff  + i + arraySize(nextKey)) % arraySize(nextKey) ];
+    int newValue = nextKey[(diff  + i + nextKeySize) % nextKeySize ];
 
     CStavePos::setKeySignature( newValue, 0 );
 
@@ -206,7 +206,6 @@ void GuiTopBar::updateTranslate(){
     retranslateUi(this);
 }
 
-
 void GuiTopBar::on_playButton_clicked(bool clicked)
 {
     if (!m_song) return;
@@ -239,14 +238,19 @@ void GuiTopBar::on_startBarSpin_valueChanged(double bar)
 {
     if (!m_song) return;
 
-    // Stop the muisc playing
-    m_song->playMusic(false);
-    setPlayButtonState(false);
+    stopMuiscPlaying();
 
     m_song->setPlayFromBar( bar);
 }
 
+// Stop the muisc playing
+void GuiTopBar::stopMuiscPlaying()
+{
+    if (!m_song) return;
 
+    m_song->playMusic(false);
+    setPlayButtonState(false);
+}
 
 void GuiTopBar::on_saveBarButton_clicked(bool clicked)
 {
@@ -254,7 +258,6 @@ void GuiTopBar::on_saveBarButton_clicked(bool clicked)
     double barNumber = m_song->getCurrentBarPos();
     startBarSpin->setValue(barNumber);
 }
-
 
 void GuiTopBar::on_loopingBarsPopupButton_clicked(bool clicked)
 {

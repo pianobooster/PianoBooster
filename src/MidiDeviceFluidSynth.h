@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -29,11 +29,11 @@
 #ifndef __MIDI_DEVICE_FLUIDSYNTH_H__
 #define __MIDI_DEVICE_FLUIDSYNTH_H__
 
-
 #include "MidiDeviceBase.h"
 
 #include <fluidsynth.h>
 
+#define FLUID_DEFAULT_GAIN 80
 
 class CMidiDeviceFluidSynth : public CMidiDeviceBase
 {
@@ -47,6 +47,8 @@ class CMidiDeviceFluidSynth : public CMidiDeviceBase
     virtual bool openMidiPort(midiType_t type, QString portName);
     virtual void closeMidiPort(midiType_t type, int index);
 
+    virtual bool validMidiConnection() {return m_validConnection;}
+
     // based on the fluid synth settings
     virtual int     midiSettingsSetStr(QString name, QString str);
     virtual int     midiSettingsSetNum(QString name, double val);
@@ -59,9 +61,13 @@ public:
     CMidiDeviceFluidSynth();
     ~CMidiDeviceFluidSynth();
 
+    static QString getFluidInternalName()
+    {
+        return QString(tr("Internal Sound") + " " + FLUID_NAME );
+    }
 
 private:
-
+    static constexpr const char* FLUID_NAME = "(FluidSynth)";
     unsigned char m_savedRawBytes[40]; // Raw data is used for used for a SYSTEM_EVENT
     unsigned int m_rawDataIndex;
 
@@ -69,8 +75,7 @@ private:
     fluid_synth_t* m_synth;
     fluid_audio_driver_t* m_audioDriver;
     int m_soundFontId;
-
-
+    bool m_validConnection;
 };
 
 #endif //__MIDI_DEVICE_FLUIDSYNTH_H__

@@ -1,90 +1,100 @@
-# Linux and BSD Unix
+# Build instructions for Linux and BSD Unix
 
-Ensure that the build required packages are installed. Full list of them you can find [here](pkgs).
+Ensure that the following packages are installed:
+`build-essential`, `cmake`, `pkg-config`, `libftgl-dev`, `qtbase5-dev`, `qttools5-dev`, `librtmidi-dev` , `libfluidsynth-dev`, `fluid-soundfont-gm`
 
-Then type:
 
-`cmake .`
 
-or
+To generate a project makefile using CMake, create a build folder
+and then run CMake from it:
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+```
 
-`cmake . -DCMAKE_INSTALL_PREFIX="/usr"`
+To compile the PianoBooster source code type:
 
-`make`
+`make -j$(nproc)`
 
-Finally as root type:
+The pianobooster binary executable is now in a new build subdirectory.
+PianoBooster is designed to run in place so you can type `build/pianobooster` to start running the program.
 
-`make install -C build`
+(Optional) If you wish to install PianoBooster as root type:
 
-(The pianobooster binary executable is now in the "build" subdirectory.)
+`make install`
 
-To build a debug version create a dir called "debug" and change to that dir and then type:
+There is no make uninstall command but the files that have been installed are listed in a file called `install_manifest.txt` which can then be used to manually delete the installed files.
 
-`cmake -DCMAKE_BUILD_TYPE=Debug .`
+To build a debug version create a directory called "debug" and change to that dir and then type:
 
-(Alternatively you can use qmake followed by make.)
+`cmake -DCMAKE_BUILD_TYPE=Debug ..`
 
-See [DEB](pkgs/deb) for more details.
 
-See [RPM](pkgs/rpm/pianobooster.spec) for more details.
+# Build instructions for macOS
 
-See [ARCH](pkgs/arch/PKGBUILD) for more details.
-
-See [TGZ](pkgs/slack) for more details.
-
-# macOS
-
-Install latest Xcode (from Apple Developer Connection, free registration required).
+Install the latest Xcode (from Apple Developer Connection, free registration required).
 
 Install CMake and QT libraries via Homebrew:
 
-`$ brew install cmake qt5 ftgl jack`
+`$ brew install cmake qt5 ftgl pkg-config fluid-synth`
 
-Generate XCode project file via CMake:
+To generate the project makefile first create a `build` directory
+and then from that directory type:
 
-`$ cmake -G Xcode . -DCMAKE_PREFIX_PATH=$(brew --prefix qt)`
+`cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt)"`
 
-Open the project file in XCode, set whatever options you like (universal or single architecture,
-debug or release etc.) and compile.
+To compile the PianoBooster source code type:
 
-To make a self contained application bundle use QT's macdeployqt tool (included in QT 4.5.0).
+`make`
 
-# Windows
+To copy the language translations into the build directory type:
 
-To compile in Windows install the Open Source version of Qt and CMake and optionally Geany.
-When installing Qt select the option to download and install the MinGW compiler. Open the
-Qt Command Prompt and then change to the "PianoBooster" directory and then type the
-command below:
+`make install-translations`
 
-`"C:\Program Files\CMake 2.6\bin\cmake.exe" -G "MinGW Makefiles" .`
+
+To make a self contained application bundle use QT's macdeployqt tool (included in QT).
+
+`$(brew --prefix qt)/bin/macdeployqt build/pianobooster.app -dmg`
+
+
+
+# Build instructions for Windows
+
+To compile in Windows install the Open Source version of Qt and CMake.
+When installing Qt select the option to download and install the MinGW compiler. Open the Qt Command Prompt and change to the "PianoBooster" source code directory and then create a `build` directory and then from that directory type:
+
+`cmake.exe -G "MinGW Makefiles" ..`
 
 Once this is completed type:
 
 `make`
 
-Or alternatively you can install QtCreator and then open the pianobooster.pro.
+Or alternatively you can install QtCreator and then open the `CMakeLists.txt`.
 
 # Build options
 
-**USE_FTGL**: link with ftgl; enabled by default; disabling notes localization.
+Using `cmake` without any flags defaults to the recommended build options.
+However the following build options below can be changed by using the `-D` flag to `cmake`.
 
-**NO_DOCS**: do not install documents; disabled by default.
+**WITH_INTERNAL_FLUIDSYNTH:** build with an internal FluidSynth sound generator [Default:ON]
 
-**NO_LICENSE**: do not install license; disabled by default.
+**USE_BUNDLED_RTMIDI:**  Build with bundled rtmidi (for older distributions only) [Default: OFF]
 
-**NO_CHANGELOG**: do not install changelog; disabled by default.
+**USE_FTGL:** Build with ftgl for notes localization [Default:ON]
 
-**WITH_MAN**: install man page; disabled by default.
+**USE_SYSTEM_FONT:** Build with system font [Default: OFF]
 
-**INSTALL_ALL_LANGS**: install all languages; disabled by default for cmake and always enabled for qmake.
+**USE_JACK:** Build with Jack. The use of JACK is not required other than for BSD Unix. [Default: OFF]
 
-**USE_BUNDLED_RTMIDI**: build with bundled (not system) rtmidi. This is only required
-for older distributions that do not include the system rtmidi; disabled by default.
+**DATA_DIR**: Build with specified data directory; [Default:"share/games/pianobooster"]
 
-**USE_SYSTEM_FONT**: do not use and do not install bundled font, use system font instead; enabled by default.
+**NO_LANGS**: Do not install languages; [Default: OFF]
 
-**USE_FONT**: build with specified font; null by default.
+**NO_DOCS**: Do not install documents [Default: OFF]
 
-**DATA_DIR**: build with specified data directory; "share/games/pianobooster" is default.
+**NO_LICENSE**: Do not install license [Default: OFF].
 
-**NO_LANGS**: do not install languages; disabled by default.
+**NO_CHANGELOG**: Do not install changelog [Default: OFF].
+
+**WITH_MAN**: Install man page [Default: OFF].

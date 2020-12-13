@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -27,6 +27,10 @@
 /*********************************************************************************/
 #ifndef __DRAW_H__
 #define __DRAW_H__
+
+#ifdef _WIN32
+  #include <windows.h>
+#endif
 
 #ifdef __APPLE__
   #include <OpenGL/gl.h>
@@ -49,7 +53,6 @@
 
 #include "Symbol.h"
 
-
 class CSettings;
 class CSlot;
 
@@ -69,43 +72,8 @@ private:
 class CDraw : public QObject
 {
 public:
-    CDraw(CSettings* settings)
-#ifndef NO_USE_FTGL
-        :font(nullptr)
-#endif
-    {
-#ifndef NO_USE_FTGL
-        QStringList listPathFonts;
-        #if defined(USE_FONT)
-        listPathFonts.push_back(USE_FONT);
-        #endif        
-        listPathFonts.push_back(QString(PREFIX)+"/"+QString(DATA_DIR)+"/fonts/DejaVuSans.ttf");
-        listPathFonts.push_back(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
-        listPathFonts.push_back("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
-        listPathFonts.push_back("/usr/share/fonts/dejavu/DejaVuSans.ttf");
-        listPathFonts.push_back("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
-        listPathFonts.push_back("/usr/share/fonts/TTF/DejaVuSans.ttf");
-        listPathFonts.push_back("/usr/share/fonts/truetype/DejaVuSans.ttf");
-        listPathFonts.push_back("/usr/local/share/fonts/dejavu/DejaVuSans.ttf");
 
-        for (int i=0;i<listPathFonts.size();i++){
-            QFile file(listPathFonts.at(i));
-            if (file.exists()){
-                font = new FTGLPixmapFont(listPathFonts.at(i).toStdString().c_str());
-                break;
-            }
-        }
-        if (font==nullptr){
-            ppLogError("Font DejaVuSans.ttf was not found !");
-            exit(0);
-        }
-        font->FaceSize(FONT_SIZE, FONT_SIZE);
-#endif
-        m_settings = settings;
-        m_displayHand = PB_PART_both;
-        m_forceCompileRedraw = 1;
-        m_scrollProperties = &m_scrollPropertiesHorizontal;
-    }
+    CDraw(CSettings* settings);
 
     ~CDraw(){
 #ifndef NO_USE_FTGL
@@ -161,7 +129,7 @@ private:
     CScrollProperties m_scrollPropertiesHorizontal;
     CScrollProperties m_scrollPropertiesVertical;
 #ifndef NO_USE_FTGL
-    FTGLPixmapFont *font;
+    FTFont *font;
 #endif
 };
 

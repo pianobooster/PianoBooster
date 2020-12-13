@@ -13,10 +13,9 @@
 - [Piano Booster Music](courses/README.md)
 
 External links:
-- [Original project](http://pianobooster.sourceforge.net)
-- [Original source tree](http://sourceforge.net/projects/pianobooster/)
-- [Original User Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html)
-- [Original Development Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Development-f2625691.html)
+- [Web site](https://www.pianobooster.org)
+- [User Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html)
+- [Development Forum](http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Development-f2625691.html)
 
 ## Presentation
 

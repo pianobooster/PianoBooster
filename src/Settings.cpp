@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -47,8 +47,11 @@
 #include "GuiTopBar.h"
 #include "GuiSidePanel.h"
 #include "QtWindow.h"
-#include "version.txt"
+#include "version.h"
 
+#if WITH_INTERNAL_FLUIDSYNTH
+#include "MidiDeviceFluidSynth.h"
+#endif
 
 #define OPTION_DEBUG_SETTINGS   0
 #if OPTION_DEBUG_SETTINGS
@@ -56,7 +59,6 @@
 #else
 #define debugSettings(args)
 #endif
-
 
 CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSettings::UserScope, "PianoBooster", "Piano Booster"),
                                  m_mainWindow(mainWindow)
@@ -71,15 +73,8 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
     m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", false ).toBool();
 
-
     // load Fluid settings
-
-    QString soundFontNames_1 = value("FluidSynth/SoundFont2_1","").toString();
-    if (!soundFontNames_1.isEmpty()) addFluidSoundFontName(soundFontNames_1);
-
-    QString soundFontNames_2 = value("FluidSynth/SoundFont2_2","").toString();
-    if (!soundFontNames_2.isEmpty()) addFluidSoundFontName(soundFontNames_2);
-
+    setFluidSoundFontNames( value("FluidSynth/SoundFont").toStringList());
 }
 
 void CSettings::setDefaultValue(const QString & key, const QVariant & value )
@@ -90,14 +85,12 @@ void CSettings::setDefaultValue(const QString & key, const QVariant & value )
     setValue(key, value);
 }
 
-
 void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
 {
     m_song = song;
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
 }
-
 
 void CSettings::setNoteNamesEnabled(bool value) {
     m_noteNamesEnabled = value;
@@ -114,7 +107,6 @@ void CSettings::setTutorPagesEnabled(bool value) {
     setValue("Tutor/TutorPages", value );
     updateTutorPage();
 }
-
 
 void CSettings::setCourtesyAccidentals(bool value) {
     CNotation::setCourtesyAccidentals(value);
@@ -186,7 +178,6 @@ void CSettings::loadSongSettings()
     m_guiSidePanel->setCurrentHand(m_domSong.attribute("hand", "both" ));
     m_guiTopBar->setSpeed(m_domSong.attribute("speed", "100" ).toInt());
 
-
     // -1 means none and -2 means not set
     int left = m_domSong.attribute("leftHandMidiChannel", "-2").toInt();
     int right = m_domSong.attribute("rightHandMidiChannel", "-2").toInt();
@@ -194,7 +185,6 @@ void CSettings::loadSongSettings()
 
     loadHandSettings();
 }
-
 
 void CSettings::saveSongSettings()
 {
@@ -213,7 +203,6 @@ void CSettings::loadBookSettings()
         m_currentSongName = lastSong;
 }
 
-
 void CSettings::saveBookSettings()
 {
     if (!m_currentBookName.isEmpty())
@@ -223,7 +212,6 @@ void CSettings::saveBookSettings()
 
     saveSongSettings();
 }
-
 
 void CSettings::loadXmlFile()
 {
@@ -286,34 +274,32 @@ void CSettings::updateTutorPage()
     QFileInfo fileInfo(getCurrentSongLongFileName());
     const char* EXTN = ".html";
 
-    QString fileBase = fileInfo.absolutePath() + "/InfoPages/" + fileInfo.completeBaseName() + "_";
 
-    QString locale = value("General/lang",QLocale::system().bcp47Name()).toString();
 
     if (m_tutorPagesEnabled)
     {
+        QString locale = selectedLangauge();
+
+        QString tutorFilePath = fileInfo.absolutePath() + "/InfoPages/" + locale + "/";
         QFileInfo tutorFile;
-        tutorFile.setFile(fileBase + locale + EXTN);
+        tutorFile.setFile(tutorFilePath + fileInfo.completeBaseName() + EXTN);
         if (tutorFile.exists())
         {
             m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
             return;
         }
-        int n = locale.indexOf("_");
 
-        if (n > 0)
+        tutorFilePath = fileInfo.absolutePath() + "/InfoPages/en/";
+        tutorFile.setFile(tutorFilePath + fileInfo.completeBaseName() + EXTN);
+
+        if (tutorFile.exists())
         {
-            locale = locale.left(n);
-            tutorFile.setFile(fileBase + locale + EXTN);
-            if (tutorFile.exists())
-            {
-                m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
-                return;
-            }
+            m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
+            return;
         }
 
-        locale = "en";
-        tutorFile.setFile(fileBase + locale + EXTN);
+        // The previous location of the tutor pages English only
+        tutorFile.setFile(fileInfo.absolutePath() + "/InfoPages/" + fileInfo.completeBaseName() + "_en" + EXTN);
         if (tutorFile.exists())
         {
             m_mainWindow->loadTutorHtml(tutorFile.absoluteFilePath());
@@ -321,7 +307,6 @@ void CSettings::updateTutorPage()
         }
     }
     m_mainWindow->loadTutorHtml(QString());
-
 }
 
 void CSettings::openSongFile(const QString & filename)
@@ -366,7 +351,6 @@ QStringList CSettings::getSongList()
     dirSongs.setFilter(QDir::Files);
     QStringList fileNames = dirSongs.entryList();
 
-
     QStringList songNames;
     for (int i = 0; i < fileNames.size(); i++)
     {
@@ -388,7 +372,6 @@ QStringList CSettings::getBookList()
     return dirBooks.entryList();
 }
 
-
 void CSettings::writeSettings()
 {
 
@@ -396,7 +379,6 @@ void CSettings::writeSettings()
         setValue("CurrentSong", getCurrentSongLongFileName());
     saveXmlFile();
 }
-
 
 void CSettings::loadSettings()
 {
@@ -418,6 +400,8 @@ void CSettings::loadSettings()
 //    if (!songName.isEmpty())
 //        openSongFile( songName );
 
+    setupDefaultSoundFont();
+
     updateWarningMessages();
     updateTutorPage();
 
@@ -428,33 +412,26 @@ void CSettings::unzipBoosterMusicBooks()
     // Set default value
     const QString ZIPFILENAME("BoosterMusicBooks.zip");
 
-
     if (value("PianoBooster/MusicRelease", 0).toInt() < MUSIC_RELEASE)
     {
-        QString resourceDir = QApplication::applicationDirPath() + "/../music/";
+        QString musicSrcDir = QApplication::applicationDirPath() + "/";
 
-        ppLogTrace("unzipBoosterMusicBooks resourceDir1 %s", qPrintable(resourceDir));
+        ppLogTrace("unzipBoosterMusicBooks resourceDir1 %s", qPrintable(musicSrcDir));
 
-        if (!QFile::exists(resourceDir + ZIPFILENAME))
-            resourceDir = QApplication::applicationDirPath() + "/../../music/";
-        ppLogTrace("unzipBoosterMusicBooks resourceDir2 %s", qPrintable(resourceDir));
-
-        if (!QFile::exists(resourceDir + ZIPFILENAME))
+        if (!QFile::exists(musicSrcDir + ZIPFILENAME))
         {
 #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-           resourceDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/music/";
+            musicSrcDir=Util::dataDir()+"/music/";
 #endif
 #ifdef Q_OS_DARWIN
-            resourceDir = QApplication::applicationDirPath() + "/../Resources/music/";
+            musicSrcDir = QApplication::applicationDirPath() + "/../Resources/music/";
 #endif
         }
 
         ppLogInfo(qPrintable("applicationDirPath=" + QApplication::applicationDirPath()));
-        ppLogTrace("resourceDir3 %s", qPrintable(resourceDir));
+        ppLogTrace("resourceDir %s", qPrintable(musicSrcDir));
 
-
-        QFileInfo zipFile(resourceDir +  ZIPFILENAME);
-        ppLogTrace("xx %s", qPrintable(zipFile.filePath()));
+        QFileInfo zipFile(musicSrcDir +  ZIPFILENAME);
 
         QDir destMusicDir;
 
@@ -483,8 +460,6 @@ void CSettings::unzipBoosterMusicBooks()
             return;
         }
 
-
-
         QProcess unzip;
         unzip.start("unzip", QStringList() << "-o" << zipFile.filePath() << "-d" << destMusicDir.path() );
         ppLogInfo(qPrintable("running unzip -o " + zipFile.filePath() + " -d " + destMusicDir.path()) );
@@ -497,7 +472,6 @@ void CSettings::unzipBoosterMusicBooks()
             ppLogInfo(buf);
                  // the line is available in buf
         }
-
 
         if (!unzip.waitForFinished())
         {
@@ -562,3 +536,59 @@ void CSettings::updateWarningMessages()
         m_warningMessage.clear();
 }
 
+void CSettings::setupDefaultSoundFont(){
+#if WITH_INTERNAL_FLUIDSYNTH
+
+    QFileInfo defaultSoundFont = QFileInfo();
+
+    if (getFluidSoundFontNames().empty() && !m_song->validMidiOutput() && !contains("LastSoundFontDir"))
+    {
+        QString appPath = qgetenv("APPIMAGE");
+        if (!appPath.isEmpty())
+        {
+             appPath= QFileInfo(appPath).path();
+        }
+        else {
+            appPath = QApplication::applicationDirPath();
+        }
+
+        QDir directory(appPath);
+        directory.cd("soundfont");
+        QStringList dirList = directory.entryList(QStringList(),QDir::AllEntries);
+        foreach(QString filename, dirList)
+        {
+            // Find the first sound fount file
+            if ( filename.endsWith(".sf2", Qt::CaseInsensitive ) )
+            {
+                defaultSoundFont.setFile(directory.path(), filename);
+                break;
+            }
+        }
+
+#if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
+        if (!defaultSoundFont.isFile())
+        {
+            QStringList possibleSoundFontFolders = {"/usr/share/soundfonts","/usr/share/sounds/sf2"};
+            for (QString soundFontFolder:possibleSoundFontFolders)
+            {
+                // fluid-soundfont-gm Fluid (R3) General MIDI SoundFont (GM) package
+                QFileInfo foundSoundFont(soundFontFolder, "FluidR3_GM.sf2");
+                if (foundSoundFont.isFile())
+                {
+                       defaultSoundFont=foundSoundFont;
+                       break;
+                }
+            }
+        }
+#endif
+
+        if (defaultSoundFont.isFile()) {
+            setFluidSoundFontNames(defaultSoundFont.filePath());
+            setValue("Midi/Output",CMidiDeviceFluidSynth::getFluidInternalName() );
+            setValue("LastSoundFontDir", defaultSoundFont.path());
+            saveSoundFontSettings();
+            m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT, CMidiDeviceFluidSynth::getFluidInternalName());
+        }
+    }
+#endif
+}

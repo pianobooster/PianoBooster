@@ -1,0 +1,293 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-09-28 20:58+0100\n"
+"PO-Revision-Date: 2020-10-04 16:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#. type: Plain text
+#: BeginnerCourse/01-StartWithMiddleC.md:2
+#, no-wrap
+msgid "**Start With Middle C** is an extremely easy piece. Just find **middle C** on the piano and then play that note four times using your **thumb** on your **right hand**. The first half of the piece has **middle C** in the **Treble Clef**, then for the second half of the piece the same **middle C** note is shown the **Bass Clef**. Play this using your **thumb** on your **left hand**.\n"
+msgstr "**Почнімо з середнього до** — надзвичайно простий твір. Просто знайдіть **середнє до** на піаніно, а потім зіграйте цю ноту чотири рази за допомогою вашого **великого пальця** на **правій руці**. У перша половині твору **середнє до** грають у **скрипковому ключі**, а у другій половині ту саму ноту **середнього до** грають у **басовому ключі**. Цю ноту слід грати **великим пальцем** вашої **лівої руки**.\n"
+
+#. type: Plain text
+#: BeginnerCourse/01-StartWithMiddleC.md:3
+msgid ""
+"> **Hint:** _Try to remember where **Middle C** is on the piano - this is "
+"the most **important note**!_"
+msgstr ""
+"> **Підказка:** _Постарайтеся згадати, де знаходиться **середньої до** на "
+"піаніно -- це **найважливіша нота**!_"
+
+#. type: Plain text
+#: BeginnerCourse/02-ChordOfCMajor.md:2
+msgid ""
+"The **Chord of C Major** piece, introduces you to the chord of **C Major** "
+"which has three notes **Middle C**, **E** and **G**."
+msgstr ""
+"Твір **Акорд до-мажор** знайомить вас із акордом **до-мажор**, який "
+"складається з трьох нот: **середньої до**, **мі** та **соль**."
+
+#. type: Plain text
+#: BeginnerCourse/02-ChordOfCMajor.md:4
+msgid ""
+"Use your **thumb** for **C**, your **middle finger** for **E** and your "
+"**little finger** for **G**."
+msgstr ""
+"Скористайтеся **великим пальцем** для **до**, **середнім пальцем** для "
+"**мі** та **мізинцем** для **соль**."
+
+#. type: Plain text
+#: BeginnerCourse/02-ChordOfCMajor.md:5 BeginnerCourse/05-ChordOfFMajor.md:5
+msgid ""
+"> **Hint:** _If you don't know the names of the notes on the score then turn "
+"on **Show Note Names** from the PianoBooster **Setup/Preferences** menu._"
+msgstr ""
+"> **Підказка:** _Якщо ви не знаєте розташування клавіш нот, позначте пункт "
+"**Показувати назви нот** у меню **Параметри/Налаштування** PianoBooster._"
+
+#. type: Plain text
+#: BeginnerCourse/03-UpAndDown.md:2
+#, no-wrap
+msgid "**Up And Down** uses all the fingers of your right hand to play the first five notes of the **scale of C major**.\n"
+msgstr "**У вгору і вниз** ви маєте скористатися усіма пальцями на вашій правій руці для перших п'яти нот у **гамі до-мажор**.\n"
+
+#. type: Plain text
+#: BeginnerCourse/03-UpAndDown.md:4
+msgid ""
+"Use your **thumb** for **C**, your **index finger** for **D**, . . . , all "
+"the way up to your **little finger** for **G**. Make sure you keep using the "
+"correct finger for each note."
+msgstr ""
+"Скористайтеся **великим пальцем** для **до**, **вказівним пальцем** слід "
+"грати **ре**, . . . , і так далі, аж до вашого **мізинця** для **соль**. "
+"Переконайтеся, що для кожної ноти ви використовуйте відповідний палець."
+
+#. type: Plain text
+#: BeginnerCourse/03-UpAndDown.md:5
+msgid ""
+"> **Hint:** _If you don't know the notes on the piano then **label the piano "
+"keys** using the PianoBooster **Note Chart**._"
+msgstr ""
+"> **Підказка:** _Якщо ви не знаєте розташування нот на клавіатурі піаніно, "
+"попросіть програму **додати мітки клавіш** за допомогою **Діаграми нот** "
+"PianoBooster._"
+
+#. type: Plain text
+#: BeginnerCourse/04-ClairDeLaLune.md:2
+msgid ""
+"This is a simplified version of **Clair De La Lune** that uses just three "
+"notes **C D** and **E** from your right hand. First find **middle C** and "
+"always use your **thumb** for this note, then for **D** use your **first "
+"finger** and for **E** use **middle finger**."
+msgstr ""
+"Це спрощена версія **У світлі місяця**, у якій використано три ноти **до "
+"ре** та **мі** для вашої правої руки. Спочатку знайдіть **середню до** і "
+"завжди використовуйте для цієї ноти ваш **великий палець**, далі, для **ре** "
+"використовуйте ваш **вказівний палець**, а для **мі** — **середній палець**."
+
+#. type: Plain text
+#: BeginnerCourse/04-ClairDeLaLune.md:3
+msgid ""
+"> **Hint:** _Remember the fingering: Use your **thumb** for **middle C**, "
+"your **first finger** for **D** and **middle finger** for **E**._"
+msgstr ""
+"> **Підказка:** _Запам'ятайте розкладку за пальцями: **великий палець** для "
+"**середньої до**, **вказівний палець** для **ре** і **середній палець** для "
+"**мі**._"
+
+#. type: Plain text
+#: BeginnerCourse/05-ChordOfFMajor.md:2
+msgid ""
+"Now we are going to play using your **left hand** the **F major chord**. The "
+"three notes of a chord are called a triad and this chord has the same shape "
+"as the C major chord we played earlier but played on a different part of the "
+"piano."
+msgstr ""
+"Тепер ми зіграємо **лівою рукою** **акорд фа-мажор**. Три ноти акорду "
+"називають тріадою. Цей акорд має ту саму форму, що і акорд до-мажор, який ми "
+"грали раніше на іншій частині клавіатури піаніно."
+
+#. type: Plain text
+#: BeginnerCourse/05-ChordOfFMajor.md:4
+msgid ""
+"Use your **little finger** on the left hand for **F**, your **middle "
+"finger** for **A** and your **thumb** for **C**."
+msgstr ""
+"Використовуйте **мізинець** на лівій руці для **фа**, **середнім пальцем** "
+"для **ля** і **великим пальцем** для **до**."
+
+#. type: Plain text
+#: BeginnerCourse/06-DownAndUp.md:2
+#, no-wrap
+msgid "**Down And Up** is mirror version of the Up And Down piece we played earlier but this version uses your **left hand**. These are the top five notes of the scale of C major. Again try to use all your fingers.\n"
+msgstr "**Вниз і вгору** є дзеркальною версією «Вгору і вниз», яку грають **лівою рукою**. Це верхні п'ять нот гами до-мажор. Знову ж таки, намагайтеся використовувати усі ваші пальці.\n"
+
+#. type: Plain text
+#: BeginnerCourse/06-DownAndUp.md:4
+msgid ""
+"Use your **thumb** for **C**, your **index finger** for **B**, . . . , all "
+"the way down to your **little finger** for **F**."
+msgstr ""
+"Скористайтеся **великим пальцем** для **до**, **вказівним пальцем** слід "
+"грати **сі**, . . . , і так далі, аж до вашого **мізинця** для **фа**."
+
+#. type: Plain text
+#: BeginnerCourse/06-DownAndUp.md:5
+msgid ""
+"> **Hint:** _Make sure you use **every finger** on your **left hand** when "
+"playing this piece._"
+msgstr ""
+"> **Підказка:** _Користуйтеся **усіма пальцями** на вашій **лівій руці**, "
+"коли гратимете цей твір._"
+
+#. type: Plain text
+#: BoosterMusic/01-ClairDeLaLune.md:2
+msgid ""
+"This is a simplified version of **Clair De La Lune** that uses only the "
+"three notes **C D** and **E** from your right hand. First find **middle C** "
+"and always use your **thumb** for this note, then for **D** use your **first "
+"finger** and for **E** use **middle finger**."
+msgstr ""
+"Це спрощена версія **У світлі місяця**, у якій використано три ноти **до "
+"ре** та **мі** для вашої правої руки. Спочатку знайдіть **середню до** і "
+"завжди використовуйте для цієї ноти ваш **великий палець**, далі, для **ре** "
+"використовуйте ваш **вказівний палець**, а для **мі** — **середній палець**."
+
+#. type: Plain text
+#: BoosterMusic/01-ClairDeLaLune.md:3
+msgid ""
+"> **Hint:** _If you are a complete beginner try the pieces from the "
+"**Beginner Course** first._"
+msgstr ""
+"> **Підказка:** _Якщо граєте вперше, спробуйте спочатку твори із **Курсу для "
+"початківців**._"
+
+#. type: Plain text
+#: BoosterMusic/02-LavendersBlue.md:2
+#, no-wrap
+msgid "**Lavender's Blue** is a simple tune in the right hand only that uses the first six notes of the scale of C Major. For the lowest five notes **C D E F** and **G** use all the fingers or your right hand - one for each note. (With your **thumb** on **C** and your **little finger** on **G**). Then for **A** just stretch your **little finger** to reach that note.\n"
+msgstr "**Лавандовий синій** — проста мелодія для правої руки, у якій використовують перші шість нот у гамі до-мажор. Для п'яти нижніх нот, **до, ре, мі, фа** та **соль** скористайтеся усіма пальцями на вашій правій руці — по одному на ноту. (**Великий палець** для **до**, а **мізинець** для **соль**). Далі, щоб зіграти **ля**, потягніться до відповідної клавіші **мізинцем**.\n"
+
+#. type: Plain text
+#: BoosterMusic/02-LavendersBlue.md:3
+msgid ""
+"> **Hint:** _To help find the notes ensure **Show Note Names** are turned on "
+"from **Setup Preferences** menu._"
+msgstr ""
+"> **Підказка:** _Якщо ви не знаєте розташування клавіш нот, позначте пункт "
+"**Показувати назви нот** у меню **Параметри/Налаштування** PianoBooster._"
+
+#. type: Plain text
+#: BoosterMusic/03-SkipToMyLou.md:2
+msgid ""
+"For **Skip To My Lou** start with both thumbs on **middle C** and then use "
+"one finger for each white note on the piano. So for the first two notes "
+"which are **E** you should use the **middle finger** of your right hand."
+msgstr ""
+"**Skip To My Lou** слід починати, розташувавши обидва великі пальці на "
+"**середньому до**, а потім використовувати відповідний палець для кожної "
+"білої ноти піаніно. Отже, для перших двох нот, якими є **мі**, вам слід "
+"скористатися **середнім пальцем** правої руки."
+
+#. type: Plain text
+#: BoosterMusic/03-SkipToMyLou.md:4
+msgid ""
+"This piece introduces the use of **both hands** as the melody goes across "
+"**middle C**."
+msgstr ""
+"У цьому творі використовують гру **обома руками**, оскільки мелодія "
+"переходить через **середнє до**."
+
+#. type: Plain text
+#: BoosterMusic/03-SkipToMyLou.md:5
+msgid ""
+"> **Hint:** _For the notes in the **treble clef** you always use your "
+"**right hand** and for the **base clef** your **left hand**. Make sure you "
+"always keep using the correct finger for each note._"
+msgstr ""
+"> **Підказка:** _Для нот у **скрипковому ключі** слід завжди використовувати "
+"**праву руку**, а для нот у **басовому ключі** — **ліву руку**. "
+"Переконайтеся, що ви завжди використовуєте відповідний палець для кожної "
+"ноти._"
+
+#. type: Plain text
+#: BoosterMusic/04-FrereJacques.md:2
+msgid ""
+"For **Frere Jacques** introduces the use of playing both hands together with "
+"a very simple left hand part. First practice the **left hand** and **right "
+"hand** parts separately. Then when ready reduce the **speed to 70%** and try "
+"**both hands** together. Again start with **both thumbs** on **Middle C**."
+msgstr ""
+"**Брат Жак** навчає грі обома руками і містить дуже просту партію для лівої "
+"руки. Спочатку повправляйтеся грі **лівою рукою** і **правою рукою** окремо. "
+"Далі, коли будете готові, зменшіть **швидкість до 70%** і спробуйте грати "
+"**обома руками** разом. Знову ж таки, розпочніть із **обома великим "
+"пальцями** на **середній до**."
+
+#. type: Plain text
+#: BoosterMusic/04-FrereJacques.md:3
+msgid ""
+"> **Hint:** _Practice the **left hand** and **right hand** parts separately._"
+msgstr ""
+"> **Підказка:** _Спочатку повправляйтеся грі **лівою рукою** і **правою "
+"рукою** окремо._"
+
+#. type: Plain text
+#: BoosterMusic/05-ScarboroughFair.md:2
+#, no-wrap
+msgid "**Scarborough Fair** spans a range of eight notes and so you will have to move fingers up the piano. Use the fingering that you feel comfortable with but ensure that you **use all your fingers** (of your right hand).\n"
+msgstr "**Ярмарка у Скарборо** використовує вісім нот, тому вам доведеться пересувати пальці клавіатурою. Скористайтеся найзручнішим для вас способом пересування пальців, але намагайтеся **використовувати усі пальці** (вашої правої руки).\n"
+
+#. type: Plain text
+#: BoosterMusic/05-ScarboroughFair.md:3
+msgid ""
+"> **Hint:** _Don't think about what fingers to use, just use the fingering "
+"that **comes naturally to you**._"
+msgstr ""
+"> **Підказка:** _Просто натискайте клавіші тими пальцями, якими вам **зручно "
+"це робити**._"
+
+#. type: Plain text
+#: BoosterMusic/06-Greensleeves.md:2
+#, no-wrap
+msgid "**Greensleeves** introduces the key of **G major** which has **one Sharp - F#**. Normally the sharp symbol is not shown when **F#** is played (but turning on **Courtesy Accidentals** from the Piano Booster setup/preferences menu will show all accidentals in the key signature). The melody is in the right hand with a simple left hand part.\n"
+msgstr "**У Зелених рукавах** використано клавішу **соль-мажор**, яка є клавішею **одинарного дієза — фа-дієз**. Зазвичай, символ дієза не пишуть, якщо грають **фа-дієз** (але якщо увімкнути **Врахування альтерації** у меню налаштувань Piano Booster, програма показуватиме альтерацію на клавіатурі). Мелодію грає права рука — партія лівої руки є дуже простою.\n"
+
+#. type: Plain text
+#: BoosterMusic/06-Greensleeves.md:3
+msgid ""
+"> **Hint:** _You can show **Courtesy Accidentals** from the PianoBooster "
+"setup/preferences menu. But remember to **turn them off** when you get more "
+"skilled._"
+msgstr ""
+"> **Підказка:** _Ви можете увімкнути **Врахування альтерації** у меню "
+"налаштувань Piano Booster. Втім, не забудьте **вимкнути альтерацію**, коли "
+"набудете певного досвіду._"
+
+#. type: Plain text
+#: BoosterMusic/07-AmazingGrace.md:2
+#, no-wrap
+msgid "**Amazing Grace** introduces the key of **F major** which has a **single Flat - Bb**. Again the flat symbol is not normally shown on the score when playing Bb. Practice both hands separately at first and then when ready reduce the speed to 70% when trying both hands for the first time.\n"
+msgstr "**Чудова ласка** навчає вас грі клавішею **фа-мажор**, яка є клавішею **одинарного бемоля — сі-бемоль**. Знову ж таки, символ бемоль, зазвичай, не буде показано у нотному записі, коли ви граєте сі-бемоль. Спочатку попрактикуйтеся грі руками окремо, а потім зменшіть швидкість до 70% і спробуйте грати обома руками.\n"
+
+#. type: Plain text
+#: BoosterMusic/07-AmazingGrace.md:3
+msgid ""
+"> **Hint:** _Reduce the speed to 70% when trying both hands for the first "
+"time._"
+msgstr ""
+"> **Підказка:** _Зменшіть швидкість до 70%, коли вперше намагатиметеся грати "
+"обома руками._"

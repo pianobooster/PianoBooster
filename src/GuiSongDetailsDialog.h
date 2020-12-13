@@ -29,12 +29,10 @@
 #ifndef __GUISONGDETAILSDIALOG_H__
 #define __GUISONGDETAILSDIALOG_H__
 
-
 #include <QtWidgets>
 
 #include "Song.h"
 #include "Settings.h"
-
 
 #include "ui_GuiSongDetailsDialog.h"
 

@@ -42,13 +42,14 @@
 
 #define REDRAW_COUNT ((m_cfg_openGlOptimise >= 2) ? 1 : 2) // there are two gl buffers but redrawing once is best (set 2 with buggy gl drivers)
 
+#define TEXT_LEFT_MARGIN 30
 
 CGLView::CGLView(QtWindow* parent, CSettings* settings)
     : QGLWidget(parent)
 {
     m_qtWindow = parent;
     m_settings = settings;
-    m_rating = 0;
+    m_rating = nullptr;
     m_fullRedrawFlag = true;
     m_forcefullRedraw = 0;
     m_forceRatingRedraw = 0;
@@ -67,11 +68,9 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
 
 CGLView::~CGLView()
 {
-    makeCurrent();
     delete m_song;
     delete m_score;
     m_titleHeight = 0;
-
 }
 
 QSize CGLView::minimumSizeHint() const
@@ -127,7 +126,6 @@ void CGLView::paintGL()
     m_score->drawScroll(m_forcefullRedraw);
     BENCHMARK(10, "drawScroll");
 
-
     if (m_forcefullRedraw) m_forcefullRedraw--;
     BENCHMARK(11, "exit");
     BENCHMARK_RESULTS();
@@ -135,16 +133,13 @@ void CGLView::paintGL()
 
 void CGLView::drawTimeSignature()
 {
-    if (Cfg::quickStart)
-        return;
-
     if (m_forcefullRedraw == 0)
         return;
 
     float x,y;
     int topNumber, bottomNumber;
 
-    if (m_song == 0) return;
+    if (m_song == nullptr) return;
 
     m_song->getTimeSig(&topNumber, &bottomNumber);
     if (topNumber == 0 ) return;
@@ -179,12 +174,11 @@ void CGLView::drawAccurracyBar()
         return;
     m_forceRatingRedraw--;
 
-
     float accuracy;
     CColor color;
 
     float y = Cfg::getAppHeight() - 14;
-    const float x = 120;
+    const float x = accuracyBarStart;
     const int width = 360;
     const int lineWidth = 8/2;
 
@@ -196,7 +190,6 @@ void CGLView::drawAccurracyBar()
     glRectf(x, y - lineWidth, x + width * accuracy, y + lineWidth);
     CDraw::drColor (Cfg::backgroundColor());
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
-
 
     glLineWidth (1);
     CDraw::drColor (CColor(1.0, 1.0, 1.0));
@@ -210,14 +203,11 @@ void CGLView::drawAccurracyBar()
 
 void CGLView::drawDisplayText()
 {
-    if (m_rating == 0)
+    if (m_rating == nullptr)
     {
         m_rating = m_song->getRating();
         return; // don't run this func the first time it is called
     }
-
-    if (Cfg::quickStart)
-        return;
 
     if (m_forcefullRedraw == 0)
         return;
@@ -227,21 +217,28 @@ void CGLView::drawDisplayText()
     if (!m_settings->getWarningMessage().isEmpty())
     {
         glColor3f(1.0,0.2,0.0);
-        renderText(30, y-4, 0, m_settings->getWarningMessage(), m_timeRatingFont);
+        renderText(TEXT_LEFT_MARGIN, y-4, 0, m_settings->getWarningMessage(), m_timeRatingFont);
         return;
     }
 
     glColor3f(1.0,1.0,1.0);
 
-    if (m_song->getPlayMode() != PB_PLAY_MODE_listen)
-        renderText(30, y-4,0 ,tr("Accuracy:"), m_timeRatingFont);
+    if (m_song->getPlayMode() != PB_PLAY_MODE_listen) {
+        if (accuracyBarStart == 0) {
+            QFontMetrics fm(m_timeRatingFont);
+            accuracyText = tr("Accuracy:");
+            accuracyBarStart=fm.boundingRect(accuracyText + "  ").right() + TEXT_LEFT_MARGIN;
+       }
+
+        renderText(TEXT_LEFT_MARGIN, y-4,0 ,accuracyText, m_timeRatingFont);
+    }
 
     if (m_titleHeight < 45 )
         return;
 
     y = Cfg::getAppHeight() - m_titleHeight;
 
-    renderText(30, y+6, 0,tr("Song:") + " " + m_song->getSongTitle(), m_timeRatingFont);
+    renderText(TEXT_LEFT_MARGIN, y+6, 0,tr("Song:") + " " + m_song->getSongTitle(), m_timeRatingFont);
     /*
     char buffer[100];
     sprintf(buffer, "Notes %d wrong %d Late %d Score %4.1f%%",
@@ -253,12 +250,12 @@ void CGLView::drawDisplayText()
 
 void CGLView::drawBarNumber()
 {
-    if (m_forceBarRedraw == 0 || Cfg::quickStart)
+    if (m_forceBarRedraw == 0)
         return;
     m_forceBarRedraw--;
 
     float y = Cfg::getAppHeight() - m_titleHeight - 34;
-    float x = 30;
+    float x = TEXT_LEFT_MARGIN;
 
     //CDraw::drColor (Cfg::backgroundColor());
     //CDraw::drColor (Cfg::noteColorDim());
@@ -292,6 +289,10 @@ void CGLView::resizeGL(int width, int height)
         m_titleHeight = 60;
     }
     maxSoreHeight = heightAboveStave + heightBelowStave + staveGap + m_titleHeight;
+    if (height > maxSoreHeight) {
+        int scoreExtraTopGap = (height - maxSoreHeight);
+        maxSoreHeight += qMin(200, scoreExtraTopGap);
+    }
     int sizeX = qMin(width, maxSoreWidth);
     int sizeY = qMin(height, maxSoreHeight);
     int x = (width - sizeX)/2;
@@ -328,7 +329,6 @@ void CGLView::initializeGL()
     glShadeModel (GL_FLAT);
     //glEnable(GL_TEXTURE_2D);                        // Enable Texture Mapping
 
-
     //from initCheck();
     glShadeModel(GL_FLAT);
     //glEnable(GL_DEPTH_TEST);
@@ -344,18 +344,14 @@ void CGLView::initializeGL()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     //enableAntialiasedLines();
 
-    m_timeSigFont =  QFont("Arial", 22 );
-    m_timeRatingFont =  QFont("Arial", 12 );
+    // This is a work around for Windows different display scaling option
+    int widgetPointSize = m_qtWindow->font().pointSize();
+    m_timeSigFont =  QFont("Arial", widgetPointSize*2 );
+    m_timeRatingFont =  QFont("Arial", static_cast<int>(widgetPointSize * 1.2) );
 
     Cfg::setStaveEndX(400);        //This value get changed by the resizeGL func
 
     m_song->setActiveHand(PB_PART_both);
-
-    if (!Cfg::quickStart)
-    {
-        renderText(10,10,QString("~"), m_timeRatingFont); //fixme this is a work around for a QT bug.
-        renderText(10,10,QString("~"), m_timeSigFont); //this is a work around for a QT bug.
-    }
 
     setFocusPolicy(Qt::ClickFocus);
     m_qtWindow->init();
@@ -363,7 +359,6 @@ void CGLView::initializeGL()
     m_score->init();
 
     m_song->regenerateChordQueue();
-
 
     // increased the tick time for Midi handling
 
@@ -392,7 +387,6 @@ void CGLView::timerEvent(QTimerEvent *event)
          QWidget::timerEvent(event);
          return;
     }
-
 
     updateMidiTask();
     BENCHMARK(1, "m_song task");

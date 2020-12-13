@@ -1,5 +1,5 @@
 // Musical MIDI Accompaniment file for the Piano Booster project
-// For more information see: https://github.com/captnfab/PianoBooster
+// For more information see: https://github.com/pianobooster/PianoBooster
 // Creative Commons license
 
 MidiTName Down And Up
@@ -79,7 +79,7 @@ Groove Second
     C                           {1c++;}
     C C Am:5 Am:5               {4c++;4b+;4a+;4g+;}
     F:8 F:8 Am:5 Am:5           {4f+;4g+;4a+;4b+;}
-    C                           {1+2c++;}
+    C                           {1+2c++~;}
     C z! z! z!
 
 

@@ -2,39 +2,47 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr">
 <context>
+    <name>CConductor</name>
+    <message>
+        <location filename="../src/Conductor.cpp" line="335"/>
+        <source>None</source>
+        <translation>Aucun</translation>
+    </message>
+</context>
+<context>
     <name>CDraw</name>
     <message>
-        <location filename="../src/Draw.cpp" line="271"/>
+        <location filename="../src/Draw.cpp" line="310"/>
         <source>C</source>
         <translation>Do</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="272"/>
+        <location filename="../src/Draw.cpp" line="311"/>
         <source>D</source>
         <translation>Ré</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="273"/>
+        <location filename="../src/Draw.cpp" line="312"/>
         <source>E</source>
         <translation>Mi</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="274"/>
+        <location filename="../src/Draw.cpp" line="313"/>
         <source>F</source>
         <translation>Fa</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="275"/>
+        <location filename="../src/Draw.cpp" line="314"/>
         <source>G</source>
         <translation>Sol</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="276"/>
+        <location filename="../src/Draw.cpp" line="315"/>
         <source>A</source>
         <translation>La</translation>
     </message>
     <message>
-        <location filename="../src/Draw.cpp" line="277"/>
+        <location filename="../src/Draw.cpp" line="316"/>
         <source>B</source>
         <translation>Si</translation>
     </message>
@@ -42,17 +50,17 @@
 <context>
     <name>CGLView</name>
     <message>
-        <location filename="../src/GlView.cpp" line="237"/>
+        <location filename="../src/GlView.cpp" line="229"/>
         <source>Accuracy:</source>
         <translation>Exactitude :</translation>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="244"/>
+        <location filename="../src/GlView.cpp" line="241"/>
         <source>Song:</source>
         <translation>Morceau :</translation>
     </message>
     <message>
-        <location filename="../src/GlView.cpp" line="267"/>
+        <location filename="../src/GlView.cpp" line="264"/>
         <source>Bar:</source>
         <translation>Mesure :</translation>
     </message>
@@ -60,17 +68,17 @@
 <context>
     <name>CSettings</name>
     <message>
-        <location filename="../src/Settings.cpp" line="409"/>
+        <location filename="../src/Settings.cpp" line="393"/>
         <source>space</source>
         <translation>espace</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="558"/>
+        <location filename="../src/Settings.cpp" line="538"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...</source>
         <translation>ERREUR PAS DE SON : pour corriger ceci, utilisez le menu Paramétrage/Paramètres Midi...</translation>
     </message>
     <message>
-        <location filename="../src/Settings.cpp" line="560"/>
+        <location filename="../src/Settings.cpp" line="540"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
         <translation>ERREUR PAS DE FICHIER MIDI : pour corriger ceci, utilisez le menu Fichier/Ouvrir...</translation>
     </message>
@@ -78,647 +86,647 @@
 <context>
     <name>CTrackList</name>
     <message>
-        <location filename="../src/TrackList.cpp" line="355"/>
+        <location filename="../src/TrackList.cpp" line="388"/>
         <source>(None)</source>
         <translation>(aucun)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="356"/>
+        <location filename="../src/TrackList.cpp" line="389"/>
         <source>Grand Piano</source>
         <translation>Piano à queue</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="357"/>
+        <location filename="../src/TrackList.cpp" line="390"/>
         <source>Bright Piano</source>
         <translation>Piano brillant</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="358"/>
+        <location filename="../src/TrackList.cpp" line="391"/>
         <source>Electric Grand</source>
         <translation>À queue électrique</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="359"/>
+        <location filename="../src/TrackList.cpp" line="392"/>
         <source>Honky-tonk Piano</source>
         <translation>Piano Honky-tonk</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="360"/>
+        <location filename="../src/TrackList.cpp" line="393"/>
         <source>Electric Piano 1</source>
         <translation>Piano électrique 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="361"/>
+        <location filename="../src/TrackList.cpp" line="394"/>
         <source>Electric Piano 2</source>
         <translation>Piano électrique 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="362"/>
+        <location filename="../src/TrackList.cpp" line="395"/>
         <source>Harpsichord</source>
         <translation>Clavecin</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="363"/>
+        <location filename="../src/TrackList.cpp" line="396"/>
         <source>Clavi</source>
         <translation>Clavi</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="364"/>
+        <location filename="../src/TrackList.cpp" line="397"/>
         <source>Celesta</source>
         <translation>Célesta</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="365"/>
+        <location filename="../src/TrackList.cpp" line="398"/>
         <source>Glockenspiel</source>
         <translation>Glockenspiel</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="366"/>
+        <location filename="../src/TrackList.cpp" line="399"/>
         <source>Music Box</source>
         <translation>Boîte à musique</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="367"/>
+        <location filename="../src/TrackList.cpp" line="400"/>
         <source>Vibraphone</source>
         <translation>Vibraphone</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="368"/>
+        <location filename="../src/TrackList.cpp" line="401"/>
         <source>Marimba</source>
         <translation>Marimba</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="369"/>
+        <location filename="../src/TrackList.cpp" line="402"/>
         <source>Xylophone</source>
         <translation>Xylophone</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="370"/>
+        <location filename="../src/TrackList.cpp" line="403"/>
         <source>Tubular Bells</source>
         <translation>Carillon</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="371"/>
+        <location filename="../src/TrackList.cpp" line="404"/>
         <source>Dulcimer</source>
         <translation>Dulcimer</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="372"/>
+        <location filename="../src/TrackList.cpp" line="405"/>
         <source>Drawbar Organ</source>
         <translation>Orgue à tirette</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="373"/>
+        <location filename="../src/TrackList.cpp" line="406"/>
         <source>Percussive Organ</source>
         <translation>Orgue percussif</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="374"/>
+        <location filename="../src/TrackList.cpp" line="407"/>
         <source>Rock Organ</source>
         <translation>Orgue rock</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="375"/>
+        <location filename="../src/TrackList.cpp" line="408"/>
         <source>Church Organ</source>
         <translation>Grand orgue</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="376"/>
+        <location filename="../src/TrackList.cpp" line="409"/>
         <source>Reed Organ</source>
         <translation>Orgue à anche</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="377"/>
+        <location filename="../src/TrackList.cpp" line="410"/>
         <source>Accordion</source>
         <translation>Accordéon</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="378"/>
+        <location filename="../src/TrackList.cpp" line="411"/>
         <source>Harmonica</source>
         <translation>Harmonica</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="379"/>
+        <location filename="../src/TrackList.cpp" line="412"/>
         <source>Tango Accordion</source>
         <translation>Accordéon tango</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="380"/>
+        <location filename="../src/TrackList.cpp" line="413"/>
         <source>Acoustic Guitar (nylon)</source>
         <translation>Guitare sèche (nylon)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="381"/>
+        <location filename="../src/TrackList.cpp" line="414"/>
         <source>Acoustic Guitar (steel)</source>
         <translation>Guitare sèche (acier)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="382"/>
+        <location filename="../src/TrackList.cpp" line="415"/>
         <source>Electric Guitar (jazz)</source>
         <translation>Guitare électrique (jazz)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="383"/>
+        <location filename="../src/TrackList.cpp" line="416"/>
         <source>Electric Guitar (clean)</source>
         <translation>Guitare électrique</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="384"/>
+        <location filename="../src/TrackList.cpp" line="417"/>
         <source>Electric Guitar (muted)</source>
         <translation>Guitare électrique (étouffée)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="385"/>
+        <location filename="../src/TrackList.cpp" line="418"/>
         <source>Overdriven Guitar</source>
         <translation>Guitare saturée</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="386"/>
+        <location filename="../src/TrackList.cpp" line="419"/>
         <source>Distortion Guitar</source>
         <translation>Guitare distorsion</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="387"/>
+        <location filename="../src/TrackList.cpp" line="420"/>
         <source>Guitar harmonics</source>
         <translation>Guitare harmoniques</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="388"/>
+        <location filename="../src/TrackList.cpp" line="421"/>
         <source>Acoustic Bass</source>
         <translation>Basse acoustique</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="389"/>
+        <location filename="../src/TrackList.cpp" line="422"/>
         <source>Electric Bass (finger)</source>
         <translation>Basse électrique (doigt)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="390"/>
+        <location filename="../src/TrackList.cpp" line="423"/>
         <source>Electric Bass (pick)</source>
         <translation>Basse électrique (médiator)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="391"/>
+        <location filename="../src/TrackList.cpp" line="424"/>
         <source>Fretless Bass</source>
         <translation>Basse sans frette</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="392"/>
+        <location filename="../src/TrackList.cpp" line="425"/>
         <source>Slap Bass 1</source>
         <translation>Basse slap 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="393"/>
+        <location filename="../src/TrackList.cpp" line="426"/>
         <source>Slap Bass 2</source>
         <translation>Basse slap 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="394"/>
+        <location filename="../src/TrackList.cpp" line="427"/>
         <source>Synth Bass 1</source>
         <translation>Basse synthétique 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="395"/>
+        <location filename="../src/TrackList.cpp" line="428"/>
         <source>Synth Bass 2</source>
         <translation>Basse synthétique 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="396"/>
+        <location filename="../src/TrackList.cpp" line="429"/>
         <source>Violin</source>
         <translation>Violon</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="397"/>
+        <location filename="../src/TrackList.cpp" line="430"/>
         <source>Viola</source>
         <translation>Alto</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="398"/>
+        <location filename="../src/TrackList.cpp" line="431"/>
         <source>Cello</source>
         <translation>Violoncelle</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="399"/>
+        <location filename="../src/TrackList.cpp" line="432"/>
         <source>Contrabass</source>
         <translation>Contre-basse</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="400"/>
+        <location filename="../src/TrackList.cpp" line="433"/>
         <source>Tremolo Strings</source>
         <translation>Cordes trémolo</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="401"/>
+        <location filename="../src/TrackList.cpp" line="434"/>
         <source>Pizzicato Strings</source>
         <translation>Cordes pizzicato</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="402"/>
+        <location filename="../src/TrackList.cpp" line="435"/>
         <source>Orchestral Harp</source>
         <translation>Harpe orchestrale</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="403"/>
+        <location filename="../src/TrackList.cpp" line="436"/>
         <source>Timpani</source>
         <translation>Timbales</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="404"/>
+        <location filename="../src/TrackList.cpp" line="437"/>
         <source>String Ensemble 1</source>
         <translation>Ensemble de corde 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="405"/>
+        <location filename="../src/TrackList.cpp" line="438"/>
         <source>String Ensemble 2</source>
         <translation>Ensemble de corde 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="406"/>
+        <location filename="../src/TrackList.cpp" line="439"/>
         <source>SynthStrings 1</source>
         <translation>Cordes synthétiques 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="407"/>
+        <location filename="../src/TrackList.cpp" line="440"/>
         <source>SynthStrings 2</source>
         <translation>Cordes synthétiques 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="408"/>
+        <location filename="../src/TrackList.cpp" line="441"/>
         <source>Choir Aahs</source>
         <translation>Chœur Aaah</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="409"/>
+        <location filename="../src/TrackList.cpp" line="442"/>
         <source>Voice Oohs</source>
         <translation>Voix Oooh</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="410"/>
+        <location filename="../src/TrackList.cpp" line="443"/>
         <source>Synth Voice</source>
         <translation>Voix synthétique</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="411"/>
+        <location filename="../src/TrackList.cpp" line="444"/>
         <source>Orchestra Hit</source>
         <translation>Pêche orchestrale</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="412"/>
+        <location filename="../src/TrackList.cpp" line="445"/>
         <source>Trumpet</source>
         <translation>Trompette</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="413"/>
+        <location filename="../src/TrackList.cpp" line="446"/>
         <source>Trombone</source>
         <translation>Trombone</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="414"/>
+        <location filename="../src/TrackList.cpp" line="447"/>
         <source>Tuba</source>
         <translation>Tuba</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="415"/>
+        <location filename="../src/TrackList.cpp" line="448"/>
         <source>Muted Trumpet</source>
         <translation>Trompette étouffée</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="416"/>
+        <location filename="../src/TrackList.cpp" line="449"/>
         <source>French Horn</source>
         <translation>Cor d&apos;harmonie</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="417"/>
+        <location filename="../src/TrackList.cpp" line="450"/>
         <source>Brass Section</source>
         <translation>Section de cuivre</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="418"/>
+        <location filename="../src/TrackList.cpp" line="451"/>
         <source>SynthBrass 1</source>
         <translation>Cuivre synthétique 1</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="419"/>
+        <location filename="../src/TrackList.cpp" line="452"/>
         <source>SynthBrass 2</source>
         <translation>Cuivre synthétique 2</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="420"/>
+        <location filename="../src/TrackList.cpp" line="453"/>
         <source>Soprano Sax</source>
         <translation>Sax soprano</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="421"/>
+        <location filename="../src/TrackList.cpp" line="454"/>
         <source>Alto Sax</source>
         <translation>Sax alto</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="422"/>
+        <location filename="../src/TrackList.cpp" line="455"/>
         <source>Tenor Sax</source>
         <translation>Sax ténor</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="423"/>
+        <location filename="../src/TrackList.cpp" line="456"/>
         <source>Baritone Sax</source>
         <translation>Sax baryton</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="424"/>
+        <location filename="../src/TrackList.cpp" line="457"/>
         <source>Oboe</source>
         <translation>Hautbois</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="425"/>
+        <location filename="../src/TrackList.cpp" line="458"/>
         <source>English Horn</source>
         <translation>Cor anglais</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="426"/>
+        <location filename="../src/TrackList.cpp" line="459"/>
         <source>Bassoon</source>
         <translation>Basson</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="427"/>
+        <location filename="../src/TrackList.cpp" line="460"/>
         <source>Clarinet</source>
         <translation>Clarinette</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="428"/>
+        <location filename="../src/TrackList.cpp" line="461"/>
         <source>Piccolo</source>
         <translation>Piccolo</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="429"/>
+        <location filename="../src/TrackList.cpp" line="462"/>
         <source>Flute</source>
         <translation>Flûte</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="430"/>
+        <location filename="../src/TrackList.cpp" line="463"/>
         <source>Recorder</source>
         <translation>Enregistreur</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="431"/>
+        <location filename="../src/TrackList.cpp" line="464"/>
         <source>Pan Flute</source>
         <translation>Flûte de pan</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="432"/>
+        <location filename="../src/TrackList.cpp" line="465"/>
         <source>Blown Bottle</source>
         <translation>Souffle dans une bouteille</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="433"/>
+        <location filename="../src/TrackList.cpp" line="466"/>
         <source>Shakuhachi</source>
         <translation>Shakuhachi</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="434"/>
+        <location filename="../src/TrackList.cpp" line="467"/>
         <source>Whistle</source>
         <translation>Sifflet</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="435"/>
+        <location filename="../src/TrackList.cpp" line="468"/>
         <source>Ocarina</source>
         <translation>Ocarina</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="436"/>
+        <location filename="../src/TrackList.cpp" line="469"/>
         <source>Lead 1 (square)</source>
         <translation>Général 1 (carrée)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="437"/>
+        <location filename="../src/TrackList.cpp" line="470"/>
         <source>Lead 2 (sawtooth)</source>
         <translation>Général 2 (dent de scie)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="438"/>
+        <location filename="../src/TrackList.cpp" line="471"/>
         <source>Lead 3 (calliope)</source>
         <translation>Général 3 (orgue à vapeur)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="439"/>
+        <location filename="../src/TrackList.cpp" line="472"/>
         <source>Lead 4 (chiff)</source>
         <translation>Général 4 (chiff)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="440"/>
+        <location filename="../src/TrackList.cpp" line="473"/>
         <source>Lead 5 (charang)</source>
         <translation>Général 5 (charang)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="441"/>
+        <location filename="../src/TrackList.cpp" line="474"/>
         <source>Lead 6 (voice)</source>
         <translation>Général 6 (voix)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="442"/>
+        <location filename="../src/TrackList.cpp" line="475"/>
         <source>Lead 7 (fifths)</source>
         <translation>Général 7 (quinte)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="443"/>
+        <location filename="../src/TrackList.cpp" line="476"/>
         <source>Lead 8 (bass + lead)</source>
         <translation>Général 8 (basse + général)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="444"/>
+        <location filename="../src/TrackList.cpp" line="477"/>
         <source>Pad 1 (new age)</source>
         <translation>Nappe 1 (new age)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="445"/>
+        <location filename="../src/TrackList.cpp" line="478"/>
         <source>Pad 2 (warm)</source>
         <translation>Nappe 2 (chaud)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="446"/>
+        <location filename="../src/TrackList.cpp" line="479"/>
         <source>Pad 3 (polysynth)</source>
         <translation>Nappe 3 (polysynth)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="447"/>
+        <location filename="../src/TrackList.cpp" line="480"/>
         <source>Pad 4 (choir)</source>
         <translation>Nappe 4 (chœur)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="448"/>
+        <location filename="../src/TrackList.cpp" line="481"/>
         <source>Pad 5 (bowed)</source>
         <translation>Nappe 5 (courbée)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="449"/>
+        <location filename="../src/TrackList.cpp" line="482"/>
         <source>Pad 6 (metallic)</source>
         <translation>Nappe 6 (métallique)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="450"/>
+        <location filename="../src/TrackList.cpp" line="483"/>
         <source>Pad 7 (halo)</source>
         <translation>Nappe 7 (halo)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="451"/>
+        <location filename="../src/TrackList.cpp" line="484"/>
         <source>Pad 8 (sweep)</source>
         <translation>Nappe 8 (balais)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="452"/>
+        <location filename="../src/TrackList.cpp" line="485"/>
         <source>FX 1 (rain)</source>
         <translation>Effet 1 (pluie)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="453"/>
+        <location filename="../src/TrackList.cpp" line="486"/>
         <source>FX 2 (soundtrack)</source>
         <translation>Effet 2 (bande-son)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="454"/>
+        <location filename="../src/TrackList.cpp" line="487"/>
         <source>FX 3 (crystal)</source>
         <translation>Effet 3 (cristal)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="455"/>
+        <location filename="../src/TrackList.cpp" line="488"/>
         <source>FX 4 (atmosphere)</source>
         <translation>Effet 4 (atmosphère)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="456"/>
+        <location filename="../src/TrackList.cpp" line="489"/>
         <source>FX 5 (brightness)</source>
         <translation>Effet 5 (brillance)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="457"/>
+        <location filename="../src/TrackList.cpp" line="490"/>
         <source>FX 6 (goblins)</source>
         <translation>Effet 6 (lutins)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="458"/>
+        <location filename="../src/TrackList.cpp" line="491"/>
         <source>FX 7 (echoes)</source>
         <translation>Effet 7 (échos)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="459"/>
+        <location filename="../src/TrackList.cpp" line="492"/>
         <source>FX 8 (sci-fi)</source>
         <translation>Effet 8 (sci-fi)</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="460"/>
+        <location filename="../src/TrackList.cpp" line="493"/>
         <source>Sitar</source>
         <translation>Sitar</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="461"/>
+        <location filename="../src/TrackList.cpp" line="494"/>
         <source>Banjo</source>
         <translation>Banjo</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="462"/>
+        <location filename="../src/TrackList.cpp" line="495"/>
         <source>Shamisen</source>
         <translation>Shamisen</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="463"/>
+        <location filename="../src/TrackList.cpp" line="496"/>
         <source>Koto</source>
         <translation>Koto</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="464"/>
+        <location filename="../src/TrackList.cpp" line="497"/>
         <source>Kalimba</source>
         <translation>Kalimba</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="465"/>
+        <location filename="../src/TrackList.cpp" line="498"/>
         <source>Bag pipe</source>
         <translation>Cornemuse</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="466"/>
+        <location filename="../src/TrackList.cpp" line="499"/>
         <source>Fiddle</source>
         <translation>Violon folk</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="467"/>
+        <location filename="../src/TrackList.cpp" line="500"/>
         <source>Shanai</source>
         <translation>Shanai</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="468"/>
+        <location filename="../src/TrackList.cpp" line="501"/>
         <source>Tinkle Bell</source>
         <translation>Tintement de cloche</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="469"/>
+        <location filename="../src/TrackList.cpp" line="502"/>
         <source>Agogo</source>
         <translation>Agogo</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="470"/>
+        <location filename="../src/TrackList.cpp" line="503"/>
         <source>Steel Drums</source>
         <translation>Steeldrums</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="471"/>
+        <location filename="../src/TrackList.cpp" line="504"/>
         <source>Woodblock</source>
         <translation>Woodblock</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="472"/>
+        <location filename="../src/TrackList.cpp" line="505"/>
         <source>Taiko Drum</source>
         <translation>Taikodrum</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="473"/>
+        <location filename="../src/TrackList.cpp" line="506"/>
         <source>Melodic Tom</source>
         <translation>Tom mélodique</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="474"/>
+        <location filename="../src/TrackList.cpp" line="507"/>
         <source>Synth Drum</source>
         <translation>Percussion synthétique</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="475"/>
+        <location filename="../src/TrackList.cpp" line="508"/>
         <source>Reverse Cymbal</source>
         <translation>Cymbale inversée</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="476"/>
+        <location filename="../src/TrackList.cpp" line="509"/>
         <source>Guitar Fret Noise</source>
         <translation>Bruit de frette de guitare</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="477"/>
+        <location filename="../src/TrackList.cpp" line="510"/>
         <source>Breath Noise</source>
         <translation>Bruit de respiration</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="478"/>
+        <location filename="../src/TrackList.cpp" line="511"/>
         <source>Seashore</source>
         <translation>Bord de mer</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="479"/>
+        <location filename="../src/TrackList.cpp" line="512"/>
         <source>Bird Tweet</source>
         <translation>Cuicui d&apos;oiseau</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="480"/>
+        <location filename="../src/TrackList.cpp" line="513"/>
         <source>Telephone Ring</source>
         <translation>Sonnerie de téléphone</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="481"/>
+        <location filename="../src/TrackList.cpp" line="514"/>
         <source>Helicopter</source>
         <translation>Hélicoptère</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="482"/>
+        <location filename="../src/TrackList.cpp" line="515"/>
         <source>Applause</source>
         <translation>Applaudissement</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="483"/>
+        <location filename="../src/TrackList.cpp" line="516"/>
         <source>Gunshot</source>
         <translation>Coup de feu</translation>
     </message>
@@ -807,12 +815,12 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation>Vous pouvez utiliser le clavier alphanumérique à la place du clavier-MIDI;  &apos;x&apos; est le Do du milieu.</translation>
+        <translation>Vous pouvez utiliser le clavier alphanumérique à la place du clavier MIDI ; &apos;x&apos; est le Do du milieu.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation>L&apos;étendue de votre clavier est de &lt;b&gt;%1 octaves&lt;/b&gt; et &lt;b&gt;%2 demi-tons&lt;/b&gt;; 60 est le Do du milieu.</translation>
+        <translation>L&apos;étendue de votre clavier est de &lt;b&gt;%1 octaves&lt;/b&gt; et &lt;b&gt;%2 demi-tons&lt;/b&gt; ; 60 est le Do du milieu.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
@@ -828,12 +836,12 @@
         <translation>Bouclage continu</translation>
     </message>
     <message>
-        <location filename="../src/GuiLoopingPopup.cpp" line="52"/>
+        <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
         <source>Repeat End Bar:</source>
         <translation>Répérer la mesure de fin :</translation>
     </message>
     <message>
-        <location filename="../src/GuiLoopingPopup.cpp" line="54"/>
+        <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
         <source>Repeat Bar is disabled</source>
         <translation>La répétition de mesure est désactivée</translation>
     </message>
@@ -876,160 +884,155 @@
         <translation>Périphérique de sortie MIDI :</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="136"/>
-        <source>Sound Fonts</source>
-        <translation>Banques de son</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
-        <source>Add</source>
-        <translation>Ajouter</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="156"/>
-        <source>Remove</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="183"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="203"/>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="218"/>
-        <source>Audio Device:</source>
-        <translation>Périphérique audio :</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="235"/>
-        <source>Buffer Counts:</source>
-        <translation>Compteurs du tampon:</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="255"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="266"/>
         <source>Master Gain:</source>
         <translation>Gain général :</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="279"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>
         <source>Buffer Size:</source>
-        <translation>Taille du tampon:</translation>
+        <translation>Taille du tampon :</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="208"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
         <source>Audio Driver:</source>
         <translation>Pilote audio :</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="198"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="243"/>
         <source>Sample Rate:</source>
         <translation>Taux d&apos;échantillonnage :</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="272"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
+        <source>Sound Font</source>
+        <translation>Banque de son</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
+        <source>Load</source>
+        <translation>Charger</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
+        <source>Clear</source>
+        <translation>Nettoyer</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
         <source>Reverb</source>
         <translation>Réverb</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="191"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="216"/>
         <source>Chorus</source>
         <translation>Chorus</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="315"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
+        <source>Buffer Count:</source>
+        <translation>Nombre de tampons :</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
         <source>Latency Fix</source>
         <translation>Correction de latence</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="339"/>
         <source>Latency</source>
         <translation>Latence</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.ui" line="340"/>
+        <location filename="../src/GuiMidiSetupDialog.ui" line="352"/>
         <source>0 (msec)</source>
-        <translation>0 (msec)</translation>
+        <translation>0 (ms)</translation>
     </message>
 </context>
 <context>
     <name>GuiMidiSetupDialog</name>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="61"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="115"/>
         <source>None (PC Keyboard)</source>
         <translation>Aucun (clavier alpha-numérique)</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="67"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="127"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="182"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="146"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="210"/>
         <source>None</source>
         <translation>Aucun</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="135"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
+        <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
+        <translation>Note : le Microsoft GS Wavetable Synth introduit un retard indésirable !</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
         <source>Midi Output Device:</source>
         <translation>Périphérique de sortie MIDI :</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="137"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>%1 mSec</source>
-        <translation>%1 mSec</translation>
+        <translation>%1 ms</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="157"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="174"/>
         <source>Enter a value for the latency fix in milliseconds</source>
         <translation>Entrez une valeur en millisecondes pour la correction de latence</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="175"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
         <translation>La correction de latence fonctionne en jouant la musique avant ce que vous&lt;br&gt; jouez pour contrecarrer le délai dans la génération du son.&lt;br&gt;Vous aurez besoin d&apos;un piano &lt;b&gt;avec des haut-parleurs allumés&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Entrez le temps en millisecondes pour le délai (1000 mSec = 1 sec)&lt;br&gt;&lt;br&gt;(pour le synthé logiciel Microsoft GS Wavetable, essayez une valeur de 150)&lt;br&gt;&lt;br&gt;Si vous n&apos;êtes pas sûr, mettez une valeur de zéro.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="303"/>
-        <source>SoundFont2 Files (*.sf2)</source>
-        <translation>Fichiers de banque de son (*.sf2)</translation>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
+        <source>Open SoundFont File for fluidsynth</source>
+        <translation>Ouvrir le fichier SoundFont pour fluidsynth</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="47"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
+        <source>SoundFont Files (*.sf2 *.sf3)</source>
+        <translation>Fichiers de banque de son (*.sf2 *.sf3)</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
         <source>Midi Setup</source>
         <translation>Paramétrage MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="128"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="147"/>
         <source>No Sound Output Device selected; Choose a Midi Output Device</source>
-        <translation>Pas de périphérique de sortie audio sélectionnée; choisissez un périphérique de sortie MIDI</translation>
+        <translation>Pas de périphérique de sortie audio sélectionné ; choisissez un périphérique de sortie MIDI</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="123"/>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="130"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="142"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="149"/>
         <source>The use of Midi Through is not recommended!</source>
         <translation>L&apos;utilisation du Midi Through n&apos;est pas recommandée !</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="121"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="140"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
-        <translation>Si vous n&apos;avez pas de clavier-piano MIDI, vous pouvez utiliser le clavier alphanumérique; &apos;X&apos; est le Do du milieu.</translation>
+        <translation>Si vous n&apos;avez pas de clavier MIDI, vous pouvez utiliser le clavier alphanumérique ; &apos;X&apos; est le Do du milieu.</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="125"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
         <source>Midi Input Device:</source>
         <translation>Périphérique d&apos;entrée MIDI :</translation>
     </message>
     <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="132"/>
-        <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.</source>
-        <translation>Note : le synthé Microsoft GS Wavetable introduit un délai non-voulu !</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="133"/>
+        <location filename="../src/GuiMidiSetupDialog.cpp" line="152"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation>(Essayez une correction de latence de 150msc)</translation>
-    </message>
-    <message>
-        <location filename="../src/GuiMidiSetupDialog.cpp" line="302"/>
-        <source>Open SoundFont2 File for fluidsynth</source>
-        <translation>Ouvrir un fichier de banque de son SF2 pour fluidsynth</translation>
+        <translation>(Essayez une correction de latence de 150 ms)</translation>
     </message>
 </context>
 <context>
@@ -1057,12 +1060,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
-        <translation>Affiche le nom des notes</translation>
+        <translation>Afficher le nom des notes</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
-        <translation>Amabilité des accidents</translation>
+        <translation>altérations de précaution</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
@@ -1118,6 +1121,11 @@
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>After the Beat</source>
         <translation>Après la pulsation</translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
+        <source>System Language</source>
+        <translation>Langue système</translation>
     </message>
 </context>
 <context>
@@ -1218,29 +1226,29 @@
         <translation>Silencier votre partie lors de la lecture</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="83"/>
-        <location filename="../src/GuiSidePanel.cpp" line="287"/>
+        <location filename="../src/GuiSidePanel.cpp" line="79"/>
+        <location filename="../src/GuiSidePanel.cpp" line="274"/>
         <source>Drums</source>
         <translation>Percussions</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="84"/>
-        <location filename="../src/GuiSidePanel.cpp" line="288"/>
+        <location filename="../src/GuiSidePanel.cpp" line="80"/>
+        <location filename="../src/GuiSidePanel.cpp" line="275"/>
         <source>Melody</source>
         <translation>Mélodie</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="100"/>
+        <location filename="../src/GuiSidePanel.cpp" line="95"/>
         <source>Set as Right Hand Part</source>
         <translation>Paramétrer en tant que partie de main droite</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="104"/>
+        <location filename="../src/GuiSidePanel.cpp" line="99"/>
         <source>Set as Left Hand Part</source>
         <translation>Paramétrer en tant que partie de main gauche</translation>
     </message>
     <message>
-        <location filename="../src/GuiSidePanel.cpp" line="108"/>
+        <location filename="../src/GuiSidePanel.cpp" line="103"/>
         <source>Reset Both Parts</source>
         <translation>Réinitialiser les deux parties</translation>
     </message>
@@ -1248,8 +1256,8 @@
 <context>
     <name>GuiSongDetailsDialog</name>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="48"/>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="50"/>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="47"/>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="49"/>
         <source>No channel assigned</source>
         <translation>pas de canal assigné</translation>
     </message>
@@ -1280,27 +1288,27 @@
         <translation>Canal MIDI main gauche :</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="67"/>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="65"/>
         <source>The left and right hand channels must be different</source>
         <translation>Les canaux de main gauche et droite doivent être différent</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="70"/>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="68"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
         <translation>Les canaux de main gauche et droite doivent tous deux être positionnés à &quot;pas de canal assigné&quot; pour désactiver cette fonction</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="71"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
         <translation>Paramètrer les canaux MIDI pour être utilisé pour les parties piano de mains gauche et droite :</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="74"/>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="72"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
         <translation>la partie de piano de main gauche utilise le canal 1</translation>
     </message>
     <message>
-        <location filename="../src/GuiSongDetailsDialog.cpp" line="75"/>
+        <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
         <translation>la partie de piano de main droite utilise le canal 1</translation>
     </message>
@@ -1349,104 +1357,104 @@
         <translation>Sauvegarder le numéro de cette mesure</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="55"/>
+        <location filename="../src/GuiTopBar.cpp" line="54"/>
         <location filename="../src/GuiTopBar.cpp" line="202"/>
         <source>Major</source>
         <translation>Majeure</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="56"/>
+        <location filename="../src/GuiTopBar.cpp" line="55"/>
         <location filename="../src/GuiTopBar.cpp" line="203"/>
         <source>Minor</source>
         <translation>Mineure</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="89"/>
+        <location filename="../src/GuiTopBar.cpp" line="88"/>
         <source>Gb</source>
         <translation>Solb</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="90"/>
+        <location filename="../src/GuiTopBar.cpp" line="89"/>
         <source>Db</source>
         <translation>Réb</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="91"/>
+        <location filename="../src/GuiTopBar.cpp" line="90"/>
         <source>Ab</source>
         <translation>Lab</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="92"/>
-        <location filename="../src/GuiTopBar.cpp" line="105"/>
+        <location filename="../src/GuiTopBar.cpp" line="91"/>
+        <location filename="../src/GuiTopBar.cpp" line="104"/>
         <source>Eb</source>
         <translation>Mib</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="93"/>
-        <location filename="../src/GuiTopBar.cpp" line="106"/>
+        <location filename="../src/GuiTopBar.cpp" line="92"/>
+        <location filename="../src/GuiTopBar.cpp" line="105"/>
         <source>Bb</source>
         <translation>Sib</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="95"/>
-        <location filename="../src/GuiTopBar.cpp" line="108"/>
+        <location filename="../src/GuiTopBar.cpp" line="94"/>
+        <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>C</source>
         <translation>Do</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="101"/>
-        <location filename="../src/GuiTopBar.cpp" line="114"/>
+        <location filename="../src/GuiTopBar.cpp" line="100"/>
+        <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>F#</source>
         <translation>Fa#</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="94"/>
-        <location filename="../src/GuiTopBar.cpp" line="107"/>
+        <location filename="../src/GuiTopBar.cpp" line="93"/>
+        <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>F</source>
         <translation>Fa</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="96"/>
-        <location filename="../src/GuiTopBar.cpp" line="109"/>
+        <location filename="../src/GuiTopBar.cpp" line="95"/>
+        <location filename="../src/GuiTopBar.cpp" line="108"/>
         <source>G</source>
         <translation>Sol</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="97"/>
-        <location filename="../src/GuiTopBar.cpp" line="110"/>
+        <location filename="../src/GuiTopBar.cpp" line="96"/>
+        <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>D</source>
         <translation>Ré</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="98"/>
-        <location filename="../src/GuiTopBar.cpp" line="111"/>
+        <location filename="../src/GuiTopBar.cpp" line="97"/>
+        <location filename="../src/GuiTopBar.cpp" line="110"/>
         <source>A</source>
         <translation>La</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="99"/>
-        <location filename="../src/GuiTopBar.cpp" line="112"/>
+        <location filename="../src/GuiTopBar.cpp" line="98"/>
+        <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>E</source>
         <translation>Mi</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="100"/>
-        <location filename="../src/GuiTopBar.cpp" line="113"/>
+        <location filename="../src/GuiTopBar.cpp" line="99"/>
+        <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>B</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="115"/>
+        <location filename="../src/GuiTopBar.cpp" line="114"/>
         <source>G#</source>
         <translation>Sol#</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="116"/>
+        <location filename="../src/GuiTopBar.cpp" line="115"/>
         <source>C#</source>
         <translation>Do#</translation>
     </message>
     <message>
-        <location filename="../src/GuiTopBar.cpp" line="117"/>
+        <location filename="../src/GuiTopBar.cpp" line="116"/>
         <source>D#</source>
         <translation>Ré#</translation>
     </message>
@@ -1459,18 +1467,18 @@
 <context>
     <name>QMessageBox</name>
     <message>
-        <location filename="../src/MidiFile.cpp" line="92"/>
-        <location filename="../src/MidiFile.cpp" line="99"/>
+        <location filename="../src/MidiFile.cpp" line="88"/>
+        <location filename="../src/MidiFile.cpp" line="95"/>
         <source>Midi File Error</source>
         <translation>Erreur de fichier MIDI</translation>
     </message>
     <message>
-        <location filename="../src/MidiFile.cpp" line="93"/>
+        <location filename="../src/MidiFile.cpp" line="89"/>
         <source>Cannot open &quot;%1&quot;</source>
         <translation>Impossible d’ouvrir &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/MidiFile.cpp" line="100"/>
+        <location filename="../src/MidiFile.cpp" line="96"/>
         <source>Midi file &quot;%1&quot; is corrupted</source>
         <translation>Le fichier midi &quot;%1&quot; est corrompu</translation>
     </message>
@@ -1488,22 +1496,22 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/TrackList.cpp" line="268"/>
+        <location filename="../src/TrackList.cpp" line="301"/>
         <source>L</source>
         <translation>G</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="270"/>
+        <location filename="../src/TrackList.cpp" line="303"/>
         <source>R</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="343"/>
+        <location filename="../src/TrackList.cpp" line="376"/>
         <source>Drums</source>
         <translation>Percussions</translation>
     </message>
     <message>
-        <location filename="../src/TrackList.cpp" line="346"/>
+        <location filename="../src/TrackList.cpp" line="379"/>
         <source>Unknown</source>
         <translation>Inconnu</translation>
     </message>
@@ -1511,445 +1519,444 @@
 <context>
     <name>QtWindow</name>
     <message>
-        <location filename="../src/QtWindow.cpp" line="60"/>
+        <location filename="../src/QtWindow.cpp" line="59"/>
         <source>Piano Booster</source>
         <translation>Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="223"/>
-        <location filename="../src/QtWindow.cpp" line="231"/>
-        <location filename="../src/QtWindow.cpp" line="255"/>
+        <location filename="../src/QtWindow.cpp" line="207"/>
+        <location filename="../src/QtWindow.cpp" line="215"/>
+        <location filename="../src/QtWindow.cpp" line="239"/>
         <source>PianoBooster Midi File Error</source>
         <translation>Erreur de fichier MIDI Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="224"/>
+        <location filename="../src/QtWindow.cpp" line="208"/>
         <source>Cannot open &quot;%1&quot;</source>
         <translation>Impossible d’ouvrir &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="232"/>
+        <location filename="../src/QtWindow.cpp" line="216"/>
         <source>&quot;%1&quot; is not a Midi File</source>
         <translation>&quot;%1&quot; n’est pas un fichier midi</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="256"/>
+        <location filename="../src/QtWindow.cpp" line="240"/>
         <source>&quot;%1&quot; is not a valid Midi file</source>
         <translation>&quot;%1&quot; n’est pas un fichier midi valide</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="332"/>
+        <location filename="../src/QtWindow.cpp" line="313"/>
         <source>&amp;Open...</source>
         <translation>&amp;Ouvrir...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="333"/>
+        <location filename="../src/QtWindow.cpp" line="314"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="334"/>
+        <location filename="../src/QtWindow.cpp" line="315"/>
         <source>Open an existing file</source>
         <translation>Ouvrir un fichier existant</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="337"/>
+        <location filename="../src/QtWindow.cpp" line="318"/>
         <source>E&amp;xit</source>
         <translation>&amp;Quitter</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="338"/>
+        <location filename="../src/QtWindow.cpp" line="319"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="339"/>
+        <location filename="../src/QtWindow.cpp" line="320"/>
         <source>Exit the application</source>
         <translation>Quitter l&apos;application</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="342"/>
+        <location filename="../src/QtWindow.cpp" line="323"/>
         <source>&amp;About</source>
         <translation>À pr&amp;opos</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="343"/>
+        <location filename="../src/QtWindow.cpp" line="324"/>
         <source>Show the application&apos;s About box</source>
         <translation>Afficher la boîte d&apos;à propos de l&apos;application</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="346"/>
+        <location filename="../src/QtWindow.cpp" line="327"/>
         <source>&amp;PC Shortcut Keys</source>
         <translation>&amp;Raccourcis-clavier</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="347"/>
+        <location filename="../src/QtWindow.cpp" line="328"/>
         <source>The PC Keyboard shortcut keys</source>
         <translation>Les raccourcis du clavier alphanumérique</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="350"/>
+        <location filename="../src/QtWindow.cpp" line="331"/>
         <source>&amp;Midi Setup ...</source>
         <translation>Paramètres &amp;MIDI...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="351"/>
-        <location filename="../src/QtWindow.cpp" line="389"/>
+        <location filename="../src/QtWindow.cpp" line="332"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="352"/>
+        <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the Midi input and output</source>
         <translation>Paramétrer la sortie et l&apos;entrée MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="355"/>
+        <location filename="../src/QtWindow.cpp" line="336"/>
         <source>Piano &amp;Keyboard Setting ...</source>
         <translation>Paramétrer le &amp;clavier-piano ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="356"/>
+        <location filename="../src/QtWindow.cpp" line="337"/>
         <source>Ctrl+K</source>
         <translation>Ctrl+K</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="357"/>
+        <location filename="../src/QtWindow.cpp" line="338"/>
         <source>Change the piano keyboard settings</source>
         <translation>Modifier les paramètres du clavier-piano</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="360"/>
+        <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Plein écran</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="361"/>
+        <location filename="../src/QtWindow.cpp" line="342"/>
         <source>Fullscreen mode</source>
         <translation>Mode plein-écran</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="362"/>
+        <location filename="../src/QtWindow.cpp" line="343"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="366"/>
+        <location filename="../src/QtWindow.cpp" line="347"/>
         <source>&amp;Show the Side Panel</source>
         <translation>&amp;Afficher le panneau latéral</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="367"/>
+        <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Show the Left Side Panel</source>
         <translation>Afficher le panneau-gauche</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="368"/>
+        <location filename="../src/QtWindow.cpp" line="349"/>
         <source>F12</source>
         <translation>F12</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="373"/>
+        <location filename="../src/QtWindow.cpp" line="354"/>
         <source>Show Piano &amp;Keyboard</source>
         <translation>Afficher le &amp;clavier-piano</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="374"/>
+        <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Show Piano Keyboard Widget</source>
         <translation>Afficher le clavier piano</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="382"/>
+        <location filename="../src/QtWindow.cpp" line="363"/>
         <source>&amp;Preferences ...</source>
         <translation>&amp;Préférences ...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="383"/>
+        <location filename="../src/QtWindow.cpp" line="364"/>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="384"/>
+        <location filename="../src/QtWindow.cpp" line="365"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="387"/>
-        <source>&amp;Song Details ...</source>
+        <location filename="../src/QtWindow.cpp" line="368"/>
+        <source>Song &amp;Details ...</source>
         <translation>&amp;Détails du morceau...</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="388"/>
+        <location filename="../src/QtWindow.cpp" line="369"/>
         <source>Song Settings</source>
         <translation>Paramètres de morceau</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="393"/>
+        <location filename="../src/QtWindow.cpp" line="370"/>
+        <source>Ctrl+D</source>
+        <translation>Ctrl+D</translation>
+    </message>
+    <message>
+        <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Shift+F1</source>
         <translation>Shift+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="398"/>
+        <location filename="../src/QtWindow.cpp" line="379"/>
         <source>Alt+F1</source>
         <translation>Alt+F1</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="427"/>
+        <location filename="../src/QtWindow.cpp" line="405"/>
         <source>&amp;File</source>
         <translation>&amp;Fichier</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="437"/>
+        <location filename="../src/QtWindow.cpp" line="415"/>
         <source>&amp;View</source>
         <translation>&amp;Affichage</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="443"/>
+        <location filename="../src/QtWindow.cpp" line="421"/>
         <source>&amp;Song</source>
         <translation>&amp;Morceau</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="447"/>
+        <location filename="../src/QtWindow.cpp" line="425"/>
         <source>Set&amp;up</source>
         <translation>&amp;Paramétrage</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="453"/>
-        <location filename="../src/QtWindow.cpp" line="457"/>
+        <location filename="../src/QtWindow.cpp" line="431"/>
+        <location filename="../src/QtWindow.cpp" line="435"/>
         <source>&amp;Help</source>
         <translation>A&amp;ide</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="458"/>
-        <location filename="../src/QtWindow.cpp" line="554"/>
+        <location filename="../src/QtWindow.cpp" line="436"/>
+        <location filename="../src/QtWindow.cpp" line="526"/>
         <source>Piano Booster Help</source>
         <translation>Aide de Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="462"/>
+        <location filename="../src/QtWindow.cpp" line="440"/>
         <source>&amp;Website</source>
         <translation>&amp;Site sur la toile</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="463"/>
+        <location filename="../src/QtWindow.cpp" line="441"/>
         <source>Piano Booster Website</source>
         <translation>Site ouèbe Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="505"/>
+        <location filename="../src/QtWindow.cpp" line="477"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="556"/>
+        <location filename="../src/QtWindow.cpp" line="528"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Pour commencer&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="557"/>
+        <location filename="../src/QtWindow.cpp" line="529"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vous avez besoin d&apos;un &lt;b&gt;clavier de piano MIDI&lt;/b&gt; et d&apos;une &lt;b&gt;interface MIDI&lt;/b&gt; pour le PC. Si vous n&apos;avez pas de clavier, vous pouvez toujours essayer PianoBooster en utilisant le clavier alphanumérique du PC, &apos;X&apos; est le Do médium.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="560"/>
+        <location filename="../src/QtWindow.cpp" line="532"/>
         <source>&lt;p&gt;To hear the music you will need a &lt;b&gt;General Midi sound synthesizer&lt;/b&gt;. The &quot;Microsoft GS Wavetable software synthesizer&quot; that comes with Windows can be used but it introduces an unacceptable delay (latency). In Linux you can use </source>
         <translation>&lt;p&gt;Pour entendre la musique, vous aurez besoin d&apos;un &lt;b&gt;synthétiseur de son General Midi&lt;/b&gt;. Le &quot;synthétiseur logiciel Microsoft GS Wavetable&quot; qui vient avec Windows peut être utilisé mais il introduit un délai inacceptable (latence). Sur Linux, vous pouvez utiliser </translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="564"/>
+        <location filename="../src/QtWindow.cpp" line="536"/>
         <source>or</source>
         <translation>ou</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="566"/>
+        <location filename="../src/QtWindow.cpp" line="538"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
         <translation>&lt;p&gt;PianoBooster fonctionne mieux avec des fichiers MIDI qui ont des parties de piano droite et gauche séparée utilisant les canaux MIDI 3 et 4.</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="568"/>
+        <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Mise en place&lt;/h3&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="569"/>
+        <location filename="../src/QtWindow.cpp" line="541"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
         <translation>&lt;p&gt;Premièrement, utilisez le menu &lt;i&gt;Pramétrages/Paramètres MIDI&lt;/i&gt; puis, dans la boîte de dialogue, sélectionnez les interfaces d&apos;entrée et de sortie MIDI qui correspondent à votre matériel. </translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="571"/>
+        <location filename="../src/QtWindow.cpp" line="543"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
         <translation>Ensuite, utilisez &lt;i&gt;Fichier/Ouvrir&lt;/i&gt; pour ouvrir un fichier MIDI &quot;.mid&quot; ou un fichier karaoke &quot;.kar&quot;. Maintenant, sélectionner si vous voulez seulement &lt;i&gt;écouter&lt;/i&gt; de la musique ou &lt;i&gt;jouer avec&lt;/i&gt; sur le clavier piano en paramétrant le niveau de &lt;i&gt;compétence&lt;/i&gt; sur le coté du panneau. Finalement, lorsque vous êtes prêt, cliquez sur l&apos;&lt;i&gt;icône de lecture&lt;/i&gt; (ou pressez la &lt;i&gt;barre d&apos;espace&lt;/i&gt;) pour lancer la musique.</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="575"/>
+        <location filename="../src/QtWindow.cpp" line="547"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
         <translation>&lt;h3&gt;Conseils pour jouer du piano&lt;/h3&gt;&lt;p&gt;Pour des conseils sur la manière de jouer du piano, lire : </translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="577"/>
+        <location filename="../src/QtWindow.cpp" line="549"/>
         <source>Piano Hints</source>
         <translation>Conseils pour piano</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="578"/>
+        <location filename="../src/QtWindow.cpp" line="550"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
         <translation>&lt;h3&gt;Plus d&apos;informations&lt;/h3&gt;&lt;p&gt;Pour plus d&apos;aide sur PianoBooster, veuillez visiter son </translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="580"/>
+        <location filename="../src/QtWindow.cpp" line="552"/>
         <source>website</source>
         <translation>site ouèbe</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="581"/>
+        <location filename="../src/QtWindow.cpp" line="553"/>
         <source>the PianoBooster</source>
         <translation>le PianoBooster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="581"/>
+        <location filename="../src/QtWindow.cpp" line="553"/>
         <source>FAQ</source>
         <translation>FAQ</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="582"/>
+        <location filename="../src/QtWindow.cpp" line="554"/>
         <source>and the</source>
         <translation>et le</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="582"/>
+        <location filename="../src/QtWindow.cpp" line="554"/>
         <source>user forum</source>
         <translation>forum utilisateur</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="592"/>
+        <location filename="../src/QtWindow.cpp" line="564"/>
         <source>About Piano Booster</source>
         <translation>À propos de Piano Booster</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="594"/>
+        <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="595"/>
+        <location filename="../src/QtWindow.cpp" line="567"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
         <translation>&lt;b&gt;Augmenter&lt;/b&gt; vos talents de joueur de &lt;b&gt;Piano&lt;/b&gt; !&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="597"/>
-        <source>Copyright(c) L. J. Barman, 2008-2013; All rights reserved.&lt;br&gt;</source>
-        <translation>Copyright(c) L. J. Barman, 2008-2013; Tout droits réservés.&lt;br&gt;</translation>
+        <location filename="../src/QtWindow.cpp" line="569"/>
+        <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
+        <translation>Copyright(c) L. J. Barman, 2008-2020 ; tous droits réservés.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="598"/>
+        <location filename="../src/QtWindow.cpp" line="570"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation>Copyright(c) Fabien Givors, 2018-2019; Tout droits réservés.&lt;br&gt;</translation>
+        <translation>Copyright(c) Fabien Givors, 2018-2019 ; tous droits réservés.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="600"/>
+        <location filename="../src/QtWindow.cpp" line="572"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
         <translation>Ce programme est disponible sous les termes de la Licence Publique Générale GNU version 3 telle que publiée par la Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="605"/>
+        <location filename="../src/QtWindow.cpp" line="578"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
         <translation>Ce programme contient également RtMIDI : classes C++ entrée/sortie MIDI&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="606"/>
+        <location filename="../src/QtWindow.cpp" line="579"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation>Copyright(c) Gary P. Scavone, 2003-2019; Tout droits réservés.</translation>
+        <translation>Copyright(c) Gary P. Scavone, 2003-2019 ; tous droits réservés.</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="615"/>
+        <location filename="../src/QtWindow.cpp" line="588"/>
         <source>space</source>
         <translation>espace</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="628"/>
+        <location filename="../src/QtWindow.cpp" line="601"/>
         <source>PC Keyboard ShortCuts</source>
         <translation>Raccourcis du clavier alphanumérique</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="630"/>
+        <location filename="../src/QtWindow.cpp" line="603"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
         <translation>&lt;h2&gt;&lt;center&gt;Raccourcis-clavier&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Les raccourcis-clavier suivants ont été assignés.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="636"/>
+        <location filename="../src/QtWindow.cpp" line="609"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
         <translation>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Touche&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="642"/>
+        <location filename="../src/QtWindow.cpp" line="615"/>
         <source>Choose the right hand</source>
         <translation>Choisir la main droite</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="643"/>
+        <location filename="../src/QtWindow.cpp" line="616"/>
         <source>Choose both hands</source>
         <translation>Choisir les deux mains</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="644"/>
+        <location filename="../src/QtWindow.cpp" line="617"/>
         <source>Choose the left Hand</source>
         <translation>Choisir la main gauche</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="645"/>
+        <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play from start toggle</source>
         <translation>Basculer le jouer depuis le début</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="646"/>
+        <location filename="../src/QtWindow.cpp" line="619"/>
         <source>Play Pause Toggle</source>
         <translation>Bascule pause lecture</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="647"/>
-        <location filename="../src/QtWindow.cpp" line="648"/>
+        <location filename="../src/QtWindow.cpp" line="620"/>
+        <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Increase the speed by 5%</source>
         <translation>Augmente la vitesse de 5%</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="649"/>
+        <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Change to the Next Song</source>
         <translation>Va au morceau suivant</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="650"/>
+        <location filename="../src/QtWindow.cpp" line="623"/>
         <source>Change to the Previous Song</source>
         <translation>Va au morceau précédant</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="651"/>
+        <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Change to the Next Book</source>
         <translation>Va au livre suivant</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="652"/>
+        <location filename="../src/QtWindow.cpp" line="625"/>
         <source>Change to the Previous Book</source>
         <translation>Va au livre précédant</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="654"/>
+        <location filename="../src/QtWindow.cpp" line="627"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
         <translation>&lt;tr&gt;&lt;td&gt;Touches de piano factice&lt;/td&gt;&lt;td&gt;X est le Do du milieu&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="677"/>
+        <location filename="../src/QtWindow.cpp" line="649"/>
         <source>Open Midi File</source>
         <translation>Ouvrir un fichier MIDI</translation>
     </message>
     <message>
-        <location filename="../src/QtWindow.cpp" line="678"/>
+        <location filename="../src/QtWindow.cpp" line="650"/>
         <source>Midi Files</source>
         <translation>Fichiers MIDI</translation>
-    </message>
-    <message>
-        <location filename="../src/QtWindow.cpp" line="124"/>
-        <source>None</source>
-        <translation>Aucun</translation>
     </message>
 </context>
 </TS>

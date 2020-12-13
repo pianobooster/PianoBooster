@@ -29,7 +29,6 @@
 #ifndef __SCROLL_H__
 #define __SCROLL_H__
 
-
 #include "Draw.h"
 #include "Song.h"
 #include "Queue.h"
@@ -115,6 +114,5 @@ private:
     float m_noteSpacingFactor;
     float m_ppqnFactor; // if PulsesPerQuarterNote is 96 then the factor is 1.0
 };
-
 
 #endif //__SCROLL_H__

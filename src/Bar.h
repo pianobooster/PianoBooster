@@ -29,9 +29,7 @@
 #ifndef __BAR_H__
 #define __BAR_H__
 
-
 #include "MidiFile.h"
-
 
 // The event bits can be ORed together
 #define EVENT_BITS_playingStopped          0x0001 // set when we reach the end of piece
@@ -42,8 +40,6 @@
 #define EVENT_BITS_loadSong                0x0020 // load song
 
 typedef unsigned long eventBits_t;
-
-
 
 // controls the bar numbers
 class CBar
@@ -97,9 +93,11 @@ public:
     //
     int getBarNumber(){ return m_barCounter;}
 
-    double getCurrentBarPos() { return m_barCounter + static_cast<double>(m_beatCounter)/m_currentTimeSigBottom +
-         static_cast<double>(m_deltaTime)/(m_beatLength * m_currentTimeSigBottom * SPEED_ADJUST_FACTOR); }
-
+    double getCurrentBarPos()
+    {
+        return m_barCounter + static_cast<double>(m_beatCounter)/m_currentTimeSigBottom +
+            static_cast<double>(m_deltaTime)/(m_beatLength * m_currentTimeSigBottom * SPEED_ADJUST_FACTOR);
+    }
 
     bool seekingBarNumber() { return m_seekingBarNumber;}
 
@@ -119,8 +117,6 @@ private:
         m_enableLooping = (m_loopingBars > 0.0)?true:false;
         m_enablePlayFromBar = (m_enableLooping || m_playFromBar > 0.0)?true:false;
     }
-
-
 
     int m_deltaTime;
     int m_beatLength; //in ppqn ticks

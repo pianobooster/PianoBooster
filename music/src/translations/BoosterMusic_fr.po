@@ -1,0 +1,311 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-09-28 20:58+0100\n"
+"PO-Revision-Date: 2020-10-06 13:26+0000\n"
+"Last-Translator: Olivier Humbert <trebmuh@tuxfamily.org>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/pianobooster/"
+"boostermusic/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3-dev\n"
+
+#. type: Plain text
+#: BeginnerCourse/01-StartWithMiddleC.md:2
+#, no-wrap
+msgid "**Start With Middle C** is an extremely easy piece. Just find **middle C** on the piano and then play that note four times using your **thumb** on your **right hand**. The first half of the piece has **middle C** in the **Treble Clef**, then for the second half of the piece the same **middle C** note is shown the **Bass Clef**. Play this using your **thumb** on your **left hand**.\n"
+msgstr "**Start With Middle C** est une pièce extrêmement facile. Il suffit de trouver le **do moyen** sur le piano et de jouer cette note quatre fois en utilisant le **pouce** de votre **main droite**. La première moitié de la pièce comporte un **Do central** en **clef de Sol**, puis pour la deuxième moitié de la pièce, la même note de **Do central** est indiquée en **clef de Fa**. Jouez cette note en utilisant le **pouce** de votre **main gauche**.\n"
+
+#. type: Plain text
+#: BeginnerCourse/01-StartWithMiddleC.md:3
+msgid ""
+"> **Hint:** _Try to remember where **Middle C** is on the piano - this is "
+"the most **important note**!_"
+msgstr ""
+"> **Astuce :** _essayez de vous rappeler où se trouve le **Do moyen** sur le "
+"piano - c'est la **note la plus importante**!_"
+
+#. type: Plain text
+#: BeginnerCourse/02-ChordOfCMajor.md:2
+msgid ""
+"The **Chord of C Major** piece, introduces you to the chord of **C Major** "
+"which has three notes **Middle C**, **E** and **G**."
+msgstr ""
+"La pièce ** Accord de Do majeur**, vous introduit à l'accord de **Do "
+"majeur** qui possède trois notes **Do central**, **Mi** et **Sol**."
+
+#. type: Plain text
+#: BeginnerCourse/02-ChordOfCMajor.md:4
+msgid ""
+"Use your **thumb** for **C**, your **middle finger** for **E** and your "
+"**little finger** for **G**."
+msgstr ""
+"Utilisez votre **pouce** pour le **Do**, votre **majeur** pour le **Mi** et "
+"votre **auriculaire** pour le **Sol**."
+
+#. type: Plain text
+#: BeginnerCourse/02-ChordOfCMajor.md:5 BeginnerCourse/05-ChordOfFMajor.md:5
+msgid ""
+"> **Hint:** _If you don't know the names of the notes on the score then turn "
+"on **Show Note Names** from the PianoBooster **Setup/Preferences** menu._"
+msgstr ""
+"> **Astuce :** _Si vous ne connaissez pas les noms des notes de la "
+"partition, alors activez l'option **Afficher le nom des notes** dans le menu "
+"**Paramétrage/Préférences** de PianoBooster._"
+
+#. type: Plain text
+#: BeginnerCourse/03-UpAndDown.md:2
+#, no-wrap
+msgid "**Up And Down** uses all the fingers of your right hand to play the first five notes of the **scale of C major**.\n"
+msgstr "**Up And Down** utilise tous les doigts de votre main droite pour jouer les cinq premières notes de la **gamme de Do majeur**.\n"
+
+#. type: Plain text
+#: BeginnerCourse/03-UpAndDown.md:4
+msgid ""
+"Use your **thumb** for **C**, your **index finger** for **D**, . . . , all "
+"the way up to your **little finger** for **G**. Make sure you keep using the "
+"correct finger for each note."
+msgstr ""
+"Utilisez votre **pouce** pour le **Do**, votre **index finger** pour le "
+"**Ré**, . . . , jusqu'à votre **auriculaire** pour le **Sol**. Assurez-vous "
+"de toujours utiliser le bon doigt pour chaque note."
+
+#. type: Plain text
+#: BeginnerCourse/03-UpAndDown.md:5
+msgid ""
+"> **Hint:** _If you don't know the notes on the piano then **label the piano "
+"keys** using the PianoBooster **Note Chart**._"
+msgstr ""
+"> **Astuce :** _ si vous ne connaissez pas les notes du piano, alors "
+"**étiquetez les touches du piano** à l'aide du **tableau de notes** de "
+"PianoBooster._"
+
+#. type: Plain text
+#: BeginnerCourse/04-ClairDeLaLune.md:2
+msgid ""
+"This is a simplified version of **Clair De La Lune** that uses just three "
+"notes **C D** and **E** from your right hand. First find **middle C** and "
+"always use your **thumb** for this note, then for **D** use your **first "
+"finger** and for **E** use **middle finger**."
+msgstr ""
+"Il s'agit d'une version simplifiée de ** Au clair de la lune** qui utilise "
+"seulement trois notes **Do, Ré** et **Mi** de votre main droite. Trouvez "
+"d'abord le **Do central** et utilisez toujours votre **pouce** pour cette "
+"note, puis pour le **Ré** utilisez votre **premier doigt** et pour le **Mi** "
+"utilisez le **majeur**."
+
+#. type: Plain text
+#: BeginnerCourse/04-ClairDeLaLune.md:3
+msgid ""
+"> **Hint:** _Remember the fingering: Use your **thumb** for **middle C**, "
+"your **first finger** for **D** and **middle finger** for **E**._"
+msgstr ""
+"> **Astuce :** _souvenez vous du doigté : utilisez votre **pouce** pour le "
+"**Do central**, votre **premier doigt** pour le **Ré** et le **majeur** pour "
+"le **Mi**._"
+
+#. type: Plain text
+#: BeginnerCourse/05-ChordOfFMajor.md:2
+msgid ""
+"Now we are going to play using your **left hand** the **F major chord**. The "
+"three notes of a chord are called a triad and this chord has the same shape "
+"as the C major chord we played earlier but played on a different part of the "
+"piano."
+msgstr ""
+"Nous allons maintenant jouer de la **main gauche** l'**accord en Fa "
+"majeur**. Les trois notes d'un accord sont appelées une triade et cet accord "
+"a la même forme que l'accord de Do majeur que nous avons joué précédemment "
+"mais sur une partie différente du piano."
+
+#. type: Plain text
+#: BeginnerCourse/05-ChordOfFMajor.md:4
+msgid ""
+"Use your **little finger** on the left hand for **F**, your **middle "
+"finger** for **A** and your **thumb** for **C**."
+msgstr ""
+"Utilisez votre **petit doigt** de la main gauche pour **le Fa**, votre "
+"**majeur** pour le **La** et votre **pouce** pour le **Do**."
+
+#. type: Plain text
+#: BeginnerCourse/06-DownAndUp.md:2
+#, no-wrap
+msgid "**Down And Up** is mirror version of the Up And Down piece we played earlier but this version uses your **left hand**. These are the top five notes of the scale of C major. Again try to use all your fingers.\n"
+msgstr "**Down And Up** est une version miroir du morceau Up And Down que nous avons joué plus tôt, mais cette version utilise votre **main gauche**. Ce sont les cinq premières notes de la gamme de Do majeur. Essayez à nouveau d'utiliser tous vos doigts.\n"
+
+#. type: Plain text
+#: BeginnerCourse/06-DownAndUp.md:4
+msgid ""
+"Use your **thumb** for **C**, your **index finger** for **B**, . . . , all "
+"the way down to your **little finger** for **F**."
+msgstr ""
+"Utilisez votre **pouce** pour le **Do**, votre **index** pour le "
+"**Si**, . . . , jusqu'à votre **auriculaire** pour le **Fa**."
+
+#. type: Plain text
+#: BeginnerCourse/06-DownAndUp.md:5
+msgid ""
+"> **Hint:** _Make sure you use **every finger** on your **left hand** when "
+"playing this piece._"
+msgstr ""
+"> **Astuce :** _ assurez-vous d'utiliser **tous les doigts** de votre **main "
+"gauche** lorsque vous jouez ce morceau._"
+
+#. type: Plain text
+#: BoosterMusic/01-ClairDeLaLune.md:2
+msgid ""
+"This is a simplified version of **Clair De La Lune** that uses only the "
+"three notes **C D** and **E** from your right hand. First find **middle C** "
+"and always use your **thumb** for this note, then for **D** use your **first "
+"finger** and for **E** use **middle finger**."
+msgstr ""
+"Ceci est une version simplifiée dez **Clair De La Lune** qui utilise "
+"seulement les trois notes **Do, Ré** et **Mi** depuis votre main droite. "
+"Tout d'abord trouver **Do milieu** et utilisez toujours votre**pouce** pour "
+"cette note, puis pour **Ré** utilisez votre **premier doigt** et pour **Mi** "
+"utilisez **votre doigt du milieu**."
+
+#. type: Plain text
+#: BoosterMusic/01-ClairDeLaLune.md:3
+msgid ""
+"> **Hint:** _If you are a complete beginner try the pieces from the "
+"**Beginner Course** first._"
+msgstr ""
+"> **Astuce :** _si vous êtres un débutant complet commencez par essayer les "
+"morceaux du **cours débutant** d'abord._"
+
+#. type: Plain text
+#: BoosterMusic/02-LavendersBlue.md:2
+#, no-wrap
+msgid "**Lavender's Blue** is a simple tune in the right hand only that uses the first six notes of the scale of C Major. For the lowest five notes **C D E F** and **G** use all the fingers or your right hand - one for each note. (With your **thumb** on **C** and your **little finger** on **G**). Then for **A** just stretch your **little finger** to reach that note.\n"
+msgstr ""
+"**Lavande Bleue** est une musique simple, à jouer à la main droite, qui "
+"utilise seulement les premières notes de la gamme Do majeur. Pour les cinq "
+"notes les plus basses **Do, Ré, Mi** et **Fa** utilisez tous les doigts de "
+"votre main droite - un pour chaque note (avec votre **pouce** sur **Do** et "
+"votre **petit doigt** sur **Fa**). Puis pour **La** il suffit d'étendre "
+"votre **petit doigt** afin d'atteindre cette note.\n"
+
+#. type: Plain text
+#: BoosterMusic/02-LavendersBlue.md:3
+msgid ""
+"> **Hint:** _To help find the notes ensure **Show Note Names** are turned on "
+"from **Setup Preferences** menu._"
+msgstr ""
+"> **Astuce :** _pour vous aider à trouver les notes, assurez-vous que "
+"**montrer les noms des notes** est activé, dans le menu **Préférences "
+"paramètres**._"
+
+#. type: Plain text
+#: BoosterMusic/03-SkipToMyLou.md:2
+msgid ""
+"For **Skip To My Lou** start with both thumbs on **middle C** and then use "
+"one finger for each white note on the piano. So for the first two notes "
+"which are **E** you should use the **middle finger** of your right hand."
+msgstr ""
+"Pour **Skip To My Lou** commencez avec les deux pouces sur **Do du milieu** "
+"puis utilisez un doigt pour chaque note sur le piano. Ainsi les deux "
+"premières notes étant **Mi** vous devriez utiliser le **doigt majeur** de "
+"votre main droite."
+
+#. type: Plain text
+#: BoosterMusic/03-SkipToMyLou.md:4
+msgid ""
+"This piece introduces the use of **both hands** as the melody goes across "
+"**middle C**."
+msgstr ""
+"Cette pièce introduit l'usage des **deux mains** parce que la mélodie se "
+"joue à travers le **Do milieu**."
+
+#. type: Plain text
+#: BoosterMusic/03-SkipToMyLou.md:5
+msgid ""
+"> **Hint:** _For the notes in the **treble clef** you always use your "
+"**right hand** and for the **base clef** your **left hand**. Make sure you "
+"always keep using the correct finger for each note._"
+msgstr ""
+"> **Astuce :** _concernant les notes de la **clé de sol** vous devriez "
+"utiliser votre **main droite** et pour la **clé de base** votre **main "
+"gauche**. Assurez vous de toujours garder le doigt adéquat pour chaque note._"
+
+#. type: Plain text
+#: BoosterMusic/04-FrereJacques.md:2
+msgid ""
+"For **Frere Jacques** introduces the use of playing both hands together with "
+"a very simple left hand part. First practice the **left hand** and **right "
+"hand** parts separately. Then when ready reduce the **speed to 70%** and try "
+"**both hands** together. Again start with **both thumbs** on **Middle C**."
+msgstr ""
+"Pour **Frère Jacques** commencez à jouer à deux mains simultanées avec une "
+"partie très facile à la main droite. D'abord entraînez-vous **main gauche** "
+"et **main droite**séparément. Puis lorsque vous serez prêt réduisez la **"
+"vitesse à 70%** et essayez **à deux mains** simultanées. Ensuite démarrez "
+"avec les **deux pouces** sur les **Do du milieu**."
+
+#. type: Plain text
+#: BoosterMusic/04-FrereJacques.md:3
+msgid ""
+"> **Hint:** _Practice the **left hand** and **right hand** parts separately._"
+msgstr ""
+"> **Astuce :** _entraînez-vous aux parties **main gauche** puis **main "
+"droite** séparément._"
+
+#. type: Plain text
+#: BoosterMusic/05-ScarboroughFair.md:2
+#, no-wrap
+msgid "**Scarborough Fair** spans a range of eight notes and so you will have to move fingers up the piano. Use the fingering that you feel comfortable with but ensure that you **use all your fingers** (of your right hand).\n"
+msgstr "**Scarborough Fair** couvre une gamme de huit notes et vous devrez donc déplacer vos doigts vers le haut du piano. Utilisez les doigts avec lesquels vous vous sentez à l'aise, mais assurez-vous que vous **utilisez tous vos doigts** (de votre main droite).\n"
+
+#. type: Plain text
+#: BoosterMusic/05-ScarboroughFair.md:3
+msgid ""
+"> **Hint:** _Don't think about what fingers to use, just use the fingering "
+"that **comes naturally to you**._"
+msgstr ""
+"> **Astuce :** _Ne pensez pas aux doigts à utiliser, utilisez simplement le "
+"doigté qui ** vous vient naturellement**._"
+
+#. type: Plain text
+#: BoosterMusic/06-Greensleeves.md:2
+#, no-wrap
+msgid "**Greensleeves** introduces the key of **G major** which has **one Sharp - F#**. Normally the sharp symbol is not shown when **F#** is played (but turning on **Courtesy Accidentals** from the Piano Booster setup/preferences menu will show all accidentals in the key signature). The melody is in the right hand with a simple left hand part.\n"
+msgstr ""
+"**Greensleeves** introduit la tonalité de **Sol majeur** qui possède **un "
+"dièse - Fa#**. Normalement, le symbole de dièse n'est pas affiché lorsque "
+"**Fa#** est joué (mais en activant **altérations de précaution** dans le "
+"menu Piano Booster Paramétrages/Préférences vous pourrez voir tous les "
+"accidents dans la tonalité). La mélodie est à la main droite avec une partie "
+"simple à la main gauche.\n"
+
+#. type: Plain text
+#: BoosterMusic/06-Greensleeves.md:3
+msgid ""
+"> **Hint:** _You can show **Courtesy Accidentals** from the PianoBooster "
+"setup/preferences menu. But remember to **turn them off** when you get more "
+"skilled._"
+msgstr ""
+"> **Astuce :** _vous pouvez afficher les **altérations de précaution** "
+"depuis le menu Paramétrages/Préférences de Pianobooster. Mais souvenez-vous "
+"de **les enlever** lorsque vous serez plus compétent._"
+
+#. type: Plain text
+#: BoosterMusic/07-AmazingGrace.md:2
+#, no-wrap
+msgid "**Amazing Grace** introduces the key of **F major** which has a **single Flat - Bb**. Again the flat symbol is not normally shown on the score when playing Bb. Practice both hands separately at first and then when ready reduce the speed to 70% when trying both hands for the first time.\n"
+msgstr "**Amazing Grace** introduit la tonalité de **Fa majeur** qui a un **seul Bémol - Sib**. Là encore, le symbole du bémol n'apparaît pas normalement sur la partition lorsque l'on joue le Si bémol. Pratiquez les deux mains séparément au début, puis lorsque vous êtes prêt, réduisez la vitesse à 70% lorsque vous essayez les deux mains pour la première fois..\n"
+
+#. type: Plain text
+#: BoosterMusic/07-AmazingGrace.md:3
+msgid ""
+"> **Hint:** _Reduce the speed to 70% when trying both hands for the first "
+"time._"
+msgstr ""
+"> **Astuce :** _réduisez la vitesse à 70% lorsque vous essayez les deux "
+"mains pour la première fois._"

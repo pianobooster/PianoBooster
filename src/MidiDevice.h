@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -49,7 +49,8 @@ public:
     void playMidiEvent(const CMidiEvent & event);
     int checkMidiInput();
     CMidiEvent readMidiInput();
-    bool validMidiOutput() { return m_validOutput; }
+    bool validMidiOutput();
+    virtual bool validMidiConnection() {return validMidiOutput();}
 
     QStringList getMidiPortList(midiType_t type);
     bool openMidiPort(midiType_t type, QString portName);
@@ -62,10 +63,16 @@ public:
     virtual double  midiSettingsGetNum(QString name);
     virtual int     midiSettingsGetInt(QString name);
 
-private:
+    void flushMidiInput()
+    {
+        while (checkMidiInput() > 0) {
+            readMidiInput();
+        }
+    }
 
+private:
     CMidiDeviceBase* m_rtMidiDevice;
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     CMidiDeviceBase* m_fluidSynthMidiDevice;
 #endif
     CMidiDeviceBase* m_selectedMidiInputDevice;

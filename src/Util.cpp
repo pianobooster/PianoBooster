@@ -26,21 +26,14 @@
 */
 /*********************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 #include <fstream>
 #include <sstream>
+#include <QTime>
 #include "Util.h"
 #include "Cfg.h"
-#include <QTime>
 
-
-
-static QTime s_realtime;
-
-static  FILE * logInfoFile = 0;
-static  FILE * logErrorFile = 0;
+static  FILE * logInfoFile = nullptr;
+static  FILE * logErrorFile = nullptr;
 
 static bool logsOpened = false;
 
@@ -52,7 +45,7 @@ static void openLogFile() {
     {
         logInfoFile = fopen ("pb.log","w");
         logErrorFile = logInfoFile;
-        if (logErrorFile == 0)
+        if (logErrorFile == nullptr)
         {
             fputs("FATAL: cannot open the logfile", stderr);
             exit(EXIT_FAILURE);
@@ -68,7 +61,6 @@ static void openLogFile() {
         logErrorFile = stderr;
     }
 }
-
 
 static void flushLogs()
 {
@@ -167,7 +159,6 @@ void ppLogTrace(const char *msg, ...)
 #endif
 }
 
-
 void ppLogDebug( const char *msg, ...)
 {
     va_list ap;
@@ -197,6 +188,10 @@ void ppLogError(const char *msg, ...)
     flushLogs();
 }
 
+#ifdef DEBUG_LOG_TIMING
+static QTime s_realtime;
+#endif
+
 void ppTiming(const char *msg, ...)
 {
 #ifdef DEBUG_LOG_TIMING
@@ -213,8 +208,6 @@ void ppTiming(const char *msg, ...)
 }
 
 ////////////////////// BENCH MARK //////////////////////
-
-
 static QTime s_benchMarkTime;
 static int s_previousTime;
 static int s_previousFrameTime;
@@ -243,7 +236,6 @@ void benchMarkReset(benchData_t *pBench)
     pBench->minDelta = 9999999;
     pBench->frameRatePrevious = pBench->frameRateCurrent;
 }
-
 
 void benchMarkInit()
 {
@@ -310,4 +302,19 @@ void benchMarkResults()
     {
         printResult(i, &s_benchData[i]);
     }
+}
+
+// Returns the location of where the data is stored
+// for an AppImage the dataDir is must be relative to the applicationDirPath
+QString Util::dataDir() {
+    QString appImagePath = qgetenv("APPIMAGE");
+
+    if (appImagePath.isEmpty() )
+        return QString(PREFIX)+"/"+QString(DATA_DIR);
+    QString appImageInternalPath = QApplication::applicationDirPath();
+    int i = appImageInternalPath.lastIndexOf(PREFIX);
+
+    appImageInternalPath.truncate(i);
+
+    return (appImageInternalPath+QString(PREFIX)+"/"+QString(DATA_DIR));
 }

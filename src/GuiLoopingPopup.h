@@ -29,11 +29,9 @@
 #ifndef __GUILOOPINGPOPUP_H__
 #define __GUILOOPINGPOPUP_H__
 
-
 #include <QtWidgets>
 
 #include "Song.h"
-
 
 #include "ui_GuiLoopingPopup.h"
 

@@ -33,11 +33,10 @@ GuiLoopingPopup::GuiLoopingPopup(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
-    m_song = 0;
+    m_song = nullptr;
     setWindowTitle(tr("Continuous Looping"));
     setWindowFlags(Qt::Popup);
 }
-
 
 void GuiLoopingPopup::init(CSong* song)
 {
@@ -53,7 +52,6 @@ void GuiLoopingPopup::updateInfo()
     else
         loopingText->setText(tr("Repeat Bar is disabled"));
 }
-
 
 void GuiLoopingPopup::on_loopBarsSpin_valueChanged(double bars)
 {

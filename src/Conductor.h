@@ -63,13 +63,11 @@ typedef enum {
     PB_RHYTHM_TAP_drumsAndMellody
 } rhythmTapping_t;
 
-
 typedef enum {
     PB_STOP_POINT_MODE_automatic,
     PB_STOP_POINT_MODE_onTheBeat,
     PB_STOP_POINT_MODE_afterTheBeat
 } stopPointMode_t;
-
 
 /*!
  * @brief   xxxxx.
@@ -81,7 +79,6 @@ public:
     ~CConductor();
 
     void init2(CScore * scoreWin, CSettings* settings);
-
 
     //! add a midi event to be analysed and played
     void midiEventInsert(CMidiEvent event);
@@ -103,6 +100,7 @@ public:
     void realTimeEngine(int mSecTicks);
     void playMusic(bool start);
     bool playingMusic() {return m_playing;}
+    void reconnectMidi();
 
     float getSpeed() {return m_tempo.getSpeed();}
     void setSpeed(float speed)
@@ -117,8 +115,6 @@ public:
     }
     int getLatencyFix() { return m_latencyFix; }
 
-    void muteChannel(int channel, bool state);
-    void mutePart(int channel, bool state);
     void transpose(int transpose);
 
     int getTranspose() {return m_transpose;}
@@ -167,6 +163,8 @@ public:
     }
     bool hasPianistKeyboardChannel(int chan)   { return (m_pianistGoodChan == chan || m_pianistBadChan == chan ) ? true : false;}
 
+    bool shouldMutePianistPart() {return m_playMode != PB_PLAY_MODE_listen && m_mutePianistPart == true;}
+
     CRating* getRating(){return &m_rating;}
 
     // You MUST clear the time sig to 0 first before setting an new start time Sig
@@ -207,7 +205,6 @@ public:
     stopPointMode_t cfg_stopPointMode;
     rhythmTapping_t cfg_rhythmTapping;
 
-
 protected:
     CScore* m_scoreWin;
     CSettings* m_settings;
@@ -218,11 +215,9 @@ protected:
     eventBits_t m_realTimeEventBits; //used to signal real time events to the caller of task()
 
     void outputSavedNotes();
-    void activatePianistMutePart();
 
     void resetWantedChord();
     void playWantedChord (CChord chord, CMidiEvent inputNote);
-
 
     bool validatePianistNote( const CMidiEvent& inputNote);
     bool validatePianistChord();
@@ -231,10 +226,6 @@ protected:
 
     int track2Channel(int track) {return m_track2ChannelLookUp[track];}
 
-
-
-
-
 private:
     void allSoundOff();
     void resetAllChannels();
@@ -242,7 +233,6 @@ private:
     void outputPianoVolume();
 
     void channelSoundOff(int channel);
-    void trackSoundOff(int trackNumber);
 
     void findSplitPoint();
     void fetchNextChord();
@@ -278,13 +268,6 @@ private:
     CQueue<CMidiEvent>* m_savedNoteQueue;
     CQueue<CMidiEvent>* m_savedNoteOffQueue;
     CMidiEvent m_nextMidiEvent;
-    bool m_muteChannels[MAX_MIDI_CHANNELS];
-    bool isChannelMuted(int chan)
-    {
-        if (chan < 0 || chan >= MAX_MIDI_CHANNELS)
-            return true;
-        return m_muteChannels[chan];
-    }
     void setFollowSkillAdvanced(bool enable);
 
     CPiano* m_piano;
@@ -296,7 +279,7 @@ private:
     CChord m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts
     CChord m_goodPlayedNotes;  // The good notes the pianist plays
     CTempo m_tempo;
-
+    bool m_KeyboardLightsOn;
 
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef
     bool m_followSkillAdvanced;
@@ -322,7 +305,7 @@ private:
     bool m_testWrongNoteSound;
     int m_boostVolume;
     int m_pianoVolume;
-    int m_activeChannel; // The current part that is being displayed (used for boost and activatePianistMutePart)
+    int m_activeChannel; // The current part that is being displayed (used for boost)
     int m_savedMainVolume[MAX_MIDI_CHANNELS];
     static playMode_t m_playMode;
     int m_skill;

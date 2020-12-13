@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -50,15 +50,15 @@ private slots:
     void on_midiInputCombo_activated (int index);
     void on_midiOutputCombo_activated (int index);
     void on_latencyFixButton_clicked ( bool checked );
-    void on_fluidAddButton_clicked ( bool checked );
-    void on_fluidRemoveButton_clicked ( bool checked );
-    void on_audioDriverCombo_currentIndexChanged ( int index );
+    void on_fluidLoadButton_clicked ( bool checked );
+    void on_fluidClearButton_clicked ( bool checked );
 
 private:
-
+    void setComboFromSetting(QComboBox *combo, const QString &key, const QVariant &defaultValue = QVariant());
     void updateMidiInfoText();
-    void updateFluidInfoText();
-    void setDefaultFluidSynth();
+    void refreshMidiInputCombo();
+    void refreshMidiOutputCombo();
+    void updateFluidInfoStatus();
     CSettings* m_settings;
     CSong* m_song;
     int m_latencyFix;

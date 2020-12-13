@@ -52,7 +52,7 @@ public:
 
     void setSpeed(int value){ speedSpin->setValue(value); }
     int getSpeed(){return speedSpin->value();}
-
+    void stopMuiscPlaying();
     void updateTranslate();
 
 public slots:
@@ -73,7 +73,6 @@ private slots:
 
     void on_saveBarButton_clicked(bool clicked);
     void on_loopingBarsPopupButton_clicked(bool clicked);
-
 
 private:
     bool eventFilter(QObject *obj, QEvent *event);

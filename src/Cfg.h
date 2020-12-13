@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -40,12 +40,10 @@
 #define BENCHMARK_RESULTS()
 #endif
 
-
 class CColor
 {
 public:
     CColor() { red = green = blue = 0; }
-
 
     CColor(double r, double g, double b)
     {
@@ -86,10 +84,8 @@ public:
     static int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
     static int chordMaxLength()    {return 20;} // the max time between the start and end of a cord
 
-
     static CColor menuColor()        {return CColor(0.1, 0.6, 0.6);}
     static CColor menuSelectedColor(){return CColor(0.7, 0.7, 0.1);}
-
 
     static CColor staveColor()           {return CColor(0.1, 0.7, 0.1);} // green
     static CColor staveColorDim()        {return CColor(0.15, 0.40, 0.15);} // grey
@@ -114,8 +110,6 @@ public:
     #endif
     }
 
-
-
     static void setStaveEndX(float x)
     {
          m_staveEndX = x;
@@ -132,13 +126,10 @@ public:
         m_appHeight = height;
     }
 
-
-
     static int defaultWrongPatch() {return 7;} // Starts at 1
     static int defaultRightPatch() {return 1;} // Starts at 1
 
     static int logLevel;
-    static bool quickStart;
     static bool experimentalTempo;
     static bool experimentalNoteLength;
     static int experimentalSwapInterval;

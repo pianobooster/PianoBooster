@@ -19,6 +19,10 @@
 
 ****************************************************************************/
 
+#ifdef _WIN32
+  #include <windows.h>
+#endif
+
 #ifdef __APPLE__
   #include <OpenGL/gl.h>
   #include <OpenGL/glu.h>
@@ -30,11 +34,11 @@
 #include <QApplication>
 #include <QtOpenGL>
 #include "QtWindow.h"
-#include "version.txt"
+#include "version.h"
 
 int main(int argc, char *argv[]){
     QCoreApplication::setOrganizationName("PianoBooster");
-    QCoreApplication::setOrganizationDomain("https://github.com/captnfab/PianoBooster");
+    QCoreApplication::setOrganizationDomain("https://github.com/pianobooster/PianoBooster");
     QCoreApplication::setApplicationName("Piano Booster");
     QCoreApplication::setApplicationVersion(PB_VERSION);
 
@@ -52,12 +56,10 @@ int main(int argc, char *argv[]){
     QApplication app(argc, argv);
 
     if (!QGLFormat::hasOpenGL()) {
-        QMessageBox::information(0, QMessageBox::tr("OpenGL support"),
+        QMessageBox::information(nullptr, QMessageBox::tr("OpenGL support"),
                  QMessageBox::tr("This system does not support OpenGL which is needed to run Piano Booster."));
         return -1;
     }
-
-
 
     QtWindow window;
 
@@ -67,4 +69,3 @@ int main(int argc, char *argv[]){
     closeLogs();
     return value;
 }
-

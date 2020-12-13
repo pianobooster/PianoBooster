@@ -18,14 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with PianoBooster.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include <stdio.h>
-#include <stdlib.h>
 #include <QMessageBox>
 
 #include "MidiFile.h"
 
 int CMidiFile::m_ppqn = DEFAULT_PPQN;
-
 
 /* Read 16 bits from the Standard MIDI file */
 int CMidiFile::readWord(void)
@@ -79,7 +76,6 @@ int CMidiFile::readHeader(void)
     return i;
 }
 
-
 void CMidiFile::openMidiFile(string filename)
 {
     if (m_file.is_open())
@@ -89,19 +85,20 @@ void CMidiFile::openMidiFile(string filename)
     m_file.open(filename.c_str(), ios_base::in | ios_base::binary);
     if (m_file.fail() == true)
     {
-        QMessageBox::warning(0, QMessageBox::tr("Midi File Error"),
+        QMessageBox::warning(nullptr, QMessageBox::tr("Midi File Error"),
                  QMessageBox::tr("Cannot open \"%1\"").arg(QString(filename.c_str())));
         midiError(SMF_CANNOT_OPEN_FILE);
         return;
     }
     rewind();
     if (getMidiError() != SMF_NO_ERROR)
-        QMessageBox::warning(0, QMessageBox::tr("Midi File Error"),
+        QMessageBox::warning(nullptr, QMessageBox::tr("Midi File Error"),
                  QMessageBox::tr("Midi file \"%1\" is corrupted").arg(QString(filename.c_str())));
 }
 
 void CMidiFile::rewind()
 {
+    m_numberOfTracks = 0;
     size_t ntrks;
     size_t trk;
     dword_t trackLength;
@@ -125,12 +122,13 @@ void CMidiFile::rewind()
         ppLogError("Too many tracks in SMF file");
         return;
     }
+    m_numberOfTracks = ntrks;
     for (trk = 0; trk < arraySize(m_tracks); trk++)
     {
-        if (m_tracks[trk]!= 0)
+        if (m_tracks[trk]!= nullptr)
         {
             delete (m_tracks[trk]);
-            m_tracks[trk] = 0;
+            m_tracks[trk] = nullptr;
         }
     }
     filePos = m_file.tellg();
@@ -160,12 +158,12 @@ bool CMidiFile::checkMidiEventFromStream(int streamIdx)
         assert("streamIdx out of range");
         return false;
     }
-    if (m_tracks[streamIdx] != 0 && m_tracks[streamIdx]->length() > 0)
+    if (m_tracks[streamIdx] != nullptr && m_tracks[streamIdx]->length() > 0)
         return true;
     return false;
 }
 
-CMidiEvent CMidiFile::fetchMidiEventFromStream(int streamIdx)
+CMidiEvent CMidiFile::fetchMidiEventFromStream(int trackNo)
 {
-    return m_tracks[streamIdx]->pop();
+    return m_tracks[trackNo]->pop(trackNo);
 }

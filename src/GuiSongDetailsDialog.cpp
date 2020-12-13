@@ -33,12 +33,11 @@ GuiSongDetailsDialog::GuiSongDetailsDialog(QWidget *parent)
     : QDialog(parent)
 {
     setupUi(this);
-    m_song = 0;
-    m_settings = 0;
-    m_trackList = 0;
+    m_song = nullptr;
+    m_settings = nullptr;
+    m_trackList = nullptr;
     setWindowTitle(tr("Song Details"));
 }
-
 
 void GuiSongDetailsDialog::init(CSong* song, CSettings* settings)
 {
@@ -55,7 +54,6 @@ void GuiSongDetailsDialog::init(CSong* song, CSettings* settings)
     updateSongInfoText();
 
 }
-
 
 void GuiSongDetailsDialog::updateSongInfoText()
 {
@@ -78,7 +76,6 @@ void GuiSongDetailsDialog::updateSongInfoText()
 
     buttonBox->button(QDialogButtonBox::Ok)->setEnabled(activateOkButton);
 }
-
 
 void GuiSongDetailsDialog::on_leftHandChannelCombo_activated (int index)
 {

@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -105,6 +105,14 @@ public:
     {
         return m_fluidSoundFontNames;
     }
+    void setFluidSoundFontNames(QStringList names)
+    {
+        m_fluidSoundFontNames = names;
+    }
+    void setFluidSoundFontNames(QString names)
+    {
+        m_fluidSoundFontNames = QStringList(names);
+    }
     void addFluidSoundFontName(QString sfName)
     {
         m_fluidSoundFontNames.append(sfName);
@@ -113,6 +121,24 @@ public:
     {
         m_fluidSoundFontNames.removeAll(sfName);
     }
+    void clearFluidSoundFontNames()
+    {
+        m_fluidSoundFontNames.clear();
+    }
+    void saveSoundFontSettings()
+    {
+        setValue("FluidSynth/SoundFont", getFluidSoundFontNames());
+    }
+
+    // has a new sound fount been entered that is not the same as the old sound font
+    bool isNewSoundFontEntered()
+    {
+        if (getFluidSoundFontNames().isEmpty())
+            return false;
+
+        return getFluidSoundFontNames() != value("FluidSynth/SoundFont").toStringList();
+    }
+
     void pianistActive() { m_pianistActive = true;}
     void setActiveHand(whichPart_t hand);
 
@@ -121,6 +147,18 @@ public:
     void fastUpdateRate(bool fullSpeed);
     QString getWarningMessage() {return m_warningMessage;}
     void updateWarningMessages();
+
+    QString selectedLangauge() {
+        QString locale = value("General/lang","").toString();
+        if (locale.isEmpty()) {
+            locale = QLocale::system().bcp47Name();
+            int n = locale.indexOf("_");
+            if ((n > 0)) {
+                locale = locale.left(n);
+            }
+        }
+        return locale;
+    }
 
 private:
 
@@ -137,7 +175,7 @@ private:
     void loadXmlFile();
     void saveXmlFile();
     void setDefaultValue(const QString & key, const QVariant & value );
-
+    void setupDefaultSoundFont();
 
     // returns either 'left' 'right' or 'both'
     const QString partToHandString(whichPart_t part)
@@ -168,7 +206,7 @@ private:
     QString m_currentBookName;
     QString m_currentSongName;
     QString m_warningMessage;
-    QStringList m_fluidSoundFontNames;
+    QStringList m_fluidSoundFontNames = QStringList();
     bool m_pianistActive;
 };
 

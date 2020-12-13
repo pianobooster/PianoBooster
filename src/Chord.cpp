@@ -31,13 +31,34 @@
 
 int CNote::m_leftHandChannel = -2;
 int CNote::m_rightHandChannel = -2;
+int CNote::m_rightHandTrack[MAX_MIDI_CHANNELS];
+
 whichPart_t CNote::m_activeHand = PB_PART_both;
 
 int CChord::m_cfg_highestPianoNote = 127; // The highest note on the users piano keyboard;
 int CChord::m_cfg_lowestPianoNote = 0;
 
-whichPart_t CNote::findHand(int midiNote, int midiChannel, int whichChannel, whichPart_t whichPart)
+
+void CNote::reset()
 {
+    CNote::setChannelHands(-2, -2);  // -2 for not set -1 for none
+
+    for (int chan = 0; chan < MAX_MIDI_CHANNELS; chan++) {
+        m_rightHandTrack[chan]=-1;
+    }
+}
+
+void CNote::setChannelHands(int left, int right)
+{
+    m_leftHandChannel = left;
+    m_rightHandChannel = right;
+}
+
+
+whichPart_t CNote::findHand(CMidiEvent midi, int whichChannel, whichPart_t whichPart)
+{
+    int midiNote = midi.note();
+    int midiChannel = midi.channel();
     whichPart_t hand = PB_PART_none;
     // exit if it is not for this channel
     if (midiChannel != whichChannel)
@@ -46,28 +67,24 @@ whichPart_t CNote::findHand(int midiNote, int midiChannel, int whichChannel, whi
         if (CNote::hasPianoPart(whichChannel) == false || CNote::hasPianoPart(midiChannel) == false)
             return PB_PART_none;
     }
+    int rightHandTrack = CNote::rightHandTrack(midiChannel);
 
-    if (midiChannel == CNote::rightHandChan())
+    if (midiChannel == whichChannel && rightHandTrack >= 0 ) {
+        hand = (midi.track() == rightHandTrack) ? PB_PART_right : PB_PART_left ;
+    } else if (midiChannel == CNote::rightHandChan()) {
         hand  = PB_PART_right;
-    else if (midiChannel == CNote::leftHandChan())
+    } else if (midiChannel == CNote::leftHandChan()) {
         hand  = PB_PART_left;
-    else
-    {
-        if (midiChannel == whichChannel)
-        {
-            if (midiNote >= MIDDLE_C)
-                hand = PB_PART_right;
-            else
-                hand = PB_PART_left;
-        }
+    } else  if (midiChannel == whichChannel) {
+        hand = (midiNote >= MIDDLE_C) ? PB_PART_right : PB_PART_left ;
     }
+
     if (whichPart == PB_PART_left && hand == PB_PART_right)
         hand = PB_PART_none;
     if (whichPart == PB_PART_right && hand == PB_PART_left)
         hand = PB_PART_none;
     return hand;
 }
-
 
 void CChord::addNote(whichPart_t part, int note, int duration)
 {
@@ -83,11 +100,6 @@ void CChord::addNote(whichPart_t part, int note, int duration)
     m_length++;
 }
 
-void CNote::setChannelHands(int left, int right)
-{
-    m_leftHandChannel = left;
-    m_rightHandChannel = right;
-}
 
 //////////////// CChord /////////////////////
 
@@ -165,7 +177,6 @@ bool CFindChord::findChord(CMidiEvent midi, int channel, whichPart_t part)
     }
 
     m_noteGapTime += midi.deltaTime();
-
 
     if ((m_noteGapTime >= m_cfg_ChordNoteGap || m_cordSpanGapTime > m_cfg_ChordMaxLength)
             && m_currentChord.length() > 0 )

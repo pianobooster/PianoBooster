@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -26,7 +26,7 @@
 
 #include "GlView.h"
 #include "QtWindow.h"
-#include "version.txt"
+#include "version.h"
 
 #ifdef __linux__
 #ifndef USE_REALTIME_PRIORITY
@@ -52,7 +52,6 @@ static int set_realtime_priority(int policy, int prio)
 }
 #endif
 
-
 QtWindow::QtWindow()
 {
     m_settings = new CSettings(this);
@@ -73,9 +72,8 @@ QtWindow::QtWindow()
     }
 
     for (int i = 0; i < MAX_RECENT_FILES; ++i)
-         m_recentFileActs[i] = 0;
-    m_separatorAct = 0;
-
+         m_recentFileActs[i] = nullptr;
+    m_separatorAct = nullptr;
 
 #if USE_REALTIME_PRIORITY
     int rt_prio = sched_get_priority_max(SCHED_FIFO);
@@ -87,7 +85,6 @@ QtWindow::QtWindow()
 
     m_song = m_glWidget->getSongObject();
     m_score = m_glWidget->getScoreObject();
-
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
     QVBoxLayout *columnLayout = new QVBoxLayout;
@@ -120,22 +117,13 @@ QtWindow::QtWindow()
     m_song->setPianoSoundPatches(m_settings->value("Keyboard/RightSound", Cfg::defaultRightPatch()).toInt() - 1,
                                  m_settings->value("Keyboard/WrongSound", Cfg::defaultWrongPatch()).toInt() - 1, true);
 
-    QString midiInputName = m_settings->value("Midi/Input").toString();
-    if (midiInputName.startsWith(tr("None")))
-        CChord::setPianoRange(PC_KEY_LOWEST_NOTE, PC_KEY_HIGHEST_NOTE);
-    else
-        CChord::setPianoRange(m_settings->value("Keyboard/LowestNote", 0).toInt(),
-                          m_settings->value("Keyboard/HighestNote", 127).toInt());
-
     m_song->setLatencyFix(m_settings->value("Midi/Latency", 0).toInt());
 
     m_song->cfg_timingMarkersFlag = m_settings->value("Score/TimingMarkers", m_song->cfg_timingMarkersFlag ).toBool();
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (m_settings->value("Score/StopPointMode", m_song->cfg_stopPointMode ).toInt());
     m_song->cfg_rhythmTapping = static_cast<rhythmTapping_t> (m_settings->value("Score/RtyhemTappingMode", m_song->cfg_rhythmTapping ).toInt());
 
-
-    m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputName);
-    m_song->openMidiPort(CMidiDevice::MIDI_OUTPUT,m_settings->value("Midi/Output").toString());
+    m_song->reconnectMidi();
 
     readSettings();
 
@@ -144,7 +132,6 @@ QtWindow::QtWindow()
         if (!songName.isEmpty())
             m_settings->openSongFile( songName );
     });
-
 }
 
 void QtWindow::init()
@@ -171,15 +158,12 @@ void QtWindow::displayUsage()
 {
     fprintf(stdout, "Usage: pianobooster [flags] [midifile]\n");
     fprintf(stdout, "  -d, --debug             Increase the debug level.\n");
-    fprintf(stdout, "  -q, --quick-start       Quick start.\n");
     fprintf(stdout, "      --Xnote-length      Displays the note length (experimental)\n");
-    fprintf(stdout, "      --Xtick-rate=RATE   Adjust the tick rate in mSec (experimental).\n");
-    fprintf(stdout, "                          default 4 (12 windows).\n");
     fprintf(stdout, "  -h, --help              Displays this help message.\n");
     fprintf(stdout, "  -v, --version           Displays version number and then exits.\n");
     fprintf(stdout, "  -l   --log              Write debug info to the \"pb.log\" log file.\n");
     fprintf(stdout, "       --midi-input-dump  Displays the midi input in hex.\n");
-    fprintf(stdout, "       --lights:          Turns on the keyboard lights.\n");
+    fprintf(stdout, "       --lights           Turns on the keyboard lights.\n");
 }
 
 int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
@@ -220,7 +204,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
 
     if (!fileInfo.exists() )
     {
-        QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
+        QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
                  tr("Cannot open \"%1\"").arg(QString(fileInfo.absoluteFilePath())));
         exit(1);
     }
@@ -228,7 +212,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
              fileInfo.fileName().endsWith(".midi", Qt::CaseInsensitive ) ||
              fileInfo.fileName().endsWith(".kar", Qt::CaseInsensitive )) )
     {
-        QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
+        QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
                  tr("\"%1\" is not a Midi File").arg(QString(fileInfo.fileName())));
         exit(1);
     }
@@ -252,7 +236,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
             m_settings->setValue("CurrentSong", fileInfo.absoluteFilePath());
         else
         {
-            QMessageBox::warning(0, tr("PianoBooster Midi File Error"),
+            QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
                  tr("\"%1\" is not a valid Midi file").arg(QString(fileInfo.absoluteFilePath())));
             exit(1);
         }
@@ -271,8 +255,6 @@ void QtWindow::decodeCommandLine()
         {
             if (arg.startsWith("-d") || arg.startsWith("--debug"))
                 Cfg::logLevel++;
-            else if (arg.startsWith("-q") || arg.startsWith("--quick-start"))
-                Cfg::quickStart = true;
             else if (arg.startsWith("--Xnote-length"))
                 Cfg::experimentalNoteLength = true;
             else if (arg.startsWith("--Xtick-rate")) {
@@ -283,7 +265,6 @@ void QtWindow::decodeCommandLine()
                 Cfg::useLogFile = true;
             else if (arg.startsWith("--midi-input-dump"))
                 Cfg::midiInputDump = true;
-
             else if (arg.startsWith("-X1"))
                 Cfg::experimentalTempo = true;
             else if (arg.startsWith("-Xswap"))
@@ -384,9 +365,9 @@ void QtWindow::createActions()
     m_setupPreferencesAct->setShortcut(tr("Ctrl+P"));
     connect(m_setupPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
 
-    m_songDetailsAct = new QAction(tr("&Song Details ..."), this);
+    m_songDetailsAct = new QAction(tr("Song &Details ..."), this);
     m_songDetailsAct->setToolTip(tr("Song Settings"));
-    m_songDetailsAct->setShortcut(tr("Ctrl+S"));
+    m_songDetailsAct->setShortcut(tr("Ctrl+D"));
     connect(m_songDetailsAct, SIGNAL(triggered()), this, SLOT(showSongDetailsDialog()));
 
     QAction* act = new QAction(this);
@@ -411,15 +392,12 @@ void QtWindow::createActions()
     addShortcutAction("ShortCuts/NextBook",         SLOT(on_nextBook()));
     addShortcutAction("ShortCuts/PreviousBook",     SLOT(on_previousBook()));
 
-
      for (int i = 0; i < MAX_RECENT_FILES; ++i) {
          m_recentFileActs[i] = new QAction(this);
          m_recentFileActs[i]->setVisible(false);
          connect(m_recentFileActs[i], SIGNAL(triggered()),
                  this, SLOT(openRecentFile()));
      }
-
-
 }
 
 void QtWindow::createMenus()
@@ -467,30 +445,24 @@ void QtWindow::createMenus()
     m_helpMenu->addAction(m_shortcutAct);
     m_helpMenu->addAction(m_aboutAct);
 }
+
 void QtWindow::openRecentFile()
- {
-     QAction *action = qobject_cast<QAction *>(sender());
+{
+    QAction *action = qobject_cast<QAction *>(sender());
      if (action)
          m_settings->openSongFile(action->data().toString());
 }
 
 void QtWindow::showMidiSetup(){
-    bool isPlaying=false;
 
-    if(m_song->playingMusic()){
-        isPlaying=true;
-        m_topBar->on_playButton_clicked(true);
-    }
+    m_topBar->stopMuiscPlaying();
 
     m_glWidget->stopTimerEvent();
     GuiMidiSetupDialog midiSetupDialog(this);
     midiSetupDialog.init(m_song, m_settings);
     midiSetupDialog.exec();
-
+    m_song->flushMidiInput();
     m_glWidget->startTimerEvent();
-    if (isPlaying){
-        m_topBar->on_playButton_clicked(true);
-    }
 }
 
 // load the recent file list from the config file into the file menu
@@ -503,7 +475,7 @@ void QtWindow::updateRecentFileActions()
 
     for (int i = 0; i < numRecentFiles; ++i) {
         QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
-        if (m_recentFileActs[i] == 0)
+        if (m_recentFileActs[i] == nullptr)
             break;
         m_recentFileActs[i]->setText(text);
         m_recentFileActs[i]->setData(files[i]);
@@ -511,7 +483,7 @@ void QtWindow::updateRecentFileActions()
     }
 
     for (int j = numRecentFiles; j < MAX_RECENT_FILES; ++j) {
-        if (m_recentFileActs[j] == 0)
+        if (m_recentFileActs[j] == nullptr)
             break;
         m_recentFileActs[j]->setVisible(false);
     }
@@ -545,7 +517,7 @@ void QtWindow::setCurrentFile(const QString &fileName)
 
 void QtWindow::website()
 {
-    QDesktopServices::openUrl(QUrl("http://pianobooster.sourceforge.net/"));
+    QDesktopServices::openUrl(QUrl("https://www.pianobooster.org/"));
 }
 
 void QtWindow::help()
@@ -574,11 +546,11 @@ void QtWindow::help()
        "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music.") +
     tr("<h3>Hints on Playing the Piano</h3>"
        "<p>For hints on how to play the piano see: ") +
-       "<a href=\"http://pianobooster.sourceforge.net/pianohints.html\" ><b>" + tr("Piano Hints") + "</b></a></p>" +
+       "<a href=\"https://www.pianobooster.org/music-info.html\" ><b>" + tr("Piano Hints") + "</b></a></p>" +
     tr("<h3>More Information</h3>"
        "<p>For more help please visit the PianoBooster ") +
-       "<a href=\"http://pianobooster.sourceforge.net\" ><b>" + tr("website") + "</b></a>, " +
-    tr("the PianoBooster") + " <a href=\"http://pianobooster.sourceforge.net/faq.html\" ><b> " + tr("FAQ") + "</b></a> " +
+       "<a href=\"https://www.pianobooster.org\" ><b>" + tr("website") + "</b></a>, " +
+    tr("the PianoBooster") + " <a href=\"https://www.pianobooster.org/faq.html\" ><b> " + tr("FAQ") + "</b></a> " +
     tr("and the") + " <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\"><b>" +tr("user forum") +"</b></a>."
     );
 
@@ -593,8 +565,8 @@ void QtWindow::about()
     msgBox.setText(
             tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
             tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
-            "<a href=\"http://pianobooster.sourceforge.net/\" ><b>http://pianobooster.sourceforge.net/</b></a><br><br>" +
-            tr("Copyright(c) L. J. Barman, 2008-2013; All rights reserved.<br>") +
+            "<a href=\"https://www.pianobooster.org/\" ><b>https://www.pianobooster.org/</b></a><br><br>" +
+            tr("Copyright(c) L. J. Barman, 2008-2020; All rights reserved.<br>") +
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
             "<br>" +
             tr("This program is made available "
@@ -662,7 +634,6 @@ void QtWindow::keyboardShortcuts()
     msgBox.exec();
 }
 
-
 void QtWindow::open()
 {
     m_glWidget->stopTimerEvent();
@@ -682,6 +653,7 @@ void QtWindow::open()
         m_settings->openSongFile(fileName);
         setCurrentFile(fileName);
     }
+    m_song->flushMidiInput();
     m_glWidget->startTimerEvent();
 }
 
@@ -709,7 +681,6 @@ void QtWindow::closeEvent(QCloseEvent *event)
 
     writeSettings();
 }
-
 
 void QtWindow::keyPressEvent ( QKeyEvent * event )
 {
@@ -753,10 +724,11 @@ void QtWindow::loadTutorHtml(const QString & name)
         QTextStream out(&file);
         out.setCodec("UTF-8");
 
-        QString htmlheader = "<head><style>body {background-color:#FFFFC0;color: black}p{font-size: 18px;} #hint{color: #ff0000;}</style></head>";
-
-        QString text = htmlheader + out.readAll();
-        m_tutorWindow->setHtml(text.toUtf8().data());
+        QString htmlStart = "<head><style> body{background-color:#FFFFC0;color: black} p{font-size: 18px;} blockquote{color: #ff0000;}</style></head><body>";
+        QString htmlBody = out.readAll();
+        QString htmlEnd = "</body>";
+        QString htmlText = htmlStart + htmlBody + htmlEnd;
+        m_tutorWindow->setHtml(htmlText.toUtf8().data());
 
         // TODO get this working again on small screens
         //_tutorWindow->setFixedHeight(130);
@@ -771,8 +743,8 @@ void QtWindow::loadTutorHtml(const QString & name)
 
 void QtWindow::refreshTranslate(){
 #ifndef NO_LANGS
-
-    QString locale = m_settings->value("General/lang",QLocale::system().bcp47Name()).toString();
+    QString appImagePath = qgetenv("APPIMAGE");
+    QString locale = m_settings->selectedLangauge();
 
     qApp->removeTranslator(&translator);
     qApp->removeTranslator(&translatorMusic);
@@ -806,10 +778,10 @@ void QtWindow::refreshTranslate(){
     QFile fileTestLocale(translationsDir);
     if (!fileTestLocale.exists()){
  #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-        translationsDir=QString(PREFIX)+"/"+QString(DATA_DIR)+"/translations/";
+        translationsDir=Util::dataDir()+"/translations/";
  #endif
  #ifdef Q_OS_DARWIN
-        QApplication::applicationDirPath() + "/../Resources/translations/";
+        translationsDir=QApplication::applicationDirPath() + "/../Resources/translations/";
  #endif
     }
     ppLogInfo("Translations loaded from '%s'",  qPrintable(translationsDir));
@@ -825,15 +797,13 @@ void QtWindow::refreshTranslate(){
            translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translatorMusic);
 
-
     // set translator for default widget's text (for example: QMessageBox's buttons)
 #ifdef __WIN32
-    qtTranslator.load("qt_"+locale,translationsDir);
+    qtTranslator.load("qt_"+locale, translationsDir);
 #else
-    qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qtTranslator.load("qt_"+locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
     qApp->installTranslator(&qtTranslator);
-
 
     // retranslate UI
     QList<QWidget*> l2 = this->findChildren<QWidget *>();

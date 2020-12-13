@@ -28,39 +28,53 @@
 
 #include "MidiDeviceRt.h"
 
-
 CMidiDeviceRt::CMidiDeviceRt()
 {
-    try {
-        m_midiout = new RtMidiOut();
-    }
-    catch(RtMidiError &error){
-        error.printMessage();
-        exit(1);
-    }
-
-    try {
-        m_midiin = new RtMidiIn();
-    }
-    catch(RtMidiError &error){
-        error.printMessage();
-        exit(1);
-    }
-
-
+    m_validConnection = false;
+    m_midiout = nullptr;
+    m_midiin = nullptr;
     m_midiPorts[0] = -1;
     m_midiPorts[1] = -1;
     m_rawDataIndex = 0;
+    init();
 }
 
 CMidiDeviceRt::~CMidiDeviceRt()
 {
-    delete m_midiout;
-    delete m_midiin;
+    if (m_midiout!=nullptr) { delete m_midiout; }
+    if (m_midiin!=nullptr) {delete m_midiin; }
 }
 
 void CMidiDeviceRt::init()
 {
+    if (m_midiin == nullptr || m_midiout == nullptr) {
+        m_midiPorts[0] = -1;
+        m_midiPorts[1] = -1;
+        m_rawDataIndex = 0;
+        if (m_midiout!=nullptr) {
+            delete m_midiout;
+            m_midiout = nullptr;
+        }
+        try {
+            m_midiout = new RtMidiOut();
+        }
+        catch(RtMidiError &error){
+            error.printMessage();
+            return;
+        }
+
+        if (m_midiin!=nullptr) {
+            delete m_midiin;
+            m_midiin = nullptr;
+        }
+        try {
+            m_midiin = new RtMidiIn();
+        }
+        catch(RtMidiError &error){
+            error.printMessage();
+            return;
+        }
+    }
 }
 
 QString CMidiDeviceRt::addIndexToString(QString name, int index)
@@ -74,10 +88,15 @@ QString CMidiDeviceRt::addIndexToString(QString name, int index)
 }
 QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
 {
+    init();
+    QStringList portNameList;
+    if (m_midiin == nullptr || m_midiout == nullptr) {
+        return portNameList;
+    }
+
     unsigned int nPorts;
     QString name;
     RtMidi* midiDevice;
-    QStringList portNameList;
 
     if (type == MIDI_INPUT)
         midiDevice = m_midiin;
@@ -97,16 +116,19 @@ QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
          portNameList << name;
     }
 
-
     return portNameList;
 }
 
 bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
 {
+    init();
+    if (m_midiin == nullptr || m_midiout == nullptr) {
+        return false;
+    }
+
     unsigned int nPorts;
     QString name;
     RtMidi* midiDevice;
-
 
     if (portName.length() == 0)
         return false;
@@ -138,6 +160,7 @@ bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
             m_rawDataIndex = 0;
 
             midiDevice->openPort( i );
+            m_validConnection = true;
             return true;
         }
     }
@@ -146,12 +169,12 @@ bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
 
 void CMidiDeviceRt::closeMidiPort(midiType_t type, int index)
 {
+    m_validConnection = false;
     if (type == MIDI_INPUT)
         m_midiin->closePort();
     else
         m_midiout->closePort();
 }
-
 
 //! add a midi event to be played immediately
 void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
@@ -218,21 +241,34 @@ void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
 
         default:
             return;
-            break;
-    }
 
-    m_midiout->sendMessage( &message );
+    }
+    try {
+        m_midiout->sendMessage( &message );
+    }
+    catch(RtMidiError &error){
+        error.printMessage();
+        m_validConnection = false;
+    }
 
     //event.printDetails(); // useful for debugging
 }
-
 
 // Return the number of events waiting to be read from the midi device
 int CMidiDeviceRt::checkMidiInput()
 {
     if (m_midiPorts[0] < 0)
         return 0;
-    m_midiin->getMessage( &m_inputMessage );
+
+    try {
+        m_stamp = m_midiin->getMessage( &m_inputMessage );
+    }
+    catch(RtMidiError &error){
+        error.printMessage();
+        m_validConnection = false;
+        return 0;
+    }
+
     return m_inputMessage.size();
 }
 
@@ -242,14 +278,13 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
     CMidiEvent midiEvent;
     unsigned int channel;
 
-
     if (Cfg::midiInputDump)
     {
         QString str;
 
         for (unsigned int i = 0; i < m_inputMessage.size(); i++)
             str += " 0x" + QString::number(m_inputMessage[i], 16) + ',';
-        ppLogInfo("midi input %s", qPrintable(str));
+        ppLogInfo("midi input %f : %s", m_stamp, qPrintable(str));
     }
 
     channel = m_inputMessage[0] & 0x0f;
@@ -267,10 +302,7 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
         break;
 
     case MIDI_NOTE_PRESSURE: //MIDI_CMD_NOTE_PRESSURE: //POLY_AFTERTOUCH:
-        // fixme fill in the blanks
-        //midi_input_bytes[midi_input_length++] = channel | MIDI_CMD_NOTE_PRESSURE;
-        //midi_input_bytes[midi_input_length++] = ev->data.note.note;
-        //midi_input_bytes[midi_input_length++] = ev->data.note.velocity;
+        midiEvent.notePressure(0, channel, m_inputMessage[1], m_inputMessage[2]);
         break;
 
     case MIDI_CONTROL_CHANGE:  //CONTROL_CHANGE:
@@ -278,26 +310,21 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
         break;
 
     case MIDI_PROGRAM_CHANGE: //PROGRAM_CHANGE:
-        //midiEvent.programChangeEvent(0, ev->data.control.channel, ev->data.control.value);
+        midiEvent.programChangeEvent(0, channel, m_inputMessage[1]);
         break;
 
     case MIDI_CHANNEL_PRESSURE: //AFTERTOUCH:
-        // fixme fill in the blanks
-        //midi_input_bytes[midi_input_length++] = ev->data.control.channel | MIDI_CMD_CHANNEL_PRESSURE;
-        //midi_input_bytes[midi_input_length++] = ev->data.control.value;
+        midiEvent.channelPressure(0, channel, m_inputMessage[1]);
         break;
 
     case MIDI_PITCH_BEND: //PITCH_BEND:
-        // fixme fill in the blanks
-        //midi_input_bytes[midi_input_length++] = ev->data.control.channel | MIDI_CMD_CHANNEL_PRESSURE;
-        //midi_input_bytes[midi_input_length++] = ev->data.control.value;
+        midiEvent.pitchBendEvent(0, channel, m_inputMessage[1], m_inputMessage[2]);
         break;
     }
 
     m_inputMessage.clear();
     return midiEvent;
 }
-
 
 int CMidiDeviceRt::midiSettingsSetStr(QString name, QString str)
 {

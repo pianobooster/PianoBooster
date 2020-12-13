@@ -26,12 +26,10 @@
 */
 /*********************************************************************************/
 
-
 #include "Tempo.h"
 
 int CTempo::m_cfg_followTempoAmount = 0;
 int CTempo::m_cfg_maxJumpAhead = 0;
-
 
 void CTempo::enableFollowTempo(bool enable)
 {
@@ -65,7 +63,3 @@ void CTempo::adjustTempo(int * ticks)
         m_jumpAheadDelta = 0;
     }
 }
-
-
-
-

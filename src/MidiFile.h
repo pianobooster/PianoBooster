@@ -52,6 +52,7 @@ public:
         setSize(MAX_TRACKS);
         for (i = 0; i < arraySize(m_tracks); i++)
             m_tracks[i] = 0;
+        m_numberOfTracks = 0;
     }
 
     void openMidiFile(string filename);
@@ -66,6 +67,7 @@ public:
 
     void setLogLevel(int level){CMidiTrack::setLogLevel(level);}
     midiErrors_t getMidiError() { return m_midiError;}
+    int numberOfTracks() const {return m_numberOfTracks;}
     
 private:
     bool checkMidiEventFromStream(int streamIdx);
@@ -76,6 +78,7 @@ private:
     midiErrors_t m_midiError;
     CMidiTrack* m_tracks[MAX_TRACKS];
     QString m_songTitle;
+    int m_numberOfTracks;
 };
 
 #endif // __MIDIFILE_H__

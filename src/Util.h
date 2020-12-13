@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -32,6 +32,7 @@
 #include <assert.h>
 #include <string>
 #include <QString>
+#include <QApplication>
 
 using namespace std;
 
@@ -45,13 +46,11 @@ using namespace std;
 #define MAX_MIDI_NOTES          128
 
 #define MAX_MIDI_TRACKS         32      // This will allow us to map midi track on to midi channels
-typedef unsigned char byte;
+typedef unsigned char byte_t;
 
 #define arraySize(a) (sizeof(a)/sizeof(a[0]))     /* Returns (at compile time) the number of elements in an array */
 
 #define ppDEBUG(args)     ppLogDebug args
-
-
 
 typedef enum
 {
@@ -71,7 +70,6 @@ void ppLogError(const char *msg, ...);
 void ppTiming(const char *msg, ...);
 void closeLogs();
 
-
 #define SPEED_ADJUST_FACTOR     1000
 #define deltaAdjust(delta) ((delta)/SPEED_ADJUST_FACTOR )
 
@@ -79,5 +77,9 @@ void benchMarkInit();
 void benchMark(unsigned int id, QString message);
 void benchMarkResults();
 
+class Util {
+public:
+    static QString dataDir();
+};
 
 #endif //__UTIL_H__

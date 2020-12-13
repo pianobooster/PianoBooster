@@ -29,12 +29,10 @@
 #ifndef __GUIPREFERENCESDIALOG_H__
 #define __GUIPREFERENCESDIALOG_H__
 
-
 #include <QtWidgets>
 
 #include "Song.h"
 #include "Settings.h"
-
 
 #include "ui_GuiPreferencesDialog.h"
 

@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -28,17 +28,14 @@
 
 #include "MidiDevice.h"
 #include "MidiDeviceRt.h"
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     #include "MidiDeviceFluidSynth.h"
 #endif
-
-
-
 
 CMidiDevice::CMidiDevice()
 {
     m_rtMidiDevice = new CMidiDeviceRt();
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     m_fluidSynthMidiDevice = new CMidiDeviceFluidSynth();
 #endif
     m_selectedMidiInputDevice = m_rtMidiDevice;
@@ -49,21 +46,23 @@ CMidiDevice::CMidiDevice()
 CMidiDevice::~CMidiDevice()
 {
     delete m_rtMidiDevice;
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     delete m_fluidSynthMidiDevice;
 #endif
 }
 
-
-
 void CMidiDevice::init()
 {
+#if WITH_INTERNAL_FLUIDSYNTH
+    m_fluidSynthMidiDevice->setQSettings(qsettings);
+#endif
+
 }
 
 QStringList CMidiDevice::getMidiPortList(midiType_t type)
 {
     QStringList list;
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
     list <<  m_fluidSynthMidiDevice->getMidiPortList(type);
 #endif
     list <<  m_rtMidiDevice->getMidiPortList(type);
@@ -94,7 +93,7 @@ bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
             m_validOutput = true;
             return true;
         }
-#if EXPERIMENTAL_USE_FLUIDSYNTH
+#if WITH_INTERNAL_FLUIDSYNTH
         if ( m_fluidSynthMidiDevice->openMidiPort(type, portName) )
         {
             m_selectedMidiOutputDevice = m_fluidSynthMidiDevice;
@@ -108,29 +107,27 @@ bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
 
 void CMidiDevice::closeMidiPort(midiType_t type, int index)
 {
-    if (m_selectedMidiOutputDevice == 0)
+    if (m_selectedMidiOutputDevice == nullptr)
         return;
 
     m_selectedMidiOutputDevice->closeMidiPort(type, index);
-
-    m_selectedMidiOutputDevice = 0;
+    m_selectedMidiOutputDevice = nullptr;
 }
 
 //! add a midi event to be played immediately
 void CMidiDevice::playMidiEvent(const CMidiEvent & event)
 {
-    if (m_selectedMidiOutputDevice == 0)
+    if (m_selectedMidiOutputDevice == nullptr)
         return;
 
     m_selectedMidiOutputDevice->playMidiEvent(event);
     //event.printDetails(); // useful for debugging
 }
 
-
 // Return the number of events waiting to be read from the midi device
 int CMidiDevice::checkMidiInput()
 {
-    if (m_selectedMidiInputDevice == 0)
+    if (m_selectedMidiInputDevice == nullptr)
         return 0;
 
     return m_selectedMidiInputDevice->checkMidiInput();
@@ -142,6 +139,13 @@ CMidiEvent CMidiDevice::readMidiInput()
     return m_selectedMidiInputDevice->readMidiInput();
 }
 
+bool CMidiDevice::validMidiOutput()
+{
+    if (m_validOutput) {
+        return m_selectedMidiOutputDevice->validMidiConnection();
+    }
+    return m_validOutput;
+}
 
 int CMidiDevice::midiSettingsSetStr(QString name, QString str)
 {

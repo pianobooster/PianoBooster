@@ -2,11 +2,11 @@
 /*!
 @file           Draw.cpp
 
-@brief          xxxxx.
+
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -36,6 +36,43 @@ typedef unsigned char guint8;
 
 whichPart_t CDraw::m_displayHand;
 int CDraw::m_forceCompileRedraw;
+
+CDraw::CDraw(CSettings* settings)
+#ifndef NO_USE_FTGL
+    :font(nullptr)
+#endif
+{
+#ifndef NO_USE_FTGL
+    QStringList listPathFonts;
+
+    listPathFonts.append(Util::dataDir()+"/fonts/DejaVuSans.ttf");
+    listPathFonts.append(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
+    listPathFonts.append(QApplication::applicationDirPath() + "/../Resources/fonts/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/dejavu/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/TTF/DejaVuSans.ttf");
+    listPathFonts.append("/usr/share/fonts/truetype/DejaVuSans.ttf");
+    listPathFonts.append("/usr/local/share/fonts/dejavu/DejaVuSans.ttf");
+
+    for (int i=0;i<listPathFonts.size();i++){
+        QFile file(listPathFonts.at(i));
+        if (file.exists()){
+            font = new FTBitmapFont(listPathFonts.at(i).toStdString().c_str());
+            break;
+        }
+    }
+    if (font==nullptr){
+        ppLogError("Font DejaVuSans.ttf was not found !");
+        exit(0);
+    }
+    font->FaceSize(FONT_SIZE, FONT_SIZE);
+#endif
+    m_settings = settings;
+    m_displayHand = PB_PART_both;
+    m_forceCompileRedraw = 1;
+    m_scrollProperties = &m_scrollPropertiesHorizontal;
+}
 
 void CDraw::oneLine(float x1, float y1, float x2, float y2)
 {
@@ -245,7 +282,6 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
           glEnd();
       break;
 
-
       default:
           glBegin(GL_LINES);
               glVertex2f(  3 + x,   -15  + y);  //  1
@@ -315,7 +351,6 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
 
     accidental = symbol.getStavePos().getAccidental();
 
-
     if (symbol.getAccidentalModifer() == PB_ACCIDENTAL_MODIFER_suppress)
         accidental = 0; // Suppress the accidental if it is the same bar
 
@@ -339,7 +374,6 @@ void CDraw::checkAccidental(CSymbol symbol, float x, float y)
     }
 }
 
-
 bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColor color, bool playable)
 {
     const float stemLength  = 34.0;
@@ -361,7 +395,6 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColor colo
         stemFlagCount = 2;
     else if (symbol->getType() <= PB_SYMBOL_quaver)
         stemFlagCount = 1;
-
 
     if (symbol->getType() <= PB_SYMBOL_crotchet)
         solidNoteHead = true;
@@ -784,8 +817,6 @@ void CDraw::drawSymbol(CSymbol symbol, float x)
     drawSymbol(symbol, x, symbol.getStavePos().getPosY());
 }
 
-
-
 void CDraw::drawSlot(CSlot* slot)
 {
     CStavePos stavePos;
@@ -799,7 +830,6 @@ void CDraw::drawSlot(CSlot* slot)
         drawSymbol(slot->getSymbol(i), 0.0, stavePos.getPosYRelative()); // we add this  back when drawing this symbol
     }
 }
-
 
 void CDraw::drawStaves(float startX, float endX)
 {
@@ -826,7 +856,6 @@ void CDraw::drawStaves(float startX, float endX)
     }
     glEnd();
 }
-
 
 void CDraw::drawKeySignature(int key)
 {

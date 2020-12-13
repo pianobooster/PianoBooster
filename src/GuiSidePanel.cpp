@@ -33,20 +33,16 @@
 #include "TrackList.h"
 #include "Conductor.h"
 
-
 GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     : QWidget(parent), m_parent(parent)
 {
-    m_song = 0;
-    m_score = 0;
-    m_trackList = 0;
-    m_topBar = 0;
+    m_song = nullptr;
+    m_score = nullptr;
+    m_trackList = nullptr;
+    m_topBar = nullptr;
     m_settings = settings;
     setupUi(this);
-
-
 }
-
 
 void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar)
 {
@@ -87,7 +83,6 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     on_rhythmTappingCombo_activated(m_settings->value("SidePanel/rhythmTapping",0).toInt());
     rhythmTappingCombo->setCurrentIndex(m_song->cfg_rhythmTapping);
 
-
     repeatSong->setChecked(m_settings->value("SidePanel/repeatSong",false).toBool());
     connect(repeatSong,SIGNAL(stateChanged(int)),this,SLOT(on_repeatSong_released()));
 
@@ -110,9 +105,6 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     connect(act, SIGNAL(triggered()), this, SLOT(clearTrackPart()));
 
     trackListWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
-
-
-
 }
 
 void GuiSidePanel::refresh() {
@@ -123,7 +115,6 @@ void GuiSidePanel::refresh() {
         trackListWidget->clear();
 
         trackListWidget->addItems(m_trackList->getAllChannelProgramNames());
-
 
         trackListWidget->setCurrentRow(m_trackList->getActiveItemIndex());
 
@@ -194,14 +185,11 @@ void GuiSidePanel::on_leftHandRadio_toggled (bool checked)
 
 void GuiSidePanel::on_repeatSong_released(){
     m_settings->setValue("SidePanel/repeatSong",repeatSong->isChecked());
-
 }
 
 void GuiSidePanel::autoSetMuteYourPart()
 {
-    bool checked = false;
-    if ( CNote::hasPianoPart(m_song->getActiveChannel()))
-        checked =  true;
+    bool checked = true;
     if (m_song->getPlayMode() == PB_PLAY_MODE_rhythmTapping)
     {
         if (m_song->cfg_rhythmTapping == PB_RHYTHM_TAP_drumsOnly)
@@ -264,7 +252,6 @@ void GuiSidePanel::updateTranslate(){
             listActionsRetranslateUi[w]=m;
         }
 
-
     }
 
     // retranslate UI
@@ -289,7 +276,6 @@ void GuiSidePanel::updateTranslate(){
 
     retranslateUi(this);
 
-
     // ---  smart resize panel  --- //
     int maxDeltaWidth=0;
     this->setMaximumWidth(300); // default
@@ -309,7 +295,6 @@ void GuiSidePanel::updateTranslate(){
     }
     this->setMaximumWidth(300+maxDeltaWidth);
 }
-
 
 void GuiSidePanel::on_rhythmTappingCombo_activated (int index)
 {

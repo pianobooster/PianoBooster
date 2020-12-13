@@ -2,11 +2,9 @@
 /*!
 @file           MidiDeviceRt.h
 
-@brief          xxxxxx.
-
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -29,11 +27,8 @@
 #ifndef __MIDI_DEVICE_RT_H__
 #define __MIDI_DEVICE_RT_H__
 
-
 #include "MidiDeviceBase.h"
-
 #include "rtmidi/RtMidi.h"
-
 
 class CMidiDeviceRt : public CMidiDeviceBase
 {
@@ -47,6 +42,8 @@ class CMidiDeviceRt : public CMidiDeviceBase
 
     virtual bool openMidiPort(midiType_t type, QString portName);
     virtual void closeMidiPort(midiType_t type, int index);
+
+    virtual bool validMidiConnection() {return m_validConnection;}
 
     // based on the fluid synth settings
     virtual int     midiSettingsSetStr(QString name, QString str);
@@ -66,6 +63,8 @@ private:
     RtMidiOut *m_midiout;
     RtMidiIn *m_midiin;
 
+    double m_stamp;
+
     // 0 for input, 1 for output
     int m_midiPorts[2];      // select which MIDI output port to open
     std::vector<unsigned char> m_inputMessage;
@@ -74,6 +73,8 @@ private:
 
     // kotechnology added function to create indexed string. Format: "1 - Example"
     QString addIndexToString(QString name, int index);
+
+    bool m_validConnection;
 };
 
 #endif //__MIDI_DEVICE_RT_H__

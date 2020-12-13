@@ -1,0 +1,123 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  linux-build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install build-essential cmake pkg-config libftgl-dev qtbase5-dev qttools5-dev librtmidi-dev fluid-soundfont-gm libfluidsynth-dev
+      - name: Install linuxdeploy
+        run: |
+          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x linuxdeploy*.AppImage
+      - name: Define variables
+        run: |
+          pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
+          pb_app_name="PianoBooster-${pb_ver}-x86_64"
+          echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}"
+
+      - name: Build
+        env:
+          pb_app_name: ${{ env.PB_APP_NAME }}
+        run: |
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+          make -j$(nproc)
+          make install DESTDIR=AppDir
+          # Package
+          export QT_SELECT=5
+          export QML_SOURCES_PATHS="${GITHUB_WORKSPACE}"/src
+          # initialize AppDir, bundle shared libraries for PianoBooster, use Qt plugin to bundle additional resources, and build AppImage, all in one single command
+          ../linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
+          find .
+          echo "Done!"
+          chmod +x *AppImage
+          mv *AppImage ../${pb_app_name}.AppImage
+          cd ..
+          ls -lh ${pb_app_name}.AppImage
+          md5sum ${pb_app_name}.AppImage >checksum.txt
+          cat checksum.txt
+      - name: Upload Linux Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: pianobooster-${{ env.PB_VERSION }}-linux
+          path: |
+             ${{ env.PB_APP_NAME }}.AppImage
+             checksum.txt
+
+  macos-build:
+    runs-on: macos-10.15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Install dependencies
+        run: |
+          brew update || brew update
+          brew uninstall openssl@1.0.2t
+          rm -rf /usr/local/etc/openssl
+          rm -rf /usr/local/etc/openssl@1.1
+          brew upgrade
+          brew install cmake qt5 ftgl pkg-config fluid-synth
+      - name: Define variables
+        run: |
+          pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
+          pb_app_name="PianoBooster-${pb_ver}"
+          echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
+          echo "PB_APP_NAME=${pb_app_name}"
+      - name: Build
+        env:
+          pb_app_name: ${{ env.PB_APP_NAME }}
+        run: |
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt)"
+          make
+          make install-translations
+          $(brew --prefix qt)/bin/macdeployqt build/pianobooster.app -dmg
+          find .
+          echo "Done!"
+          mv build/*dmg ../${pb_app_name}.dmg
+          cd ..
+          ls -lh ${pb_app_name}.dmg
+          md5 -r ${pb_app_name}.dmg > checksum.txt
+          cat checksum.txt
+      - name: Upload Mac Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: pianobooster-${{ env.PB_VERSION }}-macos
+          path: |
+            ${{ env.PB_APP_NAME }}.dmg
+            checksum.txt
+
+
+#  windows-build:
+#    runs-on: windows-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2.0.0
+#      - name: Install dependencies
+#        uses: lukka/run-vcpkg@v4
+#        with:
+#          vcpkgDirectory: ${{ github.workspace }}/vcpkg
+#          vcpkgArguments: fluidsynth qt5-base qt5-tools freetype ftgl
+#          vcpkgGitUrl: 'https://github.com/microsoft/vcpkg.git'
+#          vcpkgGitCommitId: '56fffbe49dfb4dd8fae0940f272c5fd2b86be991'
+#          vcpkgTriplet: x64-windows
+#      - name:
+#        run: |
+#          mkdir build
+#          cd build
+#          cmake .. -DWITH_INTERNAL_FLUIDSYNTH=OFF -DCMAKE_TOOLCHAIN_FILE="${GITHUB_WORKSPACE}"/vcpkg/scripts/buildsystems/vcpkg.cmake
+#          cmake --build .
+#          find .
+#        shell: bash
+#

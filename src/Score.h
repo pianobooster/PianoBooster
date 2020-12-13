@@ -26,15 +26,12 @@
 */
 /*********************************************************************************/
 
-
-
 #ifndef _SCORE_H_
 #define _SCORE_H_
 
 #include "Scroll.h"
 #include "Piano.h"
 #include "Settings.h"
-
 
 class CScore : public CDraw
 {
@@ -108,7 +105,6 @@ public:
             m_scroll[m_activeScroll]->setPlayedNoteColor(note, color, wantedDelta, pianistTimming);
     }
 
-
     void setActiveChannel(int channel)
     {
         int newActiveSroll;
@@ -132,7 +128,6 @@ public:
             m_scroll[m_activeScroll]->refresh();
     }
 
-
     void setDisplayHand(whichPart_t hand)
     {
         CDraw::setDisplayHand(hand);
@@ -145,7 +140,6 @@ public:
 
 protected:
     CPiano* m_piano;
-
 
 private:
     CRating* m_rating;

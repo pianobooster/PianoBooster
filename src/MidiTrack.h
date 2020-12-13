@@ -36,8 +36,6 @@
 
 using namespace std;
 
-
-
 typedef enum
 {
     SMF_NO_ERROR,
@@ -47,8 +45,6 @@ typedef enum
     SMF_ERROR_TOO_MANY_TRACK,
     SMF_END_OF_FILE
 } midiErrors_t;
-
-
 
 typedef unsigned char byte_t;
 typedef unsigned short word_t;
@@ -82,15 +78,15 @@ public:
     midiErrors_t getMidiError() { return m_midiError;}
 
     int length() {return m_trackEventQueue->length();}
-    CMidiEvent pop() {
+    CMidiEvent pop(int trackNo) {
         CMidiEvent m = m_trackEventQueue->pop();
+        m.setTrack(trackNo);
         m.printDetails();
         return m;
     }
     QString getTrackName() {return m_trackName;}
 
     static void setLogLevel(int level){m_logLevel = level;}
-
 
 private:
     void errorFail(midiErrors_t error)
@@ -103,7 +99,6 @@ private:
         }
     }
     void midiFailReset() { m_midiError = SMF_NO_ERROR;}
-
 
     void ppDebugTrack(int level, const char *msg, ...);
 
@@ -122,7 +117,6 @@ private:
             c = 0;
         return c;
     }
-
 
     word_t readWord(void)
     {
@@ -155,7 +149,6 @@ private:
 
     void decodeSystemMessage( byte_t status, byte_t data1 );
     void noteOffEvent(CMidiEvent &event,  int deltaTime, int channel, int pitch, int velocity);
-
 
     void createNoteEventPtr(int channel)
     {

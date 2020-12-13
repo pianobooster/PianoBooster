@@ -33,7 +33,6 @@
 #include "Cfg.h"
 #include "StavePosition.h"
 
-
 typedef enum
 {
     PB_SYMBOL_none,
@@ -49,7 +48,6 @@ typedef enum
     PB_SYMBOL_playingZone,
     PB_SYMBOL_theEndMarker,
 
-
     PB_SYMBOL_noteHead,             // ONLY ADD NOTES BELOW THIS MAKER
     PB_SYMBOL_demisemiquaver,       // Demisemiquaver / Thirty-second note
     PB_SYMBOL_semiquaver,           // Semiquaver / Sixteenth note
@@ -60,7 +58,6 @@ typedef enum
     PB_SYMBOL_breve,                // Breve / Double whole note
 
 } musicalSymbol_t;
-
 
 typedef enum {
     PB_ACCIDENTAL_MODIFER_noChange,
@@ -99,8 +96,6 @@ public:
         m_color = color;
         m_hand = stavePos.getHand();
     }
-
-
 
     ////////////////////////////////////////////////////////////////////////////////
     //@brief Get the type of symbol
@@ -160,10 +155,8 @@ public:
         return getStavePos().getAccidental();
     }
 
-
     void setAccidentalModifer(accidentalModifer_t value) {m_accidentalModifer = value;}
     accidentalModifer_t getAccidentalModifer() {return m_accidentalModifer;}
-
 
 private:
     void init()
@@ -179,7 +172,7 @@ private:
 
     CStavePos m_stavePos;
     musicalSymbol_t m_symbolType;
-    byte m_midiNote;
+    byte_t m_midiNote;
     accidentalModifer_t m_accidentalModifer; // Used to suppress the second sharp in the same bar
     int m_midiDuration;
     whichPart_t m_hand;
@@ -190,8 +183,4 @@ private:
     int m_total;  // the number of the notes per hand;
 };
 
-
-
-
 #endif // _SYMBOL_H_
-

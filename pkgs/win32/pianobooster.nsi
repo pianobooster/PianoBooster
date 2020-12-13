@@ -8,6 +8,34 @@
     !include "MUI2.nsh"
 
 ;--------------------------------
+;Defines
+
+    !cd "..\..\"
+
+    !define PB_BUILT_DIR "release\build"
+    !if ! /FileExists "${PB_BUILT_DIR}\pianobooster.exe"
+        !error "the release file '${PB_BUILT_DIR}\pianobooster.exe' not found"
+    !endif
+
+
+    ; The Env PB_INSTALL_FILES_PATH must be set to the path of all the addition release files
+    ; trick to see if at compile time an environment variable exists
+    ; see https://stackoverflow.com/questions/22149007/nsis-how-to-check-at-compile-time-if-an-environment-variable-exists
+    !if "$%PB_INSTALL_FILES_PATH%" == "${U+24}%PB_INSTALL_FILES_PATH%"
+        !error "the environmental variable PB_INSTALL_FILES_PATH is not set"
+    !endif
+
+    ; Put file there
+
+    !define FILES_FOR_RELEASE $%PB_INSTALL_FILES_PATH%
+    !echo "The FILES_FOR_RELEASE path is ${FILES_FOR_RELEASE}"
+
+    !if ! /FileExists "${FILES_FOR_RELEASE}\Qt5Core.dll"
+        !error "File '${FILES_FOR_RELEASE}\Qt5Core.dll' not found"
+   !endif
+
+
+;--------------------------------
 ;General
 
     ; The name of the installer
@@ -30,7 +58,7 @@
 ;--------------------------------
 ;Variables
 
-  Var StartMenuFolder
+    Var StartMenuFolder
 
 ;--------------------------------
 ;Interface Settings
@@ -125,46 +153,39 @@
     !insertmacro MUI_LANGUAGE "Ukrainian"
     !insertmacro MUI_LANGUAGE "Uzbek"
     !insertmacro MUI_LANGUAGE "Vietnamese"
-    !insertmacro MUI_LANGUAGE "Welsh" 
+    !insertmacro MUI_LANGUAGE "Welsh"
 ;--------------------------------
 ;Installer Sections
 
 Section "Install Section"
 
+
     SetOutPath "$INSTDIR"
 
-    ; Put file there
-    File FilesForRelease\pianobooster.exe
-    File FilesForRelease\*.dll
+    SetOutPath $INSTDIR
+    File "${PB_BUILT_DIR}\pianobooster.exe"
+    File /r "${FILES_FOR_RELEASE}\*.*"
 
 
-    CreateDirectory $INSTDIR\fonts
-    SetOutPath $INSTDIR\fonts
-    File FilesForRelease\fonts\DejaVuSans.ttf
-
-    CreateDirectory $INSTDIR\music
-    SetOutPath $INSTDIR\music
-    File FilesForRelease\music\BoosterMusicBooks.zip
-
-    CreateDirectory $INSTDIR\platforms
-    SetOutPath $INSTDIR\platforms
-    File FilesForRelease\platforms\*.dll
 
     CreateDirectory $INSTDIR\translations
     SetOutPath $INSTDIR\translations
-    File FilesForRelease\translations\*.*
+    File "${PB_BUILT_DIR}\translations\*.qm"
+    File "${PB_BUILT_DIR}\translations\langs.json"
 
+    CreateDirectory $INSTDIR\fonts
+    SetOutPath $INSTDIR\fonts
+    File "${PB_BUILT_DIR}\fonts\*.ttf"
+    
     CreateDirectory $INSTDIR\doc
     SetOutPath $INSTDIR\doc
-    File FilesForRelease\README.md
-    File FilesForRelease\Changelog.txt
-    File FilesForRelease\doc\faq.md
-    File FilesForRelease\license.txt
-    File FilesForRelease\gplv3.txt
+    File license.txt
+    File gplv3.txt
 
     CreateDirectory "$DOCUMENTS\My Music"
     SetOutPath "$DOCUMENTS\My Music"
-    File /r FilesForRelease\BoosterMusicBooks3
+    ; Temporary fix
+    File /r "${PB_BUILT_DIR}\BoosterMusicBooks\BoosterMusicBooks4"
 
     SetOutPath $INSTDIR
 
@@ -179,9 +200,6 @@ Section "Install Section"
         ;Create shortcuts
         CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Piano Booster.lnk" "$INSTDIR\pianobooster.exe" "" "$INSTDIR\pianobooster.exe" 0
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\ReadMe.lnk" "$INSTDIR\doc\ReadMe.md" "" "$INSTDIR\doc\ReadMe.md" 0
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\ReleaseNotes.lnk" "$INSTDIR\doc\Changelog.txt" "" "$INSTDIR\doc\Changelog.txt" 0
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\FAQ.lnk" "$INSTDIR\doc\faq.md" "" "$INSTDIR\doc\faq.md" 0
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
 
     !insertmacro MUI_STARTMENU_WRITE_END
@@ -206,28 +224,7 @@ Section "Uninstall"
 
 
     ; Remove files and uninstaller
-    Delete $INSTDIR\*.*
-    Delete $INSTDIR\doc\README.md
-    Delete $INSTDIR\doc\Changelog.txt
-    Delete $INSTDIR\doc\faq.md
-    Delete $INSTDIR\doc\license.txt
-    Delete $INSTDIR\doc\gplv3.txt
-    RMDir "$INSTDIR\doc"
-
-    Delete $INSTDIR\fonts\*.*
-    RMDir "$INSTDIR\fonts"
-
-    Delete $INSTDIR\music\*.*
-    RMDir "$INSTDIR\music"
-
-    Delete $INSTDIR\platforms\*.*
-    RMDir "$INSTDIR\platforms"
-
-    Delete $INSTDIR\translations\*.*
-    RMDir "$INSTDIR\translations"
-
-    Delete $INSTDIR\uninstall.exe
-    RMDir "$INSTDIR"
+    RMDir /r "$INSTDIR"
 
     !insertmacro MUI_STARTMENU_GETFOLDER Application $StartMenuFolder
 

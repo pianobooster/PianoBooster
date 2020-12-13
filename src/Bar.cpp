@@ -35,7 +35,6 @@
 #define ppDEBUG_BAR(args)
 #endif
 
-
 void CBar::setTimeSig(int top, int bottom)
 {
     m_currentTimeSigTop = top;
@@ -110,7 +109,6 @@ void CBar::checkGotoBar()
             m_eventBits |= EVENT_BITS_UptoBarReached;
     }
 }
-
 
 void CBar::setPlayFromBar(double bar)
 {

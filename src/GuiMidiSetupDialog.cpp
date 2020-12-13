@@ -5,7 +5,7 @@
 
     @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -28,18 +28,21 @@
 
 #include "GuiMidiSetupDialog.h"
 
+#if WITH_INTERNAL_FLUIDSYNTH
+#include "MidiDeviceFluidSynth.h"
+#endif
 
 GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     : QDialog(parent)
 {
-    m_song = 0;
-    m_settings = 0;
+    m_song = nullptr;
+    m_settings = nullptr;
     setupUi(this);
     m_latencyFix = 0;
     m_latencyChanged = false;
     midiSetupTabWidget->setCurrentIndex(0);
 
-#ifndef EXPERIMENTAL_USE_FLUIDSYNTH
+#ifndef WITH_INTERNAL_FLUIDSYNTH
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
 
@@ -53,67 +56,86 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     // Check inputs.
     QString portName;
-    int i = 0;
 
     m_latencyFix = m_song->getLatencyFix();
 
-    midiInputCombo->addItem(tr("None (PC Keyboard)"));
+    refreshMidiInputCombo();
+    refreshMidiOutputCombo();
+#if WITH_INTERNAL_FLUIDSYNTH
+    masterGainSpin->setValue(FLUID_DEFAULT_GAIN);
+#endif
+    reverbCheck->setChecked(false);
+    chorusCheck->setChecked(false);
 
-    midiInputCombo->addItems(song->getMidiPortList(CMidiDevice::MIDI_INPUT));
-
-
-    // Check outputs.
-    midiOutputCombo->addItem(tr("None"));
-    midiOutputCombo->addItems(song->getMidiPortList(CMidiDevice::MIDI_OUTPUT));
-    i = midiInputCombo->findText(m_settings->value("Midi/Input").toString());
-    if (i!=-1)
-        midiInputCombo->setCurrentIndex(i);
-    i = midiOutputCombo->findText(m_settings->value("Midi/Output").toString());
-    if (i!=-1)
-        midiOutputCombo->setCurrentIndex(i);
-
-    sampleRateCombo->addItem("44100");
-    sampleRateCombo->addItem("22050");
-    sampleRateCombo->setValidator(new QIntValidator(0, 999999, this));
+    sampleRateCombo->addItems({"22050", "44100","48000", "88200","96000"});
+    sampleRateCombo->setValidator(new QIntValidator(22050, 96000, this));
+    bufferSizeCombo->addItems({"64", "128", "512", "1024", "2024", "4096","8192"});
+    bufferSizeCombo->setValidator(new QIntValidator(64, 8192, this));
+    bufferSizeCombo->setCurrentIndex(1);
+    bufferCountCombo->addItems({"2","4", "8","16", "32", "64"});
+    bufferCountCombo->setValidator(new QIntValidator(2, 64, this));
+    bufferCountCombo->setCurrentIndex(1);
 
     updateMidiInfoText();
 
     audioDriverCombo->clear();
-    audioDriverCombo->addItem("");
-    audioDriverCombo->addItem("alsa");
-    audioDriverCombo->addItem("file");
-    audioDriverCombo->addItem("jack");
-    audioDriverCombo->addItem("oss");
-    audioDriverCombo->addItem("portaudio");
-    audioDriverCombo->addItem("pulseaudio");
 
-    setDefaultFluidSynth();
+#if defined (Q_OS_LINUX)
+    audioDriverCombo->addItems({"pulseaudio", "alsa"});
+#elif defined (Q_OS_UNIX) || defined (Q_OS_DARWIN)
+    audioDriverCombo->addItems({"pulseaudio"});
+#endif
 
-    connect(audioDriverCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(on_audioDriverCombo_currentIndexChanged(int)));
-
-    if (m_settings->getFluidSoundFontNames().size()!=0){
-        masterGainSpin->setValue(m_settings->value("FluidSynth/masterGainSpin","0.2").toDouble());
-        bufferSizeSpin->setValue(m_settings->value("FluidSynth/bufferSizeSpin","").toInt());
-        bufferCountsSpin->setValue(m_settings->value("FluidSynth/bufferCountsSpin","").toInt());
+    if (m_settings->getFluidSoundFontNames().size()>0){
+        masterGainSpin->setValue(m_settings->value("FluidSynth/masterGainSpin","40").toInt());
         reverbCheck->setChecked(m_settings->value("FluidSynth/reverbCheck","false").toBool());
         chorusCheck->setChecked(m_settings->value("FluidSynth/chorusCheck","false").toBool());
+        setComboFromSetting(audioDriverCombo, "FluidSynth/audioDriverCombo","pulseaudio");
+        setComboFromSetting(sampleRateCombo, "FluidSynth/sampleRateCombo","22050");
+        setComboFromSetting(bufferSizeCombo, "FluidSynth/bufferSizeCombo","128");
+        setComboFromSetting(bufferCountCombo, "FluidSynth/bufferCountCombo","4");
+     }
 
-        audioDeviceLineEdit->setText(m_settings->value("FluidSynth/audioDeviceLineEdit","").toString());
-        for (int i=0;i<audioDriverCombo->count();i++){
-            if (audioDriverCombo->itemText(i)==m_settings->value("FluidSynth/audioDriverCombo","").toString()){
-                audioDriverCombo->setCurrentIndex(i);
-                break;
-            }
-        }
-        sampleRateCombo->setCurrentText(m_settings->value("FluidSynth/sampleRateCombo").toString());
+    updateFluidInfoStatus();
+}
+
+void GuiMidiSetupDialog::setComboFromSetting(QComboBox *combo, const QString &key, const QVariant &defaultValue) {
+    QString value = m_settings->value(key, defaultValue).toString();
+    int index = combo->findText(value);
+
+    if ( index != -1 ) { // -1 for not found
+        combo->setCurrentIndex(index);
+    } else {
+        combo->setCurrentText(value);
     }
+}
 
-    updateFluidInfoText();
+void GuiMidiSetupDialog::refreshMidiInputCombo()
+{
+    int i = 0;
+    midiInputCombo->clear();
+    midiInputCombo->addItem(tr("None (PC Keyboard)"));
+    midiInputCombo->addItems(m_song->getMidiPortList(CMidiDevice::MIDI_INPUT));
+    i = midiInputCombo->findText(m_settings->value("Midi/Input").toString());
+    if (i!=-1)
+        midiInputCombo->setCurrentIndex(i);
+}
+
+void GuiMidiSetupDialog::refreshMidiOutputCombo()
+{
+    int i = 0;
+
+    // Check outputs.
+    midiOutputCombo->clear();
+    midiOutputCombo->addItem(tr("None"));
+    midiOutputCombo->addItems(m_song->getMidiPortList(CMidiDevice::MIDI_OUTPUT));
+    i = midiOutputCombo->findText(m_settings->value("Midi/Output").toString());
+    if (i!=-1)
+        midiOutputCombo->setCurrentIndex(i);
 }
 
 void GuiMidiSetupDialog::updateMidiInfoText()
 {
-
     midiInfoText->clear();
 
     if (midiInputCombo->currentIndex() == 0)
@@ -128,14 +150,14 @@ void GuiMidiSetupDialog::updateMidiInfoText()
     else if (midiOutputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
     else if (midiOutputCombo->currentText().contains("Microsoft GS Wavetable", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!.") + "\n"
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!") + "\n"
                                 + tr("(Try a latency fix of 150msc)") + "</span>");
     else
         midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device:") + " " + midiOutputCombo->currentText() +"</span>");
 
     latencyFixLabel->setText(tr("%1 mSec").arg(m_latencyFix));
 
-    updateFluidInfoText();
+    updateFluidInfoStatus();
 }
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
@@ -168,9 +190,23 @@ void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
     }
 }
 
-
 void GuiMidiSetupDialog::accept()
 {
+    // save FluidSynth settings
+    if (m_settings->getFluidSoundFontNames().size()==0){
+        m_settings->remove("FluidSynth");
+    }else{
+        m_settings->setValue("FluidSynth/masterGainSpin",masterGainSpin->value());
+        m_settings->setValue("FluidSynth/bufferSizeCombo", bufferSizeCombo->currentText());
+        m_settings->setValue("FluidSynth/bufferCountCombo", bufferCountCombo->currentText());
+        m_settings->setValue("FluidSynth/reverbCheck",reverbCheck->isChecked());
+        m_settings->setValue("FluidSynth/chorusCheck",chorusCheck->isChecked());
+        m_settings->setValue("FluidSynth/audioDriverCombo",audioDriverCombo->currentText());
+        m_settings->setValue("FluidSynth/sampleRateCombo",sampleRateCombo->currentText());
+    }
+
+    m_settings->saveSoundFontSettings();
+
     m_settings->setValue("Midi/Input", midiInputCombo->currentText());
     m_song->openMidiPort(CMidiDevice::MIDI_INPUT, midiInputCombo->currentText() );
     if (midiInputCombo->currentText().startsWith(tr("None")))
@@ -210,132 +246,83 @@ void GuiMidiSetupDialog::accept()
         m_latencyChanged = false;
     }
 
-
-
-    // save FluidSynth settings
-    if (m_settings->getFluidSoundFontNames().size()==0){
-        m_settings->remove("FluidSynth");
-    }else{
-        m_settings->setValue("FluidSynth/masterGainSpin",QString::number(masterGainSpin->value(),'f',2));
-        m_settings->setValue("FluidSynth/bufferSizeSpin",bufferSizeSpin->value());
-        m_settings->setValue("FluidSynth/bufferCountsSpin",bufferCountsSpin->value());
-        m_settings->setValue("FluidSynth/reverbCheck",reverbCheck->isChecked());
-        m_settings->setValue("FluidSynth/chorusCheck",chorusCheck->isChecked());
-        m_settings->setValue("FluidSynth/audioDriverCombo",audioDriverCombo->currentText());
-        if (audioDriverCombo->currentText()=="alsa"){
-            m_settings->setValue("FluidSynth/audioDeviceLineEdit",audioDeviceLineEdit->text());
-        }else{
-            m_settings->setValue("FluidSynth/audioDeviceLineEdit","");
-        }
-        m_settings->setValue("FluidSynth/sampleRateCombo",sampleRateCombo->currentText());
-    }
-
     this->QDialog::accept();
 }
 
-
-void GuiMidiSetupDialog::updateFluidInfoText()
+void GuiMidiSetupDialog::updateFluidInfoStatus()
 {
     QStringList soundFontNames = m_settings->getFluidSoundFontNames();
     soundFontList->clear();
-    for (int i=0; i < soundFontNames.count(); i++)
+    if (!m_settings->getFluidSoundFontNames().isEmpty())
     {
-        int n = soundFontNames.at(i).lastIndexOf("/");
-        soundFontList->addItem(soundFontNames.at(i).mid(n+1));
+        QFileInfo fileInfo = QFileInfo(m_settings->getFluidSoundFontNames().at(0));
+        if (fileInfo.exists())
+        {
+            soundFontList->addItem(fileInfo.fileName());
+        }
     }
 
-
     bool fontLoaded = (soundFontList->count() > 0) ? true : false;
-    fluidRemoveButton->setEnabled(fontLoaded);
+    fluidClearButton->setEnabled(fontLoaded);
 
-    fluidAddButton->setEnabled(soundFontList->count() < 2 ? true : false);
+    fluidLoadButton->setEnabled(soundFontList->count() < 2 ? true : false);
 
     fluidSettingsGroupBox->setEnabled(fontLoaded);
 }
 
-void GuiMidiSetupDialog::setDefaultFluidSynth(){
-    masterGainSpin->setValue(0.4);
-    bufferSizeSpin->setValue(128);
-    bufferCountsSpin->setValue(6);
-    reverbCheck->setChecked(false);
-    chorusCheck->setChecked(false);
-    #if defined (Q_OS_UNIX) || defined (Q_OS_DARWIN)
-    audioDriverCombo->setCurrentIndex(3);
-    audioDeviceLineEdit->setText("");
-    #endif
-    #if defined (Q_OS_LINUX)
-    audioDriverCombo->setCurrentIndex(1);
-    audioDeviceLineEdit->setText("plughw:0");
-    #endif
-    sampleRateCombo->setCurrentIndex(0);
-
-}
-
-
-void GuiMidiSetupDialog::on_fluidAddButton_clicked ( bool checked )
+void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
 {
-    QStringList possibleSoundFontFolders;
+#if WITH_INTERNAL_FLUIDSYNTH
+    QString lastSoundFont = m_settings->value("LastSoundFontDir","").toString();
+
+     if (lastSoundFont.isEmpty()) {
+
+        lastSoundFont = QDir::homePath();
+
+        QStringList possibleSoundFontFolders;
 #if defined (Q_OS_LINUX) || defined (Q_OS_UNIX)
-    possibleSoundFontFolders.push_back("/usr/share/soundfonts");
-    possibleSoundFontFolders.push_back("/usr/share/sounds/sf2");
+        possibleSoundFontFolders.push_back("/usr/share/soundfonts");
+        possibleSoundFontFolders.push_back("/usr/share/sounds/sf2");
 #endif
-
-    QString lastSoundFont = QDir::homePath();
-
-    for (QString soundFontFolder:possibleSoundFontFolders){
-        QDir dir(soundFontFolder);
-        if (dir.exists()){
-            lastSoundFont=soundFontFolder;
-            break;
+        for (QString soundFontFolder:possibleSoundFontFolders){
+            QDir dir(soundFontFolder);
+            if (dir.exists()){
+                lastSoundFont=soundFontFolder;
+                break;
+            }
         }
     }
 
+    QFileInfo soundFontInfo = QFileDialog::getOpenFileName(this, tr("Open SoundFont File for fluidsynth"),
+                            lastSoundFont, tr("SoundFont Files (*.sf2 *.sf3)"));
+    if (!soundFontInfo.isFile()) return;
 
-    QString soundFontName = QFileDialog::getOpenFileName(this,tr("Open SoundFont2 File for fluidsynth"),
-                            lastSoundFont, tr("SoundFont2 Files (*.sf2)"));
-    if (soundFontName.isEmpty()) return;
+    m_settings->setFluidSoundFontNames(soundFontInfo.filePath());
+    m_settings->setValue("LastSoundFontDir", soundFontInfo.path());
 
-    m_settings->addFluidSoundFontName(soundFontName);
-
-    updateFluidInfoText();
-
-    m_settings->setValue("FluidSynth/SoundFont2_1","");
-    m_settings->setValue("FluidSynth/SoundFont2_2","");
-    for (int i=0;i<m_settings->getFluidSoundFontNames().size();i++){
-        m_settings->setValue("FluidSynth/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
-    }}
-
-void GuiMidiSetupDialog::on_fluidRemoveButton_clicked ( bool checked ){
-    if (soundFontList->currentRow()==-1) return;
-
-    QStringList soundFontNames = m_settings->getFluidSoundFontNames();
-
-    m_settings->removeFluidSoundFontName(soundFontNames.at(soundFontList->currentRow()));
-    soundFontList->removeItemWidget(soundFontList->currentItem());
-
-    updateFluidInfoText();
-
-    m_settings->setValue("FluidSynth/SoundFont2_1","");
-    m_settings->setValue("FluidSynth/SoundFont2_2","");
-    for (int i=0;i<m_settings->getFluidSoundFontNames().size();i++){
-        m_settings->setValue("FluidSynth/SoundFont2_"+QString::number(1+i),m_settings->getFluidSoundFontNames().at(i));
+    if (m_settings->isNewSoundFontEntered())
+    {
+        int i = midiOutputCombo->findText(CMidiDeviceFluidSynth::getFluidInternalName());
+        if (i==-1)
+           midiOutputCombo->addItem(CMidiDeviceFluidSynth::getFluidInternalName());
+        i = midiOutputCombo->findText(CMidiDeviceFluidSynth::getFluidInternalName());
+        if (i!=-1)
+            midiOutputCombo->setCurrentIndex(i);
     }
-
-    if (m_settings->getFluidSoundFontNames().size()==0){
-        setDefaultFluidSynth();
-        m_settings->remove("Fluid");
-    }
-
+    updateFluidInfoStatus();
+    updateMidiInfoText();
+#endif
 }
 
-void GuiMidiSetupDialog::on_audioDriverCombo_currentIndexChanged(int index){
-    if (audioDriverCombo->currentText()=="alsa"){
-        audioDeviceLineEdit->setEnabled(true);
-        if (audioDeviceLineEdit->text().isEmpty()){
-            audioDeviceLineEdit->setText("plughw:0");
-        }
-    }else{
-        audioDeviceLineEdit->setEnabled(false);
-        audioDeviceLineEdit->setText("");
+void GuiMidiSetupDialog::on_fluidClearButton_clicked( bool checked ){
+#if WITH_INTERNAL_FLUIDSYNTH
+    m_settings->clearFluidSoundFontNames();
+    int i = midiOutputCombo->findText(CMidiDeviceFluidSynth::getFluidInternalName());
+    if (i>=0)
+    {
+       midiOutputCombo->removeItem(i);
+       midiOutputCombo->setCurrentIndex(0);
     }
+    updateFluidInfoStatus();
+#endif
 }

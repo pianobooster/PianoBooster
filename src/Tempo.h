@@ -46,7 +46,6 @@ public:
     }
     void setSavedWantedChord(CChord * savedWantedChord) { m_savedWantedChord = savedWantedChord; }
 
-
     void reset()
     {
         // 120 beats per minute is the default
@@ -89,17 +88,15 @@ public:
         if (m_cfg_maxJumpAhead != 0)
             m_jumpAheadDelta = ticks;
     }
+
     void clearPlayingTicks()
     {
         m_jumpAheadDelta = 0;
     }
 
-
     void adjustTempo(int * ticks);
 
-
     static void enableFollowTempo(bool enable);
-
 
 private:
     float m_userSpeed; // controls the speed of the piece playing
@@ -108,7 +105,6 @@ private:
     static int m_cfg_maxJumpAhead;
     static int m_cfg_followTempoAmount;
     CChord *m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts
-
 
 };
 

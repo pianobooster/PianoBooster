@@ -34,7 +34,6 @@
 #include "Song.h"
 #include "Settings.h"
 
-
 #include "ui_GuiKeyboardSetupDialog.h"
 
 class GuiKeyboardSetupDialog : public QDialog, private Ui::GuiKeyboardSetupDialog
@@ -49,7 +48,6 @@ public:
 private slots:
     void accept();
     void reject();
-
 
     void on_rightTestButton_pressed() {
         m_song->testWrongNoteSound(false);

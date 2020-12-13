@@ -26,10 +26,8 @@
 */
 /*********************************************************************************/
 
-
 #include "Notation.h"
 #include "Cfg.h"
-
 
 #define OPTION_DEBUG_NOTATION     0
 #if OPTION_DEBUG_NOTATION
@@ -37,7 +35,6 @@
 #else
 #define ppDEBUG_NOTATION(args)
 #endif
-
 
 #define MERGESLOT_NOTE_INDEX        0
 #define MERGESLOT_BEATMARK_INDEX    1
@@ -193,7 +190,7 @@ accidentalModifer_t CNotation::detectSuppressedNatural(int note)
     }
     if (pBackLink)
     {
-        pNoteState->setBackLink(0);
+        pNoteState->setBackLink(nullptr);
         pBackLink->setBarChange(-1); // this prevents further suppression on the original note
     }
 
@@ -211,7 +208,6 @@ void CNotation::setupNotationParamaters()
     cfg_param[NOTATE_minimBoundary]      = CMidiFile::ppqnAdjust(DEFAULT_PPQN*2 + 10);
     cfg_param[NOTATE_semibreveBoundary]  = CMidiFile::ppqnAdjust(DEFAULT_PPQN*4 + 10);
 }
-
 
 void CNotation::calculateScoreNoteLength()
 {

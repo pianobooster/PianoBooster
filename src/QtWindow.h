@@ -40,8 +40,6 @@
 #include "GuiLoopingPopup.h"
 #include "Settings.h"
 
-
-
 class CGLView;
 class QAction;
 class QMenu;
@@ -94,6 +92,7 @@ private slots:
         preferencesDialog.exec();
 
         refreshTranslate();
+        m_score->refreshScroll();
     }
 
     void showSongDetailsDialog()
@@ -183,7 +182,6 @@ private:
     void updateRecentFileActions();
     QString strippedName(const QString &fullFileName);
     void refreshTranslate();
-
 
     void displayUsage();
     void createActions();

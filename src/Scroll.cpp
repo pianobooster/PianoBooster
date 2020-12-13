@@ -151,7 +151,6 @@ void CScroll::removeSlots()
     }
 }
 
-
 //! Draw all the symbols that we have in the list
 void CScroll::drawScrollingSymbols(bool show)
 {
@@ -176,7 +175,6 @@ void CScroll::drawScrollingSymbols(bool show)
 
     glPopMatrix();
 }
-
 
 void CScroll::scrollDeltaTime(int ticks)
 {
@@ -241,7 +239,6 @@ void CScroll::setPlayedNoteColor(int note, CColor color, int wantedDelta, int pi
     }
     compileSlot(m_scrollQueue->index(index));
 }
-
 
 void CScroll::refresh()
 {
@@ -324,7 +321,6 @@ void CScroll::showScroll(bool show)
         if (m_symbolID == 0)
             m_symbolID = glGenLists (1);
 
-
         // add in the missing GL display list
         for ( i = 0; i < m_scrollQueue->length(); i++)
         {
@@ -362,7 +358,6 @@ void CScroll::showScroll(bool show)
         m_symbolID = 0;
     }
 }
-
 
 CScroll::CSlotDisplayList::CSlotDisplayList(const CSlot& slot, GLuint displayListId, GLuint nextDisplayListId) : CSlot(slot),
     m_displayListId(displayListId), m_nextDisplayListId(nextDisplayListId)

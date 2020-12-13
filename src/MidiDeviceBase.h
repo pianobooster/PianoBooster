@@ -6,7 +6,7 @@
 
 @author         L. J. Barman
 
-    Copyright (c)   2008-2013, L. J. Barman, all rights reserved
+    Copyright (c)   2008-2020, L. J. Barman and others, all rights reserved
 
     This file is part of the PianoBooster application
 
@@ -28,19 +28,16 @@
 
 #ifndef __MIDI_DEVICE_BASE_H__
 #define __MIDI_DEVICE_BASE_H__
+#include <QObject>
 #include <QStringList>
+#include <qsettings.h>
 
 #include "Util.h"
 #include "Cfg.h"
 
-/*!
- * @brief   xxxxx.
- */
-
 #include "MidiEvent.h"
 
-
-class CMidiDeviceBase
+class CMidiDeviceBase : public QObject
 {
 public:
     virtual void init() = 0;
@@ -53,6 +50,8 @@ public:
     virtual QStringList getMidiPortList(midiType_t type) = 0;
 
     virtual bool openMidiPort(midiType_t type, QString portName) = 0;
+    virtual bool validMidiConnection() = 0;
+
     virtual void closeMidiPort(midiType_t type, int index) = 0;
 
     // based on the fluid synth settings
@@ -62,12 +61,15 @@ public:
     virtual QString midiSettingsGetStr(QString name) = 0;
     virtual double  midiSettingsGetNum(QString name) = 0;
     virtual int     midiSettingsGetInt(QString name) = 0;
+    void setQSettings(QSettings* settings) {qsettings = settings;}
 
     //you should always have a virtual destructor when using virtual functions
     virtual ~CMidiDeviceBase() {};
 
-
+protected:
+    QSettings* qsettings = nullptr;
 private:
+
 };
 
 #endif //__MIDI_DEVICE_H__

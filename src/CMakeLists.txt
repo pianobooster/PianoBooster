@@ -1,9 +1,14 @@
 # Cmake File for Piano Booster
 
-option(USE_FTGL "build with ftgl" ON)
-option(USE_JACK "build with Jack (Only required of BSD Unix)" OFF)
-option(USE_BUNDLED_RTMIDI "build with bundled rtmidi (for older distributions only)" OFF)
-option(USE_SYSTEM_FONT "build with system font" OFF)
+option(WITH_INTERNAL_FLUIDSYNTH "Build with an internal FluidSynth sound generator" ON)
+option(USE_FTGL "Build with ftgl for notes localization" ON)
+option(USE_SYSTEM_FONT "Build with system font" OFF)
+option(USE_JACK "Build with Jack (Only required for BSD Unix)" OFF)
+if(${CMAKE_SYSTEM} MATCHES "Linux")
+   option(USE_BUNDLED_RTMIDI "Build with bundled rtmidi (for older distributions only)" OFF)
+else()
+   option(USE_BUNDLED_RTMIDI "Build with bundled rtmidi" ON)
+endif()
 
 cmake_minimum_required(VERSION 2.4)
 if(COMMAND cmake_policy)
@@ -12,7 +17,6 @@ endif(COMMAND cmake_policy)
 
 if(WIN32)
     MESSAGE("GUI system is WIN32 ${CMAKE_GENERATOR}")
-    SET(CMAKE_COLOR_MAKEFILE OFF)
 endif(WIN32)
 
 # set project's name
@@ -24,9 +28,6 @@ cmake_policy(SET CMP0043 NEW)
 # enable warnings
 add_compile_options(-Wall)
 
-if(USE_FONT)
-    add_compile_options("-DUSE_FONT=\"${USE_FONT}\"")
-endif()
 
 add_compile_options("-DPREFIX=\"${CMAKE_INSTALL_PREFIX}\"")
 
@@ -45,17 +46,23 @@ MESSAGE("CMAKE_INSTALL_BINDIR: " ${CMAKE_INSTALL_BINDIR})
 
 FIND_PACKAGE( OpenGL REQUIRED )
 
-include(FindPkgConfig)
-FIND_PACKAGE( PkgConfig REQUIRED )
+if(NOT WIN32)
+   # the `pkg_check_modules` function is created with this call
+   include(FindPkgConfig)
+   FIND_PACKAGE( PkgConfig REQUIRED )
+endif()
 
 if(USE_FTGL)
-   pkg_check_modules(FTGL ftgl)
-   if(NOT FTGL_FOUND)
-      MESSAGE(FATAL_ERROR "FTGL was not found")
-   endif(NOT FTGL_FOUND)
-
-   SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
-   SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+   if(NOT WIN32)
+      pkg_check_modules(FTGL ftgl)
+      if(NOT FTGL_FOUND)
+         MESSAGE(FATAL_ERROR "FTGL was not found")
+      endif(NOT FTGL_FOUND)
+      SET(FTGL_INCLUDE_DIR ${FTGL_INCLUDE_DIRS})
+      SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
+   else()
+      FIND_PACKAGE( ftgl REQUIRED )
+   endif()
 else(USE_FTGL)
     add_compile_options("-DNO_USE_FTGL")
 endif(USE_FTGL)
@@ -84,30 +91,26 @@ endif(${CMAKE_SYSTEM} MATCHES "Windows")
 
 if(${CMAKE_SYSTEM} MATCHES "Darwin")
     ADD_DEFINITIONS(-D__MACOSX_CORE__)
+    ADD_DEFINITIONS(-std=c++11)
     LINK_LIBRARIES("-framework CoreMidi -framework CoreAudio -framework CoreFoundation -framework OpenGL")
 endif(${CMAKE_SYSTEM} MATCHES "Darwin")
 
-if(EXPERIMENTAL_USE_FLUIDSYNTH)
-    ADD_DEFINITIONS(-DEXPERIMENTAL_USE_FLUIDSYNTH)
-    MESSAGE("Building using fluidsynth")
-    SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
-
-    if(FLUIDSYNTH_INPLACE_DIR)
-        INCLUDE_DIRECTORIES(${FLUIDSYNTH_INPLACE_DIR}/include/)
-        if(WIN32)
-            LINK_LIBRARIES( ${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.dll.a)
-        endif(WIN32)
-        if(UNIX)
-            LINK_LIBRARIES(${FLUIDSYNTH_INPLACE_DIR}/src/.libs/libfluidsynth.so)
-        endif(UNIX)
-    else(FLUIDSYNTH_INPLACE_DIR)
+if(WITH_INTERNAL_FLUIDSYNTH)
+    if(NOT WIN32)
         pkg_check_modules(FLUIDSYNTH fluidsynth)
+
         if(NOT FLUIDSYNTH_FOUND)
-            MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
+           MESSAGE(FATAL_ERROR "FLUIDSYNTH was not found")
         endif(NOT FLUIDSYNTH_FOUND)
-        LINK_LIBRARIES( fluidsynth)
-    endif(FLUIDSYNTH_INPLACE_DIR)
-endif(EXPERIMENTAL_USE_FLUIDSYNTH)
+        INCLUDE_DIRECTORIES(${FLUIDSYNTH_INCLUDE_DIRS})
+        SET(FLUIDSYNTH_LIBRARY ${FLUIDSYNTH_LIBRARIES})
+    else()
+        FIND_PACKAGE( fluidsynth REQUIRED )
+    endif()
+    ADD_DEFINITIONS(-DWITH_INTERNAL_FLUIDSYNTH)
+    MESSAGE("Building with internal fluidsynth")
+    SET( PB_BASE_SRCS MidiDeviceFluidSynth.cpp )
+endif(WITH_INTERNAL_FLUIDSYNTH)
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
@@ -117,7 +120,6 @@ SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp ${PB_BASE_SRCS})
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
     Chord.h Tempo.h MidiDevice.h)
-
 
 if(USE_JACK)
     # Check for Jack
@@ -141,9 +143,11 @@ if(USE_BUNDLED_RTMIDI)
     set(PB_BASE_SRCS ${PB_BASE_SRCS} 3rdparty/rtmidi/RtMidi.cpp)
     set(PB_BASE_HDR ${PB_BASE_HDR} 3rdparty/rtmidi/RtMidi.h)
 else()
-    pkg_check_modules(RTMIDI REQUIRED rtmidi)
+    pkg_check_modules(RTMIDI rtmidi)
+    if(NOT RTMIDI_FOUND)
+        MESSAGE(FATAL_ERROR "rtmidi not found (Try building with option USE_BUNDLED_RTMIDI=ON)")
+    endif(NOT RTMIDI_FOUND)
     include_directories(${RTMIDI_INCLUDE_DIRS})
-    link_directories(${RTMIDI_LIBRARY_DIRS})
 endif()
 
 # with SET() command you can change variables or define new ones
@@ -213,19 +217,40 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # here we instruct CMake to build "pianobooster" executable from all of the source files
 if(APPLE)
-    ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE ${PIANOBOOSTER_SRCS}
+    # the property added the pianobooster icon to Info.plist
+    set(MACOSX_BUNDLE_ICON_FILE pianobooster.icns)
+
+    # Tells CMake where to find and install the pianobooster icon
+    set(pianobooster_ICON ${CMAKE_CURRENT_SOURCE_DIR}/../icons/MacOS/pianobooster.icns)
+    set_source_files_properties(${pianobooster_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+
+    set(pianobooster_TRANSLATIONS ${CMAKE_CURRENT_BINARY_DIR}/translations/langs.json)
+    set_source_files_properties(${pianobooster_TRANSLATIONS} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/translations")
+
+    set(pianobooster_MUSIC ${CMAKE_CURRENT_SOURCE_DIR}/../music/BoosterMusicBooks.zip)
+    set_source_files_properties(${pianobooster_MUSIC} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/music")
+    set(pianobooster_FONT ${CMAKE_CURRENT_SOURCE_DIR}/fonts/DejaVuSans.ttf)
+    set_source_files_properties(${pianobooster_FONT} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/fonts")
+
+    ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE
+        ${pianobooster_ICON} ${pianobooster_TRANSLATIONS}
+        ${pianobooster_MUSIC} ${pianobooster_FONT}
+        ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
+
+    add_custom_target(install-translations cp -R -v ${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.app/Contents/Resources/translations)
+
 endif(APPLE)
 
-if(UNIX)
+if(UNIX AND NOT APPLE)
     ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
-endif(UNIX)
+endif(UNIX AND NOT APPLE)
 
 if(WIN32)
-    ADD_EXECUTABLE( pianobooster WIN32 ${PIANOBOOSTER_SRCS}
+    ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
     SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
@@ -236,12 +261,14 @@ qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
 if(${CMAKE_VERSION} VERSION_LESS "3.13.0")
     message("Please consider to switch to CMake 3.13.0")
 else()
-    target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS} ${JACK_LIBRARY_DIRS})
+    target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS} ${JACK_LIBRARY_DIRS} ${FLUIDSYNTH_LIBRARY_DIRS})
 endif()
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY})
+target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY} ${FLUIDSYNTH_LIBRARY} ${RTMIDI_LIBRARY})
 
-INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
-INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+if(NOT APPLE)
+    INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
+    INSTALL(TARGETS pianobooster RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+endif(NOT APPLE)
 
 if(NOT NO_DOCS)
     INSTALL( FILES ../README.md DESTINATION share/doc/pianobooster/ )
@@ -272,12 +299,9 @@ if(WIN32)
     INSTALL( FILES ../music/BoosterMusicBooks.zip DESTINATION . )
 endif(WIN32)
 
-if(USE_FONT)
-    INSTALL ( FILES ${USE_FONT} DESTINATION ${DATA_DIR}/fonts)
-endif(USE_FONT)
-
 if(NOT USE_SYSTEM_FONT)
-    INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION ${DATA_DIR}/fonts)
+    configure_file(fonts/DejaVuSans.ttf ${CMAKE_CURRENT_BINARY_DIR}/fonts/DejaVuSans.ttf COPYONLY)
+    INSTALL ( FILES fonts/DejaVuSans.ttf DESTINATION ${DATA_DIR}/fonts/)
 endif(NOT USE_SYSTEM_FONT)
 
 if(NOT NO_LANGS)
@@ -291,4 +315,6 @@ endif()
 if(DEBUG_LOG_TIMING)
     ADD_DEFINITIONS(-DPB_LOG_TIMING)
 endif()
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../music/BoosterMusicBooks.zip ${CMAKE_CURRENT_BINARY_DIR}/ COPYONLY)
 
