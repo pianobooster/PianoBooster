@@ -1,4 +1,4 @@
-1.0.0-RC1 (12 Dec 2020)
+1.0.0 (13 Dec 2020)
 - Integrated fluidsynth as a build option.
 - Changes necessary for building an AppImage.
 - Added <System Language> to the manual language selection.
