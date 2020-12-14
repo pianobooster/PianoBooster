@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-28 20:58+0100\n"
+"POT-Creation-Date: 2020-12-14 22:05+0000\n"
 "PO-Revision-Date: 2020-10-06 13:26+0000\n"
 "Last-Translator: Olivier Humbert <trebmuh@tuxfamily.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pianobooster/"
@@ -159,6 +159,50 @@ msgstr ""
 "gauche** lorsque vous jouez ce morceau._"
 
 #. type: Plain text
+#: BeginnerCourse/07-IntervalsRightHand.md:2
+#, no-wrap
+msgid "**Intervals Right Hand** contains all the melodic intervals (sequences of two notes) one can play with the first five notes of the scale of C major.\n"
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/07-IntervalsRightHand.md:4
+msgid ""
+"Similarly to the Up and Down piece we played earlier, use your **thumb** for "
+"**C**, your **index finger** for **D**, . . . , all the way up to your "
+"**little finger** for **G**. Make sure you keep using the correct finger for "
+"each note."
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/07-IntervalsRightHand.md:5
+msgid ""
+"> **Hint:** _If reading a melody with large intervals is difficult, remember "
+"you can **label the piano keys** using the PianoBooster **Note Chart**_"
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/08-IntervalsLeftHand.md:2
+#, no-wrap
+msgid "**Intervals Left Hand** will exercise you to play all the melodic intervals possible with the top five notes of the scale of C major.\n"
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/08-IntervalsLeftHand.md:4
+msgid ""
+"Similarly to the Down and Up piece, use your **thumb** for **C**, your "
+"**index finger** for **B**, . . . , all the way down to your **little "
+"finger** for **F**."
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/08-IntervalsLeftHand.md:5
+msgid ""
+"> **Hint:** _For some intervals, it may be hard passing from one finger to "
+"another if you are not used to it. Keep your left hand relaxed and try "
+"several times until your feel comfortable._"
+msgstr ""
+
+#. type: Plain text
 #: BoosterMusic/01-ClairDeLaLune.md:2
 msgid ""
 "This is a simplified version of **Clair De La Lune** that uses only the "
@@ -185,13 +229,7 @@ msgstr ""
 #: BoosterMusic/02-LavendersBlue.md:2
 #, no-wrap
 msgid "**Lavender's Blue** is a simple tune in the right hand only that uses the first six notes of the scale of C Major. For the lowest five notes **C D E F** and **G** use all the fingers or your right hand - one for each note. (With your **thumb** on **C** and your **little finger** on **G**). Then for **A** just stretch your **little finger** to reach that note.\n"
-msgstr ""
-"**Lavande Bleue** est une musique simple, à jouer à la main droite, qui "
-"utilise seulement les premières notes de la gamme Do majeur. Pour les cinq "
-"notes les plus basses **Do, Ré, Mi** et **Fa** utilisez tous les doigts de "
-"votre main droite - un pour chaque note (avec votre **pouce** sur **Do** et "
-"votre **petit doigt** sur **Fa**). Puis pour **La** il suffit d'étendre "
-"votre **petit doigt** afin d'atteindre cette note.\n"
+msgstr "**Lavande Bleue** est une musique simple, à jouer à la main droite, qui utilise seulement les premières notes de la gamme Do majeur. Pour les cinq notes les plus basses **Do, Ré, Mi** et **Fa** utilisez tous les doigts de votre main droite - un pour chaque note (avec votre **pouce** sur **Do** et votre **petit doigt** sur **Fa**). Puis pour **La** il suffit d'étendre votre **petit doigt** afin d'atteindre cette note.\n"
 
 #. type: Plain text
 #: BoosterMusic/02-LavendersBlue.md:3
@@ -245,8 +283,8 @@ msgid ""
 msgstr ""
 "Pour **Frère Jacques** commencez à jouer à deux mains simultanées avec une "
 "partie très facile à la main droite. D'abord entraînez-vous **main gauche** "
-"et **main droite**séparément. Puis lorsque vous serez prêt réduisez la **"
-"vitesse à 70%** et essayez **à deux mains** simultanées. Ensuite démarrez "
+"et **main droite**séparément. Puis lorsque vous serez prêt réduisez la "
+"**vitesse à 70%** et essayez **à deux mains** simultanées. Ensuite démarrez "
 "avec les **deux pouces** sur les **Do du milieu**."
 
 #. type: Plain text
@@ -276,13 +314,7 @@ msgstr ""
 #: BoosterMusic/06-Greensleeves.md:2
 #, no-wrap
 msgid "**Greensleeves** introduces the key of **G major** which has **one Sharp - F#**. Normally the sharp symbol is not shown when **F#** is played (but turning on **Courtesy Accidentals** from the Piano Booster setup/preferences menu will show all accidentals in the key signature). The melody is in the right hand with a simple left hand part.\n"
-msgstr ""
-"**Greensleeves** introduit la tonalité de **Sol majeur** qui possède **un "
-"dièse - Fa#**. Normalement, le symbole de dièse n'est pas affiché lorsque "
-"**Fa#** est joué (mais en activant **altérations de précaution** dans le "
-"menu Piano Booster Paramétrages/Préférences vous pourrez voir tous les "
-"accidents dans la tonalité). La mélodie est à la main droite avec une partie "
-"simple à la main gauche.\n"
+msgstr "**Greensleeves** introduit la tonalité de **Sol majeur** qui possède **un dièse - Fa#**. Normalement, le symbole de dièse n'est pas affiché lorsque **Fa#** est joué (mais en activant **altérations de précaution** dans le menu Piano Booster Paramétrages/Préférences vous pourrez voir tous les accidents dans la tonalité). La mélodie est à la main droite avec une partie simple à la main gauche.\n"
 
 #. type: Plain text
 #: BoosterMusic/06-Greensleeves.md:3

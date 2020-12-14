@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-28 20:58+0100\n"
+"POT-Creation-Date: 2020-12-14 22:05+0000\n"
 "PO-Revision-Date: 2020-10-04 16:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -153,6 +153,50 @@ msgid ""
 msgstr ""
 "> **Подсказка:** _Убедитесь, что вы используете **каждый палец** на **левой "
 "руке** при игре этой пьесы._"
+
+#. type: Plain text
+#: BeginnerCourse/07-IntervalsRightHand.md:2
+#, no-wrap
+msgid "**Intervals Right Hand** contains all the melodic intervals (sequences of two notes) one can play with the first five notes of the scale of C major.\n"
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/07-IntervalsRightHand.md:4
+msgid ""
+"Similarly to the Up and Down piece we played earlier, use your **thumb** for "
+"**C**, your **index finger** for **D**, . . . , all the way up to your "
+"**little finger** for **G**. Make sure you keep using the correct finger for "
+"each note."
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/07-IntervalsRightHand.md:5
+msgid ""
+"> **Hint:** _If reading a melody with large intervals is difficult, remember "
+"you can **label the piano keys** using the PianoBooster **Note Chart**_"
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/08-IntervalsLeftHand.md:2
+#, no-wrap
+msgid "**Intervals Left Hand** will exercise you to play all the melodic intervals possible with the top five notes of the scale of C major.\n"
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/08-IntervalsLeftHand.md:4
+msgid ""
+"Similarly to the Down and Up piece, use your **thumb** for **C**, your "
+"**index finger** for **B**, . . . , all the way down to your **little "
+"finger** for **F**."
+msgstr ""
+
+#. type: Plain text
+#: BeginnerCourse/08-IntervalsLeftHand.md:5
+msgid ""
+"> **Hint:** _For some intervals, it may be hard passing from one finger to "
+"another if you are not used to it. Keep your left hand relaxed and try "
+"several times until your feel comfortable._"
+msgstr ""
 
 #. type: Plain text
 #: BoosterMusic/01-ClairDeLaLune.md:2
