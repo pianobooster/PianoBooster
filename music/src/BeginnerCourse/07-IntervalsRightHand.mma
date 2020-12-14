@@ -1,0 +1,75 @@
+// Musical MIDI Accompaniment file for the Piano Booster project
+// For more information see: https://github.com/captnfab/PianoBooster
+// Creative Commons license
+
+MidiTName Intervals Right Hand
+
+Include Booster44Lib
+
+SeqClear
+SeqSize 1
+Time 4
+Timesig 4 4
+
+    Plectrum-Pick7  Groove BoosterLib44
+    Bass-GentleDotted Groove BoosterLib44
+    Bass-GentleDotted Volume p
+    Drum-RCymbal2         Groove BoosterLib44
+
+
+DefGroove First
+
+
+SeqClear
+    SeqSize 4
+    Time 4
+    Timesig 4 4
+
+    Plectrum-UpUp  Groove BoosterLib44
+    Drum-RCymbal2         Groove BoosterLib44
+    Bass-GentleDotted Groove BoosterLib44
+
+DefGroove Second
+
+    Bass-SimpleStrings  Groove BoosterLib44
+
+DefGroove SecondSustain
+
+Begin Solo-SlowStrings
+    Voice SlowStrings
+    Volume p
+End
+
+AutoSoloTracks Solo-SlowStrings
+
+Begin Solo-Right
+    Voice Piano1
+    Channel 4
+End
+Begin Solo-Left
+    Voice Piano1
+    Channel 3
+End
+
+Tempo 90
+Timesig 4 4
+
+Groove Metronome4
+
+z
+
+Groove First
+
+midiInc file=07-IntervalsRightHand.solo.mid Solo-Left=3 Solo-Right=4  Volume=80
+
+Groove Second
+
+C / G/B /
+Am /
+G7 / Am /
+C / F/C /
+G / F/A /
+F/A / Am /
+Am / G/B /
+G7 / C /
+C / z! /

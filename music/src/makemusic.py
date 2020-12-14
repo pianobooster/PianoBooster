@@ -60,7 +60,7 @@ def create_midi_files(src_dir, book_name, song, temp_mma_dir):
 def create_info_pages(src_dir, book_name, song):
     src_path_name = src_dir + '/' + song
     info_output_dir = build_zip_dir + book_name + '/' + info_pages
-    execute_command("pandoc -r markdown -w html \"{0}.md\" -o \"{1}/en/{2}.html\""
+    execute_command("pandoc --from=markdown --to=html \"{0}.md\" -o \"{1}/en/{2}.html\""
                     .format(src_path_name, info_output_dir, song))
 
     translations_dir = build_translations_dir + src_dir
@@ -72,7 +72,8 @@ def create_info_pages(src_dir, book_name, song):
         print("language " + language)
         make_dir(info_output_dir + '/' + language)
 
-        execute_command("pandoc -r markdown -w html \"{0}/{1}/{3}.md\" -o \"{2}/{1}/{3}.html\""
+        if os.path.exists(f"{translations_dir}/{info_output_dir}/{song}.md"):
+            execute_command("pandoc --from=markdown --to=html \"{0}/{1}/{3}.md\" -o \"{2}/{1}/{3}.html\""
                         .format(translations_dir, language, info_output_dir, song))
 
 
@@ -199,7 +200,7 @@ def update_translations():
 
 
 def run_main(argv):
-    rm_tree(build_web_dir)
+    rm_tree(build_dir)
 
     update_translations()
     process_book("BeginnerCourse", "Beginner Course")
