@@ -175,6 +175,7 @@ SET( PIANOBOOSTER_SRCS
     TrackList.cpp
     Rating.cpp
     Bar.cpp
+    Metronome.cpp
     Settings.cpp
     Merge.cpp
     pianobooster.rc

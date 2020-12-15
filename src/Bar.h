@@ -30,6 +30,7 @@
 #define __BAR_H__
 
 #include "MidiFile.h"
+#include "Metronome.h"
 
 // The event bits can be ORed together
 #define EVENT_BITS_playingStopped          0x0001 // set when we reach the end of piece
@@ -110,6 +111,8 @@ public:
 
     int goToBarNumer();
 
+    void setMetronome(CMetronome *metronome);
+
 private:
     void checkGotoBar();
     void setupEnableFlags()
@@ -137,7 +140,7 @@ private:
     eventBits_t m_eventBits;
     bool m_enableLooping;
     bool m_enablePlayFromBar;
-
+    CMetronome *m_metronome = nullptr;
 };
 
 #endif  // __BAR_H__

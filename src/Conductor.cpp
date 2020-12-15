@@ -50,6 +50,8 @@ CConductor::CConductor()
     m_wantedChordQueue = new CQueue<CChord>(1000);
     m_savedNoteQueue = new CQueue<CMidiEvent>(200);
     m_savedNoteOffQueue = new CQueue<CMidiEvent>(200);
+
+    m_bar.setMetronome(&m_metronome);
     m_playing = false;
     m_transpose = 0;
     m_latencyFix = 0;
@@ -178,36 +180,82 @@ int CConductor::calcBoostVolume(int channel, int volume)
                 activePart = true;
         }
     }
-    else
-    {
-        if (channel == m_activeChannel)
-            activePart= true;
+
+    int adjustVolume = m_boostVolume;
+
+    if (m_metronmeActive && channel == MIDI_DRUM_CHANNEL) {
+        activePart= true;
     }
+
+
+    /* ZZ TBD
+    if (m_metronmeActive) {
+        // the m_metronomeDrumVolume can only increase the actual valume by 50% max
+        adjustVolume = adjustVolume + m_pianoVolume;
+        //adjustVolume = static_cast<int>((adjustVolume+100) * ((m_pianoVolume+100)/200.0)) - 100;
+
+        if (channel == MIDI_DRUM_CHANNEL) {
+            activePart= true;
+        }
+    }*/
+
+    if (adjustVolume > 100) {adjustVolume = 100;}
+    if (adjustVolume < -100) {adjustVolume = -100;}
+
     if (channel == m_activeChannel)
         activePart= true;
 
-    //if (channel == 5)  activePart= true; // for debugging
+    //if (channel == 5)  activePart= true; // for debugging // ZZ TBD
 
     if (activePart)
     {
         if (returnVolume == 0 )
             ;               /* Don't adjust the volume if zero */
-        else if (m_boostVolume < 0 )
-            returnVolume = (returnVolume * (m_boostVolume + 100)) / 100;
+        else if (adjustVolume < 0 )
+            returnVolume = (returnVolume * (adjustVolume + 100)) / 100;
         else
-            returnVolume += m_boostVolume;
+            returnVolume += adjustVolume;
     }
     else
     {
-        if (m_boostVolume > 0)
-            returnVolume = (returnVolume * (100 - m_boostVolume)) / 100;
+        if (adjustVolume > 0)
+            returnVolume = (returnVolume * (100 - adjustVolume)) / 100;
     }
-        // The piano volume can reduce the volume of the music
+    /* ZZ TBD
+    // The piano volume can reduce the volume of the music
     if (m_pianoVolume>0)
-        returnVolume = (returnVolume * (100 - m_pianoVolume)) / 100;;
+        returnVolume = (returnVolume * (100 - m_pianoVolume)) / 100;
+*/
 
-    if (returnVolume > 127)
-        returnVolume = 127;
+    if (m_metronmeActive) {
+        // the m_metronomeDrumVolume can only increase the actual valume by 50% max
+       // adjustVolume = adjustVolume + m_pianoVolume;
+        //int tbdVol = m_metronomeDrumVolume;
+        int tbdVol = m_pianoVolume/2;
+        //adjustVolume = static_cast<int>((adjustVolume+100) * ((m_pianoVolume+100)/200.0)) - 100;
+
+        if (channel == MIDI_DRUM_CHANNEL) {
+            ppLogInfo("ZZ return Volume MIDI_DRUM_CHANNEL %d %d %d", returnVolume, tbdVol,returnVolume + tbdVol );
+             if (returnVolume == 0 )
+                ;               /* Don't adjust the volume if zero */
+            else if (tbdVol < 0 )
+                ;//returnVolume = (returnVolume * (tbdVol + 100)) / 100;
+            else {
+                returnVolume += tbdVol;
+                 }
+
+
+        } else {
+            // The metronome/drum volume can reduce the volume of the other music
+            //*
+            if (tbdVol>0)
+                returnVolume = (returnVolume * (100 - tbdVol)) / 100;
+         //*/
+        }
+    }
+
+    if (returnVolume > 127) {returnVolume = 127; }
+    if (returnVolume < 0){returnVolume=0;}
     return returnVolume;
 }
 
@@ -1036,7 +1084,9 @@ void CConductor::realTimeEngine(int mSecTicks)
             }
         }
         if (m_songEventQueue->length() > 0)
-            m_nextMidiEvent = m_songEventQueue->pop();
+        {
+            m_nextMidiEvent = m_metronome.getNextMergedEvent(m_songEventQueue);
+        }
         else
         {
             ppDEBUG_CONDUCTOR(("no data in song queue"));

@@ -37,6 +37,7 @@
 #include "Rating.h"
 #include "Tempo.h"
 #include "Bar.h"
+#include "Metronome.h"
 
 class CScore;
 class CPiano;
@@ -272,6 +273,7 @@ private:
 
     CPiano* m_piano;
 
+    CMetronome m_metronome;
     CBar m_bar;
     int m_leadLagAdjust; // Synchronise the sound with the video
     int m_silenceTimeOut; // used to create silence if the student stops for toooo long
@@ -305,6 +307,8 @@ private:
     bool m_testWrongNoteSound;
     int m_boostVolume;
     int m_pianoVolume;
+    int m_metronomeDrumVolume = 100;
+    bool m_metronmeActive = true;
     int m_activeChannel; // The current part that is being displayed (used for boost)
     int m_savedMainVolume[MAX_MIDI_CHANNELS];
     static playMode_t m_playMode;
