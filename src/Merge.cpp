@@ -2,7 +2,7 @@
 /*!
 @file           Merge.cpp
 
-@brief          Merge Midi Events from multiple streams into a single stream.
+@brief          Merge MIDI Events from multiple streams into a single stream.
 
 @author         L. J. Barman
 

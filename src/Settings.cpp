@@ -529,7 +529,7 @@ void CSettings::setChannelHands(int left, int right)
 void CSettings::updateWarningMessages()
 {
     if (!m_song->validMidiOutput())
-        m_warningMessage = tr("ERROR NO SOUND: To fix this use menu Setup/Midi Setup ...");
+        m_warningMessage = tr("ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...");
     else if (m_currentSongName.isEmpty())
         m_warningMessage = tr("ERROR NO MIDI FILE: To fix this use menu File/Open ...");
     else

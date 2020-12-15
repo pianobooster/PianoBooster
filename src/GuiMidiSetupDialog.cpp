@@ -46,7 +46,7 @@ GuiMidiSetupDialog::GuiMidiSetupDialog(QWidget *parent)
     midiSetupTabWidget->removeTab(midiSetupTabWidget->indexOf(tab_2));
 #endif
 
-    setWindowTitle(tr("Midi Setup"));
+    setWindowTitle(tr("MIDI Setup"));
 }
 
 void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
@@ -141,19 +141,19 @@ void GuiMidiSetupDialog::updateMidiInfoText()
     if (midiInputCombo->currentIndex() == 0)
         midiInfoText->append("<span style=\"color:black\">" + tr("If you don't have a MIDI keyboard you can use the PC keyboard; 'X' is middle C.") + "</span>");
     else if (midiInputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of MIDI Through is not recommended!") + "</span>");
     else
-        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Input Device:") + " " + midiInputCombo->currentText() +"</span>");
+        midiInfoText->append("<span style=\"color:gray\">" + tr("MIDI Input Device:") + " " + midiInputCombo->currentText() +"</span>");
 
     if (midiOutputCombo->currentText() == tr("None"))
-        midiInfoText->append("<span style=\"color:red\">" + tr("No Sound Output Device selected; Choose a Midi Output Device") + "</span>");
-    else if (midiOutputCombo->currentText().contains("Midi Through", Qt::CaseInsensitive))
-        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of Midi Through is not recommended!") + "</span>");
+        midiInfoText->append("<span style=\"color:red\">" + tr("No Sound Output Device selected; Choose a MIDI Output Device") + "</span>");
+    else if (midiOutputCombo->currentText().contains("MIDI Through", Qt::CaseInsensitive))
+        midiInfoText->append("<span style=\"color:#FF6600\">" + tr("The use of MIDI Through is not recommended!") + "</span>");
     else if (midiOutputCombo->currentText().contains("Microsoft GS Wavetable", Qt::CaseInsensitive))
         midiInfoText->append("<span style=\"color:#FF6600\">" + tr("Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!") + "\n"
                                 + tr("(Try a latency fix of 150msc)") + "</span>");
     else
-        midiInfoText->append("<span style=\"color:gray\">" + tr("Midi Output Device:") + " " + midiOutputCombo->currentText() +"</span>");
+        midiInfoText->append("<span style=\"color:gray\">" + tr("MIDI Output Device:") + " " + midiOutputCombo->currentText() +"</span>");
 
     latencyFixLabel->setText(tr("%1 mSec").arg(m_latencyFix));
 

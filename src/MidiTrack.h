@@ -95,7 +95,7 @@ private:
         {
             m_midiError = error;
             if (m_midiError != SMF_NO_ERROR)
-                ppLogError("Midi error %d", m_midiError);
+                ppLogError("MIDI error %d", m_midiError);
         }
     }
     void midiFailReset() { m_midiError = SMF_NO_ERROR;}
