@@ -57,7 +57,7 @@ public:
     void setMidiTempo(int tempo)
     {
         m_midiTempo = (static_cast<float>(tempo) * DEFAULT_PPQN) / CMidiFile::getPulsesPerQuarterNote();
-        ppLogWarn("Midi Tempo %f  ppqn %d %d", m_midiTempo, CMidiFile::getPulsesPerQuarterNote(), tempo);
+        ppLogWarn("MIDI Tempo %f  ppqn %d %d", m_midiTempo, CMidiFile::getPulsesPerQuarterNote(), tempo);
     }
 
     void setSpeed(float speed)

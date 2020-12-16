@@ -204,7 +204,7 @@ void QtWindow::decodeMidiFileArg(QString arg)
 
     if (!fileInfo.exists() )
     {
-        QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
+        QMessageBox::warning(nullptr, tr("PianoBooster MIDI File Error"),
                  tr("Cannot open \"%1\"").arg(QString(fileInfo.absoluteFilePath())));
         exit(1);
     }
@@ -212,8 +212,8 @@ void QtWindow::decodeMidiFileArg(QString arg)
              fileInfo.fileName().endsWith(".midi", Qt::CaseInsensitive ) ||
              fileInfo.fileName().endsWith(".kar", Qt::CaseInsensitive )) )
     {
-        QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
-                 tr("\"%1\" is not a Midi File").arg(QString(fileInfo.fileName())));
+        QMessageBox::warning(nullptr, tr("PianoBooster MIDI File Error"),
+                 tr("\"%1\" is not a MIDI File").arg(QString(fileInfo.fileName())));
         exit(1);
     }
     else
@@ -236,8 +236,8 @@ void QtWindow::decodeMidiFileArg(QString arg)
             m_settings->setValue("CurrentSong", fileInfo.absoluteFilePath());
         else
         {
-            QMessageBox::warning(nullptr, tr("PianoBooster Midi File Error"),
-                 tr("\"%1\" is not a valid Midi file").arg(QString(fileInfo.absoluteFilePath())));
+            QMessageBox::warning(nullptr, tr("PianoBooster MIDI File Error"),
+                 tr("\"%1\" is not a valid MIDI file").arg(QString(fileInfo.absoluteFilePath())));
             exit(1);
         }
     }
@@ -328,9 +328,9 @@ void QtWindow::createActions()
     m_shortcutAct->setToolTip(tr("The PC Keyboard shortcut keys"));
     connect(m_shortcutAct, SIGNAL(triggered()), this, SLOT(keyboardShortcuts()));
 
-    m_setupMidiAct = new QAction(tr("&Midi Setup ..."), this);
+    m_setupMidiAct = new QAction(tr("&MIDI Setup ..."), this);
     m_setupMidiAct->setShortcut(tr("Ctrl+S"));
-    m_setupMidiAct->setToolTip(tr("Setup the Midi input and output"));
+    m_setupMidiAct->setToolTip(tr("Setup the MIDI input and output"));
     connect(m_setupMidiAct, SIGNAL(triggered()), this, SLOT(showMidiSetup()));
 
     m_setupKeyboardAct = new QAction(tr("Piano &Keyboard Setting ..."), this);
@@ -528,17 +528,16 @@ void QtWindow::help()
     tr("<h3>Getting Started</h3>") +
     tr("<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
        "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
-       "middle C.</p>") +
-    tr("<p>To hear the music you will need a <b>General Midi sound synthesizer</b>. "
-       "The \"Microsoft GS Wavetable software synthesizer\" that comes with Windows can be used "
-       "but it introduces an unacceptable delay (latency). In Linux you can use ") +
-       "<a href=\"http://www.fluidsynth.org\">FluidSynth</a> " +
-    tr("or") +
-    " <a href=\"http://timidity.sourceforge.net/\">Timidity</a></p>" +
+       "middle C.</p>") +                
+
+    tr("<p>PianoBooster now includes a built-in sound generator called FluidSynth "
+    "which requires a General MIDI (GM) SoundFont. "
+    "Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.</p>")   +
+
     tr("<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
        "using MIDI channels 3 and 4.") +
     tr("<h3>Setting Up</h3>") +
-    tr("<p>First use the <i>Setup/Midi Setup</i> menu and in the dialog box select the MIDI input and MIDI "
+    tr("<p>First use the <i>Setup/MIDI Setup</i> menu and in the dialog box select the MIDI input and MIDI "
        "output interfaces that match your hardware. ") +
     tr("Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
        "Now select whether you want to just <i>listen</i> to the music or "
@@ -646,8 +645,8 @@ void QtWindow::open()
     else
         dir = QDir::homePath();
 
-    QString fileName = QFileDialog::getOpenFileName(this,tr("Open Midi File"),
-                            dir, tr("Midi Files") + " (*.mid *.MID *.midi *.MIDI *.kar *.KAR)");
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Open MIDI File"),
+                            dir, tr("MIDI Files") + " (*.mid *.MID *.midi *.MIDI *.kar *.KAR)");
     if (!fileName.isEmpty()) {
 
         m_settings->openSongFile(fileName);

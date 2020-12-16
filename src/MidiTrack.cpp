@@ -61,7 +61,7 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
     {
         if (m_file.get() !="MTrk"[i] )
         {
-            ppLogError("No valid Midi tracks");
+            ppLogError("No valid MIDI tracks");
             errorFail(SMF_CORRUPTED_MIDI_FILE);
             return;
         }
@@ -330,7 +330,7 @@ void CMidiTrack::readMetaEvent(byte_t type)
         __dt(ppDebugTrack(2,"METACUEPT %s", text.c_str()));
         break;
 
-    case METACHANPFX:                         /* Midi Channel Prefix */
+    case METACHANPFX:                         /* MIDI Channel Prefix */
         __dt(data = readDataEvent(1));
         __dt(ppDebugTrack(2,"MIDI Channel Prefix %lu", data));
         break;

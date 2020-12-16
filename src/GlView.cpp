@@ -360,7 +360,7 @@ void CGLView::initializeGL()
 
     m_song->regenerateChordQueue();
 
-    // increased the tick time for Midi handling
+    // increased the tick time for MIDI handling
 
     m_timer.start(Cfg::tickRate, this );
 

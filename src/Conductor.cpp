@@ -953,7 +953,7 @@ void CConductor::missedNotesColor(CColor color)
 void CConductor::realTimeEngine(int mSecTicks)
 {
     int type;
-    int ticks; // Midi ticks
+    int ticks; // MIDI ticks
 
     //mSecTicks = 2; // for debugging only
 
@@ -1047,7 +1047,7 @@ void CConductor::realTimeEngine(int mSecTicks)
         else if (type == MIDI_PB_timeSignature)
         {
             m_bar.setTimeSig(m_nextMidiEvent.data1(), m_nextMidiEvent.data2());
-            ppLogDebug("Midi Time Signature %d/%d", m_nextMidiEvent.data1(),m_nextMidiEvent.data2());
+            ppLogDebug("MIDI Time Signature %d/%d", m_nextMidiEvent.data1(),m_nextMidiEvent.data2());
 
         }
         else if ( type != MIDI_NONE )   // this marks the end of the piece of music
