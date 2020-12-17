@@ -1775,12 +1775,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;До поточної версії PianoBooster включено вбудований засіб генерації звукових даних, який має назву FluidSynth і потребує для роботи звуковий шрифт General MIDI (GM). Скористайтеся пунктом меню «Налаштування/Налаштувати MIDI» і кнопкою завантаження на вкладці FluidSynth, щоб встановити звуковий шрифт.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/MIDI Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Спочатку скористайтеся пунктом меню &lt;i&gt;Налаштування/Налаштувати MIDI&lt;/i&gt; і у діалоговому вікні виберіть вхідний та вихідний інтерфейси MIDI, які відповідають використаному вами обладнанню. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
@@ -1946,12 +1946,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити файл MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>файли MIDI</translation>
     </message>
 </context>
 </TS>
