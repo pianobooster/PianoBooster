@@ -658,7 +658,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="502"/>
         <source>Agogo</source>
-        <translation type="unfinished"></translation>
+        <translation>Agogô</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="503"/>
@@ -971,7 +971,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Microsoft GS Wavetable-synthen introduserer uønsket forsinkelse!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -996,7 +996,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
         <source>Open SoundFont File for fluidsynth</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Åpne SoundFont-fil for FluidSynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
@@ -1203,12 +1203,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="270"/>
         <source>Adjust the volume of the selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Juster lydstyrken for valgt del</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="236"/>
         <source>Mute the currently selected part</source>
-        <translation type="unfinished"></translation>
+        <translation>Forstum valgt del</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="128"/>
@@ -1405,7 +1405,7 @@
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>F#</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">F#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="93"/>
@@ -1446,17 +1446,17 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="114"/>
         <source>G#</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">G#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
         <source>C#</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">C#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="116"/>
         <source>D#</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
@@ -1470,7 +1470,7 @@
         <location filename="../src/MidiFile.cpp" line="88"/>
         <location filename="../src/MidiFile.cpp" line="95"/>
         <source>Midi File Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Feil i MIDI-fil</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="89"/>
@@ -1490,7 +1490,7 @@
     <message>
         <location filename="../src/QtMain.cpp" line="56"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemet støtter ikke OpenGL, som trengs for å kjøre PianoBooster.</translation>
     </message>
 </context>
 <context>
@@ -1498,12 +1498,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="301"/>
         <source>L</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="303"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="376"/>
@@ -1528,7 +1528,7 @@
         <location filename="../src/QtWindow.cpp" line="215"/>
         <location filename="../src/QtWindow.cpp" line="239"/>
         <source>PianoBooster Midi File Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PianoBooster-MIDI-filfeil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="208"/>
@@ -1583,7 +1583,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="324"/>
         <source>Show the application&apos;s About box</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis «Om»</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="327"/>
@@ -1643,12 +1643,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="347"/>
         <source>&amp;Show the Side Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vis sidepanelet</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis venstre sidepanel</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
@@ -1755,7 +1755,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="528"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Begynn nå</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="529"/>
@@ -1805,7 +1805,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="550"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Mer info&lt;/h3&gt;&lt;p&gt;Videre hjelp er å finne i PianoBooster- </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
@@ -1815,7 +1815,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
@@ -1840,7 +1840,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PianoBooster - Versjon %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="567"/>
@@ -1860,7 +1860,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="572"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmet er lisensiert GPLv3+.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="578"/>

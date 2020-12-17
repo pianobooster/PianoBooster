@@ -896,7 +896,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>
         <source>Buffer Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puffergröße:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="286"/>
@@ -911,7 +911,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Sound Font</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
@@ -921,7 +921,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurücksetzen</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -936,7 +936,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl Puffer:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
@@ -971,7 +971,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinweis: Der Microsoft GS Wavetable Synthesizer führt zu unerwünschten Verzögerungen!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -996,12 +996,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
         <source>Open SoundFont File for fluidsynth</source>
-        <translation type="unfinished"></translation>
+        <translation>SoundFount-Datei für FluidSynth öffnen</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="295"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>SoundFont-Dateien (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>

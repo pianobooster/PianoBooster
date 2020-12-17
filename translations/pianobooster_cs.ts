@@ -800,7 +800,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
         <source>Reset</source>
-        <translation>Nastavit znovu</translation>
+        <translation>Obnovit výchozí</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="72"/>
@@ -891,7 +891,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="266"/>
         <source>Master Gain:</source>
-        <translation>Hlavní zesilovač:</translation>
+        <translation>Hlavní zesílení:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>
@@ -916,7 +916,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation>Načíst</translation>
+        <translation>Nahrát</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
@@ -991,7 +991,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="175"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation>Oprava prodlevy pracuje pouštěním hudby před tím, &lt;br&gt;co hrajete, aby působila proti zpoždění v tvůrci zvuku.&lt;br&gt;&lt;br&gt;Budete potřebovat piano &lt;b&gt;s reproduktory&lt;/b&gt;, jež jsou &lt;b&gt;zesíleny&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Zadejte čas v milisekundách pro zpoždění (1000 ms = 1 s)&lt;br&gt;(Pro Microsoft GS Wavetable SW Synth zkuste hodnotu 150)&lt;br&gt;Pokud si nejste jisti, zadejte jako hodnotu nulu.</translation>
+        <translation>Oprava prodlevy pracuje pouštěním hudby před tím, &lt;br&gt;co hrajete, aby působila proti zpoždění v tvůrci zvuku.&lt;br&gt;&lt;br&gt;Budete potřebovat klavír &lt;b&gt;s reproduktory&lt;/b&gt;, jež jsou &lt;b&gt;zesíleny&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Zadejte čas v milisekundách pro zpoždění (1000 ms = 1 s)&lt;br&gt;(Pro Microsoft GS Wavetable SW Synth zkuste hodnotu 150)&lt;br&gt;Pokud si nejste jisti, zadejte jako hodnotu nulu.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="294"/>
@@ -1718,7 +1718,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="421"/>
         <source>&amp;Song</source>
-        <translation>Pí&amp;seň</translation>
+        <translation>Pís&amp;eň</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="425"/>
@@ -1740,7 +1740,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="440"/>
         <source>&amp;Website</source>
-        <translation>&amp;Webová stránka</translation>
+        <translation>&amp;Internetová stránka</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="441"/>
@@ -1785,27 +1785,27 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="541"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/Midi Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation>&lt;p&gt;První běžte do menu &lt;i&gt;Nastavení/Nastavení MIDI&lt;/i&gt; a vyberte takové rozhraní, které podporuje váš hardware. </translation>
+        <translation>&lt;p&gt;Nejprve použijte &lt;i&gt;Nastavení/Nastavení MIDI&lt;/i&gt; a vyberte takové rozhraní, které podporuje vaše vybavení. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="543"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation>Dále použíte &lt;i&gt;Soubor/Otevřít&lt;/i&gt; pro otevření MIDI souborů s příponou &quot;.mid&quot; nebo karaoke souborů s příponou &quot;.kar&quot;. Poté si vyberte jestli chcete hudbu jen &lt;i&gt;poslouchat&lt;/i&gt; nebo &lt;i&gt;hrát pospolu&lt;/i&gt; na Vaších klávesách. Je možné také nastavit&lt;i&gt;úrovně&lt;/i&gt; obtížnosti na levém panelu. Až budete připraveni klikněte na tlačítko s &lt;i&gt;ikonou play&lt;/i&gt; (nebo zmáčkněte &lt;i&gt;mezerník&lt;/i&gt;) ke spuštění hudby.</translation>
+        <translation>Dále použijte &lt;i&gt;Soubor/Otevřít&lt;/i&gt; pro otevření MIDI souborů s příponou &quot;.mid&quot; nebo karaoke souborů s příponou &quot;.kar&quot;. Poté si vyberte, jestli chcete hudbu jen &lt;i&gt;poslouchat&lt;/i&gt; nebo &lt;i&gt;hrát pospolu&lt;/i&gt; na vašich klávesách. Je také možné v postranním panelu nastavit &lt;i&gt;úrovně&lt;/i&gt; obtížnosti. Až budete připraveni, ke spuštění hudby klepněte na tlačítko pro &lt;i&gt;přehrávání&lt;/i&gt; (nebo zmáčkněte &lt;i&gt;mezerník&lt;/i&gt;).</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="547"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation>&lt;h3&gt;Rady jak hrát na klavír&lt;/h3&gt;&lt;p&gt;Pro rady jak hrát na klavír se podívejte na: </translation>
+        <translation>&lt;h3&gt;Rady, jak hrát na klavír&lt;/h3&gt;&lt;p&gt;Pro rady, jak hrát na klavír, se podívejte na: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="549"/>
         <source>Piano Hints</source>
-        <translation>Rady na Klavír</translation>
+        <translation>Rady pro hru na klavír</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="550"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation>&lt;h3&gt;Pro více informací&lt;/h3&gt;&lt;p&gt;Pro více informací prosím navštivte </translation>
+        <translation>&lt;h3&gt;Více informací&lt;/h3&gt;&lt;p&gt;Pro více informací, prosím, navštivte </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
@@ -1815,12 +1815,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>the PianoBooster</source>
-        <translation>často kladené otázky PianoBoosteru</translation>
+        <translation>často kladené otázky ohledně PianoBoosteru</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>FAQ</source>
-        <translation>FAQ</translation>
+        <translation>Často kladené dotazy</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="554"/>
@@ -1910,12 +1910,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play from start toggle</source>
-        <translation>Přepnutí Přehrát od začátku</translation>
+        <translation>Přepnutí pro Přehrát od začátku</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="619"/>
         <source>Play Pause Toggle</source>
-        <translation>Přepnutí Přehrát/Pozastavit</translation>
+        <translation>Přepnutí pro Přehrát/Pozastavit</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="620"/>
