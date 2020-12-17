@@ -61,9 +61,6 @@ jobs:
       - name: Install dependencies
         run: |
           brew update || brew update
-          brew uninstall openssl@1.0.2t
-          rm -rf /usr/local/etc/openssl
-          rm -rf /usr/local/etc/openssl@1.1
           brew upgrade
           brew install cmake qt5 ftgl pkg-config fluid-synth
       - name: Define variables
