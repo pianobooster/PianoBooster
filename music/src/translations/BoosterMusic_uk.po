@@ -7,14 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-12-14 22:05+0000\n"
-"PO-Revision-Date: 2020-10-04 16:15+0100\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"PO-Revision-Date: 2020-12-17 12:54+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/pianobooster/"
+"boostermusic/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4-dev\n"
 
 #. type: Plain text
 #: BeginnerCourse/01-StartWithMiddleC.md:2
@@ -158,6 +161,8 @@ msgstr ""
 #, no-wrap
 msgid "**Intervals Right Hand** contains all the melodic intervals (sequences of two notes) one can play with the first five notes of the scale of C major.\n"
 msgstr ""
+"**Інтервали правою рукою** містить усі мелодійні інтервали (послідовності "
+"двох нот), які можна зіграти із п'ятьма першими нотами гами до-мажор.\n"
 
 #. type: Plain text
 #: BeginnerCourse/07-IntervalsRightHand.md:4
@@ -167,6 +172,10 @@ msgid ""
 "**little finger** for **G**. Make sure you keep using the correct finger for "
 "each note."
 msgstr ""
+"Подібно до п'єси «Вгору і вниз», яку ви грали раніше, скористайтеся **"
+"великим пальцем** для **до**, **вказівним пальцем** слід грати **ре**, . . . "
+", і так далі, аж до вашого **мізинця** для **соль**. Переконайтеся, що для "
+"кожної ноти ви використовуйте відповідний палець."
 
 #. type: Plain text
 #: BeginnerCourse/07-IntervalsRightHand.md:5
@@ -174,12 +183,17 @@ msgid ""
 "> **Hint:** _If reading a melody with large intervals is difficult, remember "
 "you can **label the piano keys** using the PianoBooster **Note Chart**_"
 msgstr ""
+"> **Підказка:** _якщо читати мелодію із великими інтервалами складно, "
+"згадайте, що ви можете **створити мітки для клавіш піаніно** за допомогою **"
+"Діаграми нот** PianoBooster_"
 
 #. type: Plain text
 #: BeginnerCourse/08-IntervalsLeftHand.md:2
 #, no-wrap
 msgid "**Intervals Left Hand** will exercise you to play all the melodic intervals possible with the top five notes of the scale of C major.\n"
 msgstr ""
+"**Інтервали лівою рукою** надасть вам змогу повправлятися у грі для усіх "
+"можливих мелодійних інтервалів із п'ятьма верхніми нотами гами до-мажор.\n"
 
 #. type: Plain text
 #: BeginnerCourse/08-IntervalsLeftHand.md:4
@@ -188,6 +202,9 @@ msgid ""
 "**index finger** for **B**, . . . , all the way down to your **little "
 "finger** for **F**."
 msgstr ""
+"Подібно до п'єси «Вниз і вгору», скористайтеся **великим пальцем** для **до**"
+", **вказівним пальцем** слід грати **сі**, . . . , і так далі, аж до вашого "
+"**мізинця** для **фа**."
 
 #. type: Plain text
 #: BeginnerCourse/08-IntervalsLeftHand.md:5
@@ -196,6 +213,9 @@ msgid ""
 "another if you are not used to it. Keep your left hand relaxed and try "
 "several times until your feel comfortable._"
 msgstr ""
+"> **Підказка:** _для деяких інтервалів перехід від одного пальця до іншого "
+"може бути складним, якщо ви до цього не звикли. Розслабте вашу ліву руку і "
+"спробуйте декілька разів, аж доки не відчуватимете себе комфортно._"
 
 #. type: Plain text
 #: BoosterMusic/01-ClairDeLaLune.md:2
