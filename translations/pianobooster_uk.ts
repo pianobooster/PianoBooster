@@ -75,7 +75,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ПОМИЛКА — НЕМАЄ ЗВУКУ: щоб виправити, скористайтеся пунктом меню Налаштування/Налаштувати MIDI...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
@@ -976,28 +976,28 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
         <source>MIDI Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштувати MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>The use of MIDI Through is not recommended!</source>
-        <translation type="unfinished"></translation>
+        <translation>Не рекомендуємо використовувати передавання MIDI!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="146"/>
         <source>MIDI Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій вхідних даних MIDI:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="149"/>
         <source>No Sound Output Device selected; Choose a MIDI Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вибрано пристрою для виведення звукових даних. Виберіть пристрій виведення MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>MIDI Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій виведення MIDI:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
@@ -1470,7 +1470,7 @@
         <location filename="../src/MidiFile.cpp" line="88"/>
         <location filename="../src/MidiFile.cpp" line="95"/>
         <source>MIDI File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка у роботі з файлами MIDI</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="89"/>
@@ -1480,7 +1480,7 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="96"/>
         <source>MIDI file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл MIDI «%1» пошкоджено</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
@@ -1750,37 +1750,37 @@
         <location filename="../src/QtWindow.cpp" line="215"/>
         <location filename="../src/QtWindow.cpp" line="239"/>
         <source>PianoBooster MIDI File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка PianoBooster під час роботи з файлами MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="216"/>
         <source>&quot;%1&quot; is not a MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>«%1» не є файлом MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="240"/>
         <source>&quot;%1&quot; is not a valid MIDI file</source>
-        <translation type="unfinished"></translation>
+        <translation>«%1» не є коректним файлом MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="331"/>
         <source>&amp;MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Н&amp;алаштувати MIDI...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the MIDI input and output</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштовування входу і виходу MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;До поточної версії PianoBooster включено вбудований засіб генерації звукових даних, який має назву FluidSynth і потребує для роботи звуковий шрифт General MIDI (GM). Скористайтеся пунктом меню «Налаштування/Налаштувати MIDI» і кнопкою завантаження на вкладці FluidSynth, щоб встановити звуковий шрифт.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/MIDI Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Спочатку скористайтеся пунктом меню &lt;i&gt;Налаштування/Налаштувати MIDI&lt;/i&gt; і у діалоговому вікні виберіть вхідний та вихідний інтерфейси MIDI, які відповідають використаному вами обладнанню. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
@@ -1946,12 +1946,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити файл MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>файли MIDI</translation>
     </message>
 </context>
 </TS>
