@@ -75,7 +75,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>FEL INGET LJUD: För att åtgärda detta använder du menyn Inställning/MIDI-inställning...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
@@ -820,12 +820,12 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>Din keyboardsintervall är &lt;b&gt;oktaver %1&lt;/b&gt; och &lt;b&gt;halvtoner %2&lt;/b&gt;; 60 är mitten C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppsan, du har &lt;b&gt;0 noter&lt;/b&gt; på din keyboard!</translation>
     </message>
 </context>
 <context>
@@ -976,28 +976,28 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
         <source>MIDI Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-inställningar</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>The use of MIDI Through is not recommended!</source>
-        <translation type="unfinished"></translation>
+        <translation>Användning av MIDI Through rekommenderas inte!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="146"/>
         <source>MIDI Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-ingångsenhet:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="149"/>
         <source>No Sound Output Device selected; Choose a MIDI Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen ljudutgångsenhet vald; Välj en MIDI-utgångsenhet</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>MIDI Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-utgångsenhet:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
@@ -1012,7 +1012,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="177"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation type="unfinished"></translation>
+        <translation>Latensfixet fungerar genom att köra musiken framför det du spelar för att motverka fördröjningen i ljudgeneratorn.&lt;br&gt;&lt;br&gt;Du behöver ett piano &lt;b&gt;med högtalare&lt;/b&gt; som är &lt;b &gt;uppvridna&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Ange tiden i millisekunder för fördröjningen (1000 mSec = 1 sek)&lt;br&gt;(För Microsoft GS Wavetable SW Synth försök värdet 150)&lt;br&gt;Om du är inte säker på att ange ett värde på noll.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="296"/>
@@ -1032,7 +1032,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Prova en latensfix på 150 msc)</translation>
     </message>
 </context>
 <context>
@@ -1040,7 +1040,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation type="unfinished">Dialogruta</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
@@ -1264,7 +1264,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation type="unfinished">Dialogruta</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="27"/>
@@ -1399,7 +1399,7 @@
         <location filename="../src/GuiTopBar.cpp" line="94"/>
         <location filename="../src/GuiTopBar.cpp" line="107"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="100"/>
@@ -1411,37 +1411,37 @@
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
         <location filename="../src/GuiTopBar.cpp" line="108"/>
         <source>G</source>
-        <translation type="unfinished">G</translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="96"/>
         <location filename="../src/GuiTopBar.cpp" line="109"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="97"/>
         <location filename="../src/GuiTopBar.cpp" line="110"/>
         <source>A</source>
-        <translation type="unfinished">A</translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="98"/>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>E</source>
-        <translation type="unfinished">E</translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="99"/>
         <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="114"/>
