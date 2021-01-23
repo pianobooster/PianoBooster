@@ -1,5 +1,5 @@
 ;NSIS Modern User Interface
-;create the windows install exectuable
+;create the windows install executable
 ;Piano Booster
 
 ;--------------------------------
