@@ -14,37 +14,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="307"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>ΝΤΟ</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="308"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>ΡΕ</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="309"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>ΜΙ</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>ΦΑ</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="311"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΟΛ</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="312"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>ΛΑ</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>ΣΙ</translation>
     </message>
 </context>
 <context>
@@ -113,12 +113,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Electric Piano 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρμόνιο 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Electric Piano 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρμόνιο 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
@@ -213,7 +213,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ακουστική Κιθάρα (νάιλον)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
@@ -1890,17 +1890,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε το δεξί χέρι</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="615"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε και τα δύο χέρια</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="616"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε το αριστερό χέρι</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="617"/>
@@ -1946,12 +1946,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιγμα MIDI αρχείου</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI Αρχεία</translation>
     </message>
 </context>
 </TS>

@@ -1728,7 +1728,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="528"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Begynn nå</translation>
+        <translation>&lt;h3&gt;Begynn nå&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="529"/>

@@ -75,7 +75,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ERREUR PAS DE SON : pour résoudre ce problème, utilisez le menu Paramétrages/Paramètres MIDI...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
@@ -976,28 +976,28 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
         <source>MIDI Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>The use of MIDI Through is not recommended!</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;utilisation de MIDI Through n&apos;est pas recommandée !</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="146"/>
         <source>MIDI Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Périphérique d&apos;entrée MIDI :</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="149"/>
         <source>No Sound Output Device selected; Choose a MIDI Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun périphérique de sortie sonore n&apos;est sélectionné ; choisissez un périphérique de sortie MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>MIDI Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Périphérique de sortie MIDI :</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
@@ -1470,7 +1470,7 @@
         <location filename="../src/MidiFile.cpp" line="88"/>
         <location filename="../src/MidiFile.cpp" line="95"/>
         <source>MIDI File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur de fichier MIDI</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="89"/>
@@ -1480,7 +1480,7 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="96"/>
         <source>MIDI file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier MIDI &quot;%1&quot; est corrompu</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
@@ -1750,37 +1750,37 @@
         <location filename="../src/QtWindow.cpp" line="215"/>
         <location filename="../src/QtWindow.cpp" line="239"/>
         <source>PianoBooster MIDI File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur de fichier MIDI PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="216"/>
         <source>&quot;%1&quot; is not a MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; n&apos;est pas un fichier MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="240"/>
         <source>&quot;%1&quot; is not a valid MIDI file</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; n&apos;est pas un fichier MIDI valide</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="331"/>
         <source>&amp;MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Paramètres MIDI ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the MIDI input and output</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurer l&apos;entrée et la sortie MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster inclut maintenant un générateur de sons intégré appelé FluidSynth qui nécessite une banque de son General MIDI (GM). Utilisez l&apos;option de menu &quot;Paramétrage/Paramètres MIDI&quot; et ensuite le bouton de chargement de l&apos;onglet FluidSynth pour installer la banque de son.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/MIDI Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Utilisez d&apos;abord le menu &lt;i&gt;Paramétrages/Paramètres MIDI&lt;/i&gt; et, dans la boîte de dialogue, sélectionnez les interfaces d&apos;entrée et de sortie MIDI qui correspondent à votre matériel. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
@@ -1946,12 +1946,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir un fichier MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers MIDI</translation>
     </message>
 </context>
 </TS>
