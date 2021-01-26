@@ -130,7 +130,7 @@ public:
         setValue("FluidSynth/SoundFont", getFluidSoundFontNames());
     }
 
-    // has a new sound fount been entered that is not the same as the old sound font
+    // has a new sound font been entered that is not the same as the old sound font
     bool isNewSoundFontEntered()
     {
         if (getFluidSoundFontNames().isEmpty())
