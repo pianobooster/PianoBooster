@@ -28,7 +28,7 @@
 
 #include "Bar.h"
 
-#define OPTION_DEBUG_BAR     1  // ZZ set back to 0
+#define OPTION_DEBUG_BAR     0
 #if OPTION_DEBUG_BAR
 #define ppDEBUG_BAR(args)     ppLogDebug args
 #else
@@ -54,7 +54,7 @@ void CBar::setTimeSig(int top, int bottom)
     m_beatLength = (CMidiFile::getPulsesPerQuarterNote() *4)/ m_currentTimeSigBottom;
     m_barLength = m_beatLength * getTimeSigTop();
     if (m_metronome != nullptr) {
-        m_metronome->setBarLength(m_barLength, m_beatLength);
+        m_metronome->setBarLength(m_barLength, m_currentTimeSigBottom);
     }
 }
 
@@ -62,9 +62,6 @@ int CBar::addDeltaTime(int ticks)
 {
     if (m_flushTicks == true && ticks != 0) // ignore this set of ticks
     {
-        if (m_metronome != nullptr) {
-            m_metronome->flushTicks(ticks);
-        }
         ppDEBUG_BAR(("addDeltaTime m_flushTicks ticks %d", ticks));
         m_flushTicks = false;
         return 0;

@@ -1,0 +1,4 @@
+0, 0, Header, 1, 1, 480
+1, 0, Start_track
+1, 67200, End_track
+0, 0, End_of_file

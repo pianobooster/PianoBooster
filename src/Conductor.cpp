@@ -1125,6 +1125,8 @@ void CConductor::rewind()
     resetWantedChord();
     setFollowSkillAdvanced(false);
 
+    m_metronome.rewindToStart();
+
     m_cfg_earlyNotesPoint = CMidiFile::ppqnAdjust(15); // was 10 playZoneEarly
     m_cfg_stopPointBeginner = CMidiFile::ppqnAdjust(-0); //was -3; // stop just after the beat
     m_cfg_stopPointAdvanced = CMidiFile::ppqnAdjust(-15); //was -3; // stop just after the beat

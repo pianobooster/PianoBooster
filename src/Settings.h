@@ -176,6 +176,7 @@ private:
     void saveXmlFile();
     void setDefaultValue(const QString & key, const QVariant & value );
     void setupDefaultSoundFont();
+    void setupMetronome();
 
     // returns either 'left' 'right' or 'both'
     const QString partToHandString(whichPart_t part)

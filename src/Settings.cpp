@@ -405,6 +405,7 @@ void CSettings::loadSettings()
     updateWarningMessages();
     updateTutorPage();
 
+    setupMetronome();
 }
 
 void CSettings::unzipBoosterMusicBooks()
@@ -592,3 +593,12 @@ void CSettings::setupDefaultSoundFont(){
     }
 #endif
 }
+
+void CSettings::setupMetronome() {
+    /* ZZ
+    setDefaultValue("Metronome/tryZZ","1234\n56789");
+    QStringList data {"hellxo, xxxx", "world", "how", "are", "you"};
+    setDefaultValue("Metronome/tryZZ3", data);
+    */
+}
+

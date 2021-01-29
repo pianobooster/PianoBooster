@@ -1,0 +1,13 @@
+0, 0, Header, 1, 1, 480
+1, 0, Start_track
+1, 0, Cue_point_t, "Metronome Woodblock"
+1, 0, Note_on_c, 9, 76, 127
+1, 0, Note_off_c, 9, 76, 0
+1, 480, Note_on_c, 9, 77, 127
+1, 480, Note_off_c, 9, 77, 0
+1, 960, Note_on_c, 9, 77, 127
+1, 960, Note_off_c, 9, 77, 0
+1, 1440, Note_on_c, 9, 77, 127
+1, 1440, Note_off_c, 9, 77, 0
+1, 1920, End_track
+0, 0, End_of_file
