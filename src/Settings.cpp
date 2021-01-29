@@ -557,7 +557,7 @@ void CSettings::setupDefaultSoundFont(){
         QStringList dirList = directory.entryList(QStringList(),QDir::AllEntries);
         foreach(QString filename, dirList)
         {
-            // Find the first sound fount file
+            // Find the first sound font file
             if ( filename.endsWith(".sf2", Qt::CaseInsensitive ) )
             {
                 defaultSoundFont.setFile(directory.path(), filename);

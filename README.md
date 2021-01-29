@@ -102,7 +102,7 @@ This source code URL has recently changed so please update all your bookmarks an
 
 We have many [issues](https://github.com/pianobooster/PianoBooster/issues) always.
 
-We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](music/src).
+We are looking for musicians to make music for pianobooster. It can be educational courses or other melodies: [music sources](https://github.com/pianobooster/BoosterMusic).
 
 
 Thanks to everyone who has already made contributions to the Piano Booster project.

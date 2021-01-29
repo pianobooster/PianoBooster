@@ -521,7 +521,7 @@ void CConductor::turnOnKeyboardLights(bool on)
     if (Cfg::keyboardLightsChan == -1)
         return;
 
-    // exit if keybaord light are allready on
+    // exit if keyboard light are already on
     if (m_KeyboardLightsOn && on)
         return;
 
