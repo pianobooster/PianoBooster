@@ -1,0 +1,30 @@
+0, 0, Header, 1, 1, 480
+1, 0, Start_track
+1, 0, Note_on_c, 9, 36, 73
+1, 2, Note_off_c, 9, 36, 64
+1, 2, Note_on_c, 9, 37, 38
+1, 5, Note_off_c, 9, 37, 64
+1, 5, Note_on_c, 9, 42, 59
+1, 7, Note_off_c, 9, 42, 64
+1, 245, Note_on_c, 9, 42, 56
+1, 247, Note_off_c, 9, 42, 64
+1, 482, Note_on_c, 9, 42, 59
+1, 485, Note_off_c, 9, 42, 64
+1, 487, Note_on_c, 9, 36, 66
+1, 490, Note_off_c, 9, 36, 64
+1, 722, Note_on_c, 9, 42, 60
+1, 725, Note_off_c, 9, 42, 64
+1, 955, Note_on_c, 9, 36, 71
+1, 957, Note_off_c, 9, 36, 64
+1, 960, Note_on_c, 9, 42, 55
+1, 962, Note_off_c, 9, 42, 64
+1, 967, Note_on_c, 9, 37, 40
+1, 970, Note_off_c, 9, 37, 64
+1, 1197, Note_on_c, 9, 42, 54
+1, 1200, Note_off_c, 9, 42, 64
+1, 1440, Note_on_c, 9, 42, 52
+1, 1442, Note_off_c, 9, 42, 64
+1, 1682, Note_on_c, 9, 42, 57
+1, 1685, Note_off_c, 9, 42, 64
+1, 1920, End_track
+0, 0, End_of_file

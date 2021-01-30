@@ -1,7 +1,7 @@
 # Piano Booster metronome patterns
 
 To activate these different metronome patterns copy them over the `Default.txt` metronome pattern file.
-On windows this file is in `\Users\<your user name>\AppData\Roaming\PianoBooster\metronome-patterns\Default.txt` and Linux and macOS it is in `~/.config/PianoBooster/metronome-patterns/Default.txt`
+On windows this file is in `\Users\<your user name>\AppData\Local\PianoBooster\Piano Booster\PianoBooster\metronome-patterns\Default.txt` and Linux and macOS it is in `~/.config/PianoBooster/metronome-patterns/Default.txt`
 
 Alternatively you can edit the `Default.txt` metronome patten file to suit your needs.
 If you do create useful metronome patten please consider sharing it with other users.
