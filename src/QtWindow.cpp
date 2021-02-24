@@ -62,6 +62,7 @@ QtWindow::QtWindow()
 
     decodeCommandLine();
 
+    /*
     if (Cfg::experimentalSwapInterval != -1)
     {
         QGLFormat fmt;
@@ -70,6 +71,7 @@ QtWindow::QtWindow()
         ppLogInfo("Open GL Swap Interval %d", value);
         QGLFormat::setDefaultFormat(fmt);
     }
+    */
 
     for (int i = 0; i < MAX_RECENT_FILES; ++i)
          m_recentFileActs[i] = nullptr;

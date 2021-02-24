@@ -45,7 +45,7 @@
 #define TEXT_LEFT_MARGIN 30
 
 CGLView::CGLView(QtWindow* parent, CSettings* settings)
-    : QGLWidget(parent)
+    : QOpenGLWidget(parent)
 {
     m_qtWindow = parent;
     m_settings = settings;
@@ -416,8 +416,8 @@ void CGLView::timerEvent(QTimerEvent *event)
     else
         m_fullRedrawFlag = false;
 
-    glDraw();
-    //update();
+    //glDraw();
+    update();
     m_fullRedrawFlag = true;
     BENCHMARK(19, "timer exit");
 }
@@ -425,3 +425,70 @@ void CGLView::timerEvent(QTimerEvent *event)
 void CGLView::mediaTimerEvent(int ticks)
 {
 }
+
+
+
+void CGLView::renderText(double x, double y, double z, const QString &str, const QFont & font = QFont()) {
+    // Identify x and y locations to render text within widget
+    int height = this->height();
+    GLdouble textPosX = 0, textPosY = 0, textPosZ = 0;
+    //project(x, y, 0f, &textPosX, &textPosX, &textPosZ);
+    textPosX = x;
+    textPosY = y;
+    textPosY = height - textPosY; // y is inverted
+
+    // Retrieve last OpenGL color to use as a font color
+    GLdouble glColor[4];
+    glGetDoublev(GL_CURRENT_COLOR, glColor);
+    QColor fontColor = Qt::white;// QColor(glColor[0], glColor[1], glColor[2], glColor[3]);
+
+    // Render text
+    QPainter painter(this);
+    painter.setPen(fontColor);
+    painter.setFont(font);
+    painter.drawText(textPosX, textPosY, str);
+    painter.end();
+}
+
+inline GLint CGLView::project(GLdouble objx, GLdouble objy, GLdouble objz,
+    const GLdouble model[16], const GLdouble proj[16],
+    const GLint viewport[4],
+    GLdouble * winx, GLdouble * winy, GLdouble * winz)
+{
+    GLdouble in[4], out[4];
+
+    in[0] = objx;
+    in[1] = objy;
+    in[2] = objz;
+    in[3] = 1.0;
+    transformPoint(out, model, in);
+    transformPoint(in, proj, out);
+
+    if (in[3] == 0.0)
+        return GL_FALSE;
+
+    in[0] /= in[3];
+    in[1] /= in[3];
+    in[2] /= in[3];
+
+    *winx = viewport[0] + (1 + in[0]) * viewport[2] / 2;
+    *winy = viewport[1] + (1 + in[1]) * viewport[3] / 2;
+
+    *winz = (1 + in[2]) / 2;
+    return GL_TRUE;
+}
+
+inline void CGLView::transformPoint(GLdouble out[4], const GLdouble m[16], const GLdouble in[4])
+{
+#define M(row,col)  m[col*4+row]
+    out[0] =
+        M(0, 0) * in[0] + M(0, 1) * in[1] + M(0, 2) * in[2] + M(0, 3) * in[3];
+    out[1] =
+        M(1, 0) * in[0] + M(1, 1) * in[1] + M(1, 2) * in[2] + M(1, 3) * in[3];
+    out[2] =
+        M(2, 0) * in[0] + M(2, 1) * in[1] + M(2, 2) * in[2] + M(2, 3) * in[3];
+    out[3] =
+        M(3, 0) * in[0] + M(3, 1) * in[1] + M(3, 2) * in[2] + M(3, 3) * in[3];
+#undef M
+}
+
