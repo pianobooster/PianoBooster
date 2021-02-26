@@ -111,7 +111,7 @@ void CPiano::drawPianoInputLines(CChord* chord, CColor color, int lineLength)
 
     for ( i = 0; i < chord->length(); i++)
     {
-        if (!m_rhythmTapping)
+        if (!m_rhythmTapping && m_settings->isNotePositionEnabled())
         {
             int pitch = chord->getNote(i).pitch();
             stavePos.notePos(chord->getNote(i).part(), pitch);
