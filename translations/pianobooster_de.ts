@@ -1546,7 +1546,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="318"/>
         <source>E&amp;xit</source>
-        <translation>&amp;Schliessen</translation>
+        <translation>&amp;Schließen</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="319"/>
@@ -1556,7 +1556,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="320"/>
         <source>Exit the application</source>
-        <translation>Das Programm schliessen</translation>
+        <translation>Das Programm schließen</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="323"/>
