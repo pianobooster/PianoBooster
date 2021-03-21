@@ -82,7 +82,9 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
 #if defined (Q_OS_LINUX)
     audioDriverCombo->addItems({"pulseaudio", "alsa"});
-#elif defined (Q_OS_UNIX) || defined (Q_OS_DARWIN)
+#elif defined (Q_OS_DARWIN)
+    audioDriverCombo->addItems({"coreaudio", "pulseaudio"});
+#elif defined (Q_OS_UNIX)
     audioDriverCombo->addItems({"pulseaudio"});
 #endif
 
