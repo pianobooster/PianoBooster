@@ -29,7 +29,7 @@
 #include "Cfg.h"
 
 float Cfg::m_staveEndX;
-int Cfg::logLevel = 1;
+int Cfg::logLevel = LOG_LEVEL_INFO;
 int Cfg::m_appX;
 int Cfg::m_appY;
 int Cfg::m_appWidth;

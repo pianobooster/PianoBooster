@@ -113,7 +113,7 @@ void ppLogInfo(const char *msg, ...)
     va_list ap;
 
     //fixme should call ppLog
-    if (Cfg::logLevel  <  1)
+    if (Cfg::logLevel  <  LOG_LEVEL_INFO)
         return;
 
     openLogFile();
@@ -130,7 +130,7 @@ void ppLogWarn(const char *msg, ...)
 {
     va_list ap;
 
-    if (Cfg::logLevel  <  2)
+    if (Cfg::logLevel  <  LOG_LEVEL_WARN)
         return;
 
     openLogFile();
@@ -163,7 +163,7 @@ void ppLogDebug( const char *msg, ...)
 {
     va_list ap;
 
-    if (Cfg::logLevel  <  2)
+    if (Cfg::logLevel  <  LOG_LEVEL_DEBUG)
         return;
 
     openLogFile();
