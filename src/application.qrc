@@ -11,5 +11,6 @@
         <file>images/play.png</file>
         <file>images/save.png</file>
         <file>images/stop.png</file>
+        <file>images/metronome.png</file>
     </qresource>
 </RCC>
