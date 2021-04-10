@@ -54,10 +54,12 @@ public:
     int getSpeed(){return speedSpin->value();}
     void stopMuiscPlaying();
     void updateTranslate();
+    void metronomeClicked() { on_metronome_clicked(true); }
 
 public slots:
     void on_playFromStartButton_clicked(bool clicked);
     void on_playButton_clicked(bool clicked);
+    void on_metronome_clicked(bool clicked);
 
 private slots:
     void on_speedSpin_valueChanged(int speed);

@@ -28,15 +28,6 @@
 
 #include "MidiDeviceFluidSynth.h"
 
-static fluid_settings_t* s_debug_fluid_settings;
-
-static void debug_settings_foreach_func (void *data, const char *name, int type)
-{
-    char buffer[300];
-    fluid_settings_copystr(s_debug_fluid_settings, name, buffer, sizeof (buffer));
-    ppLogDebug("settings_foreach_func %s : %s", name , buffer );
-}
-
 CMidiDeviceFluidSynth::CMidiDeviceFluidSynth()
 {
     m_synth = nullptr;
@@ -97,8 +88,8 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
     fluid_settings_setint(m_fluidSettings, "audio.period-size", qsettings->value("FluidSynth/bufferSizeCombo", 128).toInt());
     fluid_settings_setint(m_fluidSettings, "audio.periods", qsettings->value("FluidSynth/bufferCountCombo", 4).toInt());
 
-#if !defined (Q_OS_WINDOWS)
-    fluid_settings_setstr(m_fluidSettings, "audio.driver", qsettings->value("FluidSynth/audioDriverCombo", "pulseaudio").toString().toStdString().c_str());
+#if defined (Q_OS_LINUX)
+    fluid_settings_setstr(m_fluidSettings, "audio.driver", qsettings->value("FluidSynth/audioDriverCombo", "alsa").toString().toStdString().c_str());
 #endif
 
     // Create the synthesizer.
@@ -122,10 +113,6 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
     }
     fluid_synth_set_gain(m_synth, qsettings->value("FluidSynth/masterGainSpin", FLUID_DEFAULT_GAIN).toFloat()/100.0f );
     m_validConnection = true;
-    if (Cfg::logLevel >= LOG_LEVEL_DEBUG) {
-        s_debug_fluid_settings = m_fluidSettings;
-        fluid_settings_foreach(m_fluidSettings, 0, debug_settings_foreach_func);
-    }
     return true;
 }
 

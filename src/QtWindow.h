@@ -34,6 +34,7 @@
 #include "GuiMidiSetupDialog.h"
 #include "GuiKeyboardSetupDialog.h"
 #include "GuiSidePanel.h"
+#include "GuiMetronomeDialog.h"
 #include "GuiTopBar.h"
 #include "GuiPreferencesDialog.h"
 #include "GuiSongDetailsDialog.h"
@@ -114,6 +115,12 @@ private slots:
         m_sidePanel->setVisible(m_sidePanelStateAct->isChecked());
     }
 
+    void showMetronomeDialog()
+    {
+        m_metronomeDialog->init(m_song, m_settings, m_topBar);
+        m_metronomeDialog->exec();
+    }
+
     void onViewPianoKeyboard(){
         if (m_viewPianoKeyboard->isChecked()){
             m_settings->setValue("View/PianoKeyboard","on");
@@ -155,12 +162,13 @@ private slots:
         speed = m_song->getSpeed();
         m_topBar->setSpeed(static_cast<int>(speed*100 + 0.5));
     }
-    void on_slower()   {
+    void on_slower() {
         float speed = m_song->getSpeed() - 0.04;
         m_song->setSpeed(speed);
         speed = m_song->getSpeed();
-        m_topBar->setSpeed(static_cast<int>(speed*100 + 0.5));
+        m_topBar->setSpeed(static_cast<int>(speed * 100 + 0.5));
     }
+
     void on_nextSong()   {  m_sidePanel->nextSong(+1); }
     void on_previousSong()   {  m_sidePanel->nextSong(-1); }
     void on_nextBook()   {  m_sidePanel->nextBook(+1); }
@@ -194,6 +202,7 @@ private:
     GuiSidePanel *m_sidePanel;
     GuiTopBar *m_topBar;
     QTextBrowser *m_tutorWindow;
+    GuiMetronomeDialog* m_metronomeDialog;
 
     QTranslator translator;
     QTranslator translatorMusic;
@@ -215,6 +224,7 @@ private:
     QAction *m_fullScreenStateAct;
     QAction *m_setupPreferencesAct;
     QAction *m_songDetailsAct;
+    QAction *m_MetronomeAct;
 
     QMenu *m_fileMenu;
     QMenu *m_viewMenu;
@@ -232,3 +242,4 @@ private:
 };
 
 #endif // __QT_WINDOW_H__
+

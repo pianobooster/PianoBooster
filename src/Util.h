@@ -36,6 +36,8 @@
 
 using namespace std;
 
+#define MIN_MIDI_VOLUME         0
+#define MAX_MIDI_VOLUME         127
 #define MAX_MIDI_CHANNELS       16      // There are always at most 16 midi channels
 #define MIDDLE_C                60
 #define MIDI_OCTAVE             12
@@ -69,6 +71,7 @@ void ppLogWarn(const char *msg, ...);
 void ppLogError(const char *msg, ...);
 void ppTiming(const char *msg, ...);
 void closeLogs();
+int getNormalizedValue(int value, int rMin, int rMax, int tMin, int tMax);
 
 #define SPEED_ADJUST_FACTOR     1000
 #define deltaAdjust(delta) ((delta)/SPEED_ADJUST_FACTOR )

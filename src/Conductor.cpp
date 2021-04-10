@@ -75,6 +75,11 @@ CConductor::CConductor()
     setPianoSoundPatches(1-1, 7-1); // 6-1
     m_tempo.setSavedWantedChord(&m_savedWantedChord);
 
+    for (int chan = 0; chan < MAX_MIDI_CHANNELS; chan++)
+    {
+        m_savedMainVolume[chan] = MAX_MIDI_VOLUME / 2;
+    }
+
     reset();
     rewind();
     testWrongNoteSound(false);
@@ -156,7 +161,7 @@ void CConductor::resetAllChannels()
 int CConductor::calcBoostVolume(int channel, int volume)
 {
     int returnVolume;
-    bool activePart;
+    //bool activePart;
 
     if (volume == -1)
         volume = m_savedMainVolume[channel];
@@ -164,6 +169,8 @@ int CConductor::calcBoostVolume(int channel, int volume)
         m_savedMainVolume[channel] = volume;
 
     returnVolume = volume;
+
+#if 0
     activePart = false;
     if (CNote::hasPianoPart(m_activeChannel))
     {
@@ -226,6 +233,7 @@ int CConductor::calcBoostVolume(int channel, int volume)
     if (m_pianoVolume>0)
         returnVolume = (returnVolume * (100 - m_pianoVolume)) / 100;
 */
+//todo uncomment this 
 
     if (m_metronmeActive) {
         // the m_metronomeDrumVolume can only increase the actual valume by 50% max
@@ -253,9 +261,10 @@ int CConductor::calcBoostVolume(int channel, int volume)
          //*/
         }
     }
+#endif
 
     if (returnVolume > 127) {returnVolume = 127; }
-    if (returnVolume < 0){returnVolume=0;}
+    if (returnVolume < 0) {returnVolume=0;}
     return returnVolume;
 }
 
@@ -326,10 +335,7 @@ void CConductor::setActiveChannel(int channel)
 void CConductor::outputPianoVolume()
 {
     CMidiEvent event;
-    int volume = 127;
-    // if piano volume is between -100 and 0 reduce the volume accordingly
-    if (m_pianoVolume < 0)
-        volume = (volume * (100 + m_pianoVolume)) / 100;
+    int volume = m_pianoVolume;
 
     event.controlChangeEvent(0, m_pianistGoodChan, MIDI_MAIN_VOLUME, volume);
     playTrackEvent(event); // Play the midi note or event
@@ -1085,7 +1091,7 @@ void CConductor::realTimeEngine(int mSecTicks)
         }
         if (m_songEventQueue->length() > 0)
         {
-            m_nextMidiEvent = m_metronome.getNextMergedEvent(m_songEventQueue);
+            m_nextMidiEvent = m_metronome.getNextMergedEvent(m_songEventQueue, m_metronmeActive);
         }
         else
         {
@@ -1105,7 +1111,7 @@ void CConductor::rewind()
 
     for ( chan = 0; chan < MAX_MIDI_CHANNELS; chan++)
     {
-        m_savedMainVolume[chan] = 100;
+        m_savedMainVolume[chan] = MAX_MIDI_VOLUME/2;
     }
     m_lastSound = -1;
     m_rating.reset();

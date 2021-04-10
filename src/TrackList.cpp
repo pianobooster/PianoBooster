@@ -326,6 +326,20 @@ QStringList CTrackList::getAllChannelProgramNames(bool raw)
     return items;
 }
 
+QStringList CTrackList::getAllPercussionProgramNames()
+{
+    QStringList items;
+    int chan = 9;
+    QString text;
+
+    for (int i = 33; i < 82; i++)
+    {
+        text = QString::number(i) + " " + getPercussionProgramName(i);
+        items += text;
+    }
+    return items;
+}
+
 int CTrackList::getActiveHandIndex(whichPart_t whichPart)
 {
     int index = 0;
@@ -390,9 +404,12 @@ QString CTrackList::getChannelProgramName(int chan)
     }
     int program = m_midiChannels[chan].firstPatch();
 
-    if (chan==10-1)
-        return QObject::tr("Drums");
-    QString name = getProgramName(program +1); // Skip
+    QString name;
+    if (chan==10-1) //percussion channel
+        name = getPercussionProgramName(program + 1);     
+    else
+        name = getProgramName(program +1); // Skip
+    
     if (name.isEmpty())
         name = QObject::tr("Unknown");
 
@@ -532,6 +549,100 @@ QString CTrackList::getProgramName(int program)
         /* 126. */ QT_TR_NOOP("Helicopter"),
         /* 127. */ QT_TR_NOOP("Applause"),
         /* 128. */ QT_TR_NOOP("Gunshot"),
+    };
+
+    if (program >= 0 && program < static_cast<int>(arraySize(gmInstrumentNames)))
+        return tr(gmInstrumentNames[program]);
+    else
+        return QString();
+}
+
+QString CTrackList::getPercussionProgramName(int program)
+{
+    const char* const gmInstrumentNames[] =
+    {
+                   QT_TR_NOOP("(None)"),  // Don't use
+                   /* 1.   */ QT_TR_NOOP("(None)"),
+                   /* 2.   */ QT_TR_NOOP("(None)"),
+                   /* 3.   */ QT_TR_NOOP("(None)"),
+                   /* 4.   */ QT_TR_NOOP("(None)"),
+                   /* 5.   */ QT_TR_NOOP("(None)"),
+                   /* 6.   */ QT_TR_NOOP("(None)"),
+                   /* 7.   */ QT_TR_NOOP("(None)"),
+                   /* 8.   */ QT_TR_NOOP("(None)"),
+                   /* 9.   */ QT_TR_NOOP("(None)"),
+                   /* 10.  */ QT_TR_NOOP("(None)"),
+                   /* 11.  */ QT_TR_NOOP("(None)"),
+                   /* 12.  */ QT_TR_NOOP("(None)"),
+                   /* 13.  */ QT_TR_NOOP("(None)"),
+                   /* 14.  */ QT_TR_NOOP("(None)"),
+                   /* 15.  */ QT_TR_NOOP("(None)"),
+                   /* 16.  */ QT_TR_NOOP("(None)"),
+                   /* 17.  */ QT_TR_NOOP("(None)"),
+                   /* 18.  */ QT_TR_NOOP("(None)"),
+                   /* 19.  */ QT_TR_NOOP("(None)"),
+                   /* 20.  */ QT_TR_NOOP("(None)"),
+                   /* 21.  */ QT_TR_NOOP("(None)"),
+                   /* 22.  */ QT_TR_NOOP("(None)"),
+                   /* 23.  */ QT_TR_NOOP("(None)"),
+                   /* 24.  */ QT_TR_NOOP("(None)"),
+                   /* 25.  */ QT_TR_NOOP("(None)"),
+                   /* 26.  */ QT_TR_NOOP("(None)"),
+                   /* 27.  */ QT_TR_NOOP("(None)"),
+                   /* 28.  */ QT_TR_NOOP("(None)"),
+                   /* 29.  */ QT_TR_NOOP("(None)"),
+                   /* 30.  */ QT_TR_NOOP("(None)"),
+                   /* 31.  */ QT_TR_NOOP("(None)"),
+                   /* 32.  */ QT_TR_NOOP("(None)"),
+                   /* 33.  */ QT_TR_NOOP("Metronome Click"),
+                   /* 34.  */ QT_TR_NOOP("Metronome Bell"),
+                   /* 35.  */ QT_TR_NOOP("Acoustic Bass Drum"),
+                   /* 36.  */ QT_TR_NOOP("Bass Drum 1"),
+                   /* 37.  */ QT_TR_NOOP("Side Stick"),
+                   /* 38.  */ QT_TR_NOOP("Acoustic Snare"),
+                   /* 39.  */ QT_TR_NOOP("Hand Clap"),
+                   /* 40.  */ QT_TR_NOOP("Electric Snare"),
+                   /* 41.  */ QT_TR_NOOP("Low Floor Tom"),
+                   /* 42.  */ QT_TR_NOOP("Closed Hi-Hat"),
+                   /* 43.  */ QT_TR_NOOP("High Floor Tom"),
+                   /* 44.  */ QT_TR_NOOP("Pedal Hi-Hat"),
+                   /* 45.  */ QT_TR_NOOP("Low Tom"),
+                   /* 46.  */ QT_TR_NOOP("Open Hi-Hat"),
+                   /* 47.  */ QT_TR_NOOP("Low-Mid Tom"),
+                   /* 48.  */ QT_TR_NOOP("Hi-Mid Tom"),
+                   /* 49.  */ QT_TR_NOOP("Crash Cymbal 1"),
+                   /* 50.  */ QT_TR_NOOP("High Tom"),
+                   /* 51.  */ QT_TR_NOOP("Ride Cymbal 1"),
+                   /* 52.  */ QT_TR_NOOP("Chinese Cymbal"),
+                   /* 53.  */ QT_TR_NOOP("Ride Bell"),
+                   /* 54.  */ QT_TR_NOOP("Tambourine"),
+                   /* 55.  */ QT_TR_NOOP("Splash Cymbal"),
+                   /* 56.  */ QT_TR_NOOP("Cowbell"),
+                   /* 57.  */ QT_TR_NOOP("Crash Cymbal 2"),
+                   /* 58.  */ QT_TR_NOOP("Vibraslap"),
+                   /* 59.  */ QT_TR_NOOP("Ride Cymbal 2"),
+                   /* 60.  */ QT_TR_NOOP("Hi Bongo"),
+                   /* 61.  */ QT_TR_NOOP("Low Bongo"),
+                   /* 62.  */ QT_TR_NOOP("Mute Hi Conga"),
+                   /* 63.  */ QT_TR_NOOP("Open Hi Conga"),
+                   /* 64.  */ QT_TR_NOOP("Low Conga"),
+                   /* 65.  */ QT_TR_NOOP("High Timbale"),
+                   /* 66.  */ QT_TR_NOOP("Low Timbale"),
+                   /* 67.  */ QT_TR_NOOP("High Agogo"),
+                   /* 68.  */ QT_TR_NOOP("Low Agogo"),
+                   /* 69.  */ QT_TR_NOOP("Cabasa"),
+                   /* 70.  */ QT_TR_NOOP("Maracas"),
+                   /* 71.  */ QT_TR_NOOP("Short Whistle"),
+                   /* 72.  */ QT_TR_NOOP("Long Whistle"),
+                   /* 73.  */ QT_TR_NOOP("Short Guiro"),
+                   /* 74.  */ QT_TR_NOOP("Long Guiro"),
+                   /* 75.  */ QT_TR_NOOP("Claves"),
+                   /* 76.  */ QT_TR_NOOP("Hi Wood Block"),
+                   /* 77.  */ QT_TR_NOOP("Low Wood Block"),
+                   /* 78.  */ QT_TR_NOOP("Mute Cuica"),
+                   /* 79.  */ QT_TR_NOOP("Open Cuica"),
+                   /* 80.  */ QT_TR_NOOP("Mute Triangle"),
+                   /* 81.  */ QT_TR_NOOP("Open Triangle"),
     };
 
     if (program >= 0 && program < static_cast<int>(arraySize(gmInstrumentNames)))

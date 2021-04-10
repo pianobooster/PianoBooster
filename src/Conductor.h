@@ -134,21 +134,34 @@ public:
 
     void setPlayMode(playMode_t mode);
 
+    int getChannelVolume() { return m_savedMainVolume[m_activeChannel]; }
+    void channelVolume(int channelVolume)
+    {
+       if (channelVolume > 127) { channelVolume = 127; }
+       if (channelVolume < 0) { channelVolume = 0; }
+
+       m_savedMainVolume[m_activeChannel] = channelVolume;
+            
+        outputBoostVolume();
+    }
+
     int getBoostVolume() {return m_boostVolume;}
     void boostVolume(int boostVolume)
     {
+        if (boostVolume > 127) { boostVolume = 127; }
+        if (boostVolume < 0) { boostVolume = 0; }
+
         m_boostVolume = boostVolume;
-        if (m_boostVolume < -100 ) m_boostVolume = -100;
-        if (m_boostVolume > 100 ) m_boostVolume = 100;
         outputBoostVolume();
     }
 
     int getPianoVolume() {return m_pianoVolume;}
     void pianoVolume(int pianoVolume)
     {
+        if (pianoVolume > 127) { pianoVolume = 127; }
+        if (pianoVolume < 0) { pianoVolume = 0; }
+
         m_pianoVolume = pianoVolume;
-        if (m_pianoVolume < -100 ) m_pianoVolume = -100;
-        if (m_pianoVolume > 100 ) m_pianoVolume = 100;
         outputBoostVolume();
     }
     static playMode_t getPlayMode() {return m_playMode;}
@@ -205,6 +218,51 @@ public:
     bool cfg_timingMarkersFlag;
     stopPointMode_t cfg_stopPointMode;
     rhythmTapping_t cfg_rhythmTapping;
+    
+    void setMetronomeState(bool active) { m_metronmeActive = active;  }
+    bool metronomeActive() { return m_metronmeActive;  }
+    
+    int getMetronomeBarSound() {
+        return m_metronome.getBarSound();
+    }
+
+    int getMetronomeBeatSound() {
+        return m_metronome.getBeatSound();
+    }
+
+    int getMetronomeBarVelocity() {
+        return m_metronome.getBarVelocity();
+    }
+
+    int getMetronomeBeatVelocity() {
+        return m_metronome.getBeatVelocity();
+    }
+
+    void setMetronomeBarSound(int key) {
+        m_metronome.setBarSound(key);
+        m_metronome.rewindToStart();
+    }
+
+    void setMetronomeBeatSound(int key) {
+        m_metronome.setBeatSound(key);
+        m_metronome.rewindToStart();
+    }
+
+    void setMetronomeBarVelocity(int velocity) {
+        m_metronome.setBarVelocity(velocity);
+        m_metronome.rewindToStart();
+    }
+
+    void setMetronomeBeatVelocity(int velocity) {
+        m_metronome.setBeatVelocity(velocity);
+        m_metronome.rewindToStart();
+    }
+    
+    void setMetronomeVolume(int volume) { 
+    	m_savedMainVolume[MIDI_DRUM_CHANNEL] = volume;
+    	outputBoostVolume();
+     }
+    int getMetronomeVolume() { return m_metronome.getMetronomeVolume(); }
 
 protected:
     CScore* m_scoreWin;
@@ -308,7 +366,7 @@ private:
     int m_boostVolume;
     int m_pianoVolume;
     int m_metronomeDrumVolume = 100;
-    bool m_metronmeActive = true;
+    bool m_metronmeActive = false;
     int m_activeChannel; // The current part that is being displayed (used for boost)
     int m_savedMainVolume[MAX_MIDI_CHANNELS];
     static playMode_t m_playMode;

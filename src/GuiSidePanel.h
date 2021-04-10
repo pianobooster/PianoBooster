@@ -102,13 +102,28 @@ private slots:
             m_trackList->currentRowChanged(currentRow);
             autoSetMuteYourPart();
         }
+        if (m_song) {
+            int activeChannelVolume = m_song->getChannelVolume();
+            int sliderValue = getNormalizedValue(activeChannelVolume, MIN_MIDI_VOLUME, MAX_MIDI_VOLUME, -100, 100); //reverse normalization process
+            boostSlider->setSliderPosition(sliderValue);
+        }
     }
 
     void on_boostSlider_valueChanged(int value) {
-        if (m_song) m_song->boostVolume(value);
+        if (value < -100) value = -100;
+        if (value > 100) value = 100;
+
+        value = getNormalizedValue(value, -100, 100, MIN_MIDI_VOLUME, MAX_MIDI_VOLUME);
+
+        if (m_song) m_song->channelVolume(value);
     }
 
     void on_pianoSlider_valueChanged(int value) {
+        if (value < -100) value = -100;
+        if (value > 100) value = 100;
+
+        value = getNormalizedValue(value, -100, 100, MIN_MIDI_VOLUME, MAX_MIDI_VOLUME);
+
         if (m_song) m_song->pianoVolume(value);
     }
     void on_listenRadio_toggled (bool checked)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>GuiMetronomeDialog</class>
+ <widget class="QDialog" name="GuiMetronomeDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -30,7 +30,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QComboBox" name="comboBox_2"/>
+         <widget class="QComboBox" name="barCombo"/>
         </item>
         <item row="0" column="2">
          <widget class="QLabel" name="label_5">
@@ -40,7 +40,7 @@
          </widget>
         </item>
         <item row="1" column="2">
-         <widget class="QSpinBox" name="spinBox"/>
+         <widget class="QSpinBox" name="barSpin"/>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_7">
@@ -57,10 +57,10 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QComboBox" name="comboBox_3"/>
+         <widget class="QComboBox" name="beatCombo"/>
         </item>
         <item row="2" column="2">
-         <widget class="QSpinBox" name="spinBox_2"/>
+         <widget class="QSpinBox" name="beatSpin"/>
         </item>
         <item row="3" column="0">
          <widget class="QLabel" name="label_8">
@@ -70,10 +70,10 @@
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QComboBox" name="comboBox_4"/>
+         <widget class="QComboBox" name="subBeatCombo"/>
         </item>
         <item row="3" column="2">
-         <widget class="QSpinBox" name="spinBox_3"/>
+         <widget class="QSpinBox" name="subBeatSpin"/>
         </item>
        </layout>
       </item>
@@ -98,14 +98,14 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QCheckBox" name="checkBox">
+        <widget class="QCheckBox" name="metronomeCheck">
          <property name="text">
           <string>Activate Metronome</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="previewSoundPush">
          <property name="text">
           <string>Preview Sound</string>
          </property>
@@ -121,7 +121,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QSlider" name="horizontalSlider">
+      <widget class="QSlider" name="metronomeVolume">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -184,7 +184,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>GuiMetronomeDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -200,7 +200,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>GuiMetronomeDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

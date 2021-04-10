@@ -3,7 +3,6 @@
 #include <QStandardPaths>
 #include <QTextStream>
 
-
 void  CMetronome::writeStandardCsv(QDir dir) {
     QFile metroFile(dir.filePath(DEFAULT_FILE_NAME));
 
@@ -54,6 +53,9 @@ void  CMetronome::loadMetronomeCsv(QDir dir, QString fileName) {
 
     long timeCode = 0;
     QTextStream in(&metroFile);
+    
+    int noteCounter = 0;
+    int notesPerBar = 0;
 
     while (!in.atEnd()){
     QString line=in.readLine().trimmed(); // reads line from file
@@ -68,17 +70,62 @@ void  CMetronome::loadMetronomeCsv(QDir dir, QString fileName) {
             QString cmd = elements[2].trimmed();
             int channel = elements[3].trimmed().toInt();
             QString noteStr = elements[4].trimmed();
-            int note = noteStr.toInt();
             QString velocityStr = elements[5].trimmed();
             int velocity = velocityStr.toInt();
-
+            int note = noteStr.toInt();
+            
+            if ((noteCounter == 0 || (notesPerBar != 0 && (noteCounter == notesPerBar)))) { //note on bar
+               if (barSound != -1) { //custom bar sound
+                   note = barSound;
+               }
+               else {
+               if (cmd == "Note_on_c") {
+                   if (noteCounter == 0) {
+                       barSound = note; 
+                   }
+                   }
+               }
+               
+               if (cmd == "Note_on_c") {
+                   if (barVelocity != -1) {
+                       velocity = barVelocity;
+                   }
+                   else {
+                       if (noteCounter == 0) {
+                           barVelocity = velocity;
+                       }
+                   }
+               } 
+            } else {
+               if (beatSound != -1) { //custom beat sound
+               //printf("beat sound %d \n", beatSound);
+                   note = beatSound;
+               }
+               else {
+               if (cmd == "Note_on_c") {
+                   beatSound = note; 
+                   }
+               }
+               
+               if (cmd == "Note_on_c") {
+                   if (beatVelocity != -1) {
+                       velocity = beatVelocity;
+                   }
+                   else {
+                       beatVelocity = velocity;
+                   }
+                   
+               } 
+            }
+            
             CMidiEvent midiEvent;
             if (cmd == "Header") {
                 metronomePpqn = velocity;
                 timeScaling = CMidiFile::getPulsesPerQuarterNote() / (double)metronomePpqn;
                 ticksPerBeat = metronomePpqn * timeScaling;
-
-            } else if (cmd == "Note_on_c") {
+                notesPerBar = m_barLength / ticksPerBeat;
+            } else if (cmd == "Note_on_c") {       
+                noteCounter++;
                 midiEvent.noteOnEvent(deltaTime, channel, note, velocity);
                 metronomePattern.append(midiEvent);
                 addRepeatPattern(midiEvent, timeCode );
@@ -108,10 +155,10 @@ void  CMetronome::generateMetronomeTickPattern() {
     metronomeDir.cd("PianoBooster/metronome-patterns");
 
     writeStandardCsv(metronomeDir);
-    loadMetronomeCsv(metronomeDir, DEFAULT_FILE_NAME);
+    loadMetronomeCsv(metronomeDir, DEFAULT_FILE_NAME);  
 }
 
-CMidiEvent CMetronome::getNextMergedEvent(CQueue<CMidiEvent>* otherQueue) {
+CMidiEvent CMetronome::getNextMergedEvent(CQueue<CMidiEvent>* otherQueue, bool metronomeActive) {
 
     if (otherQueue->length() == 0) {
         return CMidiEvent();
@@ -151,6 +198,13 @@ CMidiEvent CMetronome::getNextMergedEvent(CQueue<CMidiEvent>* otherQueue) {
 
         nextMetronomeEvent = metronomeEvent;
         metronomeIndex++;
+    }
+    
+    if (!metronomeActive) {
+        if (nextOtherEvent.type() == MIDI_NONE) {
+            return nextOtherEvent;
+        } 
+        return otherQueue->pop();
     }
 
     return nextMetronomeEvent.getNextMergedEvent(nextOtherEvent);

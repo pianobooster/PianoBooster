@@ -35,7 +35,6 @@
 GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
     : QWidget(parent), m_settings(settings)
 {
-
     m_atTheEndOfTheSong = false;
     m_song = nullptr;
     setupUi(this);
@@ -55,6 +54,8 @@ GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
     majorCombo->addItem(tr("Minor"));
     setMaximumHeight(30);
     setMaximumSize(QSize(16777215, 30));
+    
+    setStyleSheet("outline: none");
 }
 
 void GuiTopBar::init(CSong* songObj)
@@ -204,6 +205,32 @@ void GuiTopBar::updateTranslate(){
     majorCombo->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
 
     retranslateUi(this);
+}
+
+void GuiTopBar::on_metronome_clicked(bool clicked)
+{
+    if (!m_song) return;
+
+    if(!m_song->metronomeActive()) {
+         m_song->setMetronomeState(true);
+         metronome->setToolTip(tr(""));
+         
+         QPalette pal = metronome->palette();
+         pal.setColor(QPalette::Button, QColor(Qt::blue));
+         metronome->setAutoFillBackground(true);
+         metronome->setPalette(pal);
+         metronome->update();
+           
+    } else {
+         m_song->setMetronomeState(false);
+         metronome->setToolTip(tr("Start and stop metronome"));
+         
+         QPalette pal = metronome->palette();
+         pal.setColor(QPalette::Button, QColor(Qt::white));
+         metronome->setAutoFillBackground(true);
+         metronome->setPalette(pal);
+         metronome->update();
+    }
 }
 
 void GuiTopBar::on_playButton_clicked(bool clicked)

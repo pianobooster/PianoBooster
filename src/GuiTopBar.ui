@@ -185,6 +185,29 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="metronome">
+       <property name="toolTip">
+        <string>Start and stop metronome</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/images/metronome.png</normaloff>:/images/metronome.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>

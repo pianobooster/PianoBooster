@@ -113,7 +113,7 @@ void ppLogInfo(const char *msg, ...)
     va_list ap;
 
     //fixme should call ppLog
-    if (Cfg::logLevel  <  LOG_LEVEL_INFO)
+    if (Cfg::logLevel  <  1)
         return;
 
     openLogFile();
@@ -130,7 +130,7 @@ void ppLogWarn(const char *msg, ...)
 {
     va_list ap;
 
-    if (Cfg::logLevel  <  LOG_LEVEL_WARN)
+    if (Cfg::logLevel  <  2)
         return;
 
     openLogFile();
@@ -163,7 +163,7 @@ void ppLogDebug( const char *msg, ...)
 {
     va_list ap;
 
-    if (Cfg::logLevel  <  LOG_LEVEL_DEBUG)
+    if (Cfg::logLevel  <  2)
         return;
 
     openLogFile();
@@ -317,4 +317,26 @@ QString Util::dataDir() {
     appImageInternalPath.truncate(i);
 
     return (appImageInternalPath+QString(PREFIX)+"/"+QString(DATA_DIR));
+}
+
+int getNormalizedValue(int value, int rMin, int rMax, int tMin, int tMax) {
+    
+    //Scale the channel volume between 0 and MAX_MIDI_VOLUME (127)
+    //using this normaliztion formula https://stats.stackexchange.com/a/281164
+
+    float normalizedVolume = value;
+    //printf("step 1: %f \n", normalizedVolume);
+    normalizedVolume = (normalizedVolume - rMin);
+    //printf("step 2: %f \n", normalizedVolume);
+    normalizedVolume = normalizedVolume / (rMax - rMin);
+    //printf("step 3: %f \n", normalizedVolume);
+    normalizedVolume = normalizedVolume * (tMax - tMin);
+    //printf("step 4: %f \n", normalizedVolume);
+    normalizedVolume = normalizedVolume + tMin;
+    //printf("step 5: %f \n", normalizedVolume);
+
+    printf("Volume slider value changed\n");
+    printf("new slider volume: %d normalize slider volume: %d \n", value, (int)normalizedVolume);
+
+    return (int) normalizedVolume;
 }

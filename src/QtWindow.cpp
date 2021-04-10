@@ -91,6 +91,7 @@ QtWindow::QtWindow()
 
     m_sidePanel = new GuiSidePanel(this, m_settings);
     m_topBar = new GuiTopBar(this, m_settings);
+    m_metronomeDialog = new GuiMetronomeDialog(this);
     m_tutorWindow = new QTextBrowser(this);
     m_tutorWindow->hide();
 
@@ -369,6 +370,11 @@ void QtWindow::createActions()
     m_songDetailsAct->setToolTip(tr("Song Settings"));
     m_songDetailsAct->setShortcut(tr("Ctrl+D"));
     connect(m_songDetailsAct, SIGNAL(triggered()), this, SLOT(showSongDetailsDialog()));
+    
+    m_MetronomeAct = new QAction(tr("Metronome ..."), this);
+    m_MetronomeAct->setToolTip(tr("Metronome Settings"));
+    //m_MetronomeAct->setShortcut(tr("Ctrl+D")); //todo set shortcut
+    connect(m_MetronomeAct, SIGNAL(triggered()), this, SLOT(showMetronomeDialog()));
 
     QAction* act = new QAction(this);
     act->setShortcut(tr("Shift+F1"));
@@ -421,6 +427,11 @@ void QtWindow::createMenus()
     m_songMenu = menuBar()->addMenu(tr("&Song"));
     m_songMenu->setToolTipsVisible(true);
     m_songMenu->addAction(m_songDetailsAct);
+    m_songMenu->addAction(m_MetronomeAct);
+    
+    /*m_songMenu = menuBar()->addMenu(tr("&Metronome"));
+    m_songMenu->setToolTipsVisible(true);
+    m_songMenu->addAction(m_MetronomeAct);*/
 
     m_setupMenu = menuBar()->addMenu(tr("Set&up"));
     m_setupMenu->setToolTipsVisible(true);
@@ -828,3 +839,4 @@ void QtWindow::refreshTranslate(){
 
 #endif
 }
+

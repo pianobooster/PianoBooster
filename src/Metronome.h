@@ -1,6 +1,8 @@
 #ifndef METRONOME_H
 #define METRONOME_H
 
+#define MAX_VELOCITY 127
+
 #include <QVector>
 #include <QDir>
 #include "MidiEvent.h"
@@ -23,12 +25,56 @@ public:
         generateMetronomeTickPattern();
     }
 
-    CMidiEvent getNextMergedEvent(CQueue<CMidiEvent>* otherQueue);
+    void skipMetronomeEvent() {
+        metronomeIndex++;
+    }
+
+    CMidiEvent getNextMergedEvent(CQueue<CMidiEvent>* otherQueue, bool metronomeActive = true);
 
     void setBarLength(int barLength, int timeSigBottom) {
         m_barLength = barLength;
         m_timeSigBottom = timeSigBottom;
         resetTicks();
+    }
+
+    int getBarSound() {
+        return barSound;
+    }
+
+    int getBeatSound() {
+        return beatSound;
+    }
+
+    int getBarVelocity() {
+        return barVelocity;
+    }
+
+    int getBeatVelocity() {
+        return beatVelocity;
+    }
+    
+    int getMetronomeVolume() {
+        return metronomeVolume;
+    }
+
+    void setBarSound(int key) {
+        barSound = key;
+    }
+
+    void setBeatSound(int key) {
+        beatSound = key;
+    }
+
+    void setBarVelocity(int velocity) {
+        barVelocity = velocity;
+    }
+
+    void setBeatVelocity(int velocity) {
+        beatVelocity = velocity;
+    }
+    
+    void setMetronomeVolume(int volume) {
+        metronomeVolume = volume; 
     }
 
 private:
@@ -66,6 +112,12 @@ private:
     int ticksPerBeat = DEFAULT_PPQN;
     CQueue<CMidiEvent>* otherQueue;
     int m_barLength, m_timeSigBottom;
+    int barSound = -1;
+    int beatSound = -1;
+    int barVelocity = -1;
+    int beatVelocity = -1;
+    int metronomeVolume = MAX_MIDI_VOLUME / 2;
+    
 };
 
 #endif // METRONOME_H
