@@ -62,13 +62,12 @@ QtWindow::QtWindow()
 
     decodeCommandLine();
 
+    QGLFormat fmt = QGLFormat::defaultFormat();
     if (Cfg::experimentalSwapInterval != -1)
     {
-        QGLFormat fmt;
         fmt.setSwapInterval(Cfg::experimentalSwapInterval);
         int value = fmt.swapInterval();
         ppLogInfo("Open GL Swap Interval %d", value);
-        QGLFormat::setDefaultFormat(fmt);
     }
 
     for (int i = 0; i < MAX_RECENT_FILES; ++i)
@@ -79,6 +78,13 @@ QtWindow::QtWindow()
     int rt_prio = sched_get_priority_max(SCHED_FIFO);
     set_realtime_priority(SCHED_FIFO, rt_prio);
 #endif
+
+    QString antiAliasingSetting = m_settings->value("anti-aliasing").toString();
+    if (antiAliasingSetting.isEmpty() || antiAliasingSetting=="on"){
+        fmt.setSamples(4);
+    }
+
+    QGLFormat::setDefaultFormat(fmt);
 
     m_glWidget = new CGLView(this, m_settings);
     m_glWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
