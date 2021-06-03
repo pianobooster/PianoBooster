@@ -81,6 +81,7 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
     ADD_DEFINITIONS(-D__LINUX_ALSA__)
     LINK_LIBRARIES (asound)
     LINK_LIBRARIES (pthread)
+    LINK_LIBRARIES (ncurses)
     LINK_LIBRARIES (GL)
 endif(${CMAKE_SYSTEM} MATCHES "Linux")
 

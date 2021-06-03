@@ -149,6 +149,7 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     showTutorPagesCheck->setChecked(m_settings->isTutorPagesEnabled());
     followThroughErrorsCheck->setChecked(m_settings->isFollowThroughErrorsEnabled());
     showColoredNotesCheck->setChecked(m_settings->isColoredNotesEnabled());
+    showNotePositionCheck->setChecked(m_settings->isNotePositionEnabled());
 
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
 
@@ -164,6 +165,7 @@ void GuiPreferencesDialog::accept()
     m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());
     m_settings->setFollowThroughErrorsEnabled( followThroughErrorsCheck->isChecked());
     m_settings->setColoredNotes( showColoredNotesCheck->isChecked());
+    m_settings->setNotePositionEnabled( showNotePositionCheck->isChecked());
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
 

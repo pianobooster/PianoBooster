@@ -54,10 +54,12 @@ public:
     bool isTutorPagesEnabled() { return m_tutorPagesEnabled; }
     bool isFollowThroughErrorsEnabled() { return m_followThroughErrorsEnabled; }
     bool isColoredNotesEnabled() { return m_coloredNotes; }
+    bool isNotePositionEnabled() { return m_notePositionEnabled; }
 
     /// Saves in the .ini file whether the user wants to show the note names
     void setNoteNamesEnabled(bool value);
     void setColoredNotes(bool value);
+    void setNotePositionEnabled(bool value);
     void setTutorPagesEnabled(bool value);
     void setFollowThroughErrorsEnabled(bool value);
 
@@ -77,6 +79,13 @@ public:
     void coloredNotes(bool b){
         m_coloredNotes = b;
     }
+
+
+    /// returns true if the user wants to see vertical line at the current note
+    bool showNotePosition(){
+        return m_notePositionEnabled;
+    }
+
 
     /// returns true if the user wants Follow Skill to ignore errors
     bool followThroughErrors(){
@@ -199,6 +208,7 @@ private:
     GuiTopBar* m_guiTopBar;
     bool m_noteNamesEnabled;
     bool m_coloredNotes;
+    bool m_notePositionEnabled;
     bool m_tutorPagesEnabled;
     bool m_advancedMode;
     bool m_followThroughErrorsEnabled;

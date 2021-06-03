@@ -69,6 +69,7 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_pianistActive = false;
     m_noteNamesEnabled = value("Score/NoteNames", true ).toBool();
     m_coloredNotes = value("Score/ColoredNotes", false ).toBool();
+    m_notePositionEnabled = value("Score/notePosition", true ).toBool();
     m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
     m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", false ).toBool();
@@ -100,6 +101,11 @@ void CSettings::setNoteNamesEnabled(bool value) {
 void CSettings::setColoredNotes(bool value) {
     m_coloredNotes = value;
     setValue("Score/ColoredNotes", value );
+}
+
+void CSettings::setNotePositionEnabled(bool value) {
+    m_notePositionEnabled = value;
+    setValue("Score/notePosition", value );
 }
 
 void CSettings::setTutorPagesEnabled(bool value) {
