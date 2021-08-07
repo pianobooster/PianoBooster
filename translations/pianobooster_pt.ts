@@ -1785,87 +1785,87 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation type="unfinished"></translation>
+        <translation>Depois use &lt;i&gt;Arquivo/Abrir&lt;/i&gt; para abrir o arquivos &quot;.mid&quot; de MIDI ou &quot;.kar&quot; de karaoke. Agora selecione se você quer apenas &lt;i&gt;ouvir&lt;/i&gt; a canção ou &lt;i&gt;tocar junto&lt;/i&gt; no teclado para configurar o nível de &lt;i&gt;habilidade&lt;/i&gt; no menu lateral. Finalmente quando estiver pronto para clicar no &lt;i&gt;ícone de tocar&lt;/i&gt; (ou pressione a &lt;i&gt;barra de espaço&lt;/i&gt;) para rolar a música.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="546"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Dicas sobre tocar o piano&lt;/h3&gt;&lt;p&gt;Para dicas de como tocar o piano veja: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="548"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Dicas de Piano</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="549"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Mais Informação&lt;/h3&gt;&lt;p&gt;Para mais ajuda por favor visite o </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="551"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>site do PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation>o PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
         <source>FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Perguntas Frequentes</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>e o</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>fórum de usuários</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="563"/>
         <source>About Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="565"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PianoBooster - Versão %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Impulsione&lt;/b&gt; suas habilidades de &lt;b&gt;Piano&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright(c) L. J. Barman, 2008-2020; Todos Direitos Reservados.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright(c) Fabien Givors, 2018-2019; Todos direitos reservados.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Este programa é disponibilizado pelos termos da licensa da GNU General Public License version 3 como publicado pela Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Esse programa também contém classes C++ da RtMIDI: realtime MIDI i/o&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="578"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright(c) Gary P. Scavone, 2003-2019; Todos direitos reservados.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="587"/>
@@ -1875,83 +1875,83 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
         <source>PC Keyboard ShortCuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Atalhos de Teclado do Computador</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Atalhos do teclado&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;As seguintes teclas de atalho do computador foram definidas.&lt;/p&gt;&lt;center&gt;&lt;table border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;th&gt;Ação&lt;/th&gt;&lt;th&gt;Tecla&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha a mão direita</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="615"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha ambas as mãos</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="616"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha a mão esquerda</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="617"/>
         <source>Play from start toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Tocar do início</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play Pause Toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Tocar Parar</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="619"/>
         <location filename="../src/QtWindow.cpp" line="620"/>
         <source>Increase the speed by 5%</source>
-        <translation type="unfinished"></translation>
+        <translation>Aumentar a velocidade em 5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Change to the Next Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar para próxima música</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Change to the Previous Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar para música anterior</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar para próximo livro</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar para o livro anterior</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="626"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;td&gt;Notas falsas do Piano&lt;/td&gt;&lt;td&gt;X é o Dó Central&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Arquivo MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos MIDI</translation>
     </message>
 </context>
 </TS>
