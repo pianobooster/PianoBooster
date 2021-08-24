@@ -1531,7 +1531,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="313"/>
         <source>&amp;Open...</source>
-        <translation>&amp;باز کردن...‌</translation>
+        <translation>&amp;باز کردن...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="314"/>
