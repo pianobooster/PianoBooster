@@ -72,6 +72,41 @@ Once this is completed type:
 
 Or alternatively you can install QtCreator and then open the `CMakeLists.txt`.
 
+# Build instructions for Raspberry PI OS and other ARM Devices
+
+Building on these devices requires QT compiled with desktop OpenGL support. OpenGL/ES is not supported at this time. If after compiling and running PianoBooster you see messages concerning OpenGL/ES like this:
+
+```
+QGLWidget::renderText is not supported under OpenGL/ES
+```
+
+it means that your version of QTOpenGL will not support PianoBooster. To fix this you must obtain an alternate package from your distribtion or compile your own version of QT with desktop opengl support. For instructions on building QT5, please read the [QT5 Linux Building Instructions](https://doc.qt.io/qt-5/linux-building.html)
+
+Use the following command on the configure step:
+```
+./configure -opensource -opengl desktop
+```
+
+After building and installing QT, you can build PianoBooster with the above Linux and BSD Unix steps.  If you wish to install your QT in a prefix then you can set `$LD_LIBRARY_PATH` to `$QTPREFIX/lib` and then run it.
+
+# Building an AppImage
+
+For compatility reasons, it is recommended to build the AppImage on the oldest still supported distribution that you can assume users still use.
+
+This can be accomplished by first installing packages specified in the Linux and BSD Unix steps above. You will also need [linuxdeploy](https://github.com/linuxdeploy/linuxdeploy). You can use the appimage or build it yourself. To build the PianoBooster appimage run:
+
+```
+$ mkdir build
+$ cd build
+$ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+$ make
+$ make install DESTDIR=AppDir
+
+$ linuxdeploy --appdir=AppDir --output appimage
+or
+$ linuxdeploy --appdir=AppDir && linuxdeploy-plugin-appimage --appdir=AppDir
+```
+
 # Build options
 
 Using `cmake` without any flags defaults to the recommended build options.

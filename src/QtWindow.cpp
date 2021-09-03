@@ -79,9 +79,8 @@ QtWindow::QtWindow()
     set_realtime_priority(SCHED_FIFO, rt_prio);
 #endif
 
-    QString antiAliasingSetting = m_settings->value("anti-aliasing").toString();
-    if (antiAliasingSetting.isEmpty() || antiAliasingSetting=="on"){
-        fmt.setSamples(4);
+    if (Cfg::samplesPerPixel != -1) {
+        fmt.setSamples(Cfg::samplesPerPixel);
     }
 
     QGLFormat::setDefaultFormat(fmt);

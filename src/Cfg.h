@@ -113,6 +113,13 @@ public:
     #else
           tickRate = 4; // was 12
     #endif
+
+    #if defined (Q_PROCESSOR_ARM)
+          // Multi sampling anti aliasing does not work well on devices like the Raspberry PI
+          samplesPerPixel = -1;
+    #else
+          samplesPerPixel = 4;
+    #endif
     }
 
     static void setStaveEndX(float x)
@@ -138,6 +145,7 @@ public:
     static bool experimentalTempo;
     static bool experimentalNoteLength;
     static int experimentalSwapInterval;
+    static int samplesPerPixel;
     static int tickRate;
     static bool useLogFile;
     static bool midiInputDump;
