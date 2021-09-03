@@ -87,7 +87,7 @@ Use the following command on the configure step:
 ./configure -opensource -opengl desktop
 ```
 
-After building and installing QT, you can build PianoBooster with the above Linux and BSD Unix steps.  If you wish to install your QT in a prefix then you can set `$LD_LIBRARY_PATH` to `$QTPREFIX/lib` and then run it.
+After building and installing QT, you can build PianoBooster with the above Linux and BSD Unix steps.  If you installed your QT in a prefix then you can set `$LD_LIBRARY_PATH` to `$QTPREFIX/lib` and then run it.
 
 # Building an AppImage
 
@@ -102,9 +102,9 @@ $ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 $ make
 $ make install DESTDIR=AppDir
 
-$ linuxdeploy --appdir=AppDir --output appimage
-or
-$ linuxdeploy --appdir=AppDir && linuxdeploy-plugin-appimage --appdir=AppDir
+$ linuxdeploy --appdir=AppDir --plugin qt --output appimage
+or (if built separately)
+$ linuxdeploy --appdir=AppDir && linuxdeploy-plugin-qt --appdir=AppDir && linuxdeploy-plugin-appimage --appdir=AppDir
 ```
 
 # Build options
