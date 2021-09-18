@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Conductor.cpp" line="318"/>
         <source>None</source>
-        <translation type="unfinished">Ingen</translation>
+        <translation>Ingen</translation>
     </message>
 </context>
 <context>
@@ -1070,7 +1070,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppföljningsfel</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
@@ -1193,7 +1193,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rytmtappning med:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
@@ -1213,7 +1213,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="128"/>
         <source>Rhythm Tap</source>
-        <translation type="unfinished"></translation>
+        <translation>Rytmtappning</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
@@ -1275,7 +1275,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="33"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation>MIDI-kanaler för vänster och höger pianodelar:</translation>
+        <translation>MIDI-kanaler för vänster och höger hand pianodelar:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="45"/>
@@ -1290,17 +1290,17 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="65"/>
         <source>The left and right hand channels must be different</source>
-        <translation>De vänstra och högra kanalerna måste vara olika</translation>
+        <translation>Vänster och höger hand kanalerna måste vara olika</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="68"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation>Både vänster och höger kanal måste vara ingen för att inaktivera denna funktion</translation>
+        <translation>Både vänster och höger hand kanaler måste vara ingen för att inaktivera den här funktionen</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="71"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation>Ställ in MIDI-kanaler som ska användas för vänster och höger pianodelar:</translation>
+        <translation>Ställ in MIDI-kanaler som ska användas för vänster och höger hand pianodelar:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="72"/>
@@ -1310,7 +1310,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation>den högra hand pianodelen använder MIDI-kanal 1</translation>
+        <translation>höger hand pianodelen använder MIDI-kanal 1</translation>
     </message>
 </context>
 <context>
@@ -1785,67 +1785,67 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd sedan &lt;i&gt;Arkiv/Öppna&lt;/i&gt; för att öppna MIDI-filen &quot;.mid&quot; eller karaoke-filen &quot;.kar&quot;. Välj nu om du bara vill &lt;i&gt;lyssna&lt;/i&gt; på musiken eller &lt;i&gt;spela med&lt;/i&gt; på pianotangentbordet genom att ställa in &lt;i&gt;färdighet&lt;/i&gt;-nivån på sidopanelen. Slutligen när du är klar klickar du på &lt;i&gt;uppspelningsikonen&lt;/i&gt; (eller trycker på &lt;i&gt;mellanslagstangenten&lt;/i&gt;) för att rulla musiken.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="546"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Tips om att spela piano &lt;/h3&gt;&lt;p&gt;För tips om hur du spelar piano, se: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="548"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Pianotips</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="549"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Mer information&lt;/h3&gt;&lt;p&gt;För mer hjälp, besök PianoBooster </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="551"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>webbplats</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation>PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
         <source>FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Vanliga frågor</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>och</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>användarforum</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="563"/>
         <source>About Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Om Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="565"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PianoBooster - version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Förbättra&lt;/b&gt; dina färdigheter i &lt;b&gt;pianospelning&lt;/b&gt;!&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
@@ -1855,12 +1855,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Detta program är tillgängligt under villkoren i GNU General Public License version 3 som publicerats av Free Software Foundation.&lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Detta program innehåller också RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="578"/>
@@ -1880,78 +1880,78 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Tangentbordsgenvägar&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Följande PC-tangentbordsgenvägar har definierats.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;th&gt;Åtgärd&lt;/th&gt;&lt;th&gt;Tangent&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj höger hand</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="615"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj båda händerna</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="616"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj vänster hand</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="617"/>
         <source>Play from start toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Spela från början växla</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play Pause Toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Spela Pausa Växla</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="619"/>
         <location filename="../src/QtWindow.cpp" line="620"/>
         <source>Increase the speed by 5%</source>
-        <translation type="unfinished"></translation>
+        <translation>Öka hastigheten med 5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Change to the Next Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt till nästa låt</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Change to the Previous Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt till föregående låt</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt till nästa bok</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt till föregående bok</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="626"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;td&gt;Falska pianotangenter&lt;/td&gt;&lt;td&gt;X är mellan C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna MIDI-fil</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI-filer</translation>
     </message>
 </context>
 </TS>
