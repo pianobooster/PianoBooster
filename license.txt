@@ -18,6 +18,7 @@ along with PianoBooster. If not, see <http://www.gnu.org/licenses/>.
 
 The Piano Booster Documentation and Music are released under the
 Creative Commons Attribution 4.0 International License (CC-BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
 
 Contributors:
  - Christian Prinoth
