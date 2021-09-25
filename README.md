@@ -77,7 +77,7 @@ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 See the GNU General Public License in the file "gplv3.txt" or from the web site
 <http://www.gnu.org/licenses/> or [gplv3.txt](gplv3.txt).
 
-The **PianoBooster** documentation and music are released under the Creative Commons License (CC-BY).
+The **PianoBooster** documentation and music are released under the Creative Commons Attribution 4.0 International License (CC-BY 4.0).
 
 [PianoBooster License](license.txt)
 
