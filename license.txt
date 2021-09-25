@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with PianoBooster. If not, see <http://www.gnu.org/licenses/>.
 
 The Piano Booster Documentation and Music are released under the
-Creative Commons License (CC-BY).
+Creative Commons Attribution 4.0 International License (CC-BY 4.0).
 
 Contributors:
  - Christian Prinoth
