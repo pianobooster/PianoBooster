@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="264"/>
         <source>Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mått:</translation>
     </message>
 </context>
 <context>
@@ -838,12 +838,12 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
         <source>Repeat End Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Upprepa slutmått:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
         <source>Repeat Bar is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Upprepa mått är inaktiverat</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
@@ -853,7 +853,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation type="unfinished"></translation>
+        <translation>Upprepa mått:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
@@ -891,7 +891,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="266"/>
         <source>Master Gain:</source>
-        <translation type="unfinished"></translation>
+        <translation>Huvudförstärkning:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>
@@ -1065,7 +1065,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillåtna oavsiktliga</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
@@ -1349,12 +1349,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Startmått:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara detta måttnummer</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="54"/>
@@ -1850,7 +1850,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright(c) Fabien Givors, 2018-2019; Alla rättigheter reserverade.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
@@ -1865,7 +1865,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="578"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright(c) Gary P. Scavone, 2003-2019; Alla rättigheter reserverade.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="587"/>
