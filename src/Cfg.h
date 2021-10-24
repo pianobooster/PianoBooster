@@ -89,23 +89,23 @@ public:
     static int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
     static int chordMaxLength()    {return 20;} // the max time between the start and end of a cord
 
-    static CColor menuColor()        {return CColor(0.1, 0.6, 0.6);}
-    static CColor menuSelectedColor(){return CColor(0.7, 0.7, 0.1);}
+    static CColor menuColor()        {return CColor(0.9, 0.4, 0.4);}
+    static CColor menuSelectedColor(){return CColor(0.3, 0.3, 0.9);}
 
-    static CColor staveColor()           {return CColor(0.1, 0.7, 0.1);} // green
-    static CColor staveColorDim()        {return CColor(0.15, 0.40, 0.15);} // grey
-    static CColor noteColor()            {return CColor(0.1, 0.9, 0.1);} // green
-    static CColor noteColorDim()         {return CColor(0.25, 0.45, 0.25);} // green
-    //static CColor playedGoodColor()    {return CColor(0.6, 0.6, 1.0);} // grey
-    static CColor playedGoodColor()      {return CColor(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
-    static CColor playedBadColor()       {return CColor(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
-    static CColor playedStoppedColor()   {return CColor(1.0, 0.8, 0.0);} // bright orange
-    static CColor backgroundColor()      {return CColor(0.0, 0.0, 0.0);} // black
-    static CColor barMarkerColor()       {return CColor(0.3, 0.25, 0.25);} // grey
-    static CColor beatMarkerColor()      {return CColor(0.25, 0.2, 0.2);} // grey
+    static CColor staveColor()           {return CColor(0.60, 0.56, 0.58);}
+    static CColor staveColorDim()        {return CColor(0.75, 0.70, 0.75);}
+    static CColor noteColor()            {return CColor(0.55, 0.45, 0.55);}
+    static CColor noteColorDim()         {return CColor(0.75, 0.55, 0.75);}
+    //static CColor playedGoodColor()    {return CColor(0.4, 0.4, 0.0);}
+    static CColor playedGoodColor()      {return CColor(0.5, 0.4, 0.0);}
+    static CColor playedBadColor()       {return CColor(0.2, 0.7, 0.2);}
+    static CColor playedStoppedColor()   {return CColor(0.0, 0.2, 0.0);}
+    static CColor backgroundColor()      {return CColor(1.0, 1.0, 1.0);}
+    static CColor barMarkerColor()       {return CColor(0.7, 0.75, 0.75);}
+    static CColor beatMarkerColor()      {return CColor(0.77, 0.78, 0.78);}
     static CColor pianoGoodColor()      {return playedGoodColor();}
-    static CColor pianoBadColor()       {return CColor(1.0, 0.0, 0.0);}
-    static CColor noteNameColor()       {return CColor(1.0, 1.0, 1.0);}
+    static CColor pianoBadColor()       {return CColor(0.0, 1.0, 1.0);}
+    static CColor noteNameColor()       {return CColor(0.0, 0.0, 0.0);}
 
     static void setDefaults() {
     #ifdef _WIN32

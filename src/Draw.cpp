@@ -771,13 +771,13 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                 float early = Cfg::playZoneEarly() * HORIZONTAL_SPACING_FACTOR;
                 float late = Cfg::playZoneLate() * HORIZONTAL_SPACING_FACTOR;
                 //glColor3f (0.7, 1.0, 0.7);
-                glColor3f (0.0, 0.0, 0.3);
+                glColor3f (0.86, 0.87, 0.84);
                 glRectf(x-late, topY, x + early, bottomY);
                 glLineWidth (2.0);
-                glColor3f (0.0, 0.0, 0.8);
+                glColor3f (0.62, 0.64, 0.56);
                 oneLine(x, topY, x, bottomY );
                 glLineWidth (1.0);
-                glColor3f (0.0, 0.0, 0.6);
+                glColor3f (0.74, 0.76, 0.70);
                 oneLine(x-late, topY, x-late, bottomY );
                 oneLine(x+early, topY, x+early, bottomY );
             }

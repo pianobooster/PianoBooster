@@ -56,7 +56,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_forceBarRedraw = 0;
     m_allowedTimerEvent = true;
 
-    m_backgroundColor = QColor(0, 0, 0);
+    m_backgroundColor = QColor(255,255,255);
 
     m_song = new CSong();
     m_score = new CScore(m_settings);
@@ -192,7 +192,7 @@ void CGLView::drawAccurracyBar()
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
 
     glLineWidth (1);
-    CDraw::drColor (CColor(1.0, 1.0, 1.0));
+    CDraw::drColor (CColor(0.0, 0.0, 0.0));
     glBegin(GL_LINE_LOOP);
     glVertex2f (x, y + lineWidth);
     glVertex2f (x+ width, y  + lineWidth);
@@ -216,12 +216,12 @@ void CGLView::drawDisplayText()
 
     if (!m_settings->getWarningMessage().isEmpty())
     {
-        glColor3f(1.0,0.2,0.0);
+        glColor3f(0.0,0.8,1.0);
         renderText(TEXT_LEFT_MARGIN, y-4, 0, m_settings->getWarningMessage(), m_timeRatingFont);
         return;
     }
 
-    glColor3f(1.0,1.0,1.0);
+    glColor3f(0.0,0.0,0.0);
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen) {
         if (accuracyBarStart == 0) {
@@ -260,7 +260,7 @@ void CGLView::drawBarNumber()
     //CDraw::drColor (Cfg::backgroundColor());
     //CDraw::drColor (Cfg::noteColorDim());
     //glRectf(x+30+10, y-2, x + 80, y + 16);
-    glColor3f(1.0,1.0,1.0);
+    glColor3f(0.0,0.0,0.0);
     renderText(x, y, 0, tr("Bar:") + " " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
 
@@ -323,8 +323,8 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 
 void CGLView::initializeGL()
 {
-    CColor color = Cfg::backgroundColor();
-    glClearColor (color.red, color.green, color.blue, 0.0);
+    //CColor color = Cfg::backgroundColor();
+    glClearColor (1.0, 1.0, 1.0, 0.0);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
     glShadeModel (GL_FLAT);
     //glEnable(GL_TEXTURE_2D);                        // Enable Texture Mapping
