@@ -838,7 +838,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
         <source>Repeat End Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>重复结束小节：</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
@@ -992,7 +992,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="149"/>
         <source>No Sound Output Device selected; Choose a MIDI Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>未检测到输出设备。选择一个MIDI输出设备。</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
@@ -1002,7 +1002,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
         <source>%1 mSec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1毫秒</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="176"/>
@@ -1027,7 +1027,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="142"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果您没有MIDI键盘，您可以使用电脑键盘。“X”键对应中央C。</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -1110,7 +1110,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Automatic (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>自动（推荐）</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
@@ -1125,7 +1125,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>系统语言</translation>
     </message>
 </context>
 <context>
@@ -1300,7 +1300,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="71"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation type="unfinished"></translation>
+        <translation>设置左、右手部分各自的MIDI通道：</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="72"/>
@@ -1461,7 +1461,7 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
         <source>Playing music from the beginning</source>
-        <translation type="unfinished"></translation>
+        <translation>从头播放音乐</translation>
     </message>
 </context>
 <context>
@@ -1490,7 +1490,7 @@
     <message>
         <location filename="../src/QtMain.cpp" line="60"/>
         <source>This system does not support OpenGL which is needed to run Piano Booster.</source>
-        <translation type="unfinished"></translation>
+        <translation>系统不支持OpenGL，Piano Booster无法打开。</translation>
     </message>
 </context>
 <context>
@@ -1606,7 +1606,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>全屏模式</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
@@ -1621,7 +1621,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>显示左侧面板</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
@@ -1738,7 +1738,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="537"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster建议使用左手键盘放在3通道、右手键盘放在4通道的MIDI文件。</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="539"/>
@@ -1770,12 +1770,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the MIDI input and output</source>
-        <translation type="unfinished"></translation>
+        <translation>设置MIDI输入输出</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster现内置MIDI合成器FluidSynth，此合成器需要一个通用MIDI音色库（GM音色库）。在“设置”菜单下的“MIDI设置”菜单中的“FluidSynth”选项卡中点击“载入”按钮安装此音色库。</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
