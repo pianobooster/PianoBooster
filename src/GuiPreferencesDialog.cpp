@@ -29,6 +29,7 @@
 #include <QJsonDocument>
 #include <QJsonValue>
 #include <QColorDialog>
+#include <QPalette>
 
 #include <QTimer>
 
@@ -219,6 +220,7 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     }
 
     initDisplayColors();
+    addColorChangeListener();
 
     initLanguageCombo();
 }
@@ -247,8 +249,38 @@ void GuiPreferencesDialog::initDisplayColors(){
         colorName.append(m_settings->colorNames[i][0]);
 
         colorSpinBoxes[i]->setValue(m_settings->value(QString::fromUtf8(colorName.c_str()), m_settings->colorNames[i][1]).toInt());
-
     }
+
+    updateColorSelBtnBg();
+}
+
+void GuiPreferencesDialog::updateColorSelBtnBg() {
+    setButtonBgColor(noteDimClrSel, m_settings->noteColorDim() );
+    setButtonBgColor(barMarkerClrSel, m_settings->barMarkerColor() );
+    setButtonBgColor(noteNameClrSel, m_settings->noteNameColor() );
+    setButtonBgColor(pianoBadClrSel, m_settings->pianoBadColor() );
+    setButtonBgColor(staveDimClrSel, m_settings->staveColorDim() );
+    setButtonBgColor(bgClrSel, m_settings->backgroundColor() );
+    setButtonBgColor(menuSelectedClrSel, m_settings->menuSelectedColor() );
+    setButtonBgColor(noteClrSel, m_settings->noteColor() );
+    setButtonBgColor(staveClrSel, m_settings->staveColor() );
+    setButtonBgColor(menuClrSel, m_settings->menuColor() );
+    setButtonBgColor(playStoppedClrSel, m_settings->playedStoppedColor() );
+    setButtonBgColor(beatMarkerClrSel, m_settings->beatMarkerColor() );
+    setButtonBgColor(playZoneBgClrSel, m_settings->playZoneAreaColor() );
+    setButtonBgColor(playGoodClrSel, m_settings->playedGoodColor() );
+    setButtonBgColor(playBadClrSel, m_settings->playedBadColor() );
+    setButtonBgColor(playZoneEndLineClrSel, m_settings->playZoneEndColor() );
+    setButtonBgColor(playZoneMiddleClrSel, m_settings->playZoneMiddleColor() );
+}
+
+void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, CColor color) {
+    QColor qcolor((int) (color.red * 255),(int)  (color.green *255), (int) (color.blue*255));
+    QPalette pal = btn->palette();
+    pal.setColor(QPalette::Button, qcolor);
+    btn->setAutoFillBackground(true);
+    btn->setPalette(pal);
+    btn->update();
 }
 
 void GuiPreferencesDialog::showColorSelector(QSpinBox * redBox, QSpinBox * greenBox, QSpinBox * blueBox) {
@@ -411,11 +443,29 @@ void GuiPreferencesDialog::on_applyButton_clicked()
     QTimer::singleShot(200, this, &GuiPreferencesDialog::forceGlViewUpdate);
 
     CDraw::forceCompileRedraw();
-
+    
     CSettings::clearCache();
+}
+
+void GuiPreferencesDialog::addColorChangeListener() {
+
+    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
+        QObject::connect(colorSpinBoxes[i], static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
+            this, &GuiPreferencesDialog::colorSpinBoxChanged);
+    }
+}
+
+void GuiPreferencesDialog::colorSpinBoxChanged(int val) {
+    if ( true ) {
+        return; //tbd the event is only generated after the popup dialog is closed, so it doesn't work
+    }
+
+    saveDisplayColors();    //tbd should only save to temporary data structure similar to the settings, since this is not yet applied
+    QTimer::singleShot(200, this, &GuiPreferencesDialog::updateColorSelBtnBg);
 }
 
 void GuiPreferencesDialog::forceGlViewUpdate() {
     //m_glView->updateBackground(true);
     m_glView->updateBackground(true);
+    updateColorSelBtnBg();
 }

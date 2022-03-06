@@ -90,6 +90,12 @@ private slots:
     
     void forceGlViewUpdate();
 
+    void updateColorSelBtnBg();
+    void addColorChangeListener();
+    void colorSpinBoxChanged(int val);
+
+    void setButtonBgColor(QPushButton * btn, CColor color);
+
 private:
     void initLanguageCombo();
 
