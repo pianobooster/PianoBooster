@@ -143,7 +143,7 @@ QtWindow::QtWindow()
 void QtWindow::init()
 {
 
-    m_settings->loadSettings();
+    //m_settings->loadSettings();
 
     createActions();
     createMenus();

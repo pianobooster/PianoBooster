@@ -49,6 +49,8 @@
 #include "QtWindow.h"
 #include "version.h"
 
+//#include <iostream>
+
 #include "Cfg.h"
 
 #if WITH_INTERNAL_FLUIDSYNTH
@@ -77,14 +79,19 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
 
     // load Fluid settings
     setFluidSoundFontNames( value("FluidSynth/SoundFont").toStringList());
+    setDefaultColors();
+    Cfg::setColorPreference(this);
+    
 }
 
-void CSettings::setDefaultValue(const QString & key, const QVariant & value )
+void CSettings::setDefaultValue(const QString & key, const QVariant & val )
 {
-    if (contains(key)) // Do not change the value if it already set
+    if (contains(key)) { // Do not change the value if it already set
+        //cout << "already exist: " << key.toUtf8().constData() << ",   " << value(key, 0).toString().toUtf8().constData() << endl;
         return;
-
-    setValue(key, value);
+    }
+    //cout << "Not yet exist: " << key.toUtf8().constData()  << ",   "  << endl;
+    setValue(key, val);
 }
 
 void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
@@ -92,8 +99,7 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
     m_song = song;
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
-
-    Cfg::setColorPreference(this);
+    loadSettings();
 }
 
 void CSettings::setNoteNamesEnabled(bool value) {
@@ -404,18 +410,18 @@ void CSettings::loadSettings()
 //    if (!songName.isEmpty())
 //        openSongFile( songName );
 
-
-    for ( int i = 0; i < colorCount; i++) {
-        string colorName = "ScoreColors/";
-        colorName.append(colorNames[i][0]);
-        setDefaultValue(QString::fromUtf8(colorName.c_str()), colorNames[i][1]);
-    }
-
     setupDefaultSoundFont();
 
     updateWarningMessages();
     updateTutorPage();
+}
 
+void CSettings::setDefaultColors() {
+    for ( int i = 0; i < colorCount * 3; i++) {
+        string colorName = "ScoreColors/";
+        colorName.append(colorNames[i][0]);
+        setDefaultValue(QString::fromUtf8(colorName.c_str()), std::stoi((colorNames[i][1])));
+    }
 }
 
 CColor CSettings::menuColor() {
