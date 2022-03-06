@@ -86,6 +86,8 @@ private slots:
 
     void showColorSelector(QSpinBox * red, QSpinBox * green, QSpinBox * blue);
 
+    void on_applyButton_clicked();
+
 private:
     void initLanguageCombo();
 

@@ -221,24 +221,8 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
 
 void GuiPreferencesDialog::accept()
 {
-    m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
-    m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
-    m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
-    m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
-    m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());
-    m_settings->setFollowThroughErrorsEnabled( followThroughErrorsCheck->isChecked());
-    m_settings->setColoredNotes( showColoredNotesCheck->isChecked());
-    m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
-    m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
-
-    m_settings->setValue("General/lang", languageCombo->currentData().toString());
-
-    m_song->refreshScroll();
-
-    saveDisplayColors();
-
-    CSettings::clearCache();
-
+    
+    on_applyButton_clicked();
     this->QDialog::accept();
 }
 
@@ -394,4 +378,25 @@ void GuiPreferencesDialog::on_playZoneEndLineClrSel_clicked()
     showColorSelector(playZoneEndLineRedSpinBox,
         playZoneEndLineGreenSpinBox,
         playZoneEndLineBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_applyButton_clicked()
+{
+    m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
+    m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
+    m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
+    m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
+    m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());
+    m_settings->setFollowThroughErrorsEnabled( followThroughErrorsCheck->isChecked());
+    m_settings->setColoredNotes( showColoredNotesCheck->isChecked());
+    m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
+    m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
+
+    m_settings->setValue("General/lang", languageCombo->currentData().toString());
+
+    m_song->refreshScroll();
+
+    saveDisplayColors();
+
+    CSettings::clearCache();
 }
