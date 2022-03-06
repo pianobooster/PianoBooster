@@ -54,6 +54,8 @@ public:
     void stopTimerEvent();
     void startTimerEvent();
 
+    void updateBackground(bool refresh);
+
 protected:
     void timerEvent(QTimerEvent *event);
     void mediaTimerEvent(int ticks);
@@ -74,7 +76,6 @@ private:
     QString accuracyText;
     int accuracyBarStart = 0;
 
-    QColor m_backgroundColor;
     QtWindow* m_qtWindow;  // The parent Window
     CSettings* m_settings;
     CSong* m_song;

@@ -614,7 +614,8 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
             // See forum post at link below from PianoBooster forum user Kory.
             // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html
             // http://piano-booster.2625608.n2.nabble.com/Pianobooster-port-to-arm-linux-or-Android-td7572459.html#a7572676
-            if (m_settings->coloredNotes() && color == Cfg::noteColor()) //KORY added
+            color == Cfg::noteColor();
+            if (m_settings->coloredNotes()) //KORY added
             {
                 int note = symbol.getNote() % MIDI_OCTAVE;
                 switch (note)

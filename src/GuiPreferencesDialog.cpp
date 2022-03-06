@@ -30,8 +30,12 @@
 #include <QJsonValue>
 #include <QColorDialog>
 
+#include <QTimer>
+
 #include "GuiPreferencesDialog.h"
 #include "GlView.h"
+
+#include "Draw.h"
 
 GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     : QDialog(parent)
@@ -397,6 +401,21 @@ void GuiPreferencesDialog::on_applyButton_clicked()
     m_song->refreshScroll();
 
     saveDisplayColors();
+    
+    /*
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &GuiPreferencesDialog::forceGlViewUpdate);
+    timer->start(200);
+    */
+
+    QTimer::singleShot(200, this, &GuiPreferencesDialog::forceGlViewUpdate);
+
+    CDraw::forceCompileRedraw();
 
     CSettings::clearCache();
+}
+
+void GuiPreferencesDialog::forceGlViewUpdate() {
+    //m_glView->updateBackground(true);
+    m_glView->updateBackground(true);
 }

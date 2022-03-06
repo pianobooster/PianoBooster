@@ -56,8 +56,6 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_forceBarRedraw = 0;
     m_allowedTimerEvent = true;
 
-    m_backgroundColor = m_settings->getQColor("bg");
-
     m_song = new CSong();
     m_score = new CScore(m_settings);
     m_displayUpdateTicks = 0;
@@ -192,7 +190,7 @@ void CGLView::drawAccurracyBar()
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
 
     glLineWidth (1);
-    CColor bgColor = m_settings->getColor("bg");
+    CColor bgColor = m_settings->backgroundColor();
     CDraw::drColor (CColor(1.0 - bgColor.red, 1.0 - bgColor.green, 1.0 - bgColor.blue));
     glBegin(GL_LINE_LOOP);
     glVertex2f (x, y + lineWidth);
@@ -215,7 +213,7 @@ void CGLView::drawDisplayText()
 
     int y = Cfg::getAppHeight() - 14;
     
-    CColor bgColor = m_settings->getColor("bg");
+    CColor bgColor = m_settings->backgroundColor();
 
     if (!m_settings->getWarningMessage().isEmpty())
     {
@@ -263,7 +261,7 @@ void CGLView::drawBarNumber()
     //CDraw::drColor (Cfg::backgroundColor());
     //CDraw::drColor (Cfg::noteColorDim());
     //glRectf(x+30+10, y-2, x + 80, y + 16);
-    CColor bgColor = m_settings->getColor("bg");
+    CColor bgColor = m_settings->backgroundColor();
     glColor3f(1.0 - bgColor.red, 1.0 - bgColor.green, 1.0 - bgColor.blue);
     renderText(x, y, 0, tr("Bar:") + " " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
@@ -328,8 +326,7 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 void CGLView::initializeGL()
 {
     //CColor color = Cfg::backgroundColor();
-    CColor bgColor = m_settings->getColor("bg");
-    glClearColor (bgColor.red, bgColor.green, bgColor.blue, 0.0);
+    updateBackground(false);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
     glShadeModel (GL_FLAT);
     //glEnable(GL_TEXTURE_2D);                        // Enable Texture Mapping
@@ -376,6 +373,15 @@ void CGLView::initializeGL()
     m_realtime.start();
 
     //startMediaTimer(12, this );
+}
+
+void CGLView::updateBackground(bool refresh) {
+    CColor bgColor = m_settings->backgroundColor();
+    glClearColor (bgColor.red, bgColor.green, bgColor.blue, 0.0);
+    if ( refresh ) {
+        update();
+        repaint();
+    }
 }
 
 void CGLView::updateMidiTask()
