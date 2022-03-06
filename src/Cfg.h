@@ -65,7 +65,7 @@ public:
     static float scrollStartX()        {return keySignatureX() + 64;}
     static float pianoX()              {return 25;}
 
-    static float staveThickness()      {return 1;}
+    static float staveThickness()      {return 2;}
 
     static int playZoneEarly()     {return m_playZoneEarly;}
     static int playZoneLate()      {return m_playZoneLate;}

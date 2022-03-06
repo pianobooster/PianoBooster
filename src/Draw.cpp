@@ -37,36 +37,47 @@ typedef unsigned char guint8;
 whichPart_t CDraw::m_displayHand;
 int CDraw::m_forceCompileRedraw;
 
+FTFont * setupFont() {
+    static FTFont * cacheFont = NULL;
+    if ( cacheFont == NULL ) {
+        QStringList listPathFonts;
+
+        listPathFonts.append(Util::dataDir()+"/fonts/DejaVuSans.ttf");
+        listPathFonts.append(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
+        listPathFonts.append(QApplication::applicationDirPath() + "/../Resources/fonts/DejaVuSans.ttf");
+        listPathFonts.append("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
+        listPathFonts.append("/usr/share/fonts/dejavu/DejaVuSans.ttf");
+        listPathFonts.append("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
+        listPathFonts.append("/usr/share/fonts/TTF/DejaVuSans.ttf");
+        listPathFonts.append("/usr/share/fonts/truetype/DejaVuSans.ttf");
+        listPathFonts.append("/usr/local/share/fonts/dejavu/DejaVuSans.ttf");
+
+        for (int i=0;i<listPathFonts.size();i++){
+            QFile file(listPathFonts.at(i));
+            if (file.exists()){
+                cacheFont = new FTBitmapFont(listPathFonts.at(i).toStdString().c_str());
+                break;
+            }
+        }
+
+        if (cacheFont==nullptr){
+            ppLogError("Font DejaVuSans.ttf was not found !");
+            exit(0);
+        }
+        cacheFont->FaceSize(FONT_SIZE, 72);
+    }
+    return cacheFont;
+}
+
 CDraw::CDraw(CSettings* settings)
 #ifndef NO_USE_FTGL
     :font(nullptr)
 #endif
 {
 #ifndef NO_USE_FTGL
-    QStringList listPathFonts;
 
-    listPathFonts.append(Util::dataDir()+"/fonts/DejaVuSans.ttf");
-    listPathFonts.append(QApplication::applicationDirPath() + "/fonts/DejaVuSans.ttf");
-    listPathFonts.append(QApplication::applicationDirPath() + "/../Resources/fonts/DejaVuSans.ttf");
-    listPathFonts.append("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf");
-    listPathFonts.append("/usr/share/fonts/dejavu/DejaVuSans.ttf");
-    listPathFonts.append("/usr/share/fonts/TTF/dejavu/DejaVuSans.ttf");
-    listPathFonts.append("/usr/share/fonts/TTF/DejaVuSans.ttf");
-    listPathFonts.append("/usr/share/fonts/truetype/DejaVuSans.ttf");
-    listPathFonts.append("/usr/local/share/fonts/dejavu/DejaVuSans.ttf");
+    font = setupFont();
 
-    for (int i=0;i<listPathFonts.size();i++){
-        QFile file(listPathFonts.at(i));
-        if (file.exists()){
-            font = new FTBitmapFont(listPathFonts.at(i).toStdString().c_str());
-            break;
-        }
-    }
-    if (font==nullptr){
-        ppLogError("Font DejaVuSans.ttf was not found !");
-        exit(0);
-    }
-    font->FaceSize(FONT_SIZE, FONT_SIZE);
 #endif
     m_settings = settings;
     m_displayHand = PB_PART_both;
@@ -741,7 +752,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
 
         case PB_SYMBOL_barLine:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
-            glLineWidth (4.0);
+            glLineWidth (3.0);
             drColor ((m_displayHand == PB_PART_left) ? m_settings->staveColorDim() : m_settings->staveColor());
             oneLine(x, CStavePos(PB_PART_right, 4).getPosYRelative(), x, CStavePos(PB_PART_right, -4).getPosYRelative());
             drColor ((m_displayHand == PB_PART_right) ? m_settings->staveColorDim() : m_settings->staveColor());
@@ -839,7 +850,7 @@ void CDraw::drawStaves(float startX, float endX)
     int i;
 
     glLineWidth (Cfg::staveThickness());
-
+    
     /* select color for all lines  */
     drColor ((m_displayHand != PB_PART_left) ? m_settings->staveColor() : m_settings->staveColorDim());
     glBegin(GL_LINES);

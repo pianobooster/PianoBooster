@@ -47,7 +47,7 @@
 #include <QApplication>
 
 #define HORIZONTAL_SPACING_FACTOR   (0.75) // defines the speed of the scrolling
-#define FONT_SIZE 16
+#define FONT_SIZE 18    //16
 
 #include "StavePosition.h"
 
