@@ -49,6 +49,8 @@
 #include "QtWindow.h"
 #include "version.h"
 
+#include "Cfg.h"
+
 #if WITH_INTERNAL_FLUIDSYNTH
 #include "MidiDeviceFluidSynth.h"
 #endif
@@ -90,6 +92,8 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
     m_song = song;
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
+
+    Cfg::setColorPreference(this);
 }
 
 void CSettings::setNoteNamesEnabled(bool value) {
@@ -400,11 +404,51 @@ void CSettings::loadSettings()
 //    if (!songName.isEmpty())
 //        openSongFile( songName );
 
+
+    for ( int i = 0; i < colorCount; i++) {
+        string colorName = "ScoreColors/";
+        colorName.append(colorNames[i][0]);
+        setDefaultValue(QString::fromUtf8(colorName.c_str()), colorNames[i][1]);
+    }
+
     setupDefaultSoundFont();
 
     updateWarningMessages();
     updateTutorPage();
 
+}
+
+CColor CSettings::menuColor() {
+    return getColor("menu");
+}
+
+CColor CSettings::menuSelectedColor()    {return getColor("menuSelected");}
+
+CColor CSettings::staveColor()           {return getColor("stave");}
+CColor CSettings::staveColorDim()        {return getColor("staveDim");}
+CColor CSettings::noteColor()            {return getColor("note");}
+CColor CSettings::noteColorDim()         {return getColor("noteDim");}
+CColor CSettings::playedGoodColor()      {return getColor("playGood");}
+CColor CSettings::playedBadColor()       {return getColor("playBad");}
+CColor CSettings::playedStoppedColor()   {return getColor("playStopped");}
+CColor CSettings::backgroundColor()      {return getColor("bg");}
+CColor CSettings::barMarkerColor()       {return getColor("barMarker");}
+CColor CSettings::beatMarkerColor()      {return getColor("beatMarker");}
+CColor CSettings::pianoGoodColor()       {return getColor("pianoGood");}
+CColor CSettings::pianoBadColor()        {return getColor("pianoBad");}
+CColor CSettings::noteNameColor()        {return getColor("noteName");}
+
+CColor CSettings::playZoneAreaColor()    {return getColor("playZoneBg");}
+CColor CSettings::playZoneEndColor()     {return getColor("playZoneEndLine");}
+CColor CSettings::playZoneMiddleColor()  {return getColor("playZoneMiddle");}
+
+std::unordered_map<std::string, CColor *> CSettings::colorCache;
+
+void CSettings::clearCache() {
+    for (std::unordered_map<std::string, CColor *>::iterator it = CSettings::colorCache.begin(); it!= CSettings::colorCache.end(); ++it) {
+        delete it->second;
+    }
+    CSettings::colorCache.clear(); 
 }
 
 void CSettings::unzipBoosterMusicBooks()

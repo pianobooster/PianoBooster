@@ -53,9 +53,14 @@ private slots:
 private:
     void initLanguageCombo();
 
+    void initDisplayColors();
+    void saveDisplayColors();
+
     CSettings* m_settings;
     CSong* m_song;
     CGLView *m_glView;
+
+    QSpinBox * colorSpinBoxes[CSettings::colorCount*3] = {};
 };
 
 #endif //__GUIPREFERENCESDIALOG_H__

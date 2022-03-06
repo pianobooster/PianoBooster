@@ -45,26 +45,10 @@
 #define LOG_LEVEL_WARN  2
 #define LOG_LEVEL_DEBUG 3
 
-class CColor
-{
-public:
-    CColor() { red = green = blue = 0; }
+#include <cstddef>
+#include <stdexcept>
 
-    CColor(double r, double g, double b)
-    {
-        red = static_cast<float>(r);
-        green = static_cast<float>(g);
-        blue = static_cast<float>(b);
-    }
-    float red, green, blue;
-
-    bool operator==(CColor color)
-    {
-        if (red == color.red && green == color.green && blue == color.blue)
-            return true;
-        return false;
-    }
-};
+#include "IColorPreference.h"
 
 /*!
  * @brief   Contains all the configuration Information.
@@ -89,23 +73,117 @@ public:
     static int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
     static int chordMaxLength()    {return 20;} // the max time between the start and end of a cord
 
-    static CColor menuColor()        {return CColor(0.9, 0.4, 0.4);}
-    static CColor menuSelectedColor(){return CColor(0.3, 0.3, 0.9);}
+    static IColorPreference * colorPref;
 
-    static CColor staveColor()           {return CColor(0.60, 0.56, 0.58);}
-    static CColor staveColorDim()        {return CColor(0.75, 0.70, 0.75);}
-    static CColor noteColor()            {return CColor(0.55, 0.45, 0.55);}
-    static CColor noteColorDim()         {return CColor(0.75, 0.55, 0.75);}
+    static void setColorPreference(IColorPreference * pref) {
+        colorPref = pref;
+    }
+
+    static CColor menuColor() {
+        if ( colorPref != NULL) {
+            return colorPref->menuColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor menuSelectedColor() {
+        if ( colorPref != NULL) {
+            return colorPref->menuSelectedColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor staveColor() {
+        if ( colorPref != NULL) {
+            return colorPref->staveColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor staveColorDim() {
+        if ( colorPref != NULL) {
+            return colorPref->staveColorDim();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor noteColor()  {
+        if ( colorPref != NULL) {
+            return colorPref->noteColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor noteColorDim() {
+        if ( colorPref != NULL) {
+            return colorPref->noteColorDim();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
     //static CColor playedGoodColor()    {return CColor(0.4, 0.4, 0.0);}
-    static CColor playedGoodColor()      {return CColor(0.5, 0.4, 0.0);}
-    static CColor playedBadColor()       {return CColor(0.2, 0.7, 0.2);}
-    static CColor playedStoppedColor()   {return CColor(0.0, 0.2, 0.0);}
-    static CColor backgroundColor()      {return CColor(1.0, 1.0, 1.0);}
-    static CColor barMarkerColor()       {return CColor(0.7, 0.75, 0.75);}
-    static CColor beatMarkerColor()      {return CColor(0.77, 0.78, 0.78);}
+    static CColor playedGoodColor() {
+        if ( colorPref != NULL) {
+            return colorPref->playedGoodColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor playedBadColor() {
+        if ( colorPref != NULL) {
+            return colorPref->playedBadColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor playedStoppedColor() {
+        if ( colorPref != NULL) {
+            return colorPref->playedStoppedColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor backgroundColor() {
+        if ( colorPref != NULL) {
+            return colorPref->backgroundColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor barMarkerColor() {
+        if ( colorPref != NULL) {
+            return colorPref->barMarkerColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor beatMarkerColor() {
+        if ( colorPref != NULL) {
+            return colorPref->beatMarkerColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
     static CColor pianoGoodColor()      {return playedGoodColor();}
-    static CColor pianoBadColor()       {return CColor(0.0, 1.0, 1.0);}
-    static CColor noteNameColor()       {return CColor(0.0, 0.0, 0.0);}
+    static CColor pianoBadColor() {
+        if ( colorPref != NULL) {
+            return colorPref->pianoBadColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor noteNameColor() {
+        if ( colorPref != NULL) {
+            return colorPref->noteNameColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+
+    static CColor playZoneAreaColor()  {
+        if ( colorPref != NULL) {
+            return colorPref->playZoneAreaColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor playZoneEndColor() {
+        if ( colorPref != NULL) {
+            return colorPref->playZoneEndColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
+    static CColor playZoneMiddleColor() {
+        if ( colorPref != NULL) {
+            return colorPref->playZoneMiddleColor();
+        }
+        throw std::runtime_error("Color preference not initialized."); 
+    }
 
     static void setDefaults() {
     #ifdef _WIN32

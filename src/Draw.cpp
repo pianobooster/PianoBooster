@@ -93,9 +93,9 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool pl
     whichPart_t hand = symbol.getStavePos().getHand();
 
     if (playable)
-        drColor(Cfg::staveColor());
+        drColor(m_settings->staveColor());
     else
-        drColor(Cfg::staveColorDim());
+        drColor(m_settings->staveColorDim());
 
     glLineWidth (Cfg::staveThickness());
     glBegin(GL_LINES);
@@ -742,9 +742,9 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
         case PB_SYMBOL_barLine:
             x += BEAT_MARKER_OFFSET * HORIZONTAL_SPACING_FACTOR; // the beat markers where entered early so now move them correctly
             glLineWidth (4.0);
-            drColor ((m_displayHand == PB_PART_left) ? Cfg::staveColorDim() : Cfg::staveColor());
+            drColor ((m_displayHand == PB_PART_left) ? m_settings->staveColorDim() : m_settings->staveColor());
             oneLine(x, CStavePos(PB_PART_right, 4).getPosYRelative(), x, CStavePos(PB_PART_right, -4).getPosYRelative());
-            drColor ((m_displayHand == PB_PART_right) ? Cfg::staveColorDim() : Cfg::staveColor());
+            drColor ((m_displayHand == PB_PART_right) ? m_settings->staveColorDim() : m_settings->staveColor());
             oneLine(x, CStavePos(PB_PART_left, 4).getPosYRelative(), x, CStavePos(PB_PART_left, -4).getPosYRelative());
             break;
 
@@ -771,13 +771,16 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                 float early = Cfg::playZoneEarly() * HORIZONTAL_SPACING_FACTOR;
                 float late = Cfg::playZoneLate() * HORIZONTAL_SPACING_FACTOR;
                 //glColor3f (0.7, 1.0, 0.7);
-                glColor3f (0.86, 0.87, 0.84);
+                CColor area = m_settings->playZoneAreaColor();
+                glColor3f (area.red, area.green, area.blue);
                 glRectf(x-late, topY, x + early, bottomY);
                 glLineWidth (2.0);
-                glColor3f (0.62, 0.64, 0.56);
+                CColor midLineColor = m_settings->playZoneMiddleColor();
+                glColor3f (midLineColor.red, midLineColor.green, midLineColor.blue);
                 oneLine(x, topY, x, bottomY );
                 glLineWidth (1.0);
-                glColor3f (0.74, 0.76, 0.70);
+                CColor endLineColor = m_settings->playZoneEndColor();
+                glColor3f (endLineColor.red, endLineColor.green, endLineColor.blue);
                 oneLine(x-late, topY, x-late, bottomY );
                 oneLine(x+early, topY, x+early, bottomY );
             }
@@ -838,7 +841,7 @@ void CDraw::drawStaves(float startX, float endX)
     glLineWidth (Cfg::staveThickness());
 
     /* select color for all lines  */
-    drColor ((m_displayHand != PB_PART_left) ? Cfg::staveColor() : Cfg::staveColorDim());
+    drColor ((m_displayHand != PB_PART_left) ? m_settings->staveColor() : m_settings->staveColorDim());
     glBegin(GL_LINES);
 
     for (i = -4; i <= 4; i+=2 )
@@ -847,7 +850,7 @@ void CDraw::drawStaves(float startX, float endX)
         glVertex2f (startX, pos.getPosY());
         glVertex2f (endX, pos.getPosY());
     }
-    drColor ((m_displayHand != PB_PART_right) ? Cfg::staveColor() : Cfg::staveColorDim());
+    drColor ((m_displayHand != PB_PART_right) ? m_settings->staveColor() : m_settings->staveColorDim());
     for (i = -4; i <= 4; i+=2 )
     {
         CStavePos pos = CStavePos(PB_PART_left, i);

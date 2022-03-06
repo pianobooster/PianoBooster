@@ -152,6 +152,69 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
 
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
 
+    //Initialize the color spin boxes.  Would be good to someday convert to a color selector, or keep the same
+    //but add a color selector button at the end of each line
+    //preview is even better
+    QSpinBox * colorSpinBoxesTemp[CSettings::colorCount*3] = {
+        noteDimRedSpinBox,
+        noteDimGreenSpinBox,
+        noteDimBlueSpinBox,
+        barMarkerRedSpinBox,
+        barMarkerGreenSpinBox,
+        barMarkerBlueSpinBox,
+        noteNameRedSpinBox,
+        noteNameGreenSpinBox,
+        noteNameBlueSpinBox,
+        pianoBadRedSpinBox,
+        pianoBadGreenSpinBox,
+        pianoBadBlueSpinBox,
+        staveDimRedSpinBox,
+        staveDimGreenSpinBox,
+        staveDimBlueSpinBox,
+        bgRedSpinBox,
+        bgGreenSpinBox,
+        bgBlueSpinBox,
+        menuSelectedRedSpinBox,
+        menuSelectedGreenSpinBox,
+        menuSelectedBlueSpinBox,
+        noteRedSpinBox,
+        noteGreenSpinBox,
+        noteBlueSpinBox,
+        staveRedSpinBox,
+        staveGreenSpinBox,
+        staveBlueSpinBox,
+        menuRedSpinBox,
+        menuGreenSpinBox,
+        menuBlueSpinBox,
+        playStoppedRedSpinBox,
+        playStoppedGreenSpinBox,
+        playStoppedBlueSpinBox,
+        beatMarkerRedSpinBox,
+        beatMarkerGreenSpinBox,
+        beatMarkerBlueSpinBox,
+        playZoneBgRedSpinBox,
+        playZoneBgGreenSpinBox,
+        playZoneBgBlueSpinBox,
+        playGoodRedSpinBox,
+        playGoodGreenSpinBox,
+        playGoodBlueSpinBox,
+        playBadRedSpinBox,
+        playBadGreenSpinBox,
+        playBadBlueSpinBox,
+        playZoneEndLineRedSpinBox,
+        playZoneEndLineGreenSpinBox,
+        playZoneEndLineBlueSpinBox,
+        playZoneMiddleRedSpinBox,
+        playZoneMiddleGreenSpinBox,
+        playZoneMiddleBlueSpinBox
+    };
+
+    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
+        colorSpinBoxes[i] = colorSpinBoxesTemp[i];
+    }
+
+    initDisplayColors();
+
     initLanguageCombo();
 }
 
@@ -171,5 +234,30 @@ void GuiPreferencesDialog::accept()
 
     m_song->refreshScroll();
 
+    saveDisplayColors();
+
+    CSettings::clearCache();
+
     this->QDialog::accept();
+}
+
+void GuiPreferencesDialog::saveDisplayColors(){
+    
+    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
+        string colorName = "ScoreColors/";
+        colorName.append(m_settings->colorNames[i][0]);
+
+        m_settings->setValue(QString::fromUtf8(colorName.c_str()), colorSpinBoxes[i]->value());
+    }
+}
+
+void GuiPreferencesDialog::initDisplayColors(){
+    
+    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
+        string colorName = "ScoreColors/";
+        colorName.append(m_settings->colorNames[i][0]);
+
+        colorSpinBoxes[i]->setValue(m_settings->value(QString::fromUtf8(colorName.c_str()), m_settings->colorNames[i][1]).toInt());
+
+    }
 }

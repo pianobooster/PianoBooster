@@ -43,5 +43,7 @@ int Cfg::keyboardLightsChan = -1;
 int Cfg::experimentalSwapInterval = -1;
 int Cfg::tickRate;
 
+IColorPreference * Cfg::colorPref = NULL;
+
 const int Cfg::m_playZoneEarly = 25; // Was 25
 const int Cfg::m_playZoneLate = 25;

@@ -27,8 +27,13 @@
 #ifndef __SETTINGS_H__
 #define __SETTINGS_H__
 
+#include <unordered_map>
+
 #include <QSettings>
 #include <QDomDocument>
+
+#include "IColorPreference.h"
+
 #include "Song.h"
 #include "Notation.h"
 
@@ -39,11 +44,13 @@ class GuiTopBar;
 class QtWindow;
 
 /// Save all the settings for the programme in the right place.
-class CSettings : public QSettings
+class CSettings : public QSettings, public IColorPreference
 {
 
 public:
     CSettings(QtWindow *mainWindow);
+
+    static std::unordered_map<std::string, CColor *> colorCache;
 
     void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
 
@@ -147,6 +154,116 @@ public:
     void fastUpdateRate(bool fullSpeed);
     QString getWarningMessage() {return m_warningMessage;}
     void updateWarningMessages();
+
+    CColor menuColor() ;
+    CColor menuSelectedColor() ;
+
+    CColor staveColor() ;
+    CColor staveColorDim() ;
+    CColor noteColor() ;
+    CColor noteColorDim() ;
+    //static CColor playedGoodColor()    {return CColor(0.4, 0.4, 0.0);}
+    CColor playedGoodColor() ;
+    CColor playedBadColor()  ;
+    CColor playedStoppedColor() ;
+    CColor backgroundColor()  ;
+    CColor barMarkerColor() ;
+    CColor beatMarkerColor() ;
+    CColor pianoGoodColor() ;
+    CColor pianoBadColor() ;
+    CColor noteNameColor() ;
+
+    CColor playZoneAreaColor() ;
+    CColor playZoneEndColor() ;
+    CColor playZoneMiddleColor() ;
+
+    static const int colorCount = 17;
+
+    const char * colorNames[colorCount*3][2] = {
+        {"noteDimRed", "191"},
+        {"noteDimGreen", "140"},
+        {"noteDimBlue", "191"},
+        {"barMarkerRed", "179"},
+        {"barMarkerGreen", "191"},
+        {"barMarkerBlue", "191"},
+        {"noteNameRed", "0"},
+        {"noteNameGreen", "0"},
+        {"noteNameBlue", "0"},
+        {"pianoBadRed", "0"},
+        {"pianoBadGreen", "255"},
+        {"pianoBadBlue", "255"},
+        {"staveDimRed", "191"},
+        {"staveDimGreen", "179"},
+        {"staveDimBlue", "191"},
+        {"bgRed", "230"},
+        {"bgGreen", "230"},
+        {"bgBlue", "230"},
+        {"menuSelectedRed", "77"},
+        {"menuSelectedGreen", "77"},
+        {"menuSelectedBlue", "230"},
+        {"noteRed", "140"},
+        {"noteGreen", "115"},
+        {"noteBlue", "140"},
+        {"staveRed", "153"},
+        {"staveGreen", "143"},
+        {"staveBlue", "148"},
+        {"menuRed", "230"},
+        {"menuGreen", "102"},
+        {"menuBlue", "102"},
+        {"playStoppedRed", "0"},
+        {"playStoppedGreen", "51"},
+        {"playStoppedBlue", "0"},
+        {"beatMarkerRed", "196"},
+        {"beatMarkerGreen", "199"},
+        {"beatMarkerBlue", "199"},
+        {"playZoneBgRed", "219"},
+        {"playZoneBgGreen", "222"},
+        {"playZoneBgBlue", "214"},
+        {"playGoodRed", "128"},
+        {"playGoodGreen", "102"},
+        {"playGoodBlue", "0"},
+        {"playBadRed", "51"},
+        {"playBadGreen", "179"},
+        {"playBadBlue", "51"},
+        {"playZoneEndLineRed", "189"},
+        {"playZoneEndLineGreen", "194"},
+        {"playZoneEndLineBlue", "179"},
+        {"playZoneMiddleRed", "158"},
+        {"playZoneMiddleGreen", "163"},
+        {"playZoneMiddleBlue", "179"}
+    };
+
+    static void clearCache();
+
+    QColor getQColor(string name) {
+        CColor color = getColor(name);
+        QColor qColor((int) (color.red * 255), (int) (color.green * 255), (int) (color.blue * 255), 255);
+        return qColor;
+    }
+
+    CColor getColor(string name) {
+        std::unordered_map<std::string, CColor* >::iterator colorIter = CSettings::colorCache.find(name);
+        if ( colorIter != CSettings::colorCache.end()) {
+            return *(colorIter->second);
+        }
+        
+        string colorName = "ScoreColors/";
+        colorName.append(name);
+        string redName = colorName + "Red";
+        string greenName = colorName + "Green";
+        string blueName = colorName + "Blue";
+
+        int red = value(QString::fromUtf8(redName.c_str()), "0").toInt();
+        int green = value(QString::fromUtf8(greenName.c_str()), "0").toInt();
+        int blue = value(QString::fromUtf8(blueName.c_str()), "0").toInt();
+
+        CColor * color = new CColor(red/255.0f, green/255.0f, blue/255.0f);
+
+        CSettings::colorCache[name] = color;
+
+        return *color;
+        
+    };
 
     QString selectedLangauge() {
         QString locale = value("General/lang","").toString();
