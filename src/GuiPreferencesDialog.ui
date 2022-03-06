@@ -198,6 +198,19 @@
           <item row="10" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
+             <widget class="QPushButton" name="noteDimClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="noteDimRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -222,6 +235,19 @@
           </item>
           <item row="15" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QPushButton" name="barMarkerClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QSpinBox" name="barMarkerRedSpinBox">
               <property name="maximum">
@@ -255,6 +281,19 @@
           <item row="18" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_14">
             <item>
+             <widget class="QPushButton" name="noteNameClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="noteNameRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -279,6 +318,19 @@
           </item>
           <item row="17" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QPushButton" name="pianoBadClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QSpinBox" name="pianoBadRedSpinBox">
               <property name="maximum">
@@ -312,6 +364,19 @@
           <item row="8" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
+             <widget class="QPushButton" name="staveDimClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="staveDimRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -336,6 +401,19 @@
           </item>
           <item row="14" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QPushButton" name="bgClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QSpinBox" name="bgRedSpinBox">
               <property name="maximum">
@@ -376,6 +454,19 @@
           <item row="6" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
+             <widget class="QPushButton" name="menuSelectedClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="menuSelectedRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -407,6 +498,19 @@
           </item>
           <item row="9" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="noteClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QSpinBox" name="noteRedSpinBox">
               <property name="maximum">
@@ -447,6 +551,19 @@
           <item row="7" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
+             <widget class="QPushButton" name="staveClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="staveRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -486,6 +603,19 @@
           <item row="5" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
+             <widget class="QPushButton" name="menuClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="menuRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -521,6 +651,19 @@
           <item row="13" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item>
+             <widget class="QPushButton" name="playStoppedClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="playStoppedRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -552,6 +695,19 @@
           </item>
           <item row="16" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QPushButton" name="beatMarkerClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QSpinBox" name="beatMarkerRedSpinBox">
               <property name="maximum">
@@ -599,6 +755,19 @@
           <item row="19" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_15">
             <item>
+             <widget class="QPushButton" name="playZoneBgClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="playZoneBgRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -623,6 +792,19 @@
           </item>
           <item row="11" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QPushButton" name="playGoodClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QSpinBox" name="playGoodRedSpinBox">
               <property name="maximum">
@@ -656,6 +838,19 @@
           <item row="12" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
+             <widget class="QPushButton" name="playBadClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="playBadRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -681,6 +876,19 @@
           <item row="21" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_17">
             <item>
+             <widget class="QPushButton" name="playZoneEndLineClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QSpinBox" name="playZoneEndLineRedSpinBox">
               <property name="maximum">
                <number>255</number>
@@ -705,6 +913,19 @@
           </item>
           <item row="20" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <widget class="QPushButton" name="playZoneMiddleClrSel">
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔘</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QSpinBox" name="playZoneMiddleRedSpinBox">
               <property name="maximum">

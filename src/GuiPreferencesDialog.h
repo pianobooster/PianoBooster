@@ -50,6 +50,42 @@ public:
 private slots:
     void accept();
 
+    void on_menuClrSel_clicked();
+
+    void on_menuSelectedClrSel_clicked();
+
+    void on_staveClrSel_clicked();
+
+    void on_staveDimClrSel_clicked();
+
+    void on_noteClrSel_clicked();
+
+    void on_noteDimClrSel_clicked();
+
+    void on_playGoodClrSel_clicked();
+
+    void on_playBadClrSel_clicked();
+
+    void on_playStoppedClrSel_clicked();
+
+    void on_bgClrSel_clicked();
+
+    void on_noteNameClrSel_clicked();
+
+    void on_barMarkerClrSel_clicked();
+
+    void on_beatMarkerClrSel_clicked();
+
+    void on_pianoBadClrSel_clicked();
+
+    void on_playZoneBgClrSel_clicked();
+
+    void on_playZoneMiddleClrSel_clicked();
+
+    void on_playZoneEndLineClrSel_clicked();
+
+    void showColorSelector(QSpinBox * red, QSpinBox * green, QSpinBox * blue);
+
 private:
     void initLanguageCombo();
 

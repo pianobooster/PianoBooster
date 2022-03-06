@@ -28,6 +28,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QJsonValue>
+#include <QColorDialog>
 
 #include "GuiPreferencesDialog.h"
 #include "GlView.h"
@@ -260,4 +261,137 @@ void GuiPreferencesDialog::initDisplayColors(){
         colorSpinBoxes[i]->setValue(m_settings->value(QString::fromUtf8(colorName.c_str()), m_settings->colorNames[i][1]).toInt());
 
     }
+}
+
+void GuiPreferencesDialog::showColorSelector(QSpinBox * redBox, QSpinBox * greenBox, QSpinBox * blueBox) {
+    int red = redBox->value();
+    int green = greenBox->value();
+    int blue = blueBox->value();
+    QColor qcolor(red, green, blue);
+    QColor selColor = QColorDialog::getColor(qcolor, this );
+    if( selColor.isValid() )
+    {
+        redBox->setValue(selColor.red());
+        greenBox->setValue(selColor.green());
+        blueBox->setValue(selColor.blue());
+    }
+}
+
+void GuiPreferencesDialog::on_menuClrSel_clicked()
+{
+    showColorSelector(menuRedSpinBox,
+        menuGreenSpinBox,
+        menuBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_menuSelectedClrSel_clicked()
+{
+    showColorSelector(menuSelectedRedSpinBox,
+        menuSelectedGreenSpinBox,
+        menuSelectedBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_staveClrSel_clicked()
+{
+   showColorSelector(staveRedSpinBox,
+        staveGreenSpinBox,
+        staveBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_staveDimClrSel_clicked()
+{
+    showColorSelector(staveDimRedSpinBox,
+        staveDimGreenSpinBox,
+        staveDimBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_noteClrSel_clicked()
+{
+    showColorSelector(noteRedSpinBox,
+        noteGreenSpinBox,
+        noteBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_noteDimClrSel_clicked()
+{
+    showColorSelector(noteDimRedSpinBox,
+        noteDimGreenSpinBox,
+        noteDimBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_playGoodClrSel_clicked()
+{
+    showColorSelector(playGoodRedSpinBox,
+        playGoodGreenSpinBox,
+        playGoodBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_playBadClrSel_clicked()
+{
+    showColorSelector(playBadRedSpinBox,
+        playBadGreenSpinBox,
+        playBadBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_playStoppedClrSel_clicked()
+{
+    showColorSelector(playStoppedRedSpinBox,
+        playStoppedGreenSpinBox,
+        playStoppedBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_bgClrSel_clicked()
+{
+    showColorSelector(bgRedSpinBox,
+        bgGreenSpinBox,
+        bgBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_noteNameClrSel_clicked()
+{
+    showColorSelector(noteNameRedSpinBox,
+        noteNameGreenSpinBox,
+        noteNameBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_barMarkerClrSel_clicked()
+{
+    showColorSelector(barMarkerRedSpinBox,
+        barMarkerGreenSpinBox,
+        barMarkerBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_beatMarkerClrSel_clicked()
+{
+    showColorSelector(beatMarkerRedSpinBox,
+        beatMarkerGreenSpinBox,
+        beatMarkerBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_pianoBadClrSel_clicked()
+{
+    showColorSelector(pianoBadRedSpinBox,
+        pianoBadGreenSpinBox,
+        pianoBadBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_playZoneBgClrSel_clicked()
+{
+    showColorSelector(playZoneBgRedSpinBox,
+        playZoneBgGreenSpinBox,
+        playZoneBgBlueSpinBox);
+}
+
+void GuiPreferencesDialog::on_playZoneMiddleClrSel_clicked()
+{
+    showColorSelector(playZoneMiddleRedSpinBox,
+        playZoneMiddleGreenSpinBox,
+        playZoneMiddleBlueSpinBox);        
+}
+
+void GuiPreferencesDialog::on_playZoneEndLineClrSel_clicked()
+{
+    showColorSelector(playZoneEndLineRedSpinBox,
+        playZoneEndLineGreenSpinBox,
+        playZoneEndLineBlueSpinBox);
 }
