@@ -99,7 +99,7 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
     m_song = song;
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
-    loadSettings();
+    //loadSettings();
 }
 
 void CSettings::setNoteNamesEnabled(bool value) {
