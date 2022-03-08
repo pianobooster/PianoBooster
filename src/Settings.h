@@ -232,7 +232,7 @@ public:
         return qColor;
     }
 
-    CColor getColor(string name) {
+    const CColor & getColor(string name) {
         std::unordered_map<std::string, CColor* >::iterator colorIter = CSettings::colorCache.find(name);
         if ( colorIter != CSettings::colorCache.end()) {
             return *(colorIter->second);
@@ -251,7 +251,7 @@ public:
         CColor * color = new CColor(red/255.0f, green/255.0f, blue/255.0f);
 
         CSettings::colorCache[name] = color;
-
+        CSettings::colorCache.insert({name, color});
         return *color;
         
     };
