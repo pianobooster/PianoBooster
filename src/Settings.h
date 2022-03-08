@@ -155,9 +155,6 @@ public:
     QString getWarningMessage() {return m_warningMessage;}
     void updateWarningMessages();
 
-    CColor menuColor() ;
-    CColor menuSelectedColor() ;
-
     CColor staveColor() ;
     CColor staveColorDim() ;
     CColor noteColor() ;
@@ -177,7 +174,7 @@ public:
     CColor playZoneEndColor() ;
     CColor playZoneMiddleColor() ;
 
-    static const int colorCount = 17;
+    static const int colorCount = 15;
 
     const char * colorNames[colorCount*3][2] = {
         {"noteDimRed", "191"},
@@ -198,18 +195,12 @@ public:
         {"bgRed", "230"},
         {"bgGreen", "230"},
         {"bgBlue", "230"},
-        {"menuSelectedRed", "77"},
-        {"menuSelectedGreen", "77"},
-        {"menuSelectedBlue", "230"},
         {"noteRed", "140"},
         {"noteGreen", "115"},
         {"noteBlue", "140"},
         {"staveRed", "153"},
         {"staveGreen", "143"},
         {"staveBlue", "148"},
-        {"menuRed", "230"},
-        {"menuGreen", "102"},
-        {"menuBlue", "102"},
         {"playStoppedRed", "0"},
         {"playStoppedGreen", "51"},
         {"playStoppedBlue", "0"},

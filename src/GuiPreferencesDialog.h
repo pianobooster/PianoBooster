@@ -50,10 +50,6 @@ public:
 private slots:
     void accept();
 
-    void on_menuClrSel_clicked();
-
-    void on_menuSelectedClrSel_clicked();
-
     void on_staveClrSel_clicked();
 
     void on_staveDimClrSel_clicked();

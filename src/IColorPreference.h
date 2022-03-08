@@ -57,9 +57,6 @@ class IColorPreference
 {
 public:
 
-    virtual CColor menuColor() = 0;
-    virtual CColor menuSelectedColor() = 0;
-
     virtual CColor staveColor() = 0;
     virtual CColor staveColorDim() = 0;
     virtual CColor noteColor() = 0;

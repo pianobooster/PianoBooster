@@ -180,18 +180,12 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
         bgRedSpinBox,
         bgGreenSpinBox,
         bgBlueSpinBox,
-        menuSelectedRedSpinBox,
-        menuSelectedGreenSpinBox,
-        menuSelectedBlueSpinBox,
         noteRedSpinBox,
         noteGreenSpinBox,
         noteBlueSpinBox,
         staveRedSpinBox,
         staveGreenSpinBox,
         staveBlueSpinBox,
-        menuRedSpinBox,
-        menuGreenSpinBox,
-        menuBlueSpinBox,
         playStoppedRedSpinBox,
         playStoppedGreenSpinBox,
         playStoppedBlueSpinBox,
@@ -261,10 +255,8 @@ void GuiPreferencesDialog::updateColorSelBtnBg() {
     setButtonBgColor(pianoBadClrSel, m_settings->pianoBadColor() );
     setButtonBgColor(staveDimClrSel, m_settings->staveColorDim() );
     setButtonBgColor(bgClrSel, m_settings->backgroundColor() );
-    setButtonBgColor(menuSelectedClrSel, m_settings->menuSelectedColor() );
     setButtonBgColor(noteClrSel, m_settings->noteColor() );
     setButtonBgColor(staveClrSel, m_settings->staveColor() );
-    setButtonBgColor(menuClrSel, m_settings->menuColor() );
     setButtonBgColor(playStoppedClrSel, m_settings->playedStoppedColor() );
     setButtonBgColor(beatMarkerClrSel, m_settings->beatMarkerColor() );
     setButtonBgColor(playZoneBgClrSel, m_settings->playZoneAreaColor() );
@@ -295,20 +287,6 @@ void GuiPreferencesDialog::showColorSelector(QSpinBox * redBox, QSpinBox * green
         greenBox->setValue(selColor.green());
         blueBox->setValue(selColor.blue());
     }
-}
-
-void GuiPreferencesDialog::on_menuClrSel_clicked()
-{
-    showColorSelector(menuRedSpinBox,
-        menuGreenSpinBox,
-        menuBlueSpinBox);
-}
-
-void GuiPreferencesDialog::on_menuSelectedClrSel_clicked()
-{
-    showColorSelector(menuSelectedRedSpinBox,
-        menuSelectedGreenSpinBox,
-        menuSelectedBlueSpinBox);
 }
 
 void GuiPreferencesDialog::on_staveClrSel_clicked()

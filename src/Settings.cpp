@@ -424,12 +424,6 @@ void CSettings::setDefaultColors() {
     }
 }
 
-CColor CSettings::menuColor() {
-    return getColor("menu");
-}
-
-CColor CSettings::menuSelectedColor()    {return getColor("menuSelected");}
-
 CColor CSettings::staveColor()           {return getColor("stave");}
 CColor CSettings::staveColorDim()        {return getColor("staveDim");}
 CColor CSettings::noteColor()            {return getColor("note");}

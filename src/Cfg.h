@@ -79,18 +79,6 @@ public:
         colorPref = pref;
     }
 
-    static CColor menuColor() {
-        if ( colorPref != NULL) {
-            return colorPref->menuColor();
-        }
-        throw std::runtime_error("Color preference not initialized."); 
-    }
-    static CColor menuSelectedColor() {
-        if ( colorPref != NULL) {
-            return colorPref->menuSelectedColor();
-        }
-        throw std::runtime_error("Color preference not initialized."); 
-    }
     static CColor staveColor() {
         if ( colorPref != NULL) {
             return colorPref->staveColor();
