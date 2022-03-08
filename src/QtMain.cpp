@@ -67,5 +67,6 @@ int main(int argc, char *argv[]){
 
     int value = app.exec();
     closeLogs();
+
     return value;
 }

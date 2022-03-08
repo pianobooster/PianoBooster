@@ -38,8 +38,8 @@ whichPart_t CDraw::m_displayHand;
 int CDraw::m_forceCompileRedraw;
 
 FTFont * setupFont() {
-    static FTFont * cacheFont = NULL;
-    if ( cacheFont == NULL ) {
+    FTFont * cacheFont = NULL;  //TBD should use singleton pattern or wrapper
+    //if ( cacheFont == NULL ) {
         QStringList listPathFonts;
 
         listPathFonts.append(Util::dataDir()+"/fonts/DejaVuSans.ttf");
@@ -65,7 +65,7 @@ FTFont * setupFont() {
             exit(0);
         }
         cacheFont->FaceSize(FONT_SIZE, 72);
-    }
+    //}
     return cacheFont;
 }
 
