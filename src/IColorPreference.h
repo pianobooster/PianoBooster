@@ -58,10 +58,9 @@ class IColorPreference
 public:
 
     virtual CColor staveColor() = 0;
-    virtual CColor staveColorDim() = 0;
+    virtual CColor staveDimColor() = 0;
     virtual CColor noteColor() = 0;
-    virtual CColor noteColorDim() = 0;
-    //static CColor playedGoodColor()    {return CColor(0.4, 0.4, 0.0);}
+    virtual CColor noteDimColor() = 0;
     virtual CColor playedGoodColor() = 0;
     virtual CColor playedBadColor()  = 0;
     virtual CColor playedStoppedColor() = 0;

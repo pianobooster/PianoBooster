@@ -158,63 +158,7 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
 
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
 
-    //Initialize the color spin boxes.  Would be good to someday convert to a color selector, or keep the same
-    //but add a color selector button at the end of each line
-    //preview is even better
-    QSpinBox * colorSpinBoxesTemp[CSettings::colorCount*3] = {
-        noteDimRedSpinBox,
-        noteDimGreenSpinBox,
-        noteDimBlueSpinBox,
-        barMarkerRedSpinBox,
-        barMarkerGreenSpinBox,
-        barMarkerBlueSpinBox,
-        noteNameRedSpinBox,
-        noteNameGreenSpinBox,
-        noteNameBlueSpinBox,
-        pianoBadRedSpinBox,
-        pianoBadGreenSpinBox,
-        pianoBadBlueSpinBox,
-        staveDimRedSpinBox,
-        staveDimGreenSpinBox,
-        staveDimBlueSpinBox,
-        bgRedSpinBox,
-        bgGreenSpinBox,
-        bgBlueSpinBox,
-        noteRedSpinBox,
-        noteGreenSpinBox,
-        noteBlueSpinBox,
-        staveRedSpinBox,
-        staveGreenSpinBox,
-        staveBlueSpinBox,
-        playStoppedRedSpinBox,
-        playStoppedGreenSpinBox,
-        playStoppedBlueSpinBox,
-        beatMarkerRedSpinBox,
-        beatMarkerGreenSpinBox,
-        beatMarkerBlueSpinBox,
-        playZoneBgRedSpinBox,
-        playZoneBgGreenSpinBox,
-        playZoneBgBlueSpinBox,
-        playGoodRedSpinBox,
-        playGoodGreenSpinBox,
-        playGoodBlueSpinBox,
-        playBadRedSpinBox,
-        playBadGreenSpinBox,
-        playBadBlueSpinBox,
-        playZoneEndLineRedSpinBox,
-        playZoneEndLineGreenSpinBox,
-        playZoneEndLineBlueSpinBox,
-        playZoneMiddleRedSpinBox,
-        playZoneMiddleGreenSpinBox,
-        playZoneMiddleBlueSpinBox
-    };
-
-    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
-        colorSpinBoxes[i] = colorSpinBoxesTemp[i];
-    }
-
     initDisplayColors();
-    addColorChangeListener();
 
     initLanguageCombo();
 }
@@ -227,47 +171,73 @@ void GuiPreferencesDialog::accept()
 }
 
 void GuiPreferencesDialog::saveDisplayColors(){
-    
-    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
-        string colorName = "ScoreColors/";
-        colorName.append(m_settings->colorNames[i][0]);
+    m_settings->setColor("noteDim", noteDimColor);
+    m_settings->setColor("barMarker", barMarkerColor);
+    m_settings->setColor("noteName", noteNameColor);
+    m_settings->setColor("pianoBad", pianoBadColor);
+    m_settings->setColor("staveDim", staveDimColor);
+    m_settings->setColor("bg", backgroundColor);
+    m_settings->setColor("note", noteColor);
+    m_settings->setColor("stave", staveColor);
+    m_settings->setColor("playStopped", playedStoppedColor);
+    m_settings->setColor("beatMarker", beatMarkerColor);
+    m_settings->setColor("playZoneBg", playZoneAreaColor);
+    m_settings->setColor("playGood", playedGoodColor);
+    m_settings->setColor("playBad", playedBadColor);
+    m_settings->setColor("playZoneEndLine", playZoneEndColor);
+    m_settings->setColor("playZoneMiddle", playZoneMiddleColor);
 
-        m_settings->setValue(QString::fromUtf8(colorName.c_str()), colorSpinBoxes[i]->value());
-    }
+}
+
+void GuiPreferencesDialog::translateColor(const CColor & ccolor, QColor & qcolor) {
+    qcolor.setRgb((int) (ccolor.red * 255),(int)  (ccolor.green *255), (int) (ccolor.blue*255));
 }
 
 void GuiPreferencesDialog::initDisplayColors(){
-    
-    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
-        string colorName = "ScoreColors/";
-        colorName.append(m_settings->colorNames[i][0]);
-
-        colorSpinBoxes[i]->setValue(m_settings->value(QString::fromUtf8(colorName.c_str()), m_settings->colorNames[i][1]).toInt());
-    }
+    translateColor(m_settings->staveColor(), staveColor);
+    translateColor(m_settings->staveDimColor(), staveDimColor);
+    translateColor(m_settings->noteColor(), noteColor);
+    translateColor(m_settings->noteDimColor(), noteDimColor);
+    translateColor(m_settings->playedGoodColor(), playedGoodColor);
+    translateColor(m_settings->playedBadColor(), playedBadColor);
+    translateColor(m_settings->playedStoppedColor(), playedStoppedColor);
+    translateColor(m_settings->backgroundColor(), backgroundColor);
+    translateColor(m_settings->barMarkerColor(), barMarkerColor);
+    translateColor(m_settings->beatMarkerColor(), beatMarkerColor);
+    translateColor(m_settings->pianoGoodColor(), pianoGoodColor);
+    translateColor(m_settings->pianoBadColor(), pianoBadColor);
+    translateColor(m_settings->noteNameColor(), noteNameColor);
+    translateColor(m_settings->playZoneAreaColor(), playZoneAreaColor);
+    translateColor(m_settings->playZoneEndColor(), playZoneEndColor);
+    translateColor(m_settings->playZoneMiddleColor(), playZoneMiddleColor);
 
     updateColorSelBtnBg();
 }
 
 void GuiPreferencesDialog::updateColorSelBtnBg() {
-    setButtonBgColor(noteDimClrSel, m_settings->noteColorDim() );
-    setButtonBgColor(barMarkerClrSel, m_settings->barMarkerColor() );
-    setButtonBgColor(noteNameClrSel, m_settings->noteNameColor() );
-    setButtonBgColor(pianoBadClrSel, m_settings->pianoBadColor() );
-    setButtonBgColor(staveDimClrSel, m_settings->staveColorDim() );
-    setButtonBgColor(bgClrSel, m_settings->backgroundColor() );
-    setButtonBgColor(noteClrSel, m_settings->noteColor() );
-    setButtonBgColor(staveClrSel, m_settings->staveColor() );
-    setButtonBgColor(playStoppedClrSel, m_settings->playedStoppedColor() );
-    setButtonBgColor(beatMarkerClrSel, m_settings->beatMarkerColor() );
-    setButtonBgColor(playZoneBgClrSel, m_settings->playZoneAreaColor() );
-    setButtonBgColor(playGoodClrSel, m_settings->playedGoodColor() );
-    setButtonBgColor(playBadClrSel, m_settings->playedBadColor() );
-    setButtonBgColor(playZoneEndLineClrSel, m_settings->playZoneEndColor() );
-    setButtonBgColor(playZoneMiddleClrSel, m_settings->playZoneMiddleColor() );
+    setButtonBgColor(noteDimColorSel, noteDimColor );
+    setButtonBgColor(barMarkerColorSel, barMarkerColor );
+    setButtonBgColor(noteNameColorSel, noteNameColor );
+    setButtonBgColor(pianoBadColorSel, pianoBadColor );
+    setButtonBgColor(staveDimColorSel, staveDimColor );
+    setButtonBgColor(bgColorSel, backgroundColor );
+    setButtonBgColor(noteColorSel, noteColor );
+    setButtonBgColor(staveColorSel, staveColor );
+    setButtonBgColor(playStoppedColorSel, playedStoppedColor );
+    setButtonBgColor(beatMarkerColorSel, beatMarkerColor );
+    setButtonBgColor(playZoneBgColorSel, playZoneAreaColor );
+    setButtonBgColor(playGoodColorSel, playedGoodColor );
+    setButtonBgColor(playBadColorSel, playedBadColor );
+    setButtonBgColor(playZoneEndLineColorSel, playZoneEndColor);
+    setButtonBgColor(playZoneMiddleColorSel, playZoneMiddleColor );
 }
 
 void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, CColor color) {
     QColor qcolor((int) (color.red * 255),(int)  (color.green *255), (int) (color.blue*255));
+    setButtonBgColor(btn, qcolor);
+}
+
+void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, QColor qcolor) {
     QPalette pal = btn->palette();
     pal.setColor(QPalette::Button, qcolor);
     btn->setAutoFillBackground(true);
@@ -275,123 +245,101 @@ void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, CColor color) {
     btn->update();
 }
 
-void GuiPreferencesDialog::showColorSelector(QSpinBox * redBox, QSpinBox * greenBox, QSpinBox * blueBox) {
-    int red = redBox->value();
-    int green = greenBox->value();
-    int blue = blueBox->value();
-    QColor qcolor(red, green, blue);
+void GuiPreferencesDialog::showColorSelector(QPushButton * btn, QColor & qcolor) {
     QColor selColor = QColorDialog::getColor(qcolor, this );
     if( selColor.isValid() )
     {
-        redBox->setValue(selColor.red());
-        greenBox->setValue(selColor.green());
-        blueBox->setValue(selColor.blue());
+        qcolor.setRed(selColor.red());
+        qcolor.setGreen(selColor.green());
+        qcolor.setBlue(selColor.blue());
+        setButtonBgColor(btn, qcolor);
     }
 }
 
-void GuiPreferencesDialog::on_staveClrSel_clicked()
+void GuiPreferencesDialog::on_staveColorSel_clicked()
 {
-   showColorSelector(staveRedSpinBox,
-        staveGreenSpinBox,
-        staveBlueSpinBox);
+   showColorSelector(staveColorSel, staveColor);
 }
 
-void GuiPreferencesDialog::on_staveDimClrSel_clicked()
+void GuiPreferencesDialog::on_staveDimColorSel_clicked()
 {
-    showColorSelector(staveDimRedSpinBox,
-        staveDimGreenSpinBox,
-        staveDimBlueSpinBox);
+    showColorSelector(staveDimColorSel, staveDimColor);
 }
 
-void GuiPreferencesDialog::on_noteClrSel_clicked()
+void GuiPreferencesDialog::on_noteColorSel_clicked()
 {
-    showColorSelector(noteRedSpinBox,
-        noteGreenSpinBox,
-        noteBlueSpinBox);
+    showColorSelector(noteColorSel,
+        noteColor);
 }
 
-void GuiPreferencesDialog::on_noteDimClrSel_clicked()
+void GuiPreferencesDialog::on_noteDimColorSel_clicked()
 {
-    showColorSelector(noteDimRedSpinBox,
-        noteDimGreenSpinBox,
-        noteDimBlueSpinBox);
+    showColorSelector(noteDimColorSel,
+        noteDimColor);
 }
 
-void GuiPreferencesDialog::on_playGoodClrSel_clicked()
+void GuiPreferencesDialog::on_playGoodColorSel_clicked()
 {
-    showColorSelector(playGoodRedSpinBox,
-        playGoodGreenSpinBox,
-        playGoodBlueSpinBox);
+    showColorSelector(playGoodColorSel,
+        playedGoodColor);
 }
 
-void GuiPreferencesDialog::on_playBadClrSel_clicked()
+void GuiPreferencesDialog::on_playBadColorSel_clicked()
 {
-    showColorSelector(playBadRedSpinBox,
-        playBadGreenSpinBox,
-        playBadBlueSpinBox);
+    showColorSelector(playBadColorSel,
+        playedBadColor);
 }
 
-void GuiPreferencesDialog::on_playStoppedClrSel_clicked()
+void GuiPreferencesDialog::on_playStoppedColorSel_clicked()
 {
-    showColorSelector(playStoppedRedSpinBox,
-        playStoppedGreenSpinBox,
-        playStoppedBlueSpinBox);
+    showColorSelector(playStoppedColorSel,
+        playedStoppedColor);
 }
 
-void GuiPreferencesDialog::on_bgClrSel_clicked()
+void GuiPreferencesDialog::on_bgColorSel_clicked()
 {
-    showColorSelector(bgRedSpinBox,
-        bgGreenSpinBox,
-        bgBlueSpinBox);
+    showColorSelector(bgColorSel, backgroundColor);
 }
 
-void GuiPreferencesDialog::on_noteNameClrSel_clicked()
+void GuiPreferencesDialog::on_noteNameColorSel_clicked()
 {
-    showColorSelector(noteNameRedSpinBox,
-        noteNameGreenSpinBox,
-        noteNameBlueSpinBox);
+    showColorSelector(noteNameColorSel,
+        noteNameColor);
 }
 
-void GuiPreferencesDialog::on_barMarkerClrSel_clicked()
+void GuiPreferencesDialog::on_barMarkerColorSel_clicked()
 {
-    showColorSelector(barMarkerRedSpinBox,
-        barMarkerGreenSpinBox,
-        barMarkerBlueSpinBox);
+    showColorSelector(barMarkerColorSel, barMarkerColor);
 }
 
-void GuiPreferencesDialog::on_beatMarkerClrSel_clicked()
+void GuiPreferencesDialog::on_beatMarkerColorSel_clicked()
 {
-    showColorSelector(beatMarkerRedSpinBox,
-        beatMarkerGreenSpinBox,
-        beatMarkerBlueSpinBox);
+    showColorSelector(beatMarkerColorSel,
+        beatMarkerColor);
 }
 
-void GuiPreferencesDialog::on_pianoBadClrSel_clicked()
+void GuiPreferencesDialog::on_pianoBadColorSel_clicked()
 {
-    showColorSelector(pianoBadRedSpinBox,
-        pianoBadGreenSpinBox,
-        pianoBadBlueSpinBox);
+    showColorSelector(pianoBadColorSel,
+        pianoBadColor);
 }
 
-void GuiPreferencesDialog::on_playZoneBgClrSel_clicked()
+void GuiPreferencesDialog::on_playZoneBgColorSel_clicked()
 {
-    showColorSelector(playZoneBgRedSpinBox,
-        playZoneBgGreenSpinBox,
-        playZoneBgBlueSpinBox);
+    showColorSelector(playZoneBgColorSel,
+        playZoneAreaColor);
 }
 
-void GuiPreferencesDialog::on_playZoneMiddleClrSel_clicked()
+void GuiPreferencesDialog::on_playZoneMiddleColorSel_clicked()
 {
-    showColorSelector(playZoneMiddleRedSpinBox,
-        playZoneMiddleGreenSpinBox,
-        playZoneMiddleBlueSpinBox);        
+    showColorSelector(playZoneMiddleColorSel,
+        playZoneMiddleColor);        
 }
 
-void GuiPreferencesDialog::on_playZoneEndLineClrSel_clicked()
+void GuiPreferencesDialog::on_playZoneEndLineColorSel_clicked()
 {
-    showColorSelector(playZoneEndLineRedSpinBox,
-        playZoneEndLineGreenSpinBox,
-        playZoneEndLineBlueSpinBox);
+    showColorSelector(playZoneEndLineColorSel,
+        playZoneEndColor);
 }
 
 void GuiPreferencesDialog::on_applyButton_clicked()
@@ -423,23 +371,6 @@ void GuiPreferencesDialog::on_applyButton_clicked()
     CDraw::forceCompileRedraw();
     
     CSettings::clearCache();
-}
-
-void GuiPreferencesDialog::addColorChangeListener() {
-
-    for ( int i = 0; i < CSettings::colorCount * 3; i++) {
-        QObject::connect(colorSpinBoxes[i], static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
-            this, &GuiPreferencesDialog::colorSpinBoxChanged);
-    }
-}
-
-void GuiPreferencesDialog::colorSpinBoxChanged(int val) {
-    if ( true ) {
-        return; //tbd the event is only generated after the popup dialog is closed, so it doesn't work
-    }
-
-    saveDisplayColors();    //tbd should only save to temporary data structure similar to the settings, since this is not yet applied
-    QTimer::singleShot(200, this, &GuiPreferencesDialog::updateColorSelBtnBg);
 }
 
 void GuiPreferencesDialog::forceGlViewUpdate() {

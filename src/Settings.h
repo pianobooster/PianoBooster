@@ -31,6 +31,7 @@
 
 #include <QSettings>
 #include <QDomDocument>
+#include <QColor>
 
 #include "IColorPreference.h"
 
@@ -156,10 +157,9 @@ public:
     void updateWarningMessages();
 
     CColor staveColor() ;
-    CColor staveColorDim() ;
+    CColor staveDimColor() ;
     CColor noteColor() ;
-    CColor noteColorDim() ;
-    //static CColor playedGoodColor()    {return CColor(0.4, 0.4, 0.0);}
+    CColor noteDimColor() ;
     CColor playedGoodColor() ;
     CColor playedBadColor()  ;
     CColor playedStoppedColor() ;
@@ -253,6 +253,21 @@ public:
         CSettings::colorCache[name] = color;
 
         return *color;
+        
+    };
+
+    void setColor(string name, const QColor & qcolor) {
+        string colorName = "ScoreColors/";
+        colorName.append(name);
+        string redName = colorName + "Red";
+        string greenName = colorName + "Green";
+        string blueName = colorName + "Blue";
+
+        setValue(QString::fromUtf8(redName.c_str()), qcolor.red());
+        setValue(QString::fromUtf8(greenName.c_str()), qcolor.green());
+        setValue(QString::fromUtf8(blueName.c_str()), qcolor.blue());
+
+        clearCache();
         
     };
 

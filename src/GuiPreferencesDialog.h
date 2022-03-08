@@ -50,47 +50,47 @@ public:
 private slots:
     void accept();
 
-    void on_staveClrSel_clicked();
+    void on_staveColorSel_clicked();
 
-    void on_staveDimClrSel_clicked();
+    void on_staveDimColorSel_clicked();
 
-    void on_noteClrSel_clicked();
+    void on_noteColorSel_clicked();
 
-    void on_noteDimClrSel_clicked();
+    void on_noteDimColorSel_clicked();
 
-    void on_playGoodClrSel_clicked();
+    void on_playGoodColorSel_clicked();
 
-    void on_playBadClrSel_clicked();
+    void on_playBadColorSel_clicked();
 
-    void on_playStoppedClrSel_clicked();
+    void on_playStoppedColorSel_clicked();
 
-    void on_bgClrSel_clicked();
+    void on_bgColorSel_clicked();
 
-    void on_noteNameClrSel_clicked();
+    void on_noteNameColorSel_clicked();
 
-    void on_barMarkerClrSel_clicked();
+    void on_barMarkerColorSel_clicked();
 
-    void on_beatMarkerClrSel_clicked();
+    void on_beatMarkerColorSel_clicked();
 
-    void on_pianoBadClrSel_clicked();
+    void on_pianoBadColorSel_clicked();
 
-    void on_playZoneBgClrSel_clicked();
+    void on_playZoneBgColorSel_clicked();
 
-    void on_playZoneMiddleClrSel_clicked();
+    void on_playZoneMiddleColorSel_clicked();
 
-    void on_playZoneEndLineClrSel_clicked();
+    void on_playZoneEndLineColorSel_clicked();
 
-    void showColorSelector(QSpinBox * red, QSpinBox * green, QSpinBox * blue);
+    void showColorSelector(QPushButton * btn, QColor & color);
 
     void on_applyButton_clicked();
     
     void forceGlViewUpdate();
 
     void updateColorSelBtnBg();
-    void addColorChangeListener();
-    void colorSpinBoxChanged(int val);
 
     void setButtonBgColor(QPushButton * btn, CColor color);
+    void setButtonBgColor(QPushButton * btn, QColor color);
+    void translateColor(const CColor & ccolor, QColor & qcolor);
 
 private:
     void initLanguageCombo();
@@ -103,6 +103,24 @@ private:
     CGLView *m_glView;
 
     QSpinBox * colorSpinBoxes[CSettings::colorCount*3] = {};
+
+    QColor staveColor;
+    QColor staveDimColor;
+    QColor noteColor;
+    QColor noteDimColor;
+    QColor playedGoodColor;
+    QColor playedBadColor;
+    QColor playedStoppedColor;
+    QColor backgroundColor;
+    QColor barMarkerColor;
+    QColor beatMarkerColor;
+    QColor pianoGoodColor;
+    QColor pianoBadColor;
+    QColor noteNameColor;
+
+    QColor playZoneAreaColor;
+    QColor playZoneEndColor;
+    QColor playZoneMiddleColor;
 };
 
 #endif //__GUIPREFERENCESDIALOG_H__

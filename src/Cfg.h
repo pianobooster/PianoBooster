@@ -85,9 +85,9 @@ public:
         }
         throw std::runtime_error("Color preference not initialized."); 
     }
-    static CColor staveColorDim() {
+    static CColor staveDimColor() {
         if ( colorPref != NULL) {
-            return colorPref->staveColorDim();
+            return colorPref->staveDimColor();
         }
         throw std::runtime_error("Color preference not initialized."); 
     }
@@ -97,9 +97,9 @@ public:
         }
         throw std::runtime_error("Color preference not initialized."); 
     }
-    static CColor noteColorDim() {
+    static CColor noteDimColor() {
         if ( colorPref != NULL) {
-            return colorPref->noteColorDim();
+            return colorPref->noteDimColor();
         }
         throw std::runtime_error("Color preference not initialized."); 
     }

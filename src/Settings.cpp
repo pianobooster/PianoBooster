@@ -425,9 +425,9 @@ void CSettings::setDefaultColors() {
 }
 
 CColor CSettings::staveColor()           {return getColor("stave");}
-CColor CSettings::staveColorDim()        {return getColor("staveDim");}
+CColor CSettings::staveDimColor()        {return getColor("staveDim");}
 CColor CSettings::noteColor()            {return getColor("note");}
-CColor CSettings::noteColorDim()         {return getColor("noteDim");}
+CColor CSettings::noteDimColor()         {return getColor("noteDim");}
 CColor CSettings::playedGoodColor()      {return getColor("playGood");}
 CColor CSettings::playedBadColor()       {return getColor("playBad");}
 CColor CSettings::playedStoppedColor()   {return getColor("playStopped");}

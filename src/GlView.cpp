@@ -148,14 +148,14 @@ void CGLView::drawTimeSignature()
 
     x = Cfg::timeSignatureX();
 
-    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_left) ? m_settings->noteColor() : m_settings->noteColorDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_left) ? m_settings->noteColor() : m_settings->noteDimColor());
 
     y = CStavePos(PB_PART_right,  0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
     y = CStavePos(PB_PART_right, -3).getPosY() - 2;
     renderText(x,y, 0, bufferBottom, m_timeSigFont);
 
-    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_right) ? m_settings->noteColor() : m_settings->noteColorDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_right) ? m_settings->noteColor() : m_settings->noteDimColor());
 
     y = CStavePos(PB_PART_left,   0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
