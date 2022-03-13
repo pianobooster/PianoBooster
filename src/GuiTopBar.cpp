@@ -28,6 +28,8 @@
 
 #include <QtWidgets>
 
+#include <QPixmap>
+
 #include "GuiTopBar.h"
 #include "TrackList.h"
 #include "GuiLoopingPopup.h"
@@ -57,10 +59,65 @@ GuiTopBar::GuiTopBar(QWidget *parent, CSettings* settings)
     setMaximumSize(QSize(16777215, 30));
 }
 
-void GuiTopBar::init(CSong* songObj)
+void GuiTopBar::init(CSong* songObj, CGLView * m_glWidget)
 {
     m_song = songObj;
+    m_glView = m_glWidget;
     reloadKeyCombo(true);
+
+    QListView *view = new QListView(themeCobox);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    themeCobox->setStyleSheet("QComboBox QAbstractItemView  { min-width: 205px; }; ");
+    themeCobox->setView(view);
+
+    updateThemeCombobox();
+}
+
+void GuiTopBar::updateThemeCombobox() {
+    QPixmap p1(":/images/colortheme.png");
+    p1 = p1.scaled(QSize(26, 26));
+    themeCobox->setIconSize(QSize(26, 26));
+
+    CThemeList themeList;
+
+    QString name = m_settings->value("themeName", "Default Theme").toString();
+
+    //themeCobox->addItem("",p1);
+    //themeCobox->setItemData(0,p1,Qt::DecorationRole);
+
+    QList<QString> themeNames = themeList.getThemeNames();
+    int index = 0;
+    foreach(const QString & themeName, themeNames) {
+        themeCobox->addItem(themeName, p1);
+        themeCobox->setItemData(index++, p1, Qt::DecorationRole);
+    }
+
+    themeCobox->setCurrentText(name);
+}
+
+void GuiTopBar::on_themeCobox_currentTextChanged(const QString &themeName) {
+    QString name = m_settings->value("themeName", "Default Theme").toString();
+    if ( name == themeName ) {
+        return;
+    }
+
+    setSelectedTheme(themeName);
+}
+
+void GuiTopBar::setSelectedTheme(QString themeName) {
+    m_settings->setValue("themeName", themeName);
+
+    CThemeList themeList;
+    m_settings->clearCache();
+
+    CDraw::forceCompileRedraw();
+    QTimer::singleShot(200, this, &GuiTopBar::forceGuiUpdate);
+}
+
+void GuiTopBar::forceGuiUpdate() {
+    m_glView->updateBackground(true);
+    m_song->forceScoreRedraw();
+    m_song->rewind();
 }
 
 void GuiTopBar::refresh(bool reset)

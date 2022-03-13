@@ -48,6 +48,9 @@ public:
     void init(CSong* song, CSettings* settings, CGLView* glView);
 
 private slots:
+    void on_resetBtn_clicked();
+
+private slots:
     void accept();
 
     void on_staveColorSel_clicked();
@@ -101,8 +104,6 @@ private:
     CSettings* m_settings;
     CSong* m_song;
     CGLView *m_glView;
-
-    QSpinBox * colorSpinBoxes[CSettings::colorCount*3] = {};
 
     QColor staveColor;
     QColor staveDimColor;

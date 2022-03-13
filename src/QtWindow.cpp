@@ -52,8 +52,33 @@ static int set_realtime_priority(int policy, int prio)
 }
 #endif
 
+void QtWindow::copyThemes() {
+    auto configFile = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+    if (configFile.isEmpty()) qFatal("Cannot determine settings storage location");
+
+    QFileInfo fileInfo(configFile);
+    QDir dir = fileInfo.dir();
+
+    if ( !dir.exists() ) {
+        qFatal("Cannot determine settings storage location");
+    }
+
+    QString  fileNames [5] = {"Default Theme.ini", "Galaxy.ini", "Earth.ini", "Mars.ini", "Saturn.ini"};
+
+    for ( int i = 0; i < 5; i++ ) {
+        QString source = ":/colorthemes/" + fileNames[i];
+        QString dest = dir.absolutePath() + "/" + fileNames[i];
+        if (!QFile::exists(dest)) {
+            QFile::copy(source, dest);
+            QFile(dest).setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
+        }
+    }
+
+}
+
 QtWindow::QtWindow()
 {
+    copyThemes();
     m_settings = new CSettings(this);
     setWindowIcon(QIcon(":/images/pianobooster.png"));
     setWindowTitle(tr("Piano Booster"));
@@ -111,7 +136,7 @@ QtWindow::QtWindow()
     m_song->init2(m_score, m_settings);
 
     m_sidePanel->init(m_song, m_song->getTrackList(), m_topBar);
-    m_topBar->init(m_song);
+    m_topBar->init(m_song, m_glWidget);
 
     QWidget *centralWin = new QWidget();
     centralWin->setLayout(mainLayout);

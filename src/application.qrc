@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/" >
+    <qresource prefix="/">
         <file>images/pianobooster.png</file>
         <file>images/copy.png</file>
         <file>images/cut.png</file>
@@ -11,5 +11,12 @@
         <file>images/play.png</file>
         <file>images/save.png</file>
         <file>images/stop.png</file>
+        <file>images/color-picker-icon.png</file>
+        <file>images/colortheme.png</file>
+        <file>colorthemes/Default Theme.ini</file>
+        <file>colorthemes/Earth.ini</file>
+        <file>colorthemes/Galaxy.ini</file>
+        <file>colorthemes/Mars.ini</file>
+        <file>colorthemes/Saturn.ini</file>
     </qresource>
 </RCC>

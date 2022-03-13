@@ -189,6 +189,8 @@ private:
     void readSettings();
     void writeSettings();
 
+    void copyThemes();
+
     CSettings* m_settings;
 
     GuiSidePanel *m_sidePanel;

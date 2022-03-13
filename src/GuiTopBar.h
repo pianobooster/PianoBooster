@@ -34,6 +34,8 @@
 #include "Score.h"
 #include "TrackList.h"
 #include "Settings.h"
+#include "Draw.h"
+#include "GlView.h"
 
 #include "ui_GuiTopBar.h"
 
@@ -44,7 +46,7 @@ class GuiTopBar : public QWidget, private Ui::GuiTopBar
 public:
     GuiTopBar(QWidget *parent, CSettings* settings);
 
-    void init(CSong* songObj);
+    void init(CSong* songObj, CGLView * glView);
 
     void refresh(bool reset);
 
@@ -54,10 +56,13 @@ public:
     int getSpeed(){return speedSpin->value();}
     void stopMuiscPlaying();
     void updateTranslate();
+    void updateThemeCombobox();
+    void forceGuiUpdate();
 
 public slots:
     void on_playFromStartButton_clicked(bool clicked);
     void on_playButton_clicked(bool clicked);
+    void on_themeCobox_currentTextChanged(const QString &text);
 
 private slots:
     void on_speedSpin_valueChanged(int speed);
@@ -78,13 +83,17 @@ private:
     bool eventFilter(QObject *obj, QEvent *event);
     void reloadKeyCombo(bool major);
 
+    void setSelectedTheme(QString themeName);
+
     CSong* m_song;
+    CGLView * m_glView;
     CSettings* m_settings;
 
     QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
     QMap<QAction*,QMap<QString,QString>> listActionsRetranslateUi;
 
     bool m_atTheEndOfTheSong;
+
 };
 
 #endif //__GUITOPBAR_H__

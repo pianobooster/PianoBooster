@@ -33,10 +33,14 @@
 
 #include <QTimer>
 
+#include <iostream>
+
 #include "GuiPreferencesDialog.h"
 #include "GlView.h"
 
 #include "Draw.h"
+
+#include "Themes.h"
 
 GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     : QDialog(parent)
@@ -167,25 +171,35 @@ void GuiPreferencesDialog::accept()
 {
     
     on_applyButton_clicked();
-    this->QDialog::accept();
+    QTimer::singleShot(200, this, &QDialog::close);
+    //this->QDialog::accept();  //Call directly causes some of the apply operation not working
 }
 
 void GuiPreferencesDialog::saveDisplayColors(){
-    m_settings->setColor("noteDim", noteDimColor);
-    m_settings->setColor("barMarker", barMarkerColor);
-    m_settings->setColor("noteName", noteNameColor);
-    m_settings->setColor("pianoBad", pianoBadColor);
-    m_settings->setColor("staveDim", staveDimColor);
-    m_settings->setColor("bg", backgroundColor);
-    m_settings->setColor("note", noteColor);
-    m_settings->setColor("stave", staveColor);
-    m_settings->setColor("playStopped", playedStoppedColor);
-    m_settings->setColor("beatMarker", beatMarkerColor);
-    m_settings->setColor("playZoneBg", playZoneAreaColor);
-    m_settings->setColor("playGood", playedGoodColor);
-    m_settings->setColor("playBad", playedBadColor);
-    m_settings->setColor("playZoneEndLine", playZoneEndColor);
-    m_settings->setColor("playZoneMiddle", playZoneMiddleColor);
+    //get the
+    CThemeList themeList;
+
+    QString name = themeName->text();
+
+    CTheme * theme = themeList.getTheme(name);
+
+    theme->setColor("noteDim", noteDimColor);
+    theme->setColor("barMarker", barMarkerColor);
+    theme->setColor("noteName", noteNameColor);
+    theme->setColor("pianoBad", pianoBadColor);
+    theme->setColor("staveDim", staveDimColor);
+    theme->setColor("bg", backgroundColor);
+    theme->setColor("note", noteColor);
+    theme->setColor("stave", staveColor);
+    theme->setColor("playStopped", playedStoppedColor);
+    theme->setColor("beatMarker", beatMarkerColor);
+    theme->setColor("playZoneBg", playZoneAreaColor);
+    theme->setColor("playGood", playedGoodColor);
+    theme->setColor("playBad", playedBadColor);
+    theme->setColor("playZoneEndLine", playZoneEndColor);
+    theme->setColor("playZoneMiddle", playZoneMiddleColor);
+
+    m_settings->clearCache();
 
 }
 
@@ -194,42 +208,50 @@ void GuiPreferencesDialog::translateColor(const CColor & ccolor, QColor & qcolor
 }
 
 void GuiPreferencesDialog::initDisplayColors(){
-    translateColor(m_settings->staveColor(), staveColor);
-    translateColor(m_settings->staveDimColor(), staveDimColor);
-    translateColor(m_settings->noteColor(), noteColor);
-    translateColor(m_settings->noteDimColor(), noteDimColor);
-    translateColor(m_settings->playedGoodColor(), playedGoodColor);
-    translateColor(m_settings->playedBadColor(), playedBadColor);
-    translateColor(m_settings->playedStoppedColor(), playedStoppedColor);
-    translateColor(m_settings->backgroundColor(), backgroundColor);
-    translateColor(m_settings->barMarkerColor(), barMarkerColor);
-    translateColor(m_settings->beatMarkerColor(), beatMarkerColor);
-    translateColor(m_settings->pianoGoodColor(), pianoGoodColor);
-    translateColor(m_settings->pianoBadColor(), pianoBadColor);
-    translateColor(m_settings->noteNameColor(), noteNameColor);
-    translateColor(m_settings->playZoneAreaColor(), playZoneAreaColor);
-    translateColor(m_settings->playZoneEndColor(), playZoneEndColor);
-    translateColor(m_settings->playZoneMiddleColor(), playZoneMiddleColor);
-
     updateColorSelBtnBg();
 }
 
 void GuiPreferencesDialog::updateColorSelBtnBg() {
-    setButtonBgColor(noteDimColorSel, noteDimColor );
-    setButtonBgColor(barMarkerColorSel, barMarkerColor );
-    setButtonBgColor(noteNameColorSel, noteNameColor );
-    setButtonBgColor(pianoBadColorSel, pianoBadColor );
-    setButtonBgColor(staveDimColorSel, staveDimColor );
-    setButtonBgColor(bgColorSel, backgroundColor );
-    setButtonBgColor(noteColorSel, noteColor );
-    setButtonBgColor(staveColorSel, staveColor );
-    setButtonBgColor(playStoppedColorSel, playedStoppedColor );
-    setButtonBgColor(beatMarkerColorSel, beatMarkerColor );
-    setButtonBgColor(playZoneBgColorSel, playZoneAreaColor );
-    setButtonBgColor(playGoodColorSel, playedGoodColor );
-    setButtonBgColor(playBadColorSel, playedBadColor );
-    setButtonBgColor(playZoneEndLineColorSel, playZoneEndColor);
-    setButtonBgColor(playZoneMiddleColorSel, playZoneMiddleColor );
+    CThemeList themeList;
+
+    QString name = m_settings->value("themeName", "Default Theme").toString();
+    themeName->setText(name);
+
+    CTheme * theme = themeList.getTheme(name);
+
+    staveColor = theme->staveColor();
+    staveDimColor = theme->staveDimColor();
+    noteColor = theme->noteColor();
+    noteDimColor = theme->noteDimColor();
+    playedGoodColor = theme->playedGoodColor();
+    playedBadColor = theme->playedBadColor();
+    playedStoppedColor = theme->playedStoppedColor();
+    backgroundColor = theme->backgroundColor();
+    barMarkerColor = theme->barMarkerColor();
+    beatMarkerColor = theme->beatMarkerColor();
+    pianoGoodColor = theme->pianoGoodColor();
+    pianoBadColor = theme->pianoBadColor();
+    noteNameColor = theme->noteNameColor();
+    playZoneAreaColor = theme->playZoneAreaColor();
+    playZoneEndColor = theme->playZoneEndColor();
+    playZoneMiddleColor = theme->playZoneMiddleColor();
+
+    setButtonBgColor(barMarkerColorSel, theme->barMarkerColor() );
+    setButtonBgColor(beatMarkerColorSel, theme->beatMarkerColor() );
+    setButtonBgColor(bgColorSel, theme->backgroundColor() );
+    setButtonBgColor(noteColorSel, theme->noteColor() );
+    setButtonBgColor(noteDimColorSel, theme->noteDimColor() );
+    setButtonBgColor(noteNameColorSel, theme->noteNameColor() );
+    setButtonBgColor(pianoBadColorSel, theme->pianoBadColor() );
+    setButtonBgColor(playBadColorSel, theme->playedBadColor() );
+    setButtonBgColor(playStoppedColorSel, theme->playedStoppedColor() );
+    setButtonBgColor(playZoneBgColorSel, theme->playZoneAreaColor() );
+    setButtonBgColor(playGoodColorSel, theme->playedGoodColor() );
+    setButtonBgColor(playZoneEndLineColorSel, theme->playZoneEndColor());
+    setButtonBgColor(playZoneMiddleColorSel, theme->playZoneMiddleColor() );
+    setButtonBgColor(staveDimColorSel, theme->staveDimColor() );
+    setButtonBgColor(staveColorSel, theme->staveColor() );
+
 }
 
 void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, CColor color) {
@@ -238,6 +260,8 @@ void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, CColor color) {
 }
 
 void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, QColor qcolor) {
+    btn->setStyleSheet(" background-repeat:no-repeat; background-position: center center; background-image: url(:/images/color-picker-icon.png);");
+
     QPalette pal = btn->palette();
     pal.setColor(QPalette::Button, qcolor);
     btn->setAutoFillBackground(true);
@@ -366,15 +390,54 @@ void GuiPreferencesDialog::on_applyButton_clicked()
     timer->start(200);
     */
 
-    QTimer::singleShot(200, this, &GuiPreferencesDialog::forceGlViewUpdate);
-
     CDraw::forceCompileRedraw();
-    
     CSettings::clearCache();
+    QTimer::singleShot(150, this, &GuiPreferencesDialog::forceGlViewUpdate);
 }
 
 void GuiPreferencesDialog::forceGlViewUpdate() {
     //m_glView->updateBackground(true);
     m_glView->updateBackground(true);
+    m_song->forceScoreRedraw();
+    m_song->rewind();
     updateColorSelBtnBg();
+}
+
+void GuiPreferencesDialog::on_resetBtn_clicked()
+{
+    CThemeList themeList;
+
+    CTheme * theme = themeList.getTheme(themeName->text());
+
+    noteDimColor = theme->getDefaultColor("noteDim");
+    barMarkerColor = theme->getDefaultColor("barMarker");
+    noteNameColor = theme->getDefaultColor("noteName");
+    pianoBadColor = theme->getDefaultColor("pianoBad");
+    staveDimColor = theme->getDefaultColor("staveDim");
+    backgroundColor = theme->getDefaultColor("bg");
+    noteColor = theme->getDefaultColor("note");
+    staveColor = theme->getDefaultColor("stave");
+    playedStoppedColor = theme->getDefaultColor("playStopped");
+    beatMarkerColor = theme->getDefaultColor("beatMarker");
+    playZoneAreaColor = theme->getDefaultColor("playZoneBg");
+    playedGoodColor = theme->getDefaultColor("playGood");
+    playedBadColor = theme->getDefaultColor("playBad");
+    playZoneEndColor = theme->getDefaultColor("playZoneEndLine");
+    playZoneMiddleColor = theme->getDefaultColor("playZoneMiddle");
+
+    setButtonBgColor(barMarkerColorSel, barMarkerColor );
+    setButtonBgColor(beatMarkerColorSel, beatMarkerColor );
+    setButtonBgColor(bgColorSel, backgroundColor );
+    setButtonBgColor(noteColorSel, noteColor);
+    setButtonBgColor(noteDimColorSel, noteDimColor );
+    setButtonBgColor(noteNameColorSel, noteNameColor );
+    setButtonBgColor(pianoBadColorSel, pianoBadColor );
+    setButtonBgColor(playBadColorSel, playedBadColor );
+    setButtonBgColor(playStoppedColorSel, playedStoppedColor );
+    setButtonBgColor(playZoneBgColorSel, playZoneAreaColor );
+    setButtonBgColor(playGoodColorSel, playedGoodColor );
+    setButtonBgColor(playZoneEndLineColorSel, playZoneEndColor);
+    setButtonBgColor(playZoneMiddleColorSel, playZoneMiddleColor );
+    setButtonBgColor(staveDimColorSel, staveDimColor );
+    setButtonBgColor(staveColorSel, staveColor );
 }

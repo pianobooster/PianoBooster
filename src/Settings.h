@@ -38,6 +38,8 @@
 #include "Song.h"
 #include "Notation.h"
 
+#include "Themes.h"
+
 #define QSTR_APPNAME "pianobooster"
 
 class GuiSidePanel;
@@ -175,55 +177,6 @@ public:
     CColor playZoneMiddleColor() ;
 
     static const int colorCount = 15;
-
-    const char * colorNames[colorCount*3][2] = {
-        {"noteDimRed", "191"},
-        {"noteDimGreen", "140"},
-        {"noteDimBlue", "191"},
-        {"barMarkerRed", "179"},
-        {"barMarkerGreen", "191"},
-        {"barMarkerBlue", "191"},
-        {"noteNameRed", "0"},
-        {"noteNameGreen", "0"},
-        {"noteNameBlue", "0"},
-        {"pianoBadRed", "0"},
-        {"pianoBadGreen", "255"},
-        {"pianoBadBlue", "255"},
-        {"staveDimRed", "191"},
-        {"staveDimGreen", "179"},
-        {"staveDimBlue", "191"},
-        {"bgRed", "230"},
-        {"bgGreen", "230"},
-        {"bgBlue", "230"},
-        {"noteRed", "140"},
-        {"noteGreen", "115"},
-        {"noteBlue", "140"},
-        {"staveRed", "153"},
-        {"staveGreen", "143"},
-        {"staveBlue", "148"},
-        {"playStoppedRed", "0"},
-        {"playStoppedGreen", "51"},
-        {"playStoppedBlue", "0"},
-        {"beatMarkerRed", "196"},
-        {"beatMarkerGreen", "199"},
-        {"beatMarkerBlue", "199"},
-        {"playZoneBgRed", "219"},
-        {"playZoneBgGreen", "222"},
-        {"playZoneBgBlue", "214"},
-        {"playGoodRed", "128"},
-        {"playGoodGreen", "102"},
-        {"playGoodBlue", "0"},
-        {"playBadRed", "51"},
-        {"playBadGreen", "179"},
-        {"playBadBlue", "51"},
-        {"playZoneEndLineRed", "189"},
-        {"playZoneEndLineGreen", "194"},
-        {"playZoneEndLineBlue", "179"},
-        {"playZoneMiddleRed", "158"},
-        {"playZoneMiddleGreen", "163"},
-        {"playZoneMiddleBlue", "179"}
-    };
-
     static void clearCache();
 
     QColor getQColor(string name) {
@@ -237,39 +190,19 @@ public:
         if ( colorIter != CSettings::colorCache.end()) {
             return *(colorIter->second);
         }
-        
-        string colorName = "ScoreColors/";
-        colorName.append(name);
-        string redName = colorName + "Red";
-        string greenName = colorName + "Green";
-        string blueName = colorName + "Blue";
 
-        int red = value(QString::fromUtf8(redName.c_str()), "0").toInt();
-        int green = value(QString::fromUtf8(greenName.c_str()), "0").toInt();
-        int blue = value(QString::fromUtf8(blueName.c_str()), "0").toInt();
+        CThemeList themeList;
+        QString themeName = this->value("themeName", "Default Theme").toString();
+        CTheme * theme = themeList.getTheme(themeName);
 
-        CColor * color = new CColor(red/255.0f, green/255.0f, blue/255.0f);
+        QColor qcolor = theme->getColor(QString::fromUtf8(name.c_str()));
+
+        CColor * color = new CColor(qcolor.red()/255.0f, qcolor.green()/255.0f, qcolor.blue()/255.0f);
 
         CSettings::colorCache[name] = color;
-        CSettings::colorCache.insert({name, color});
         return *color;
-        
-    };
+    }
 
-    void setColor(string name, const QColor & qcolor) {
-        string colorName = "ScoreColors/";
-        colorName.append(name);
-        string redName = colorName + "Red";
-        string greenName = colorName + "Green";
-        string blueName = colorName + "Blue";
-
-        setValue(QString::fromUtf8(redName.c_str()), qcolor.red());
-        setValue(QString::fromUtf8(greenName.c_str()), qcolor.green());
-        setValue(QString::fromUtf8(blueName.c_str()), qcolor.blue());
-
-        clearCache();
-        
-    };
 
     QString selectedLangauge() {
         QString locale = value("General/lang","").toString();

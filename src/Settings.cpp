@@ -417,11 +417,13 @@ void CSettings::loadSettings()
 }
 
 void CSettings::setDefaultColors() {
+    /*
     for ( int i = 0; i < colorCount * 3; i++) {
         string colorName = "ScoreColors/";
         colorName.append(colorNames[i][0]);
         setDefaultValue(QString::fromUtf8(colorName.c_str()), std::stoi((colorNames[i][1])));
     }
+    */
 }
 
 CColor CSettings::staveColor()           {return getColor("stave");}

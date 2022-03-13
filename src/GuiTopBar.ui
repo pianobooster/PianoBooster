@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>839</width>
+    <width>1015</width>
     <height>34</height>
    </rect>
   </property>
@@ -196,6 +196,9 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QComboBox" name="themeCobox"/>
      </item>
     </layout>
    </item>
