@@ -100,6 +100,8 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
     //loadSettings();
+
+    loadBackgroundSettings();
 }
 
 void CSettings::setNoteNamesEnabled(bool value) {
@@ -426,23 +428,22 @@ void CSettings::setDefaultColors() {
     */
 }
 
-CColor CSettings::staveColor()           {return getColor("stave");}
-CColor CSettings::staveDimColor()        {return getColor("staveDim");}
-CColor CSettings::noteColor()            {return getColor("note");}
-CColor CSettings::noteDimColor()         {return getColor("noteDim");}
-CColor CSettings::playedGoodColor()      {return getColor("playGood");}
-CColor CSettings::playedBadColor()       {return getColor("playBad");}
-CColor CSettings::playedStoppedColor()   {return getColor("playStopped");}
 CColor CSettings::backgroundColor()      {return getColor("bg");}
 CColor CSettings::barMarkerColor()       {return getColor("barMarker");}
 CColor CSettings::beatMarkerColor()      {return getColor("beatMarker");}
-CColor CSettings::pianoGoodColor()       {return getColor("pianoGood");}
-CColor CSettings::pianoBadColor()        {return getColor("pianoBad");}
+CColor CSettings::noteColor()            {return getColor("note");}
+CColor CSettings::noteDimColor()         {return getColor("noteDim");}
 CColor CSettings::noteNameColor()        {return getColor("noteName");}
-
+CColor CSettings::pianoBadColor()        {return getColor("pianoBad");}
+CColor CSettings::pianoGoodColor()       {return getColor("pianoGood");}
+CColor CSettings::playedGoodColor()      {return getColor("playGood");}
+CColor CSettings::playedBadColor()       {return getColor("playBad");}
+CColor CSettings::playedStoppedColor()   {return getColor("playStopped");}
 CColor CSettings::playZoneAreaColor()    {return getColor("playZoneBg");}
 CColor CSettings::playZoneEndColor()     {return getColor("playZoneEndLine");}
 CColor CSettings::playZoneMiddleColor()  {return getColor("playZoneMiddle");}
+CColor CSettings::staveColor()           {return getColor("stave");}
+CColor CSettings::staveDimColor()        {return getColor("staveDim");}
 
 std::unordered_map<std::string, CColor *> CSettings::colorCache;
 

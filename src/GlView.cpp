@@ -29,12 +29,16 @@
 #include <QtWidgets>
 #include <QtOpenGL>
 
+#include <QPainter>
+
 #include <math.h>
 
 #include "QtWindow.h"
 #include "GlView.h"
 #include "Cfg.h"
 #include "Draw.h"
+
+#include <iostream>
 
 // This defines the PB Open GL frame per seconds.
 // Try to make sure this runs a bit faster than the screen refresh rate of 60z (or 16.6 msec)
@@ -45,7 +49,7 @@
 #define TEXT_LEFT_MARGIN 30
 
 CGLView::CGLView(QtWindow* parent, CSettings* settings)
-    : QGLWidget(parent)
+    : QOpenGLWidget(parent) //QGLWidget
 {
     m_qtWindow = parent;
     m_settings = settings;
@@ -61,6 +65,19 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_displayUpdateTicks = 0;
     m_cfg_openGlOptimise = 0; // zero is no GlOptimise
     m_eventBits = 0;
+
+    //QSize tileSize = size() / 1;
+
+    //backgroundPixMap = QPixmap(":/images/white-wall-texture-background.jpg").scaled(tileSize);  //  /images/samplebg.jpg
+
+    //backgroundImg.load(":/images/background/autumn.jpg");    // /images/white-wall-texture-background.jpg
+    if (!m_settings->getBgImageFile().isEmpty()) {
+        QSize tileSize = size() / 1;
+        backgroundImg.load(m_settings->getConfigDir() + "/" + m_settings->getBgImageFile());
+        backgroundImg = backgroundImg.scaled(tileSize);
+    }
+    //this->format().setDoubleBuffer(true);
+
     BENCHMARK_INIT();
 }
 
@@ -100,8 +117,16 @@ void CGLView::paintGL()
     if (m_fullRedrawFlag)
         m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
 
-    if (m_forcefullRedraw) // clear the screen only if we are doing a full redraw
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    if (m_forcefullRedraw) {// clear the screen only if we are doing a full redraw
+        if (!m_settings->getBgImageFile().isEmpty()) {
+            QPainter painter2( this );
+            painter2.drawImage(0, 0, backgroundImg);
+            painter2.end();
+        } else {
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        }
+    }
+
     glPixelStorei(GL_UNPACK_ALIGNMENT,4);
     glLoadIdentity();
     //BENCHMARK(3, "glLoadIdentity");
@@ -125,6 +150,7 @@ void CGLView::paintGL()
     BENCHMARK(10, "drawScroll");
 
     if (m_forcefullRedraw) m_forcefullRedraw--;
+
     BENCHMARK(11, "exit");
     BENCHMARK_RESULTS();
 }
@@ -222,6 +248,27 @@ void CGLView::drawDisplayText()
         return;
     }
 
+    /* Complement color, not working well with some color*/
+    /*
+    QColor color(bgColor.red * 255, bgColor.green * 255, bgColor.blue * 255);
+    float hue = color.hslHueF();
+    float light = color.lightnessF();
+    if ( hue > -1.0) {
+        if ( hue < 1.0 ) {
+            hue = hue + 0.5f;
+            if (hue > 1.0f) {
+               hue -= 1.0f;
+            }
+        } else {
+            light = 0.0;
+        }
+    } else {
+        light = 1.0;
+    }
+    color.setHslF(hue, color.hslSaturationF(), light);
+    glColor3f(color.redF(), color.greenF(), color.blueF());
+    */
+
     glColor3f(1.0 - bgColor.red, 1.0 - bgColor.green, 1.0 - bgColor.blue);
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen) {
@@ -277,6 +324,13 @@ void CGLView::resizeGL(int width, int height)
     int staveGap;
     int maxSoreHeight;
 
+    //reload the image so not to lose resolution every smaller resize
+    if (!m_settings->getBgImageFile().isEmpty()) {
+        QSize tileSize = size() / 1;
+        backgroundImg.load(m_settings->getConfigDir() + "/" + m_settings->getBgImageFile());
+        backgroundImg = backgroundImg.scaled(tileSize);
+    }
+
     //int space = height - (heightAboveStave + heightBelowStave + minTitleHeight + minStaveGap);
     //m_titleHeight = qBound(minTitleHeight, minTitleHeight + space/2, 70);
     // staveGap = qBound(minStaveGap, minStaveGap+ space/2, static_cast<int>(CStavePos::staveHeight() * 3));
@@ -325,7 +379,6 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 
 void CGLView::initializeGL()
 {
-    //CColor color = Cfg::backgroundColor();
     updateBackground(false);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
     glShadeModel (GL_FLAT);
@@ -377,10 +430,20 @@ void CGLView::initializeGL()
 
 void CGLView::updateBackground(bool refresh) {
     CColor bgColor = m_settings->backgroundColor();
+
+    this->makeCurrent();
     glClearColor (bgColor.red, bgColor.green, bgColor.blue, 0.0);
+    this->doneCurrent();
+
+    if (!m_settings->getBgImageFile().isEmpty()) {
+        QSize tileSize = size() / 1;
+        backgroundImg.load(m_settings->getConfigDir() + "/" + m_settings->getBgImageFile());
+        backgroundImg = backgroundImg.scaled(tileSize);
+    }
+
     if ( refresh ) {
         update();
-        repaint();
+        //repaint();
     }
 }
 
@@ -431,12 +494,75 @@ void CGLView::timerEvent(QTimerEvent *event)
     else
         m_fullRedrawFlag = false;
 
-    glDraw();
-    //update();
+    //glDraw();
+    update();
     m_fullRedrawFlag = true;
     BENCHMARK(19, "timer exit");
 }
 
 void CGLView::mediaTimerEvent(int ticks)
 {
+}
+
+
+void CGLView::renderText(double x, double y, double z, const QString &str, const QFont & font) {
+    // Identify x and y locations to render text within widget
+    int height = this->height();
+    int width = this->width();
+
+    y = height - y;
+
+    const int maxSoreWidth = 1024;
+    const int staveEndGap = 20;
+    const int heightAboveStave =  static_cast<int>(CStavePos::verticalNoteSpacing() * MAX_STAVE_INDEX);
+    const int heightBelowStave =  static_cast<int>(CStavePos::verticalNoteSpacing() * - MIN_STAVE_INDEX);
+    const int minTitleHeight = 20;
+    const int minStaveGap = 120;
+    int staveGap;
+    int maxSoreHeight;
+
+    //int space = height - (heightAboveStave + heightBelowStave + minTitleHeight + minStaveGap);
+    //m_titleHeight = qBound(minTitleHeight, minTitleHeight + space/2, 70);
+    // staveGap = qBound(minStaveGap, minStaveGap+ space/2, static_cast<int>(CStavePos::staveHeight() * 3));
+    if (height < 430)  // So it works on an eeepc 701 (for Trev)
+    {
+        staveGap = minStaveGap;
+        m_titleHeight = minTitleHeight;
+    }
+    else
+    {
+        staveGap = static_cast<int>(CStavePos::staveHeight() * 3);
+        m_titleHeight = 60;
+    }
+    maxSoreHeight = heightAboveStave + heightBelowStave + staveGap + m_titleHeight;
+    if (height > maxSoreHeight) {
+        int scoreExtraTopGap = (height - maxSoreHeight);
+        maxSoreHeight += qMin(200, scoreExtraTopGap);
+    }
+    int sizeX = qMin(width, maxSoreWidth);
+    int sizeY = qMin(height, maxSoreHeight);
+    int xx = (width - sizeX)/2;
+    int yy = (height - sizeY)/2;
+    yy = (height - sizeY) - 5;
+    xx = 0;
+
+    //glViewport (xx, yy, sizeX, sizeY);
+
+    QPainter painter(this);
+    painter.setViewport(0, 0, this->width(), this->height());
+    //painter.setViewport (xx, yy, sizeX, sizeY);
+
+    //painter.setWindow(QRect(0, 0, this->width(), this->height()));
+
+    painter.setWindow(QRect(xx, yy, sizeX, sizeY));
+
+    painter.setPen(CDraw::color);
+    painter.setFont(font);
+    painter.drawText(QPoint(x, y),  str);
+    painter.end();
+}
+
+void CGLView::glColor3f( GLfloat red, GLfloat green, GLfloat blue ) {
+    ::glColor3f(red, green, blue);
+    CDraw::color.setRgbF(red, green, blue);
 }

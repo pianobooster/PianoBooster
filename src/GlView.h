@@ -30,6 +30,7 @@
 #include <QTime>
 #include <QBasicTimer>
 #include <QGLWidget>
+#include <QOpenGLWidget>
 #include "Song.h"
 #include "Score.h"
 #include "Settings.h"
@@ -37,7 +38,7 @@
 
 class Window;
 
-class CGLView : public QGLWidget//, RtTimer
+class CGLView : public QOpenGLWidget //, RtTimer  QGLWidget
 {
     Q_OBJECT
 
@@ -55,6 +56,9 @@ public:
     void startTimerEvent();
 
     void updateBackground(bool refresh);
+    void renderText(double x, double y, double z, const QString &str, const QFont & font);
+
+    void glColor3f( GLfloat red, GLfloat green, GLfloat blue );
 
 protected:
     void timerEvent(QTimerEvent *event);
@@ -94,6 +98,13 @@ private:
     int m_titleHeight;
     eventBits_t m_eventBits;
     bool m_allowedTimerEvent;
+
+    QImage backgroundImg;
+
+    //QImage resultImg;
+    //QPainter offScreenPainter;
+    //QPixmap backgroundPixMap;
+
 };
 
 #endif // __GLVIEW_H__

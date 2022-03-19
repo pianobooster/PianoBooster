@@ -32,6 +32,9 @@
 #include <QSettings>
 #include <QDomDocument>
 #include <QColor>
+#include <QStandardPaths>
+#include <QFileInfo>
+#include <QDir>
 
 #include "IColorPreference.h"
 
@@ -105,6 +108,7 @@ public:
     void writeSettings();
     void loadSettings();
     void unzipBoosterMusicBooks();
+
     QString getCurrentSongLongFileName()
     {
         if (getCurrentSongName().isEmpty())
@@ -158,23 +162,28 @@ public:
     QString getWarningMessage() {return m_warningMessage;}
     void updateWarningMessages();
 
-    CColor staveColor() ;
-    CColor staveDimColor() ;
-    CColor noteColor() ;
-    CColor noteDimColor() ;
-    CColor playedGoodColor() ;
-    CColor playedBadColor()  ;
-    CColor playedStoppedColor() ;
     CColor backgroundColor()  ;
     CColor barMarkerColor() ;
     CColor beatMarkerColor() ;
+    CColor noteColor() ;
+    CColor noteDimColor() ;
+    CColor noteNameColor() ;
     CColor pianoGoodColor() ;
     CColor pianoBadColor() ;
-    CColor noteNameColor() ;
-
+    CColor playedBadColor()  ;
+    CColor playedGoodColor() ;
+    CColor playedStoppedColor() ;
     CColor playZoneAreaColor() ;
     CColor playZoneEndColor() ;
     CColor playZoneMiddleColor() ;
+    CColor staveColor() ;
+    CColor staveDimColor() ;
+
+    QString getBgImageFile() { return bgImageFile;}
+    int getBgTileNoX(){ return bgTileNoX;}
+    int getBgTileNoY(){ return bgTileNoY;}
+    QString getBgAlignX(){ return bgAlignX;}
+    QString getBgAlignY(){ return bgAlignY;}
 
     static const int colorCount = 15;
     static void clearCache();
@@ -203,6 +212,30 @@ public:
         return *color;
     }
 
+    void loadBackgroundSettings() {
+        CThemeList themeList;
+        QString themeName = this->value("themeName", "Default Theme").toString();
+        CTheme * theme = themeList.getTheme(themeName);
+
+        bgImageFile = theme->value("BackgroundImage/fileName", "").toString();
+        bgTileNoX = theme->value("BackgroundImage/tileNoX", "1").toInt();
+        bgTileNoY = theme->value("BackgroundImage/tileNoY", "1").toInt();
+        bgAlignX = theme->value("BackgroundImage/alignX", "left").toString();
+        bgAlignY = theme->value("BackgroundImage/alignY", "top").toString();
+    }
+
+    QString getConfigDir() {
+        auto configFile = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+        if (configFile.isEmpty()) qFatal("Cannot determine settings storage location");
+
+        QFileInfo fileInfo(configFile);
+        QDir dir = fileInfo.dir();
+
+        if ( !dir.exists() ) {
+            qFatal("Cannot determine settings storage location");
+        }
+        return dir.absolutePath();
+    }
 
     QString selectedLangauge() {
         QString locale = value("General/lang","").toString();
@@ -264,6 +297,13 @@ private:
     QString m_warningMessage;
     QStringList m_fluidSoundFontNames = QStringList();
     bool m_pianistActive;
+
+    QString bgImageFile;
+    int bgTileNoX;
+    int bgTileNoY;
+    QString bgAlignX;
+    QString bgAlignY;
+
 };
 
 #endif // __SETTINGS_H__

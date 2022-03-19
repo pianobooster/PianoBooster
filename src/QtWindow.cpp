@@ -74,6 +74,17 @@ void QtWindow::copyThemes() {
         }
     }
 
+    QString  backgroundFiles [7] = {"autumn.jpg", "cloud.jpg", "hikingtrail.jpg", "horse.jpeg", "mountain.jpg", "waterfall.jpg", ""};
+
+    for ( int i = 0; i < 7; i++ ) {
+        QString source = ":/images/background/" + backgroundFiles[i];
+        QString dest = dir.absolutePath() + "/" + backgroundFiles[i];
+        if (!QFile::exists(dest)) {
+            QFile::copy(source, dest);
+            QFile(dest).setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
+        }
+    }
+
 }
 
 QtWindow::QtWindow()

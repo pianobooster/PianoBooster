@@ -18,5 +18,12 @@
         <file>colorthemes/Galaxy.ini</file>
         <file>colorthemes/Mars.ini</file>
         <file>colorthemes/Saturn.ini</file>
+        <file>images/background/autumn.jpg</file>
+        <file>images/background/cloud.jpg</file>
+        <file>images/background/hikingtrail.jpg</file>
+        <file>images/background/horse.jpeg</file>
+        <file>images/background/mountain.jpg</file>
+        <file>images/background/snowforestjpg</file>
+        <file>images/background/waterfall.jpg</file>
     </qresource>
 </RCC>

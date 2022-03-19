@@ -100,7 +100,6 @@ void GuiTopBar::on_themeCobox_currentTextChanged(const QString &themeName) {
     if ( name == themeName ) {
         return;
     }
-
     setSelectedTheme(themeName);
 }
 
@@ -109,9 +108,11 @@ void GuiTopBar::setSelectedTheme(QString themeName) {
 
     CThemeList themeList;
     m_settings->clearCache();
+    m_settings->loadBackgroundSettings();
 
     CDraw::forceCompileRedraw();
     QTimer::singleShot(200, this, &GuiTopBar::forceGuiUpdate);
+    m_glView->updateBackground(true);
 }
 
 void GuiTopBar::forceGuiUpdate() {

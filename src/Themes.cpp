@@ -82,21 +82,25 @@ CTheme::CTheme(QString fileName, QString themeName): settings(QSettings::IniForm
     this->themeName = themeName;
 }
 
-QColor CTheme::staveColor()           {return getColor("stave");}
-QColor CTheme::staveDimColor()        {return getColor("staveDim");}
-QColor CTheme::noteColor()            {return getColor("note");}
-QColor CTheme::noteDimColor()         {return getColor("noteDim");}
-QColor CTheme::playedGoodColor()      {return getColor("playGood");}
-QColor CTheme::playedBadColor()       {return getColor("playBad");}
-QColor CTheme::playedStoppedColor()   {return getColor("playStopped");}
 QColor CTheme::backgroundColor()      {return getColor("bg");}
 QColor CTheme::barMarkerColor()       {return getColor("barMarker");}
 QColor CTheme::beatMarkerColor()      {return getColor("beatMarker");}
-QColor CTheme::pianoGoodColor()       {return getColor("pianoGood");}
-QColor CTheme::pianoBadColor()        {return getColor("pianoBad");}
+QColor CTheme::noteColor()            {return getColor("note");}
+QColor CTheme::noteDimColor()         {return getColor("noteDim");}
 QColor CTheme::noteNameColor()        {return getColor("noteName");}
-
+QColor CTheme::pianoBadColor()        {return getColor("pianoBad");}
+QColor CTheme::pianoGoodColor()       {return getColor("pianoGood");}
+QColor CTheme::playedBadColor()       {return getColor("playBad");}
+QColor CTheme::playedGoodColor()      {return getColor("playGood");}
+QColor CTheme::playedStoppedColor()   {return getColor("playStopped");}
 QColor CTheme::playZoneAreaColor()    {return getColor("playZoneBg");}
 QColor CTheme::playZoneEndColor()     {return getColor("playZoneEndLine");}
 QColor CTheme::playZoneMiddleColor()  {return getColor("playZoneMiddle");}
+QColor CTheme::staveColor()           {return getColor("stave");}
+QColor CTheme::staveDimColor()        {return getColor("staveDim");}
 
+QString CTheme::getBgImageFile() { return settings.value("BackgroundImage/fileName", "").toString();}
+int CTheme::getBgTileNoX() { return settings.value("BackgroundImage/tileNoX", "1").toInt();}
+int CTheme::getBgTileNoY() { return settings.value("BackgroundImage/tileNoY", "1").toInt();}
+QString CTheme::getBgAlignX() { return settings.value("BackgroundImage/alignX", "left").toString();}
+QString CTheme::getBgAlignY() { return settings.value("BackgroundImage/alignY", "top").toString();}

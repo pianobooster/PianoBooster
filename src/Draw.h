@@ -46,6 +46,8 @@
 #include <QFile>
 #include <QApplication>
 
+#include <QColor>
+
 #define HORIZONTAL_SPACING_FACTOR   (0.75) // defines the speed of the scrolling
 #define FONT_SIZE 18    //16
 
@@ -99,7 +101,12 @@ public:
         m_forceCompileRedraw = 1;
     }
     static whichPart_t getDisplayHand()    {return m_displayHand;}
-    static void drColor(CColor color) { glColor3f(color.red, color.green, color.blue);}
+
+    static QColor color;
+    static void drColor(CColor color) {
+        glColor3f(color.red, color.green, color.blue);
+        CDraw::color.setRgbF(color.red, color.green, color.blue);
+    }
     static void forceCompileRedraw(int value = 1) {    m_forceCompileRedraw = value; }
 
 protected:

@@ -43,25 +43,34 @@ public:
     CTheme(const CTheme &theme) = delete;
     CTheme& operator=(const CTheme & other) = delete;
 
-    QString getThemeName() {return themeName;};
+    QString getThemeName() {return themeName;}
 
-    QColor staveColor();
-    QColor staveDimColor();
-    QColor noteColor();
-    QColor noteDimColor();
-    QColor playedGoodColor();
-    QColor playedBadColor();
-    QColor playedStoppedColor();
     QColor backgroundColor();
     QColor barMarkerColor();
     QColor beatMarkerColor();
-    QColor pianoGoodColor() ;
-    QColor pianoBadColor();
+    QColor noteColor();
+    QColor noteDimColor();
     QColor noteNameColor();
-
+    QColor pianoBadColor();
+    QColor pianoGoodColor() ;
+    QColor playedGoodColor();
+    QColor playedBadColor();
+    QColor playedStoppedColor();
     QColor playZoneAreaColor();
     QColor playZoneEndColor();
     QColor playZoneMiddleColor();
+    QColor staveColor();
+    QColor staveDimColor();
+
+    QString getBgImageFile();
+    int getBgTileNoX();
+    int getBgTileNoY();
+    QString getBgAlignX();
+    QString getBgAlignY();
+
+    QVariant value(const QString &key, const QVariant &defaultValue = QVariant()) const {
+        return settings.value(key, defaultValue);
+    }
 
     QColor getColor(QString name) {
         QString colorName = "ScoreColors/";

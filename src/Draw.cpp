@@ -37,6 +37,8 @@ typedef unsigned char guint8;
 whichPart_t CDraw::m_displayHand;
 int CDraw::m_forceCompileRedraw;
 
+QColor CDraw::color;
+
 FTFont * setupFont() {
     FTFont * cacheFont = NULL;  //TBD should use singleton pattern or wrapper
     //if ( cacheFont == NULL ) {
