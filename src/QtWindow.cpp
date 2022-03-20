@@ -63,9 +63,9 @@ void QtWindow::copyThemes() {
         qFatal("Cannot determine settings storage location");
     }
 
-    QString  fileNames [5] = {"Default Theme.ini", "Galaxy.ini", "Earth.ini", "Mars.ini", "Saturn.ini"};
+    QString  fileNames [9] = {"Default Theme.ini", "Galaxy.ini", "Earth.ini", "Mars.ini", "Saturn.ini", "Birds.ini", "Horses.ini", "Plant.ini", "Winter.ini"};
 
-    for ( int i = 0; i < 5; i++ ) {
+    for ( int i = 0; i < 9; i++ ) {
         QString source = ":/colorthemes/" + fileNames[i];
         QString dest = dir.absolutePath() + "/" + fileNames[i];
         if (!QFile::exists(dest)) {
@@ -74,9 +74,9 @@ void QtWindow::copyThemes() {
         }
     }
 
-    QString  backgroundFiles [7] = {"autumn.jpg", "cloud.jpg", "hikingtrail.jpg", "horse.jpeg", "mountain.jpg", "waterfall.jpg", ""};
+    QString  backgroundFiles [10] = {"autumn.jpg", "cloud.jpg", "hikingtrail.jpg", "horse.jpg", "mountain.jpg", "waterfall.jpg", "snowforest.jpg", "birds.png", "birds2.png", "plant.png"};
 
-    for ( int i = 0; i < 7; i++ ) {
+    for ( int i = 0; i < 10; i++ ) {
         QString source = ":/images/background/" + backgroundFiles[i];
         QString dest = dir.absolutePath() + "/" + backgroundFiles[i];
         if (!QFile::exists(dest)) {

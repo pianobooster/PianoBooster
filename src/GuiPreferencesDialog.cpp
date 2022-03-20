@@ -270,12 +270,12 @@ void GuiPreferencesDialog::setButtonBgColor(QPushButton * btn, QColor qcolor) {
 }
 
 void GuiPreferencesDialog::showColorSelector(QPushButton * btn, QColor & qcolor) {
-    QColor selColor = QColorDialog::getColor(qcolor, this );
-    if( selColor.isValid() )
-    {
+    QColor selColor = QColorDialog::getColor(qcolor, this, "", QColorDialog::ShowAlphaChannel | QColorDialog::DontUseNativeDialog);
+    if( selColor.isValid() ) {
         qcolor.setRed(selColor.red());
         qcolor.setGreen(selColor.green());
         qcolor.setBlue(selColor.blue());
+        qcolor.setAlpha(selColor.alpha());
         setButtonBgColor(btn, qcolor);
     }
 }

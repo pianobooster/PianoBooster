@@ -21,9 +21,16 @@
         <file>images/background/autumn.jpg</file>
         <file>images/background/cloud.jpg</file>
         <file>images/background/hikingtrail.jpg</file>
-        <file>images/background/horse.jpeg</file>
+        <file>images/background/horse.jpg</file>
         <file>images/background/mountain.jpg</file>
-        <file>images/background/snowforestjpg</file>
+        <file>images/background/snowforest.jpg</file>
         <file>images/background/waterfall.jpg</file>
+        <file>images/background/birds.png</file>
+        <file>images/background/birds2.png</file>
+        <file>images/background/plant.png</file>
+        <file>colorthemes/Birds.ini</file>
+        <file>colorthemes/Horses.ini</file>
+        <file>colorthemes/Plant.ini</file>
+        <file>colorthemes/Winter.ini</file>
     </qresource>
 </RCC>

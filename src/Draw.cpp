@@ -784,17 +784,17 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                 float bottomY = CStavePos(PB_PART_left, -m_beatMarkerHeight).getPosY();
                 float early = Cfg::playZoneEarly() * HORIZONTAL_SPACING_FACTOR;
                 float late = Cfg::playZoneLate() * HORIZONTAL_SPACING_FACTOR;
-                //glColor3f (0.7, 1.0, 0.7);
+                //glColor4f (0.7, 1.0, 0.7);
                 CColor area = m_settings->playZoneAreaColor();
-                glColor3f (area.red, area.green, area.blue);
+                glColor4f (area.red, area.green, area.blue, area.alpha);
                 glRectf(x-late, topY, x + early, bottomY);
                 glLineWidth (2.0);
                 CColor midLineColor = m_settings->playZoneMiddleColor();
-                glColor3f (midLineColor.red, midLineColor.green, midLineColor.blue);
+                glColor4f (midLineColor.red, midLineColor.green, midLineColor.blue, area.alpha);
                 oneLine(x, topY, x, bottomY );
                 glLineWidth (1.0);
                 CColor endLineColor = m_settings->playZoneEndColor();
-                glColor3f (endLineColor.red, endLineColor.green, endLineColor.blue);
+                glColor4f (endLineColor.red, endLineColor.green, endLineColor.blue, area.alpha);
                 oneLine(x-late, topY, x-late, bottomY );
                 oneLine(x+early, topY, x+early, bottomY );
             }

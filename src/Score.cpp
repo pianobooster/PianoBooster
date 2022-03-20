@@ -81,7 +81,8 @@ void CScore::drawScroll(bool refresh)
 
     if (getCompileRedrawCount())
     {
-
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glNewList (m_stavesDisplayListId, GL_COMPILE_AND_EXECUTE);
             drawSymbol(CSymbol(PB_SYMBOL_playingZone,  CStavePos(PB_PART_both, 0)), Cfg::playZoneX());
             drawStaves(Cfg::scrollStartX(), Cfg::staveEndX());
@@ -90,8 +91,12 @@ void CScore::drawScroll(bool refresh)
         forceCompileRedraw(0);
 
     }
-    else
+    else {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glCallList(m_stavesDisplayListId);
+
+    }
 
     if (m_settings->value("View/PianoKeyboard").toString()=="on"){
         drawPianoKeyboard();

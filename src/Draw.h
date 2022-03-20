@@ -104,8 +104,8 @@ public:
 
     static QColor color;
     static void drColor(CColor color) {
-        glColor3f(color.red, color.green, color.blue);
-        CDraw::color.setRgbF(color.red, color.green, color.blue);
+        glColor4f(color.red, color.green, color.blue, color.alpha);
+        CDraw::color.setRgbF(color.red, color.green, color.blue, color.alpha);
     }
     static void forceCompileRedraw(int value = 1) {    m_forceCompileRedraw = value; }
 

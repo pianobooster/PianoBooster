@@ -206,7 +206,7 @@ public:
 
         QColor qcolor = theme->getColor(QString::fromUtf8(name.c_str()));
 
-        CColor * color = new CColor(qcolor.red()/255.0f, qcolor.green()/255.0f, qcolor.blue()/255.0f);
+        CColor * color = new CColor(qcolor.red()/255.0f, qcolor.green()/255.0f, qcolor.blue()/255.0f, qcolor.alpha()/255.0f);
 
         CSettings::colorCache[name] = color;
         return *color;

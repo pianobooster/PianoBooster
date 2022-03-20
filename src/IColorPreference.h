@@ -34,19 +34,21 @@
 class CColor
 {
 public:
-    CColor() { red = green = blue = 0; }
+    CColor() { red = green = blue = 0; alpha=1.0;}
 
-    CColor(double r, double g, double b)
+    CColor(double r, double g, double b, double a = 1.0)
     {
         red = static_cast<float>(r);
         green = static_cast<float>(g);
         blue = static_cast<float>(b);
+        alpha = static_cast<float>(a);
     }
-    float red, green, blue;
+
+    float red, green, blue, alpha;
 
     bool operator==(CColor color)
     {
-        if (red == color.red && green == color.green && blue == color.blue)
+        if (red == color.red && green == color.green && blue == color.blue && alpha == color.alpha)
             return true;
         return false;
     }

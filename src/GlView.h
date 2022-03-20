@@ -58,7 +58,7 @@ public:
     void updateBackground(bool refresh);
     void renderText(double x, double y, double z, const QString &str, const QFont & font);
 
-    void glColor3f( GLfloat red, GLfloat green, GLfloat blue );
+    void glColor4f( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha = 1.0f );
 
 protected:
     void timerEvent(QTimerEvent *event);

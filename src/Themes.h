@@ -78,6 +78,7 @@ public:
         QString redName = colorName + "Red";
         QString greenName = colorName + "Green";
         QString blueName = colorName + "Blue";
+        QString alphaName = colorName + "Alpha";
 
         QString customColorName = "CustomScoreColors/";
         customColorName.append(name);
@@ -85,8 +86,9 @@ public:
         int red = settings.value(customColorName + "Red", settings.value(redName, "0")).toInt();
         int green = settings.value(customColorName + "Green", settings.value(greenName, "0")).toInt();
         int blue = settings.value(customColorName + "Blue", settings.value(blueName, "0")).toInt();
+        int alpha = settings.value(customColorName + "Alpha", settings.value(alphaName, "255")).toInt();
 
-        QColor color(red, green, blue);
+        QColor color(red, green, blue, alpha);
 
         return color;
     }
@@ -95,6 +97,7 @@ public:
         settings.setValue("CustomScoreColors/" + name + "Red", color.red());
         settings.setValue("CustomScoreColors/" + name + "Green", color.green());
         settings.setValue("CustomScoreColors/" + name + "Blue", color.blue());
+        settings.setValue("CustomScoreColors/" + name + "Alpha", color.alpha());
     }
 
     QColor getDefaultColor(QString name) {
