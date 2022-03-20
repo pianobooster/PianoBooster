@@ -18,19 +18,38 @@
         <file>colorthemes/Galaxy.ini</file>
         <file>colorthemes/Mars.ini</file>
         <file>colorthemes/Saturn.ini</file>
-        <file>images/background/autumn.jpg</file>
-        <file>images/background/cloud.jpg</file>
-        <file>images/background/hikingtrail.jpg</file>
-        <file>images/background/horse.jpg</file>
-        <file>images/background/mountain.jpg</file>
-        <file>images/background/snowforest.jpg</file>
-        <file>images/background/waterfall.jpg</file>
-        <file>images/background/birds.png</file>
-        <file>images/background/birds2.png</file>
-        <file>images/background/plant.png</file>
         <file>colorthemes/Birds.ini</file>
         <file>colorthemes/Horses.ini</file>
         <file>colorthemes/Plant.ini</file>
         <file>colorthemes/Winter.ini</file>
+        <file>images/background/babyroom.png</file>
+        <file>images/background/birds.png</file>
+        <file>images/background/birds2.png</file>
+        <file>images/background/cloud.jpg</file>
+        <file>images/background/ducks.png</file>
+        <file>images/background/flower3.png</file>
+        <file>images/background/flowers.png</file>
+        <file>images/background/flowers2.png</file>
+        <file>images/background/handnotes.png</file>
+        <file>images/background/horse.jpg</file>
+        <file>images/background/note.txt</file>
+        <file>images/background/ocean.png</file>
+        <file>images/background/piano2.png</file>
+        <file>images/background/pianokeys.png</file>
+        <file>images/background/plant.png</file>
+        <file>images/background/snowforest.jpg</file>
+        <file>images/background/vintage player.png</file>
+        <file>images/background/waterfall.jpg</file>
+        <file>colorthemes/Babyroom.ini</file>
+        <file>colorthemes/Ducks.ini</file>
+        <file>colorthemes/Flower.ini</file>
+        <file>colorthemes/Flower2.ini</file>
+        <file>colorthemes/Flower3.ini</file>
+        <file>colorthemes/Handnotes.ini</file>
+        <file>colorthemes/Ocean.ini</file>
+        <file>colorthemes/Piano.ini</file>
+        <file>colorthemes/Pianokeys.ini</file>
+        <file>colorthemes/Vintageplayer.ini</file>
+        <file>colorthemes/Waterfall.ini</file>
     </qresource>
 </RCC>

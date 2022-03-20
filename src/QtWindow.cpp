@@ -28,6 +28,8 @@
 #include "QtWindow.h"
 #include "version.h"
 
+#include <iostream>
+
 #ifdef __linux__
 #ifndef USE_REALTIME_PRIORITY
 #define USE_REALTIME_PRIORITY 0
@@ -63,28 +65,29 @@ void QtWindow::copyThemes() {
         qFatal("Cannot determine settings storage location");
     }
 
-    QString  fileNames [9] = {"Default Theme.ini", "Galaxy.ini", "Earth.ini", "Mars.ini", "Saturn.ini", "Birds.ini", "Horses.ini", "Plant.ini", "Winter.ini"};
+    QDir resourceDir(":/colorthemes/");
+    QStringList fileList = resourceDir.entryList(QDir::Files);
 
-    for ( int i = 0; i < 9; i++ ) {
-        QString source = ":/colorthemes/" + fileNames[i];
-        QString dest = dir.absolutePath() + "/" + fileNames[i];
+    for (int i = 0; i< fileList.count(); i++) {
+        QString source = ":/colorthemes/" + fileList[i];
+        QString dest = dir.absolutePath() + "/" + fileList[i];
         if (!QFile::exists(dest)) {
             QFile::copy(source, dest);
             QFile(dest).setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
         }
     }
 
-    QString  backgroundFiles [10] = {"autumn.jpg", "cloud.jpg", "hikingtrail.jpg", "horse.jpg", "mountain.jpg", "waterfall.jpg", "snowforest.jpg", "birds.png", "birds2.png", "plant.png"};
+    resourceDir = QDir(":/images/background/");
+    fileList = resourceDir.entryList(QDir::Files);
 
-    for ( int i = 0; i < 10; i++ ) {
-        QString source = ":/images/background/" + backgroundFiles[i];
-        QString dest = dir.absolutePath() + "/" + backgroundFiles[i];
+    for (int i = 0; i < fileList.count(); i++) {
+        QString source = ":/images/background/" + fileList[i];
+        QString dest = dir.absolutePath() + "/" + fileList[i];
         if (!QFile::exists(dest)) {
             QFile::copy(source, dest);
             QFile(dest).setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
         }
     }
-
 }
 
 QtWindow::QtWindow()

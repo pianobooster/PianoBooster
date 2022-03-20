@@ -4,9 +4,9 @@
 
 @brief          Encapsulate color themes
 
-@author         Nam Nguyen
+@author         Vy Ho
 
-    Copyright (c)   2022, Nam Nguyen, all rights reserved
+    Copyright (c)   2022, Vy Ho, all rights reserved
 
     This file is part of the PianoBooster application
 

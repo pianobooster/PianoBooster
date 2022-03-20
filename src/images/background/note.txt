@@ -1,0 +1,29 @@
+Conversion command:
+
+parallel dwebp {} -o {.}.png ::: *.webp
+
+-----------------------------------------------------------
+Sources:
+
+https://www.rawpixel.com/image/5921755/photo-image-background-flower-public-domain
+
+https://www.rawpixel.com/image/3864313/image-background-flower-wallpaper
+
+https://www.rawpixel.com/image/2370064/free-illustration-image-flower-watercolor-botanical
+
+https://www.rawpixel.com/image/5908480/free-public-domain-cc0-photo
+
+https://www.rawpixel.com/image/5924573/photo-image-public-domain-plant-minimal
+
+https://www.rawpixel.com/image/5915238/image-public-domain-hands-notes
+
+https://www.rawpixel.com/image/5914263/image-public-domain-notes-black
+
+https://www.rawpixel.com/image/5947665/free-public-domain-cc0-photo
+
+https://www.rawpixel.com/image/5943321/free-public-domain-cc0-photo
+
+https://www.rawpixel.com/image/5924574/photo-image-public-domain-vintage-retro
+
+
+
