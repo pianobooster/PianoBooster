@@ -216,12 +216,13 @@ public:
         CThemeList themeList;
         QString themeName = this->value("themeName", "Default Theme").toString();
         CTheme * theme = themeList.getTheme(themeName);
-
-        bgImageFile = theme->value("BackgroundImage/fileName", "").toString();
-        bgTileNoX = theme->value("BackgroundImage/tileNoX", "1").toInt();
-        bgTileNoY = theme->value("BackgroundImage/tileNoY", "1").toInt();
-        bgAlignX = theme->value("BackgroundImage/alignX", "left").toString();
-        bgAlignY = theme->value("BackgroundImage/alignY", "top").toString();
+        if ( theme != NULL ) {
+            bgImageFile = theme->value("BackgroundImage/fileName", "").toString();
+            bgTileNoX = theme->value("BackgroundImage/tileNoX", "1").toInt();
+            bgTileNoY = theme->value("BackgroundImage/tileNoY", "1").toInt();
+            bgAlignX = theme->value("BackgroundImage/alignX", "left").toString();
+            bgAlignY = theme->value("BackgroundImage/alignY", "top").toString();
+        }
     }
 
     QString getConfigDir() {

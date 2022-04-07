@@ -58,12 +58,18 @@ CThemeList::CThemeList() {
         }
 
         if ( fileList[i].endsWith(".ini")) {
-            QSettings settings(QSettings::IniFormat, QSettings::UserScope, "PianoBooster", fileList[i].mid(0, fileList[i].length() - 4));
-            if ( !settings.value("themeName", "").toString().isEmpty() ) {
+            QString filePath = dir.absolutePath() + "/" + fileList[i];
+            QSettings * settings = new QSettings(filePath, QSettings::IniFormat);
+            auto themName = settings->value("themeName", "").toString();
+            if ( !themName.isEmpty() ) {
                 //std::cout << "THem: " << fileList[i].toStdString() << std::endl;
                 //themeComboBox->addItem(theme.value("themeName", "").toString());
-                CTheme * atheme = new CTheme(fileList[i].mid(0, fileList[i].length() - 4), settings.value("themeName", "").toString());
+
+                CTheme * atheme = new CTheme(settings, themName);
                 themeList->append(atheme);
+            } else {
+                delete settings;
+                settings = NULL;
             }
         }
     }
@@ -77,9 +83,22 @@ CThemeList::~CThemeList(){
     themeList = nullptr;
 }
 
-CTheme::CTheme(QString fileName, QString themeName): settings(QSettings::IniFormat, QSettings::UserScope, "PianoBooster", fileName)
+CTheme::CTheme(QString fileName, QString themeName)
 {
+    settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "PianoBooster", fileName);
     this->themeName = themeName;
+}
+
+CTheme::CTheme(QSettings * settings, QString themeName)
+{
+    this->settings = settings;
+    this->themeName = themeName;
+}
+
+CTheme::~CTheme()
+{
+    delete settings;
+    settings = NULL;
 }
 
 QColor CTheme::backgroundColor()      {return getColor("bg");}
@@ -99,8 +118,8 @@ QColor CTheme::playZoneMiddleColor()  {return getColor("playZoneMiddle");}
 QColor CTheme::staveColor()           {return getColor("stave");}
 QColor CTheme::staveDimColor()        {return getColor("staveDim");}
 
-QString CTheme::getBgImageFile() { return settings.value("BackgroundImage/fileName", "").toString();}
-int CTheme::getBgTileNoX() { return settings.value("BackgroundImage/tileNoX", "1").toInt();}
-int CTheme::getBgTileNoY() { return settings.value("BackgroundImage/tileNoY", "1").toInt();}
-QString CTheme::getBgAlignX() { return settings.value("BackgroundImage/alignX", "left").toString();}
-QString CTheme::getBgAlignY() { return settings.value("BackgroundImage/alignY", "top").toString();}
+QString CTheme::getBgImageFile() { return settings->value("BackgroundImage/fileName", "").toString();}
+int CTheme::getBgTileNoX() { return settings->value("BackgroundImage/tileNoX", "1").toInt();}
+int CTheme::getBgTileNoY() { return settings->value("BackgroundImage/tileNoY", "1").toInt();}
+QString CTheme::getBgAlignX() { return settings->value("BackgroundImage/alignX", "left").toString();}
+QString CTheme::getBgAlignY() { return settings->value("BackgroundImage/alignY", "top").toString();}

@@ -122,6 +122,8 @@ void CGLView::paintGL()
             glEnable(GL_BLEND);
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         } else {
+            CColor bgColor = m_settings->backgroundColor();
+            glClearColor (bgColor.red, bgColor.green, bgColor.blue, 0.0);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         }
     }
@@ -428,10 +430,9 @@ void CGLView::initializeGL()
 }
 
 void CGLView::updateBackground(bool refresh) {
-    CColor bgColor = m_settings->backgroundColor();
 
     this->makeCurrent();
-    glClearColor (bgColor.red, bgColor.green, bgColor.blue, 0.0);
+
     this->doneCurrent();
 
     if (!m_settings->getBgImageFile().isEmpty()) {
@@ -440,7 +441,13 @@ void CGLView::updateBackground(bool refresh) {
         backgroundImg = backgroundImg.scaled(tileSize);
     }
 
+    if ( isVisible() ) {
+        CColor bgColor = m_settings->backgroundColor();
+        glClearColor (bgColor.red, bgColor.green, bgColor.blue, 0.0);
+    }
+
     if ( refresh ) {
+
         update();
         //repaint();
     }

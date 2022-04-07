@@ -32,16 +32,20 @@
 #include <QList>
 #include <QSettings>
 
+#include <iostream>
+
 class CTheme
 {
 private:
-    QSettings settings;
+    QSettings * settings;
     QString themeName;
 
 public:
     CTheme(QString fileName, QString themeName);
+    CTheme(QSettings * settings, QString themeName);
     CTheme(const CTheme &theme) = delete;
     CTheme& operator=(const CTheme & other) = delete;
+    ~CTheme();
 
     QString getThemeName() {return themeName;}
 
@@ -69,7 +73,7 @@ public:
     QString getBgAlignY();
 
     QVariant value(const QString &key, const QVariant &defaultValue = QVariant()) const {
-        return settings.value(key, defaultValue);
+        return settings->value(key, defaultValue);
     }
 
     QColor getColor(QString name) {
@@ -83,10 +87,10 @@ public:
         QString customColorName = "CustomScoreColors/";
         customColorName.append(name);
 
-        int red = settings.value(customColorName + "Red", settings.value(redName, "0")).toInt();
-        int green = settings.value(customColorName + "Green", settings.value(greenName, "0")).toInt();
-        int blue = settings.value(customColorName + "Blue", settings.value(blueName, "0")).toInt();
-        int alpha = settings.value(customColorName + "Alpha", settings.value(alphaName, "255")).toInt();
+        int red = settings->value(customColorName + "Red", settings->value(redName, "0")).toInt();
+        int green = settings->value(customColorName + "Green", settings->value(greenName, "0")).toInt();
+        int blue = settings->value(customColorName + "Blue", settings->value(blueName, "0")).toInt();
+        int alpha = settings->value(customColorName + "Alpha", settings->value(alphaName, "255")).toInt();
 
         QColor color(red, green, blue, alpha);
 
@@ -94,10 +98,10 @@ public:
     }
 
     void setColor(QString name, QColor & color) {
-        settings.setValue("CustomScoreColors/" + name + "Red", color.red());
-        settings.setValue("CustomScoreColors/" + name + "Green", color.green());
-        settings.setValue("CustomScoreColors/" + name + "Blue", color.blue());
-        settings.setValue("CustomScoreColors/" + name + "Alpha", color.alpha());
+        settings->setValue("CustomScoreColors/" + name + "Red", color.red());
+        settings->setValue("CustomScoreColors/" + name + "Green", color.green());
+        settings->setValue("CustomScoreColors/" + name + "Blue", color.blue());
+        settings->setValue("CustomScoreColors/" + name + "Alpha", color.alpha());
     }
 
     QColor getDefaultColor(QString name) {
@@ -107,9 +111,9 @@ public:
         QString greenName = colorName + "Green";
         QString blueName = colorName + "Blue";
 
-        int red =settings.value(redName, "0").toInt();
-        int green = settings.value(greenName, "0").toInt();
-        int blue = settings.value(blueName, "0").toInt();
+        int red =settings->value(redName, "0").toInt();
+        int green = settings->value(greenName, "0").toInt();
+        int blue = settings->value(blueName, "0").toInt();
 
         QColor color(red, green, blue);
 

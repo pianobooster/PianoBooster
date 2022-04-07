@@ -62,9 +62,11 @@ void QtWindow::copyThemes() {
     QDir dir = fileInfo.dir();
 
     if ( !dir.exists() ) {
+        dir.mkpath(dir.absolutePath());
+    }
+    if ( !dir.exists() ) {
         qFatal("Cannot determine settings storage location");
     }
-
     QDir resourceDir(":/colorthemes/");
     QStringList fileList = resourceDir.entryList(QDir::Files);
 
