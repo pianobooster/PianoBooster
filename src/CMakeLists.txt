@@ -176,6 +176,7 @@ SET( PIANOBOOSTER_SRCS
     Rating.cpp
     Bar.cpp
     Settings.cpp
+    Themes.cpp
     Merge.cpp
     pianobooster.rc
     images/pianobooster.ico

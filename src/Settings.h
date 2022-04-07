@@ -27,10 +27,21 @@
 #ifndef __SETTINGS_H__
 #define __SETTINGS_H__
 
+#include <unordered_map>
+
 #include <QSettings>
 #include <QDomDocument>
+#include <QColor>
+#include <QStandardPaths>
+#include <QFileInfo>
+#include <QDir>
+
+#include "IColorPreference.h"
+
 #include "Song.h"
 #include "Notation.h"
+
+#include "Themes.h"
 
 #define QSTR_APPNAME "pianobooster"
 
@@ -39,14 +50,16 @@ class GuiTopBar;
 class QtWindow;
 
 /// Save all the settings for the programme in the right place.
-class CSettings : public QSettings
+class CSettings : public QSettings, public IColorPreference
 {
 
 public:
     CSettings(QtWindow *mainWindow);
 
-    void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
+    static std::unordered_map<std::string, CColor *> colorCache;
 
+    void init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar);
+    void setDefaultColors();
     /// returns true if the user wants to see the note names
     bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
     bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
@@ -95,6 +108,7 @@ public:
     void writeSettings();
     void loadSettings();
     void unzipBoosterMusicBooks();
+
     QString getCurrentSongLongFileName()
     {
         if (getCurrentSongName().isEmpty())
@@ -147,6 +161,82 @@ public:
     void fastUpdateRate(bool fullSpeed);
     QString getWarningMessage() {return m_warningMessage;}
     void updateWarningMessages();
+
+    CColor backgroundColor()  ;
+    CColor barMarkerColor() ;
+    CColor beatMarkerColor() ;
+    CColor noteColor() ;
+    CColor noteDimColor() ;
+    CColor noteNameColor() ;
+    CColor pianoGoodColor() ;
+    CColor pianoBadColor() ;
+    CColor playedBadColor()  ;
+    CColor playedGoodColor() ;
+    CColor playedStoppedColor() ;
+    CColor playZoneAreaColor() ;
+    CColor playZoneEndColor() ;
+    CColor playZoneMiddleColor() ;
+    CColor staveColor() ;
+    CColor staveDimColor() ;
+
+    QString getBgImageFile() { return bgImageFile;}
+    int getBgTileNoX(){ return bgTileNoX;}
+    int getBgTileNoY(){ return bgTileNoY;}
+    QString getBgAlignX(){ return bgAlignX;}
+    QString getBgAlignY(){ return bgAlignY;}
+
+    static const int colorCount = 15;
+    static void clearCache();
+
+    QColor getQColor(string name) {
+        CColor color = getColor(name);
+        QColor qColor((int) (color.red * 255), (int) (color.green * 255), (int) (color.blue * 255), 255);
+        return qColor;
+    }
+
+    const CColor & getColor(string name) {
+        std::unordered_map<std::string, CColor* >::iterator colorIter = CSettings::colorCache.find(name);
+        if ( colorIter != CSettings::colorCache.end()) {
+            return *(colorIter->second);
+        }
+
+        CThemeList themeList;
+        QString themeName = this->value("themeName", "Default Theme").toString();
+        CTheme * theme = themeList.getTheme(themeName);
+
+        QColor qcolor = theme->getColor(QString::fromUtf8(name.c_str()));
+
+        CColor * color = new CColor(qcolor.red()/255.0f, qcolor.green()/255.0f, qcolor.blue()/255.0f, qcolor.alpha()/255.0f);
+
+        CSettings::colorCache[name] = color;
+        return *color;
+    }
+
+    void loadBackgroundSettings() {
+        CThemeList themeList;
+        QString themeName = this->value("themeName", "Default Theme").toString();
+        CTheme * theme = themeList.getTheme(themeName);
+        if ( theme != NULL ) {
+            bgImageFile = theme->value("BackgroundImage/fileName", "").toString();
+            bgTileNoX = theme->value("BackgroundImage/tileNoX", "1").toInt();
+            bgTileNoY = theme->value("BackgroundImage/tileNoY", "1").toInt();
+            bgAlignX = theme->value("BackgroundImage/alignX", "left").toString();
+            bgAlignY = theme->value("BackgroundImage/alignY", "top").toString();
+        }
+    }
+
+    QString getConfigDir() {
+        auto configFile = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+        if (configFile.isEmpty()) qFatal("Cannot determine settings storage location");
+
+        QFileInfo fileInfo(configFile);
+        QDir dir = fileInfo.dir();
+
+        if ( !dir.exists() ) {
+            qFatal("Cannot determine settings storage location");
+        }
+        return dir.absolutePath();
+    }
 
     QString selectedLangauge() {
         QString locale = value("General/lang","").toString();
@@ -208,6 +298,13 @@ private:
     QString m_warningMessage;
     QStringList m_fluidSoundFontNames = QStringList();
     bool m_pianistActive;
+
+    QString bgImageFile;
+    int bgTileNoX;
+    int bgTileNoY;
+    QString bgAlignX;
+    QString bgAlignY;
+
 };
 
 #endif // __SETTINGS_H__

@@ -28,6 +28,8 @@
 #include "QtWindow.h"
 #include "version.h"
 
+#include <iostream>
+
 #ifdef __linux__
 #ifndef USE_REALTIME_PRIORITY
 #define USE_REALTIME_PRIORITY 0
@@ -52,8 +54,47 @@ static int set_realtime_priority(int policy, int prio)
 }
 #endif
 
+void QtWindow::copyThemes() {
+    auto configFile = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+    if (configFile.isEmpty()) qFatal("Cannot determine settings storage location");
+
+    QFileInfo fileInfo(configFile);
+    QDir dir = fileInfo.dir();
+
+    if ( !dir.exists() ) {
+        dir.mkpath(dir.absolutePath());
+    }
+    if ( !dir.exists() ) {
+        qFatal("Cannot determine settings storage location");
+    }
+    QDir resourceDir(":/colorthemes/");
+    QStringList fileList = resourceDir.entryList(QDir::Files);
+
+    for (int i = 0; i< fileList.count(); i++) {
+        QString source = ":/colorthemes/" + fileList[i];
+        QString dest = dir.absolutePath() + "/" + fileList[i];
+        if (!QFile::exists(dest)) {
+            QFile::copy(source, dest);
+            QFile(dest).setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
+        }
+    }
+
+    resourceDir = QDir(":/images/background/");
+    fileList = resourceDir.entryList(QDir::Files);
+
+    for (int i = 0; i < fileList.count(); i++) {
+        QString source = ":/images/background/" + fileList[i];
+        QString dest = dir.absolutePath() + "/" + fileList[i];
+        if (!QFile::exists(dest)) {
+            QFile::copy(source, dest);
+            QFile(dest).setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
+        }
+    }
+}
+
 QtWindow::QtWindow()
 {
+    copyThemes();
     m_settings = new CSettings(this);
     setWindowIcon(QIcon(":/images/pianobooster.png"));
     setWindowTitle(tr("Piano Booster"));
@@ -111,7 +152,7 @@ QtWindow::QtWindow()
     m_song->init2(m_score, m_settings);
 
     m_sidePanel->init(m_song, m_song->getTrackList(), m_topBar);
-    m_topBar->init(m_song);
+    m_topBar->init(m_song, m_glWidget);
 
     QWidget *centralWin = new QWidget();
     centralWin->setLayout(mainLayout);

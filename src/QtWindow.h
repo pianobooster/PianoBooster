@@ -27,7 +27,7 @@
 #ifndef __QT_WINDOW_H__
 #define __QT_WINDOW_H__
 
-#include <QtWidgets>
+#include <QGLFormat>
 
 #include "Song.h"
 #include "Score.h"
@@ -188,6 +188,8 @@ private:
     void createMenus();
     void readSettings();
     void writeSettings();
+
+    void copyThemes();
 
     CSettings* m_settings;
 

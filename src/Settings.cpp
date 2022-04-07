@@ -49,6 +49,10 @@
 #include "QtWindow.h"
 #include "version.h"
 
+//#include <iostream>
+
+#include "Cfg.h"
+
 #if WITH_INTERNAL_FLUIDSYNTH
 #include "MidiDeviceFluidSynth.h"
 #endif
@@ -75,14 +79,19 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
 
     // load Fluid settings
     setFluidSoundFontNames( value("FluidSynth/SoundFont").toStringList());
+    setDefaultColors();
+    Cfg::setColorPreference(this);
+    
 }
 
-void CSettings::setDefaultValue(const QString & key, const QVariant & value )
+void CSettings::setDefaultValue(const QString & key, const QVariant & val )
 {
-    if (contains(key)) // Do not change the value if it already set
+    if (contains(key)) { // Do not change the value if it already set
+        //cout << "already exist: " << key.toUtf8().constData() << ",   " << value(key, 0).toString().toUtf8().constData() << endl;
         return;
-
-    setValue(key, value);
+    }
+    //cout << "Not yet exist: " << key.toUtf8().constData()  << ",   "  << endl;
+    setValue(key, val);
 }
 
 void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
@@ -90,6 +99,9 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
     m_song = song;
     m_guiSidePanel = sidePanel;
     m_guiTopBar = topBar;
+    //loadSettings();
+
+    loadBackgroundSettings();
 }
 
 void CSettings::setNoteNamesEnabled(bool value) {
@@ -404,7 +416,42 @@ void CSettings::loadSettings()
 
     updateWarningMessages();
     updateTutorPage();
+}
 
+void CSettings::setDefaultColors() {
+    /*
+    for ( int i = 0; i < colorCount * 3; i++) {
+        string colorName = "ScoreColors/";
+        colorName.append(colorNames[i][0]);
+        setDefaultValue(QString::fromUtf8(colorName.c_str()), std::stoi((colorNames[i][1])));
+    }
+    */
+}
+
+CColor CSettings::backgroundColor()      {return getColor("bg");}
+CColor CSettings::barMarkerColor()       {return getColor("barMarker");}
+CColor CSettings::beatMarkerColor()      {return getColor("beatMarker");}
+CColor CSettings::noteColor()            {return getColor("note");}
+CColor CSettings::noteDimColor()         {return getColor("noteDim");}
+CColor CSettings::noteNameColor()        {return getColor("noteName");}
+CColor CSettings::pianoBadColor()        {return getColor("pianoBad");}
+CColor CSettings::pianoGoodColor()       {return getColor("pianoGood");}
+CColor CSettings::playedGoodColor()      {return getColor("playGood");}
+CColor CSettings::playedBadColor()       {return getColor("playBad");}
+CColor CSettings::playedStoppedColor()   {return getColor("playStopped");}
+CColor CSettings::playZoneAreaColor()    {return getColor("playZoneBg");}
+CColor CSettings::playZoneEndColor()     {return getColor("playZoneEndLine");}
+CColor CSettings::playZoneMiddleColor()  {return getColor("playZoneMiddle");}
+CColor CSettings::staveColor()           {return getColor("stave");}
+CColor CSettings::staveDimColor()        {return getColor("staveDim");}
+
+std::unordered_map<std::string, CColor *> CSettings::colorCache;
+
+void CSettings::clearCache() {
+    for (std::unordered_map<std::string, CColor *>::iterator it = CSettings::colorCache.begin(); it!= CSettings::colorCache.end(); ++it) {
+        delete it->second;
+    }
+    CSettings::colorCache.clear(); 
 }
 
 void CSettings::unzipBoosterMusicBooks()
