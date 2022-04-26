@@ -43,6 +43,7 @@ public:
     CScroll(int id, CSettings* settings) : CDraw(settings)
     {
         m_id = id;
+        m_settings = settings;
         m_symbolID = 0;
 
         m_notation = new CNotation();
@@ -63,6 +64,7 @@ public:
     void scrollDeltaTime(int ticks);
     void transpose(int transpose);
     void refresh();
+    void recalculateGeometry();
     void setPlayedNoteColor(int note, CColor color, int wantedDelta, int pianistTimming);
     void setChannel(int chan)
     {
@@ -98,6 +100,7 @@ private:
     int findWantedChord(int note, CColor color, int wantedDelta);
 
     int m_id;      // There are lots of these class running but each class has a unique id
+    CSettings *m_settings;
     CNotation *m_notation;
     int m_deltaHead;
     int m_deltaTail;

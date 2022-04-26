@@ -149,8 +149,13 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     showTutorPagesCheck->setChecked(m_settings->isTutorPagesEnabled());
     followThroughErrorsCheck->setChecked(m_settings->isFollowThroughErrorsEnabled());
     showColoredNotesCheck->setChecked(m_settings->isColoredNotesEnabled());
+    scalingHorizontalSlider->setValue((int) (m_settings->scalingFactor() * 10.0));
 
     followStopPointCombo->setCurrentIndex(m_song->cfg_stopPointMode);
+
+    connect(scalingHorizontalSlider, SIGNAL(valueChanged(int)),
+        this, SLOT(updateScalingLabelCurrentValue()));
+    updateScalingLabelCurrentValue();
 
     initLanguageCombo();
 }
@@ -164,6 +169,7 @@ void GuiPreferencesDialog::accept()
     m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());
     m_settings->setFollowThroughErrorsEnabled( followThroughErrorsCheck->isChecked());
     m_settings->setColoredNotes( showColoredNotesCheck->isChecked());
+    m_settings->setScalingFactor( (float)scalingHorizontalSlider->value() / 10.0);
     m_song->cfg_stopPointMode = static_cast<stopPointMode_t> (followStopPointCombo->currentIndex());
     m_settings->setValue("Score/StopPointMode", m_song->cfg_stopPointMode );
 
@@ -172,4 +178,12 @@ void GuiPreferencesDialog::accept()
     m_song->refreshScroll();
 
     this->QDialog::accept();
+}
+
+void GuiPreferencesDialog::updateScalingLabelCurrentValue()
+{
+    int value = scalingHorizontalSlider->value();
+    QString str = QString("%1 %").arg(QString::number(value * 10));
+    scalingLabelCurrentValue->setText(str);
+
 }

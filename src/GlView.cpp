@@ -266,7 +266,17 @@ void CGLView::drawBarNumber()
 
 void CGLView::resizeGL(int width, int height)
 {
-    const int maxSoreWidth = 1024;
+    recalculateGeometry(width, height);
+}
+
+void CGLView::recalculateGeometry(int width, int height) {
+    float sf = m_settings->scalingFactor();
+    CStavePos::setScalingFactor(sf);
+    Cfg::setScalingFactor(sf);
+    m_score->recalculateGeometry();
+    m_score->refreshFontSize();
+
+    const int maxSoreWidth = static_cast<int>(1024 * m_settings->scalingFactor());
     const int staveEndGap = 20;
     const int heightAboveStave =  static_cast<int>(CStavePos::verticalNoteSpacing() * MAX_STAVE_INDEX);
     const int heightBelowStave =  static_cast<int>(CStavePos::verticalNoteSpacing() * - MIN_STAVE_INDEX);
@@ -285,7 +295,7 @@ void CGLView::resizeGL(int width, int height)
     }
     else
     {
-        staveGap = static_cast<int>(CStavePos::staveHeight() * 3);
+        staveGap = static_cast<int>(CStavePos::staveHeight() * 3 * (1/sf));
         m_titleHeight = 60;
     }
     maxSoreHeight = heightAboveStave + heightBelowStave + staveGap + m_titleHeight;
@@ -306,6 +316,7 @@ void CGLView::resizeGL(int width, int height)
     glLoadIdentity();
     glOrtho(0, sizeX, 0, sizeY, -1.0, 1.0);
     glMatrixMode(GL_MODELVIEW);
+    refreshFontSize();
     CStavePos::setStaveCenterY(sizeY - maxSoreHeight/2 - m_titleHeight/2);
     Cfg::setAppDimentions(x, y, sizeX, sizeY);
     Cfg::setStaveEndX(sizeX - staveEndGap);
@@ -348,10 +359,9 @@ void CGLView::initializeGL()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     //enableAntialiasedLines();
 
-    // This is a work around for Windows different display scaling option
-    int widgetPointSize = m_qtWindow->font().pointSize();
-    m_timeSigFont =  QFont("Arial", widgetPointSize*2 );
-    m_timeRatingFont =  QFont("Arial", static_cast<int>(widgetPointSize * 1.2) );
+    m_timeSigFont = QFont("Arial");
+    m_timeRatingFont = QFont("Arial");
+    refreshFontSize();
 
     Cfg::setStaveEndX(400);        //This value get changed by the resizeGL func
 
@@ -371,6 +381,14 @@ void CGLView::initializeGL()
     m_realtime.start();
 
     //startMediaTimer(12, this );
+}
+
+void CGLView::refreshFontSize()
+{
+    // This is a work around for Windows different display scaling option
+    int widgetPointSize = m_qtWindow->font().pointSize();
+    m_timeSigFont.setPointSize(static_cast<int>(widgetPointSize * 2 * m_settings->scalingFactor()));
+    m_timeRatingFont.setPointSize(static_cast<int>(widgetPointSize * 1.2 * m_settings->scalingFactor()));
 }
 
 void CGLView::updateMidiTask()

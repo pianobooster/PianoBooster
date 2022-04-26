@@ -75,6 +75,8 @@ public:
     void loadTutorHtml(const QString & name);
     void setCurrentFile(const QString &fileName);
 
+    void refreshGlWidget();
+
 private slots:
     void open();
     void help();

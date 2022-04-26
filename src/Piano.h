@@ -47,7 +47,7 @@ typedef struct {
 } savedNoteOffChord_t;
 
 
-class CPiano : protected CDraw
+class CPiano : public CDraw
 {
 
 public:

@@ -29,6 +29,7 @@
 #include "Cfg.h"
 
 float Cfg::m_staveEndX;
+float Cfg::m_scalingFactor;
 int Cfg::logLevel = LOG_LEVEL_INFO;
 int Cfg::m_appX;
 int Cfg::m_appY;

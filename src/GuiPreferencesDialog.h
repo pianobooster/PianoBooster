@@ -49,6 +49,7 @@ public:
 
 private slots:
     void accept();
+    void updateScalingLabelCurrentValue();
 
 private:
     void initLanguageCombo();

@@ -28,6 +28,7 @@
 
 #include "Cfg.h"
 #include "Scroll.h"
+#include "Settings.h"
 
 //#define NOTE_AHEAD_GAP          50
 //#define NOTE_BEHIND_GAP          14
@@ -383,6 +384,11 @@ void CScroll::reset()
     m_symbolID = 0;
 
     m_scrollQueue->clear();
+    recalculateGeometry();
+}
+
+void CScroll::recalculateGeometry()
+{
     m_ppqnFactor = static_cast<float>(DEFAULT_PPQN) / CMidiFile::getPulsesPerQuarterNote();
-    m_noteSpacingFactor = m_ppqnFactor * HORIZONTAL_SPACING_FACTOR;
+    m_noteSpacingFactor = m_ppqnFactor * HORIZONTAL_SPACING_FACTOR * m_settings->scalingFactor();
 }

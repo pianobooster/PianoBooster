@@ -50,6 +50,7 @@ public:
     CSong* getSongObject() {return m_song;}
     CScore* getScoreObject() {return m_score;}
     int m_cfg_openGlOptimise;
+    void recalculateGeometry(int width, int height);
 
     void stopTimerEvent();
     void startTimerEvent();
@@ -59,6 +60,7 @@ protected:
     void mediaTimerEvent(int ticks);
 
     void initializeGL();
+    void refreshFontSize();
     void paintGL();
     void resizeGL(int width, int height);
     void mousePressEvent(QMouseEvent *event);
