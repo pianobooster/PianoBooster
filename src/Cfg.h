@@ -148,6 +148,11 @@ public:
         m_scalingFactor = scalingFactor;
     }
 
+    static float getScalingFactor()
+    {
+        return m_scalingFactor;
+    }
+
 private:
     static float m_staveEndX;
     static int m_appX, m_appY, m_appWidth, m_appHeight;

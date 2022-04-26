@@ -116,11 +116,6 @@ void CScore::drawPianoKeyboard(){
         PianoKeyboard() {
             i = 0; k = 0;
             yStart = 0.0f;
-            xSize = Cfg::staveEndX() - Cfg::staveStartX();
-            ySize = 30;
-
-            xPlaceSize = xSize / 52.0f;
-            xKeySize = xPlaceSize - xPlaceSize * 0.1f;
             stopped = false;
         }
 
@@ -188,6 +183,12 @@ void CScore::drawPianoKeyboard(){
         }
 
         void drawKeyboard() {
+            // Recalculate here since scaling factor may have changed
+            xSize = Cfg::staveEndX() - Cfg::staveStartX();
+            ySize = 30 * Cfg::getScalingFactor();
+            xPlaceSize = xSize / 52.0f;
+            xKeySize = xPlaceSize - xPlaceSize * 0.1f;
+
             i = k = 0;
             drawWhiteKey();
             int b1 = i, k1 = k++;
