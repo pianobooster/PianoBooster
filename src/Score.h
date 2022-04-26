@@ -80,6 +80,12 @@ public:
             m_scroll[i]->reset();
     }
 
+    void recalculateGeometry()
+    {   size_t i;
+        for (i=0; i< arraySize(m_scroll); i++)
+            m_scroll[i]->recalculateGeometry();
+    }
+
     void drawScrollingSymbols(bool show = true)
     {   size_t i;
         for (i=0; i< arraySize(m_scroll); i++)
@@ -137,6 +143,18 @@ public:
     void drawScore();
     void drawScroll(bool refresh);
     void drawPianoKeyboard();
+
+#ifndef NO_USE_FTGL
+    void refreshFontSize() override
+    {
+        CDraw::refreshFontSize();
+        m_piano->refreshFontSize();
+
+        size_t i;
+        for (i=0; i< arraySize(m_scroll); i++)
+            m_scroll[i]->refreshFontSize();
+    }
+#endif
 
 protected:
     CPiano* m_piano;

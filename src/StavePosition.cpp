@@ -34,6 +34,7 @@ int CStavePos::m_KeySignature;
 int CStavePos::m_KeySignatureMajorMinor;
 const staveLookup_t*  CStavePos::m_staveLookUpTable;
 float CStavePos::m_staveCentralOffset = (staveHeight() * 3)/2;
+float CStavePos::m_scalingFactor = 1.0;
 
 ////////////////////////////////////////////////////////////////////////////////
 //! @brief Calculates the position of a note on the stave

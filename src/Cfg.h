@@ -72,16 +72,16 @@ public:
 class Cfg
 {
 public:
-    static float staveStartX()         {return 20;}
+    static float staveStartX()         {return 20 * m_scalingFactor;}
     static float staveEndX()           {return m_staveEndX;}
-    static float playZoneX()           {return scrollStartX() + ( staveEndX() - scrollStartX())* 0.4f;}
-    static float clefX()               {return staveStartX() + 20;}
-    static float timeSignatureX()       {return clefX() + 25;}
-    static float keySignatureX()       {return timeSignatureX() + 25;}
-    static float scrollStartX()        {return keySignatureX() + 64;}
-    static float pianoX()              {return 25;}
+    static float playZoneX()           {return scrollStartX() + ( staveEndX() - scrollStartX())* 0.4f * m_scalingFactor;}
+    static float clefX()               {return staveStartX() + 20 * m_scalingFactor;}
+    static float timeSignatureX()       {return clefX() + 25 * m_scalingFactor;}
+    static float keySignatureX()       {return timeSignatureX() + 25 * m_scalingFactor;}
+    static float scrollStartX()        {return keySignatureX() + 64 * m_scalingFactor;}
+    static float pianoX()              {return 25 * m_scalingFactor;}
 
-    static float staveThickness()      {return 1;}
+    static float staveThickness()      {return 1 * m_scalingFactor;}
 
     static int playZoneEarly()     {return m_playZoneEarly;}
     static int playZoneLate()      {return m_playZoneLate;}
@@ -143,11 +143,22 @@ public:
     static bool midiInputDump;
     static int keyboardLightsChan;
 
+    static void setScalingFactor(float scalingFactor)
+    {
+        m_scalingFactor = scalingFactor;
+    }
+
+    static float getScalingFactor()
+    {
+        return m_scalingFactor;
+    }
+
 private:
     static float m_staveEndX;
     static int m_appX, m_appY, m_appWidth, m_appHeight;
     static const int m_playZoneEarly;
     static const int m_playZoneLate;
+    static float m_scalingFactor;
 };
 
 #endif //__CFG_H__

@@ -59,6 +59,7 @@ QtWindow::QtWindow()
     setWindowTitle(tr("Piano Booster"));
 
     Cfg::setDefaults();
+    Cfg::setScalingFactor(m_settings->scalingFactor());
 
     decodeCommandLine();
 
@@ -519,6 +520,12 @@ void QtWindow::setCurrentFile(const QString &fileName)
 
     updateRecentFileActions();
 
+}
+
+// Trigger recalculation of various spacings, positions, etc
+void QtWindow::refreshGlWidget()
+{
+    m_glWidget->recalculateGeometry(m_glWidget->width(), m_glWidget->height());
 }
 
 void QtWindow::website()

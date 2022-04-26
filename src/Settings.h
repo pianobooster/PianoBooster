@@ -53,6 +53,7 @@ public:
 
     bool isTutorPagesEnabled() { return m_tutorPagesEnabled; }
     bool isFollowThroughErrorsEnabled() { return m_followThroughErrorsEnabled; }
+    float scalingFactor() { return m_scalingFactor; }
     bool isColoredNotesEnabled() { return m_coloredNotes; }
 
     /// Saves in the .ini file whether the user wants to show the note names
@@ -60,6 +61,7 @@ public:
     void setColoredNotes(bool value);
     void setTutorPagesEnabled(bool value);
     void setFollowThroughErrorsEnabled(bool value);
+    void setScalingFactor(float value);
 
     void setCourtesyAccidentals(bool value);
     void setAdvancedMode(bool value) { m_advancedMode = value;}
@@ -202,6 +204,7 @@ private:
     bool m_tutorPagesEnabled;
     bool m_advancedMode;
     bool m_followThroughErrorsEnabled;
+    float m_scalingFactor;
     QString m_bookPath;
     QString m_currentBookName;
     QString m_currentSongName;

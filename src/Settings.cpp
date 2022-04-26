@@ -48,6 +48,7 @@
 #include "GuiSidePanel.h"
 #include "QtWindow.h"
 #include "version.h"
+#include "Draw.h"
 
 #if WITH_INTERNAL_FLUIDSYNTH
 #include "MidiDeviceFluidSynth.h"
@@ -72,6 +73,7 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
     m_followThroughErrorsEnabled = value("Score/FollowThroughErrors", false ).toBool();
+    m_scalingFactor = value("Score/ScalingFactor", 1.0).toFloat();
 
     // load Fluid settings
     setFluidSoundFontNames( value("FluidSynth/SoundFont").toStringList());
@@ -116,6 +118,12 @@ void CSettings::setCourtesyAccidentals(bool value) {
 void CSettings::setFollowThroughErrorsEnabled(bool value) {
     m_followThroughErrorsEnabled = value;
     setValue("Score/FollowThroughErrors", value );
+}
+
+void CSettings::setScalingFactor(float value) {
+    m_scalingFactor = value;
+    setValue("Score/ScalingFactor", value);
+    m_mainWindow->refreshGlWidget();
 }
 
 // Open a document if it exists or else create it (also delete an duplicates
@@ -404,7 +412,7 @@ void CSettings::loadSettings()
 
     updateWarningMessages();
     updateTutorPage();
-
+    setScalingFactor(m_scalingFactor);
 }
 
 void CSettings::unzipBoosterMusicBooks()

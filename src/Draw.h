@@ -93,6 +93,10 @@ public:
     void drawSymbol(CSymbol symbol, float x);
     void drawSlot(CSlot* slot);
 
+#ifndef NO_USE_FTGL
+    virtual void refreshFontSize();
+#endif
+
     static void setDisplayHand(whichPart_t hand)
     {
         m_displayHand = hand;
