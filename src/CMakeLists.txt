@@ -148,6 +148,7 @@ else()
         MESSAGE(FATAL_ERROR "rtmidi not found (Try building with option USE_BUNDLED_RTMIDI=ON)")
     endif(NOT RTMIDI_FOUND)
     include_directories(${RTMIDI_INCLUDE_DIRS})
+    link_directories(${RTMIDI_LIBRARY_DIRS})
 endif()
 
 # with SET() command you can change variables or define new ones
