@@ -1775,7 +1775,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;PianoBooster 现内置声音合成器 FluidSynth，此合成器需要一个通用 MIDI 音色库（GM音色库）。找到“设置/MIDI 设置”菜单选项，然后使用 FluidSynth 选项卡上的加载按钮来安装音色库。&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;PianoBooster 现内置声音合成器 FluidSynth，此合成器需要一个通用 MIDI 音色库（GM 音色库）。找到“设置/MIDI 设置”菜单选项，然后使用 FluidSynth 选项卡上的加载按钮来安装音色库。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
