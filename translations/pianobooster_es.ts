@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Conductor.cpp" line="318"/>
         <source>None</source>
-        <translation type="unfinished">Ninguno</translation>
+        <translation>Ninguno</translation>
     </message>
 </context>
 <context>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ERROR SIN SONIDO: Para arreglarlo use el menú Configuración/Configuración MIDI ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
@@ -108,7 +108,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Honky-tonk Piano</source>
-        <translation>Honky-tonk Piano</translation>
+        <translation>Piano Honky-tonk</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
@@ -623,7 +623,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="513"/>
         <source>Shamisen</source>
-        <translation type="unfinished"></translation>
+        <translation>Shamisén</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="514"/>
@@ -881,7 +881,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="95"/>
         <source>Midi Output Device:</source>
-        <translation>Dipositivo de Salida  Midi:</translation>
+        <translation>Dispositivo de salida Midi:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="203"/>
@@ -911,17 +911,17 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Sound Font</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Carga</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -936,7 +936,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Recuento de búfer:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
@@ -971,38 +971,38 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: el sintetizador Microsoft GS Wavetable presenta un retardo no deseado!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
         <source>MIDI Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="144"/>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="151"/>
         <source>The use of MIDI Through is not recommended!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡No se recomienda el uso de MIDI Through!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="146"/>
         <source>MIDI Input Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo de entrada MIDI:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="149"/>
         <source>No Sound Output Device selected; Choose a MIDI Output Device</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha seleccionado ningún dispositivo de salida de sonido; elija un dispositivo de salida MIDI</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>MIDI Output Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo de salida MIDI:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
         <source>%1 mSec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 mSec</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="176"/>
@@ -1017,12 +1017,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="296"/>
         <source>Open SoundFont File for fluidsynth</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo SoundFont para fluidsynth</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="297"/>
         <source>SoundFont Files (*.sf2 *.sf3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos SoundFont (*.sf2 *.sf3)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="142"/>
@@ -1070,17 +1070,17 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Seguimiento de errores</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
         <source>Show color coded notes on the score</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar notas codificadas por colores en la partitura</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
         <source>Color Coded Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Notas con código de colores</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
@@ -1125,7 +1125,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma del sistema</translation>
     </message>
 </context>
 <context>
@@ -1188,7 +1188,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"></translation>
+        <translation>Repetir canción</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
@@ -1300,7 +1300,7 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="71"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation>Seleccionar los Canales MIDI usados por  la mano izquierda y derecha en las partes de piano:</translation>
+        <translation>Seleccionar los canales MIDI usados por la mano izquierda y derecha en las partes de piano:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="72"/>
@@ -1470,17 +1470,17 @@
         <location filename="../src/MidiFile.cpp" line="88"/>
         <location filename="../src/MidiFile.cpp" line="95"/>
         <source>MIDI File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de archivo MIDI</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="89"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="96"/>
         <source>MIDI file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo MIDI &quot;%1&quot; está dañado</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
@@ -1526,7 +1526,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="208"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="313"/>
@@ -1606,7 +1606,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo a pantalla completa</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
@@ -1621,7 +1621,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar el panel lateral izquierdo</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
@@ -1636,7 +1636,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar widget de teclado de piano</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
@@ -1661,12 +1661,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
         <source>Song Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de la canción</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="374"/>
@@ -1718,7 +1718,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="441"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitio web de Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="477"/>
@@ -1728,104 +1728,104 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="528"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Comenzando&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="529"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Necesita un &lt;b&gt;teclado de piano MIDI &lt;/b&gt; y una &lt;b&gt;Interfaz MIDI&lt;/b&gt; para PC. Si no tiene un teclado MIDI, aun puede probar PianoBooster con el teclado de su PC, &apos;X&apos; es el Do central.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="537"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster funciona mejor con archivos MIDI que tienen partes de piano separadas a la izquierda y a la derecha utilizando los canales MIDI 3 y 4.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="539"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Configuración&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="207"/>
         <location filename="../src/QtWindow.cpp" line="215"/>
         <location filename="../src/QtWindow.cpp" line="239"/>
         <source>PianoBooster MIDI File Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error en el archivo MIDI de PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="216"/>
         <source>&quot;%1&quot; is not a MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; no es un archivo MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="240"/>
         <source>&quot;%1&quot; is not a valid MIDI file</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; no es un archivo MIDI válido</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="331"/>
         <source>&amp;MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración &amp;Midi...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the MIDI input and output</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar la entrada y la salida MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster incluye ahora un generador de sonido integrado llamado FluidSynth que requiere un SoundFont del tipo General MIDI (GM). Utilice la opción de menú &apos;Configuración/Configuración MIDI&apos; y luego el botón de carga en la pestaña FluidSynth para instalar el SoundFont.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/MIDI Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Primero use el menú &lt;i&gt;Configuración/Configuración MIDI&lt;/i&gt; y en el cuadro de diálogo seleccione las interfaces de entrada y salida MIDI que coincidan con su hardware. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation type="unfinished"></translation>
+        <translation>A continuación utilice &lt;i&gt;Archivo/Abrir&lt;/i&gt; para abrir el archivo MIDI &quot;.mid&quot; o un archivo de karaoke &quot;.kar&quot;. Ahora selecciona si sólo quieres &lt;i&gt;escuchar&lt;/i&gt; la música o &lt;i&gt; tocar junto a ella&lt;/i&gt; en el teclado del piano ajustando el nivel de &lt;i&gt;habilidad&lt;/i&gt; en el panel lateral. Por último, cuando estés listo, haz clic en el icono de &lt;i&gt;reproducción&lt;/i&gt; (o pulsa la &lt;i&gt;barra espaciadora&lt;/i&gt;) para hacer rodar la música.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="546"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Consejos para tocar el piano&lt;/h3&gt;&lt;p&gt;Para obtener consejos sobre cómo tocar el piano, consulte: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="548"/>
         <source>Piano Hints</source>
-        <translation type="unfinished"></translation>
+        <translation>Consejos para el piano</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="549"/>
         <source>&lt;h3&gt;More Information&lt;/h3&gt;&lt;p&gt;For more help please visit the PianoBooster </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Más información&lt;/h3&gt;&lt;p&gt;Para obtener más ayuda, visite PianoBooster </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="551"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>sitio web</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation>el PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
         <source>FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>PREGUNTAS FRECUENTES</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>y el</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>foro de usuarios</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="563"/>
@@ -1845,7 +1845,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished">Copyright(c) L. J. Barman, 2008-2013; Todos los derechos reservados.&lt;br&gt; {2008-2020;?}</translation>
+        <translation>Copyright(c) L. J. Barman, 2008-2020; Todos los derechos reservados.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
@@ -1946,12 +1946,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos MIDI</translation>
     </message>
 </context>
 </TS>
