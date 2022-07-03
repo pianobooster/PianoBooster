@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/GlView.cpp" line="264"/>
         <source>Bar:</source>
-        <translation>Mått:</translation>
+        <translation>Takt:</translation>
     </message>
 </context>
 <context>
@@ -75,12 +75,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation>FEL INGET LJUD: För att åtgärda detta använder du menyn Inställning/MIDI-inställning...</translation>
+        <translation>FEL! INGET LJUD: För att åtgärda detta använder du menyn Inställning/MIDI-inställning...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation>Fel INGEN MIDI-FIL: För att åtgärda detta använd menyn Arkiv/Öppna ...</translation>
+        <translation>FEL! INGEN MIDI-FIL: För att åtgärda detta använd menyn Arkiv/Öppna ...</translation>
     </message>
 </context>
 <context>
@@ -93,7 +93,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>Grand Piano</source>
-        <translation>Flygelpiano</translation>
+        <translation>Flygel</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Electric Grand</source>
-        <translation>Elektrisk Grand</translation>
+        <translation>Elflygel</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
         <source>Celesta</source>
-        <translation>Celest</translation>
+        <translation>Celesta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="416"/>
@@ -173,17 +173,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Drawbar Organ</source>
-        <translation>Hammondorgel 1</translation>
+        <translation>Elorgel 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
         <source>Percussive Organ</source>
-        <translation>Orgel med percussion</translation>
+        <translation>Elorgel 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>Rock Organ</source>
-        <translation>Hammondorgel 3</translation>
+        <translation>Elorgel 3</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
@@ -193,7 +193,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
         <source>Reed Organ</source>
-        <translation>Orgel med tungstämma</translation>
+        <translation>Harmonium</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
@@ -238,7 +238,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
         <source>Overdriven Guitar</source>
-        <translation>Elgitarr (overdrive)</translation>
+        <translation>Elgitarr (överstyrd)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="437"/>
@@ -268,7 +268,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="442"/>
         <source>Fretless Bass</source>
-        <translation>Bandlös elbas</translation>
+        <translation>Elbas (bandlös)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="443"/>
@@ -293,12 +293,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="447"/>
         <source>Violin</source>
-        <translation>Fiol</translation>
+        <translation>Violin</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="448"/>
         <source>Viola</source>
-        <translation>Altfiol</translation>
+        <translation>Viola</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="449"/>
@@ -318,7 +318,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>Pizzicato Strings</source>
-        <translation>Pizzicato</translation>
+        <translation>Pizzicatostråkar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
@@ -613,7 +613,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="511"/>
         <source>Sitar</source>
-        <translation>Sitra</translation>
+        <translation>Sitar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="512"/>
@@ -663,7 +663,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="521"/>
         <source>Steel Drums</source>
-        <translation>Ståltrummor</translation>
+        <translation>Oljefat</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="522"/>
@@ -736,17 +736,17 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation>Inställningar för piano-tangentbord</translation>
+        <translation>Inställningar för pianoklaviatur</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation>Dialogruta</translation>
+        <translation>Dialogfönster</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation>Ställ in ditt pianotangentbord</translation>
+        <translation>Ställ in din pianoklaviatur</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
@@ -774,28 +774,28 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation>Felaktiga noter</translation>
+        <translation>Felaktiga toner</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation>Keyboardets noträckvidd</translation>
+        <translation>Klaviaturomfång</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation>Lägsta not:</translation>
+        <translation>Lägsta ton:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation>Notnumret mellan 0 och 127</translation>
+        <translation>Tonnumret mellan 0 och 127</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation>Högsta not:</translation>
+        <translation>Högsta ton:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
@@ -810,22 +810,22 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation>Välj rätt och fel ljud för ditt spelande.</translation>
+        <translation>Välj ljud för rätt och fel i ditt spel.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
         <source>You can use the PC keyboard instead of a MIDI keyboard; &apos;x&apos; is middle C.</source>
-        <translation>Du kan använda PC-tangentbordet istället för en MIDI-keyboard; &apos;x&apos; är mitt C.</translation>
+        <translation>Du kan använda datortangentbordet istället för en MIDI-klaviatur; &apos;X&apos; är mitten-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="105"/>
         <source>Your keyboard range is &lt;b&gt;octaves %1&lt;/b&gt; and &lt;b&gt;semitones %2&lt;/b&gt;; 60 is middle C.</source>
-        <translation>Din keyboardsintervall är &lt;b&gt;oktaver %1&lt;/b&gt; och &lt;b&gt;halvtoner %2&lt;/b&gt;; 60 är mitten C.</translation>
+        <translation>Ditt klaviaturomfång är &lt;b&gt;oktaver %1&lt;/b&gt; och &lt;b&gt;halvtoner %2&lt;/b&gt;; 60 är mitten-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="107"/>
         <source>Oops, you have &lt;b&gt;0 notes&lt;/b&gt; on your keyboard!</source>
-        <translation>Hoppsan, du har &lt;b&gt;0 noter&lt;/b&gt; på din keyboard!</translation>
+        <translation>Hoppsan, du har &lt;b&gt;0 noter&lt;/b&gt; på din klaviatur!</translation>
     </message>
 </context>
 <context>
@@ -838,27 +838,27 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
         <source>Repeat End Bar:</source>
-        <translation>Upprepa slutmått:</translation>
+        <translation>Reprisslutstreck:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
         <source>Repeat Bar is disabled</source>
-        <translation>Upprepa mått är inaktiverat</translation>
+        <translation>Repristecken är inaktiverat</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
         <source>Form</source>
-        <translation>Formulär</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation>Upprepa mått:</translation>
+        <translation>Repristakter:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
         <source>End bar</source>
-        <translation>Sista takten</translation>
+        <translation>Sluttakt</translation>
     </message>
 </context>
 <context>
@@ -866,7 +866,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="27"/>
         <source>MIDI input &amp;&amp; output</source>
-        <translation>MIDI-inmatning &amp;&amp; utmatning</translation>
+        <translation>MIDI-inmatning &amp;&amp; -utmatning</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="49"/>
@@ -891,7 +891,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="266"/>
         <source>Master Gain:</source>
-        <translation>Huvudförstärkning:</translation>
+        <translation>Huvudvolym:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>
@@ -911,7 +911,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="149"/>
         <source>Sound Font</source>
-        <translation>Sound Font</translation>
+        <translation>Ljudfont</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
@@ -941,7 +941,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
         <source>Latency Fix</source>
-        <translation>Latenslösning</translation>
+        <translation>Latensfix</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="339"/>
@@ -959,7 +959,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="117"/>
         <source>None (PC Keyboard)</source>
-        <translation>Inget (PC-tangentbord)</translation>
+        <translation>Ingen (datortangentbord)</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="130"/>
@@ -971,7 +971,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="153"/>
         <source>Note: the Microsoft GS Wavetable Synth introduces an unwanted delay!</source>
-        <translation>Obs: Microsoft GS Wavetable Synth introducerar en oönskad försening!</translation>
+        <translation>Obs: Microsoft GS Wavetable Synth introducerar en oönskad fördröjning!</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="49"/>
@@ -1012,7 +1012,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="177"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation>Latensfixet fungerar genom att köra musiken framför det du spelar för att motverka fördröjningen i ljudgeneratorn.&lt;br&gt;&lt;br&gt;Du behöver ett piano &lt;b&gt;med högtalare&lt;/b&gt; som är &lt;b &gt;uppvridna&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Ange tiden i millisekunder för fördröjningen (1000 mSec = 1 sek)&lt;br&gt;(För Microsoft GS Wavetable SW Synth försök värdet 150)&lt;br&gt;Om du är inte säker på att ange ett värde på noll.</translation>
+        <translation>Latensfixet fungerar genom att spela musiken tidigare än det du spelar för att motverka fördröjningen i ljudgeneratorn.&lt;br&gt;&lt;br&gt;Du behöver ett piano &lt;b&gt;med högtalare&lt;/b&gt; som är &lt;b &gt;uppvridna&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Ange tiden i millisekunder för fördröjningen (1000 mSec = 1 sek)&lt;br&gt;(För Microsoft GS Wavetable SW Synth försök värdet 150)&lt;br&gt;Om du är inte säker på att ange ett värde på noll.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="296"/>
@@ -1027,7 +1027,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="142"/>
         <source>If you don&apos;t have a MIDI keyboard you can use the PC keyboard; &apos;X&apos; is middle C.</source>
-        <translation>Om du inte har en MIDI-keyboard kan du använda PC-tangentbordet; &quot;X&quot; är mitt C.</translation>
+        <translation>Om du inte har en MIDI-klaviatur kan du använda datortangentbordet; &quot;X&quot; är mitten-C.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
@@ -1040,12 +1040,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation>Dialogruta</translation>
+        <translation>Dialogfönster</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
         <source>Score Settings</source>
-        <translation>Poänginställningar</translation>
+        <translation>Partiturinställningar</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="96"/>
@@ -1060,12 +1060,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
-        <translation>Visa notnamn</translation>
+        <translation>Visa tonnamn</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
-        <translation>Tillåtna oavsiktliga</translation>
+        <translation>Varningsförtecken</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
@@ -1075,7 +1075,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
         <source>Show color coded notes on the score</source>
-        <translation>Visa färgkodade noter på poängen</translation>
+        <translation>Visa färgkodade noter i partituret</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
@@ -1115,12 +1115,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>On the Beat</source>
-        <translation>På takten</translation>
+        <translation>På slaget</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>After the Beat</source>
-        <translation>Efter takten</translation>
+        <translation>Efter slaget</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
@@ -1133,7 +1133,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="20"/>
         <source>Form</source>
-        <translation>Formulär</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="40"/>
@@ -1193,7 +1193,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
-        <translation>Rytmtappning med:</translation>
+        <translation>Rytmknackning med:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
@@ -1203,17 +1203,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="270"/>
         <source>Adjust the volume of the selected part</source>
-        <translation>Justera volymen för den valda delen</translation>
+        <translation>Justera volymen för den valda stämman</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="236"/>
         <source>Mute the currently selected part</source>
-        <translation>Stäng av ljudet för den valda delen</translation>
+        <translation>Stäng av ljudet för den valda stämman</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="128"/>
         <source>Rhythm Tap</source>
-        <translation>Rytmtappning</translation>
+        <translation>Rytmknackning</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
@@ -1240,17 +1240,17 @@
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="95"/>
         <source>Set as Right Hand Part</source>
-        <translation>Ställ in som höger handdel</translation>
+        <translation>Ställ in som högerhandsstämma</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="99"/>
         <source>Set as Left Hand Part</source>
-        <translation>Ställ in som vänster handdel</translation>
+        <translation>Ställ in som vänsterhandsstämma</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="103"/>
         <source>Reset Both Parts</source>
-        <translation>Återställ båda delarna</translation>
+        <translation>Återställ båda stämmorna</translation>
     </message>
 </context>
 <context>
@@ -1264,53 +1264,53 @@
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialogruta</translation>
+        <translation>Dialogfönster</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="27"/>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="39"/>
         <source>Song Details</source>
-        <translation>Låtdetaljer</translation>
+        <translation>Låtuppgifter</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="33"/>
         <source>MIDI Channels for left and right hand piano parts:</source>
-        <translation>MIDI-kanaler för vänster och höger hand pianodelar:</translation>
+        <translation>MIDI-kanaler för vänster och höger hand:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="45"/>
         <source>Right Hand MIDI Channel:</source>
-        <translation>Höger hand MIDI-kanal:</translation>
+        <translation>Höger hands MIDI-kanal:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.ui" line="68"/>
         <source>Left Hand MIDI Channel:</source>
-        <translation>Vänster hand MIDI-kanal:</translation>
+        <translation>Vänster hands MIDI-kanal:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="65"/>
         <source>The left and right hand channels must be different</source>
-        <translation>Vänster och höger hand kanalerna måste vara olika</translation>
+        <translation>Vänster och höger hands kanaler måste vara olika</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="68"/>
         <source>Both left and right hand channels must be none to disable this feature</source>
-        <translation>Både vänster och höger hand kanaler måste vara ingen för att inaktivera den här funktionen</translation>
+        <translation>Både vänster och höger hands kanaler måste vara ingen för att inaktivera den här funktionen</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="71"/>
         <source>Set the MIDI Channels to be used for left and right hand piano parts:</source>
-        <translation>Ställ in MIDI-kanaler som ska användas för vänster och höger hand pianodelar:</translation>
+        <translation>Ställ in MIDI-kanaler som ska användas för vänster och höger hand:</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="72"/>
         <source>the left  hand piano part is using MIDI Channels 1</source>
-        <translation>vänster  hand pianodel använder MIDI-kanal 1</translation>
+        <translation>vänster hand använder MIDI-kanal 1</translation>
     </message>
     <message>
         <location filename="../src/GuiSongDetailsDialog.cpp" line="73"/>
         <source>the right hand piano part is using MIDI Channels 1</source>
-        <translation>höger hand pianodelen använder MIDI-kanal 1</translation>
+        <translation>höger hand använder MIDI-kanal 1</translation>
     </message>
 </context>
 <context>
@@ -1318,7 +1318,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="32"/>
         <source>Form</source>
-        <translation>Formulär</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
@@ -1339,7 +1339,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation>Tangent:</translation>
+        <translation>Tonart:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1349,12 +1349,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation>Startmått:</translation>
+        <translation>Starttakt:</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation>Spara detta måttnummer</translation>
+        <translation>Spara detta taktnummer</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="54"/>
@@ -1371,29 +1371,29 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="88"/>
         <source>Gb</source>
-        <translation>Gb</translation>
+        <translation>Gess</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
         <source>Db</source>
-        <translation>Db</translation>
+        <translation>Dess</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="90"/>
         <source>Ab</source>
-        <translation>Ab</translation>
+        <translation>Ass</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="91"/>
         <location filename="../src/GuiTopBar.cpp" line="104"/>
         <source>Eb</source>
-        <translation>Eb</translation>
+        <translation>Ess</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="92"/>
         <location filename="../src/GuiTopBar.cpp" line="105"/>
         <source>Bb</source>
-        <translation>Bb</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1405,7 +1405,7 @@
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>F#</source>
-        <translation>F#</translation>
+        <translation>Fiss</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="93"/>
@@ -1441,22 +1441,22 @@
         <location filename="../src/GuiTopBar.cpp" line="99"/>
         <location filename="../src/GuiTopBar.cpp" line="112"/>
         <source>B</source>
-        <translation>B</translation>
+        <translation>H</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="114"/>
         <source>G#</source>
-        <translation>G#</translation>
+        <translation>Giss</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
         <source>C#</source>
-        <translation>C#</translation>
+        <translation>Ciss</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="116"/>
         <source>D#</source>
-        <translation>D#</translation>
+        <translation>Diss</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
@@ -1498,12 +1498,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="319"/>
         <source>L</source>
-        <translation>L</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="321"/>
         <source>R</source>
-        <translation>R</translation>
+        <translation>H</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="394"/>
@@ -1556,7 +1556,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="320"/>
         <source>Exit the application</source>
-        <translation>Avsluta program</translation>
+        <translation>Avsluta programmet</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="323"/>
@@ -1566,17 +1566,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="324"/>
         <source>Show the application&apos;s About box</source>
-        <translation>Visa programmets Om-ruta</translation>
+        <translation>Visa programmets Om-fönster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="327"/>
         <source>&amp;PC Shortcut Keys</source>
-        <translation>&amp;PC-genvägstangenter</translation>
+        <translation>&amp;Kortkommandon</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="328"/>
         <source>The PC Keyboard shortcut keys</source>
-        <translation>PC-tangentbordsgenvägar</translation>
+        <translation>Kortkommandotangenter</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="332"/>
@@ -1586,7 +1586,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="336"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation>Inställningar för piano&amp;tangentbord...</translation>
+        <translation>Inställning för &amp;klaviatur ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="337"/>
@@ -1596,7 +1596,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="338"/>
         <source>Change the piano keyboard settings</source>
-        <translation>Ändra pianotangentbordets inställningar</translation>
+        <translation>Ändra klaviaturinställningar</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
@@ -1631,12 +1631,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation>Visa piano&amp;tangentbord</translation>
+        <translation>Visa klaviatur</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation>Visa gränssnittskomponent för pianotangentbord</translation>
+        <translation>Visa gränssnittskomponent för klaviatur</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
@@ -1656,7 +1656,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="368"/>
         <source>Song &amp;Details ...</source>
-        <translation>Låt&amp;detaljer ...</translation>
+        <translation>Låt&amp;uppgifter ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
@@ -1708,7 +1708,7 @@
         <location filename="../src/QtWindow.cpp" line="436"/>
         <location filename="../src/QtWindow.cpp" line="526"/>
         <source>Piano Booster Help</source>
-        <translation>Piano Booster hjälp</translation>
+        <translation>Piano Booster-hjälp</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="440"/>
@@ -1718,7 +1718,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="441"/>
         <source>Piano Booster Website</source>
-        <translation>Piano Booster webbplats</translation>
+        <translation>Piano Boosters webbplats</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="477"/>
@@ -1733,12 +1733,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="529"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Du behöver ett &lt;b&gt;MIDI-pianokeyboard &lt;/b&gt; och ett &lt;b&gt;MIDI-gränssnitt&lt;/b&gt; for PC:n. Om du inte har ett MIDI-keyboard kan du fortfarande testa PianoBooster med PC-tangentbordet, &apos;X&apos; är mitten C.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Du behöver en &lt;b&gt;MIDI-klaviatur &lt;/b&gt; och ett &lt;b&gt;MIDI-gränssnitt&lt;/b&gt; till datorn. Om du inte har en MIDI-klaviatur kan du fortfarande testa PianoBooster med datortangentbordet, &apos;X&apos; är mitten-C.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="537"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
-        <translation>&lt;p&gt;PianoBooster fungerar bäst med MIDI-filer som har separata pianodelar till vänster och höger med hjälp av MIDI-kanaler 3 och 4.</translation>
+        <translation>&lt;p&gt;PianoBooster fungerar bäst med MIDI-filer som har separata stämmor för vänster och höger hand med hjälp av MIDI-kanaler 3 och 4.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="539"/>
@@ -1765,27 +1765,27 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="331"/>
         <source>&amp;MIDI Setup ...</source>
-        <translation>&amp;MIDI-inställning ...</translation>
+        <translation>&amp;MIDI-inställningar ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the MIDI input and output</source>
-        <translation>Ställ in MIDI-in och -utmatningen</translation>
+        <translation>Ställ in MIDI-inmatningen och -utmatningen</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;PianoBooster inkluderar nu en inbyggd ljudgenerator som heter FluidSynth som kräver ett General MIDI (GM) SoundFont. Använd menyalternativet &quot;Inställning/MIDI-inställning&quot; och sedan inläsningsknappen på FluidSynth-fliken för att installera SoundFont.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;PianoBooster inkluderar nu en inbyggd ljudgenerator som heter FluidSynth som kräver en General MIDI (GM) SoundFont. Använd menyalternativet &quot;Inställning/MIDI-inställning&quot; och sedan inläsningsknappen på FluidSynth-fliken för att installera SoundFont.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/MIDI Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation>&lt;p&gt;Använd först menyn &lt;i&gt;Inställning/MIDI-inställning&lt;/i&gt; och välj MIDI-inmatnings- och MIDI-utmatningsgränssnitt som matchar din hårdvara i dialogrutan. </translation>
+        <translation>&lt;p&gt;Använd först menyn &lt;i&gt;Inställning/MIDI-inställning&lt;/i&gt; och välj MIDI-inmatnings- och MIDI-utmatningsgränssnitt som matchar din hårdvara i dialogfönstret. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
         <source>Next use &lt;i&gt;File/Open&lt;/i&gt; to open the MIDI file &quot;.mid&quot; or a karaoke &quot;.kar&quot; file. Now select whether you want to just &lt;i&gt;listen&lt;/i&gt; to the music or &lt;i&gt;play along&lt;/i&gt; on the piano keyboard by setting the &lt;i&gt;skill&lt;/i&gt; level on the side panel. Finally when you are ready click the &lt;i&gt;play icon&lt;/i&gt; (or press the &lt;i&gt;space bar&lt;/i&gt;) to roll the music.</source>
-        <translation>Använd sedan &lt;i&gt;Arkiv/Öppna&lt;/i&gt; för att öppna MIDI-filen &quot;.mid&quot; eller karaoke-filen &quot;.kar&quot;. Välj nu om du bara vill &lt;i&gt;lyssna&lt;/i&gt; på musiken eller &lt;i&gt;spela med&lt;/i&gt; på pianotangentbordet genom att ställa in &lt;i&gt;färdighet&lt;/i&gt;-nivån på sidopanelen. Slutligen när du är klar klickar du på &lt;i&gt;uppspelningsikonen&lt;/i&gt; (eller trycker på &lt;i&gt;mellanslagstangenten&lt;/i&gt;) för att rulla musiken.</translation>
+        <translation>Använd sedan &lt;i&gt;Arkiv/Öppna&lt;/i&gt; för att öppna MIDI-filen &quot;.mid&quot; eller karaoke-filen &quot;.kar&quot;. Välj nu om du bara vill &lt;i&gt;lyssna&lt;/i&gt; på musiken eller &lt;i&gt;spela med&lt;/i&gt; på klaviaturen genom att ställa in &lt;i&gt;färdighets&lt;/i&gt;-nivån på sidopanelen. Slutligen när du är klar klickar du på &lt;i&gt;uppspelningsikonen&lt;/i&gt; (eller trycker på &lt;i&gt;mellanslagstangenten&lt;/i&gt;) för att starta musiken.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="546"/>
@@ -1845,12 +1845,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation></translation>
+        <translation>Kopieringsrätt (c) L. J. Barman, 2008-2020; Alla rättigheter förbehållna.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation>Copyright(c) Fabien Givors, 2018-2019; Alla rättigheter reserverade.&lt;br&gt;</translation>
+        <translation>Kopieringsrätt(c) Fabien Givors, 2018-2019; Alla rättigheter förbehållna.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
@@ -1860,12 +1860,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
         <source>This program also contains RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</source>
-        <translation>Detta program innehåller också RtMIDI: realtime MIDI i/o C++ classes&lt;br&gt;</translation>
+        <translation>Detta program innehåller också RtMIDI: realtids-MIDI i/o C++-klasser&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="578"/>
         <source>Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.</source>
-        <translation>Copyright(c) Gary P. Scavone, 2003-2019; Alla rättigheter reserverade.</translation>
+        <translation>Kopieringsrätt(c) Gary P. Scavone, 2003-2019; Alla rättigheter förbehållna.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="587"/>
@@ -1875,12 +1875,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
         <source>PC Keyboard ShortCuts</source>
-        <translation>Snabbkommandon</translation>
+        <translation>Kortkommandon</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation>&lt;h2&gt;&lt;center&gt;Tangentbordsgenvägar&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Följande PC-tangentbordsgenvägar har definierats.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
+        <translation>&lt;h2&gt;&lt;center&gt;Kortkommandon&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;Följande kortkommandon har definierats.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
@@ -1905,12 +1905,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="617"/>
         <source>Play from start toggle</source>
-        <translation>Spela från början växla</translation>
+        <translation>Spela från början (av/på)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play Pause Toggle</source>
-        <translation>Spela Pausa Växla</translation>
+        <translation>Spela/pausera (av/på)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="619"/>
@@ -1941,7 +1941,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="626"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation>&lt;tr&gt;&lt;td&gt;Falska pianotangenter&lt;/td&gt;&lt;td&gt;X är mellan C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
+        <translation>&lt;tr&gt;&lt;td&gt;Falska pianotangenter&lt;/td&gt;&lt;td&gt;X är mitten-C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
