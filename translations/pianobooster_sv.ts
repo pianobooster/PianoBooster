@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>B</source>
-        <translation>B</translation>
+        <translation>H</translation>
     </message>
 </context>
 <context>
@@ -838,12 +838,12 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
         <source>Repeat End Bar:</source>
-        <translation>Reprisslutstreck:</translation>
+        <translation>Reprisera sluttakt:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
         <source>Repeat Bar is disabled</source>
-        <translation>Repristecken är inaktiverat</translation>
+        <translation>Reprisera takt är inaktiverat</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
@@ -853,7 +853,7 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation>Repristakter:</translation>
+        <translation>Reprisera takter:</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
@@ -1193,7 +1193,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
-        <translation>Rytmknackning med:</translation>
+        <translation>Rytmspelning med:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
@@ -1213,7 +1213,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="128"/>
         <source>Rhythm Tap</source>
-        <translation>Rytmknackning</translation>
+        <translation>Rytmspelning</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
@@ -1223,7 +1223,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="239"/>
         <source>Mute your part when playing</source>
-        <translation>Stäng av ljudet för din del när du spelar</translation>
+        <translation>Stäng av ljudet för din stämma när du spelar</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="79"/>
