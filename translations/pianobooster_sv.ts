@@ -213,12 +213,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation>Akustisk nylonsträngad gitarr</translation>
+        <translation>Gitarr (nylonsträngad)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation>Akustisk stålsträngad gitarr</translation>
+        <translation>Gitarr (stålsträngad)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
@@ -248,12 +248,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Guitar harmonics</source>
-        <translation>Gitarrflageoletter</translation>
+        <translation>Elgitarrflageoletter</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
         <source>Acoustic Bass</source>
-        <translation>Akustisk bas</translation>
+        <translation>Basfiol</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="440"/>
@@ -751,7 +751,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
         <source>Right Notes</source>
-        <translation>Rätt noter</translation>
+        <translation>Rätt toner</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
@@ -936,12 +936,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="256"/>
         <source>Buffer Count:</source>
-        <translation>Buffertantal:</translation>
+        <translation>Bufferttal:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="327"/>
         <source>Latency Fix</source>
-        <translation>Latensfix</translation>
+        <translation>Latensåtgärd</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="339"/>
@@ -1012,7 +1012,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="177"/>
         <source>The latency fix works by running the music ahead of what you&lt;br&gt;are playing to counteract the delay within the sound generator.&lt;br&gt;&lt;br&gt;You will need a piano &lt;b&gt;with speakers&lt;/b&gt; that are &lt;b&gt;turned up&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Enter the time in milliseconds for the delay (1000 mSec = 1 sec)&lt;br&gt;(For the Microsoft GS Wavetable SW Synth try a value of 150)&lt;br&gt;If you are not sure enter a value of zero.</source>
-        <translation>Latensfixet fungerar genom att spela musiken tidigare än det du spelar för att motverka fördröjningen i ljudgeneratorn.&lt;br&gt;&lt;br&gt;Du behöver ett piano &lt;b&gt;med högtalare&lt;/b&gt; som är &lt;b &gt;uppvridna&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Ange tiden i millisekunder för fördröjningen (1000 mSec = 1 sek)&lt;br&gt;(För Microsoft GS Wavetable SW Synth försök värdet 150)&lt;br&gt;Om du är inte säker på att ange ett värde på noll.</translation>
+        <translation>Latensåtgärden fungerar genom att spela musiken tidigare än det du spelar för att motverka fördröjningen i ljudgeneratorn.&lt;br&gt;&lt;br&gt;Du behöver ett piano &lt;b&gt;med högtalare&lt;/b&gt; som är &lt;b &gt;uppvridna&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Ange tiden i millisekunder för fördröjningen (1000 mSec = 1 sek)&lt;br&gt;(För Microsoft GS Wavetable SW Synth försök värdet 150)&lt;br&gt;Om du är inte säker på att ange ett värde på noll.</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="296"/>
@@ -1032,7 +1032,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="154"/>
         <source>(Try a latency fix of 150msc)</source>
-        <translation>(Prova en latensfix på 150 msc)</translation>
+        <translation>(Prova en latensåtgärd på 150 ms)</translation>
     </message>
 </context>
 <context>
@@ -1198,7 +1198,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
         <source>Parts</source>
-        <translation>Delar</translation>
+        <translation>Stämmor</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="270"/>
@@ -1696,7 +1696,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="425"/>
         <source>Set&amp;up</source>
-        <translation>In&amp;ställning</translation>
+        <translation>In&amp;ställningar</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="431"/>
@@ -1775,12 +1775,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;PianoBooster inkluderar nu en inbyggd ljudgenerator som heter FluidSynth som kräver en General MIDI (GM) SoundFont. Använd menyalternativet &quot;Inställning/MIDI-inställning&quot; och sedan inläsningsknappen på FluidSynth-fliken för att installera SoundFont.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;PianoBooster inkluderar nu en inbyggd ljudgenerator som heter FluidSynth som kräver en General MIDI (GM) SoundFont. Använd menyalternativet &quot;Inställningar -&gt; MIDI-inställningar&quot; och sedan inläsningsknappen på FluidSynth-fliken för att installera SoundFont.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/MIDI Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation>&lt;p&gt;Använd först menyn &lt;i&gt;Inställning/MIDI-inställning&lt;/i&gt; och välj MIDI-inmatnings- och MIDI-utmatningsgränssnitt som matchar din hårdvara i dialogfönstret. </translation>
+        <translation>&lt;p&gt;Använd först menyn &lt;i&gt;Inställningar -&gt; MIDI-inställningar&lt;/i&gt; och välj MIDI-inmatnings- och MIDI-utmatningsgränssnitt som matchar din hårdvara i dialogfönstret. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
