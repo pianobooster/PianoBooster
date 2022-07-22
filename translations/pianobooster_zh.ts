@@ -24,7 +24,7 @@
     <message>
         <location filename="../src/Draw.cpp" line="309"/>
         <source>E</source>
-        <translation>e</translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
@@ -52,17 +52,17 @@
     <message>
         <location filename="../src/GlView.cpp" line="229"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>准确度：</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="241"/>
         <source>Song:</source>
-        <translation>曲子：</translation>
+        <translation>歌曲：</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="264"/>
         <source>Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>小节：</translation>
     </message>
 </context>
 <context>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"></translation>
+        <translation>电钢琴</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
@@ -810,7 +810,7 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="101"/>
         <source>Choose the right and wrong sound for your playing.</source>
-        <translation type="unfinished"></translation>
+        <translation>为您的演奏选择正确提示音和错误提示音。</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="103"/>
@@ -838,12 +838,12 @@
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
         <source>Repeat End Bar:</source>
-        <translation>重复结束小节：</translation>
+        <translation>循环的最后小节：</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
         <source>Repeat Bar is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>不循环</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="19"/>
@@ -853,12 +853,12 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation type="unfinished"></translation>
+        <translation>循环的小节数</translation>
     </message>
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="73"/>
         <source>End bar</source>
-        <translation>End bar</translation>
+        <translation>结束的小节</translation>
     </message>
 </context>
 <context>
@@ -916,12 +916,12 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="169"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>加载</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="176"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>清空</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="209"/>
@@ -1045,7 +1045,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="26"/>
         <source>Score Settings</source>
-        <translation>分数设置</translation>
+        <translation>乐谱设置</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="96"/>
@@ -1055,27 +1055,27 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="57"/>
         <source>Follow stop point:</source>
-        <translation>跟随停止点：</translation>
+        <translation>演奏跟随停止于：</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="103"/>
         <source>Show Note Names</source>
-        <translation>显示音符名称</translation>
+        <translation>显示音名</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="37"/>
         <source>Courtesy Accidentals</source>
-        <translation>临时记号</translation>
+        <translation>提醒用临时变音记号（Courtesy Accidentals）</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="136"/>
         <source>Follow Through Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>“跟您演奏”模式下错音不暂停</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="143"/>
         <source>Show color coded notes on the score</source>
-        <translation type="unfinished"></translation>
+        <translation>乐谱上使用彩色音符</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="146"/>
@@ -1085,12 +1085,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Music Course</source>
-        <translation type="unfinished"></translation>
+        <translation>音乐教程</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="182"/>
         <source>Show Tutor Help Pages</source>
-        <translation type="unfinished"></translation>
+        <translation>显示帮助教程界面</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="194"/>
@@ -1105,7 +1105,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>Preferences</source>
-        <translation>首选项</translation>
+        <translation>个人设置</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
@@ -1115,12 +1115,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
         <source>On the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>拍子上</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="45"/>
         <source>After the Beat</source>
-        <translation type="unfinished"></translation>
+        <translation>拍子后</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
@@ -1138,17 +1138,17 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="40"/>
         <source>Book:</source>
-        <translation>书籍：</translation>
+        <translation>曲集：</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="66"/>
         <source>Song:</source>
-        <translation>曲子：</translation>
+        <translation>歌曲：</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="115"/>
         <source>Skill</source>
-        <translation>技巧</translation>
+        <translation>模式</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="121"/>
@@ -1163,79 +1163,79 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Hands</source>
-        <translation type="unfinished"></translation>
+        <translation>左右手</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="166"/>
         <source>Right</source>
-        <translation>右</translation>
+        <translation>右手</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Both</source>
-        <translation>双向</translation>
+        <translation>双手合奏</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="180"/>
         <source>Left</source>
-        <translation>左</translation>
+        <translation>左手</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="195"/>
         <source>Adjust the volume of your piano</source>
-        <translation>调整你的钢琴音量</translation>
+        <translation>调整钢琴音量</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"></translation>
+        <translation>重复播放歌曲</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
         <source>Rhythm Tapping with:</source>
-        <translation type="unfinished"></translation>
+        <translation>提示音：</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
         <source>Parts</source>
-        <translation>部件</translation>
+        <translation>音轨</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="270"/>
         <source>Adjust the volume of the selected part</source>
-        <translation>调整选择部件的音量</translation>
+        <translation>调整所选音轨的音量</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="236"/>
         <source>Mute the currently selected part</source>
-        <translation>静音当前部件</translation>
+        <translation>静音当前音轨</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="128"/>
         <source>Rhythm Tap</source>
-        <translation type="unfinished"></translation>
+        <translation>提示演奏</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="135"/>
         <source>Follow You</source>
-        <translation>跟随着你</translation>
+        <translation>跟您演奏</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="239"/>
         <source>Mute your part when playing</source>
-        <translation>播放时静音部件</translation>
+        <translation>静音您演奏的音轨</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="79"/>
         <location filename="../src/GuiSidePanel.cpp" line="274"/>
         <source>Drums</source>
-        <translation type="unfinished"></translation>
+        <translation>鼓声</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="80"/>
         <location filename="../src/GuiSidePanel.cpp" line="275"/>
         <source>Melody</source>
-        <translation type="unfinished"></translation>
+        <translation>旋律音</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.cpp" line="95"/>
@@ -1323,13 +1323,13 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="55"/>
         <source>Start playing music from the start</source>
-        <translation>从开始处播放音乐</translation>
+        <translation>从头播放音乐</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="78"/>
         <location filename="../src/GuiTopBar.cpp" line="174"/>
         <source>Start and stop playing music</source>
-        <translation>开始和停止播放音乐</translation>
+        <translation>开始、停止播放音乐</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="101"/>
@@ -1339,7 +1339,7 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="111"/>
         <source>Key:</source>
-        <translation>密钥：</translation>
+        <translation>调号：</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="124"/>
@@ -1349,12 +1349,12 @@
     <message>
         <location filename="../src/GuiTopBar.ui" line="153"/>
         <source>Start Bar:</source>
-        <translation>开始Bar：</translation>
+        <translation>开始的小节：</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.ui" line="170"/>
         <source>Save this Bar Number</source>
-        <translation>保存Bar数字</translation>
+        <translation>设置为当前位置</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="54"/>
@@ -1371,12 +1371,12 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="88"/>
         <source>Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>Gb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="89"/>
         <source>Db</source>
-        <translation type="unfinished"></translation>
+        <translation>Db</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="90"/>
@@ -1393,7 +1393,7 @@
         <location filename="../src/GuiTopBar.cpp" line="92"/>
         <location filename="../src/GuiTopBar.cpp" line="105"/>
         <source>Bb</source>
-        <translation type="unfinished"></translation>
+        <translation>Bb</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="94"/>
@@ -1405,13 +1405,13 @@
         <location filename="../src/GuiTopBar.cpp" line="100"/>
         <location filename="../src/GuiTopBar.cpp" line="113"/>
         <source>F#</source>
-        <translation>f#</translation>
+        <translation>F#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="93"/>
         <location filename="../src/GuiTopBar.cpp" line="106"/>
         <source>F</source>
-        <translation type="unfinished">E</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="95"/>
@@ -1435,7 +1435,7 @@
         <location filename="../src/GuiTopBar.cpp" line="98"/>
         <location filename="../src/GuiTopBar.cpp" line="111"/>
         <source>E</source>
-        <translation type="unfinished">e</translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="99"/>
@@ -1446,17 +1446,17 @@
     <message>
         <location filename="../src/GuiTopBar.cpp" line="114"/>
         <source>G#</source>
-        <translation>g#</translation>
+        <translation>G#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="115"/>
         <source>C#</source>
-        <translation>c#</translation>
+        <translation>C#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="116"/>
         <source>D#</source>
-        <translation>d#</translation>
+        <translation>D#</translation>
     </message>
     <message>
         <location filename="../src/GuiTopBar.cpp" line="175"/>
@@ -1546,7 +1546,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="318"/>
         <source>E&amp;xit</source>
-        <translation>退出(&amp;x)</translation>
+        <translation>退出(&amp;X)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="319"/>
@@ -1566,12 +1566,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="324"/>
         <source>Show the application&apos;s About box</source>
-        <translation>显示程序的关于对话框</translation>
+        <translation>显示程序的“关于”对话框</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="327"/>
         <source>&amp;PC Shortcut Keys</source>
-        <translation>&amp;PC快捷键</translation>
+        <translation>PC快捷键(&amp;P)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="328"/>
@@ -1616,7 +1616,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="347"/>
         <source>&amp;Show the Side Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>显示侧面板(&amp;)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
@@ -1631,12 +1631,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>显示钢琴键盘(&amp;K)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>显示钢琴键盘小部件</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
@@ -1691,12 +1691,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="421"/>
         <source>&amp;Song</source>
-        <translation>曲子(&amp;S)</translation>
+        <translation>歌曲(&amp;S)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="425"/>
         <source>Set&amp;up</source>
-        <translation>设置(&amp;u)</translation>
+        <translation>设置(&amp;U)</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="431"/>
@@ -1880,27 +1880,27 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
         <source>&lt;h2&gt;&lt;center&gt;Keyboard shortcuts&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;The following PC keyboard shortcuts have been defined.&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</source>
-        <translation>&lt;h2&gt;&lt;center&gt;快捷键&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;已定义下述快捷键。&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
+        <translation>&lt;h2&gt;&lt;center&gt;快捷键&lt;/center&gt;&lt;/h2&gt;&lt;p&gt;可使用下述快捷键。&lt;/p&gt;&lt;center&gt;&lt;table  border=&apos;1&apos; cellspacing=&apos;0&apos; cellpadding=&apos;4&apos; &gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="608"/>
         <source>&lt;tr&gt;&lt;th&gt;Action&lt;/th&gt;&lt;th&gt;Key&lt;/th&gt;&lt;/tr&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;th&gt;操作&lt;/th&gt;&lt;th&gt;快捷键&lt;/th&gt;&lt;/tr&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="614"/>
         <source>Choose the right hand</source>
-        <translation type="unfinished"></translation>
+        <translation>选择右手</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="615"/>
         <source>Choose both hands</source>
-        <translation type="unfinished"></translation>
+        <translation>选择双手</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="616"/>
         <source>Choose the left Hand</source>
-        <translation type="unfinished"></translation>
+        <translation>选择左手</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="617"/>
@@ -1910,38 +1910,38 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="618"/>
         <source>Play Pause Toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>播放暂停切换</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="619"/>
         <location filename="../src/QtWindow.cpp" line="620"/>
         <source>Increase the speed by 5%</source>
-        <translation>以百分之五的速度增长</translation>
+        <translation>速度加快 5%</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="621"/>
         <source>Change to the Next Song</source>
-        <translation>切换到下一首歌</translation>
+        <translation>切换到下一支曲</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="622"/>
         <source>Change to the Previous Song</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到上一支曲</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="623"/>
         <source>Change to the Next Book</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到下一册曲集</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="624"/>
         <source>Change to the Previous Book</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到上一册曲集</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="626"/>
         <source>&lt;tr&gt;&lt;td&gt;Fake Piano keys&lt;/td&gt;&lt;td&gt;X is middle C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;tr&gt;&lt;td&gt;琴键对应&lt;/td&gt;&lt;td&gt;“X”键为中央 C&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/center&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
