@@ -1556,7 +1556,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="320"/>
         <source>Exit the application</source>
-        <translation>Завершити роботу програми</translation>
+        <translation>Завершити роботу застосунку</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="323"/>
@@ -1566,7 +1566,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="324"/>
         <source>Show the application&apos;s About box</source>
-        <translation>Показати панель з інформацією про програму</translation>
+        <translation>Показати панель з інформацією про застосунок</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="327"/>
