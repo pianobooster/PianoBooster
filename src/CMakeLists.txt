@@ -316,5 +316,55 @@ if(DEBUG_LOG_TIMING)
     ADD_DEFINITIONS(-DPB_LOG_TIMING)
 endif()
 
+# allow enabling useful warnings (explicitly disabling not useful ones) and allow treating warnings them as errors
+# note: code copied from: https://github.com/Martchus/cpp-utilities/blob/d8c38699ba41b048c61662786c69eb02ff7eaca7/cmake/modules/BasicConfig.cmake
+option(ENABLE_WARNINGS "adds additional compiler flags to enable useful warnings" OFF)
+set(CLANG_WARNINGS
+    -Wall
+    -Wextra # reasonable and standard
+    -Wshadow=local # warn the user if a variable declaration shadows one from a parent context
+    -Wnon-virtual-dtor # warn the user if a class with virtual functions has a non-virtual destructor. This helps catch hard
+                       # to track down memory errors
+    -Wold-style-cast # warn for c-style casts
+    -Wcast-align # warn for potential performance problem casts
+    -Wunused # warn on anything being unused
+    -Woverloaded-virtual # warn if you overload (not override) a virtual function
+    -Wconversion # warn on type conversions that may lose data
+    -Wsign-conversion # warn on sign conversions
+    -Wnull-dereference # warn if a null dereference is detected
+    -Wdouble-promotion # warn if float is implicit promoted to double
+    -Wformat=2 # warn on security issues around functions that format output (ie printf)
+    -Wno-pedantic # warn NOT if non-standard C++ is used (some vendor extensions are very useful)
+    -Wno-missing-field-initializers # warn NOT about missing field initializers
+    -Wno-useless-cast # warn NOT about useless cases (this is sometimes very useful in templates)
+    -Wno-unused-const-variable # warn NOT about unused constants (usually used in other compile unit)
+    -Wno-unknown-warning-option # warn NOT about unknown warning options (depending on compiler/version not all are
+                                # available)
+)
+set(GCC_WARNINGS
+    ${CLANG_WARNINGS}
+    -Wmisleading-indentation # warn if indentation implies blocks where blocks do not exist
+    -Wduplicated-cond # warn if if / else chain has duplicated conditions
+    -Wduplicated-branches # warn if if / else branches have duplicated code
+    -Wlogical-op # warn about logical operations being used where bitwise were probably wanted
+)
+if (ENABLE_WARNINGS)
+    if (CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
+        target_compile_options(pianobooster PRIVATE ${CLANG_WARNINGS})
+    elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(pianobooster PRIVATE ${GCC_WARNINGS})
+    else ()
+        message(AUTHOR_WARNING "Enabling warnings is not supported for compiler '${CMAKE_CXX_COMPILER_ID}'.")
+    endif ()
+endif ()
+option(TREAT_WARNINGS_AS_ERRORS "adds additional compiler flag to treat warnings as errors" "${ENABLE_DEVEL_DEFAULTS}")
+if (TREAT_WARNINGS_AS_ERRORS)
+    if (CMAKE_CXX_COMPILER_ID MATCHES ".*Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(pianobooster PRIVATE -Werror)
+    else ()
+        message(AUTHOR_WARNING "Treating warnings as errors is not supported for compiler '${CMAKE_CXX_COMPILER_ID}'.")
+    endif ()
+endif ()
+
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../music/BoosterMusicBooks.zip ${CMAKE_CURRENT_BINARY_DIR}/ COPYONLY)
 
