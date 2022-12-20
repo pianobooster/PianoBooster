@@ -28,6 +28,7 @@
 #include "QtWindow.h"
 #include "version.h"
 
+#include <QDebug>
 #include <QSurfaceFormat>
 
 #ifdef __linux__
@@ -645,18 +646,11 @@ void QtWindow::open()
 {
     m_glWidget->stopTimerEvent();
 
-    QFileInfo currentSong = m_settings->getCurrentSongLongFileName();
-
-    QString dir;
-    if (currentSong.isFile())
-        dir = currentSong.path();
-    else
-        dir = QDir::homePath();
-
-    QString fileName = QFileDialog::getOpenFileName(this,tr("Open MIDI File"),
+    const auto currentSong = QFileInfo(m_settings->getCurrentSongLongFileName());
+    const auto dir = currentSong.isFile() ? currentSong.path() : QDir::homePath();
+    const auto fileName = QFileDialog::getOpenFileName(this,tr("Open MIDI File"),
                             dir, tr("MIDI Files") + " (*.mid *.MID *.midi *.MIDI *.kar *.KAR)");
     if (!fileName.isEmpty()) {
-
         m_settings->openSongFile(fileName);
         setCurrentFile(fileName);
     }
@@ -730,7 +724,11 @@ void QtWindow::loadTutorHtml(const QString & name)
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
         QTextStream out(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        out.setEncoding(QStringConverter::Utf8);
+#else
         out.setCodec("UTF-8");
+#endif
 
         QString htmlStart = "<head><style> body{background-color:#FFFFC0;color: black} p{font-size: 18px;} blockquote{color: #ff0000;}</style></head><body>";
         QString htmlBody = out.readAll();
@@ -795,23 +793,30 @@ void QtWindow::refreshTranslate(){
     ppLogInfo("Translations loaded from '%s'",  qPrintable(translationsDir));
 
     // set translator for app
+    auto ok = true;
     if (!translator.load(QSTR_APPNAME + QString("_") + locale , translationsDir))
-        translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
+        ok = ok & translator.load(QSTR_APPNAME + QString("_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translator);
 
     // set translator for music
     if (!translatorMusic.load(QString("music_") + locale , translationsDir))
        if (!translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath()  + "/translations/"))
-           translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
+           ok = ok & translatorMusic.load(QString("music_") + locale, QApplication::applicationDirPath());
     qApp->installTranslator(&translatorMusic);
 
     // set translator for default widget's text (for example: QMessageBox's buttons)
 #ifdef __WIN32
-    qtTranslator.load("qt_"+locale, translationsDir);
+    ok = ok & qtTranslator.load("qt_"+locale, translationsDir);
+#elif QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    ok = ok & qtTranslator.load("qt_"+locale, QLibraryInfo::path(QLibraryInfo::TranslationsPath));
 #else
-    qtTranslator.load("qt_"+locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    ok = ok & qtTranslator.load("qt_"+locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
     qApp->installTranslator(&qtTranslator);
+
+    if (!ok) {
+        qDebug() << "Unable to load all translations";
+    }
 
     // retranslate UI
     QList<QWidget*> l2 = this->findChildren<QWidget *>();

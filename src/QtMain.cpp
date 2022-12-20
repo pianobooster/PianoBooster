@@ -54,15 +54,7 @@ int main(int argc, char *argv[]){
     }
 
     QApplication app(argc, argv);
-
-    if (!QGLFormat::hasOpenGL()) {
-        QMessageBox::information(nullptr, QMessageBox::tr("OpenGL support"),
-                 QMessageBox::tr("This system does not support OpenGL which is needed to run Piano Booster."));
-        return -1;
-    }
-
     QtWindow window;
-
     window.show();
 
     int value = app.exec();

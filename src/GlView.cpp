@@ -547,7 +547,12 @@ static inline GLint qgluProject(GLdouble objx, GLdouble objy, GLdouble objz,
 void CGLView::renderText(double x, double y, double z, const QString &str, const QFont & font = QFont()) {
 #ifndef QT_OPENGL_ES
     auto *const ctx = context();
-    auto *const gl1funcs = ctx->versionFunctions<QOpenGLFunctions_1_1>();
+    auto *const gl1funcs =
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+QOpenGLVersionFunctionsFactory::get<QOpenGLFunctions_1_1>(ctx);
+#else
+ctx->versionFunctions<QOpenGLFunctions_1_1>();
+#endif
     if (!ctx->isOpenGLES() && gl1funcs) {
         if (str.isEmpty() || !isValid())
             return;
