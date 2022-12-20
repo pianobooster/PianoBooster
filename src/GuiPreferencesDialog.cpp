@@ -29,6 +29,8 @@
 #include <QJsonDocument>
 #include <QJsonValue>
 
+#include <QRegExp> // deprecated, from compat module in Qt 6
+
 #include "GuiPreferencesDialog.h"
 #include "GlView.h"
 
