@@ -63,13 +63,7 @@ protected:
     void resizeGL(int width, int height);
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
-
     void renderText(double x, double y, double z, const QString &str, const QFont & font);
-    GLint project(GLdouble objx, GLdouble objy, GLdouble objz,
-        const GLdouble model[16], const GLdouble proj[16],
-        const GLint viewport[4],
-        GLdouble * winx, GLdouble * winy, GLdouble * winz);
-    void transformPoint(GLdouble out[4], const GLdouble m[16], const GLdouble in[4]);
 
 private:
     void drawDisplayText();
