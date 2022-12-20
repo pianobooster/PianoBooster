@@ -281,6 +281,9 @@ void GuiSidePanel::updateTranslate(){
         int delta = 0;
         QFontMetrics fm(w->font());
 
+#if (QT_VERSION < QT_VERSION_CHECK(5, 11, 0)) // keep compat with Qt < 5.11
+#define horizontalAdvance width
+#endif
         auto *const lb = qobject_cast<QLabel*>(w);
         if (lb) delta=fm.horizontalAdvance(lb->text())-lb->width();
 
