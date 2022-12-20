@@ -577,6 +577,7 @@ void QtWindow::about()
             QStringLiteral("<a href=\"https://www.pianobooster.org/\" ><b>https://www.pianobooster.org/</b></a><br><br>") %
             tr("Copyright(c) L. J. Barman, 2008-2020; All rights reserved.<br>") %
             tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") %
+            tr("Copyright(c) Marius Kittler, 2021-2022; All rights reserved.<br>") %
             QStringLiteral("<br>") %
             tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
