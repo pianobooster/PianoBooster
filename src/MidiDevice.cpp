@@ -70,7 +70,7 @@ QStringList CMidiDevice::getMidiPortList(midiType_t type)
     return list;
 }
 
-bool CMidiDevice::openMidiPort(midiType_t type, QString portName)
+bool CMidiDevice::openMidiPort(midiType_t type, const QString &portName)
 {
     closeMidiPort(type, -1);
 
@@ -147,42 +147,42 @@ bool CMidiDevice::validMidiOutput()
     return m_validOutput;
 }
 
-int CMidiDevice::midiSettingsSetStr(QString name, QString str)
+int CMidiDevice::midiSettingsSetStr(const QString &name, const QString &str)
 {
     if (m_selectedMidiOutputDevice)
         return m_selectedMidiOutputDevice->midiSettingsSetStr(name, str);
     return 0;
 }
 
-int CMidiDevice::midiSettingsSetNum(QString name, double val)
+int CMidiDevice::midiSettingsSetNum(const QString &name, double val)
 {
     if (m_selectedMidiOutputDevice)
         return m_selectedMidiOutputDevice->midiSettingsSetNum(name, val);
     return 0;
 }
 
-int CMidiDevice::midiSettingsSetInt(QString name, int val)
+int CMidiDevice::midiSettingsSetInt(const QString &name, int val)
 {
     if (m_selectedMidiOutputDevice)
         return m_selectedMidiOutputDevice->midiSettingsSetInt(name, val);
     return 0;
 }
 
-QString CMidiDevice::midiSettingsGetStr(QString name)
+QString CMidiDevice::midiSettingsGetStr(const QString &name)
 {
     if (m_selectedMidiOutputDevice)
         return m_selectedMidiOutputDevice->midiSettingsGetStr(name);
     return QString();
 }
 
-double CMidiDevice::midiSettingsGetNum(QString name)
+double CMidiDevice::midiSettingsGetNum(const QString &name)
 {
     if (m_selectedMidiOutputDevice)
         return m_selectedMidiOutputDevice->midiSettingsGetNum(name);
     return 0.0;
 }
 
-int CMidiDevice::midiSettingsGetInt(QString name)
+int CMidiDevice::midiSettingsGetInt(const QString &name)
 {
     if (m_selectedMidiOutputDevice)
         return m_selectedMidiOutputDevice->midiSettingsGetInt(name);

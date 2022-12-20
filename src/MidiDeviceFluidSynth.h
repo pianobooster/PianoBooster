@@ -44,18 +44,18 @@ class CMidiDeviceFluidSynth : public CMidiDeviceBase
     virtual CMidiEvent readMidiInput();
     virtual QStringList getMidiPortList(midiType_t type);
 
-    virtual bool openMidiPort(midiType_t type, QString portName);
+    virtual bool openMidiPort(midiType_t type, const QString &portName);
     virtual void closeMidiPort(midiType_t type, int index);
 
     virtual bool validMidiConnection() {return m_validConnection;}
 
     // based on the fluid synth settings
-    virtual int     midiSettingsSetStr(QString name, QString str);
-    virtual int     midiSettingsSetNum(QString name, double val);
-    virtual int     midiSettingsSetInt(QString name, int val);
-    virtual QString midiSettingsGetStr(QString name);
-    virtual double  midiSettingsGetNum(QString name);
-    virtual int     midiSettingsGetInt(QString name);
+    virtual int     midiSettingsSetStr(const QString &name, const QString &str);
+    virtual int     midiSettingsSetNum(const QString &name, double val);
+    virtual int     midiSettingsSetInt(const QString &name, int val);
+    virtual QString midiSettingsGetStr(const QString &name);
+    virtual double  midiSettingsGetNum(const QString &name);
+    virtual int     midiSettingsGetInt(const QString &name);
 
 public:
     CMidiDeviceFluidSynth();

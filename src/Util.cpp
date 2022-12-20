@@ -268,7 +268,7 @@ static qint64 benchMarkUpdate(benchData_t *pBench,  qint64 previousTime)
     return time;
 }
 
-void benchMark(unsigned int id, QString message)
+void benchMark(unsigned int id, const QString &message)
 {
     if (id >= arraySize(s_benchData))
         return;

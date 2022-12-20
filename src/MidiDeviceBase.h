@@ -49,18 +49,18 @@ public:
     typedef enum {MIDI_INPUT, MIDI_OUTPUT} midiType_t;
     virtual QStringList getMidiPortList(midiType_t type) = 0;
 
-    virtual bool openMidiPort(midiType_t type, QString portName) = 0;
+    virtual bool openMidiPort(midiType_t type, const QString &portName) = 0;
     virtual bool validMidiConnection() = 0;
 
     virtual void closeMidiPort(midiType_t type, int index) = 0;
 
     // based on the fluid synth settings
-    virtual int     midiSettingsSetStr(QString name, QString str) = 0;
-    virtual int     midiSettingsSetNum(QString name, double val) = 0;
-    virtual int     midiSettingsSetInt(QString name, int val) = 0;
-    virtual QString midiSettingsGetStr(QString name) = 0;
-    virtual double  midiSettingsGetNum(QString name) = 0;
-    virtual int     midiSettingsGetInt(QString name) = 0;
+    virtual int     midiSettingsSetStr(const QString &name, const QString &str) = 0;
+    virtual int     midiSettingsSetNum(const QString &name, double val) = 0;
+    virtual int     midiSettingsSetInt(const QString &name, int val) = 0;
+    virtual QString midiSettingsGetStr(const QString &name) = 0;
+    virtual double  midiSettingsGetNum(const QString &name) = 0;
+    virtual int     midiSettingsGetInt(const QString &name) = 0;
     void setQSettings(QSettings* settings) {qsettings = settings;}
 
     //you should always have a virtual destructor when using virtual functions

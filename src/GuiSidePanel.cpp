@@ -196,7 +196,7 @@ void GuiSidePanel::autoSetMuteYourPart()
     m_song->mutePianistPart(checked);
 }
 
-void GuiSidePanel::setSongName(QString songName)
+void GuiSidePanel::setSongName(const QString &songName)
 {
     for (int i = 0; i < songCombo->count(); ++i)
     {
@@ -205,7 +205,7 @@ void GuiSidePanel::setSongName(QString songName)
     }
 }
 
-void GuiSidePanel::setBookName(QString bookName)
+void GuiSidePanel::setBookName(const QString &bookName)
 {
     for (int i = 0; i < bookCombo->count(); ++i)
     {
@@ -215,7 +215,7 @@ void GuiSidePanel::setBookName(QString bookName)
 }
 
 // pass either 'left' 'right' or 'both'
-void GuiSidePanel::setCurrentHand(QString hand)
+void GuiSidePanel::setCurrentHand(const QString &hand)
 {
     if (hand == "left")
         leftHandRadio->setChecked(true);

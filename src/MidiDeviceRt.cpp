@@ -121,7 +121,7 @@ QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
     return portNameList;
 }
 
-bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
+bool CMidiDeviceRt::openMidiPort(midiType_t type, const QString &portName)
 {
     init();
     if (m_midiin == nullptr || m_midiout == nullptr) {
@@ -132,7 +132,7 @@ bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
     QString name;
     RtMidi* midiDevice;
 
-    if (portName.length() == 0)
+    if (portName.isEmpty())
         return false;
 
     int dev;
@@ -328,40 +328,40 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
     return midiEvent;
 }
 
-int CMidiDeviceRt::midiSettingsSetStr(QString name, QString str)
+int CMidiDeviceRt::midiSettingsSetStr(const QString &name, const QString &str)
 {
     Q_UNUSED(name)
     Q_UNUSED(str)
     return 0;
 }
 
-int CMidiDeviceRt::midiSettingsSetNum(QString name, double val)
+int CMidiDeviceRt::midiSettingsSetNum(const QString &name, double val)
 {
     Q_UNUSED(name)
     Q_UNUSED(val)
     return 0;
 }
 
-int CMidiDeviceRt::midiSettingsSetInt(QString name, int val)
+int CMidiDeviceRt::midiSettingsSetInt(const QString &name, int val)
 {
     Q_UNUSED(name)
     Q_UNUSED(val)
     return 0;
 }
 
-QString CMidiDeviceRt::midiSettingsGetStr(QString name)
+QString CMidiDeviceRt::midiSettingsGetStr(const QString &name)
 {
     Q_UNUSED(name)
     return QString();
 }
 
-double CMidiDeviceRt::midiSettingsGetNum(QString name)
+double CMidiDeviceRt::midiSettingsGetNum(const QString &name)
 {
     Q_UNUSED(name)
     return 0.0;
 }
 
-int CMidiDeviceRt::midiSettingsGetInt(QString name)
+int CMidiDeviceRt::midiSettingsGetInt(const QString &name)
 {
     Q_UNUSED(name)
     return 0;

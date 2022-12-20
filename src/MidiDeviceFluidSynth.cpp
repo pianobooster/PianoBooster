@@ -73,11 +73,11 @@ QStringList CMidiDeviceFluidSynth::getMidiPortList(midiType_t type)
     return fontList;
 }
 
-bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
+bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, const QString &portName)
 {
     closeMidiPort(MIDI_OUTPUT, -1);
 
-    if (portName.length() == 0)
+    if (portName.isEmpty())
         return false;
 
     if (type == MIDI_INPUT)
@@ -216,7 +216,7 @@ CMidiEvent CMidiDeviceFluidSynth::readMidiInput()
     return midiEvent;
 }
 
-int CMidiDeviceFluidSynth::midiSettingsSetStr(QString name, QString str)
+int CMidiDeviceFluidSynth::midiSettingsSetStr(const QString &name, const QString &str)
 {
     if (!m_fluidSettings)
         return 0;
@@ -224,14 +224,14 @@ int CMidiDeviceFluidSynth::midiSettingsSetStr(QString name, QString str)
     return fluid_settings_setstr(m_fluidSettings, (char *)qPrintable(name), (char *)qPrintable(str));
 }
 
-int CMidiDeviceFluidSynth::midiSettingsSetNum(QString name, double val)
+int CMidiDeviceFluidSynth::midiSettingsSetNum(const QString &name, double val)
 {
     if (!m_fluidSettings)
         return 0;
     return fluid_settings_setnum(m_fluidSettings, (char *)qPrintable(name), val);
 }
 
-int CMidiDeviceFluidSynth::midiSettingsSetInt(QString name, int val)
+int CMidiDeviceFluidSynth::midiSettingsSetInt(const QString &name, int val)
 {
     if (!m_fluidSettings)
         return 0;
@@ -239,7 +239,7 @@ int CMidiDeviceFluidSynth::midiSettingsSetInt(QString name, int val)
     return fluid_settings_setint(m_fluidSettings, (char *)qPrintable(name), val);
 }
 
-QString CMidiDeviceFluidSynth::midiSettingsGetStr(QString name)
+QString CMidiDeviceFluidSynth::midiSettingsGetStr(const QString &name)
 {
     Q_UNUSED(name)
     //char buffer[200];
@@ -250,7 +250,7 @@ QString CMidiDeviceFluidSynth::midiSettingsGetStr(QString name)
     return QString(); // FIXME: buffer is never initialized here, let's just return QString() for now
 }
 
-double CMidiDeviceFluidSynth::midiSettingsGetNum(QString name)
+double CMidiDeviceFluidSynth::midiSettingsGetNum(const QString &name)
 {
     if (!m_fluidSettings)
         return 0.0;
@@ -259,7 +259,7 @@ double CMidiDeviceFluidSynth::midiSettingsGetNum(QString name)
     return val;
 }
 
-int CMidiDeviceFluidSynth::midiSettingsGetInt(QString name)
+int CMidiDeviceFluidSynth::midiSettingsGetInt(const QString &name)
 {
     if (!m_fluidSettings)
         return 0;
