@@ -29,6 +29,7 @@
 #define __GLVIEW_H__
 #include <QTime>
 #include <QBasicTimer>
+#include <QElapsedTimer>
 #include <QOpenGLWidget>
 #include "Song.h"
 #include "Score.h"
@@ -81,8 +82,8 @@ private:
     CSong* m_song;
     CScore* m_score;
     QBasicTimer m_timer;
-    QTime m_realtime;
-    int m_displayUpdateTicks;
+    QElapsedTimer m_realtime;
+    qint64 m_displayUpdateTicks;
     CRating* m_rating;
     QFont m_timeSigFont;
     QFont m_timeRatingFont;

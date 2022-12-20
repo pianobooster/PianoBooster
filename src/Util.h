@@ -29,8 +29,10 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
-#include <assert.h>
+#include <cassert>
 #include <string>
+#include <limits>
+
 #include <QString>
 #include <QApplication>
 
@@ -48,7 +50,18 @@ using namespace std;
 #define MAX_MIDI_TRACKS         32      // This will allow us to map midi track on to midi channels
 typedef unsigned char byte_t;
 
-#define arraySize(a) (sizeof(a)/sizeof(a[0]))     /* Returns (at compile time) the number of elements in an array */
+template <typename As, typename T, std::size_t N>
+[[nodiscard]] constexpr auto arraySizeAs(const T (&)[N]) noexcept
+{
+    static_assert(N >= 0 && N <= std::numeric_limits<As>::max());
+    return static_cast<As>(N);
+}
+
+template <typename T, std::size_t N>
+[[nodiscard]] constexpr auto arraySize(const T (&a)[N]) noexcept
+{
+    return arraySizeAs<int>(a);
+}
 
 #define ppDEBUG(args)     ppLogDebug args
 
@@ -70,8 +83,10 @@ void ppLogError(const char *msg, ...);
 void ppTiming(const char *msg, ...);
 void closeLogs();
 
-#define SPEED_ADJUST_FACTOR     1000
-#define deltaAdjust(delta) ((delta)/SPEED_ADJUST_FACTOR )
+constexpr int SPEED_ADJUST_FACTOR = 1000;
+constexpr int deltaAdjust (int delta) { return delta / SPEED_ADJUST_FACTOR; }
+constexpr qint64 deltaAdjustL (qint64 delta) { return delta / SPEED_ADJUST_FACTOR; }
+constexpr float deltaAdjustF (qint64 delta) { return static_cast<float>(delta) / static_cast<float>(SPEED_ADJUST_FACTOR); }
 
 void benchMarkInit();
 void benchMark(unsigned int id, QString message);

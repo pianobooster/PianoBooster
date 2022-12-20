@@ -42,7 +42,7 @@ void CScroll::compileSlot(CSlotDisplayList info)
         return;
 
     glNewList (info.m_displayListId, GL_COMPILE);
-    glTranslatef (info.getDeltaTime() * m_noteSpacingFactor, 0.0, 0.0); /*  move position  */
+    glTranslatef (static_cast<float>(info.getDeltaTime()) * m_noteSpacingFactor, 0.0f, 0.0f); /*  move position  */
 
     info.transpose(m_transpose);
     drawSlot(&info);
@@ -77,8 +77,8 @@ bool CScroll::insertSlots()
 
     while (true)
     {
-        float headDelta = deltaAdjust(m_deltaHead) * m_noteSpacingFactor;
-        float slotDetlta = Cfg::staveEndX() - Cfg::playZoneX() - m_headSlot.getDeltaTime() * m_noteSpacingFactor - NOTE_BEHIND_GAP;
+        float headDelta = deltaAdjustF(m_deltaHead) * m_noteSpacingFactor;
+        float slotDetlta = Cfg::staveEndX() - Cfg::playZoneX() - static_cast<float>(m_headSlot.getDeltaTime()) * m_noteSpacingFactor - NOTE_BEHIND_GAP;
 
         if (headDelta > slotDetlta)
             break;
@@ -113,16 +113,16 @@ bool CScroll::insertSlots()
 
 void CScroll::removeEarlyTimingMakers()
 {
-    float delta = deltaAdjust(m_deltaTail) * m_noteSpacingFactor  + Cfg::playZoneX() - Cfg::scrollStartX() - NOTE_AHEAD_GAP;
+    float delta = deltaAdjustF(m_deltaTail) * m_noteSpacingFactor  + Cfg::playZoneX() - Cfg::scrollStartX() - NOTE_AHEAD_GAP;
     // only look a few steps (10) into the scroll queue
     for (int i = 0; i < 10 && i < m_scrollQueue->length(); i++ )
     {
-        if (delta < -(m_scrollQueue->index(i).getLeftSideDeltaTime() * m_noteSpacingFactor))
+        if (delta < -(static_cast<float>(m_scrollQueue->index(i).getLeftSideDeltaTime()) * m_noteSpacingFactor))
         {
             m_scrollQueue->indexPtr(i)->clearAllNoteTimmings();
             compileSlot(m_scrollQueue->index(i));
         }
-        delta += m_scrollQueue->index(i).getDeltaTime() * m_noteSpacingFactor;
+        delta += static_cast<float>(m_scrollQueue->index(i).getDeltaTime()) * m_noteSpacingFactor;
     }
 }
 
@@ -130,7 +130,7 @@ void CScroll::removeSlots()
 {
     while (m_scrollQueue->length() > 0)
     {
-        if (deltaAdjust(m_deltaTail) * m_noteSpacingFactor > -Cfg::playZoneX() + Cfg::scrollStartX() + NOTE_AHEAD_GAP -(m_scrollQueue->index(0).getLeftSideDeltaTime() * m_noteSpacingFactor) )
+        if (deltaAdjustF(m_deltaTail) * m_noteSpacingFactor > -Cfg::playZoneX() + Cfg::scrollStartX() + NOTE_AHEAD_GAP -(static_cast<float>(m_scrollQueue->index(0).getLeftSideDeltaTime()) * m_noteSpacingFactor) )
             break;
 
         CSlotDisplayList info = m_scrollQueue->pop();
@@ -165,7 +165,7 @@ void CScroll::drawScrollingSymbols(bool show)
         return;
 
     glPushMatrix();
-    glTranslatef (Cfg::playZoneX() + deltaAdjust(m_deltaTail) * m_noteSpacingFactor, CStavePos::getStaveCenterY(), 0.0);
+    glTranslatef (Cfg::playZoneX() + deltaAdjustF(m_deltaTail) * m_noteSpacingFactor, CStavePos::getStaveCenterY(), 0.0f);
 
     BENCHMARK(8, "glTranslatef");
 
@@ -176,7 +176,7 @@ void CScroll::drawScrollingSymbols(bool show)
     glPopMatrix();
 }
 
-void CScroll::scrollDeltaTime(int ticks)
+void CScroll::scrollDeltaTime(qint64 ticks)
 {
     m_deltaHead -= ticks;
     m_deltaTail -= ticks;
@@ -204,8 +204,9 @@ bool CScroll::validPianistChord(int index)
     return false;
 }
 
-int CScroll::findWantedChord(int note, CColor color, int wantedDelta)
+int CScroll::findWantedChord(int note, CColor color, qint64 wantedDelta)
 {
+    Q_UNUSED(note)
     if (color == Cfg::playedBadColor()) // fixme should be an enum
         return m_wantedIndex;
     {
@@ -223,7 +224,7 @@ int CScroll::findWantedChord(int note, CColor color, int wantedDelta)
     return m_wantedIndex;
 }
 
-void CScroll::setPlayedNoteColor(int note, CColor color, int wantedDelta, int pianistTimming)
+void CScroll::setPlayedNoteColor(int note, CColor color, qint64 wantedDelta, qint64 pianistTimming)
 {
     int index;
     if (m_wantedIndex >= m_scrollQueue->length())
@@ -233,7 +234,7 @@ void CScroll::setPlayedNoteColor(int note, CColor color, int wantedDelta, int pi
     m_scrollQueue->indexPtr(index)->setNoteColor(note, color);
     if (pianistTimming != NOT_USED)
     {
-        pianistTimming = deltaAdjust(pianistTimming) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
+        pianistTimming = deltaAdjustL(pianistTimming) * DEFAULT_PPQN / CMidiFile::getPulsesPerQuarterNote();
 
         m_scrollQueue->indexPtr(index)->setNoteTimming(note, pianistTimming);
     }
@@ -383,6 +384,6 @@ void CScroll::reset()
     m_symbolID = 0;
 
     m_scrollQueue->clear();
-    m_ppqnFactor = static_cast<float>(DEFAULT_PPQN) / CMidiFile::getPulsesPerQuarterNote();
+    m_ppqnFactor = static_cast<float>(DEFAULT_PPQN) / static_cast<float>(CMidiFile::getPulsesPerQuarterNote());
     m_noteSpacingFactor = m_ppqnFactor * HORIZONTAL_SPACING_FACTOR;
 }

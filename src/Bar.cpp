@@ -55,7 +55,7 @@ void CBar::setTimeSig(int top, int bottom)
     m_barLength = m_beatLength * getTimeSigTop();
 }
 
-int CBar::addDeltaTime(int ticks)
+qint64 CBar::addDeltaTime(qint64 ticks)
 {
     if (m_flushTicks == true && ticks != 0) // ignore this set of ticks
     {
@@ -82,15 +82,11 @@ int CBar::addDeltaTime(int ticks)
     return ticks;
 }
 
-int CBar::goToBarNumer()
+qint64 CBar::goToBarNumer()
 {
-    int ticks;
-
-    ticks = static_cast<int>((m_playFromBar - getCurrentBarPos()) * m_beatLength * SPEED_ADJUST_FACTOR + 1);
-
+    const auto ticks = static_cast<qint64>(m_playFromBar - getCurrentBarPos()) * m_beatLength * SPEED_ADJUST_FACTOR + 1;
     addDeltaTime(ticks);
     return ticks;
-
 }
 
 void CBar::checkGotoBar()
@@ -120,6 +116,8 @@ void CBar::setPlayFromBar(double bar)
 
 void CBar::setPlayFromBar(int bar, int beat, int ticks)
 {
+    Q_UNUSED(beat)
+    Q_UNUSED(ticks)
     double playFromBar = bar;
     setPlayFromBar( playFromBar);
 }

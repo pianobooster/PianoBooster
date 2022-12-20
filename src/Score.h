@@ -45,8 +45,8 @@ public:
 
     //! add a midi event to be analysed and displayed on the score
     void midiEventInsert(CMidiEvent event)
-    {   size_t i;
-        for (i=0; i < arraySize(m_scroll); i++)
+    {
+        for (int i=0; i < arraySize(m_scroll); i++)
         {
             m_scroll[i]->midiEventInsert(event);
         }
@@ -55,13 +55,10 @@ public:
     //! first check if there is space to add a midi event
     int midiEventSpace()
     {
-        size_t i;
-        int minSpace;
-        int space;
-        minSpace = 1000;
-        for (i=0; i< arraySize(m_scroll); i++) // this maybe slow
+        int minSpace = 1000;
+        for (auto *const scroll : m_scroll) // this maybe slow
         {
-            space = m_scroll[i]->midiEventSpace();
+            int space = scroll->midiEventSpace();
             if (space < minSpace)
                 minSpace = space;
         }
@@ -69,27 +66,27 @@ public:
     }
 
     void transpose(int semitones)
-    {   size_t i;
-        for (i=0; i< arraySize(m_scroll); i++)
-            m_scroll[i]->transpose(semitones);
+    {
+        for (auto *const scroll : m_scroll)
+            scroll->transpose(semitones);
     }
 
     void reset()
-    {   size_t i;
-        for (i=0; i< arraySize(m_scroll); i++)
-            m_scroll[i]->reset();
+    {
+        for (auto *const scroll : m_scroll)
+            scroll->reset();
     }
 
     void drawScrollingSymbols(bool show = true)
-    {   size_t i;
-        for (i=0; i< arraySize(m_scroll); i++)
-            m_scroll[i]->drawScrollingSymbols(show);
+    {
+        for (auto *const scroll : m_scroll)
+            scroll->drawScrollingSymbols(show);
     }
 
-    void scrollDeltaTime(int ticks)
-    {   size_t i;
-        for (i=0; i< arraySize(m_scroll); i++)
-            m_scroll[i]->scrollDeltaTime(ticks);
+    void scrollDeltaTime(qint64 ticks)
+    {
+        for (auto *const scroll : m_scroll)
+            scroll->scrollDeltaTime(ticks);
     }
 
     void setRatingObject(CRating* rating)
@@ -99,7 +96,7 @@ public:
 
     CPiano* getPianoObject() { return m_piano;}
 
-    void setPlayedNoteColor(int note, CColor color, int wantedDelta, int pianistTimming = NOT_USED)
+    void setPlayedNoteColor(int note, CColor color, qint64 wantedDelta, qint64 pianistTimming = NOT_USED)
     {
         if (m_activeScroll>=0)
             m_scroll[m_activeScroll]->setPlayedNoteColor(note, color, wantedDelta, pianistTimming);
@@ -109,7 +106,7 @@ public:
     {
         int newActiveSroll;
 
-        if (channel < 0 || channel >= static_cast<int>(arraySize(m_scroll)))
+        if (channel < 0 || channel >= arraySize(m_scroll))
             return;
         newActiveSroll = channel;
 

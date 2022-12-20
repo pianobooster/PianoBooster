@@ -479,7 +479,7 @@ void QtWindow::updateRecentFileActions()
 
     QStringList files = m_settings->value("RecentFileList").toStringList();
 
-    int numRecentFiles = qMin(files.size(), (int)MAX_RECENT_FILES);
+    int numRecentFiles = qMin(files.size(), MAX_RECENT_FILES);
 
     for (int i = 0; i < numRecentFiles; ++i) {
         QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
@@ -681,6 +681,7 @@ void QtWindow::writeSettings()
 
 void QtWindow::closeEvent(QCloseEvent *event)
 {
+    Q_UNUSED(event)
     if (m_song->playingMusic())
     {
         m_song->playMusic(false);

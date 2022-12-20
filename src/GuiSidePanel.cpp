@@ -111,16 +111,11 @@ void GuiSidePanel::refresh() {
     if (m_trackList)
     {
         m_trackList->refresh();
-
         trackListWidget->clear();
-
         trackListWidget->addItems(m_trackList->getAllChannelProgramNames());
-
         trackListWidget->setCurrentRow(m_trackList->getActiveItemIndex());
-
         for (int i = 0; i < trackListWidget->count(); i++)
             m_trackList->changeListWidgetItemView(i, trackListWidget->item(i));
-
     }
     autoSetMuteYourPart();
 }
@@ -162,6 +157,7 @@ void GuiSidePanel::on_bookCombo_activated (int index)
 
 void GuiSidePanel::on_songCombo_activated(int index)
 {
+    Q_UNUSED(index)
     m_settings->setCurrentSongName(songCombo->currentText());
 }
 
@@ -285,11 +281,11 @@ void GuiSidePanel::updateTranslate(){
         int delta = 0;
         QFontMetrics fm(w->font());
 
-        QLabel *lb = dynamic_cast<QLabel*>(w);
-        if (lb) delta=fm.width(lb->text())-lb->width();
+        auto *const lb = qobject_cast<QLabel*>(w);
+        if (lb) delta=fm.horizontalAdvance(lb->text())-lb->width();
 
-        QRadioButton *rb = dynamic_cast<QRadioButton*>(w);
-        if (rb) delta=fm.width(rb->text())-(rb->width()-32);
+        auto *const rb = qobject_cast<QRadioButton*>(w);
+        if (rb) delta=fm.horizontalAdvance(rb->text())-(rb->width()-32);
 
         if (delta>maxDeltaWidth) maxDeltaWidth=delta;
     }

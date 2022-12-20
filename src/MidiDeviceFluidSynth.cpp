@@ -32,6 +32,8 @@ static fluid_settings_t* s_debug_fluid_settings;
 
 static void debug_settings_foreach_func (void *data, const char *name, int type)
 {
+    Q_UNUSED(data)
+    Q_UNUSED(type)
     char buffer[300];
     fluid_settings_copystr(s_debug_fluid_settings, name, buffer, sizeof (buffer));
     ppLogDebug("settings_foreach_func %s : %s", name , buffer );
@@ -48,7 +50,7 @@ CMidiDeviceFluidSynth::CMidiDeviceFluidSynth()
 
 CMidiDeviceFluidSynth::~CMidiDeviceFluidSynth()
 {
-    closeMidiPort(MIDI_OUTPUT, -1);
+    CMidiDeviceFluidSynth::closeMidiPort(MIDI_OUTPUT, -1); // not possible to make virtual call in d'tor
 }
 
 void CMidiDeviceFluidSynth::init()
@@ -103,9 +105,8 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
 
     // Create the synthesizer.
     m_synth = new_fluid_synth(m_fluidSettings);
-
-    fluid_synth_set_reverb_on(m_synth, 0);
-    fluid_synth_set_chorus_on(m_synth, 0);
+    fluid_synth_reverb_on(m_synth, -1, 0);
+    fluid_synth_chorus_on(m_synth, -1, 0);
 
     // Create the audio driver.
     m_audioDriver = new_fluid_audio_driver(m_fluidSettings, m_synth);
@@ -131,6 +132,7 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
 
 void CMidiDeviceFluidSynth::closeMidiPort(midiType_t type, int index)
 {
+    Q_UNUSED(index)
     m_validConnection = false;
 
     if (type != MIDI_OUTPUT)
@@ -154,10 +156,7 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
     if (m_synth == nullptr)
         return;
 
-    int channel;
-
-    channel = event.channel() & 0x0f;
-
+    int channel = event.channel() & 0x0f;
     switch(event.type())
     {
         case MIDI_NOTE_OFF: // NOTE_OFF
@@ -190,8 +189,8 @@ void CMidiDeviceFluidSynth::playMidiEvent(const CMidiEvent & event)
             break;
 
         case  MIDI_PB_collateRawMidiData: //used for a SYSTEM_EVENT
-            if (m_rawDataIndex < arraySize(m_savedRawBytes))
-                m_savedRawBytes[m_rawDataIndex++] = event.data1();
+            if (m_rawDataIndex < arraySizeAs<unsigned int>(m_savedRawBytes))
+                m_savedRawBytes[m_rawDataIndex++] = static_cast<unsigned char>(event.data1());
             return; // Don't output any thing yet so just return
 
         case  MIDI_PB_outputRawMidiData: //used for a SYSTEM_EVENT
@@ -242,11 +241,13 @@ int CMidiDeviceFluidSynth::midiSettingsSetInt(QString name, int val)
 
 QString CMidiDeviceFluidSynth::midiSettingsGetStr(QString name)
 {
-    char buffer[200];
-    if (!m_fluidSettings)
-        return QString();
+    Q_UNUSED(name)
+    //char buffer[200];
+    //if (!m_fluidSettings)
+    //    return QString();
     //fluid_settings_getstr(m_fluidSettings, (char *)qPrintable(name), buffer );
-    return QString( buffer );
+    //return QString( buffer );
+    return QString(); // FIXME: buffer is never initialized here, let's just return QString() for now
 }
 
 double CMidiDeviceFluidSynth::midiSettingsGetNum(QString name)

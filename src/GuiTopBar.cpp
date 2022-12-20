@@ -126,7 +126,7 @@ void GuiTopBar::on_keyCombo_activated(int index)
 
 void GuiTopBar::on_transposeSpin_valueChanged(int value)
 {
-    unsigned int i;         //C  Db  D  Eb  E  F   F# G  Ab  A  Bb  B
+    int i;         //C  Db  D  Eb  E  F   F# G  Ab  A  Bb  B
     const int nextKey[] = {   0, -5, 2, -3, 4, -1, 6, 1, -4, 3, -2, 5};
     const int nextKeySize = arraySize(nextKey);
     if (!m_song) return;
@@ -208,6 +208,7 @@ void GuiTopBar::updateTranslate(){
 
 void GuiTopBar::on_playButton_clicked(bool clicked)
 {
+    Q_UNUSED(clicked)
     if (!m_song) return;
 
     if (m_atTheEndOfTheSong)
@@ -221,6 +222,7 @@ void GuiTopBar::on_playButton_clicked(bool clicked)
 
 void GuiTopBar::on_playFromStartButton_clicked(bool clicked)
 {
+    Q_UNUSED(clicked)
     if (!m_song) return;
 
     m_atTheEndOfTheSong = false;
@@ -231,7 +233,7 @@ void GuiTopBar::on_playFromStartButton_clicked(bool clicked)
 void GuiTopBar::on_speedSpin_valueChanged(int speed)
 {
     if (!m_song) return;
-    m_song->setSpeed(speed/100.0);
+    m_song->setSpeed(static_cast<float>(speed) / 100.0f);
 }
 
 void GuiTopBar::on_startBarSpin_valueChanged(double bar)
@@ -254,6 +256,7 @@ void GuiTopBar::stopMuiscPlaying()
 
 void GuiTopBar::on_saveBarButton_clicked(bool clicked)
 {
+    Q_UNUSED(clicked)
     if (!m_song) return;
     double barNumber = m_song->getCurrentBarPos();
     startBarSpin->setValue(barNumber);
@@ -261,6 +264,7 @@ void GuiTopBar::on_saveBarButton_clicked(bool clicked)
 
 void GuiTopBar::on_loopingBarsPopupButton_clicked(bool clicked)
 {
+    Q_UNUSED(clicked)
     if (!m_song) return;
 
     m_song->playMusic(false);

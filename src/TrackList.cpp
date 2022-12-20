@@ -366,7 +366,7 @@ int CTrackList::getHandTrackIndex(whichPart_t whichPart)
     return -1;
 }
 
-void CTrackList::changeListWidgetItemView( unsigned int index, QListWidgetItem* listWidgetItem )
+void CTrackList::changeListWidgetItemView( int index, QListWidgetItem* listWidgetItem )
 {
     int chan = m_partsList[index].midiChannel();
     if ( CNote::hasPianoPart( chan ))
@@ -534,7 +534,7 @@ QString CTrackList::getProgramName(int program)
         /* 128. */ QT_TR_NOOP("Gunshot"),
     };
 
-    if (program >= 0 && program < static_cast<int>(arraySize(gmInstrumentNames)))
+    if (program >= 0 && program < arraySize(gmInstrumentNames))
         return tr(gmInstrumentNames[program]);
     else
         return QString();

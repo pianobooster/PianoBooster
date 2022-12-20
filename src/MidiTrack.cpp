@@ -30,6 +30,8 @@
 #include "Util.h"
 #include "StavePosition.h"
 
+#include <limits>
+
 #define OPTION_DEBUG_TRACK     1
 #if OPTION_DEBUG_TRACK
 #define __dt(X)        X
@@ -71,7 +73,12 @@ CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
 
     m_filePos = m_file.tellg();
     m_trackLength = m_trackLengthCounter + 8; // 4 bytes for the "MTrk" + 4 bytes for the track length
-    m_trackEventQueue = new CQueue<CMidiEvent>(m_trackLength/3); // The minimum bytes per event is 3
+    if (m_trackLength > static_cast<dword_t>(std::numeric_limits<int>::max())) {
+        ppLogError("The track length is too big.");
+        errorFail(SMF_ERROR_TOO_MANY_TRACK);
+        return;
+    }
+    m_trackEventQueue = new CQueue<CMidiEvent>(static_cast<int>(m_trackLength/3ul)); // The minimum bytes per event is 3
 }
 
 void CMidiTrack::ppDebugTrack(int level, const char *msg, ...)
@@ -131,7 +138,7 @@ string CMidiTrack::readTextEvent()
     {
         if (failed() == true)
             return text;
-        text += readByte();
+        text += static_cast<char>(readByte());
     }
     return text;
 }
@@ -181,13 +188,12 @@ void  CMidiTrack::ignoreSysexEvent(byte_t data)
 /* Time Signature */
 void CMidiTrack::readTimeSignatureEvent()
 {
-    byte_t len;
     byte_t timeSigNumerator;
     byte_t timeSigDenominator;
     CMidiEvent event;
     byte_t b3, b4;
 
-    len = readVarLen();
+    const auto len = readVarLen();
     if (len!=4)
     {
         errorFail(SMF_CORRUPTED_MIDI_FILE);
@@ -205,7 +211,7 @@ void CMidiTrack::readTimeSignatureEvent()
         errorFail(SMF_CORRUPTED_MIDI_FILE);
         return;
     }
-    len = (1<<timeSigDenominator);
+    //len = (1<<timeSigDenominator);
 
     b3 = readByte();           /* Ignore the last bytes */
     b4 = readByte();           /* Ignore the last bytes */
@@ -217,12 +223,11 @@ void CMidiTrack::readTimeSignatureEvent()
 /* Key Signature */
 void CMidiTrack::readKeySignatureEvent()
 {
-    byte_t len;
     CMidiEvent event;
     int keySig;
     int majorKey;
 
-    len = readVarLen();
+    const auto len = readVarLen();
     if (len!=2)
     {
         errorFail(SMF_CORRUPTED_MIDI_FILE);
@@ -283,20 +288,17 @@ void CMidiTrack::readMetaEvent(byte_t type)
 
     case METATEMPO:                        /* Set Tempo */
     {
-        byte_t b1,b2, b3;
-        int tempo;
-
-        b1 = readVarLen();
+        auto b1 = readVarLen();
         if (b1 != 3)
         {
             errorFail(SMF_CORRUPTED_MIDI_FILE);
             break;
         }
         b1 = readByte();
-        b2 = readByte();
-        b3 = readByte();
-        tempo = b1 << 16 | b2 << 8 | b3; // microseconds per quarter-note#
-        event.metaEvent(readDelaTime(), MIDI_PB_tempo, tempo, 0);
+        const auto b2 = readByte();
+        const auto b3 = readByte();
+        const auto tempo = b1 << 16 | b2 << 8 | b3; // microseconds per quarter-note#
+        event.metaEvent(readDelaTime(), MIDI_PB_tempo, static_cast<int>(tempo), 0);
         m_trackEventQueue->push(event);
         __dt(ppDebugTrack(2,"Set Tempo %d", tempo));
         break;
@@ -412,15 +414,19 @@ void CMidiTrack::noteOffEvent(CMidiEvent &event, int deltaTime, int channel, int
 void CMidiTrack::decodeMidiEvent()
 {
     CMidiEvent event;
-    byte_t c;
     byte_t status, data1, data2;
     int channel;
 
-    int deltaTicks = readVarLen();
+    const auto readDeltaTicks = readVarLen();
+    if (readDeltaTicks > std::numeric_limits<int>::max()) {
+        errorFail(SMF_CORRUPTED_MIDI_FILE);
+        return;
+    }
+    const auto deltaTicks = static_cast<int>(readDeltaTicks);
     m_deltaTime += deltaTicks;
     m_currentTime += deltaTicks;
 
-    c = readByte();
+    const auto c = readByte();
     if ((c & 0x80) == 0 )
     {
         status = m_savedRunningStatus;
@@ -428,8 +434,7 @@ void CMidiTrack::decodeMidiEvent()
     }
     else
     {
-        status = c;
-        m_savedRunningStatus = status;
+        m_savedRunningStatus = status = c;
         data1=readByte();
         if ((data1 & 0x80) != 0) {
             errorFail(SMF_CORRUPTED_MIDI_FILE);

@@ -79,11 +79,13 @@ void GuiSongDetailsDialog::updateSongInfoText()
 
 void GuiSongDetailsDialog::on_leftHandChannelCombo_activated (int index)
 {
+    Q_UNUSED(index)
     updateSongInfoText();
 }
 
 void GuiSongDetailsDialog::on_rightHandChannelCombo_activated (int index)
 {
+    Q_UNUSED(index)
     updateSongInfoText();
 }
 
