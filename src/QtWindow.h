@@ -175,11 +175,11 @@ protected:
 
 private:
     void decodeCommandLine();
-    int decodeIntegerParam(QString arg, int defaultParam);
-    bool validateIntegerParam(QString arg);
-    bool validateIntegerParamWithMessage(QString arg);
-    void decodeMidiFileArg(QString arg);
-    QString displayShortCut(QString code, QString description);
+    int decodeIntegerParam(const QString &arg, int defaultParam);
+    bool validateIntegerParam(const QString &arg);
+    bool validateIntegerParamWithMessage(const QString &arg);
+    void decodeMidiFileArg(const QString &arg);
+    QString displayShortCut(const QString &code, const QString &description);
     void addShortcutAction(const QString & key, const char * method);
     void updateRecentFileActions();
     QString strippedName(const QString &fullFileName);

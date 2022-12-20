@@ -176,7 +176,7 @@ void QtWindow::displayUsage()
     fprintf(stdout, "       --lights           Turns on the keyboard lights.\n");
 }
 
-int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
+int QtWindow::decodeIntegerParam(const QString &arg, int defaultParam)
 {
     int n = arg.lastIndexOf('=');
     if (n == -1 || (n + 1) >= arg.size())
@@ -188,7 +188,7 @@ int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
     return defaultParam;
 }
 
-bool QtWindow::validateIntegerParam(QString arg)
+bool QtWindow::validateIntegerParam(const QString &arg)
 {
     int n = arg.lastIndexOf('=');
     if (n == -1 || (n + 1) >= arg.size())
@@ -197,7 +197,7 @@ bool QtWindow::validateIntegerParam(QString arg)
     arg.mid(n+1).toInt(&ok);
      return ok;
 }
-bool QtWindow::validateIntegerParamWithMessage(QString arg)
+bool QtWindow::validateIntegerParamWithMessage(const QString &arg)
 {
     bool ok = validateIntegerParam(arg);
     if (!ok) {
@@ -207,7 +207,7 @@ bool QtWindow::validateIntegerParamWithMessage(QString arg)
      return ok;
 }
 
-void QtWindow::decodeMidiFileArg(QString arg)
+void QtWindow::decodeMidiFileArg(const QString &arg)
 {
 
     QFileInfo fileInfo(arg);
@@ -592,7 +592,7 @@ void QtWindow::about()
     msgBox.exec();
 }
 
-QString QtWindow::displayShortCut(QString key, QString description)
+QString QtWindow::displayShortCut(const QString &key, const QString &description)
 {
     QString str = QStringLiteral("<tr>"
                 "<td>%1</td>"
