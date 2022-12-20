@@ -59,10 +59,10 @@ public:
     CSymbol* getSymbolPtr(int index) {return &m_symbols[index];}
     musicalSymbol_t getSymbolType(int index) {return m_symbols[index].getType();}
     int length() {return m_length;}
-    void setDeltaTime(int delta) {m_deltaTime = delta;}
-    void addDeltaTime(int delta) {m_deltaTime += delta;}
-    int getDeltaTime() {return m_deltaTime;}
-    int getLeftSideDeltaTime() {return m_deltaTime + m_maxLeftEdge;}
+    void setDeltaTime(qint64 delta) {m_deltaTime = delta;}
+    void addDeltaTime(qint64 delta) {m_deltaTime += delta;}
+    qint64 getDeltaTime() {return m_deltaTime;}
+    qint64 getLeftSideDeltaTime() {return m_deltaTime + m_maxLeftEdge;}
 
     void setAv8Left(int val) {m_av8Left = val;}
     int getAv8Left() {return m_av8Left;}
@@ -71,7 +71,7 @@ public:
     bool addSymbol(CSymbol symbol);
     void analyse();
 
-    void setSymbol(int delta, CSymbol symbol)
+    void setSymbol(qint64 delta, CSymbol symbol)
     {
         clear();
         setDeltaTime(delta);
@@ -95,7 +95,7 @@ public:
         }
     }
 
-    void setNoteTimming(int note, int timing)
+    void setNoteTimming(int note, qint64 timing)
     {
         for (int i = 0; i < m_length; i++)
         {
@@ -118,13 +118,13 @@ public:
 protected:
 
 private:
-    int m_deltaTime;
+    qint64 m_deltaTime;
 
     CSymbol m_symbols[MAX_SYMBOLS];
     int m_length;
     int m_av8Left;
     int m_av8Right;
-    int m_maxLeftEdge; // the furthest the note will appear on the left hand edge (used when removing the note)
+    qint64 m_maxLeftEdge; // the furthest the note will appear on the left hand edge (used when removing the note)
 };
 
 // remembers the state of a running accidental
@@ -209,10 +209,10 @@ private:
     CQueue<CSlot>* m_slotQueue;             // Queue of symbol slots that have not been read yet
     CQueue<CMidiEvent>* m_midiInputQueue;   // A Queue of midi events
     CSlot m_currentSlot;
-    int m_currentDeltaTime;        // time difference between this and the previous slot
+    qint64 m_currentDeltaTime;        // time difference between this and the previous slot
     int m_beatPerBarCounter;
     int m_earlyBarChangeCounter;
-    int m_earlyBarChangeDelta; // Counts the ppqn in one bar
+    qint64 m_earlyBarChangeDelta; // Counts the ppqn in one bar
     CSlot m_mergeSlots[2];
     int m_displayChannel;
     CFindChord m_findScrollerChord;

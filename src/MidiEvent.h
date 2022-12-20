@@ -233,7 +233,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////////////
     //@brief how long the midi note was played for
-    long getDuration(){return m_duration;}
+    int getDuration(){return m_duration;}
 
     /**
      * This merges two MidiEvents (this and the other MidiEvent)

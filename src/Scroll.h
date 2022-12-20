@@ -60,10 +60,10 @@ public:
         delete m_notation;
     }
     void reset();
-    void scrollDeltaTime(int ticks);
+    void scrollDeltaTime(qint64 ticks);
     void transpose(int transpose);
     void refresh();
-    void setPlayedNoteColor(int note, CColor color, int wantedDelta, int pianistTimming);
+    void setPlayedNoteColor(int note, CColor color, qint64 wantedDelta, qint64 pianistTimming);
     void setChannel(int chan)
     {
         m_notation->setChannel( chan );
@@ -95,19 +95,19 @@ private:
     bool insertSlots();
     void removeSlots();
     void removeEarlyTimingMakers();
-    int findWantedChord(int note, CColor color, int wantedDelta);
+    int findWantedChord(int note, CColor color, qint64 wantedDelta);
 
     int m_id;      // There are lots of these class running but each class has a unique id
     CNotation *m_notation;
-    int m_deltaHead;
-    int m_deltaTail;
+    qint64 m_deltaHead;
+    qint64 m_deltaTail;
 
     GLuint m_symbolID; // the next Display List name (or ID) to use
     CSlot m_headSlot;   // The next slot to be put in at the head of the queue;
 
     int m_transpose;
     int m_wantedIndex;  // The index number of the wanted call in the scrollQueue
-    int m_wantedDelta; // The running delta time of the wanted chord
+    qint64 m_wantedDelta; // The running delta time of the wanted chord
 
     CQueue<CSlotDisplayList>* m_scrollQueue;  // The current active display list of notes/chords on the screen
     bool m_show; // set to true to show on the screen

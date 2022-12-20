@@ -180,8 +180,8 @@ void CGLView::drawAccurracyBar()
     float accuracy;
     CColor color;
 
-    float y = Cfg::getAppHeight() - 14;
-    const float x = accuracyBarStart;
+    float y = static_cast<float>(Cfg::getAppHeight() - 14);
+    const float x = static_cast<float>(accuracyBarStart);
     const int width = 360;
     const int lineWidth = 8/2;
 
@@ -219,12 +219,12 @@ void CGLView::drawDisplayText()
 
     if (!m_settings->getWarningMessage().isEmpty())
     {
-        glColor3f(1.0,0.2,0.0);
+        glColor3f(1.0f,0.2f,0.0f);
         renderText(TEXT_LEFT_MARGIN, y-4, 0, m_settings->getWarningMessage(), m_timeRatingFont);
         return;
     }
 
-    glColor3f(1.0,1.0,1.0);
+    glColor3f(1.0f,1.0f,1.0f);
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen) {
         if (accuracyBarStart == 0) {
@@ -257,13 +257,13 @@ void CGLView::drawBarNumber()
         return;
     m_forceBarRedraw--;
 
-    float y = Cfg::getAppHeight() - m_titleHeight - 34;
-    float x = TEXT_LEFT_MARGIN;
+    const auto y = static_cast<float>(Cfg::getAppHeight() - m_titleHeight - 34);
+    const auto x = static_cast<float>(TEXT_LEFT_MARGIN);
 
     //CDraw::drColor (Cfg::backgroundColor());
     //CDraw::drColor (Cfg::noteColorDim());
     //glRectf(x+30+10, y-2, x + 80, y + 16);
-    glColor3f(1.0,1.0,1.0);
+    glColor3f(1.0f,1.0f,1.0f);
     renderText(x, y, 0, tr("Bar:") + " " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
 
@@ -298,30 +298,29 @@ void CGLView::resizeGL(int width, int height)
     }
     int sizeX = qMin(width, maxSoreWidth);
     int sizeY = qMin(height, maxSoreHeight);
-    int x = (width - sizeX)/2;
-    int y = (height - sizeY)/2;
-    y = (height - sizeY) - 5;
-    x = 0;
-
+    int x = 0;
+    int y = (height - sizeY) - 5;
     glViewport (x, y, sizeX, sizeY);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(0, sizeX, 0, sizeY, -1.0, 1.0);
     glMatrixMode(GL_MODELVIEW);
-    CStavePos::setStaveCenterY(sizeY - maxSoreHeight/2 - m_titleHeight/2);
+    CStavePos::setStaveCenterY(static_cast<float>(sizeY) - static_cast<float>(maxSoreHeight)/2.0f - static_cast<float>(m_titleHeight)/2.0f);
     Cfg::setAppDimentions(x, y, sizeX, sizeY);
-    Cfg::setStaveEndX(sizeX - staveEndGap);
-    CStavePos::setStaveCentralOffset(staveGap/2);
+    Cfg::setStaveEndX(static_cast<float>(sizeX - staveEndGap));
+    CStavePos::setStaveCentralOffset(static_cast<float>(staveGap)/2.0f);
     CDraw::forceCompileRedraw();
 }
 
 void CGLView::mousePressEvent(QMouseEvent *event)
 {
+    Q_UNUSED(event)
 }
 
 void CGLView::mouseMoveEvent(QMouseEvent *event)
 {
+    Q_UNUSED(event)
 }
 
 void CGLView::initializeGL()
@@ -378,8 +377,7 @@ void CGLView::initializeGL()
 
 void CGLView::updateMidiTask()
 {
-    int ticks;
-    ticks = m_realtime.restart();
+    const auto ticks = m_realtime.restart();
     m_displayUpdateTicks += ticks;
     m_eventBits |= m_song->task(ticks);
 }
@@ -431,6 +429,7 @@ void CGLView::timerEvent(QTimerEvent *event)
 
 void CGLView::mediaTimerEvent(int ticks)
 {
+    Q_UNUSED(ticks)
 }
 
 #ifndef QT_OPENGL_ES
@@ -595,7 +594,7 @@ void CGLView::renderText(double x, double y, double z, const QString &str, const
         } else if (use_scissor_testing) {
             funcs->glEnable(GL_SCISSOR_TEST);
         }
-        funcs->glViewport(0, 0, width * dpr, height * dpr);
+        funcs->glViewport(0, 0, static_cast<GLsizei>(width * dpr), static_cast<GLsizei>(height * dpr));
         gl1funcs->glAlphaFunc(GL_GREATER, 0.0);
         funcs->glEnable(GL_ALPHA_TEST);
         if (use_depth_testing)

@@ -196,8 +196,8 @@ public:
         m_cordSpanGapTime = 0;
         m_completeChord.clear();
         m_currentChord.clear();
-        m_cfg_ChordNoteGap = CMidiFile::ppqnAdjust(Cfg::chordNoteGap());
-        m_cfg_ChordMaxLength = CMidiFile::ppqnAdjust(Cfg::chordMaxLength());
+        m_cfg_ChordNoteGap = CMidiFile::ppqnAdjust(static_cast<float>(Cfg::chordNoteGap()));
+        m_cfg_ChordMaxLength = CMidiFile::ppqnAdjust(static_cast<float>(Cfg::chordMaxLength()));
     }
 
     CChord getChord()

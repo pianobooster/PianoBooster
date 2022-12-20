@@ -63,7 +63,7 @@ public:
     }
 
     void init2(CScore * scoreWin, CSettings* settings);
-    eventBits_t task(int ticks);
+    eventBits_t task(qint64 ticks);
     bool pcKeyPress(int key, bool down);
     void loadSong(const QString &filename);
     void regenerateChordQueue();

@@ -159,7 +159,7 @@ void CSong::refreshScroll()
     forceScoreRedraw();
 }
 
-eventBits_t CSong::task(int ticks)
+eventBits_t CSong::task(qint64 ticks)
 {
     realTimeEngine(ticks);
 

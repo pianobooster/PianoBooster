@@ -33,7 +33,7 @@
 #include "MidiFile.h"
 #include "Chord.h"
 
-#define MICRO_SECOND 1000000.0
+#define MICRO_SECOND 1000000.0f
 
 // Define a chord
 class CTempo
@@ -56,8 +56,8 @@ public:
     // Tempo, microseconds-per-MIDI-quarter-note
     void setMidiTempo(int tempo)
     {
-        m_midiTempo = (static_cast<float>(tempo) * DEFAULT_PPQN) / CMidiFile::getPulsesPerQuarterNote();
-        ppLogWarn("MIDI Tempo %f  ppqn %d %d", m_midiTempo, CMidiFile::getPulsesPerQuarterNote(), tempo);
+        m_midiTempo = (static_cast<float>(tempo) * DEFAULT_PPQN) / static_cast<float>(CMidiFile::getPulsesPerQuarterNote());
+        ppLogWarn("MIDI Tempo %f  ppqn %d %d", static_cast<double>(m_midiTempo), CMidiFile::getPulsesPerQuarterNote(), tempo);
     }
 
     void setSpeed(float speed)
@@ -71,19 +71,19 @@ public:
     }
     float getSpeed() {return m_userSpeed;}
 
-    int mSecToTicks(int mSec)
+    qint64 mSecToTicks(qint64 mSec)
     {
-        return static_cast<int>(mSec * m_userSpeed * (100.0 * MICRO_SECOND) /m_midiTempo);
+        return static_cast<qint64>(static_cast<float>(mSec) * m_userSpeed * (100.0f * MICRO_SECOND) / m_midiTempo);
     }
 
-    void insertPlayingTicks(int ticks)
+    void insertPlayingTicks(qint64 ticks)
     {
         m_jumpAheadDelta -= ticks;
         if (m_jumpAheadDelta < CMidiFile::ppqnAdjust(-10)*SPEED_ADJUST_FACTOR)
             m_jumpAheadDelta = CMidiFile::ppqnAdjust(-10)*SPEED_ADJUST_FACTOR;
     }
 
-    void removePlayingTicks(int ticks)
+    void removePlayingTicks(qint64 ticks)
     {
         if (m_cfg_maxJumpAhead != 0)
             m_jumpAheadDelta = ticks;
@@ -94,14 +94,14 @@ public:
         m_jumpAheadDelta = 0;
     }
 
-    void adjustTempo(int * ticks);
+    void adjustTempo(qint64 *ticks);
 
     static void enableFollowTempo(bool enable);
 
 private:
     float m_userSpeed; // controls the speed of the piece playing
     float m_midiTempo; // controls the speed of the piece playing
-    int m_jumpAheadDelta;
+    qint64 m_jumpAheadDelta;
     static int m_cfg_maxJumpAhead;
     static int m_cfg_followTempoAmount;
     CChord *m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts

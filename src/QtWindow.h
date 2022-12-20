@@ -58,7 +58,7 @@ public:
 
     void init();
 
-    void songEventUpdated(int eventBits)
+    void songEventUpdated(eventBits_t eventBits)
     {
         if ((eventBits & EVENT_BITS_playingStopped) != 0){
             if (m_sidePanel->isRepeatSong()){
@@ -150,16 +150,16 @@ private slots:
 
     void on_playPause()   {  m_topBar->on_playButton_clicked(true); }
     void on_faster()   {
-        float speed = m_song->getSpeed() + 0.04;
+        float speed = m_song->getSpeed() + 0.04f;
         m_song->setSpeed(speed);
         speed = m_song->getSpeed();
-        m_topBar->setSpeed(static_cast<int>(speed*100 + 0.5));
+        m_topBar->setSpeed(static_cast<int>(speed * 100.0f + 0.5f));
     }
     void on_slower()   {
-        float speed = m_song->getSpeed() - 0.04;
+        float speed = m_song->getSpeed() - 0.04f;
         m_song->setSpeed(speed);
         speed = m_song->getSpeed();
-        m_topBar->setSpeed(static_cast<int>(speed*100 + 0.5));
+        m_topBar->setSpeed(static_cast<int>(speed * 100.0f + 0.5f));
     }
     void on_nextSong()   {  m_sidePanel->nextSong(+1); }
     void on_previousSong()   {  m_sidePanel->nextSong(-1); }
@@ -226,7 +226,7 @@ private:
     CScore* m_score;
     QAction *m_separatorAct;
 
-    enum { MAX_RECENT_FILES = 20 };
+    static constexpr int MAX_RECENT_FILES = 20;
     QAction *m_recentFileActs[MAX_RECENT_FILES];
 
 };

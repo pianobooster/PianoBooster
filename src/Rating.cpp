@@ -68,11 +68,11 @@ void CRating::calculateAccuracy()
         } accuracyItem_t;
         const accuracyItem_t accuracyTable[] =
         {
-            {1.00, 0.01, -0.08, CColor(0.5, 0.5, 1.0)}, // Only the color is used on the top score
-            {0.75, 0.01, -0.07, CColor(0.7, 0.3, 1.0)},
-            {0.50, 0.01, -0.05, CColor(1.0, 0.6, 0.4)},
-            {0.25, 0.01, -0.03, CColor(1.0, 0.3, 1.0)},
-            {0.0 , 0.015, -0.02, CColor(1.0, 0.4, 0.2)}
+            {1.00f, 0.01f, -0.08f, CColor(0.5, 0.5, 1.0)}, // Only the color is used on the top score
+            {0.75f, 0.01f, -0.07f, CColor(0.7, 0.3, 1.0)},
+            {0.50f, 0.01f, -0.05f, CColor(1.0, 0.6, 0.4)},
+            {0.25f, 0.01f, -0.03f, CColor(1.0, 0.3, 1.0)},
+            {0.00f, 0.015f, -0.02f, CColor(1.0, 0.4, 0.2)}
         };
 
         size_t i;

@@ -164,16 +164,19 @@ void GuiMidiSetupDialog::updateMidiInfoText()
 
 void GuiMidiSetupDialog::on_midiInputCombo_activated (int index)
 {
+    Q_UNUSED(index)
     updateMidiInfoText();
 }
 
 void GuiMidiSetupDialog::on_midiOutputCombo_activated (int index)
 {
+    Q_UNUSED(index)
     updateMidiInfoText();
 }
 
 void GuiMidiSetupDialog::on_latencyFixButton_clicked ( bool checked )
 {
+    Q_UNUSED(checked)
     bool ok;
     int latencyFix = QInputDialog::getInt(this, tr("Enter a value for the latency fix in milliseconds"),
             tr(
@@ -274,6 +277,7 @@ void GuiMidiSetupDialog::updateFluidInfoStatus()
 
 void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
 {
+    Q_UNUSED(checked)
 #if WITH_INTERNAL_FLUIDSYNTH
     QString lastSoundFont = m_settings->value("LastSoundFontDir","").toString();
 
@@ -286,9 +290,8 @@ void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
         possibleSoundFontFolders.push_back("/usr/share/soundfonts");
         possibleSoundFontFolders.push_back("/usr/share/sounds/sf2");
 #endif
-        for (QString soundFontFolder:possibleSoundFontFolders){
-            QDir dir(soundFontFolder);
-            if (dir.exists()){
+        for (const QString &soundFontFolder : possibleSoundFontFolders){
+            if (QDir(soundFontFolder).exists()){
                 lastSoundFont=soundFontFolder;
                 break;
             }
@@ -317,6 +320,7 @@ void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
 }
 
 void GuiMidiSetupDialog::on_fluidClearButton_clicked( bool checked ){
+    Q_UNUSED(checked)
 #if WITH_INTERNAL_FLUIDSYNTH
     m_settings->clearFluidSoundFontNames();
     int i = midiOutputCombo->findText(CMidiDeviceFluidSynth::getFluidInternalName());

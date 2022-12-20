@@ -122,13 +122,9 @@ CSlot CNotation::nextBeatMarker()
 
 int CNotation::nextMergeSlot()
 {
-    size_t i;
-    CSlot nearestSlot;
-    size_t nearestIndex;
-
-    nearestSlot = m_mergeSlots[0];
-    nearestIndex = 0;
-    for( i = 1; i < arraySize(m_mergeSlots); i++)
+    int nearestIndex = 0;
+    CSlot nearestSlot = m_mergeSlots[0];
+    for(int i = 1; i < arraySize(m_mergeSlots); i++)
     {
         // find the slot with the lowest delta time
         if (m_mergeSlots[i].getDeltaTime() < nearestSlot.getDeltaTime())
@@ -139,7 +135,7 @@ int CNotation::nextMergeSlot()
     }
 
     // Now subtract the delta time from all the others
-    for( i = 0; i < arraySize(m_mergeSlots); i++)
+    for(int i = 0; i < arraySize(m_mergeSlots); ++i)
     {
         if (i == nearestIndex)
             continue;
@@ -367,12 +363,11 @@ void CNotation::reset()
 {
     const int cfg_earlBarLead = CMidiFile::ppqnAdjust(8);
 
-    size_t i;
     m_currentDeltaTime = 0;
     m_midiInputQueue->clear();
     m_slotQueue->clear();
-    for( i = 0; i < arraySize(m_mergeSlots); i++)
-        m_mergeSlots[i].clear();
+    for (auto &slot : m_mergeSlots)
+        slot.clear();
     m_currentSlot.clear();
     m_beatPerBarCounter=0;
     m_earlyBarChangeCounter = 0;
@@ -380,9 +375,7 @@ void CNotation::reset()
 
     m_bar.reset();
     m_findScrollerChord.reset();
-    for( i = 0; i < MAX_MIDI_NOTES; i++)
-    {
-        m_noteState[i].clear();
-    }
+    for (auto &noteState : m_noteState)
+        noteState.clear();
     setupNotationParamaters();
 }

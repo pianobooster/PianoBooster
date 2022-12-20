@@ -45,7 +45,7 @@ void CTempo::enableFollowTempo(bool enable)
     }
 }
 
-void CTempo::adjustTempo(int * ticks)
+void CTempo::adjustTempo(qint64 * ticks)
 {
     if (m_jumpAheadDelta && m_cfg_maxJumpAhead && m_savedWantedChord)
     {
@@ -53,11 +53,11 @@ void CTempo::adjustTempo(int * ticks)
             *ticks += m_jumpAheadDelta;
 
         // Automatically adjust the speed
-        m_userSpeed = m_userSpeed + m_userSpeed * m_jumpAheadDelta * 0.00002;
+        m_userSpeed = m_userSpeed + m_userSpeed * static_cast<float>(m_jumpAheadDelta) * 0.00002f;
 
-        if (m_userSpeed> 2.0) m_userSpeed = 2.0;
-        if (m_userSpeed < 0.2) m_userSpeed = 0.2;
-        printf("%03.0f  %5d\r",m_userSpeed *100, m_jumpAheadDelta );
+        if (m_userSpeed> 2.0f) m_userSpeed = 2.0f;
+        if (m_userSpeed < 0.2f) m_userSpeed = 0.2f;
+        printf("%03.0f  %5lld\r", static_cast<double>(m_userSpeed) * 100.0, m_jumpAheadDelta);
         fflush(stdout);
 
         m_jumpAheadDelta = 0;
