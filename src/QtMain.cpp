@@ -33,6 +33,9 @@
 
 #include <QApplication>
 #include <QtOpenGL>
+
+#include <cstdlib>
+
 #include "QtWindow.h"
 #include "version.h"
 
@@ -45,10 +48,10 @@ int main(int argc, char *argv[]){
     {
         QCoreApplication app(argc, argv);
         QStringList argList = QCoreApplication::arguments();
-        for (QString arg:argList){
-            if (arg=="--version"){
+        for (const QString &arg : argList){
+            if (arg == QLatin1String("--version")) {
                 fprintf(stdout, "pianobooster " PB_VERSION "\n");
-                exit(0);
+                return EXIT_SUCCESS;
             }
         }
     }
