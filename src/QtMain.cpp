@@ -44,6 +44,7 @@ int main(int argc, char *argv[]){
     QCoreApplication::setOrganizationDomain("https://github.com/pianobooster/PianoBooster");
     QCoreApplication::setApplicationName("Piano Booster");
     QCoreApplication::setApplicationVersion(PB_VERSION);
+    QGuiApplication::setDesktopFileName(QStringLiteral("pianobooster"));
 
     {
         QCoreApplication app(argc, argv);
