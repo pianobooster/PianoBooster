@@ -48,6 +48,8 @@ class QSlider;
 class QPushButton;
 class QTextBrowser;
 
+static constexpr int maxRecentFiles() { return 20; }
+
 class QtWindow : public QMainWindow
 {
     Q_OBJECT
@@ -226,9 +228,7 @@ private:
     CScore* m_score;
     QAction *m_separatorAct;
 
-    static constexpr int MAX_RECENT_FILES = 20;
-    QAction *m_recentFileActs[MAX_RECENT_FILES];
-
+    QAction *m_recentFileActs[maxRecentFiles()];
 };
 
 #endif // __QT_WINDOW_H__
