@@ -40,10 +40,10 @@
 #include "version.h"
 
 int main(int argc, char *argv[]){
-    QCoreApplication::setOrganizationName("PianoBooster");
-    QCoreApplication::setOrganizationDomain("https://github.com/pianobooster/PianoBooster");
-    QCoreApplication::setApplicationName("Piano Booster");
-    QCoreApplication::setApplicationVersion(PB_VERSION);
+    QCoreApplication::setOrganizationName(QStringLiteral("PianoBooster"));
+    QCoreApplication::setOrganizationDomain(QStringLiteral("https://github.com/pianobooster/PianoBooster"));
+    QCoreApplication::setApplicationName(QStringLiteral("Piano Booster"));
+    QCoreApplication::setApplicationVersion(QStringLiteral(PB_VERSION));
     QGuiApplication::setDesktopFileName(QStringLiteral("pianobooster"));
 
     {
