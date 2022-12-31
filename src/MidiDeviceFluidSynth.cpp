@@ -30,7 +30,13 @@
 
 static fluid_settings_t* s_debug_fluid_settings;
 
-static void debug_settings_foreach_func (void *data, const char *name, int type)
+static void debug_settings_foreach_func (void *data,
+#if FLUIDSYNTH_VERSION_MAJOR >= 2
+    const char *name,
+#else
+    char *name,
+#endif
+    int type)
 {
     Q_UNUSED(data)
     Q_UNUSED(type)
