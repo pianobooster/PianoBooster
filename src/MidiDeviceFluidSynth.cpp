@@ -111,8 +111,13 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, QString portName)
 
     // Create the synthesizer.
     m_synth = new_fluid_synth(m_fluidSettings);
+#if (FLUIDSYNTH_VERSION_MAJOR >= 2) && (FLUIDSYNTH_VERSION_MINOR >= 2)
     fluid_synth_reverb_on(m_synth, -1, 0);
     fluid_synth_chorus_on(m_synth, -1, 0);
+#else
+    fluid_synth_set_reverb_on(m_synth, 0);
+    fluid_synth_set_chorus_on(m_synth, 0);
+#endif
 
     // Create the audio driver.
     m_audioDriver = new_fluid_audio_driver(m_fluidSettings, m_synth);
