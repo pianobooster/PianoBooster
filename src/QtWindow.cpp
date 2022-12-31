@@ -74,7 +74,7 @@ QtWindow::QtWindow()
         ppLogInfo("Open GL Swap Interval %d", value);
     }
 
-    for (int i = 0; i < MAX_RECENT_FILES; ++i)
+    for (int i = 0; i < maxRecentFiles(); ++i)
          m_recentFileActs[i] = nullptr;
     m_separatorAct = nullptr;
 
@@ -402,7 +402,7 @@ void QtWindow::createActions()
     addShortcutAction("ShortCuts/NextBook",         SLOT(on_nextBook()));
     addShortcutAction("ShortCuts/PreviousBook",     SLOT(on_previousBook()));
 
-     for (int i = 0; i < MAX_RECENT_FILES; ++i) {
+     for (int i = 0; i < maxRecentFiles(); ++i) {
          m_recentFileActs[i] = new QAction(this);
          m_recentFileActs[i]->setVisible(false);
          connect(m_recentFileActs[i], SIGNAL(triggered()),
@@ -416,7 +416,7 @@ void QtWindow::createMenus()
     m_fileMenu->setToolTipsVisible(true);
     m_fileMenu->addAction(m_openAct);
     m_separatorAct = m_fileMenu->addSeparator();
-    for (int i = 0; i < MAX_RECENT_FILES; ++i)
+    for (int i = 0; i < maxRecentFiles(); ++i)
        m_fileMenu->addAction(m_recentFileActs[i]);
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_exitAct);
@@ -481,7 +481,7 @@ void QtWindow::updateRecentFileActions()
 
     QStringList files = m_settings->value("RecentFileList").toStringList();
 
-    int numRecentFiles = qMin(files.size(), MAX_RECENT_FILES);
+    int numRecentFiles = qMin(files.size(), maxRecentFiles());
 
     for (int i = 0; i < numRecentFiles; ++i) {
         QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
@@ -492,7 +492,7 @@ void QtWindow::updateRecentFileActions()
         m_recentFileActs[i]->setVisible(true);
     }
 
-    for (int j = numRecentFiles; j < MAX_RECENT_FILES; ++j) {
+    for (int j = numRecentFiles; j < maxRecentFiles(); ++j) {
         if (m_recentFileActs[j] == nullptr)
             break;
         m_recentFileActs[j]->setVisible(false);
@@ -516,7 +516,7 @@ void QtWindow::setCurrentFile(const QString &fileName)
     QStringList files = m_settings->value("RecentFileList").toStringList();
     files.removeAll(fileName);
     files.prepend(fileName);
-    while (files.size() > MAX_RECENT_FILES)
+    while (files.size() > maxRecentFiles())
         files.removeLast();
 
     m_settings->setValue("RecentFileList", files);
