@@ -28,7 +28,10 @@
 
 #include <fstream>
 #include <sstream>
+
+#include <QElapsedTimer>
 #include <QTime>
+
 #include "Util.h"
 #include "Cfg.h"
 
@@ -156,6 +159,8 @@ void ppLogTrace(const char *msg, ...)
     va_end(ap);
     fputc('\n', logInfoFile);
     flushLogs();
+#else
+    Q_UNUSED(msg)
 #endif
 }
 
@@ -204,24 +209,26 @@ void ppTiming(const char *msg, ...)
     va_end(ap);
     fputc('\n', logInfoFile);
     flushLogs();
+#else
+    Q_UNUSED(msg)
 #endif
 }
 
 ////////////////////// BENCH MARK //////////////////////
-static QTime s_benchMarkTime;
-static int s_previousTime;
-static int s_previousFrameTime;
+static QElapsedTimer s_benchMarkTime;
+static qint64 s_previousTime;
+static qint64 s_previousFrameTime;
 
 typedef struct
 {
-    int time;
+    qint64 time;
     QString msg;
-    int deltaTotal;
-    int deltaCount;
-    int maxDelta;
-    int minDelta;
-    int frameRatePrevious;
-    int frameRateCurrent;
+    qint64 deltaTotal;
+    qint64 deltaCount;
+    qint64 maxDelta;
+    qint64 minDelta;
+    qint64 frameRatePrevious;
+    qint64 frameRateCurrent;
 
 } benchData_t;
 
@@ -249,10 +256,10 @@ void benchMarkInit()
     s_frameRate.msg = " *** Frame Rate ***";
 }
 
-int benchMarkUpdate(benchData_t *pBench,  int previousTime)
+static qint64 benchMarkUpdate(benchData_t *pBench,  qint64 previousTime)
 {
-    int time = s_benchMarkTime.elapsed();
-    int delta = time - previousTime;
+    auto time = s_benchMarkTime.elapsed();
+    auto delta = time - previousTime;
     pBench->deltaTotal += delta;
     pBench->deltaCount++;
     pBench->frameRateCurrent = time;
@@ -281,10 +288,10 @@ void printResult(int i, benchData_t *pBench)
         fprintf(logInfoFile, "Bench%2d: ", i);
     else
         fputs("Bench  : ", logInfoFile);
-    fprintf(logInfoFile, "ct %4d, min %2d, avg %4.3f, max %2d frame %4.3f %s\n",  pBench->deltaCount,  pBench->minDelta,
-                    static_cast<double>(pBench->deltaTotal)/pBench->deltaCount,
+    fprintf(logInfoFile, "ct %4lld, min %2lld, avg %4.3f, max %2lld frame %4.3f %s\n",  pBench->deltaCount,  pBench->minDelta,
+                    static_cast<double>(pBench->deltaTotal)/static_cast<double>(pBench->deltaCount),
                     pBench->maxDelta,
-                    (static_cast<double>(pBench->frameRateCurrent - pBench->frameRatePrevious))/pBench->deltaCount,
+                    (static_cast<double>(pBench->frameRateCurrent - pBench->frameRatePrevious))/static_cast<double>(pBench->deltaCount),
                     qPrintable(pBench->msg));
     benchMarkReset(pBench);
     flushLogs();
@@ -292,13 +299,11 @@ void printResult(int i, benchData_t *pBench)
 
 void benchMarkResults()
 {
-    int ticks;
-    ticks = s_benchMarkTime.elapsed();
-
+    const auto ticks = s_benchMarkTime.elapsed();
     if ( (ticks - s_previousFrameTime) < 5000)
         return;
     s_previousFrameTime = ticks;
-    for (unsigned int i=0; i <  arraySize( s_benchData ); i++)
+    for (int i=0; i <  arraySize(s_benchData); i++)
     {
         printResult(i, &s_benchData[i]);
     }

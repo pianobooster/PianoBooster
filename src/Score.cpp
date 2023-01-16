@@ -32,10 +32,9 @@
 
 CScore::CScore(CSettings* settings) : CDraw(settings)
 {
-    size_t i;
     m_piano = new CPiano(settings);
     m_rating = nullptr;
-    for (i=0; i< arraySize(m_scroll); i++)
+    for (int i=0; i< arraySize(m_scroll); i++)
     {
         m_scroll[i] = new CScroll(i, settings);
         m_scroll[i]->setChannel(i);
@@ -49,9 +48,8 @@ CScore::CScore(CSettings* settings) : CDraw(settings)
 CScore::~CScore()
 {
     delete m_piano;
-    size_t i;
-    for (i=0; i< arraySize(m_scroll); i++)
-        delete m_scroll[i];
+    for (auto *const scroll : m_scroll)
+        delete scroll;
 
     if (m_scoreDisplayListId != 0)
         glDeleteLists(m_scoreDisplayListId, 1);
@@ -73,7 +71,7 @@ void CScore::drawScroll(bool refresh)
         float topY = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY();
         float bottomY = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY();
         drColor (Cfg::backgroundColor());
-        glRectf(Cfg::scrollStartX(), topY, Cfg::getAppWidth(), bottomY);
+        glRectf(Cfg::scrollStartX(), topY, static_cast<float>(Cfg::getAppWidth()), bottomY);
     }
 
     if (m_stavesDisplayListId == 0)
@@ -126,13 +124,13 @@ void CScore::drawPianoKeyboard(){
 
         void drawBlackKey(int i, int k) {
             glPushMatrix();
-            float yBlackShift = ySize / 2.5;
+            float yBlackShift = ySize / 2.5f;
             float yBlackSize = ySize - yBlackShift;
-            glScalef(1, 1.4, 1);
-            glTranslatef(Cfg::staveStartX() + xPlaceSize * i - xPlaceSize / 3,
-                yStart + yBlackShift, 0.0);
+            glScalef(1.0f, 1.4f, 1.0f);
+            glTranslatef(Cfg::staveStartX() + xPlaceSize * static_cast<float>(i) - xPlaceSize / 3.0f,
+                yStart + yBlackShift, 0.0f);
 
-            float xKeySize = this->xKeySize / 1.5;
+            float xKeySize = this->xKeySize / 1.5f;
 
             CDraw::drColor (CColor(0.0, 0.0, 0.0));
             if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
@@ -150,8 +148,8 @@ void CScore::drawPianoKeyboard(){
 
         void drawWhiteKey() {
             glPushMatrix();
-            glScalef(1, 1.4, 1);
-            glTranslatef(Cfg::staveStartX() + xPlaceSize * i++, yStart, 0.0);
+            glScalef(1.0f, 1.4f, 1.0f);
+            glTranslatef(Cfg::staveStartX() + xPlaceSize * static_cast<float>(i++), yStart, 0.0f);
 
             CDraw::drColor (CColor(1.0, 1.0, 1.0));
             if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
@@ -207,10 +205,10 @@ void CScore::drawPianoKeyboard(){
         pianoKeyboard.state[k] = 2;
     }
 
-    for(size_t i=0; i<arraySize(m_scroll); ++i) {
+    for (auto *const scroll : m_scroll) {
         int notes[64];
         memset(notes, 0, sizeof(notes));
-        bool stopped = m_scroll[i]->getKeyboardInfo(notes);
+        bool stopped = scroll->getKeyboardInfo(notes);
         for(int *note=notes; *note; ++note) {
             pianoKeyboard.stopped = stopped;
             int k = *note - 21;

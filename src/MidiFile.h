@@ -46,11 +46,10 @@ class CMidiFile : public CMerge
 public:
     CMidiFile()
     {
-        size_t i;
         midiError(SMF_NO_ERROR);
         m_ppqn = DEFAULT_PPQN;
         setSize(MAX_TRACKS);
-        for (i = 0; i < arraySize(m_tracks); i++)
+        for (int i = 0; i < arraySize(m_tracks); i++)
             m_tracks[i] = 0;
         m_numberOfTracks = 0;
     }

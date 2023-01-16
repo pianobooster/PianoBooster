@@ -104,11 +104,11 @@ private:
 
     byte_t readByte(void)
     {
-        int c;
+        auto c = byte_t();
 
         if (m_trackLengthCounter != 0 )
         {
-            c = m_file.get();
+            c = static_cast<byte_t>(m_file.get());
             if (m_file.fail() == true)
                 errorFail(SMF_END_OF_FILE);
             m_trackLengthCounter--;
@@ -120,19 +120,15 @@ private:
 
     word_t readWord(void)
     {
-        word_t value;
-
-        value  = (readByte()&0x0ff) <<8 ;
-        value |= readByte()&0x0ff;
+        word_t value = readByte() << 8;
+        value |= readByte();
         return value;
     }
 
     dword_t readDWord(void)
     {
-        dword_t value;
-
-        value  = (readWord()&0x0ffff) <<16 ;
-        value |= readWord()&0x0ffff;
+        dword_t value = readWord() << 16;
+        value |= readWord();
         return value;
     }
 
@@ -167,7 +163,7 @@ private:
     dword_t m_trackLength;
     dword_t m_trackLengthCounter;
     CQueue<CMidiEvent>* m_trackEventQueue;
-    int m_savedRunningStatus;
+    byte_t m_savedRunningStatus;
     int m_deltaTime;
     int m_currentTime;      // The current time (all the delta times added up)
     midiErrors_t m_midiError;

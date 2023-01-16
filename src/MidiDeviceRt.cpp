@@ -28,6 +28,8 @@
 
 #include "MidiDeviceRt.h"
 
+#include <limits>
+
 CMidiDeviceRt::CMidiDeviceRt()
 {
     m_validConnection = false;
@@ -77,7 +79,7 @@ void CMidiDeviceRt::init()
     }
 }
 
-QString CMidiDeviceRt::addIndexToString(QString name, int index)
+QString CMidiDeviceRt::addIndexToString(const QString &name, int index)
 {
     QString ret;
     QString idx;
@@ -105,10 +107,10 @@ QStringList CMidiDeviceRt::getMidiPortList(midiType_t type)
 
     nPorts = midiDevice->getPortCount();
 
-    for(unsigned int i=0; i< nPorts; i++)
+    for(unsigned int i=0; i< nPorts && i < std::numeric_limits<int>::max(); ++i)
     {
         // kotechnology creating indexed string from the post name
-        name = addIndexToString(midiDevice->getPortName(i).c_str(),i);
+        name = addIndexToString(midiDevice->getPortName(i).c_str(), static_cast<int>(i));
         if (name.contains("RtMidi Output Client"))
             continue;
         if (name.contains("RtMidi Input Client"))
@@ -147,16 +149,16 @@ bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
 
     nPorts = midiDevice->getPortCount();
 
-    for(unsigned int i=0; i< nPorts; i++)
+    for(unsigned int i=0; i< nPorts && i <= std::numeric_limits<int>::max(); i++)
     {
         // kotechnology creating indexed string from the post name
-        name = addIndexToString(midiDevice->getPortName(i).c_str(),i);
+        name = addIndexToString(midiDevice->getPortName(i).c_str(), static_cast<int>(i));
         if (name == portName) // Test for a match
         {
             if (m_midiPorts[dev] >= 0)
                 midiDevice->closePort();
 
-            m_midiPorts[dev] = i;
+            m_midiPorts[dev] = static_cast<int>(i);
             m_rawDataIndex = 0;
 
             midiDevice->openPort( i );
@@ -169,6 +171,7 @@ bool CMidiDeviceRt::openMidiPort(midiType_t type, QString portName)
 
 void CMidiDeviceRt::closeMidiPort(midiType_t type, int index)
 {
+    Q_UNUSED(index)
     m_validConnection = false;
     if (type == MIDI_INPUT)
         m_midiin->closePort();
@@ -190,47 +193,47 @@ void CMidiDeviceRt::playMidiEvent(const CMidiEvent & event)
     switch(event.type())
     {
         case MIDI_NOTE_OFF: // NOTE_OFF
-            message.push_back( channel | MIDI_NOTE_OFF );
-            message.push_back( event.note());
-            message.push_back( event.velocity());
+            message.push_back(static_cast<unsigned char>(channel | MIDI_NOTE_OFF));
+            message.push_back(static_cast<unsigned char>(event.note()));
+            message.push_back(static_cast<unsigned char>(event.velocity()));
             break;
         case MIDI_NOTE_ON:      // NOTE_ON
-            message.push_back( channel | MIDI_NOTE_ON );
-            message.push_back( event.note());
-            message.push_back( event.velocity());
+            message.push_back(static_cast<unsigned char>(channel | MIDI_NOTE_ON));
+            message.push_back(static_cast<unsigned char>(event.note()));
+            message.push_back(static_cast<unsigned char>(event.velocity()));
             break;
 
         case MIDI_NOTE_PRESSURE: //POLY_AFTERTOUCH: 3 bytes
-            message.push_back( channel | MIDI_NOTE_PRESSURE);
-            message.push_back( event.data1());
-            message.push_back( event.data2());
+            message.push_back(static_cast<unsigned char>(channel | MIDI_NOTE_PRESSURE));
+            message.push_back(static_cast<unsigned char>(event.data1()));
+            message.push_back(static_cast<unsigned char>(event.data2()));
             break;
 
         case MIDI_CONTROL_CHANGE: //CONTROL_CHANGE:
-            message.push_back( channel | MIDI_CONTROL_CHANGE);
-            message.push_back( event.data1());
-            message.push_back( event.data2());
+            message.push_back(static_cast<unsigned char>(channel | MIDI_CONTROL_CHANGE));
+            message.push_back(static_cast<unsigned char>(event.data1()));
+            message.push_back(static_cast<unsigned char>(event.data2()));
             break;
 
         case MIDI_PROGRAM_CHANGE: //PROGRAM_CHANGE:
-            message.push_back( channel | MIDI_PROGRAM_CHANGE);
-            message.push_back( event.programme());
+            message.push_back(static_cast<unsigned char>(channel | MIDI_PROGRAM_CHANGE));
+            message.push_back(static_cast<unsigned char>(event.programme()));
             break;
 
         case MIDI_CHANNEL_PRESSURE: //AFTERTOUCH: 2 bytes only
-            message.push_back( channel | MIDI_CHANNEL_PRESSURE);
-            message.push_back( event.data1());
+            message.push_back(static_cast<unsigned char>(channel | MIDI_CHANNEL_PRESSURE));
+            message.push_back(static_cast<unsigned char>(event.data1()));
             break;
 
         case MIDI_PITCH_BEND: //PITCH_BEND:
-            message.push_back( channel | MIDI_PITCH_BEND);
-            message.push_back( event.data1());
-            message.push_back( event.data2());
+            message.push_back(static_cast<unsigned char>(channel | MIDI_PITCH_BEND));
+            message.push_back(static_cast<unsigned char>(event.data1()));
+            message.push_back(static_cast<unsigned char>(event.data2()));
             break;
 
         case  MIDI_PB_collateRawMidiData: //used for a SYSTEM_EVENT
-            if (m_rawDataIndex < arraySize(m_savedRawBytes))
-                m_savedRawBytes[m_rawDataIndex++] = event.data1();
+            if (m_rawDataIndex < arraySizeAs<unsigned int>(m_savedRawBytes))
+                m_savedRawBytes[m_rawDataIndex++] = static_cast<unsigned char>(event.data1());
             return; // Don't output any thing yet so just return
 
         case  MIDI_PB_outputRawMidiData: //used for a SYSTEM_EVENT
@@ -269,14 +272,13 @@ int CMidiDeviceRt::checkMidiInput()
         return 0;
     }
 
-    return m_inputMessage.size();
+    return m_inputMessage.size() > std::numeric_limits<int>::max() ? std::numeric_limits<int>::max() : static_cast<int>(m_inputMessage.size());
 }
 
 // reads the real midi event
 CMidiEvent CMidiDeviceRt::readMidiInput()
 {
     CMidiEvent midiEvent;
-    unsigned int channel;
 
     if (Cfg::midiInputDump)
     {
@@ -287,7 +289,7 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
         ppLogInfo("midi input %f : %s", m_stamp, qPrintable(str));
     }
 
-    channel = m_inputMessage[0] & 0x0f;
+    int channel = m_inputMessage[0] & 0x0f;
     switch (m_inputMessage[0] & 0xf0 )
     {
     case MIDI_NOTE_ON:
@@ -328,30 +330,39 @@ CMidiEvent CMidiDeviceRt::readMidiInput()
 
 int CMidiDeviceRt::midiSettingsSetStr(QString name, QString str)
 {
+    Q_UNUSED(name)
+    Q_UNUSED(str)
     return 0;
 }
 
 int CMidiDeviceRt::midiSettingsSetNum(QString name, double val)
 {
+    Q_UNUSED(name)
+    Q_UNUSED(val)
     return 0;
 }
 
 int CMidiDeviceRt::midiSettingsSetInt(QString name, int val)
 {
+    Q_UNUSED(name)
+    Q_UNUSED(val)
     return 0;
 }
 
 QString CMidiDeviceRt::midiSettingsGetStr(QString name)
 {
+    Q_UNUSED(name)
     return QString();
 }
 
 double CMidiDeviceRt::midiSettingsGetNum(QString name)
 {
+    Q_UNUSED(name)
     return 0.0;
 }
 
-int CMidiDeviceRt::midiSettingsGetInt(QString namel)
+int CMidiDeviceRt::midiSettingsGetInt(QString name)
 {
+    Q_UNUSED(name)
     return 0;
 }

@@ -40,19 +40,15 @@ static const float minNameGap = 14.0;
 
 void CPiano::spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex)
 {
-    unsigned int midPoint;
-    int i;
-    float lastY;
-    float gap;
-
-    int range;
-
-    range = topIndex - bottomIndex;
+    const long long range = static_cast<long long>(topIndex) - static_cast<long long>(bottomIndex);
     if (range <= 1)
         return;
 
-    midPoint = range/2 + bottomIndex;
+    const long long midPoint = range/2 + bottomIndex;
+    if (midPoint >= arraySizeAs<long long>(m_noteNameList))
+        return;
 
+    float gap;
     if (range%2 == 0) // test for an even number of notes
     {
         gap = m_noteNameList[midPoint].posY - m_noteNameList[midPoint -1].posY;
@@ -64,10 +60,9 @@ void CPiano::spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex)
         }
     }
 
-    lastY = m_noteNameList[midPoint].posY;
-
     // Search from the middle upwards
-    for (i = midPoint + 1; i < static_cast<int>(topIndex); i++)
+    float lastY = m_noteNameList[midPoint].posY;
+    for (auto i = midPoint + 1; i < static_cast<int>(topIndex); i++)
     {
         gap =  m_noteNameList[i].posY - lastY;
          // If the gap is too small make it bigger
@@ -79,7 +74,7 @@ void CPiano::spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex)
     lastY = m_noteNameList[midPoint].posY;
 
     // now go the other way
-    for (i = midPoint - 1; i >= 0; i--)
+    for (auto i = midPoint - 1; i >= 0; i--)
     {
         gap =  lastY - m_noteNameList[i].posY;
         if (gap < minNameGap)
@@ -125,10 +120,8 @@ void CPiano::drawPianoInputLines(CChord* chord, CColor color, int lineLength)
                 glLineWidth (3.0);
             }
 
-            float posY;
-            posY = stavePos.getPosYAccidental();
-
-            oneLine(Cfg::playZoneX() - lineLength, posY, Cfg::playZoneX(), posY);
+            float posY = stavePos.getPosYAccidental();
+            oneLine(Cfg::playZoneX() - static_cast<float>(lineLength), posY, Cfg::playZoneX(), posY);
             glDisable (GL_LINE_STIPPLE);
         }
         else
@@ -186,18 +179,17 @@ void CPiano::spaceNoteNames()
 
 void CPiano::addNoteNameItem(float posY, int pitch, int type)
 {
-    noteNameItem_t  noteNameItem;
-    int i;
-
-    if (m_noteNameListLength >= arraySize(m_noteNameList))
+    if (m_noteNameListLength >= arraySizeAs<decltype(m_noteNameListLength)>(m_noteNameList))
         return;
 
+    noteNameItem_t noteNameItem;
     noteNameItem.posY = noteNameItem.posYOriginal = posY;
     noteNameItem.type = type;
     noteNameItem.pitch = pitch;
 
     // Sort the entries low to high
-    for (i = m_noteNameListLength - 1; i >= 0; i--)
+        int i;
+    for (i = static_cast<int>(m_noteNameListLength) - 1; i >= 0; i--)
     {
         if (m_noteNameList[i].pitch <= pitch)
             break;
@@ -282,8 +274,8 @@ void CPiano::clear()
     m_goodChord.clear();
     m_badChord.clear();
     noteNameListClear();
-    for (unsigned int i = 0; i < arraySize(m_savedChordLookUp); i++)
-        m_savedChordLookUp[i].pitchKey = 0;
+    for (auto &chord : m_savedChordLookUp)
+        chord.pitchKey = 0;
 }
 
 void CPiano::drawPianoInput()
@@ -304,24 +296,21 @@ void CPiano::drawPianoInput()
 void CPiano::addSavedChord(CMidiEvent midiNote, CChord chord)
 {
     int key = midiNote.note();
-
-    for (unsigned int i = 0; i < arraySize(m_savedChordLookUp); i++)
-    {
+    for (auto &savedChord : m_savedChordLookUp) {
         if (midiNote.type() == MIDI_NOTE_ON)
         {
-            if (m_savedChordLookUp[i].pitchKey == 0 )
+            if (savedChord.pitchKey == 0 )
             {
-                m_savedChordLookUp[i].pitchKey = key;
-                m_savedChordLookUp[i].savedNoteOffChord = chord;
-
+                savedChord.pitchKey = key;
+                savedChord.savedNoteOffChord = chord;
                 return;
             }
         }
         else if (midiNote.type() == MIDI_NOTE_OFF)
         {
-            if (m_savedChordLookUp[i].pitchKey == key )
+            if (savedChord.pitchKey == key )
             {
-                m_savedChordLookUp[i].pitchKey = 0;
+                savedChord.pitchKey = 0;
                 return;
             }
         }
@@ -331,8 +320,8 @@ void CPiano::addSavedChord(CMidiEvent midiNote, CChord chord)
 
 CChord CPiano::removeSavedChord(int key)
 {
-    unsigned int i;
-    for (i = 0; i < arraySize(m_savedChordLookUp); i++)
+    int i = 0;
+    for (; i < arraySize(m_savedChordLookUp); ++i)
     {
         if (m_savedChordLookUp[i].pitchKey == key )
         {
@@ -340,7 +329,7 @@ CChord CPiano::removeSavedChord(int key)
             return m_savedChordLookUp[i].savedNoteOffChord;
         }
     }
-    i--;
+    --i;
     m_savedChordLookUp[i].savedNoteOffChord.clear();
     return m_savedChordLookUp[i].savedNoteOffChord;
 

@@ -63,6 +63,7 @@ void GuiLoopingPopup::on_loopBarsSpin_valueChanged(double bars)
 
 void GuiLoopingPopup::closeEvent(QCloseEvent *event)
 {
+    Q_UNUSED(event)
     QPushButton* parent = static_cast<QPushButton*> (parentWidget());
     if (parent)
         parent->setChecked(false);

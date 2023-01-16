@@ -65,13 +65,14 @@ private slots:
     }
 
     void on_resetButton_clicked(bool clicked) {
+        Q_UNUSED(clicked)
         lowestNoteEdit->setText("0");
         highestNoteEdit->setText("127");
         updateInfoText();
     }
 
-    void on_rightSoundCombo_activated (int index){ updateSounds(); }
-    void on_wrongSoundCombo_activated (int index){ updateSounds(); }
+    void on_rightSoundCombo_activated (int index){ Q_UNUSED(index) updateSounds(); }
+    void on_wrongSoundCombo_activated (int index){ Q_UNUSED(index) updateSounds(); }
     void on_lowestNoteEdit_editingFinished(){updateInfoText();}
     void on_highestNoteEdit_editingFinished(){updateInfoText();}
 private:

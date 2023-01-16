@@ -344,9 +344,9 @@ void CConductor::playMusic(bool start)
         /*
         const unsigned char gsModeEnterData[] =  {0xf0, 0x41, 0x10, 0x42, 0x12, 0x40, 0x00, 0x7f, 0x00, 0x41, 0xf7};
 
-        for (size_t i = 0; i < arraySize(gsModeEnterData); i++)
+        for (auto &d : gsModeEnterData)
         {
-            event.collateRawByte(0, gsModeEnterData[i]);
+            event.collateRawByte(0, d);
             playTrackEvent(event);
         }
         event.outputCollatedRawBytes(0);
@@ -641,7 +641,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
         {
             m_goodPlayedNotes.addNote(hand, inputNote.note());
             m_piano->addPianistNote(hand, inputNote,true);
-            int pianistTiming;
+            qint64 pianistTiming;
             if  ( ( cfg_timingMarkersFlag && m_followSkillAdvanced ) || m_playMode == PB_PLAY_MODE_rhythmTapping )
                 pianistTiming = m_pianistTiming;
             else
@@ -698,7 +698,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                       {
                         m_goodPlayedNotes.addNote(hand, inputNote.note());
                         m_piano->addPianistNote(hand, inputNote,true);
-                        int pianistTiming;
+                        qint64 pianistTiming;
                         if  ( ( cfg_timingMarkersFlag && m_followSkillAdvanced ) || m_playMode == PB_PLAY_MODE_rhythmTapping )
                           pianistTiming = m_pianistTiming;
                         else
@@ -814,7 +814,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
 
 }
 
-void CConductor::addDeltaTime(int ticks)
+void CConductor::addDeltaTime(qint64 ticks)
 {
     m_scoreWin->scrollDeltaTime(ticks);
     m_playingDeltaTime += ticks;
@@ -834,14 +834,14 @@ void CConductor::followPlaying()
 
     if (seekingBarNumber())
     {
-        if (deltaAdjust(m_chordDeltaTime) > -m_stopPoint )
+        if (deltaAdjustL(m_chordDeltaTime) > -m_stopPoint )
             fetchNextChord();
     }
     else if ( m_playMode == PB_PLAY_MODE_followYou ||  m_playMode == PB_PLAY_MODE_rhythmTapping )
     {
-        if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
+        if (deltaAdjustL(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
             m_followState = PB_FOLLOW_earlyNotes;
-        if (deltaAdjust(m_chordDeltaTime) > -m_stopPoint )
+        if (deltaAdjustL(m_chordDeltaTime) > -m_stopPoint )
         {
             m_followState = PB_FOLLOW_waiting;
             // Throw away the time past the stop point (by adding a negative ticks)
@@ -858,7 +858,7 @@ void CConductor::followPlaying()
             setEventBits( EVENT_BITS_forceRatingRedraw);
         }
     }
-    if (deltaAdjust(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
+    if (deltaAdjustL(m_chordDeltaTime) > -m_cfg_earlyNotesPoint )
         turnOnKeyboardLights(true);
 }
 
@@ -871,14 +871,11 @@ void CConductor::outputSavedNotesOff()
 // untangle the sound in case there is any notes off just after we have stopped
 void CConductor::findImminentNotesOff()
 {
-    int i;
-    CMidiEvent event;
-    int aheadDelta = 0;
-    i = 0;
+    CMidiEvent event = m_nextMidiEvent;
+    int i = 0;
+    qint64 aheadDelta = 0;
 
-    event = m_nextMidiEvent;
-
-    while (deltaAdjust(m_playingDeltaTime) + aheadDelta   > m_cfg_imminentNotesOffPoint)
+    while (deltaAdjustL(m_playingDeltaTime) + aheadDelta   > m_cfg_imminentNotesOffPoint)
     {
         if (event.type() == MIDI_NOTE_OFF )
             m_savedNoteOffQueue->push(event);
@@ -902,15 +899,9 @@ void CConductor::missedNotesColor(CColor color)
     }
 }
 
-void CConductor::realTimeEngine(int mSecTicks)
+void CConductor::realTimeEngine(qint64 mSecTicks)
 {
-    int type;
-    int ticks; // MIDI ticks
-
-    //mSecTicks = 2; // for debugging only
-
-    ticks = m_tempo.mSecToTicks(mSecTicks);
-
+    auto ticks = m_tempo.mSecToTicks(mSecTicks);
     if (!m_followPlayingTimeOut)
         m_pianistTiming += ticks;
 
@@ -979,6 +970,7 @@ void CConductor::realTimeEngine(int mSecTicks)
     addDeltaTime(ticks);
 
     followPlaying();
+    int type;
     while ( m_playingDeltaTime >= m_leadLagAdjust)
     {
         type = m_nextMidiEvent.type();
@@ -1082,8 +1074,8 @@ void CConductor::rewind()
 
     // Annie song 25
 
-    m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(Cfg::playZoneEarly()) * SPEED_ADJUST_FACTOR; // when playing along
-    m_cfg_playZoneLate = CMidiFile::ppqnAdjust(Cfg::playZoneLate()) * SPEED_ADJUST_FACTOR;
+    m_cfg_playZoneEarly = CMidiFile::ppqnAdjust(static_cast<float>(Cfg::playZoneEarly())) * SPEED_ADJUST_FACTOR; // when playing along
+    m_cfg_playZoneLate = CMidiFile::ppqnAdjust(static_cast<float>(Cfg::playZoneLate())) * SPEED_ADJUST_FACTOR;
 }
 
 void CConductor::init2(CScore * scoreWin, CSettings* settings)

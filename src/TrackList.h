@@ -185,7 +185,7 @@ public:
 
     int getHandTrackIndex(whichPart_t whichPart);
 
-    void changeListWidgetItemView(unsigned int index, QListWidgetItem* listWidgetItem);
+    void changeListWidgetItemView(int index, QListWidgetItem* listWidgetItem);
 
     double averageNotePitch(int chan) {
         int totalNoteCount = 0;

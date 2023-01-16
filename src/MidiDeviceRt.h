@@ -72,7 +72,7 @@ private:
     unsigned int m_rawDataIndex;
 
     // kotechnology added function to create indexed string. Format: "1 - Example"
-    QString addIndexToString(QString name, int index);
+    QString addIndexToString(const QString &name, int index);
 
     bool m_validConnection;
 };

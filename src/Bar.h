@@ -53,8 +53,8 @@ public:
     void setTimeSig(int top, int bottom);
 
     int getTimeSigTop() {return m_currentTimeSigTop;} // The Numerator
-    int getBeatLength() {return m_beatLength;}
-    int getBarLength() {return m_barLength;} // in ppqn
+    qint64 getBeatLength() {return m_beatLength;}
+    qint64 getBarLength() {return m_barLength;} // in ppqn
 
     void setPlayFromBar(double bar);
     void setPlayFromBar(int bar, int beat = 0, int ticks = 0);
@@ -88,15 +88,15 @@ public:
     }
 
     //return true if bar number has changed
-    int addDeltaTime(int ticks);
+    qint64 addDeltaTime(qint64 ticks);
 
     //
     int getBarNumber(){ return m_barCounter;}
 
     double getCurrentBarPos()
     {
-        return m_barCounter + static_cast<double>(m_beatCounter)/m_currentTimeSigBottom +
-            static_cast<double>(m_deltaTime)/(m_beatLength * m_currentTimeSigBottom * SPEED_ADJUST_FACTOR);
+        return m_barCounter + static_cast<double>(m_beatCounter)/static_cast<double>(m_currentTimeSigBottom) +
+            static_cast<double>(m_deltaTime)/static_cast<double>(m_beatLength * m_currentTimeSigBottom * SPEED_ADJUST_FACTOR);
     }
 
     bool seekingBarNumber() { return m_seekingBarNumber;}
@@ -108,7 +108,7 @@ public:
         return bits;
     }
 
-    int goToBarNumer();
+    qint64 goToBarNumer();
 
 private:
     void checkGotoBar();
@@ -118,9 +118,9 @@ private:
         m_enablePlayFromBar = (m_enableLooping || m_playFromBar > 0.0)?true:false;
     }
 
-    int m_deltaTime;
-    int m_beatLength; //in ppqn ticks
-    int m_barLength; // m_beatLength * getTimeSigTop() (also in ppqn ticks)
+    qint64 m_deltaTime;
+    qint64 m_beatLength; //in ppqn ticks
+    qint64 m_barLength; // m_beatLength * getTimeSigTop() (also in ppqn ticks)
 
     int m_startTimeSigTop; // The time Sig at the start of the piece
     int m_startTimeSigBottom;

@@ -128,8 +128,8 @@ public:
 
     void setColor(CColor color){ m_color = color;}
     CColor getColor(){return m_color;}
-    void setPianistTiming(int timing){ m_pianistTiming = timing;}
-    int getPianistTiming(){ return m_pianistTiming; }
+    void setPianistTiming(qint64 timing){ m_pianistTiming = timing;}
+    qint64 getPianistTiming(){ return m_pianistTiming; }
 
     void transpose(int amount)
     {
@@ -172,13 +172,13 @@ private:
 
     CStavePos m_stavePos;
     musicalSymbol_t m_symbolType;
-    byte_t m_midiNote;
+    int m_midiNote;
     accidentalModifer_t m_accidentalModifer; // Used to suppress the second sharp in the same bar
     int m_midiDuration;
     whichPart_t m_hand;
 
     CColor m_color;
-    int m_pianistTiming;
+    qint64 m_pianistTiming;
     int m_index;  // the number of the note per hand starting from the bottom.
     int m_total;  // the number of the notes per hand;
 };

@@ -97,7 +97,7 @@ public:
     //! rest the conductor between each song
     void reset();
 
-    void realTimeEngine(int mSecTicks);
+    void realTimeEngine(qint64 mSecTicks);
     void playMusic(bool start);
     bool playingMusic() {return m_playing;}
     void reconnectMidi();
@@ -247,11 +247,11 @@ private:
 
     int calcBoostVolume(int chan, int volume);
 
-    void addDeltaTime(int ticks);
+    void addDeltaTime(qint64 ticks);
     void turnOnKeyboardLights(bool on);
 
-    int m_playingDeltaTime;
-    int m_chordDeltaTime;
+    qint64 m_playingDeltaTime;
+    qint64 m_chordDeltaTime;
     bool m_playing;
 
     int m_transpose;     // the number of semitones to transpose the music
@@ -273,8 +273,8 @@ private:
     CPiano* m_piano;
 
     CBar m_bar;
-    int m_leadLagAdjust; // Synchronise the sound with the video
-    int m_silenceTimeOut; // used to create silence if the student stops for toooo long
+    qint64 m_leadLagAdjust; // Synchronise the sound with the video
+    qint64 m_silenceTimeOut; // used to create silence if the student stops for toooo long
     CChord m_wantedChord;  // The chord the pianist needs to play
     CChord m_savedWantedChord; // A copy of the wanted chord complete with both left and right parts
     CChord m_goodPlayedNotes;  // The good notes the pianist plays
@@ -284,22 +284,22 @@ private:
     int m_pianistSplitPoint;    // Defines which notes go in the base and treble clef
     bool m_followSkillAdvanced;
     int m_lastSound;
-    int m_stopPoint;   // Were we stop the music if the pianist is late
+    qint64 m_stopPoint;   // Were we stop the music if the pianist is late
     int m_cfg_rightNoteSound;
     int m_cfg_wrongNoteSound;
     int m_pianistGoodChan;
     int m_pianistBadChan;
-    int m_cfg_earlyNotesPoint; // don't press the note too early
-    int m_cfg_stopPointAdvanced;   // Were we stop the music if the pianist is late
-    int m_cfg_stopPointBeginner;   // Were we stop the music if the pianist is late
-    int m_cfg_imminentNotesOffPoint;
-    int m_cfg_playZoneEarly; // when playing along
-    int m_cfg_playZoneLate;
+    qint64 m_cfg_earlyNotesPoint; // don't press the note too early
+    qint64 m_cfg_stopPointAdvanced;   // Were we stop the music if the pianist is late
+    qint64 m_cfg_stopPointBeginner;   // Were we stop the music if the pianist is late
+    qint64 m_cfg_imminentNotesOffPoint;
+    qint64 m_cfg_playZoneEarly; // when playing along
+    qint64 m_cfg_playZoneLate;
 
     int m_cfg_rhythmTapLeftHandDrumSound;
     int m_cfg_rhythmTapRightHandDrumSound;
 
-    int m_pianistTiming;  //measure whether the pianist is playing early or late
+    qint64 m_pianistTiming;  //measure whether the pianist is playing early or late
     bool m_followPlayingTimeOut;  // O dear, the student is too slow
 
     bool m_testWrongNoteSound;
