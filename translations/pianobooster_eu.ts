@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Conductor.cpp" line="318"/>
         <source>None</source>
-        <translation type="unfinished">Bat ere ez</translation>
+        <translation>Bat ere ez</translation>
     </message>
 </context>
 <context>
@@ -14,37 +14,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="307"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="308"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="309"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="311"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="312"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
 </context>
 <context>
@@ -52,12 +52,12 @@
     <message>
         <location filename="../src/GlView.cpp" line="229"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zehaztasuna:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="241"/>
         <source>Song:</source>
-        <translation type="unfinished"></translation>
+        <translation>Abestia:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="264"/>
@@ -75,12 +75,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ERROREA SOINURIK EZ: hau konpontzeko, erabili Konfigurazioa/MIDI konfigurazioa... menua</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ERROREA MIDI FITXATEGIRIK EZ: hau konpontzeko, erabili Fitxategia/Ireki... menua</translation>
     </message>
 </context>
 <context>
@@ -113,12 +113,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Electric Piano 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano elektrikoa 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Electric Piano 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano elektrikoa 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
         <source>Music Box</source>
-        <translation type="unfinished"></translation>
+        <translation>Musika kutxa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="418"/>
@@ -163,7 +163,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="421"/>
         <source>Tubular Bells</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanpai tubularrak</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="422"/>
@@ -183,12 +183,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>Rock Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Rock organoa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
         <source>Church Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliza organoa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="427"/>
@@ -208,32 +208,32 @@
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Tango Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Tango akordeoia</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitarra akustikoa (nylona)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitarra akustikoa (altzairua)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
         <source>Electric Guitar (jazz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitarra elektrikoa (jazz)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
         <source>Electric Guitar (clean)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitarra elektrikoa (garbia)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Electric Guitar (muted)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitarra elektrikoa (isilduta)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
@@ -243,12 +243,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="437"/>
         <source>Distortion Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Distortsio gitarra</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Guitar harmonics</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitarra harmonikoak</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
@@ -258,7 +258,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="440"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baxu elektrikoa (hatza)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="441"/>
@@ -303,7 +303,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="449"/>
         <source>Cello</source>
-        <translation type="unfinished"></translation>
+        <translation>Biolontxeloa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="450"/>
@@ -313,17 +313,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="451"/>
         <source>Tremolo Strings</source>
-        <translation type="unfinished"></translation>
+        <translation>Tremolo hariak</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>Pizzicato Strings</source>
-        <translation type="unfinished"></translation>
+        <translation>Pizzicato hariak</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>Orchestral Harp</source>
-        <translation type="unfinished"></translation>
+        <translation>Orkestra Harpa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
@@ -333,12 +333,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="455"/>
         <source>String Ensemble 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hari multzoa 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="456"/>
         <source>String Ensemble 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Hari multzoa 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="457"/>
@@ -383,17 +383,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
         <source>Tuba</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="466"/>
         <source>Muted Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Tronpeta isilduta</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>French Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Frantses Adarra</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
@@ -483,7 +483,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="485"/>
         <source>Whistle</source>
-        <translation type="unfinished"></translation>
+        <translation>Txistua</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="486"/>
@@ -1576,42 +1576,42 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="328"/>
         <source>The PC Keyboard shortcut keys</source>
-        <translation type="unfinished"></translation>
+        <translation>PCko teklatuko laster teklak</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="332"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ktrl+S</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="336"/>
         <source>Piano &amp;Keyboard Setting ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano eta teklatuaren ezarpenak...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="337"/>
         <source>Ctrl+K</source>
-        <translation type="unfinished"></translation>
+        <translation>Ktrl+K</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="338"/>
         <source>Change the piano keyboard settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Aldatu pianoaren teklatuaren ezarpenak</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="341"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pantaila osoa</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="342"/>
         <source>Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Pantaila osoko modua</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="343"/>
         <source>F11</source>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="347"/>
@@ -1621,27 +1621,27 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="348"/>
         <source>Show the Left Side Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Erakutsi ezkerreko alboko panela</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="349"/>
         <source>F12</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">F12</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="354"/>
         <source>Show Piano &amp;Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Erakutsi pianoa eta teklatua</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="355"/>
         <source>Show Piano Keyboard Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Erakutsi piano-teklatuaren widgeta</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="363"/>
         <source>&amp;Preferences ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Hobespenak...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="364"/>
@@ -1651,7 +1651,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="365"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ktrl+P</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="368"/>
@@ -1661,22 +1661,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="369"/>
         <source>Song Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Abestien ezarpenak</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="370"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ktrl+D</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="374"/>
         <source>Shift+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Maius+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="379"/>
         <source>Alt+F1</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+F1</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="405"/>
@@ -1708,7 +1708,7 @@
         <location filename="../src/QtWindow.cpp" line="436"/>
         <location filename="../src/QtWindow.cpp" line="526"/>
         <source>Piano Booster Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Booster Laguntza</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="440"/>
@@ -1718,7 +1718,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="441"/>
         <source>Piano Booster Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Booster webgunea</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="477"/>
@@ -1728,22 +1728,22 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="528"/>
         <source>&lt;h3&gt;Getting Started&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Hasteko&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="529"/>
         <source>&lt;p&gt;You need a &lt;b&gt;MIDI Piano Keyboard &lt;/b&gt; and a &lt;b&gt;MIDI interface&lt;/b&gt; for the PC. If you don&apos;t have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, &apos;X&apos; is middle C.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;&lt;b&gt;MIDI piano-teklatua &lt;/b&gt; eta &lt;b&gt;MIDI interfazea&lt;/b&gt; behar dituzu ordenagailurako. Ez baduzu MIDI teklatua, oraindik ere proba dezakezu PianoBooster ordenagailuko teklatua erabiliz, &apos;X&apos; erdiko C da.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="537"/>
         <source>&lt;p&gt;PianoBooster works best with MIDI files that have separate left and right piano parts using MIDI channels 3 and 4.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;PianoBooster-ek 3 eta 4 MIDI kanalak erabiliz ezkerreko eta eskuineko piano zati bereiziak dituzten MIDI fitxategiekin funtzionatzen du.</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="539"/>
         <source>&lt;h3&gt;Setting Up&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Konfiguratzen&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="207"/>
@@ -1770,17 +1770,17 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="333"/>
         <source>Setup the MIDI input and output</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguratu MIDI sarrera eta irteera</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="533"/>
         <source>&lt;p&gt;PianoBooster now includes a built-in sound generator called FluidSynth which requires a General MIDI (GM) SoundFont. Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;PianoBooster-ek FluidSynth izeneko soinu-sorgailu integratua du orain, General MIDI (GM) SoundFont behar duena. Erabili ‘Konfigurazioa/MIDI konfigurazioa’ menuko aukera eta, ondoren, FluidSynth fitxako kargatzeko botoia SoundFont instalatzeko.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="540"/>
         <source>&lt;p&gt;First use the &lt;i&gt;Setup/MIDI Setup&lt;/i&gt; menu and in the dialog box select the MIDI input and MIDI output interfaces that match your hardware. </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Lehenik, erabili &lt;i&gt;Konfigurazioa/MIDI konfigurazioa&lt;/i&gt; menua eta elkarrizketa-koadroan hautatu zure hardwarearekin bat datozen MIDI sarrera eta MIDI irteerako interfazeak. </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="542"/>
@@ -1790,7 +1790,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="546"/>
         <source>&lt;h3&gt;Hints on Playing the Piano&lt;/h3&gt;&lt;p&gt;For hints on how to play the piano see: </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Pianoa jotzeko aholkuak&lt;/h3&gt;&lt;p&gt;Pianoa jotzeko aholkuak ikusteko, ikus: </translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="548"/>
@@ -1951,7 +1951,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI fitxategiak</translation>
     </message>
 </context>
 </TS>

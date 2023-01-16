@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/Conductor.cpp" line="318"/>
         <source>None</source>
-        <translation type="unfinished">Tidak ada</translation>
+        <translation>Tidak ada</translation>
     </message>
 </context>
 <context>
@@ -14,37 +14,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="307"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="308"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="309"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="311"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="312"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
 </context>
 <context>
@@ -52,17 +52,17 @@
     <message>
         <location filename="../src/GlView.cpp" line="229"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>Akurasi:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="241"/>
         <source>Song:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagu:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="264"/>
         <source>Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bar:</translation>
     </message>
 </context>
 <context>
@@ -75,12 +75,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>ERROR TIDAK ADA SUARA: Untuk memperbaikinya gunakan menu Setup/MIDI Setup ...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>GALAT TIDAK ADA FILE MIDI: Untuk memperbaikinya gunakan menu File/Open ...</translation>
     </message>
 </context>
 <context>
@@ -88,12 +88,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="406"/>
         <source>(None)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Tidak ada)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="407"/>
         <source>Grand Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano besar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
@@ -103,22 +103,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektrik Grand</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Honky-tonk Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Honky-tonk</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Electric Piano 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Elektrik 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Electric Piano 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Piano Elektrik 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation>Clavi</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -198,57 +198,57 @@
     <message>
         <location filename="../src/TrackList.cpp" line="428"/>
         <source>Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Akordion</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="429"/>
         <source>Harmonica</source>
-        <translation type="unfinished"></translation>
+        <translation>Harmonika</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Tango Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Akordeon Tango</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gitar Akustik (nilon)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitar Akustik (besi)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
         <source>Electric Guitar (jazz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitar Listrik (jazz)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
         <source>Electric Guitar (clean)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitar Listrik (bersih)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Electric Guitar (muted)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitar Listrik (dibisukan)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
         <source>Overdriven Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitar Overdriven</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="437"/>
         <source>Distortion Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Distorsi Gitar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Guitar harmonics</source>
-        <translation type="unfinished"></translation>
+        <translation>Harmonik gitar</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
@@ -258,17 +258,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="440"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bass Listrik (jari)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="441"/>
         <source>Electric Bass (pick)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bass Listrik (pick)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="442"/>
         <source>Fretless Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Bass tanpa fret</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="443"/>
@@ -1765,7 +1765,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="331"/>
         <source>&amp;MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pengaturan MIDI ...</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="333"/>
@@ -1805,12 +1805,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="551"/>
         <source>website</source>
-        <translation type="unfinished"></translation>
+        <translation>situs web</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
         <source>the PianoBooster</source>
-        <translation type="unfinished"></translation>
+        <translation>PianoBooster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="552"/>
@@ -1820,42 +1820,42 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>and the</source>
-        <translation type="unfinished"></translation>
+        <translation>dan</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="553"/>
         <source>user forum</source>
-        <translation type="unfinished"></translation>
+        <translation>forum pengguna</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="563"/>
         <source>About Piano Booster</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentang Piano Booster</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="565"/>
         <source>&lt;b&gt;PianoBooster - Version %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PianoBooster - Versi %1&lt;/b&gt; &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="566"/>
         <source>&lt;b&gt;Boost&lt;/b&gt; your &lt;b&gt;Piano&lt;/b&gt; playing skills!&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Boost&lt;/b&gt; keterampilan bermain &lt;b&gt;Piano&lt;/b&gt; Anda! &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="568"/>
         <source>Copyright(c) L. J. Barman, 2008-2020; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Hak Cipta (c) L. J. Barman, 2008-2020; Semua hak dilindungi undang-undang.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="569"/>
         <source>Copyright(c) Fabien Givors, 2018-2019; All rights reserved.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Hak Cipta (c) Fabien Givors, 2018-2019; Semua hak dilindungi undang-undang.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="571"/>
         <source>This program is made available under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.&lt;br&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Program ini tersedia di bawah ketentuan Gnu General Public License versi 3 seperti yang diterbitkan oleh Free Software Foundation. &lt;br&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="577"/>
@@ -1875,7 +1875,7 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="600"/>
         <source>PC Keyboard ShortCuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Pintasan Keyboard PC</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="602"/>
@@ -1946,12 +1946,12 @@
     <message>
         <location filename="../src/QtWindow.cpp" line="648"/>
         <source>Open MIDI File</source>
-        <translation type="unfinished"></translation>
+        <translation>Buka file MIDI</translation>
     </message>
     <message>
         <location filename="../src/QtWindow.cpp" line="649"/>
         <source>MIDI Files</source>
-        <translation type="unfinished"></translation>
+        <translation>File MIDI</translation>
     </message>
 </context>
 </TS>
