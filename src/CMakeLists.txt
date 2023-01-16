@@ -44,6 +44,7 @@ MESSAGE("PREFIX: " ${CMAKE_INSTALL_PREFIX})
 MESSAGE("DATA_DIR: " ${DATA_DIR})
 MESSAGE("CMAKE_INSTALL_BINDIR: " ${CMAKE_INSTALL_BINDIR})
 
+set(OpenGL_GL_PREFERENCE "GLVND")
 FIND_PACKAGE( OpenGL REQUIRED )
 
 if(NOT WIN32)
@@ -155,6 +156,7 @@ else()
         MESSAGE(FATAL_ERROR "rtmidi not found (Try building with option USE_BUNDLED_RTMIDI=ON)")
     endif(NOT RTMIDI_FOUND)
     include_directories(${RTMIDI_INCLUDE_DIRS})
+    link_directories(${RTMIDI_LIBRARY_DIRS})
 endif()
 
 # with SET() command you can change variables or define new ones
