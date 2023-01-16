@@ -28,6 +28,8 @@
 #include "QtWindow.h"
 #include "version.h"
 
+#include <QSurfaceFormat>
+
 #ifdef __linux__
 #ifndef USE_REALTIME_PRIORITY
 #define USE_REALTIME_PRIORITY 0
@@ -62,7 +64,7 @@ QtWindow::QtWindow()
 
     decodeCommandLine();
 
-    QGLFormat fmt = QGLFormat::defaultFormat();
+    auto fmt = QSurfaceFormat::defaultFormat();
     if (Cfg::experimentalSwapInterval != -1)
     {
         fmt.setSwapInterval(Cfg::experimentalSwapInterval);
@@ -84,7 +86,7 @@ QtWindow::QtWindow()
         fmt.setSamples(4);
     }
 
-    QGLFormat::setDefaultFormat(fmt);
+    QSurfaceFormat::setDefaultFormat(fmt);
 
     m_glWidget = new CGLView(this, m_settings);
     m_glWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);

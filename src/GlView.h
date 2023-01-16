@@ -29,7 +29,7 @@
 #define __GLVIEW_H__
 #include <QTime>
 #include <QBasicTimer>
-#include <QGLWidget>
+#include <QOpenGLWidget>
 #include "Song.h"
 #include "Score.h"
 #include "Settings.h"
@@ -37,7 +37,7 @@
 
 class Window;
 
-class CGLView : public QGLWidget//, RtTimer
+class CGLView : public QOpenGLWidget//, RtTimer
 {
     Q_OBJECT
 
@@ -63,6 +63,7 @@ protected:
     void resizeGL(int width, int height);
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+    void renderText(double x, double y, double z, const QString &str, const QFont & font);
 
 private:
     void drawDisplayText();
