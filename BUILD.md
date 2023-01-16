@@ -1,8 +1,9 @@
 # Build instructions for Linux and BSD Unix
 
 Ensure that the following packages are installed:
-`build-essential`, `cmake`, `pkg-config`, `libftgl-dev`, `qtbase5-dev`, `qttools5-dev`, `librtmidi-dev` , `libfluidsynth-dev`, `fluid-soundfont-gm`
 
+- For Qt5: `build-essential`, `cmake`, `pkg-config`, `libftgl-dev`, `qtbase5-dev`, `qttools5-dev`, `librtmidi-dev` , `libfluidsynth-dev`, `fluid-soundfont-gm`
+- For Qt6: `build-essential`, `cmake`, `pkg-config`, `libftgl-dev`, `qt6-base-dev`, `libqt6core5compat6-dev`, `qt6-tools-dev`, `qt6-tools-dev-tools`, `qt6-l10n-tools`, `librtmidi-dev` , `libfluidsynth-dev`, `fluid-soundfont-gm`
 
 
 To generate a project makefile using CMake, create a build folder
@@ -10,7 +11,7 @@ and then run CMake from it:
 ```
 $ mkdir build
 $ cd build
-$ cmake ..
+$ cmake .. -DQT_PACKAGE_NAME=Qt6 # or cmake .. -DQT_PACKAGE_NAME=Qt5
 ```
 
 To compile the PianoBooster source code type:
