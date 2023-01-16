@@ -24,6 +24,7 @@
 
 */
 
+#include <QFileInfo>
 #include <QtWidgets>
 
 #include "GuiMidiSetupDialog.h"
@@ -298,10 +299,11 @@ void GuiMidiSetupDialog::on_fluidLoadButton_clicked ( bool checked )
         }
     }
 
-    QFileInfo soundFontInfo = QFileDialog::getOpenFileName(this, tr("Open SoundFont File for fluidsynth"),
+    const auto soundFontFile = QFileDialog::getOpenFileName(this, tr("Open SoundFont File for fluidsynth"),
                             lastSoundFont, tr("SoundFont Files (*.sf2 *.sf3)"));
-    if (!soundFontInfo.isFile()) return;
+    if (soundFontFile.isEmpty()) return;
 
+    const auto soundFontInfo = QFileInfo(soundFontFile);
     m_settings->setFluidSoundFontNames(soundFontInfo.filePath());
     m_settings->setValue("LastSoundFontDir", soundFontInfo.path());
 

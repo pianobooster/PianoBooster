@@ -71,8 +71,15 @@ if(NO_LANGS)
     add_compile_options("-DNO_LANGS")
 endif()
 
-# Finds Qt5 libraries
-FIND_PACKAGE( Qt5 REQUIRED COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml )
+# Finds Qt libraries
+set(QT_PACKAGE_NAME Qt5 CACHE STRING "Name of the Qt package to use, set e.g. to \"Qt6\" to use Qt 6")
+set(QT_COMPONENTS Core Gui Widgets LinguistTools OpenGL Xml)
+set(QT_LIBS ${QT_PACKAGE_NAME}::Core ${QT_PACKAGE_NAME}::Gui ${QT_PACKAGE_NAME}::Widgets ${QT_PACKAGE_NAME}::Xml ${QT_PACKAGE_NAME}::OpenGL)
+if (QT_PACKAGE_NAME STREQUAL Qt6)
+    list(APPEND QT_COMPONENTS OpenGLWidgets Core5Compat)
+    list(APPEND QT_LIBS ${QT_PACKAGE_NAME}::OpenGLWidgets ${QT_PACKAGE_NAME}::Core5Compat)
+endif ()
+FIND_PACKAGE( "${QT_PACKAGE_NAME}" REQUIRED COMPONENTS ${QT_COMPONENTS})
 
 add_compile_options(-fPIC)
 
@@ -256,14 +263,12 @@ if(WIN32)
     SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
 endif(WIN32)
 
-qt5_use_modules(pianobooster Core Gui Widgets LinguistTools OpenGL Xml)
-
 if(${CMAKE_VERSION} VERSION_LESS "3.13.0")
     message("Please consider to switch to CMake 3.13.0")
 else()
     target_link_directories(pianobooster PUBLIC ${FTGL_LIBRARY_DIRS} ${JACK_LIBRARY_DIRS} ${FLUIDSYNTH_LIBRARY_DIRS})
 endif()
-target_link_libraries (pianobooster Qt5::Widgets Qt5::Xml Qt5::OpenGL ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY} ${FLUIDSYNTH_LIBRARY} ${RTMIDI_LIBRARY})
+target_link_libraries (pianobooster ${QT_LIBS} ${OPENGL_LIBRARIES} ${FTGL_LIBRARY} ${RTMIDI_LIBRARIES} ${JACK_LIBRARY} ${FLUIDSYNTH_LIBRARY} ${RTMIDI_LIBRARY})
 
 if(NOT APPLE)
     INSTALL( FILES ../pianobooster.desktop DESTINATION share/applications )
