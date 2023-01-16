@@ -79,7 +79,8 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt@5)"
+          export PKG_CONFIG_PATH="$(brew --prefix readline)/lib/pkgconfig:$PKG_CONFIG_PATH"
+          cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt@5);"
           make
           make install-translations
           $(brew --prefix qt@5)/bin/macdeployqt build/pianobooster.app -dmg
