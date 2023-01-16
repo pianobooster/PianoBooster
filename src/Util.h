@@ -51,14 +51,14 @@ using namespace std;
 typedef unsigned char byte_t;
 
 template <typename As, typename T, std::size_t N>
-[[nodiscard]] constexpr auto arraySizeAs(const T (&)[N]) noexcept
+[[nodiscard]] constexpr As arraySizeAs(const T (&)[N]) noexcept
 {
     static_assert(N >= 0 && N <= std::numeric_limits<As>::max());
     return static_cast<As>(N);
 }
 
 template <typename T, std::size_t N>
-[[nodiscard]] constexpr auto arraySize(const T (&a)[N]) noexcept
+[[nodiscard]] constexpr int arraySize(const T (&a)[N]) noexcept
 {
     return arraySizeAs<int>(a);
 }
