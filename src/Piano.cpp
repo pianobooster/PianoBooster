@@ -218,7 +218,7 @@ void CPiano::addPianistNote(whichPart_t part, CMidiEvent midiNote, bool good)
     if (stavePos.getStaveIndex() >= MAX_STAVE_INDEX || stavePos.getStaveIndex() <= MIN_STAVE_INDEX )
         return;
 
-    if (good == true)
+    if (good)
         m_goodChord.addNote(part, note);
     else
         m_badChord.addNote(part, note);

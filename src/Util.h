@@ -89,7 +89,7 @@ constexpr qint64 deltaAdjustL (qint64 delta) { return delta / SPEED_ADJUST_FACTO
 constexpr float deltaAdjustF (qint64 delta) { return static_cast<float>(delta) / static_cast<float>(SPEED_ADJUST_FACTOR); }
 
 void benchMarkInit();
-void benchMark(unsigned int id, QString message);
+void benchMark(unsigned int id, const QString &message);
 void benchMarkResults();
 
 class Util {

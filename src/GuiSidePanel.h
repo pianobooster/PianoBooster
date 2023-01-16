@@ -52,11 +52,11 @@ public:
     void refresh();
 
     void loadBookList();
-    void setBookName(QString bookName);
-    void setSongName(QString songName);
+    void setBookName(const QString &bookName);
+    void setSongName(const QString &songName);
     int getSongIndex() {return songCombo->currentIndex();}
     void setSongIndex(int index){songCombo->setCurrentIndex(index);}
-    void setCurrentHand(QString hand);
+    void setCurrentHand(const QString &hand);
 
     bool isRepeatSong(){return repeatSong->isChecked();}
 

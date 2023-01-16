@@ -84,7 +84,7 @@ public:
     CTrackList* getTrackList() {return m_trackList;}
     void refreshScroll();
 
-    QString getSongTitle() {return m_songTitle;}
+    const QString &getSongTitle() {return m_songTitle;}
 
 private:
     void midiFileInfo();

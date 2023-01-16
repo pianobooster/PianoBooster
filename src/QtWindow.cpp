@@ -30,6 +30,7 @@
 
 #include <QDebug>
 #include <QSurfaceFormat>
+#include <QStringBuilder>
 
 #ifdef __linux__
 #ifndef USE_REALTIME_PRIORITY
@@ -136,7 +137,7 @@ QtWindow::QtWindow()
 
     readSettings();
 
-    QTimer::singleShot(100, [&](){
+    QTimer::singleShot(100, this, [&](){
         QString songName = m_settings->value("CurrentSong").toString();
         if (!songName.isEmpty())
             m_settings->openSongFile( songName );
@@ -175,7 +176,7 @@ void QtWindow::displayUsage()
     fprintf(stdout, "       --lights           Turns on the keyboard lights.\n");
 }
 
-int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
+int QtWindow::decodeIntegerParam(const QString &arg, int defaultParam)
 {
     int n = arg.lastIndexOf('=');
     if (n == -1 || (n + 1) >= arg.size())
@@ -187,7 +188,7 @@ int QtWindow::decodeIntegerParam(QString arg, int defaultParam)
     return defaultParam;
 }
 
-bool QtWindow::validateIntegerParam(QString arg)
+bool QtWindow::validateIntegerParam(const QString &arg)
 {
     int n = arg.lastIndexOf('=');
     if (n == -1 || (n + 1) >= arg.size())
@@ -196,7 +197,7 @@ bool QtWindow::validateIntegerParam(QString arg)
     arg.mid(n+1).toInt(&ok);
      return ok;
 }
-bool QtWindow::validateIntegerParamWithMessage(QString arg)
+bool QtWindow::validateIntegerParamWithMessage(const QString &arg)
 {
     bool ok = validateIntegerParam(arg);
     if (!ok) {
@@ -206,7 +207,7 @@ bool QtWindow::validateIntegerParamWithMessage(QString arg)
      return ok;
 }
 
-void QtWindow::decodeMidiFileArg(QString arg)
+void QtWindow::decodeMidiFileArg(const QString &arg)
 {
 
     QFileInfo fileInfo(arg);
@@ -534,32 +535,32 @@ void QtWindow::help()
     QMessageBox msgBox(this);
     msgBox.setWindowTitle (tr("Piano Booster Help"));
     msgBox.setText(
-    tr("<h3>Getting Started</h3>") +
+    tr("<h3>Getting Started</h3>") %
     tr("<p>You need a <b>MIDI Piano Keyboard </b> and a <b>MIDI interface</b> for the PC. If you "
        "don't have a MIDI keyboard you can still try out PianoBooster using the PC keyboard, 'X' is "
-       "middle C.</p>") +                
+       "middle C.</p>") %
 
     tr("<p>PianoBooster now includes a built-in sound generator called FluidSynth "
     "which requires a General MIDI (GM) SoundFont. "
-    "Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.</p>")   +
+    "Use the ‘Setup/MIDI Setup’ menu option and then the load button on the FluidSynth tab to install the SoundFont.</p>")   %
 
     tr("<p>PianoBooster works best with MIDI files that have separate left and right piano parts "
-       "using MIDI channels 3 and 4.") +
-    tr("<h3>Setting Up</h3>") +
+       "using MIDI channels 3 and 4.") %
+    tr("<h3>Setting Up</h3>") %
     tr("<p>First use the <i>Setup/MIDI Setup</i> menu and in the dialog box select the MIDI input and MIDI "
-       "output interfaces that match your hardware. ") +
+       "output interfaces that match your hardware. ") %
     tr("Next use <i>File/Open</i> to open the MIDI file \".mid\" or a karaoke \".kar\" file. "
        "Now select whether you want to just <i>listen</i> to the music or "
        "<i>play along</i> on the piano keyboard by setting the <i>skill</i> level on the side panel. Finally when "
-       "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music.") +
+       "you are ready click the <i>play icon</i> (or press the <i>space bar</i>) to roll the music.") %
     tr("<h3>Hints on Playing the Piano</h3>"
-       "<p>For hints on how to play the piano see: ") +
-       "<a href=\"https://www.pianobooster.org/music-info.html\" ><b>" + tr("Piano Hints") + "</b></a></p>" +
+       "<p>For hints on how to play the piano see: ") %
+       "<a href=\"https://www.pianobooster.org/music-info.html\" ><b>" % tr("Piano Hints") % QStringLiteral("</b></a></p>") %
     tr("<h3>More Information</h3>"
-       "<p>For more help please visit the PianoBooster ") +
-       "<a href=\"https://www.pianobooster.org\" ><b>" + tr("website") + "</b></a>, " +
-    tr("the PianoBooster") + " <a href=\"https://www.pianobooster.org/faq.html\" ><b> " + tr("FAQ") + "</b></a> " +
-    tr("and the") + " <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\"><b>" +tr("user forum") +"</b></a>."
+       "<p>For more help please visit the PianoBooster ") %
+       "<a href=\"https://www.pianobooster.org\" ><b>" + tr("website") + "</b></a>, " %
+    tr("the PianoBooster") + " <a href=\"https://www.pianobooster.org/faq.html\" ><b> " + tr("FAQ") + QStringLiteral("</b></a> ") %
+    tr("and the") % QStringLiteral(" <a href=\"http://piano-booster.2625608.n2.nabble.com/Piano-Booster-Users-f1591936.html\"><b>") % tr("user forum") % QStringLiteral("</b></a>.")
     );
 
     msgBox.setMinimumWidth(600);
@@ -571,19 +572,20 @@ void QtWindow::about()
     QMessageBox msgBox(this);
     msgBox.setWindowTitle (tr("About Piano Booster"));
     msgBox.setText(
-            tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) +
-            tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") +
-            "<a href=\"https://www.pianobooster.org/\" ><b>https://www.pianobooster.org/</b></a><br><br>" +
-            tr("Copyright(c) L. J. Barman, 2008-2020; All rights reserved.<br>") +
-            tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") +
-            "<br>" +
+            tr("<b>PianoBooster - Version %1</b> <br><br>").arg(PB_VERSION) %
+            tr("<b>Boost</b> your <b>Piano</b> playing skills!<br><br>") %
+            QStringLiteral("<a href=\"https://www.pianobooster.org/\" ><b>https://www.pianobooster.org/</b></a><br><br>") %
+            tr("Copyright(c) L. J. Barman, 2008-2020; All rights reserved.<br>") %
+            tr("Copyright(c) Fabien Givors, 2018-2019; All rights reserved.<br>") %
+            tr("Copyright(c) Marius Kittler, 2021-2022; All rights reserved.<br>") %
+            QStringLiteral("<br>") %
             tr("This program is made available "
                 "under the terms of the GNU General Public License version 3 as published by "
                 "the Free Software Foundation.<br><br>"
             )
             #ifdef USE_BUNDLED_RTMIDI
-             +
-            tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>") +
+             %
+            tr("This program also contains RtMIDI: realtime MIDI i/o C++ classes<br>") %
             tr("Copyright(c) Gary P. Scavone, 2003-2019; All rights reserved.")
             #endif
     );
@@ -591,14 +593,12 @@ void QtWindow::about()
     msgBox.exec();
 }
 
-QString QtWindow::displayShortCut(QString key, QString description)
+QString QtWindow::displayShortCut(const QString &key, const QString &description)
 {
-    QString space = tr("space");
-
-    QString str = QString("<tr>"
+    QString str = QStringLiteral("<tr>"
                 "<td>%1</td>"
                 "<td>%2</td>"
-                "</tr>").arg( description ).arg(tr(m_settings->value(key).toString().toUtf8().data()));
+                "</tr>").arg( description, tr(m_settings->value(key).toString().toUtf8().data()));
     return str;
 
 }
@@ -749,7 +749,6 @@ void QtWindow::loadTutorHtml(const QString & name)
 
 void QtWindow::refreshTranslate(){
 #ifndef NO_LANGS
-    QString appImagePath = qgetenv("APPIMAGE");
     QString locale = m_settings->selectedLangauge();
 
     qApp->removeTranslator(&translator);

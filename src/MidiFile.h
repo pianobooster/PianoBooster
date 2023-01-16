@@ -54,7 +54,7 @@ public:
         m_numberOfTracks = 0;
     }
 
-    void openMidiFile(string filename);
+    void openMidiFile(const std::string &filename);
     int readWord(void);
     int readHeader(void);
     void rewind();

@@ -53,15 +53,15 @@ public:
     virtual bool validMidiConnection() {return validMidiOutput();}
 
     QStringList getMidiPortList(midiType_t type);
-    bool openMidiPort(midiType_t type, QString portName);
+    bool openMidiPort(midiType_t type, const QString &portName);
     void closeMidiPort(midiType_t type, int index);
     // based on the fluid synth settings
-    virtual int     midiSettingsSetStr(QString name, QString str);
-    virtual int     midiSettingsSetNum(QString name, double val);
-    virtual int     midiSettingsSetInt(QString name, int val);
-    virtual QString midiSettingsGetStr(QString name);
-    virtual double  midiSettingsGetNum(QString name);
-    virtual int     midiSettingsGetInt(QString name);
+    virtual int     midiSettingsSetStr(const QString &name, const QString &str);
+    virtual int     midiSettingsSetNum(const QString &name, double val);
+    virtual int     midiSettingsSetInt(const QString &name, int val);
+    virtual QString midiSettingsGetStr(const QString &name);
+    virtual double  midiSettingsGetNum(const QString &name);
+    virtual int     midiSettingsGetInt(const QString &name);
 
     void flushMidiInput()
     {
