@@ -164,7 +164,7 @@ jobs:
         uses: lukka/run-vcpkg@v10
         with:
           vcpkgGitUrl: 'https://github.com/microsoft/vcpkg.git'
-          vcpkgGitCommitId: e1934f4a2a0c58bb75099d89ed980832379907fa
+          vcpkgGitCommitId: e6e9a0b1b058bf0cdd884c781acd33c97abb5aa3
       - name:
         run: |
           vcpkg install fluidsynth qt5-base qt5-tools freetype ftgl
