@@ -29,7 +29,7 @@
 #ifndef __NOTATION_H__
 #define __NOTATION_H__
 
-#include <assert.h>
+#include <cassert>
 
 #include "MidiFile.h"
 #include "Queue.h"

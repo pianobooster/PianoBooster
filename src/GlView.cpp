@@ -32,7 +32,7 @@
 #include <QOpenGLFunctions_1_1>
 #include <QPaintEngine>
 
-#include <math.h>
+#include <cmath>
 
 #include "QtWindow.h"
 #include "GlView.h"
