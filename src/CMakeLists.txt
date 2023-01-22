@@ -121,7 +121,18 @@ if(WITH_INTERNAL_FLUIDSYNTH)
         INCLUDE_DIRECTORIES(${FLUIDSYNTH_INCLUDE_DIRS})
         SET(FLUIDSYNTH_LIBRARY ${FLUIDSYNTH_LIBRARIES})
     else()
+        # find FluidSynth and link against its imported target
         FIND_PACKAGE(FluidSynth REQUIRED)
+        SET(FLUIDSYNTH_LIBRARY FluidSynth::libfluidsynth)
+
+        # find additional dependencies that are pulled in by the imported target but not automatically made available
+        FIND_PACKAGE(OpenMP REQUIRED)
+        if (COMMAND pkg_check_modules)
+            pkg_check_modules(GLIB IMPORTED_TARGET glib-2.0 gthread-2.0)
+            pkg_check_modules(LIBSNDFILE IMPORTED_TARGET sndfile)
+            pkg_check_modules(PORTAUDIO IMPORTED_TARGET portaudio-2.0)
+            pkg_check_modules(READLINE IMPORTED_TARGET readline)
+        endif ()
     endif()
     ADD_DEFINITIONS(-DWITH_INTERNAL_FLUIDSYNTH)
     MESSAGE("Building with internal fluidsynth")
