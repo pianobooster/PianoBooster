@@ -47,7 +47,7 @@ MESSAGE("CMAKE_INSTALL_BINDIR: " ${CMAKE_INSTALL_BINDIR})
 set(OpenGL_GL_PREFERENCE "GLVND")
 FIND_PACKAGE( OpenGL REQUIRED )
 
-if(NOT WIN32)
+if(NOT WIN32 OR MINGW)
    # the `pkg_check_modules` function is created with this call
    include(FindPkgConfig)
    FIND_PACKAGE( PkgConfig REQUIRED )
@@ -63,6 +63,14 @@ if(USE_FTGL)
       SET(FTGL_LIBRARY ${FTGL_LIBRARIES})
    else()
       FIND_PACKAGE(FTGL REQUIRED)
+
+      # add include path for freetype2 as ftgl uses freetype2 headers but doesn't pull in the include path automatically
+      if (COMMAND pkg_check_modules)
+          pkg_check_modules(FREETYPE2 freetype2)
+          if(FREETYPE2_FOUND)
+              LIST(APPEND FTGL_INCLUDE_DIR "${FREETYPE2_INCLUDE_DIRS}")
+          endif ()
+      endif ()
    endif()
 else(USE_FTGL)
     add_compile_options("-DNO_USE_FTGL")
