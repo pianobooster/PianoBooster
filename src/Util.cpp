@@ -250,7 +250,7 @@ void benchMarkInit()
     s_previousTime = 0;
     s_previousFrameTime = 0;
 
-    for (unsigned int i=0; i <  arraySize( s_benchData ); i++)
+    for (int i=0; i <  arraySize( s_benchData ); i++)
         benchMarkReset(&s_benchData[i]);
     benchMarkReset(&s_frameRate);
     s_frameRate.msg = " *** Frame Rate ***";
