@@ -56,7 +56,7 @@ void CSong::loadSong(const QString & filename)
      fn = fn.replace('/','\\');
 #endif
     m_midiFile->setLogLevel(3);
-    m_midiFile->openMidiFile(string(fn.toLocal8Bit().data()));
+    m_midiFile->openMidiFile(std::string(fn.toLocal8Bit().data()));
     ppLogInfo("Opening song %s",  fn.toLocal8Bit().data());
     transpose(0);
     midiFileInfo();
@@ -266,7 +266,7 @@ bool CSong::pcKeyPress(int key, bool down)
         return true;
     }
 
-    for (j = 0; j < arraySize(pcNoteLookup); j++)
+    for (j = 0; j < arraySizeAs<std::size_t>(pcNoteLookup); j++)
     {
         if ( key==pcNoteLookup[j].key)
         {

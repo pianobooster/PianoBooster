@@ -80,7 +80,7 @@ void CMidiFile::openMidiFile(const std::string &filename)
         m_file.close();
     m_file.clear();  // clear any errors
 
-    m_file.open(filename.c_str(), ios_base::in | ios_base::binary);
+    m_file.open(filename.c_str(), std::ios_base::in | std::ios_base::binary);
     if (m_file.fail() == true)
     {
         QMessageBox::warning(nullptr, QMessageBox::tr("MIDI File Error"),
@@ -98,12 +98,12 @@ void CMidiFile::rewind()
 {
     m_numberOfTracks = 0;
     dword_t trackLength;
-    streampos filePos;
+    std::streampos filePos;
 
     midiError(SMF_NO_ERROR);
     m_ppqn = DEFAULT_PPQN;
 
-    m_file.seekg (0, ios::beg);
+    m_file.seekg (0, std::ios::beg);
 
     const auto ntrks = readHeader();
     if (ntrks == 0)
@@ -137,8 +137,8 @@ void CMidiFile::rewind()
             break;
         }
         //now move onto the next track
-        filePos += static_cast<streamoff>(trackLength);
-        m_file.seekg (filePos, ios::beg);
+        filePos += static_cast<std::streamoff>(trackLength);
+        m_file.seekg (filePos, std::ios::beg);
     }
     m_songTitle = m_tracks[0]->getTrackName();
     initMergedEvents();
