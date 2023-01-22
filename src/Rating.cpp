@@ -75,8 +75,7 @@ void CRating::calculateAccuracy()
             {0.00f, 0.015f, -0.02f, CColor(1.0, 0.4, 0.2)}
         };
 
-        size_t i;
-        for (i = 0; i< arraySize(accuracyTable); i++)
+        for (auto i = 0; i< arraySize(accuracyTable); i++)
         {
             if (m_currentAccuracy >= accuracyTable[i].value  || i+1 == arraySize(accuracyTable))
             {
@@ -93,7 +92,7 @@ void CRating::calculateAccuracy()
 
         m_goodAccuracyFlag = false;
 
-        for (i = 0; i< arraySize(accuracyTable); i++)
+        for (auto i = 0; i< arraySize(accuracyTable); i++)
         {
             if (m_currentAccuracy >= accuracyTable[i].value || i+1 == arraySize(accuracyTable))
             {
