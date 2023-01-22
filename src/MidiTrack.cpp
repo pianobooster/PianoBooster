@@ -41,7 +41,7 @@
 
 int CMidiTrack::m_logLevel;
 
-CMidiTrack::CMidiTrack(fstream& file, int no) :m_file(file), m_trackNumber(no)
+CMidiTrack::CMidiTrack(std::fstream& file, int no) :m_file(file), m_trackNumber(no)
 {
     m_trackEventQueue = nullptr;
     m_savedRunningStatus = 0;
@@ -122,11 +122,11 @@ dword_t CMidiTrack::readVarLen()
     return ( value );
 }
 
-string CMidiTrack::readTextEvent()
+std::string CMidiTrack::readTextEvent()
 {
     dword_t length;
 
-    string text;
+    std::string text;
     length = readVarLen();
     if (length >= 1000)
     {
@@ -250,7 +250,7 @@ void CMidiTrack::readKeySignatureEvent()
 
 void CMidiTrack::readMetaEvent(byte_t type)
 {
-    string text;
+    std::string text;
     __dt(dword_t data);
 
     if (failed() == true)
@@ -517,7 +517,7 @@ void CMidiTrack::decodeTrack()
 {
     CMidiEvent event;
 
-    m_file.seekg(m_filePos, ios::beg);
+    m_file.seekg(m_filePos, std::ios::beg);
     while (true)
     {
         if (m_trackLengthCounter== 0)

@@ -34,8 +34,6 @@
 #include "Queue.h"
 #include "MidiEvent.h"
 
-using namespace std;
-
 typedef enum
 {
     SMF_NO_ERROR,
@@ -54,7 +52,7 @@ typedef unsigned long dword_t;
 class CMidiTrack
 {
 public:
-    CMidiTrack(fstream& file, int no);
+    CMidiTrack(std::fstream& file, int no);
 
     ~CMidiTrack()
     {
@@ -135,7 +133,7 @@ private:
     void decodeMidiEvent();
     dword_t readVarLen();
 
-    string readTextEvent();
+    std::string readTextEvent();
     dword_t readDataEvent(int expectedLength);
     void readMetaEvent(byte_t type);
     void ignoreSysexEvent(byte_t data);
@@ -156,10 +154,10 @@ private:
         }
     }
 
-    fstream& m_file;
+    std::fstream& m_file;
     int m_trackNumber;
 
-    streampos m_filePos;
+    std::streampos m_filePos;
     dword_t m_trackLength;
     dword_t m_trackLengthCounter;
     CQueue<CMidiEvent>* m_trackEventQueue;

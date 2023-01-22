@@ -36,8 +36,6 @@
 #include "Merge.h"
 
 #define DEFAULT_PPQN        96      /* Standard value for pulse per quarter note */
-
-using namespace std;
 #define MAX_TRACKS  40
 
 // Reads data from a standard MIDI file
@@ -72,7 +70,7 @@ private:
     bool checkMidiEventFromStream(int streamIdx);
     CMidiEvent fetchMidiEventFromStream(int streamIdx);
     void midiError(midiErrors_t error) {m_midiError = error;}
-    fstream m_file;
+    std::fstream m_file;
     static int m_ppqn;
     midiErrors_t m_midiError;
     CMidiTrack* m_tracks[MAX_TRACKS];
