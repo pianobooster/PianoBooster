@@ -207,7 +207,7 @@ bool CScroll::validPianistChord(int index)
 int CScroll::findWantedChord(int note, CColor color, qint64 wantedDelta)
 {
     Q_UNUSED(note)
-    if (color == Cfg::playedBadColor()) // fixme should be an enum
+    if (color == Cfg::colorTheme().playedBadColor) // fixme should be an enum
         return m_wantedIndex;
     {
         while ( m_wantedIndex + 1 < m_scrollQueue->length())
@@ -254,6 +254,7 @@ void CScroll::refresh()
 bool CScroll::getKeyboardInfo(int *notes)
 {
     int stoppedScrollIdx = -1;
+    const auto &colorTheme = Cfg::colorTheme();
     for(int i=0; i<m_scrollQueue->length(); ++i) {
         CSlotDisplayList &info = *m_scrollQueue->indexPtr(i);
         if(m_show == false || info.m_displayListId == 0) continue;
@@ -261,7 +262,7 @@ bool CScroll::getKeyboardInfo(int *notes)
         CSlot* slot = &info;
         for(int j=0; j<slot->length(); ++j) {
             if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
-            if(slot->getSymbol(j).getColor() == Cfg::playedStoppedColor()) {
+            if(slot->getSymbol(j).getColor() == colorTheme.playedStoppedColor) {
                 stoppedScrollIdx = i;
                 break;
             }
@@ -276,7 +277,7 @@ bool CScroll::getKeyboardInfo(int *notes)
             CSlot* slot = &info;
             for(int j=0; j<slot->length(); ++j) {
                 if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
-                slot->getSymbolPtr(j)->setColor(Cfg::playedGoodColor());
+                slot->getSymbolPtr(j)->setColor(colorTheme.playedGoodColor);
             }
         }
     }
@@ -291,10 +292,10 @@ bool CScroll::getKeyboardInfo(int *notes)
         for(int j=0; j<slot->length(); ++j) {
             if(slot->getSymbol(j).getType() < PB_SYMBOL_noteHead) continue;
 
-            if(slot->getSymbol(j).getColor() == Cfg::noteColor() ||
-               slot->getSymbol(j).getColor() == Cfg::playedStoppedColor())
+            if(slot->getSymbol(j).getColor() == colorTheme.noteColor ||
+               slot->getSymbol(j).getColor() == colorTheme.playedStoppedColor)
                 *(note++) = slot->getSymbol(j).getNote();
-            if(slot->getSymbol(j).getColor() == Cfg::playedStoppedColor()) stopped = true;
+            if(slot->getSymbol(j).getColor() == colorTheme.playedStoppedColor) stopped = true;
         }
         if(note != notes) return stopped;
     }

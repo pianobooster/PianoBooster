@@ -282,7 +282,7 @@ void CNotation::findNoteSlots()
                 else
                     symbolType = PB_SYMBOL_noteHead;
                 CSymbol symbol(symbolType, hand, midi.note());
-                symbol.setColor(Cfg::noteColor());
+                symbol.setColor(Cfg::colorTheme().noteColor);
                 symbol.setMidiDuration(midi.getDuration());
 
                 // check if this note has occurred in this bar before

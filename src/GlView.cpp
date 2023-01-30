@@ -153,14 +153,14 @@ void CGLView::drawTimeSignature()
 
     x = Cfg::timeSignatureX();
 
-    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_left) ? Cfg::noteColor() : Cfg::noteColorDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_left) ? Cfg::colorTheme().noteColor : Cfg::colorTheme().noteColorDim);
 
     y = CStavePos(PB_PART_right,  0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
     y = CStavePos(PB_PART_right, -3).getPosY() - 2;
     renderText(x,y, 0, bufferBottom, m_timeSigFont);
 
-    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_right) ? Cfg::noteColor() : Cfg::noteColorDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_right) ? Cfg::colorTheme().noteColor : Cfg::colorTheme().noteColorDim);
 
     y = CStavePos(PB_PART_left,   0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
@@ -191,7 +191,7 @@ void CGLView::drawAccurracyBar()
     color = m_rating->getAccuracyColor();
     CDraw::drColor (color);
     glRectf(x, y - lineWidth, x + width * accuracy, y + lineWidth);
-    CDraw::drColor (Cfg::backgroundColor());
+    CDraw::drColor (Cfg::colorTheme().backgroundColor);
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
 
     glLineWidth (1);
@@ -260,8 +260,8 @@ void CGLView::drawBarNumber()
     const auto y = static_cast<float>(Cfg::getAppHeight() - m_titleHeight - 34);
     const auto x = static_cast<float>(TEXT_LEFT_MARGIN);
 
-    //CDraw::drColor (Cfg::backgroundColor());
-    //CDraw::drColor (Cfg::noteColorDim());
+    //CDraw::drColor (Cfg::colorTheme().backgroundColor);
+    //CDraw::drColor (Cfg::colorTheme().noteColorDim);
     //glRectf(x+30+10, y-2, x + 80, y + 16);
     glColor3f(1.0f,1.0f,1.0f);
     renderText(x, y, 0, tr("Bar:") + " " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
@@ -325,7 +325,7 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 
 void CGLView::initializeGL()
 {
-    CColor color = Cfg::backgroundColor();
+    CColor color = Cfg::colorTheme().backgroundColor;
     glClearColor (color.red, color.green, color.blue, 0.0);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
     glShadeModel (GL_FLAT);

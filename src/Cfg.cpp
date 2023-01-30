@@ -45,3 +45,5 @@ int Cfg::tickRate;
 
 const int Cfg::m_playZoneEarly = 25; // Was 25
 const int Cfg::m_playZoneLate = 25;
+
+ColorTheme Cfg::m_colorTheme = ColorTheme();

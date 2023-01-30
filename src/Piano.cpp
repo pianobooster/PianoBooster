@@ -282,12 +282,13 @@ void CPiano::drawPianoInput()
 {
     bool showNoteName = m_settings->showNoteNames();
     int lineLength = (showNoteName) ? PIANO_LINE_LENGTH_SHORT : PIANO_LINE_LENGTH_LONG;
+    const auto &colorTheme = Cfg::colorTheme();
 
     if (m_goodChord.length() > 0)
-        drawPianoInputLines(&m_goodChord, Cfg::pianoGoodColor(), lineLength);
+        drawPianoInputLines(&m_goodChord, colorTheme.pianoGoodColor, lineLength);
 
     if (m_badChord.length() > 0)
-        drawPianoInputLines(&m_badChord, Cfg::pianoBadColor(), lineLength);
+        drawPianoInputLines(&m_badChord, colorTheme.pianoBadColor, lineLength);
 
     if (showNoteName)
         drawPianoInputNoteNames();

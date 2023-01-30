@@ -66,6 +66,28 @@ public:
     }
 };
 
+struct ColorTheme
+{
+    constexpr ColorTheme() = default;
+
+    CColor menuColor          = CColor(0.1, 0.6, 0.6);
+    CColor menuSelectedColor  = CColor(0.7, 0.7, 0.1);
+
+    CColor staveColor         = CColor(0.1, 0.7, 0.1);     // green
+    CColor staveColorDim      = CColor(0.15, 0.40, 0.15);  // grey
+    CColor noteColor          = CColor(0.1, 0.9, 0.1);     // green
+    CColor noteColorDim       = CColor(0.25, 0.45, 0.25);  // green
+    CColor playedGoodColor    = CColor(0.5, 0.6, 1.0);     // purple
+    CColor playedBadColor     = CColor(0.8, 0.3, 0.8);     // orange
+    CColor playedStoppedColor = CColor(1.0, 0.8, 0.0);     // bright orange
+    CColor backgroundColor    = CColor(0.0, 0.0, 0.0);     // black
+    CColor barMarkerColor     = CColor(0.3, 0.25, 0.25);   // grey
+    CColor beatMarkerColor    = CColor(0.25, 0.2, 0.2);    // grey
+    CColor pianoGoodColor     = playedGoodColor;
+    CColor pianoBadColor      = CColor(1.0, 0.0, 0.0);
+    CColor noteNameColor      = CColor(1.0, 1.0, 1.0);
+};
+
 /*!
  * @brief   Contains all the configuration Information.
  */
@@ -89,23 +111,7 @@ public:
     static int chordNoteGap()      {return 10;} // all notes in a cord must be spaced less than this a gap
     static int chordMaxLength()    {return 20;} // the max time between the start and end of a cord
 
-    static CColor menuColor()        {return CColor(0.1, 0.6, 0.6);}
-    static CColor menuSelectedColor(){return CColor(0.7, 0.7, 0.1);}
-
-    static CColor staveColor()           {return CColor(0.1, 0.7, 0.1);} // green
-    static CColor staveColorDim()        {return CColor(0.15, 0.40, 0.15);} // grey
-    static CColor noteColor()            {return CColor(0.1, 0.9, 0.1);} // green
-    static CColor noteColorDim()         {return CColor(0.25, 0.45, 0.25);} // green
-    //static CColor playedGoodColor()    {return CColor(0.6, 0.6, 1.0);} // grey
-    static CColor playedGoodColor()      {return CColor(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
-    static CColor playedBadColor()       {return CColor(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
-    static CColor playedStoppedColor()   {return CColor(1.0, 0.8, 0.0);} // bright orange
-    static CColor backgroundColor()      {return CColor(0.0, 0.0, 0.0);} // black
-    static CColor barMarkerColor()       {return CColor(0.3, 0.25, 0.25);} // grey
-    static CColor beatMarkerColor()      {return CColor(0.25, 0.2, 0.2);} // grey
-    static CColor pianoGoodColor()      {return playedGoodColor();}
-    static CColor pianoBadColor()       {return CColor(1.0, 0.0, 0.0);}
-    static CColor noteNameColor()       {return CColor(1.0, 1.0, 1.0);}
+    static const ColorTheme &colorTheme() { return m_colorTheme; }
 
     static void setDefaults() {
     #ifdef _WIN32
@@ -148,6 +154,7 @@ private:
     static int m_appX, m_appY, m_appWidth, m_appHeight;
     static const int m_playZoneEarly;
     static const int m_playZoneLate;
+    static ColorTheme m_colorTheme;
 };
 
 #endif //__CFG_H__
