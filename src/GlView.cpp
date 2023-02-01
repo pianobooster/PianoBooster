@@ -54,6 +54,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_settings = settings;
     m_rating = nullptr;
     m_fullRedrawFlag = true;
+    m_themeChange = false;
     m_forcefullRedraw = 0;
     m_forceRatingRedraw = 0;
     m_forceBarRedraw = 0;
@@ -96,9 +97,31 @@ void CGLView::startTimerEvent()
     m_allowedTimerEvent=true;
 }
 
+void CGLView::reportColorThemeChange()
+{
+    const auto &noteColor = Cfg::colorTheme().noteColor;
+    m_themeChange = true;
+    m_fullRedrawFlag = true;
+    m_score->refreshNoteColor(noteColor);
+    m_song->refreshScroll();
+    m_score->refreshScroll();
+    CDraw::forceCompileRedraw();
+    repaint();
+}
+
 void CGLView::paintGL()
 {
     BENCHMARK(2, "enter");
+
+    if (m_themeChange) {
+        auto *const ctx = context();
+        auto *const funcs = ctx->functions();
+        const auto &colorTheme = Cfg::colorTheme();
+        const auto &backgroundColor = colorTheme.backgroundColor;
+        funcs->glClearColor(backgroundColor.red, backgroundColor.green, backgroundColor.blue, 0.0);
+        funcs->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        m_themeChange = false;
+    }
 
     m_displayUpdateTicks = 0;
 

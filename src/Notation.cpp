@@ -379,3 +379,14 @@ void CNotation::reset()
         noteState.clear();
     setupNotationParamaters();
 }
+
+void CNotation::resetNoteColor(CColor color)
+{
+    m_currentSlot.setNoteColor(0, color);
+    for (auto i = 0, len = m_slotQueue->length(); i != len; ++i) {
+        m_slotQueue->indexPtr(i)->setNoteColor(0, color);
+    }
+    for (auto &slot : m_mergeSlots) {
+        slot.setNoteColor(0, color);
+    }
+}

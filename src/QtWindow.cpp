@@ -422,11 +422,24 @@ void QtWindow::createMenus()
     m_fileMenu->addAction(m_exitAct);
     updateRecentFileActions();
 
+    m_colorThemeMenu = new QMenu(tr("Color theme"), this);
+    m_colorThemeActGrp = new QActionGroup(this);
+    m_colorThemeActGrp->setExclusive(true);
+    m_colorThemeMenu->addAction(tr("Default"))->setActionGroup(m_colorThemeActGrp);
+    m_colorThemeMenu->addAction(tr("Light"))->setActionGroup(m_colorThemeActGrp);
+    const auto &actions = m_colorThemeActGrp->actions();
+    for (auto *const action : actions) {
+        action->setCheckable(true);
+    }
+    actions.front()->setChecked(true);
+    connect(m_colorThemeActGrp, &QActionGroup::triggered, this, &QtWindow::changeColorTheme);
+
     m_viewMenu = menuBar()->addMenu(tr("&View"));
     m_viewMenu->setToolTipsVisible(true);
     m_viewMenu->addAction(m_sidePanelStateAct);
     m_viewMenu->addAction(m_fullScreenStateAct);
     m_viewMenu->addAction(m_viewPianoKeyboard);
+    m_viewMenu->addMenu(m_colorThemeMenu);
 
     m_songMenu = menuBar()->addMenu(tr("&Song"));
     m_songMenu->setToolTipsVisible(true);
@@ -461,6 +474,12 @@ void QtWindow::openRecentFile()
     QAction *action = qobject_cast<QAction *>(sender());
      if (action)
          m_settings->openSongFile(action->data().toString());
+}
+
+void QtWindow::changeColorTheme(QAction *triggeredAction)
+{
+    Cfg::loadColorTheme(static_cast<BuiltInColorTheme>(m_colorThemeActGrp->actions().indexOf(triggeredAction)));
+    m_glWidget->reportColorThemeChange();
 }
 
 void QtWindow::showMidiSetup(){

@@ -66,9 +66,16 @@ public:
     }
 };
 
+enum class BuiltInColorTheme {
+    Default,
+    Light,
+};
+
 struct ColorTheme
 {
     constexpr ColorTheme() = default;
+    constexpr ColorTheme &operator=(const ColorTheme &other) = default;
+    void load(BuiltInColorTheme builtInColorTheme);
 
     CColor menuColor          = CColor(0.1, 0.6, 0.6);
     CColor menuSelectedColor  = CColor(0.7, 0.7, 0.1);
@@ -112,6 +119,7 @@ public:
     static int chordMaxLength()    {return 20;} // the max time between the start and end of a cord
 
     static const ColorTheme &colorTheme() { return m_colorTheme; }
+    static void loadColorTheme(BuiltInColorTheme builtInColorTheme) { m_colorTheme.load(builtInColorTheme); }
 
     static void setDefaults() {
     #ifdef _WIN32

@@ -251,6 +251,15 @@ void CScroll::refresh()
         compileSlot(m_scrollQueue->index(i));
 }
 
+void CScroll::refreshNoteColor(CColor color)
+{
+    m_notation->resetNoteColor(color);
+    m_headSlot.setNoteColor(0, color);
+    for (auto i = 0, len = m_scrollQueue->length(); i != len; ++i) {
+        m_scrollQueue->indexPtr(i)->setNoteColor(0, color);
+    }
+}
+
 bool CScroll::getKeyboardInfo(int *notes)
 {
     int stoppedScrollIdx = -1;

@@ -84,6 +84,7 @@ private slots:
     void about();
     void keyboardShortcuts();
     void openRecentFile();
+    void changeColorTheme(QAction *triggeredAction);
 
     void showMidiSetup();
 
@@ -220,6 +221,7 @@ private:
 
     QMenu *m_fileMenu;
     QMenu *m_viewMenu;
+    QMenu *m_colorThemeMenu;
     QMenu *m_songMenu;
     QMenu *m_setupMenu;
     QMenu *m_helpMenu;
@@ -229,6 +231,7 @@ private:
     QAction *m_separatorAct;
 
     QAction *m_recentFileActs[maxRecentFiles()];
+    QActionGroup *m_colorThemeActGrp;
 };
 
 #endif // __QT_WINDOW_H__

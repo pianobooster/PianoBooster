@@ -54,6 +54,7 @@ public:
 
     void stopTimerEvent();
     void startTimerEvent();
+    void reportColorThemeChange();
 
 protected:
     void timerEvent(QTimerEvent *event);
@@ -89,6 +90,7 @@ private:
     QFont m_timeRatingFont;
     // TODO remove these as no longer required
     bool m_fullRedrawFlag;
+    bool m_themeChange;
     int m_forcefullRedraw;
     int m_forceRatingRedraw;
     int m_forceBarRedraw;

@@ -185,6 +185,7 @@ public:
         delete m_slotQueue;
     }
     void reset();
+    void resetNoteColor(CColor color);
 
     void setChannel(int channel) {m_displayChannel = channel;}
 
