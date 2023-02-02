@@ -270,7 +270,7 @@ static qint64 benchMarkUpdate(benchData_t *pBench,  qint64 previousTime)
 
 void benchMark(unsigned int id, const QString &message)
 {
-    if (id >= arraySize(s_benchData))
+    if (id >= arraySizeAs<unsigned int>(s_benchData))
         return;
     if (s_benchData[id].msg.size() == 0 )
         s_benchData[id].msg = message;
