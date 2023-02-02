@@ -74,7 +74,7 @@ enum class BuiltInColorTheme {
 struct ColorTheme
 {
     constexpr ColorTheme() = default;
-    constexpr ColorTheme &operator=(const ColorTheme &other) = default;
+    ColorTheme &operator=(const ColorTheme &other) = default;
     void load(BuiltInColorTheme builtInColorTheme);
 
     CColor menuColor          = CColor(0.1, 0.6, 0.6);
