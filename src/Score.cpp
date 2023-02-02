@@ -122,6 +122,23 @@ void CScore::drawPianoKeyboard(){
             stopped = false;
         }
 
+        void drawBackground() {
+            const auto backgroundColor = CColor(0.0f, 0.0f, 0.0f);
+            const auto backgroundMargin = 2.5f;
+            const auto backgroundHight = ySize + 12.5f + backgroundMargin;
+            const auto backgroundX = Cfg::staveStartX() - backgroundMargin;
+            const auto backgroundRight = backgroundX + xSize + backgroundMargin;
+            CDraw::drColor(backgroundColor);
+            glPushMatrix();
+            glBegin(GL_QUADS);
+            glVertex2f(backgroundX, backgroundHight);
+            glVertex2f(backgroundRight, backgroundHight);
+            glVertex2f(backgroundRight, 0.0f);
+            glVertex2f(backgroundX, 0.0f);
+            glEnd();
+            glPopMatrix();
+        }
+
         void drawBlackKey(int i, int k) {
             glPushMatrix();
             float yBlackShift = ySize / 2.5f;
@@ -186,6 +203,7 @@ void CScore::drawPianoKeyboard(){
         }
 
         void drawKeyboard() {
+            drawBackground();
             i = k = 0;
             drawWhiteKey();
             int b1 = i, k1 = k++;
