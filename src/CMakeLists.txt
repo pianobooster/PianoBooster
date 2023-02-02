@@ -127,7 +127,7 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INC
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp ${PB_BASE_SRCS})
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
-    Chord.h Tempo.h MidiDevice.h)
+    Chord.h Tempo.h MidiDevice.h MidiDeviceRt.h)
 
 if(USE_JACK)
     # Check for Jack
@@ -189,6 +189,30 @@ SET( PIANOBOOSTER_SRCS
     pianobooster.rc
     images/pianobooster.ico
 )
+SET( PIANOBOOSTER_HDR
+    QtWindow.h
+    GuiTopBar.h
+    GuiSidePanel.h
+    GuiMidiSetupDialog.h
+    GuiKeyboardSetupDialog.h
+    GuiPreferencesDialog.h
+    GuiSongDetailsDialog.h
+    GuiLoopingPopup.h
+    GlView.h
+    ${PB_BASE_HDR}
+    StavePosition.h
+    Score.h
+    Cfg.h
+    Piano.h
+    Draw.h
+    Scroll.h
+    Notation.h
+    TrackList.h
+    Rating.h
+    Bar.h
+    Settings.h
+    Merge.h
+)
 
 # another list, this time it includes all header files that should be treated with moc
 SET( PIANOBOOSTER_MOC_HDRS
@@ -244,7 +268,7 @@ if(APPLE)
     ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE
         ${pianobooster_ICON} ${pianobooster_TRANSLATIONS}
         ${pianobooster_MUSIC} ${pianobooster_FONT}
-        ${PIANOBOOSTER_SRCS}
+        ${PIANOBOOSTER_HDR} ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
 
@@ -253,13 +277,13 @@ if(APPLE)
 endif(APPLE)
 
 if(UNIX AND NOT APPLE)
-    ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
+    ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_HDR} ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
 endif(UNIX AND NOT APPLE)
 
 if(WIN32)
-    ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_SRCS}
+    ADD_EXECUTABLE( pianobooster ${PIANOBOOSTER_HDR} ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
     SET_TARGET_PROPERTIES(pianobooster PROPERTIES LINK_FLAGS "-mwindows")
