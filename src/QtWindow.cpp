@@ -431,8 +431,12 @@ void QtWindow::createMenus()
     for (auto *const action : actions) {
         action->setCheckable(true);
     }
-    actions.front()->setChecked(true);
     connect(m_colorThemeActGrp, &QActionGroup::triggered, this, &QtWindow::changeColorTheme);
+    const auto configuredThemeIndex = m_settings->value("View/BuiltInThemeIndex").toInt();
+    auto *const configuredThemeAction = actions[configuredThemeIndex >= actions.size() ? 0 : configuredThemeIndex];
+    configuredThemeAction->setChecked(true);
+    Cfg::loadColorTheme(static_cast<BuiltInColorTheme>(configuredThemeIndex));
+    m_glWidget->reportColorThemeChange();
 
     m_viewMenu = menuBar()->addMenu(tr("&View"));
     m_viewMenu->setToolTipsVisible(true);
@@ -478,7 +482,9 @@ void QtWindow::openRecentFile()
 
 void QtWindow::changeColorTheme(QAction *triggeredAction)
 {
-    Cfg::loadColorTheme(static_cast<BuiltInColorTheme>(m_colorThemeActGrp->actions().indexOf(triggeredAction)));
+    const auto builtInThemeIndex = m_colorThemeActGrp->actions().indexOf(triggeredAction);
+    Cfg::loadColorTheme(static_cast<BuiltInColorTheme>(builtInThemeIndex));
+    m_settings->setValue("View/BuiltInThemeIndex", builtInThemeIndex);
     m_glWidget->reportColorThemeChange();
 }
 
