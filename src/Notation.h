@@ -86,11 +86,11 @@ public:
         }
     }
 
-    void setNoteColor(int note, CColor color )
+    void setNoteColor(int note, CColor color)
     {
         for (int i = 0; i < m_length; i++)
         {
-            if (note == m_symbols[i].getNote() || note == 0)
+            if (note == 0 || note == m_symbols[i].getNote())
                 m_symbols[i].setColor(color);
         }
     }
