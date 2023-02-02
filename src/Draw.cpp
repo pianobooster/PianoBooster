@@ -773,14 +773,14 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                 float bottomY = CStavePos(PB_PART_left, -m_beatMarkerHeight).getPosY();
                 float early = static_cast<float>(Cfg::playZoneEarly()) * HORIZONTAL_SPACING_FACTOR;
                 float late = static_cast<float>(Cfg::playZoneLate()) * HORIZONTAL_SPACING_FACTOR;
-                //glColor3f (0.7f, 1.0f, 0.7f);
-                glColor3f (0.0f, 0.0f, 0.3f);
+                drColor(colorTheme.playingZoneBg);
                 glRectf(x-late, topY, x + early, bottomY);
                 glLineWidth (2.0f);
-                glColor3f (0.0f, 0.0f, 0.8f);
+                drColor(colorTheme.playingZoneMiddle);
                 oneLine(x, topY, x, bottomY );
                 glLineWidth (1.0f);
-                glColor3f (0.0f, 0.0f, 0.6f);
+                glColor3f (1.0f, 0.0f, 0.6f);
+                drColor(colorTheme.playingZoneBorder);
                 oneLine(x-late, topY, x-late, bottomY );
                 oneLine(x+early, topY, x+early, bottomY );
             }

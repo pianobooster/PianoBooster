@@ -93,6 +93,9 @@ struct ColorTheme
     CColor pianoGoodColor     = playedGoodColor;
     CColor pianoBadColor      = CColor(1.0, 0.0, 0.0);
     CColor noteNameColor      = CColor(1.0, 1.0, 1.0);
+    CColor playingZoneBg      = CColor(0.0f, 0.0f, 0.3f);
+    CColor playingZoneMiddle  = CColor(0.0f, 0.0f, 0.8f);
+    CColor playingZoneBorder  = CColor(0.0f, 0.0f, 0.6f);
 };
 
 /*!
