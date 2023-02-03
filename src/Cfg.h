@@ -96,6 +96,7 @@ struct ColorTheme
     CColor playingZoneBg      = CColor(0.0f, 0.0f, 0.3f);
     CColor playingZoneMiddle  = CColor(0.0f, 0.0f, 0.8f);
     CColor playingZoneBorder  = CColor(0.0f, 0.0f, 0.6f);
+    CColor textColor          = CColor(1.0f, 1.0f, 1.0f);
 };
 
 /*!

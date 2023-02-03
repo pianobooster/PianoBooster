@@ -210,15 +210,16 @@ void CGLView::drawAccurracyBar()
 
     m_rating->calculateAccuracy();
 
+    const auto &colorTheme = Cfg::colorTheme();
     accuracy = m_rating->getAccuracyValue();
     color = m_rating->getAccuracyColor();
     CDraw::drColor (color);
     glRectf(x, y - lineWidth, x + width * accuracy, y + lineWidth);
-    CDraw::drColor (Cfg::colorTheme().backgroundColor);
+    CDraw::drColor (colorTheme.backgroundColor);
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
 
     glLineWidth (1);
-    CDraw::drColor (CColor(1.0, 1.0, 1.0));
+    CDraw::drColor(colorTheme.textColor);
     glBegin(GL_LINE_LOOP);
     glVertex2f (x, y + lineWidth);
     glVertex2f (x+ width, y  + lineWidth);
@@ -247,7 +248,8 @@ void CGLView::drawDisplayText()
         return;
     }
 
-    glColor3f(1.0f,1.0f,1.0f);
+    const auto &colorTheme = Cfg::colorTheme();
+    CDraw::drColor(colorTheme.textColor);
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen) {
         if (accuracyBarStart == 0) {
@@ -283,10 +285,7 @@ void CGLView::drawBarNumber()
     const auto y = static_cast<float>(Cfg::getAppHeight() - m_titleHeight - 34);
     const auto x = static_cast<float>(TEXT_LEFT_MARGIN);
 
-    //CDraw::drColor (Cfg::colorTheme().backgroundColor);
-    //CDraw::drColor (Cfg::colorTheme().noteColorDim);
-    //glRectf(x+30+10, y-2, x + 80, y + 16);
-    glColor3f(1.0f,1.0f,1.0f);
+    CDraw::drColor (Cfg::colorTheme().textColor);
     renderText(x, y, 0, tr("Bar:") + " " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
 

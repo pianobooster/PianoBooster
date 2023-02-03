@@ -70,6 +70,7 @@ void ColorTheme::load(BuiltInColorTheme builtInColorTheme)
         playingZoneBg      = CColor(0.75f, 0.75f, 1.0f);
         playingZoneMiddle  = CColor(0.0f, 0.0f, 0.4f);
         playingZoneBorder  = CColor(0.0f, 0.0f, 0.8f);
+        textColor          = CColor(0.0, 0.0, 0.0);     // black
         break;
     default:
         *this = ColorTheme();
