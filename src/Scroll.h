@@ -63,6 +63,7 @@ public:
     void scrollDeltaTime(qint64 ticks);
     void transpose(int transpose);
     void refresh();
+    void refreshNoteColor(CColor color);
     void setPlayedNoteColor(int note, CColor color, qint64 wantedDelta, qint64 pianistTimming);
     void setChannel(int chan)
     {

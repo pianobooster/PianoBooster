@@ -45,3 +45,34 @@ int Cfg::tickRate;
 
 const int Cfg::m_playZoneEarly = 25; // Was 25
 const int Cfg::m_playZoneLate = 25;
+
+ColorTheme Cfg::m_colorTheme;
+
+void ColorTheme::load(BuiltInColorTheme builtInColorTheme)
+{
+    switch (builtInColorTheme) {
+    case BuiltInColorTheme::Light:
+        menuColor          = CColor(0.1, 0.6, 0.6);
+        menuSelectedColor  = CColor(0.7, 0.7, 0.1);
+        staveColor         = CColor(0.2, 0.2, 0.2);
+        staveColorDim      = CColor(0.25, 0.40, 0.25);  // grey
+        noteColor          = CColor(0.0, 0.0, 0.0);     // black
+        noteColorDim       = CColor(0.4, 0.4, 0.4);     // grey
+        playedGoodColor    = CColor(0.5, 0.6, 1.0);     // purple
+        playedBadColor     = CColor(0.8, 0.3, 0.8);     // orange
+        playedStoppedColor = CColor(1.0, 0.8, 0.0);     // bright orange
+        backgroundColor    = CColor(1.0, 1.0, 1.0);     // white
+        barMarkerColor     = CColor(0.5, 0.5, 0.5);     // grey
+        beatMarkerColor    = CColor(0.25, 0.25, 0.25);  // grey
+        pianoGoodColor     = playedGoodColor;
+        pianoBadColor      = CColor(1.0, 0.0, 0.0);
+        noteNameColor      = CColor(0.0, 0.0, 0.0);
+        playingZoneBg      = CColor(0.75f, 0.75f, 1.0f);
+        playingZoneMiddle  = CColor(0.0f, 0.0f, 0.4f);
+        playingZoneBorder  = CColor(0.0f, 0.0f, 0.8f);
+        textColor          = CColor(0.0, 0.0, 0.0);     // black
+        break;
+    default:
+        *this = ColorTheme();
+    }
+}

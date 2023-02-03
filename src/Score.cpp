@@ -70,7 +70,7 @@ void CScore::drawScroll(bool refresh)
     {
         float topY = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY();
         float bottomY = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY();
-        drColor (Cfg::backgroundColor());
+        drColor (Cfg::colorTheme().backgroundColor);
         glRectf(Cfg::scrollStartX(), topY, static_cast<float>(Cfg::getAppWidth()), bottomY);
     }
 
@@ -122,6 +122,23 @@ void CScore::drawPianoKeyboard(){
             stopped = false;
         }
 
+        void drawBackground() {
+            const auto backgroundColor = CColor(0.0f, 0.0f, 0.0f);
+            const auto backgroundMargin = 2.5f;
+            const auto backgroundHight = ySize + 12.5f + backgroundMargin;
+            const auto backgroundX = Cfg::staveStartX() - backgroundMargin;
+            const auto backgroundRight = backgroundX + xSize + backgroundMargin;
+            CDraw::drColor(backgroundColor);
+            glPushMatrix();
+            glBegin(GL_QUADS);
+            glVertex2f(backgroundX, backgroundHight);
+            glVertex2f(backgroundRight, backgroundHight);
+            glVertex2f(backgroundRight, 0.0f);
+            glVertex2f(backgroundX, 0.0f);
+            glEnd();
+            glPopMatrix();
+        }
+
         void drawBlackKey(int i, int k) {
             glPushMatrix();
             float yBlackShift = ySize / 2.5f;
@@ -133,8 +150,8 @@ void CScore::drawPianoKeyboard(){
             float xKeySize = this->xKeySize / 1.5f;
 
             CDraw::drColor (CColor(0.0, 0.0, 0.0));
-            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
-            if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
+            if(state[k]==1) CDraw::drColor(stopped ? Cfg::colorTheme().playedStoppedColor : Cfg::colorTheme().noteColor);
+            if(state[k]==2) CDraw::drColor(Cfg::colorTheme().playedBadColor);
             glBegin(GL_QUADS);
             glVertex2f(0, yBlackSize);
             glVertex2f(xKeySize, yBlackSize);
@@ -152,8 +169,8 @@ void CScore::drawPianoKeyboard(){
             glTranslatef(Cfg::staveStartX() + xPlaceSize * static_cast<float>(i++), yStart, 0.0f);
 
             CDraw::drColor (CColor(1.0, 1.0, 1.0));
-            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
-            if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
+            if(state[k]==1) CDraw::drColor(stopped ? Cfg::colorTheme().playedStoppedColor : Cfg::colorTheme().noteColor);
+            if(state[k]==2) CDraw::drColor(Cfg::colorTheme().playedBadColor);
             glBegin(GL_QUADS);
             glVertex2f(0, ySize);
             glVertex2f(xKeySize, ySize);
@@ -186,6 +203,7 @@ void CScore::drawPianoKeyboard(){
         }
 
         void drawKeyboard() {
+            drawBackground();
             i = k = 0;
             drawWhiteKey();
             int b1 = i, k1 = k++;
@@ -228,7 +246,7 @@ void CScore::drawScore()
             m_scoreDisplayListId = glGenLists (1);
 
         glNewList (m_scoreDisplayListId, GL_COMPILE_AND_EXECUTE);
-            drColor (Cfg::staveColor());
+            drColor (Cfg::colorTheme().staveColor);
 
             drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_right, -1)), Cfg::clefX()); // The Treble Clef
             drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());

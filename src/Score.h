@@ -102,6 +102,12 @@ public:
             m_scroll[m_activeScroll]->setPlayedNoteColor(note, color, wantedDelta, pianistTimming);
     }
 
+    void refreshNoteColor(CColor color)
+    {
+        for (auto *const scroll : m_scroll)
+            scroll->refreshNoteColor(color);
+    }
+
     void setActiveChannel(int channel)
     {
         int newActiveSroll;

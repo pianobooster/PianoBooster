@@ -54,6 +54,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_settings = settings;
     m_rating = nullptr;
     m_fullRedrawFlag = true;
+    m_themeChange = false;
     m_forcefullRedraw = 0;
     m_forceRatingRedraw = 0;
     m_forceBarRedraw = 0;
@@ -96,9 +97,31 @@ void CGLView::startTimerEvent()
     m_allowedTimerEvent=true;
 }
 
+void CGLView::reportColorThemeChange()
+{
+    const auto &noteColor = Cfg::colorTheme().noteColor;
+    m_themeChange = true;
+    m_fullRedrawFlag = true;
+    m_score->refreshNoteColor(noteColor);
+    m_song->refreshScroll();
+    m_score->refreshScroll();
+    CDraw::forceCompileRedraw();
+    repaint();
+}
+
 void CGLView::paintGL()
 {
     BENCHMARK(2, "enter");
+
+    if (m_themeChange) {
+        auto *const ctx = context();
+        auto *const funcs = ctx->functions();
+        const auto &colorTheme = Cfg::colorTheme();
+        const auto &backgroundColor = colorTheme.backgroundColor;
+        funcs->glClearColor(backgroundColor.red, backgroundColor.green, backgroundColor.blue, 0.0);
+        funcs->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        m_themeChange = false;
+    }
 
     m_displayUpdateTicks = 0;
 
@@ -153,14 +176,14 @@ void CGLView::drawTimeSignature()
 
     x = Cfg::timeSignatureX();
 
-    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_left) ? Cfg::noteColor() : Cfg::noteColorDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_left) ? Cfg::colorTheme().noteColor : Cfg::colorTheme().noteColorDim);
 
     y = CStavePos(PB_PART_right,  0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
     y = CStavePos(PB_PART_right, -3).getPosY() - 2;
     renderText(x,y, 0, bufferBottom, m_timeSigFont);
 
-    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_right) ? Cfg::noteColor() : Cfg::noteColorDim());
+    CDraw::drColor ((CDraw::getDisplayHand() != PB_PART_right) ? Cfg::colorTheme().noteColor : Cfg::colorTheme().noteColorDim);
 
     y = CStavePos(PB_PART_left,   0).getPosY() + 5;
     renderText(x,y, 0, bufferTop, m_timeSigFont);
@@ -187,15 +210,16 @@ void CGLView::drawAccurracyBar()
 
     m_rating->calculateAccuracy();
 
+    const auto &colorTheme = Cfg::colorTheme();
     accuracy = m_rating->getAccuracyValue();
     color = m_rating->getAccuracyColor();
     CDraw::drColor (color);
     glRectf(x, y - lineWidth, x + width * accuracy, y + lineWidth);
-    CDraw::drColor (Cfg::backgroundColor());
+    CDraw::drColor (colorTheme.backgroundColor);
     glRectf(x + width * accuracy, y - lineWidth, x + width, y + lineWidth);
 
     glLineWidth (1);
-    CDraw::drColor (CColor(1.0, 1.0, 1.0));
+    CDraw::drColor(colorTheme.textColor);
     glBegin(GL_LINE_LOOP);
     glVertex2f (x, y + lineWidth);
     glVertex2f (x+ width, y  + lineWidth);
@@ -224,7 +248,8 @@ void CGLView::drawDisplayText()
         return;
     }
 
-    glColor3f(1.0f,1.0f,1.0f);
+    const auto &colorTheme = Cfg::colorTheme();
+    CDraw::drColor(colorTheme.textColor);
 
     if (m_song->getPlayMode() != PB_PLAY_MODE_listen) {
         if (accuracyBarStart == 0) {
@@ -260,10 +285,7 @@ void CGLView::drawBarNumber()
     const auto y = static_cast<float>(Cfg::getAppHeight() - m_titleHeight - 34);
     const auto x = static_cast<float>(TEXT_LEFT_MARGIN);
 
-    //CDraw::drColor (Cfg::backgroundColor());
-    //CDraw::drColor (Cfg::noteColorDim());
-    //glRectf(x+30+10, y-2, x + 80, y + 16);
-    glColor3f(1.0f,1.0f,1.0f);
+    CDraw::drColor (Cfg::colorTheme().textColor);
     renderText(x, y, 0, tr("Bar:") + " " + QString::number(m_song->getBarNumber()), m_timeRatingFont);
 }
 
@@ -325,7 +347,7 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 
 void CGLView::initializeGL()
 {
-    CColor color = Cfg::backgroundColor();
+    CColor color = Cfg::colorTheme().backgroundColor;
     glClearColor (color.red, color.green, color.blue, 0.0);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
     glShadeModel (GL_FLAT);

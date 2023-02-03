@@ -282,7 +282,7 @@ void CNotation::findNoteSlots()
                 else
                     symbolType = PB_SYMBOL_noteHead;
                 CSymbol symbol(symbolType, hand, midi.note());
-                symbol.setColor(Cfg::noteColor());
+                symbol.setColor(Cfg::colorTheme().noteColor);
                 symbol.setMidiDuration(midi.getDuration());
 
                 // check if this note has occurred in this bar before
@@ -378,4 +378,15 @@ void CNotation::reset()
     for (auto &noteState : m_noteState)
         noteState.clear();
     setupNotationParamaters();
+}
+
+void CNotation::resetNoteColor(CColor color)
+{
+    m_currentSlot.setNoteColor(0, color);
+    for (auto i = 0, len = m_slotQueue->length(); i != len; ++i) {
+        m_slotQueue->indexPtr(i)->setNoteColor(0, color);
+    }
+    for (auto &slot : m_mergeSlots) {
+        slot.setNoteColor(0, color);
+    }
 }
