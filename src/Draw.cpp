@@ -825,7 +825,15 @@ void CDraw::drawSlot(CSlot* slot)
     //int av8Left = slot->getAv8Left();
     for (int i=0; i < slot->length(); i++)
     {
-        stavePos.notePos(slot->getSymbol(i).getHand(), slot->getSymbol(i).getNote());
+    	whichPart_t hand = slot->getSymbol(i).getHand();
+    	int clef = PB_SYMBOL_gClef;
+    	if (hand == PB_PART_right) {
+    		clef = m_settings->value("SidePanel/clefRight").toInt();
+    	}
+    	else if (hand == PB_PART_left) {
+    		clef = m_settings->value("SidePanel/clefLeft").toInt();
+    	}
+        stavePos.notePos(hand, slot->getSymbol(i).getNote(), clef);
         //ppLogTrace ("compileSlot len %d id %2d next %2d time %2d type %2d note %2d", slot->length(), slot->m_displayListId,
         //slot->m_nextDisplayListId, slot->getDeltaTime(), slot->getSymbol(i).getType(), slot->getSymbol(i).getNote());
 

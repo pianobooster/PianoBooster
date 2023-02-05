@@ -145,6 +145,25 @@ private slots:
 
     void on_rhythmTappingCombo_activated (int index);
 
+    void on_clefComboChange (const QString &name, int value);
+    void on_clefComboChange (const QString &name, const QString &text)
+    {
+    	int value = -1;
+    	if (text.toLower() == "treble")
+    		value = PB_SYMBOL_gClef;
+    	else if (text.toLower() == "bass")
+    		value = PB_SYMBOL_fClef;
+    	on_clefComboChange(name, value);
+    }
+    void on_clefRightComboChange (const QString &text)
+    {
+    	on_clefComboChange("SidePanel/clefRight", text);
+    }
+    void on_clefLeftComboChange (const QString &text)
+    {
+    	on_clefComboChange("SidePanel/clefLeft", text);
+    }
+
     void on_muteYourPartCheck_toggled (bool checked)
     {
         if (m_song) m_song->mutePianistPart(checked);

@@ -82,7 +82,6 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
 
     on_rhythmTappingCombo_activated(m_settings->value("SidePanel/rhythmTapping",0).toInt());
     rhythmTappingCombo->setCurrentIndex(m_song->cfg_rhythmTapping);
-
     repeatSong->setChecked(m_settings->value("SidePanel/repeatSong",false).toBool());
     connect(repeatSong,SIGNAL(stateChanged(int)),this,SLOT(on_repeatSong_released()));
 
@@ -105,6 +104,18 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     connect(act, SIGNAL(triggered()), this, SLOT(clearTrackPart()));
 
     trackListWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
+
+    m_settings->setValue("SidePanel/clefRight",PB_SYMBOL_gClef);
+	m_settings->setValue("SidePanel/clefLeft",PB_SYMBOL_fClef);
+    clefRightCombo->addItem(tr("Treble"),PB_SYMBOL_gClef);
+    clefRightCombo->addItem(tr("Bass"),PB_SYMBOL_fClef);
+    clefLeftCombo->addItem(tr("Treble"),PB_SYMBOL_gClef);
+    clefLeftCombo->addItem(tr("Bass"),PB_SYMBOL_fClef);
+    clefRightCombo->setCurrentIndex(0);
+    clefLeftCombo->setCurrentIndex(1);
+    trackListWidget->addAction(act);
+    connect(clefRightCombo, SIGNAL(currentTextChanged(QString)), this, SLOT(on_clefRightComboChange(QString)));
+    connect(clefLeftCombo, SIGNAL(currentTextChanged(QString)), this, SLOT(on_clefLeftComboChange(QString)));
 }
 
 void GuiSidePanel::refresh() {
@@ -269,13 +280,17 @@ void GuiSidePanel::updateTranslate(){
 
     rhythmTappingCombo->setItemText(0,tr("Drums"));
     rhythmTappingCombo->setItemText(1,tr("Melody"));
+    clefRightCombo->setItemText(0,tr("Treble"));
+	clefRightCombo->setItemText(1,tr("Bass"));
+    clefLeftCombo->setItemText(0,tr("Treble"));
+	clefLeftCombo->setItemText(1,tr("Bass"));
 
     retranslateUi(this);
 
     // ---  smart resize panel  --- //
     int maxDeltaWidth=0;
     this->setMaximumWidth(300); // default
-    QVector<QWidget*> listCheckWidget {label2,listenRadio,rhythmTapRadio,followYouRadio,playAlongRadio,rightHandRadio,bothHandsRadio,leftHandRadio};
+    QVector<QWidget*> listCheckWidget {label2,listenRadio,rhythmTapRadio,followYouRadio,playAlongRadio,rightHandRadio,bothHandsRadio,leftHandRadio,clefRightCombo,clefLeftCombo};
 
     for (QWidget* w:listCheckWidget){
         int delta = 0;
@@ -313,3 +328,10 @@ void GuiSidePanel::on_rhythmTappingCombo_activated (int index)
     autoSetMuteYourPart();
 }
 
+void GuiSidePanel::on_clefComboChange (const QString &name, int value)
+{
+    m_settings->setValue(name,value);
+    m_song->refreshScroll();
+    //m_score->drawScore(); // TODO makes it crash
+    //TODO do I need to do more to request a redraw?
+}

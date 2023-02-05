@@ -230,8 +230,14 @@ void CScore::drawScore()
         glNewList (m_scoreDisplayListId, GL_COMPILE_AND_EXECUTE);
             drColor (Cfg::staveColor());
 
-            drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_right, -1)), Cfg::clefX()); // The Treble Clef
-            drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());
+            if (m_settings->value("SidePanel/clefRight").toInt() == PB_SYMBOL_gClef)
+            	drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_right, -1)), Cfg::clefX()); // The Treble Clef
+            else if (m_settings->value("SidePanel/clefRight").toInt() == PB_SYMBOL_fClef)
+            	drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_right, -1)), Cfg::clefX());
+            if (m_settings->value("SidePanel/clefLeft").toInt() == PB_SYMBOL_gClef)
+            	drawSymbol(CSymbol(PB_SYMBOL_gClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());
+            else if (m_settings->value("SidePanel/clefLeft").toInt() == PB_SYMBOL_fClef)
+            	drawSymbol(CSymbol(PB_SYMBOL_fClef, CStavePos(PB_PART_left, 1)), Cfg::clefX());
             drawKeySignature(CStavePos::getKeySignature());
             drawStaves(Cfg::staveStartX(), Cfg::scrollStartX());
         glEndList ();
