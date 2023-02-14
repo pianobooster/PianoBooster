@@ -32,6 +32,7 @@
 #include "GuiTopBar.h"
 #include "TrackList.h"
 #include "Conductor.h"
+#include "Draw.h"
 
 GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     : QWidget(parent), m_parent(parent)
@@ -106,7 +107,7 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     trackListWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
 
     m_settings->setValue("SidePanel/clefRight",PB_SYMBOL_gClef);
-	m_settings->setValue("SidePanel/clefLeft",PB_SYMBOL_fClef);
+    m_settings->setValue("SidePanel/clefLeft",PB_SYMBOL_fClef);
     clefRightCombo->addItem(tr("Treble"),PB_SYMBOL_gClef);
     clefRightCombo->addItem(tr("Bass"),PB_SYMBOL_fClef);
     clefLeftCombo->addItem(tr("Treble"),PB_SYMBOL_gClef);
@@ -281,9 +282,9 @@ void GuiSidePanel::updateTranslate(){
     rhythmTappingCombo->setItemText(0,tr("Drums"));
     rhythmTappingCombo->setItemText(1,tr("Melody"));
     clefRightCombo->setItemText(0,tr("Treble"));
-	clefRightCombo->setItemText(1,tr("Bass"));
+    clefRightCombo->setItemText(1,tr("Bass"));
     clefLeftCombo->setItemText(0,tr("Treble"));
-	clefLeftCombo->setItemText(1,tr("Bass"));
+    clefLeftCombo->setItemText(1,tr("Bass"));
 
     retranslateUi(this);
 
@@ -331,7 +332,6 @@ void GuiSidePanel::on_rhythmTappingCombo_activated (int index)
 void GuiSidePanel::on_clefComboChange (const QString &name, int value)
 {
     m_settings->setValue(name,value);
+    CDraw::forceCompileRedraw();
     m_song->refreshScroll();
-    //m_score->drawScore(); // TODO makes it crash
-    //TODO do I need to do more to request a redraw?
 }

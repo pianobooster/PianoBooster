@@ -49,20 +49,18 @@ void CStavePos::notePos(whichPart_t hand, int midiNote, int clef) // in fact cle
     lookUpItem = &m_staveLookUpTable[index];
 
     if (clef == -1) {
-    	if (m_hand == PB_PART_right)
-    		clef = PB_SYMBOL_gClef;
-		if (m_hand == PB_PART_left)
-			clef = PB_SYMBOL_fClef;
+        if (m_hand == PB_PART_right)
+            clef = PB_SYMBOL_gClef;
+        if (m_hand == PB_PART_left)
+            clef = PB_SYMBOL_fClef;
     }
     if (m_hand == PB_PART_right && clef == PB_SYMBOL_gClef || m_hand == PB_PART_left && clef == PB_SYMBOL_gClef)
-        m_staveIndex =   lookUpItem->pianoNote - 7;
+        m_staveIndex = lookUpItem->pianoNote - 7;
     else if (m_hand == PB_PART_left && clef == PB_SYMBOL_fClef || m_hand == PB_PART_right && clef == PB_SYMBOL_fClef)
         m_staveIndex = lookUpItem->pianoNote + 5;
 
     m_staveIndex += (midiNote/semitonesInAnOctive)*notesInAnOctive - notesInAnOctive*5 ;
     m_accidental = lookUpItem->accidental;
-    ppLogInfo("chan %d clef %2d Note %2d - %2d (%d %d %d),\n", midiNote, clef, m_staveIndex, m_accidental,
-            index%semitonesInAnOctive, lookUpItem->pianoNote, (midiNote/semitonesInAnOctive)*notesInAnOctive);
     //ppLogTrace("chan %d Note %2d - %2d (%d %d %d),\n", midiNote, m_staveIndex, m_accidental,
         //index%semitonesInAnOctive, lookUpItem->pianoNote, (midiNote/semitonesInAnOctive)*notesInAnOctive);
 }
