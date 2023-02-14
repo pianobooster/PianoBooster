@@ -73,14 +73,14 @@ public:
 
     ////////////////////////////////////////////////////////////////////////////////
     //@brief constructors
-    CSymbol(musicalSymbol_t type, whichPart_t hand, int midiNote)
+    CSymbol(musicalSymbol_t type, whichPart_t hand, int midiNote, int clef = -1)
     {
         init();
         m_symbolType = type;
         m_midiNote = midiNote;
         m_hand = hand;
         m_midiDuration = 0;
-        m_stavePos.notePos(hand, midiNote);
+        m_stavePos.notePos(hand, midiNote, clef);
     }
 
     CSymbol()
@@ -157,6 +157,11 @@ public:
 
     void setAccidentalModifer(accidentalModifer_t value) {m_accidentalModifer = value;}
     accidentalModifer_t getAccidentalModifer() {return m_accidentalModifer;}
+
+    void setClef(int clef = -1)
+    {
+        m_stavePos.notePos(m_hand, m_midiNote, clef);
+    }
 
 private:
     void init()

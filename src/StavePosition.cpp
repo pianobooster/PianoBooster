@@ -37,7 +37,7 @@ float CStavePos::m_staveCentralOffset = (staveHeight() * 3)/2;
 
 ////////////////////////////////////////////////////////////////////////////////
 //! @brief Calculates the position of a note on the stave
-void CStavePos::notePos(whichPart_t hand, int midiNote)
+void CStavePos::notePos(whichPart_t hand, int midiNote, int clef) // in fact clef is of type musicalSymbol_t but causes circular reference
 {
     const int notesInAnOctive = 7; // Don't count middle C twice
     const int semitonesInAnOctive = 12;
@@ -48,9 +48,15 @@ void CStavePos::notePos(whichPart_t hand, int midiNote)
 
     lookUpItem = &m_staveLookUpTable[index];
 
-    if (m_hand == PB_PART_right)
-        m_staveIndex =   lookUpItem->pianoNote - 7;
-    else if (m_hand == PB_PART_left)
+    if (clef == -1) {
+        if (m_hand == PB_PART_right)
+            clef = PB_SYMBOL_gClef;
+        if (m_hand == PB_PART_left)
+            clef = PB_SYMBOL_fClef;
+    }
+    if (m_hand == PB_PART_right && clef == PB_SYMBOL_gClef || m_hand == PB_PART_left && clef == PB_SYMBOL_gClef)
+        m_staveIndex = lookUpItem->pianoNote - 7;
+    else if (m_hand == PB_PART_left && clef == PB_SYMBOL_fClef || m_hand == PB_PART_right && clef == PB_SYMBOL_fClef)
         m_staveIndex = lookUpItem->pianoNote + 5;
 
     m_staveIndex += (midiNote/semitonesInAnOctive)*notesInAnOctive - notesInAnOctive*5 ;

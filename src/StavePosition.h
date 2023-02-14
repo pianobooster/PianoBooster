@@ -83,7 +83,7 @@ public:
             m_offsetY -= staveCentralOffset();
     }
 
-    void notePos(whichPart_t hand, int midiNote);
+    void notePos(whichPart_t hand, int midiNote, int clef = -1); // in fact clef is of type musicalSymbol_t but causes circular reference
 
     ////////////////////////////////////////////////////////////////////////////////
     //! @brief Sets which stave the note will appear on
