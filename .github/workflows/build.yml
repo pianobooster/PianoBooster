@@ -8,171 +8,170 @@ on:
       - "master"
 
 jobs:
-  oldlinux-build:
-    runs-on: ubuntu-20.04
+# oldlinux-build:
+#   runs-on: ubuntu-20.04
+#   steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2.0.0
+#     - name: Install dependencies
+#       run: sudo apt-get update && sudo apt-get install build-essential cmake pkg-config libftgl-dev qtbase5-dev qttools5-dev librtmidi-dev fluid-soundfont-gm libfluidsynth-dev
+#     - name: Install linuxdeploy
+#       run: |
+#         wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+#         wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+#         chmod +x linuxdeploy*.AppImage
+#     - name: Define variables
+#       run: |
+#         pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
+#         pb_app_name="PianoBooster-${pb_ver}-x86_64"
+#         echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
+#         echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
+#         echo "PB_APP_NAME=${pb_app_name}"
+
+#     - name: Build
+#       env:
+#         pb_app_name: ${{ env.PB_APP_NAME }}
+#       run: |
+#         mkdir build
+#         cd build
+#         cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DQT_PACKAGE_NAME=Qt5
+#         make -j$(nproc)
+#         make install DESTDIR=AppDir
+#         # Package
+#         export QT_SELECT=5
+#         export QML_SOURCES_PATHS="${GITHUB_WORKSPACE}"/src
+#         # initialize AppDir, bundle shared libraries for PianoBooster, use Qt plugin to bundle additional resources, and build AppImage, all in one single command
+#         ../linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
+#         find .
+#         echo "Done!"
+#         chmod +x *AppImage
+#         mv *AppImage ../${pb_app_name}.AppImage
+#         cd ..
+#         ls -lh ${pb_app_name}.AppImage
+#         md5sum ${pb_app_name}.AppImage >checksum.txt
+#         cat checksum.txt
+#     - name: Upload Linux Build
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: pianobooster-${{ env.PB_VERSION }}-linux-Qt5-ubuntu-20.04
+#         path: |
+#            ${{ env.PB_APP_NAME }}.AppImage
+#            checksum.txt
+
+# newlinux-build:
+#   runs-on: ubuntu-22.04
+#   steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2.0.0
+#     - name: Install dependencies
+#       run: |
+#         sudo apt-get update
+#         sudo apt-get install build-essential cmake pkg-config libftgl-dev qt6-base-dev libqt6core5compat6-dev qt6-tools-dev qt6-tools-dev-tools qt6-l10n-tools librtmidi-dev fluid-soundfont-gm libfluidsynth-dev
+#         sudo apt-get install libfuse2 qmake6
+#     - name: Install linuxdeploy
+#       run: |
+#         wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+#         wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+#         chmod +x linuxdeploy*.AppImage
+#     - name: Define variables
+#       run: |
+#         pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
+#         pb_app_name="PianoBooster-${pb_ver}-x86_64"
+#         echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
+#         echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
+#         echo "PB_APP_NAME=${pb_app_name}"
+
+#     - name: Build
+#       env:
+#         pb_app_name: ${{ env.PB_APP_NAME }}
+#       run: |
+#         mkdir build
+#         cd build
+#         cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DQT_PACKAGE_NAME=Qt6
+#         make -j$(nproc)
+#         make install DESTDIR=AppDir
+#         # Package
+#         export QT_SELECT=6
+#         export QMAKE=/usr/lib/qt6/bin/qmake6
+#         export QML_SOURCES_PATHS="${GITHUB_WORKSPACE}"/src
+#         # initialize AppDir, bundle shared libraries for PianoBooster, use Qt plugin to bundle additional resources, and build AppImage, all in one single command
+#         ../linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
+#         find .
+#         echo "Done!"
+#         chmod +x *AppImage
+#         mv *AppImage ../${pb_app_name}.AppImage
+#         cd ..
+#         ls -lh ${pb_app_name}.AppImage
+#         md5sum ${pb_app_name}.AppImage >checksum.txt
+#         cat checksum.txt
+#     - name: Upload Linux Build
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: pianobooster-${{ env.PB_VERSION }}-linux-Qt6-ubuntu-22.04
+#         path: |
+#            ${{ env.PB_APP_NAME }}.AppImage
+#            checksum.txt
+
+# macos-build:
+#   runs-on: macos-11
+#   steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2.0.0
+#     - name: Install dependencies
+#       run: |
+#         brew install cmake qt@6 ftgl pkg-config fluid-synth
+#     - name: Define variables
+#       run: |
+#         pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
+#         pb_app_name="PianoBooster-${pb_ver}"
+#         echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
+#         echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
+#         echo "PB_APP_NAME=${pb_app_name}"
+#     - name: Build
+#       env:
+#         pb_app_name: ${{ env.PB_APP_NAME }}
+#       run: |
+#         mkdir build
+#         cd build
+#         export PKG_CONFIG_PATH="$(brew --prefix readline)/lib/pkgconfig:$PKG_CONFIG_PATH"
+#         cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt@6);" -DQT_PACKAGE_NAME=Qt6
+#         make
+#         make install-translations
+#         $(brew --prefix qt@6)/bin/macdeployqt build/pianobooster.app -dmg
+#         find .
+#         echo "Done!"
+#         mv build/*dmg ../${pb_app_name}.dmg
+#         cd ..
+#         ls -lh ${pb_app_name}.dmg
+#         md5 -r ${pb_app_name}.dmg > checksum.txt
+#         cat checksum.txt
+#     - name: Upload Mac Build
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: pianobooster-${{ env.PB_VERSION }}-macos
+#         path: |
+#           ${{ env.PB_APP_NAME }}.dmg
+#           checksum.txt
+
+
+  windows-build:
+    runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.0.0
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install build-essential cmake pkg-config libftgl-dev qtbase5-dev qttools5-dev librtmidi-dev fluid-soundfont-gm libfluidsynth-dev
-      - name: Install linuxdeploy
+        uses: actions/checkout@v3
+      - uses: lukka/get-cmake@latest
+      - name: Setup vcpkg
+        uses: lukka/run-vcpkg@v10
+        with:
+          vcpkgGitUrl: 'https://github.com/microsoft/vcpkg.git'
+          vcpkgGitCommitId: e6e9a0b1b058bf0cdd884c781acd33c97abb5aa3
+      - name:
         run: |
-          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
-          chmod +x linuxdeploy*.AppImage
-      - name: Define variables
-        run: |
-          pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
-          pb_app_name="PianoBooster-${pb_ver}-x86_64"
-          echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
-          echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
-          echo "PB_APP_NAME=${pb_app_name}"
-
-      - name: Build
-        env:
-          pb_app_name: ${{ env.PB_APP_NAME }}
-        run: |
+          vcpkg install fluidsynth qt5-base qt5-tools freetype ftgl
           mkdir build
           cd build
-          cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DQT_PACKAGE_NAME=Qt5
-          make -j$(nproc)
-          make install DESTDIR=AppDir
-          # Package
-          export QT_SELECT=5
-          export QML_SOURCES_PATHS="${GITHUB_WORKSPACE}"/src
-          # initialize AppDir, bundle shared libraries for PianoBooster, use Qt plugin to bundle additional resources, and build AppImage, all in one single command
-          ../linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
+          cmake .. -DWITH_INTERNAL_FLUIDSYNTH=OFF -DCMAKE_TOOLCHAIN_FILE="${GITHUB_WORKSPACE}"/vcpkg/scripts/buildsystems/vcpkg.cmake -DQT_PACKAGE_NAME=Qt5
+          cmake --build .
           find .
-          echo "Done!"
-          chmod +x *AppImage
-          mv *AppImage ../${pb_app_name}.AppImage
-          cd ..
-          ls -lh ${pb_app_name}.AppImage
-          md5sum ${pb_app_name}.AppImage >checksum.txt
-          cat checksum.txt
-      - name: Upload Linux Build
-        uses: actions/upload-artifact@v2
-        with:
-          name: pianobooster-${{ env.PB_VERSION }}-linux-Qt5-ubuntu-20.04
-          path: |
-             ${{ env.PB_APP_NAME }}.AppImage
-             checksum.txt
+        shell: bash
 
-  newlinux-build:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.0.0
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install build-essential cmake pkg-config libftgl-dev qt6-base-dev libqt6core5compat6-dev qt6-tools-dev qt6-tools-dev-tools qt6-l10n-tools librtmidi-dev fluid-soundfont-gm libfluidsynth-dev
-          sudo apt-get install libfuse2 qmake6
-      - name: Install linuxdeploy
-        run: |
-          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
-          chmod +x linuxdeploy*.AppImage
-      - name: Define variables
-        run: |
-          pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
-          pb_app_name="PianoBooster-${pb_ver}-x86_64"
-          echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
-          echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
-          echo "PB_APP_NAME=${pb_app_name}"
-
-      - name: Build
-        env:
-          pb_app_name: ${{ env.PB_APP_NAME }}
-        run: |
-          mkdir build
-          cd build
-          cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DQT_PACKAGE_NAME=Qt6
-          make -j$(nproc)
-          make install DESTDIR=AppDir
-          # Package
-          export QT_SELECT=6
-          export QMAKE=/usr/lib/qt6/bin/qmake6
-          export QML_SOURCES_PATHS="${GITHUB_WORKSPACE}"/src
-          # initialize AppDir, bundle shared libraries for PianoBooster, use Qt plugin to bundle additional resources, and build AppImage, all in one single command
-          ../linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
-          find .
-          echo "Done!"
-          chmod +x *AppImage
-          mv *AppImage ../${pb_app_name}.AppImage
-          cd ..
-          ls -lh ${pb_app_name}.AppImage
-          md5sum ${pb_app_name}.AppImage >checksum.txt
-          cat checksum.txt
-      - name: Upload Linux Build
-        uses: actions/upload-artifact@v2
-        with:
-          name: pianobooster-${{ env.PB_VERSION }}-linux-Qt6-ubuntu-22.04
-          path: |
-             ${{ env.PB_APP_NAME }}.AppImage
-             checksum.txt
-
-  macos-build:
-    runs-on: macos-11
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.0.0
-      - name: Install dependencies
-        run: |
-          brew install cmake qt@6 ftgl pkg-config fluid-synth
-      - name: Define variables
-        run: |
-          pb_ver=`grep PB_VERSION src/version.h | cut -d "\"" -f 2`
-          pb_app_name="PianoBooster-${pb_ver}"
-          echo "PB_VERSION=${pb_ver}">> $GITHUB_ENV
-          echo "PB_APP_NAME=${pb_app_name}">> $GITHUB_ENV
-          echo "PB_APP_NAME=${pb_app_name}"
-      - name: Build
-        env:
-          pb_app_name: ${{ env.PB_APP_NAME }}
-        run: |
-          mkdir build
-          cd build
-          export PKG_CONFIG_PATH="$(brew --prefix readline)/lib/pkgconfig:$PKG_CONFIG_PATH"
-          cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt@6);" -DQT_PACKAGE_NAME=Qt6
-          make
-          make install-translations
-          $(brew --prefix qt@6)/bin/macdeployqt build/pianobooster.app -dmg
-          find .
-          echo "Done!"
-          mv build/*dmg ../${pb_app_name}.dmg
-          cd ..
-          ls -lh ${pb_app_name}.dmg
-          md5 -r ${pb_app_name}.dmg > checksum.txt
-          cat checksum.txt
-      - name: Upload Mac Build
-        uses: actions/upload-artifact@v2
-        with:
-          name: pianobooster-${{ env.PB_VERSION }}-macos
-          path: |
-            ${{ env.PB_APP_NAME }}.dmg
-            checksum.txt
-
-
-#  windows-build:
-#    runs-on: windows-latest
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v2.0.0
-#      - name: Install dependencies
-#        uses: lukka/run-vcpkg@v4
-#        with:
-#          vcpkgDirectory: ${{ github.workspace }}/vcpkg
-#          vcpkgArguments: fluidsynth qt5-base qt5-tools freetype ftgl
-#          vcpkgGitUrl: 'https://github.com/microsoft/vcpkg.git'
-#          vcpkgGitCommitId: '56fffbe49dfb4dd8fae0940f272c5fd2b86be991'
-#          vcpkgTriplet: x64-windows
-#      - name:
-#        run: |
-#          mkdir build
-#          cd build
-#          cmake .. -DWITH_INTERNAL_FLUIDSYNTH=OFF -DCMAKE_TOOLCHAIN_FILE="${GITHUB_WORKSPACE}"/vcpkg/scripts/buildsystems/vcpkg.cmake
-#          cmake --build .
-#          find .
-#        shell: bash
-#
