@@ -1095,12 +1095,12 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="194"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Jezik</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="202"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jezik:</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
@@ -1110,7 +1110,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="43"/>
         <source>Automatic (Recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatski (preporučeno)</translation>
     </message>
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="44"/>
@@ -1138,7 +1138,7 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="40"/>
         <source>Book:</source>
-        <translation type="unfinished"></translation>
+        <translation>Knjiga:</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="66"/>
@@ -1148,12 +1148,12 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="115"/>
         <source>Skill</source>
-        <translation type="unfinished"></translation>
+        <translation>Vještina</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="121"/>
         <source>Listen</source>
-        <translation type="unfinished"></translation>
+        <translation>Slušaj</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="142"/>
@@ -1163,32 +1163,32 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="158"/>
         <source>Hands</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruke</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="166"/>
         <source>Right</source>
-        <translation>Desno</translation>
+        <translation>Desna</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="173"/>
         <source>Both</source>
-        <translation type="unfinished"></translation>
+        <translation>Obje</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="180"/>
         <source>Left</source>
-        <translation>Lijevo</translation>
+        <translation>Lijeva</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="195"/>
         <source>Adjust the volume of your piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Podesi glasnoću tvog klavira</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="88"/>
         <source>Repeat song</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponovi pjesmu</translation>
     </message>
     <message>
         <location filename="../src/GuiSidePanel.ui" line="218"/>
