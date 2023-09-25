@@ -1125,7 +1125,7 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="83"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Jezik sustava</translation>
     </message>
 </context>
 <context>
