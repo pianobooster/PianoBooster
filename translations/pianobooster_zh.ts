@@ -1485,7 +1485,7 @@
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
         <source>OpenGL support</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenGL支持</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="60"/>
