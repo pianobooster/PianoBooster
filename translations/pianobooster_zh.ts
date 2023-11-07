@@ -1475,12 +1475,12 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="89"/>
         <source>Cannot open &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>无法打开“%1”</translation>
     </message>
     <message>
         <location filename="../src/MidiFile.cpp" line="96"/>
         <source>MIDI file &quot;%1&quot; is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>MIDI文件“%1”损坏</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
