@@ -1480,7 +1480,7 @@
     <message>
         <location filename="../src/MidiFile.cpp" line="96"/>
         <source>MIDI file &quot;%1&quot; is corrupted</source>
-        <translation>MIDI文件“%1”损坏</translation>
+        <translation>MIDI文件“%1”已损坏</translation>
     </message>
     <message>
         <location filename="../src/QtMain.cpp" line="59"/>
