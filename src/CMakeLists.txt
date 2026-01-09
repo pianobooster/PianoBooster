@@ -240,7 +240,6 @@ if(APPLE)
     set_source_files_properties(${pianobooster_MUSIC} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/music")
     set(pianobooster_FONT ${CMAKE_CURRENT_SOURCE_DIR}/fonts/DejaVuSans.ttf)
     set_source_files_properties(${pianobooster_FONT} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/fonts")
-    set(MACOSX_BUNDLE_GUI_IDENTIFIER "com.xd.pianobooster")
     ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE
         ${pianobooster_ICON} ${pianobooster_TRANSLATIONS}
         ${pianobooster_MUSIC} ${pianobooster_FONT}
