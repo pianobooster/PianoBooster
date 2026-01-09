@@ -240,14 +240,16 @@ if(APPLE)
     set_source_files_properties(${pianobooster_MUSIC} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/music")
     set(pianobooster_FONT ${CMAKE_CURRENT_SOURCE_DIR}/fonts/DejaVuSans.ttf)
     set_source_files_properties(${pianobooster_FONT} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/fonts")
-
+    set(MACOSX_BUNDLE_GUI_IDENTIFIER "com.xd.pianobooster")
     ADD_EXECUTABLE( pianobooster MACOSX_BUNDLE
         ${pianobooster_ICON} ${pianobooster_TRANSLATIONS}
         ${pianobooster_MUSIC} ${pianobooster_FONT}
         ${PIANOBOOSTER_SRCS}
         ${PIANOBOOSTER_MOC_SRCS} ${PIANOBOOSTER_RC_SRCS}
         ${PIANOBOOSTER_UI_HDRS} ${PIANOBOOSTER_RCS} )
-
+    set_target_properties(pianobooster PROPERTIES
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.pianobooster.PianoBooster"
+    )
     add_custom_target(install-translations cp -R -v ${CMAKE_CURRENT_BINARY_DIR}/translations/*.qm ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.app/Contents/Resources/translations)
 
 endif(APPLE)
