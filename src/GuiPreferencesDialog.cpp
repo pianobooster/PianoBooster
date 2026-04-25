@@ -42,6 +42,9 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     m_settings = nullptr;
     m_glView = nullptr;
     setWindowTitle(tr("Preferences"));
+    noteNameStyleCombo->addItem(tr("Letters (C D E F G A B)"), PB_NOTE_NAME_STYLE_LETTERS);
+    noteNameStyleCombo->addItem(tr("Solfege (do re mi fa sol la si)"), PB_NOTE_NAME_STYLE_SOLFEGE);
+    noteNameSizeSpin->setRange(minNoteNameScale(), maxNoteNameScale());
     followStopPointCombo->addItem(tr("Automatic (Recommended)"));
     followStopPointCombo->addItem(tr("On the Beat"));
     followStopPointCombo->addItem(tr("After the Beat"));
@@ -147,6 +150,10 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
 
     timingMarkersCheck->setChecked(m_song->cfg_timingMarkersFlag);
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
+    const int noteNameStyleIndex = noteNameStyleCombo->findData(m_settings->noteNameStyle());
+    noteNameStyleCombo->setCurrentIndex((noteNameStyleIndex >= 0) ? noteNameStyleIndex : 0);
+    noteNameSizeSpin->setValue(m_settings->noteNameScale());
+    setNoteNameControlsEnabled(showNoteNamesCheck->isChecked());
     courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
     showTutorPagesCheck->setChecked(m_settings->isTutorPagesEnabled());
     followThroughErrorsCheck->setChecked(m_settings->isFollowThroughErrorsEnabled());
@@ -162,6 +169,8 @@ void GuiPreferencesDialog::accept()
     m_song->cfg_timingMarkersFlag = timingMarkersCheck->isChecked();
     m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
     m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
+    m_settings->setNoteNameStyle(static_cast<noteNameStyle_t>(noteNameStyleCombo->currentData().toInt()));
+    m_settings->setNoteNameScale(noteNameSizeSpin->value());
     m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
     m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());
     m_settings->setFollowThroughErrorsEnabled( followThroughErrorsCheck->isChecked());
@@ -174,4 +183,16 @@ void GuiPreferencesDialog::accept()
     m_song->refreshScroll();
 
     this->QDialog::accept();
+}
+
+void GuiPreferencesDialog::on_showNoteNamesCheck_toggled(bool checked)
+{
+    setNoteNameControlsEnabled(checked);
+}
+
+void GuiPreferencesDialog::setNoteNameControlsEnabled(bool checked)
+{
+    noteNameStyleCombo->setEnabled(checked);
+    noteNameSizeLabel->setEnabled(checked);
+    noteNameSizeSpin->setEnabled(checked);
 }
