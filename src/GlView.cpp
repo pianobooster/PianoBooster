@@ -50,6 +50,8 @@
 CGLView::CGLView(QtWindow* parent, CSettings* settings)
     : QOpenGLWidget(parent)
 {
+    setUpdateBehavior(QOpenGLWidget::PartialUpdate);
+
     m_qtWindow = parent;
     m_settings = settings;
     m_rating = nullptr;
