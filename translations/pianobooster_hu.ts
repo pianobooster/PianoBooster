@@ -14,37 +14,37 @@
     <message>
         <location filename="../src/Draw.cpp" line="307"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="308"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="309"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="310"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="311"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="312"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="../src/Draw.cpp" line="313"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
 </context>
 <context>
@@ -52,17 +52,17 @@
     <message>
         <location filename="../src/GlView.cpp" line="229"/>
         <source>Accuracy:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pontosság:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="241"/>
         <source>Song:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dal:</translation>
     </message>
     <message>
         <location filename="../src/GlView.cpp" line="264"/>
         <source>Bar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sáv:</translation>
     </message>
 </context>
 <context>
@@ -75,12 +75,12 @@
     <message>
         <location filename="../src/Settings.cpp" line="532"/>
         <source>ERROR NO SOUND: To fix this use menu Setup/MIDI Setup ...</source>
-        <translation type="unfinished"></translation>
+        <translation>HIBA NINCS HANG: Nyisd meg a Beállítások-on belül MIDI beállítások fület...</translation>
     </message>
     <message>
         <location filename="../src/Settings.cpp" line="534"/>
         <source>ERROR NO MIDI FILE: To fix this use menu File/Open ...</source>
-        <translation type="unfinished"></translation>
+        <translation>HIBA NINCS MIDI FÁJL: Nyiss meg egyet a Fájl/Megnyitás fül alatt ...</translation>
     </message>
 </context>
 <context>
@@ -98,27 +98,27 @@
     <message>
         <location filename="../src/TrackList.cpp" line="408"/>
         <source>Bright Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Fényesen zengő zongora</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="409"/>
         <source>Electric Grand</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos zongora</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="410"/>
         <source>Honky-tonk Piano</source>
-        <translation type="unfinished"></translation>
+        <translation>Honky-tonk stílusú zongora</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="411"/>
         <source>Electric Piano 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos zongora 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="412"/>
         <source>Electric Piano 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos zongora 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="413"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="414"/>
         <source>Clavi</source>
-        <translation type="unfinished"></translation>
+        <translation>Clavi zongora</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="415"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="417"/>
         <source>Music Box</source>
-        <translation type="unfinished"></translation>
+        <translation>Zenedoboz hangzású zongora</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="418"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="419"/>
         <source>Marimba</source>
-        <translation type="unfinished"></translation>
+        <translation>Marimba zongora</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="420"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="423"/>
         <source>Drawbar Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Emelőrudas orgona</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="424"/>
@@ -183,7 +183,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="425"/>
         <source>Rock Organ</source>
-        <translation type="unfinished"></translation>
+        <translation>Rock orgona</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="426"/>
@@ -208,47 +208,47 @@
     <message>
         <location filename="../src/TrackList.cpp" line="430"/>
         <source>Tango Accordion</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangóharmonika</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="431"/>
         <source>Acoustic Guitar (nylon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Akusztikus gitár (nejlon húros)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="432"/>
         <source>Acoustic Guitar (steel)</source>
-        <translation type="unfinished"></translation>
+        <translation>Akusztikus gitár (acél húros)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="433"/>
         <source>Electric Guitar (jazz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos gitár (jazz stílusú)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="434"/>
         <source>Electric Guitar (clean)</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos gitár (tiszta hangzású)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="435"/>
         <source>Electric Guitar (muted)</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos gitár (csillapított)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="436"/>
         <source>Overdriven Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Túlhajtott gitár</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="437"/>
         <source>Distortion Guitar</source>
-        <translation type="unfinished"></translation>
+        <translation>Torzított gitár</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="438"/>
         <source>Guitar harmonics</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitárharmonika</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="439"/>
@@ -258,17 +258,17 @@
     <message>
         <location filename="../src/TrackList.cpp" line="440"/>
         <source>Electric Bass (finger)</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos basszusgitár (ujjal)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="441"/>
         <source>Electric Bass (pick)</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos basszusgitár (pengetővel)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="442"/>
         <source>Fretless Bass</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektromos basszusgitár (bund nélküli)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="443"/>
@@ -318,12 +318,12 @@
     <message>
         <location filename="../src/TrackList.cpp" line="452"/>
         <source>Pizzicato Strings</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengetett vonósok (pizzicato)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="453"/>
         <source>Orchestral Harp</source>
-        <translation type="unfinished"></translation>
+        <translation>Zenekari hárfa</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="454"/>
@@ -333,22 +333,22 @@
     <message>
         <location filename="../src/TrackList.cpp" line="455"/>
         <source>String Ensemble 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vonós együttes 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="456"/>
         <source>String Ensemble 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Vonós együttes 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="457"/>
         <source>SynthStrings 1</source>
-        <translation type="unfinished"></translation>
+        <translation>SzintiVonósok 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="458"/>
         <source>SynthStrings 2</source>
-        <translation type="unfinished"></translation>
+        <translation>SzintiVonósok 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="459"/>
@@ -363,7 +363,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="461"/>
         <source>Synth Voice</source>
-        <translation type="unfinished"></translation>
+        <translation>Szintetizátoros énekhang</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="462"/>
@@ -383,32 +383,32 @@
     <message>
         <location filename="../src/TrackList.cpp" line="465"/>
         <source>Tuba</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="466"/>
         <source>Muted Trumpet</source>
-        <translation type="unfinished"></translation>
+        <translation>Csillapított trombita</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="467"/>
         <source>French Horn</source>
-        <translation type="unfinished"></translation>
+        <translation>Francia kűrt</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="468"/>
         <source>Brass Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Rézfúvósok</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="469"/>
         <source>SynthBrass 1</source>
-        <translation type="unfinished"></translation>
+        <translation>SzintiRézfúvósok 1</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="470"/>
         <source>SynthBrass 2</source>
-        <translation type="unfinished"></translation>
+        <translation>SzintiRézfúvósok 2</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="471"/>
@@ -473,7 +473,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="483"/>
         <source>Blown Bottle</source>
-        <translation type="unfinished"></translation>
+        <translation>Fújt üveg</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="484"/>
@@ -493,122 +493,122 @@
     <message>
         <location filename="../src/TrackList.cpp" line="487"/>
         <source>Lead 1 (square)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 1 (négyszögjelből)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="488"/>
         <source>Lead 2 (sawtooth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 2 (fűrészfog jelből)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="489"/>
         <source>Lead 3 (calliope)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 3 (cirkuszi)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="490"/>
         <source>Lead 4 (chiff)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 4 (fuvola)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="491"/>
         <source>Lead 5 (charang)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 5 (digitális)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="492"/>
         <source>Lead 6 (voice)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 6 (énekhang)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="493"/>
         <source>Lead 7 (fifths)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 7 (ötödikek)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="494"/>
         <source>Lead 8 (bass + lead)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóló szintetizátor 8 (basszus)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="495"/>
         <source>Pad 1 (new age)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 1 (új kor)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="496"/>
         <source>Pad 2 (warm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 2 (meleg)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="497"/>
         <source>Pad 3 (polysynth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 3 (poliszintetizátor)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="498"/>
         <source>Pad 4 (choir)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 4 (kórus)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="499"/>
         <source>Pad 5 (bowed)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 5 (hajlított)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="500"/>
         <source>Pad 6 (metallic)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 6 (fémes)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="501"/>
         <source>Pad 7 (halo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 7 (dicső)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="502"/>
         <source>Pad 8 (sweep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad 8 (átfutó)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="503"/>
         <source>FX 1 (rain)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 1 (eső)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="504"/>
         <source>FX 2 (soundtrack)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 2 (hangrészlet)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="505"/>
         <source>FX 3 (crystal)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 3 (kristály)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="506"/>
         <source>FX 4 (atmosphere)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 4 (atmoszféra)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="507"/>
         <source>FX 5 (brightness)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 5 (fényesség)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="508"/>
         <source>FX 6 (goblins)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 6 (goblinok)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="509"/>
         <source>FX 7 (echoes)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 7 (visszhangok)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="510"/>
         <source>FX 8 (sci-fi)</source>
-        <translation type="unfinished"></translation>
+        <translation>FX 8 (sci-fi)</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="511"/>
@@ -628,37 +628,37 @@
     <message>
         <location filename="../src/TrackList.cpp" line="514"/>
         <source>Koto</source>
-        <translation type="unfinished"></translation>
+        <translation>Koto</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="515"/>
         <source>Kalimba</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalimba</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="516"/>
         <source>Bag pipe</source>
-        <translation type="unfinished"></translation>
+        <translation>Duda</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="517"/>
         <source>Fiddle</source>
-        <translation type="unfinished"></translation>
+        <translation>Népi hegedű</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="518"/>
         <source>Shanai</source>
-        <translation type="unfinished"></translation>
+        <translation>Shanai</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="519"/>
         <source>Tinkle Bell</source>
-        <translation type="unfinished"></translation>
+        <translation>Csengettyű</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="520"/>
         <source>Agogo</source>
-        <translation type="unfinished"></translation>
+        <translation>Agogo</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="521"/>
@@ -668,52 +668,52 @@
     <message>
         <location filename="../src/TrackList.cpp" line="522"/>
         <source>Woodblock</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakocka</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="523"/>
         <source>Taiko Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>Taiko dob</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="524"/>
         <source>Melodic Tom</source>
-        <translation type="unfinished"></translation>
+        <translation>Dallamos tam</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="525"/>
         <source>Synth Drum</source>
-        <translation type="unfinished"></translation>
+        <translation>Szintetizátoros dob</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="526"/>
         <source>Reverse Cymbal</source>
-        <translation type="unfinished"></translation>
+        <translation>Fordított cintányér</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="527"/>
         <source>Guitar Fret Noise</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitár bundzaj</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="528"/>
         <source>Breath Noise</source>
-        <translation type="unfinished"></translation>
+        <translation>Légzéshang</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="529"/>
         <source>Seashore</source>
-        <translation>Tenger</translation>
+        <translation>Tengerhang</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="530"/>
         <source>Bird Tweet</source>
-        <translation type="unfinished"></translation>
+        <translation>Madárcsiripelés</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="531"/>
         <source>Telephone Ring</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefoncsörgés</translation>
     </message>
     <message>
         <location filename="../src/TrackList.cpp" line="532"/>
@@ -728,7 +728,7 @@
     <message>
         <location filename="../src/TrackList.cpp" line="534"/>
         <source>Gunshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisztolylövés</translation>
     </message>
 </context>
 <context>
@@ -736,22 +736,22 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.cpp" line="41"/>
         <source>Piano Keyboard Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Zongorabillentyűk beállítása</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="19"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Párbeszédpanel</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="25"/>
         <source>Setup Your Piano Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Álltsd be a zongorabillentyűket</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="55"/>
         <source>Right Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Helyes hangok</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="63"/>
@@ -763,7 +763,7 @@
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="80"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="163"/>
         <source>volume:</source>
-        <translation type="unfinished"></translation>
+        <translation>hangerő:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="118"/>
@@ -774,28 +774,28 @@
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="132"/>
         <source>Wrong Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibás hangok</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="217"/>
         <source>Keyboard Note Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Billentyűzetszélesség</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="223"/>
         <source>Lowest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Legalsó hang:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="236"/>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="272"/>
         <source>The note number between 0 and 127</source>
-        <translation type="unfinished"></translation>
+        <translation>A hangok számai 0 és 127 között</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="259"/>
         <source>Highest Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Legmagasabb hang:</translation>
     </message>
     <message>
         <location filename="../src/GuiKeyboardSetupDialog.ui" line="295"/>
@@ -891,7 +891,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="266"/>
         <source>Master Gain:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fő hangerő:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="276"/>

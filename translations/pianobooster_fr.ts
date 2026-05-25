@@ -881,7 +881,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="95"/>
         <source>Midi Output Device:</source>
-        <translation>Périphérique de sortie MIDI :</translation>
+        <translation>Périphérique de sortie MIDI&#xa0;:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.ui" line="203"/>
@@ -997,7 +997,7 @@
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="156"/>
         <source>MIDI Output Device:</source>
-        <translation>Périphérique de sortie MIDI :</translation>
+        <translation>Périphérique de sortie MIDI&#xa0;:</translation>
     </message>
     <message>
         <location filename="../src/GuiMidiSetupDialog.cpp" line="158"/>
