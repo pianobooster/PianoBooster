@@ -200,13 +200,12 @@ void CMidiTrack::readTimeSignatureEvent()
         return;
     }
     timeSigNumerator = readByte();  // The number on the top
-    timeSigDenominator = readByte(); // the number on the bottom
-    if (timeSigDenominator >= 5)
-    {
-        errorFail(SMF_CORRUPTED_MIDI_FILE);
-        return;
-    }
-    if (timeSigNumerator > 20)
+    timeSigDenominator = readByte(); // the number on the bottom (a power of two, stored as the exponent)
+    // The denominator is the exponent of a power of two: 0..7 covers 1/1 .. 1/128,
+    // which spans every time signature found in real music (the previous limit of
+    // 5 wrongly rejected valid 1/32 meters as "corrupted"). The numerator can be
+    // any byte value; only guard against the shift below overflowing.
+    if (timeSigDenominator > 7)
     {
         errorFail(SMF_CORRUPTED_MIDI_FILE);
         return;
