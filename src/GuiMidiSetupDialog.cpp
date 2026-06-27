@@ -70,6 +70,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
 
     sampleRateCombo->addItems({"22050", "44100","48000", "88200","96000"});
     sampleRateCombo->setValidator(new QIntValidator(22050, 96000, this));
+    sampleRateCombo->setCurrentIndex(2);   // 48000 Hz
     bufferSizeCombo->addItems({"64", "128", "512", "1024", "2024", "4096","8192"});
     bufferSizeCombo->setValidator(new QIntValidator(64, 8192, this));
     bufferSizeCombo->setCurrentIndex(1);
@@ -94,7 +95,7 @@ void GuiMidiSetupDialog::init(CSong* song, CSettings* settings)
         reverbCheck->setChecked(m_settings->value("FluidSynth/reverbCheck","false").toBool());
         chorusCheck->setChecked(m_settings->value("FluidSynth/chorusCheck","false").toBool());
         setComboFromSetting(audioDriverCombo, "FluidSynth/audioDriverCombo","pulseaudio");
-        setComboFromSetting(sampleRateCombo, "FluidSynth/sampleRateCombo","22050");
+        setComboFromSetting(sampleRateCombo, "FluidSynth/sampleRateCombo","48000");
         setComboFromSetting(bufferSizeCombo, "FluidSynth/bufferSizeCombo","128");
         setComboFromSetting(bufferCountCombo, "FluidSynth/bufferCountCombo","4");
      }

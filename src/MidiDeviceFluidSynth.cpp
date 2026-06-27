@@ -100,8 +100,10 @@ bool CMidiDeviceFluidSynth::openMidiPort(midiType_t type, const QString &portNam
     // Create the settings.
     m_fluidSettings = new_fluid_settings();
 
-    // Change the settings if necessary
-    fluid_settings_setnum(m_fluidSettings, "synth.sample-rate", qsettings->value("FluidSynth/sampleRateCombo",22050).toInt());
+    // Change the settings if necessary.
+    // Default to 48 kHz to match modern audio stacks (PipeWire/PulseAudio run at
+    // 48 kHz), which avoids a resampling step.
+    fluid_settings_setnum(m_fluidSettings, "synth.sample-rate", qsettings->value("FluidSynth/sampleRateCombo",48000).toInt());
     fluid_settings_setint(m_fluidSettings, "audio.period-size", qsettings->value("FluidSynth/bufferSizeCombo", 128).toInt());
     fluid_settings_setint(m_fluidSettings, "audio.periods", qsettings->value("FluidSynth/bufferCountCombo", 4).toInt());
 
