@@ -326,7 +326,10 @@ void CGLView::mouseMoveEvent(QMouseEvent *event)
 void CGLView::initializeGL()
 {
     CColor color = Cfg::backgroundColor();
-    glClearColor (color.red, color.green, color.blue, 0.0);
+    // Alpha must be 1.0 (opaque): on Wayland the compositor honours the
+    // framebuffer alpha, so a 0.0 alpha makes the staff area see-through to
+    // the desktop and blurs/stutters as it scrolls. (Harmless on X11.)
+    glClearColor (color.red, color.green, color.blue, 1.0);
     glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
     glShadeModel (GL_FLAT);
     //glEnable(GL_TEXTURE_2D);                        // Enable Texture Mapping
