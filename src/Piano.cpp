@@ -36,8 +36,6 @@
 #define PIANO_LINE_LENGTH_LONG   64
 #define PIANO_LINE_LENGTH_SHORT   48
 
-static const float minNameGap = 14.0;
-
 void CPiano::spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex)
 {
     const long long range = static_cast<long long>(topIndex) - static_cast<long long>(bottomIndex);
@@ -49,6 +47,7 @@ void CPiano::spaceNoteBunch(unsigned int bottomIndex, unsigned int topIndex)
         return;
 
     float gap;
+    const float minNameGap = noteNamePianoSpacingGap();
     if (range%2 == 0) // test for an even number of notes
     {
         gap = m_noteNameList[midPoint].posY - m_noteNameList[midPoint -1].posY;
@@ -92,7 +91,10 @@ void CPiano::drawPianoInputNoteNames()
 
     for (i = 0; i < m_noteNameListLength; i++)
     {
-        drawNoteName(m_noteNameList[i].pitch, Cfg::playZoneX() - PIANO_LINE_LENGTH_SHORT - 14, m_noteNameList[i].posY, m_noteNameList[i].type);
+        drawNoteName(m_noteNameList[i].pitch,
+                     Cfg::playZoneX() - PIANO_LINE_LENGTH_SHORT - noteNamePianoTextGap(),
+                     m_noteNameList[i].posY,
+                     m_noteNameList[i].type);
     }
 }
 
@@ -141,6 +143,7 @@ void CPiano::spaceNoteNames()
     unsigned int bottomIndex;
     unsigned int topIndex;
     bool foundBunch = false;
+    const float minNameGap = noteNamePianoSpacingGap();
 
     m_noteNameList[0].posY = m_noteNameList[0].posYOriginal;
 
@@ -334,4 +337,3 @@ CChord CPiano::removeSavedChord(int key)
     return m_savedChordLookUp[i].savedNoteOffChord;
 
 }
-

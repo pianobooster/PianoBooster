@@ -45,9 +45,9 @@
 #include <QObject>
 #include <QFile>
 #include <QApplication>
+#include <QtGlobal>
 
 #define HORIZONTAL_SPACING_FACTOR   (0.75f) // defines the speed of the scrolling
-#define FONT_SIZE 16
 
 #include "StavePosition.h"
 
@@ -110,8 +110,14 @@ protected:
     void drawStaves(float startX, float endX);
     void drawKeySignature(int key);
     void drawNoteName(int midiNote, float x, float y, int type);
+    int noteNameScale() const;
+    int noteNameRenderPixelSize() const;
+    float noteNameVerticalOffset() const;
+    float noteNamePianoTextGap() const;
+    float noteNamePianoSpacingGap() const;
 #ifndef NO_USE_FTGL
     void renderText(float x, float y, const char* s);
+    void updateNoteNameFont();
 #endif
     CSettings* m_settings;
 
@@ -130,6 +136,7 @@ private:
     CScrollProperties m_scrollPropertiesVertical;
 #ifndef NO_USE_FTGL
     FTFont *font;
+    int m_appliedNoteNameFontSize;
 #endif
 };
 

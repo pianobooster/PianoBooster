@@ -49,8 +49,10 @@ public:
 
 private slots:
     void accept();
+    void on_showNoteNamesCheck_toggled(bool checked);
 
 private:
+    void setNoteNameControlsEnabled(bool checked);
     void initLanguageCombo();
 
     CSettings* m_settings;
