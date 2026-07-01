@@ -37,11 +37,31 @@ typedef unsigned char guint8;
 whichPart_t CDraw::m_displayHand;
 int CDraw::m_forceCompileRedraw;
 
+namespace {
+
+QString noteNameBaseText(int pianoNote, noteNameStyle_t style)
+{
+    static const char *const letterNames[] = {"C", "D", "E", "F", "G", "A", "B"};
+    static const char *const solfegeNames[] = {"do", "re", "mi", "fa", "sol", "la", "si"};
+
+    if (pianoNote <= 0 || pianoNote > 7)
+        return QString();
+
+    const char *const *names = letterNames;
+    if (style == PB_NOTE_NAME_STYLE_SOLFEGE)
+        names = solfegeNames;
+
+    return QString::fromLatin1(names[pianoNote - 1]);
+}
+
+}
+
 CDraw::CDraw(CSettings* settings)
 #ifndef NO_USE_FTGL
-    :font(nullptr)
+    :font(nullptr), m_appliedNoteNameFontSize(0)
 #endif
 {
+    m_settings = settings;
 #ifndef NO_USE_FTGL
     QStringList listPathFonts;
 
@@ -66,12 +86,39 @@ CDraw::CDraw(CSettings* settings)
         ppLogError("Font DejaVuSans.ttf was not found !");
         exit(0);
     }
-    font->FaceSize(FONT_SIZE, FONT_SIZE);
+    updateNoteNameFont();
 #endif
-    m_settings = settings;
     m_displayHand = PB_PART_both;
     m_forceCompileRedraw = 1;
     m_scrollProperties = &m_scrollPropertiesHorizontal;
+}
+
+int CDraw::noteNameScale() const
+{
+    return m_settings->noteNameScale();
+}
+
+int CDraw::noteNameRenderPixelSize() const
+{
+    const float baseHeight = CStavePos::getVerticalNoteSpacing() * 2.0f;
+    const float scaledHeight = baseHeight * static_cast<float>(noteNameScale()) / 100.0f;
+    return qMax(8, qRound(scaledHeight));
+}
+
+float CDraw::noteNameVerticalOffset() const
+{
+    return CStavePos::getVerticalNoteSpacing()
+           + static_cast<float>(noteNameRenderPixelSize()) * 0.05f;
+}
+
+float CDraw::noteNamePianoTextGap() const
+{
+    return 6.0f + static_cast<float>(noteNameRenderPixelSize()) * 0.25f;
+}
+
+float CDraw::noteNamePianoSpacingGap() const
+{
+    return qMax(14.0f, static_cast<float>(noteNameRenderPixelSize()) * 0.9f);
 }
 
 void CDraw::oneLine(float x1, float y1, float x2, float y2)
@@ -117,8 +164,19 @@ void  CDraw::drawStaveExtentsion(CSymbol symbol, float x, int noteWidth, bool pl
 #define scaleGlVertex(xa, xb, ya, yb) glVertex2f( ((xa) * 1.2f) + (xb), ((ya) * 1.2f) + (yb))
 
 #ifndef NO_USE_FTGL
+void CDraw::updateNoteNameFont()
+{
+  const int wantedFontSize = noteNameRenderPixelSize();
+  if (font == nullptr || m_appliedNoteNameFontSize == wantedFontSize)
+      return;
+
+  font->FaceSize(wantedFontSize, 72);
+  m_appliedNoteNameFontSize = wantedFontSize;
+}
+
 void CDraw::renderText(float x, float y, const char* s)
 {
+  updateNoteNameFont();
   const auto w = font->Advance(s);
   const auto h = font->Descender();
   glRasterPos2f(x - w/2, y - h);
@@ -303,18 +361,9 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
     const QChar flat = QChar(0x266D);
     const QChar natural = QChar(0x266E);
     const QChar sharp = QChar(0x266F);
-    const QString n[7] =
-     {
-      tr("C"),
-      tr("D"),
-      tr("E"),
-      tr("F"),
-      tr("G"),
-      tr("A"),
-      tr("B")
-     };
+    const QString baseNote = noteNameBaseText(item.pianoNote, m_settings->noteNameStyle());
 
-    if(0<item.pianoNote && item.pianoNote < 8)
+    if (!baseNote.isEmpty())
      {
       QString accident = QString("");
       switch(item.accidental)
@@ -329,8 +378,9 @@ void CDraw::drawNoteName(int midiNote, float x, float y, int type)
           accident = QString(natural);
           break;
        }
-      QString note = n[item.pianoNote-1] + accident;
-      renderText(x, y, note.toUtf8().data());
+      const QString note = baseNote + accident;
+      const QByteArray noteUtf8 = note.toUtf8();
+      renderText(x, y, noteUtf8.constData());
      }
 #endif
 }
@@ -341,7 +391,7 @@ void CDraw::drawStaveNoteName(CSymbol symbol, float x, float y)
         return;
     if (m_settings->showNoteNames() == false)
         return;
-    y += CStavePos::getVerticalNoteSpacing()*2 +3;
+    y += noteNameVerticalOffset();
     drawNoteName(symbol.getNote(), x, y, true);
 }
 
