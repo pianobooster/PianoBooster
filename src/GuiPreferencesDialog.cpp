@@ -44,6 +44,8 @@ GuiPreferencesDialog::GuiPreferencesDialog(QWidget *parent)
     setWindowTitle(tr("Preferences"));
     noteNameStyleCombo->addItem(tr("Letters (C D E F G A B)"), PB_NOTE_NAME_STYLE_LETTERS);
     noteNameStyleCombo->addItem(tr("Solfege (do re mi fa sol la si)"), PB_NOTE_NAME_STYLE_SOLFEGE);
+    pianoKeyboardModeCombo->addItem(tr("Score guidance (legacy)"), PB_PIANO_KEYBOARD_MODE_LEGACY);
+    pianoKeyboardModeCombo->addItem(tr("MIDI output (synchronized)"), PB_PIANO_KEYBOARD_MODE_SYNCHRONIZED);
     noteNameSizeSpin->setRange(minNoteNameScale(), maxNoteNameScale());
     followStopPointCombo->addItem(tr("Automatic (Recommended)"));
     followStopPointCombo->addItem(tr("On the Beat"));
@@ -152,6 +154,8 @@ void GuiPreferencesDialog::init(CSong* song, CSettings* settings, CGLView * glVi
     showNoteNamesCheck->setChecked(m_settings->isNoteNamesEnabled());
     const int noteNameStyleIndex = noteNameStyleCombo->findData(m_settings->noteNameStyle());
     noteNameStyleCombo->setCurrentIndex((noteNameStyleIndex >= 0) ? noteNameStyleIndex : 0);
+    const int pianoKeyboardModeIndex = pianoKeyboardModeCombo->findData(m_settings->pianoKeyboardMode());
+    pianoKeyboardModeCombo->setCurrentIndex((pianoKeyboardModeIndex >= 0) ? pianoKeyboardModeIndex : 0);
     noteNameSizeSpin->setValue(m_settings->noteNameScale());
     setNoteNameControlsEnabled(showNoteNamesCheck->isChecked());
     courtesyAccidentalsCheck->setChecked(m_settings->displayCourtesyAccidentals());
@@ -170,6 +174,7 @@ void GuiPreferencesDialog::accept()
     m_settings->setValue("Score/TimingMarkers", m_song->cfg_timingMarkersFlag );
     m_settings->setNoteNamesEnabled( showNoteNamesCheck->isChecked());
     m_settings->setNoteNameStyle(static_cast<noteNameStyle_t>(noteNameStyleCombo->currentData().toInt()));
+    m_settings->setPianoKeyboardMode(static_cast<pianoKeyboardMode_t>(pianoKeyboardModeCombo->currentData().toInt()));
     m_settings->setNoteNameScale(noteNameSizeSpin->value());
     m_settings->setCourtesyAccidentals( courtesyAccidentalsCheck->isChecked());
     m_settings->setTutorPagesEnabled( showTutorPagesCheck->isChecked());

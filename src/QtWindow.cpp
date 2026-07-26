@@ -114,7 +114,7 @@ QtWindow::QtWindow()
 
     m_song->init2(m_score, m_settings);
 
-    m_sidePanel->init(m_song, m_song->getTrackList(), m_topBar);
+    m_sidePanel->init(m_song, m_song->getTrackList(), m_topBar, m_score);
     m_topBar->init(m_song);
 
     QWidget *centralWin = new QWidget();

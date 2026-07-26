@@ -177,6 +177,7 @@ public:
     // The programme name now starts at 1 with 0 = "(none)"
     static QString getProgramName(int program);
     QStringList getAllChannelProgramNames(bool raw=false);
+    int getChannelForItemIndex(int index) const;
     int getActiveItemIndex();
     int getActiveHandIndex(whichPart_t whichPart);
 

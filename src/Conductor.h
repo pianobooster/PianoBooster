@@ -30,6 +30,7 @@
 #define __CONDUCTOR_H__
 
 #include "MidiEvent.h"
+#include "PianoKeyboardState.h"
 #include "Queue.h"
 #include "MidiDevice.h"
 #include "Cfg.h"
@@ -101,6 +102,8 @@ public:
     void playMusic(bool start);
     bool playingMusic() {return m_playing;}
     void reconnectMidi();
+    bool openMidiPort(midiType_t type, const QString &portName) override;
+    void closeMidiPort(midiType_t type, int index) override;
 
     float getSpeed() {return m_tempo.getSpeed();}
     void setSpeed(float speed)
@@ -200,6 +203,14 @@ public:
     {
         m_track2ChannelLookUp[trackNumber] = channelNumber;
     }
+    int outputChannelForTrack(int trackNumber) const
+    {
+        if (trackNumber < 0 || trackNumber >= MAX_MIDI_TRACKS)
+            return -1;
+
+        const int channel = m_track2ChannelLookUp[trackNumber];
+        return channel >= 0 && channel < MAX_MIDI_CHANNELS ? channel : -1;
+    }
 
     bool cfg_timingMarkersFlag;
     stopPointMode_t cfg_stopPointMode;
@@ -227,6 +238,14 @@ protected:
     int track2Channel(int track) {return m_track2ChannelLookUp[track];}
 
 private:
+    enum class midiEventClassification_t
+    {
+        Melodic,
+        Percussion,
+        Control,
+        Auxiliary
+    };
+
     void allSoundOff();
     void resetAllChannels();
     void outputBoostVolume();
@@ -238,6 +257,11 @@ private:
     void fetchNextChord();
     void playTransposeEvent(CMidiEvent event);
     void playTrackEvent(CMidiEvent event);
+    void playTrackEvent(midiEventClassification_t classification, CMidiEvent event);
+    static midiEventClassification_t classifyMidiEvent(const CMidiEvent &event,
+                                                       bool percussion);
+    void dispatchMidiEvent(midiEventClassification_t classification,
+                           const CMidiEvent &event);
     void outputSavedNotesOff();
     void findImminentNotesOff();
     void updatePianoSounds();
@@ -312,6 +336,7 @@ private:
     bool m_mutePianistPart;
     int m_latencyFix;     // Try to fix the latency (put the time in msec, 0 disables it)
     int m_track2ChannelLookUp[MAX_MIDI_TRACKS];
+    CPianoKeyboardState m_pianoKeyboardState;
 };
 
 #endif //__CONDUCTOR_H__

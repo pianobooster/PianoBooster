@@ -119,10 +119,10 @@ void CConductor::channelSoundOff(int channel)
 
     CMidiEvent midi;
     midi.controlChangeEvent(0, channel, MIDI_ALL_NOTES_OFF, 0);
-    playMidiEvent(midi);
+    dispatchMidiEvent(midiEventClassification_t::Control, midi);
     // remove the sustain pedal as well
     midi.controlChangeEvent(0, channel, MIDI_SUSTAIN, 0);
-    playMidiEvent(midi);
+    dispatchMidiEvent(midiEventClassification_t::Control, midi);
 }
 
 void CConductor::allSoundOff()
@@ -146,7 +146,7 @@ void CConductor::resetAllChannels()
     for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
     {
         midi.controlChangeEvent(0, channel, MIDI_RESET_ALL_CONTROLLERS, 0);
-        playMidiEvent(midi);
+        dispatchMidiEvent(midiEventClassification_t::Control, midi);
     }
 }
 
@@ -311,6 +311,19 @@ void CConductor::testWrongNoteSound(bool enable)
     updatePianoSounds();
 }
 
+bool CConductor::openMidiPort(midiType_t type, const QString &portName)
+{
+    return CMidiDevice::openMidiPort(type, portName);
+}
+
+void CConductor::closeMidiPort(midiType_t type, int index)
+{
+    if (type == MIDI_OUTPUT)
+        m_pianoKeyboardState.clearAll();
+
+    CMidiDevice::closeMidiPort(type, index);
+}
+
 void CConductor::reconnectMidi()
 {
     if (!validMidiOutput()) {
@@ -360,12 +373,54 @@ void CConductor::playMusic(bool start)
 // At the moment tracks are only used to remap midi events from channel 0 when using the keyboard lights.
 void CConductor::playTrackEvent(CMidiEvent event)
 {
+    const bool percussion = event.channel() == MIDI_DRUM_CHANNEL;
+    playTrackEvent(classifyMidiEvent(event, percussion), event);
+}
+
+void CConductor::playTrackEvent(midiEventClassification_t classification, CMidiEvent event)
+{
     int track = event.channel();
-    int chan = track2Channel(track);
-    if (chan == -1)
+    if (track < 0 || track >= MAX_MIDI_TRACKS)
         return;
+
+    int chan = track2Channel(track);
+    if (chan < 0 || chan >= MAX_MIDI_CHANNELS)
+        return;
+
     event.setChannel(chan);
-    playMidiEvent(event);
+    dispatchMidiEvent(classification, event);
+}
+
+CConductor::midiEventClassification_t CConductor::classifyMidiEvent(
+        const CMidiEvent &event, bool percussion)
+{
+    if (event.type() == MIDI_CONTROL_CHANGE)
+        return midiEventClassification_t::Control;
+
+    if (event.type() == MIDI_NOTE_ON || event.type() == MIDI_NOTE_OFF)
+        return percussion ? midiEventClassification_t::Percussion
+                          : midiEventClassification_t::Melodic;
+
+    return midiEventClassification_t::Auxiliary;
+}
+
+void CConductor::dispatchMidiEvent(midiEventClassification_t classification,
+                                   const CMidiEvent &event)
+{
+    if (classification == midiEventClassification_t::Melodic)
+    {
+        if (event.type() == MIDI_NOTE_ON)
+            m_pianoKeyboardState.noteOn(event.channel(), event.note(), event.velocity());
+        else if (event.type() == MIDI_NOTE_OFF)
+            m_pianoKeyboardState.noteOff(event.channel(), event.note());
+    }
+    else if (classification == midiEventClassification_t::Control &&
+             event.type() == MIDI_CONTROL_CHANGE)
+    {
+        m_pianoKeyboardState.controlChange(event.channel(), event.data1(), event.data2());
+    }
+
+    CMidiDevice::playMidiEvent(event);
 }
 
 void CConductor::playTransposeEvent(CMidiEvent event)
@@ -485,7 +540,7 @@ void CConductor::turnOnKeyboardLights(bool on)
             event.noteOnEvent(0, Cfg::keyboardLightsChan, note, 1);
         else
             event.noteOffEvent(0, Cfg::keyboardLightsChan, note, 1);
-       playMidiEvent( event ); // don't use the track  settings
+       dispatchMidiEvent(midiEventClassification_t::Auxiliary, event); // don't use the track settings
     }
 }
 
@@ -532,7 +587,7 @@ void CConductor::playWantedChord (CChord chord, CMidiEvent inputNote)
     {
         pitch = chord.getNote(i).pitch();
         inputNote.setNote(pitch);
-        playTrackEvent(inputNote);
+        playTrackEvent(classifyMidiEvent(inputNote, false), inputNote);
     }
 }
 
@@ -766,7 +821,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 if (cfg_rhythmTapping != PB_RHYTHM_TAP_drumsOnly || m_playMode != PB_PLAY_MODE_rhythmTapping)
                 {
                     inputNote.setChannel(m_pianistGoodChan);
-                    playTrackEvent( inputNote );
+                    playTrackEvent(classifyMidiEvent(inputNote, false), inputNote);
                 }
             }
             else
@@ -782,7 +837,7 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 inputNote.setChannel(MIDI_DRUM_CHANNEL);
                 ppLogTrace("note %d", inputNote.note());
                 inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
-                playTrackEvent( inputNote );
+                playTrackEvent(classifyMidiEvent(inputNote, true), inputNote);
             }
         }
     }
@@ -795,7 +850,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
             ppLogTrace("note %d", inputNote.note());
             inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
         }
-        playTrackEvent( inputNote );
+        playTrackEvent(classifyMidiEvent(inputNote,
+                       m_playMode == PB_PLAY_MODE_rhythmTapping), inputNote);
     }
 
     /*
@@ -1093,6 +1149,7 @@ void CConductor::init2(CScore * scoreWin, CSettings* settings)
     if (m_scoreWin)
     {
         m_scoreWin->setRatingObject(&m_rating);
+        m_scoreWin->setPianoKeyboardState(&m_pianoKeyboardState);
         m_piano = m_scoreWin->getPianoObject();
     }
 

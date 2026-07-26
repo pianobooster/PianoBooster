@@ -174,6 +174,23 @@
           </property>
          </spacer>
         </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="pianoKeyboardModeLabel">
+          <property name="text">
+           <string>Piano keyboard mode:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QComboBox" name="pianoKeyboardModeCombo">
+          <property name="toolTip">
+           <string>The synchronized mode shows MIDI events sent by PianoBooster; it does not confirm audio output.</string>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContents</enum>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
      </layout>

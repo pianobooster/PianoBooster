@@ -44,6 +44,12 @@ enum noteNameStyle_t {
     PB_NOTE_NAME_STYLE_COUNT
 };
 
+enum pianoKeyboardMode_t {
+    PB_PIANO_KEYBOARD_MODE_LEGACY = 0,
+    PB_PIANO_KEYBOARD_MODE_SYNCHRONIZED = 1,
+    PB_PIANO_KEYBOARD_MODE_COUNT
+};
+
 static constexpr int defaultNoteNameFontSize() { return 16; }
 static constexpr int defaultNoteNameScale() { return 100; }
 static constexpr int minNoteNameScale() { return 50; }
@@ -61,6 +67,7 @@ public:
     /// returns true if the user wants to see the note names
     bool isNoteNamesEnabled() { return m_noteNamesEnabled; }
     noteNameStyle_t noteNameStyle() const { return m_noteNameStyle; }
+    pianoKeyboardMode_t pianoKeyboardMode() const { return m_pianoKeyboardMode; }
     int noteNameScale() const { return m_noteNameScale; }
     bool displayCourtesyAccidentals() { return CNotation::displayCourtesyAccidentals(); }
 
@@ -71,6 +78,7 @@ public:
     /// Saves in the .ini file whether the user wants to show the note names
     void setNoteNamesEnabled(bool value);
     void setNoteNameStyle(noteNameStyle_t style);
+    void setPianoKeyboardMode(pianoKeyboardMode_t mode);
     void setNoteNameScale(int size);
     void setColoredNotes(bool value);
     void setTutorPagesEnabled(bool value);
@@ -214,6 +222,7 @@ private:
     GuiTopBar* m_guiTopBar;
     bool m_noteNamesEnabled;
     noteNameStyle_t m_noteNameStyle;
+    pianoKeyboardMode_t m_pianoKeyboardMode;
     int m_noteNameScale;
     bool m_coloredNotes;
     bool m_tutorPagesEnabled;

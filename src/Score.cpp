@@ -28,6 +28,7 @@
 
 #include "Cfg.h"
 #include "Draw.h"
+#include "PianoKeyboardState.h"
 #include "Score.h"
 
 CScore::CScore(CSettings* settings) : CDraw(settings)
@@ -135,6 +136,8 @@ void CScore::drawPianoKeyboard(){
             CDraw::drColor (CColor(0.0, 0.0, 0.0));
             if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
             if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
+            if(state[k]==3) CDraw::drColor(Cfg::pianoRightGoodColor());
+            if(state[k]==4) CDraw::drColor(Cfg::pianoLeftGoodColor());
             glBegin(GL_QUADS);
             glVertex2f(0, yBlackSize);
             glVertex2f(xKeySize, yBlackSize);
@@ -154,6 +157,8 @@ void CScore::drawPianoKeyboard(){
             CDraw::drColor (CColor(1.0, 1.0, 1.0));
             if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
             if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
+            if(state[k]==3) CDraw::drColor(Cfg::pianoRightGoodColor());
+            if(state[k]==4) CDraw::drColor(Cfg::pianoLeftGoodColor());
             glBegin(GL_QUADS);
             glVertex2f(0, ySize);
             glVertex2f(xKeySize, ySize);
@@ -197,23 +202,37 @@ void CScore::drawPianoKeyboard(){
     };
     static PianoKeyboard pianoKeyboard;
 
-    CChord chord = m_piano->getBadChord();
-    for(int n=0; n<chord.length(); ++n) {
-        int pitch = chord.getNote(n).pitch();
-        int k = pitch - 21;
-        k = k < 0 ? 0 : (k >= keysCount ? (keysCount-1) : k);
-        pianoKeyboard.state[k] = 2;
-    }
-
-    for (auto *const scroll : m_scroll) {
-        int notes[64];
-        memset(notes, 0, sizeof(notes));
-        bool stopped = scroll->getKeyboardInfo(notes);
-        for(int *note=notes; *note; ++note) {
-            pianoKeyboard.stopped = stopped;
-            int k = *note - 21;
+    if (m_settings->pianoKeyboardMode() == PB_PIANO_KEYBOARD_MODE_LEGACY) {
+        CChord chord = m_piano->getBadChord();
+        for(int n=0; n<chord.length(); ++n) {
+            int pitch = chord.getNote(n).pitch();
+            int k = pitch - 21;
             k = k < 0 ? 0 : (k >= keysCount ? (keysCount-1) : k);
-            pianoKeyboard.state[k] = 1;
+            pianoKeyboard.state[k] = 2;
+        }
+
+        for (auto *const scroll : m_scroll) {
+            int notes[64];
+            memset(notes, 0, sizeof(notes));
+            bool stopped = scroll->getKeyboardInfo(notes);
+            for(int *note=notes; *note; ++note) {
+                pianoKeyboard.stopped = stopped;
+                int k = *note - 21;
+                k = k < 0 ? 0 : (k >= keysCount ? (keysCount-1) : k);
+                pianoKeyboard.state[k] = 1;
+            }
+        }
+    } else if (m_pianoKeyboardState != nullptr) {
+        const CPianoKeyboardState::snapshot_t leftActiveKeys =
+                m_pianoKeyboardState->snapshot(m_pianoKeyboardLeftChannel);
+        const CPianoKeyboardState::snapshot_t rightActiveKeys =
+                m_pianoKeyboardState->snapshot(m_pianoKeyboardRightChannel);
+        for (int k = 0; k < keysCount; ++k) {
+            const std::size_t key = static_cast<std::size_t>(k);
+            if (leftActiveKeys[key])
+                pianoKeyboard.state[k] = 4;
+            if (rightActiveKeys[key])
+                pianoKeyboard.state[k] = 3;
         }
     }
 

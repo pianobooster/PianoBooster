@@ -33,6 +33,8 @@
 #include "Piano.h"
 #include "Settings.h"
 
+class CPianoKeyboardState;
+
 class CScore : public CDraw
 {
 public:
@@ -95,6 +97,15 @@ public:
     }
 
     CPiano* getPianoObject() { return m_piano;}
+    void setPianoKeyboardState(const CPianoKeyboardState *pianoKeyboardState)
+    {
+        m_pianoKeyboardState = pianoKeyboardState;
+    }
+    void setPianoKeyboardChannels(int leftChannel, int rightChannel)
+    {
+        m_pianoKeyboardLeftChannel = leftChannel;
+        m_pianoKeyboardRightChannel = rightChannel;
+    }
 
     void setPlayedNoteColor(int note, CColor color, qint64 wantedDelta, qint64 pianistTimming = NOT_USED)
     {
@@ -144,6 +155,9 @@ private:
     int m_activeScroll;
     GLuint m_scoreDisplayListId;
     GLuint m_stavesDisplayListId;
+    const CPianoKeyboardState *m_pianoKeyboardState = nullptr;
+    int m_pianoKeyboardLeftChannel = -2;
+    int m_pianoKeyboardRightChannel = -2;
 
 };
 

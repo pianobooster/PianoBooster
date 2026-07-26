@@ -73,8 +73,8 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
 
 CGLView::~CGLView()
 {
-    delete m_song;
     delete m_score;
+    delete m_song;
     m_titleHeight = 0;
 }
 

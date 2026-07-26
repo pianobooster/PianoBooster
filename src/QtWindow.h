@@ -94,6 +94,7 @@ private slots:
         preferencesDialog.exec();
 
         refreshTranslate();
+        m_sidePanel->updatePianoKeyboardChannelControls();
         m_score->refreshScroll();
     }
 

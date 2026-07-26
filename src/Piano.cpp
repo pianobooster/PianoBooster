@@ -287,7 +287,7 @@ void CPiano::drawPianoInput()
     int lineLength = (showNoteName) ? PIANO_LINE_LENGTH_SHORT : PIANO_LINE_LENGTH_LONG;
 
     if (m_goodChord.length() > 0)
-        drawPianoInputLines(&m_goodChord, Cfg::pianoGoodColor(), lineLength);
+        drawPianoInputLines(&m_goodChord, Cfg::pianoRightGoodColor(), lineLength);
 
     if (m_badChord.length() > 0)
         drawPianoInputLines(&m_badChord, Cfg::pianoBadColor(), lineLength);
