@@ -47,10 +47,11 @@ public:
 
 private slots:
     void on_loopBarsSpin_valueChanged(double bars);
+    void on_endBarSpin_valueChanged(double endBar);
     void closeEvent(QCloseEvent *event);
 
 private:
-    void updateInfo();
+    void updateControls();
     CSong* m_song;
 };
 

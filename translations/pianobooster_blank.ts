@@ -836,13 +836,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
+        <location filename="../src/GuiLoopingPopup.ui" line="84"/>
         <source>Repeat End Bar:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
-        <source>Repeat Bar is disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -853,11 +848,6 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/GuiLoopingPopup.ui" line="73"/>
-        <source>End bar</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
