@@ -836,13 +836,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/GuiLoopingPopup.cpp" line="51"/>
+        <location filename="../src/GuiLoopingPopup.ui" line="84"/>
         <source>Repeat End Bar:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/GuiLoopingPopup.cpp" line="53"/>
-        <source>Repeat Bar is disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -853,11 +848,6 @@
     <message>
         <location filename="../src/GuiLoopingPopup.ui" line="45"/>
         <source>Repeat Bars:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/GuiLoopingPopup.ui" line="73"/>
-        <source>End bar</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1083,6 +1073,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="180"/>
+        <source>Piano keyboard mode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.ui" line="187"/>
+        <source>The synchronized mode shows MIDI events sent by PianoBooster; it does not confirm audio output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/GuiPreferencesDialog.ui" line="171"/>
         <source>Music Course</source>
         <translation type="unfinished"></translation>
@@ -1105,6 +1105,16 @@
     <message>
         <location filename="../src/GuiPreferencesDialog.cpp" line="42"/>
         <source>Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="47"/>
+        <source>Score guidance (legacy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiPreferencesDialog.cpp" line="48"/>
+        <source>MIDI output (synchronized)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1198,6 +1208,26 @@
     <message>
         <location filename="../src/GuiSidePanel.ui" line="230"/>
         <source>Parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.ui" line="306"/>
+        <source>Left Piano keyboard:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.ui" line="313"/>
+        <source>Select the MIDI channel shown in the left-hand color on the piano keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.ui" line="326"/>
+        <source>Right Piano keyboard:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/GuiSidePanel.ui" line="333"/>
+        <source>Select the MIDI channel shown in the right-hand color on the piano keyboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

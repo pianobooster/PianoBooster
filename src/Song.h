@@ -34,6 +34,7 @@
 #include "Notation.h"
 #include "Conductor.h"
 #include "TrackList.h"
+#include "SongTimeline.h"
 
 #define PC_KEY_LOWEST_NOTE    58
 #define PC_KEY_HIGHEST_NOTE    75
@@ -46,6 +47,19 @@ public:
         CStavePos::setKeySignature( NOT_USED, 0 );
         m_midiFile = new CMidiFile;
         m_trackList = new CTrackList;
+        m_timelineCursor = 0;
+        m_timelineFeedTick = 0;
+        m_scoreTimelineCursor = 0;
+        m_scoreTimelineFeedTick = 0;
+        m_scoreReachedMidiEof = false;
+        m_scrubbing = false;
+        m_scrubAnchorTick = 0;
+        m_scrubTargetTick = 0;
+        m_scrubPreviewTick = 0;
+        m_scrubDirection = 0;
+        m_scrubVisualBaseTick = 0;
+        m_pendingScrubRebase = false;
+        m_pendingScrubRebaseTick = 0;
 
         reset();
     }
@@ -69,6 +83,11 @@ public:
     void regenerateChordQueue();
 
     void rewind();
+    bool beginScrub();
+    qint64 updateScrub(int horizontalPixels);
+    bool commitScrub();
+    void cancelScrub();
+    void applyPendingScrubRebase();
 
     void playFromStartBar()
     {
@@ -88,6 +107,8 @@ public:
 
 private:
     void midiFileInfo();
+    CMidiEvent nextTimelineEvent(std::size_t &cursor, qint64 &feedTick);
+    void seekTimeline(qint64 targetTick);
 
     CMidiFile * m_midiFile;
     CFindChord m_findChord;
@@ -95,7 +116,20 @@ private:
     CChord m_fakeChord;  // the chord played with the tab key
     CTrackList* m_trackList;
     QString m_songTitle;
+    CSongTimeline m_timeline;
+    std::size_t m_timelineCursor;
+    qint64 m_timelineFeedTick;
+    std::size_t m_scoreTimelineCursor;
+    qint64 m_scoreTimelineFeedTick;
+    bool m_scoreReachedMidiEof;
+    bool m_scrubbing;
+    qint64 m_scrubAnchorTick;
+    qint64 m_scrubTargetTick;
+    qint64 m_scrubPreviewTick;
+    int m_scrubDirection;
+    qint64 m_scrubVisualBaseTick;
+    bool m_pendingScrubRebase;
+    qint64 m_pendingScrubRebaseTick;
 };
 
 #endif  // __SONG_H__
-

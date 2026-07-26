@@ -42,11 +42,14 @@ GuiSidePanel::GuiSidePanel(QWidget *parent, CSettings* settings)
     m_topBar = nullptr;
     m_settings = settings;
     setupUi(this);
+    pianoKeyboardChannelWidget->setVisible(false);
 }
 
-void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar)
+void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar,
+                        CScore* score)
 {
     m_song = songObj;
+    m_score = score;
     m_trackList = trackList;
     m_topBar = topBar;
     m_trackList->init(songObj, m_settings);
@@ -105,6 +108,7 @@ void GuiSidePanel::init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar
     connect(act, SIGNAL(triggered()), this, SLOT(clearTrackPart()));
 
     trackListWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
+    updatePianoKeyboardChannelControls();
 }
 
 void GuiSidePanel::refresh() {
@@ -116,8 +120,104 @@ void GuiSidePanel::refresh() {
         trackListWidget->setCurrentRow(m_trackList->getActiveItemIndex());
         for (int i = 0; i < trackListWidget->count(); i++)
             m_trackList->changeListWidgetItemView(i, trackListWidget->item(i));
+        refreshPianoKeyboardChannels();
     }
     autoSetMuteYourPart();
+}
+
+void GuiSidePanel::refreshPianoKeyboardChannels()
+{
+    const QString songPath = m_settings->getCurrentSongLongFileName();
+    const bool sameSong = songPath == m_pianoKeyboardSongPath;
+    const bool hadLeftSelection = sameSong
+            && leftPianoKeyboardChannelCombo->currentIndex() >= 0;
+    const bool hadRightSelection = sameSong
+            && rightPianoKeyboardChannelCombo->currentIndex() >= 0;
+    const int previousLeftChannel = hadLeftSelection
+            ? leftPianoKeyboardChannelCombo->currentData().toInt() : -2;
+    const int previousRightChannel = hadRightSelection
+            ? rightPianoKeyboardChannelCombo->currentData().toInt() : -2;
+    const QStringList channelNames = m_trackList->getAllChannelProgramNames();
+
+    leftPianoKeyboardChannelCombo->clear();
+    rightPianoKeyboardChannelCombo->clear();
+    const int channelCount = static_cast<int>(channelNames.size());
+    for (int index = 0; index < channelCount; ++index)
+    {
+        const int channel = m_trackList->getChannelForItemIndex(index);
+        leftPianoKeyboardChannelCombo->addItem(channelNames.at(index), channel);
+        rightPianoKeyboardChannelCombo->addItem(channelNames.at(index), channel);
+    }
+
+    int leftIndex = leftPianoKeyboardChannelCombo->findData(previousLeftChannel);
+    int rightIndex = rightPianoKeyboardChannelCombo->findData(previousRightChannel);
+    const int activeIndex = m_trackList->getActiveItemIndex();
+    bool leftFromHand = false;
+    bool rightFromHand = false;
+    if (leftIndex < 0)
+    {
+        leftIndex = m_trackList->getHandTrackIndex(PB_PART_left);
+        leftFromHand = leftIndex >= 0;
+    }
+    if (rightIndex < 0)
+    {
+        rightIndex = m_trackList->getHandTrackIndex(PB_PART_right);
+        rightFromHand = rightIndex >= 0;
+    }
+    if (leftIndex < 0 || leftIndex >= channelCount)
+        leftIndex = 0;
+    if (rightIndex < 0 || rightIndex >= channelCount)
+        rightIndex = (activeIndex >= 0 && activeIndex < channelCount) ? activeIndex : 0;
+    if (rightIndex == leftIndex && channelCount > 1)
+    {
+        const bool leftIsExplicit = hadLeftSelection || leftFromHand;
+        const bool rightIsExplicit = hadRightSelection || rightFromHand;
+        if (!leftIsExplicit && rightIsExplicit)
+            leftIndex = (rightIndex + 1) % channelCount;
+        else if (!rightIsExplicit)
+            rightIndex = (leftIndex + 1) % channelCount;
+    }
+
+    const bool hasChannels = channelCount > 0;
+    leftPianoKeyboardChannelCombo->setEnabled(hasChannels);
+    rightPianoKeyboardChannelCombo->setEnabled(hasChannels);
+    leftPianoKeyboardChannelCombo->setCurrentIndex(hasChannels ? leftIndex : -1);
+    rightPianoKeyboardChannelCombo->setCurrentIndex(hasChannels ? rightIndex : -1);
+    m_pianoKeyboardSongPath = songPath;
+    applyPianoKeyboardChannels();
+}
+
+void GuiSidePanel::updatePianoKeyboardChannelControls()
+{
+    const bool synchronized =
+            m_settings->pianoKeyboardMode() == PB_PIANO_KEYBOARD_MODE_SYNCHRONIZED;
+    pianoKeyboardChannelWidget->setVisible(synchronized);
+}
+
+void GuiSidePanel::on_leftPianoKeyboardChannelCombo_activated(int index)
+{
+    Q_UNUSED(index)
+    applyPianoKeyboardChannels();
+}
+
+void GuiSidePanel::on_rightPianoKeyboardChannelCombo_activated(int index)
+{
+    Q_UNUSED(index)
+    applyPianoKeyboardChannels();
+}
+
+void GuiSidePanel::applyPianoKeyboardChannels()
+{
+    if (!m_score)
+        return;
+
+    const int leftChannel = leftPianoKeyboardChannelCombo->currentIndex() >= 0
+            ? leftPianoKeyboardChannelCombo->currentData().toInt() : -2;
+    const int rightChannel = rightPianoKeyboardChannelCombo->currentIndex() >= 0
+            ? rightPianoKeyboardChannelCombo->currentData().toInt() : -2;
+    m_score->setPianoKeyboardChannels(leftChannel, rightChannel);
+    if (m_song)
+        m_song->forceScoreRedraw();
 }
 
 void GuiSidePanel::loadBookList()
@@ -312,4 +412,3 @@ void GuiSidePanel::on_rhythmTappingCombo_activated (int index)
     }
     autoSetMuteYourPart();
 }
-

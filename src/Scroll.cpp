@@ -165,7 +165,9 @@ void CScroll::drawScrollingSymbols(bool show)
         return;
 
     glPushMatrix();
-    glTranslatef (Cfg::playZoneX() + deltaAdjustF(m_deltaTail) * m_noteSpacingFactor, CStavePos::getStaveCenterY(), 0.0f);
+    glTranslatef (Cfg::playZoneX() + deltaAdjustF(m_deltaTail) * m_noteSpacingFactor
+                      + m_scrubVisualOffset,
+                  CStavePos::getStaveCenterY(), 0.0f);
 
     BENCHMARK(8, "glTranslatef");
 
@@ -372,6 +374,7 @@ void CScroll::reset()
     m_wantedIndex = 0;
     m_wantedDelta = 0;
     m_deltaHead = m_deltaTail = 0;
+    m_scrubVisualOffset = 0.0f;
     m_notation->reset();
     m_headSlot.clear();
     for ( i = 0; i < m_scrollQueue->length(); i++)

@@ -61,18 +61,47 @@
         <number>1</number>
        </property>
        <property name="maximum" >
-        <double>99.900000000000006</double>
+        <double>999.899999999999977</double>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="loopingText" >
-     <property name="text" >
-      <string>End bar</string>
+    <layout class="QHBoxLayout" name="endBarLayout" >
+     <property name="spacing" >
+      <number>0</number>
      </property>
-    </widget>
+     <item>
+      <widget class="QLabel" name="endBarLabel" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string>Repeat End Bar:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="endBarSpin" >
+       <property name="maximumSize" >
+        <size>
+         <width>62</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="decimals" >
+        <number>1</number>
+       </property>
+       <property name="maximum" >
+        <double>999.899999999999977</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

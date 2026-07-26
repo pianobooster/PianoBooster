@@ -158,8 +158,7 @@ void GuiTopBar::on_transposeSpin_valueChanged(int value)
 
 void GuiTopBar::setPlayButtonState(bool checked, bool atTheEnd)
 {
-    if (atTheEnd)
-        m_atTheEndOfTheSong = true;
+    m_atTheEndOfTheSong = atTheEnd;
 
     playButton->setChecked(checked);
     if (checked)
@@ -174,6 +173,20 @@ void GuiTopBar::setPlayButtonState(bool checked, bool atTheEnd)
         playButton->setToolTip(tr("Start and stop playing music"));
         playFromStartButton->setToolTip(tr("Playing music from the beginning"));
     }
+}
+
+void GuiTopBar::setPausedState()
+{
+    playButton->setChecked(false);
+    playButton->setIcon(QIcon(":/images/play.png"));
+    playButton->setToolTip(tr("Start and stop playing music"));
+    playFromStartButton->setToolTip(tr("Playing music from the beginning"));
+}
+
+void GuiTopBar::setPausedState(bool atTheEnd)
+{
+    m_atTheEndOfTheSong = atTheEnd;
+    setPausedState();
 }
 
 void GuiTopBar::updateTranslate(){

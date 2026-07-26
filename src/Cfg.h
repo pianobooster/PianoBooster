@@ -103,7 +103,8 @@ public:
     static CColor backgroundColor()      {return CColor(0.0, 0.0, 0.0);} // black
     static CColor barMarkerColor()       {return CColor(0.3, 0.25, 0.25);} // grey
     static CColor beatMarkerColor()      {return CColor(0.25, 0.2, 0.2);} // grey
-    static CColor pianoGoodColor()      {return playedGoodColor();}
+    static CColor pianoLeftGoodColor()  {return noteColor();}
+    static CColor pianoRightGoodColor() {return playedGoodColor();}
     static CColor pianoBadColor()       {return CColor(1.0, 0.0, 0.0);}
     static CColor noteNameColor()       {return CColor(1.0, 1.0, 1.0);}
 

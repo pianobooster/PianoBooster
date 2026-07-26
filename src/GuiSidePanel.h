@@ -47,9 +47,11 @@ class GuiSidePanel : public QWidget, private Ui::GuiSidePanel
 public:
     GuiSidePanel(QWidget *parent, CSettings* settings);
 
-    void init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar);
+    void init(CSong* songObj, CTrackList* trackList, GuiTopBar* topBar,
+              CScore* score);
 
     void refresh();
+    void updatePianoKeyboardChannelControls();
 
     void loadBookList();
     void setBookName(const QString &bookName);
@@ -96,6 +98,8 @@ private slots:
     void on_bothHandsRadio_toggled (bool checked);
     void on_leftHandRadio_toggled (bool checked);
     void on_repeatSong_released();
+    void on_leftPianoKeyboardChannelCombo_activated(int index);
+    void on_rightPianoKeyboardChannelCombo_activated(int index);
 
     void on_trackListWidget_currentRowChanged(int currentRow) {
         if (m_trackList){
@@ -177,6 +181,8 @@ private slots:
 
 private:
     void autoSetMuteYourPart();
+    void refreshPianoKeyboardChannels();
+    void applyPianoKeyboardChannels();
 
     QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
     QMap<QAction*,QMap<QString,QString>> listActionsRetranslateUi;
@@ -186,6 +192,7 @@ private:
     CTrackList* m_trackList;
     GuiTopBar* m_topBar;
     CSettings* m_settings;
+    QString m_pianoKeyboardSongPath;
     QWidget *m_parent;
 };
 

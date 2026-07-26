@@ -326,6 +326,15 @@ QStringList CTrackList::getAllChannelProgramNames(bool raw)
     return items;
 }
 
+int CTrackList::getChannelForItemIndex(int index) const
+{
+    if (index < 0 || index >= static_cast<int>(m_partsList.size()))
+        return -1;
+
+    const int track = m_partsList.at(index).midiChannel();
+    return m_song ? m_song->outputChannelForTrack(track) : -1;
+}
+
 int CTrackList::getActiveHandIndex(whichPart_t whichPart)
 {
     int index = 0;
