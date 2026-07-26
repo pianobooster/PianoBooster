@@ -31,6 +31,8 @@
 
 #include "MidiEvent.h"
 #include "PianoKeyboardState.h"
+#include "ScrubPreview.h"
+#include "SongTimeline.h"
 #include "Queue.h"
 #include "MidiDevice.h"
 #include "Cfg.h"
@@ -104,6 +106,15 @@ public:
     void reconnectMidi();
     bool openMidiPort(midiType_t type, const QString &portName) override;
     void closeMidiPort(midiType_t type, int index) override;
+    void previewScrubGroup(std::int64_t groupId,
+                           const std::vector<CScrubPreviewState::note_t> &notes);
+    void clearScrubPreview();
+    qint64 currentRawTick() const
+    {
+        return m_absoluteTickScaled / SPEED_ADJUST_FACTOR;
+    }
+    void prepareTimelineSeek(qint64 targetTick, const CPlaybackState &state);
+    void setScrubPosition(qint64 targetTick, const CBarPosition &position);
 
     float getSpeed() {return m_tempo.getSpeed();}
     void setSpeed(float speed)
@@ -193,6 +204,7 @@ public:
     double getCurrentBarPos(){ return m_bar.getCurrentBarPos();}
 
     void setPlayFromBar(double bar){ m_bar.setPlayFromBar(bar);}
+    double getPlayFromBar() const { return m_bar.getPlayFromBar(); }
     void setPlayUptoBar(double bar){ m_bar.setPlayUptoBar(bar);}
     double getPlayUptoBar(){ return m_bar.getPlayUptoBar();}
     void setLoopingBars(double bars){ m_bar.setLoopingBars(bars);}
@@ -246,6 +258,13 @@ private:
         Auxiliary
     };
 
+    enum class midiEventOrigin_t
+    {
+        Normal,
+        Pianist,
+        ScrubPreview
+    };
+
     void allSoundOff();
     void resetAllChannels();
     void outputBoostVolume();
@@ -257,11 +276,17 @@ private:
     void fetchNextChord();
     void playTransposeEvent(CMidiEvent event);
     void playTrackEvent(CMidiEvent event);
-    void playTrackEvent(midiEventClassification_t classification, CMidiEvent event);
+    void playTrackEvent(midiEventClassification_t classification,
+                        CMidiEvent event,
+                        midiEventOrigin_t origin = midiEventOrigin_t::Normal);
     static midiEventClassification_t classifyMidiEvent(const CMidiEvent &event,
                                                        bool percussion);
     void dispatchMidiEvent(midiEventClassification_t classification,
-                           const CMidiEvent &event);
+                           const CMidiEvent &event,
+                           midiEventOrigin_t origin = midiEventOrigin_t::Normal);
+    void dispatchScrubPreviewCommands(
+            const CScrubPreviewState::command_list_t &commands);
+    void restorePendingPlaybackState();
     void outputSavedNotesOff();
     void findImminentNotesOff();
     void updatePianoSounds();
@@ -337,6 +362,11 @@ private:
     int m_latencyFix;     // Try to fix the latency (put the time in msec, 0 disables it)
     int m_track2ChannelLookUp[MAX_MIDI_TRACKS];
     CPianoKeyboardState m_pianoKeyboardState;
+    CScrubPreviewState m_scrubPreviewState;
+    std::int64_t m_scrubClockMs;
+    qint64 m_absoluteTickScaled;
+    CPlaybackState m_pendingPlaybackState;
+    bool m_hasPendingPlaybackState;
 };
 
 #endif //__CONDUCTOR_H__

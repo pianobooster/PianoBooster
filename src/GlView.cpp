@@ -60,6 +60,10 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
     m_forceRatingRedraw = 0;
     m_forceBarRedraw = 0;
     m_allowedTimerEvent = true;
+    m_mouseScrubState = MouseScrubState::Idle;
+    m_scrubOriginX = 0;
+    m_lastScrubPixels = 0;
+    m_mouseGrabbed = false;
 
     m_backgroundColor = QColor(0, 0, 0);
 
@@ -73,6 +77,7 @@ CGLView::CGLView(QtWindow* parent, CSettings* settings)
 
 CGLView::~CGLView()
 {
+    cancelMouseScrub();
     delete m_score;
     delete m_song;
     m_titleHeight = 0;
@@ -103,6 +108,7 @@ void CGLView::paintGL()
     BENCHMARK(2, "enter");
 
     m_displayUpdateTicks = 0;
+    m_song->applyPendingScrubRebase();
 
     if (m_fullRedrawFlag)
         m_forcefullRedraw = m_forceRatingRedraw = m_forceBarRedraw = REDRAW_COUNT;
@@ -271,6 +277,8 @@ void CGLView::drawBarNumber()
 
 void CGLView::resizeGL(int width, int height)
 {
+    cancelMouseScrub();
+
     const int maxSoreWidth = 1024;
     const int staveEndGap = 20;
     const int heightAboveStave =  static_cast<int>(CStavePos::verticalNoteSpacing() * MAX_STAVE_INDEX);
@@ -317,12 +325,163 @@ void CGLView::resizeGL(int width, int height)
 
 void CGLView::mousePressEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event)
+    if (event->button() != Qt::LeftButton || m_mouseScrubState != MouseScrubState::Idle
+        || !isInMusicalRegion(event->pos()))
+    {
+        QOpenGLWidget::mousePressEvent(event);
+        return;
+    }
+
+    m_mouseScrubState = MouseScrubState::Candidate;
+    m_mousePressPosition = event->pos();
+    event->accept();
 }
 
 void CGLView::mouseMoveEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event)
+    if (m_mouseScrubState == MouseScrubState::Idle)
+    {
+        QOpenGLWidget::mouseMoveEvent(event);
+        return;
+    }
+
+    if ((event->buttons() & Qt::LeftButton) == 0)
+    {
+        cancelMouseScrub();
+        QOpenGLWidget::mouseMoveEvent(event);
+        return;
+    }
+
+    if (m_mouseScrubState == MouseScrubState::Candidate)
+    {
+        const int distance = (event->pos() - m_mousePressPosition).manhattanLength();
+        if (distance < QApplication::startDragDistance())
+        {
+            event->accept();
+            return;
+        }
+
+        if (!m_song->beginScrub())
+        {
+            resetMouseScrubState();
+            event->accept();
+            return;
+        }
+
+        m_mouseScrubState = MouseScrubState::Scrubbing;
+        m_scrubOriginX = event->pos().x();
+        m_lastScrubPixels = 0;
+        grabMouse();
+        m_mouseGrabbed = true;
+        setCursor(Qt::ClosedHandCursor);
+        emit scrubStarted();
+        update();
+        event->accept();
+        return;
+    }
+
+    const int horizontalPixels = event->pos().x() - m_scrubOriginX;
+    if (horizontalPixels != m_lastScrubPixels)
+    {
+        m_lastScrubPixels = horizontalPixels;
+        m_song->updateScrub(horizontalPixels);
+        update();
+    }
+    event->accept();
+}
+
+void CGLView::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (event->button() != Qt::LeftButton || m_mouseScrubState == MouseScrubState::Idle)
+    {
+        QOpenGLWidget::mouseReleaseEvent(event);
+        return;
+    }
+
+    if (m_mouseScrubState == MouseScrubState::Candidate)
+    {
+        resetMouseScrubState();
+        event->accept();
+        return;
+    }
+
+    const int horizontalPixels = event->pos().x() - m_scrubOriginX;
+    if (horizontalPixels != m_lastScrubPixels)
+    {
+        m_lastScrubPixels = horizontalPixels;
+        m_song->updateScrub(horizontalPixels);
+    }
+
+    const bool atTheEnd = m_song->commitScrub();
+    resetMouseScrubState();
+    emit scrubFinished(atTheEnd);
+    update();
+    event->accept();
+}
+
+void CGLView::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Escape && m_mouseScrubState != MouseScrubState::Idle)
+    {
+        cancelMouseScrub();
+        event->accept();
+        return;
+    }
+
+    QOpenGLWidget::keyPressEvent(event);
+}
+
+bool CGLView::event(QEvent *event)
+{
+    if ((event->type() == QEvent::WindowDeactivate || event->type() == QEvent::UngrabMouse)
+        && m_mouseScrubState == MouseScrubState::Scrubbing)
+    {
+        if (event->type() == QEvent::UngrabMouse)
+            m_mouseGrabbed = false;
+        cancelMouseScrub();
+    }
+
+    return QOpenGLWidget::event(event);
+}
+
+bool CGLView::isInMusicalRegion(const QPoint &position) const
+{
+    const int openGlX = position.x() - Cfg::getAppX();
+    const int openGlY = height() - position.y() - Cfg::getAppY();
+    const float margin = CStavePos::verticalNoteSpacing() * 2.0f;
+    const float bottom = CStavePos(PB_PART_left, MIN_STAVE_INDEX).getPosY() - margin;
+    const float top = CStavePos(PB_PART_right, MAX_STAVE_INDEX).getPosY() + margin;
+
+    return openGlX >= static_cast<int>(Cfg::scrollStartX())
+        && openGlX <= static_cast<int>(Cfg::staveEndX())
+        && openGlY >= static_cast<int>(bottom)
+        && openGlY <= static_cast<int>(top);
+}
+
+void CGLView::cancelMouseScrub()
+{
+    if (m_mouseScrubState == MouseScrubState::Scrubbing)
+    {
+        m_song->cancelScrub();
+        resetMouseScrubState();
+        update();
+        return;
+    }
+
+    resetMouseScrubState();
+}
+
+void CGLView::resetMouseScrubState()
+{
+    m_mouseScrubState = MouseScrubState::Idle;
+    m_scrubOriginX = 0;
+    m_lastScrubPixels = 0;
+    unsetCursor();
+    if (m_mouseGrabbed)
+    {
+        m_mouseGrabbed = false;
+        releaseMouse();
+    }
 }
 
 void CGLView::initializeGL()

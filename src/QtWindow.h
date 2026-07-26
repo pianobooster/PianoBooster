@@ -60,19 +60,7 @@ public:
 
     void init();
 
-    void songEventUpdated(eventBits_t eventBits)
-    {
-        if ((eventBits & EVENT_BITS_playingStopped) != 0){
-            if (m_sidePanel->isRepeatSong()){
-                m_topBar->on_playFromStartButton_clicked(true);
-            }else{
-                m_topBar->setPlayButtonState(false, true);
-            }
-        }
-        if ((eventBits & EVENT_BITS_loadSong) != 0){
-            m_topBar->setPlayButtonState(false, true);
-        }
-    }
+    void songEventUpdated(eventBits_t eventBits);
 
     void loadTutorHtml(const QString & name);
     void setCurrentFile(const QString &fileName);
@@ -86,6 +74,8 @@ private slots:
     void openRecentFile();
 
     void showMidiSetup();
+    void onScrubStarted();
+    void onScrubFinished(bool atTheEnd);
 
     void showPreferencesDialog()
     {

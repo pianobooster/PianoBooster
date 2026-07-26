@@ -104,6 +104,9 @@ QtWindow::QtWindow()
     m_tutorWindow = new QTextBrowser(this);
     m_tutorWindow->hide();
 
+    connect(m_glWidget, &CGLView::scrubStarted, this, &QtWindow::onScrubStarted);
+    connect(m_glWidget, &CGLView::scrubFinished, this, &QtWindow::onScrubFinished);
+
     m_settings->init(m_song, m_sidePanel, m_topBar);
 
     mainLayout->addWidget(m_sidePanel);
@@ -155,6 +158,22 @@ void QtWindow::init()
 
     refreshTranslate();
     show();
+}
+
+void QtWindow::songEventUpdated(eventBits_t eventBits)
+{
+    if ((eventBits & EVENT_BITS_playingStopped) != 0)
+    {
+        if (m_sidePanel->isRepeatSong())
+            m_topBar->on_playFromStartButton_clicked(true);
+        else
+            m_topBar->setPausedState(true);
+    }
+    if ((eventBits & EVENT_BITS_loadSong) != 0)
+    {
+        m_glWidget->cancelMouseScrub();
+        m_topBar->setPausedState(false);
+    }
 }
 
 QtWindow::~QtWindow()
@@ -475,6 +494,18 @@ void QtWindow::showMidiSetup(){
     m_glWidget->startTimerEvent();
 }
 
+void QtWindow::onScrubStarted()
+{
+    // Preserve the anchor's EOF state until commit. This also lets Escape or
+    // another cancellation restore the exact pre-scrub Continue semantics.
+    m_topBar->setPausedState();
+}
+
+void QtWindow::onScrubFinished(bool atTheEnd)
+{
+    m_topBar->setPausedState(atTheEnd);
+}
+
 // load the recent file list from the config file into the file menu
 void QtWindow::updateRecentFileActions()
 {
@@ -676,6 +707,7 @@ void QtWindow::writeSettings()
 void QtWindow::closeEvent(QCloseEvent *event)
 {
     Q_UNUSED(event)
+    m_glWidget->cancelMouseScrub();
     if (m_song->playingMusic())
     {
         m_song->playMusic(false);
@@ -686,6 +718,13 @@ void QtWindow::closeEvent(QCloseEvent *event)
 
 void QtWindow::keyPressEvent ( QKeyEvent * event )
 {
+    if (event->key() == Qt::Key_Escape)
+    {
+        m_glWidget->cancelMouseScrub();
+        event->accept();
+        return;
+    }
+
     if (event->text().length() == 0)
         return;
 

@@ -49,6 +49,8 @@ public:
     void refresh(bool reset);
 
     void setPlayButtonState(bool checked, bool atTheEnd = false);
+    void setPausedState();
+    void setPausedState(bool atTheEnd);
 
     void setSpeed(int value){ speedSpin->setValue(value); }
     int getSpeed(){return speedSpin->value();}
