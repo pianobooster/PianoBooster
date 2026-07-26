@@ -84,7 +84,8 @@ qint64 CBar::addDeltaTime(qint64 ticks)
 
 qint64 CBar::goToBarNumer()
 {
-    const auto ticks = static_cast<qint64>(m_playFromBar - getCurrentBarPos()) * m_beatLength * SPEED_ADJUST_FACTOR + 1;
+    const auto ticks = static_cast<qint64>(
+        (m_playFromBar - getCurrentBarPos()) * static_cast<double>(m_beatLength) * SPEED_ADJUST_FACTOR + 1.0);
     addDeltaTime(ticks);
     return ticks;
 }
