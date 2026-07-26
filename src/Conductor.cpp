@@ -51,6 +51,9 @@ CConductor::CConductor()
     m_savedNoteQueue = new CQueue<CMidiEvent>(200);
     m_savedNoteOffQueue = new CQueue<CMidiEvent>(200);
     m_playing = false;
+    m_scrubClockMs = 0;
+    m_absoluteTickScaled = 0;
+    m_hasPendingPlaybackState = false;
     m_transpose = 0;
     m_latencyFix = 0;
     m_leadLagAdjust = 0;
@@ -119,10 +122,11 @@ void CConductor::channelSoundOff(int channel)
 
     CMidiEvent midi;
     midi.controlChangeEvent(0, channel, MIDI_ALL_NOTES_OFF, 0);
-    playMidiEvent(midi);
+    dispatchMidiEvent(midiEventClassification_t::Control, midi);
     // remove the sustain pedal as well
     midi.controlChangeEvent(0, channel, MIDI_SUSTAIN, 0);
-    playMidiEvent(midi);
+    dispatchMidiEvent(midiEventClassification_t::Control, midi);
+    m_scrubPreviewState.clearExternalChannel(channel);
 }
 
 void CConductor::allSoundOff()
@@ -146,7 +150,7 @@ void CConductor::resetAllChannels()
     for ( channel = 0; channel < MAX_MIDI_CHANNELS; channel++)
     {
         midi.controlChangeEvent(0, channel, MIDI_RESET_ALL_CONTROLLERS, 0);
-        playMidiEvent(midi);
+        dispatchMidiEvent(midiEventClassification_t::Control, midi);
     }
 }
 
@@ -231,6 +235,7 @@ void CConductor::transpose(int transpose)
 {
     if (m_transpose != transpose)
     {
+        clearScrubPreview();
         allSoundOff();
         m_transpose = transpose;
         if (m_transpose >  12)
@@ -250,6 +255,7 @@ void CConductor::setActiveHand(whichPart_t hand)
 {
     if (CNote::getActiveHand() == hand)
         return;
+    clearScrubPreview();
     CNote::setActiveHand(hand);
     outputBoostVolume();
     resetWantedChord();
@@ -260,6 +266,7 @@ void CConductor::setActiveHand(whichPart_t hand)
 
 void CConductor::setPlayMode(playMode_t mode)
 {
+    clearScrubPreview();
     m_playMode = mode;
     if ( m_playMode == PB_PLAY_MODE_listen )
         resetWantedChord();
@@ -269,6 +276,7 @@ void CConductor::setPlayMode(playMode_t mode)
 
 void CConductor::setActiveChannel(int channel)
 {
+    clearScrubPreview();
     m_activeChannel = channel;
     outputBoostVolume();
     resetWantedChord();
@@ -311,6 +319,22 @@ void CConductor::testWrongNoteSound(bool enable)
     updatePianoSounds();
 }
 
+bool CConductor::openMidiPort(midiType_t type, const QString &portName)
+{
+    return CMidiDevice::openMidiPort(type, portName);
+}
+
+void CConductor::closeMidiPort(midiType_t type, int index)
+{
+    if (type == MIDI_OUTPUT) {
+        clearScrubPreview();
+        m_pianoKeyboardState.clearAll();
+    }
+    m_scrubPreviewState.clearExternalNotes();
+
+    CMidiDevice::closeMidiPort(type, index);
+}
+
 void CConductor::reconnectMidi()
 {
     if (!validMidiOutput()) {
@@ -329,6 +353,7 @@ void CConductor::reconnectMidi()
 
 void CConductor::playMusic(bool start)
 {
+    clearScrubPreview();
     reconnectMidi();
     m_playing = start;
     allSoundOff();
@@ -338,6 +363,7 @@ void CConductor::playMusic(bool start)
 
         testWrongNoteSound(false);
         outputBoostVolume();
+        restorePendingPlaybackState();
         if (seekingBarNumber())
             resetWantedChord();
 
@@ -355,17 +381,225 @@ void CConductor::playMusic(bool start)
     }
 }
 
+void CConductor::prepareTimelineSeek(qint64 targetTick,
+                                     const CPlaybackState &state)
+{
+    if (targetTick < 0)
+        targetTick = 0;
+
+    allSoundOff();
+    m_playing = false;
+    m_songEventQueue->clear();
+    m_savedNoteQueue->clear();
+    m_savedNoteOffQueue->clear();
+    m_wantedChordQueue->clear();
+    m_nextMidiEvent.clear();
+    m_playingDeltaTime = 0;
+    m_chordDeltaTime = 0;
+    m_goodPlayedNotes.clear();
+    m_followState = PB_FOLLOW_searching;
+    m_followPlayingTimeOut = false;
+    m_silenceTimeOut = 0;
+    m_tempo.clearPlayingTicks();
+    m_tempo.setMidiTempo(state.tempoMicrosecondsPerQuarter);
+    m_absoluteTickScaled = targetTick * SPEED_ADJUST_FACTOR;
+    m_bar.seekToPosition(state.barPosition.bar,
+                         state.barPosition.beat,
+                         state.barPosition.tickInBeat,
+                         state.barPosition.numerator,
+                         state.barPosition.denominator);
+    if (m_piano)
+        m_piano->clear();
+    resetWantedChord();
+
+    m_pendingPlaybackState = state;
+    m_hasPendingPlaybackState = true;
+    forceScoreRedraw();
+}
+
+void CConductor::setScrubPosition(qint64 targetTick,
+                                  const CBarPosition &position)
+{
+    m_absoluteTickScaled = qMax<qint64>(0, targetTick) * SPEED_ADJUST_FACTOR;
+    m_bar.seekToPosition(position.bar,
+                         position.beat,
+                         position.tickInBeat,
+                         position.numerator,
+                         position.denominator);
+    setEventBits(m_bar.readEventBits());
+}
+
+void CConductor::restorePendingPlaybackState()
+{
+    if (!m_hasPendingPlaybackState)
+        return;
+
+    for (int channel = 0; channel < MAX_MIDI_CHANNELS; ++channel) {
+        // These channels belong to live input and have their own configured
+        // patches.  The song context must not overwrite them on Continue.
+        if (channel == MIDI_DRUM_CHANNEL || hasPianistKeyboardChannel(channel))
+            continue;
+
+        const CChannelPlaybackState &channelState =
+                m_pendingPlaybackState.channels[static_cast<std::size_t>(channel)];
+        CMidiEvent event;
+        event.programChangeEvent(0, channel, channelState.program);
+        playTransposeEvent(event);
+
+        for (int controller = 0; controller < MAX_MIDI_NOTES; ++controller) {
+            const int value =
+                    channelState.controls[static_cast<std::size_t>(controller)];
+            if (value < 0)
+                continue;
+            event.controlChangeEvent(0, channel, controller, value);
+            playTransposeEvent(event);
+        }
+
+        event.pitchBendEvent(0, channel,
+                             channelState.pitchBendLsb,
+                             channelState.pitchBendMsb);
+        playTransposeEvent(event);
+        event.channelPressure(0, channel, channelState.channelPressure);
+        playTransposeEvent(event);
+
+        int rehydratedVoices = 0;
+        static const int maxRehydratedVoicesPerChannel = 64;
+        for (int pitch = 0;
+             pitch < MAX_MIDI_NOTES &&
+             rehydratedVoices < maxRehydratedVoicesPerChannel;
+             ++pitch) {
+            const CNotePlaybackState &note =
+                    channelState.notes[static_cast<std::size_t>(pitch)];
+            const int heldVoices = qMin<int>(
+                    static_cast<int>(note.heldVoices),
+                    maxRehydratedVoicesPerChannel - rehydratedVoices);
+            for (int voice = 0; voice < heldVoices; ++voice) {
+                event.noteOnEvent(0, channel, pitch,
+                                  note.heldVelocity > 0 ? note.heldVelocity : 1);
+                playTransposeEvent(event);
+                ++rehydratedVoices;
+            }
+            const int sustainedVoices = qMin<int>(
+                    static_cast<int>(note.sustainedVoices),
+                    maxRehydratedVoicesPerChannel - rehydratedVoices);
+            for (int voice = 0; voice < sustainedVoices; ++voice) {
+                event.noteOnEvent(0, channel, pitch,
+                                  note.sustainedVelocity > 0
+                                      ? note.sustainedVelocity : 1);
+                playTransposeEvent(event);
+                event.noteOffEvent(0, channel, pitch, 0);
+                playTransposeEvent(event);
+                ++rehydratedVoices;
+            }
+        }
+    }
+    m_hasPendingPlaybackState = false;
+}
+
+void CConductor::dispatchScrubPreviewCommands(
+        const CScrubPreviewState::command_list_t &commands)
+{
+    for (const CScrubPreviewState::command_t &command : commands) {
+        CMidiEvent event;
+        if (command.type == CScrubPreviewState::commandType_t::NoteOn)
+            event.noteOnEvent(0, command.channel, command.pitch, command.velocity);
+        else
+            event.noteOffEvent(0, command.channel, command.pitch, 0);
+        dispatchMidiEvent(midiEventClassification_t::Melodic, event,
+                          midiEventOrigin_t::ScrubPreview);
+    }
+    if (!commands.empty())
+        forceScoreRedraw();
+}
+
+void CConductor::previewScrubGroup(
+        std::int64_t groupId,
+        const std::vector<CScrubPreviewState::note_t> &notes)
+{
+    const CScrubPreviewState::groupResult_t result =
+            m_scrubPreviewState.startGroup(groupId, m_scrubClockMs, notes);
+    dispatchScrubPreviewCommands(result.commands);
+    if (result.triggered)
+        forceScoreRedraw();
+}
+
+void CConductor::clearScrubPreview()
+{
+    const bool wasActive = m_scrubPreviewState.active();
+    dispatchScrubPreviewCommands(m_scrubPreviewState.clear());
+    if (wasActive)
+        forceScoreRedraw();
+}
+
 // This will allow us to map midi tracks onto midi channels
 // tacks will eventually allow for more than the 16 midi channels (eg with two mid devices)
 // At the moment tracks are only used to remap midi events from channel 0 when using the keyboard lights.
 void CConductor::playTrackEvent(CMidiEvent event)
 {
+    const bool percussion = event.channel() == MIDI_DRUM_CHANNEL;
+    playTrackEvent(classifyMidiEvent(event, percussion), event);
+}
+
+void CConductor::playTrackEvent(midiEventClassification_t classification,
+                                CMidiEvent event,
+                                midiEventOrigin_t origin)
+{
     int track = event.channel();
-    int chan = track2Channel(track);
-    if (chan == -1)
+    if (track < 0 || track >= MAX_MIDI_TRACKS)
         return;
+
+    int chan = track2Channel(track);
+    if (chan < 0 || chan >= MAX_MIDI_CHANNELS)
+        return;
+
     event.setChannel(chan);
-    playMidiEvent(event);
+    dispatchMidiEvent(classification, event, origin);
+}
+
+CConductor::midiEventClassification_t CConductor::classifyMidiEvent(
+        const CMidiEvent &event, bool percussion)
+{
+    if (event.type() == MIDI_CONTROL_CHANGE)
+        return midiEventClassification_t::Control;
+
+    if (event.type() == MIDI_NOTE_ON || event.type() == MIDI_NOTE_OFF)
+        return percussion ? midiEventClassification_t::Percussion
+                          : midiEventClassification_t::Melodic;
+
+    return midiEventClassification_t::Auxiliary;
+}
+
+void CConductor::dispatchMidiEvent(midiEventClassification_t classification,
+                                   const CMidiEvent &event,
+                                   midiEventOrigin_t origin)
+{
+    if (origin == midiEventOrigin_t::Pianist &&
+        classification == midiEventClassification_t::Melodic) {
+        if (event.type() == MIDI_NOTE_ON && event.velocity() > 0) {
+            dispatchScrubPreviewCommands(
+                    m_scrubPreviewState.externalNoteOn(
+                            event.channel(), event.note(), event.velocity()));
+        } else if (event.type() == MIDI_NOTE_OFF ||
+                   (event.type() == MIDI_NOTE_ON && event.velocity() == 0)) {
+            m_scrubPreviewState.externalNoteOff(event.channel(), event.note());
+        }
+    }
+
+    if (classification == midiEventClassification_t::Melodic &&
+        origin != midiEventOrigin_t::ScrubPreview)
+    {
+        if (event.type() == MIDI_NOTE_ON)
+            m_pianoKeyboardState.noteOn(event.channel(), event.note(), event.velocity());
+        else if (event.type() == MIDI_NOTE_OFF)
+            m_pianoKeyboardState.noteOff(event.channel(), event.note());
+    }
+    else if (classification == midiEventClassification_t::Control &&
+             event.type() == MIDI_CONTROL_CHANGE)
+    {
+        m_pianoKeyboardState.controlChange(event.channel(), event.data1(), event.data2());
+    }
+
+    CMidiDevice::playMidiEvent(event);
 }
 
 void CConductor::playTransposeEvent(CMidiEvent event)
@@ -485,7 +719,7 @@ void CConductor::turnOnKeyboardLights(bool on)
             event.noteOnEvent(0, Cfg::keyboardLightsChan, note, 1);
         else
             event.noteOffEvent(0, Cfg::keyboardLightsChan, note, 1);
-       playMidiEvent( event ); // don't use the track  settings
+       dispatchMidiEvent(midiEventClassification_t::Auxiliary, event); // don't use the track settings
     }
 }
 
@@ -532,7 +766,8 @@ void CConductor::playWantedChord (CChord chord, CMidiEvent inputNote)
     {
         pitch = chord.getNote(i).pitch();
         inputNote.setNote(pitch);
-        playTrackEvent(inputNote);
+        playTrackEvent(classifyMidiEvent(inputNote, false), inputNote,
+                       midiEventOrigin_t::Pianist);
     }
 }
 
@@ -766,7 +1001,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 if (cfg_rhythmTapping != PB_RHYTHM_TAP_drumsOnly || m_playMode != PB_PLAY_MODE_rhythmTapping)
                 {
                     inputNote.setChannel(m_pianistGoodChan);
-                    playTrackEvent( inputNote );
+                    playTrackEvent(classifyMidiEvent(inputNote, false), inputNote,
+                                   midiEventOrigin_t::Pianist);
                 }
             }
             else
@@ -782,7 +1018,8 @@ void CConductor::pianistInput(CMidiEvent inputNote)
                 inputNote.setChannel(MIDI_DRUM_CHANNEL);
                 ppLogTrace("note %d", inputNote.note());
                 inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
-                playTrackEvent( inputNote );
+                playTrackEvent(classifyMidiEvent(inputNote, true), inputNote,
+                               midiEventOrigin_t::Pianist);
             }
         }
     }
@@ -795,7 +1032,9 @@ void CConductor::pianistInput(CMidiEvent inputNote)
             ppLogTrace("note %d", inputNote.note());
             inputNote.setNote((hand == PB_PART_right)? m_cfg_rhythmTapRightHandDrumSound : m_cfg_rhythmTapLeftHandDrumSound);
         }
-        playTrackEvent( inputNote );
+        playTrackEvent(classifyMidiEvent(inputNote,
+                       m_playMode == PB_PLAY_MODE_rhythmTapping), inputNote,
+                       midiEventOrigin_t::Pianist);
     }
 
     /*
@@ -819,6 +1058,9 @@ void CConductor::addDeltaTime(qint64 ticks)
     m_scoreWin->scrollDeltaTime(ticks);
     m_playingDeltaTime += ticks;
     m_chordDeltaTime +=ticks;
+    m_absoluteTickScaled += ticks;
+    if (m_absoluteTickScaled < 0)
+        m_absoluteTickScaled = 0;
 }
 
 void CConductor::followPlaying()
@@ -901,12 +1143,23 @@ void CConductor::missedNotesColor(CColor color)
 
 void CConductor::realTimeEngine(qint64 mSecTicks)
 {
+    if (mSecTicks > 0)
+        m_scrubClockMs += mSecTicks;
+    const bool previewWasActive = m_scrubPreviewState.active();
+    dispatchScrubPreviewCommands(m_scrubPreviewState.expire(m_scrubClockMs));
+    if (previewWasActive && !m_scrubPreviewState.active())
+        forceScoreRedraw();
+
     auto ticks = m_tempo.mSecToTicks(mSecTicks);
-    if (!m_followPlayingTimeOut)
-        m_pianistTiming += ticks;
 
     while (checkMidiInput() > 0)
         expandPianistInput(readMidiInput());
+
+    if (m_playing == false)
+        return;
+
+    if (!m_followPlayingTimeOut)
+        m_pianistTiming += ticks;
 
     if (getfollowState() == PB_FOLLOW_waiting )
     {
@@ -944,9 +1197,6 @@ void CConductor::realTimeEngine(qint64 mSecTicks)
     }
 
     m_silenceTimeOut = 0;
-    if (m_playing == false)
-        return;
-
     if (seekingBarNumber())
         ticks = 0;
 
@@ -1052,6 +1302,8 @@ void CConductor::rewind()
     m_lastSound = -1;
     m_rating.reset();
     m_playingDeltaTime = 0;
+    m_absoluteTickScaled = 0;
+    m_hasPendingPlaybackState = false;
     m_tempo.reset();
 
     m_songEventQueue->clear();
@@ -1093,6 +1345,8 @@ void CConductor::init2(CScore * scoreWin, CSettings* settings)
     if (m_scoreWin)
     {
         m_scoreWin->setRatingObject(&m_rating);
+        m_scoreWin->setPianoKeyboardState(&m_pianoKeyboardState);
+        m_scoreWin->setScrubPreviewState(&m_scrubPreviewState);
         m_piano = m_scoreWin->getPianoObject();
     }
 

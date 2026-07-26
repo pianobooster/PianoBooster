@@ -58,6 +58,9 @@ public:
 
     void setPlayFromBar(double bar);
     void setPlayFromBar(int bar, int beat = 0, int ticks = 0);
+    double getPlayFromBar() const { return m_playFromBar; }
+    void seekToPosition(int bar, int beat, qint64 ticksWithinBeat,
+                        int timeSigTop, int timeSigBottom);
     void reset() {
         setTimeSig( 0 , 0);
         m_playFromBar = 0.0;
@@ -65,6 +68,7 @@ public:
         m_loopingBars = 0.0;
         m_seekingBarNumber = false;
         m_flushTicks = false;
+        m_directPosition = false;
         m_eventBits = 0;
         setupEnableFlags();
     }
@@ -80,6 +84,7 @@ public:
 
         setTimeSig( 0 , 0);
         setTimeSig(top, bottom);
+        m_directPosition = false;
         checkGotoBar();
     }
     void getTimeSig(int *top, int *bottom) {
@@ -134,6 +139,7 @@ private:
     double m_loopingBars;
     bool m_seekingBarNumber;
     bool m_flushTicks;
+    bool m_directPosition;
     eventBits_t m_eventBits;
     bool m_enableLooping;
     bool m_enablePlayFromBar;
@@ -141,4 +147,3 @@ private:
 };
 
 #endif  // __BAR_H__
-

@@ -286,6 +286,64 @@
     </widget>
    </item>
    <item>
+    <widget class="QWidget" name="pianoKeyboardChannelWidget" native="true">
+     <layout class="QGridLayout" name="pianoKeyboardChannelLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="leftPianoKeyboardChannelLabel">
+        <property name="text">
+         <string>Left Piano keyboard:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="leftPianoKeyboardChannelCombo">
+        <property name="toolTip">
+         <string>Select the MIDI channel shown in the left-hand color on the piano keyboard</string>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="rightPianoKeyboardChannelLabel">
+        <property name="text">
+         <string>Right Piano keyboard:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="rightPianoKeyboardChannelCombo">
+        <property name="toolTip">
+         <string>Select the MIDI channel shown in the right-hand color on the piano keyboard</string>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <spacer>
      <property name="orientation">
       <enum>Qt::Vertical</enum>

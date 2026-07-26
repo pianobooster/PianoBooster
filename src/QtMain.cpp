@@ -22,11 +22,21 @@
 #include <QApplication>
 
 #include <cstdlib>
+#include <cstdio>
 
 #include "QtWindow.h"
 #include "version.h"
 
 int main(int argc, char *argv[]){
+#ifdef Q_OS_LINUX
+    if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM")
+        && qEnvironmentVariableIsSet("WAYLAND_DISPLAY")
+        && qEnvironmentVariableIsSet("DISPLAY")) {
+        qputenv("QT_QPA_PLATFORM", QByteArrayLiteral("xcb"));
+        fprintf(stderr, "Info: forcing QT_QPA_PLATFORM=xcb under Wayland\n");
+    }
+#endif
+
     QCoreApplication::setOrganizationName(QStringLiteral("PianoBooster"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("https://github.com/pianobooster/PianoBooster"));
     QCoreApplication::setApplicationName(QStringLiteral("Piano Booster"));

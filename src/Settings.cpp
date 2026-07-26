@@ -60,6 +60,27 @@
 #define debugSettings(args)
 #endif
 
+static noteNameStyle_t sanitizeNoteNameStyle(int value)
+{
+    if (value < PB_NOTE_NAME_STYLE_LETTERS || value >= PB_NOTE_NAME_STYLE_COUNT)
+        return PB_NOTE_NAME_STYLE_LETTERS;
+
+    return static_cast<noteNameStyle_t>(value);
+}
+
+static pianoKeyboardMode_t sanitizePianoKeyboardMode(int value)
+{
+    if (value < PB_PIANO_KEYBOARD_MODE_LEGACY || value >= PB_PIANO_KEYBOARD_MODE_COUNT)
+        return PB_PIANO_KEYBOARD_MODE_LEGACY;
+
+    return static_cast<pianoKeyboardMode_t>(value);
+}
+
+static int sanitizeNoteNameScale(int value)
+{
+    return qBound(minNoteNameScale(), value, maxNoteNameScale());
+}
+
 CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSettings::UserScope, "PianoBooster", "Piano Booster"),
                                  m_mainWindow(mainWindow)
 {
@@ -68,6 +89,12 @@ CSettings::CSettings(QtWindow *mainWindow) : QSettings(CSettings::IniFormat, CSe
     m_advancedMode = false;
     m_pianistActive = false;
     m_noteNamesEnabled = value("Score/NoteNames", true ).toBool();
+    m_noteNameStyle = sanitizeNoteNameStyle(value("Score/NoteNameStyle", PB_NOTE_NAME_STYLE_LETTERS).toInt());
+    m_pianoKeyboardMode = sanitizePianoKeyboardMode(value("Score/PianoKeyboardMode", PB_PIANO_KEYBOARD_MODE_LEGACY).toInt());
+    if (contains("Score/NoteNameScale"))
+        m_noteNameScale = sanitizeNoteNameScale(value("Score/NoteNameScale", defaultNoteNameScale()).toInt());
+    else
+        m_noteNameScale = sanitizeNoteNameScale(value("Score/NoteNameFontSize", defaultNoteNameFontSize()).toInt() * 100 / defaultNoteNameFontSize());
     m_coloredNotes = value("Score/ColoredNotes", false ).toBool();
     m_tutorPagesEnabled = value("Tutor/TutorPages", true ).toBool();
     CNotation::setCourtesyAccidentals(value("Score/CourtesyAccidentals", false ).toBool());
@@ -95,6 +122,21 @@ void CSettings::init(CSong* song, GuiSidePanel* sidePanel, GuiTopBar* topBar)
 void CSettings::setNoteNamesEnabled(bool value) {
     m_noteNamesEnabled = value;
     setValue("Score/NoteNames", value );
+}
+
+void CSettings::setNoteNameStyle(noteNameStyle_t style) {
+    m_noteNameStyle = sanitizeNoteNameStyle(style);
+    setValue("Score/NoteNameStyle", static_cast<int>(m_noteNameStyle));
+}
+
+void CSettings::setPianoKeyboardMode(pianoKeyboardMode_t mode) {
+    m_pianoKeyboardMode = sanitizePianoKeyboardMode(mode);
+    setValue("Score/PianoKeyboardMode", static_cast<int>(m_pianoKeyboardMode));
+}
+
+void CSettings::setNoteNameScale(int size) {
+    m_noteNameScale = sanitizeNoteNameScale(size);
+    setValue("Score/NoteNameScale", m_noteNameScale);
 }
 
 void CSettings::setColoredNotes(bool value) {

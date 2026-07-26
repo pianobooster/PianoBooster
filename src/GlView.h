@@ -54,8 +54,14 @@ public:
 
     void stopTimerEvent();
     void startTimerEvent();
+    void cancelMouseScrub();
+
+signals:
+    void scrubStarted();
+    void scrubFinished(bool atTheEnd);
 
 protected:
+    bool event(QEvent *event);
     void timerEvent(QTimerEvent *event);
     void mediaTimerEvent(int ticks);
 
@@ -64,9 +70,21 @@ protected:
     void resizeGL(int width, int height);
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void keyPressEvent(QKeyEvent *event);
     void renderText(double x, double y, double z, const QString &str, const QFont & font);
 
 private:
+    enum class MouseScrubState
+    {
+        Idle,
+        Candidate,
+        Scrubbing
+    };
+
+    bool isInMusicalRegion(const QPoint &position) const;
+    void resetMouseScrubState();
+
     void drawDisplayText();
     void drawTimeSignature();
     void drawAccurracyBar();
@@ -95,6 +113,11 @@ private:
     int m_titleHeight;
     eventBits_t m_eventBits;
     bool m_allowedTimerEvent;
+    MouseScrubState m_mouseScrubState;
+    QPoint m_mousePressPosition;
+    int m_scrubOriginX;
+    int m_lastScrubPixels;
+    bool m_mouseGrabbed;
 };
 
 #endif // __GLVIEW_H__
