@@ -246,7 +246,7 @@ static const struct pcNote_s
 bool CSong::pcKeyPress(int key, bool down)
 {
     int i;
-    size_t j;
+    int j;
     CMidiEvent midi;
     const int cfg_pcKeyVolume = 64;
     const int cfg_pcKeyChannel = 1-1;
@@ -282,4 +282,3 @@ bool CSong::pcKeyPress(int key, bool down)
     //printf("pcKeyPress %d %d\n", m_pcNote, key);
     return false;
 }
-
