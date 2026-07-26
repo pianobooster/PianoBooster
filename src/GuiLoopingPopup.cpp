@@ -41,16 +41,17 @@ GuiLoopingPopup::GuiLoopingPopup(QWidget *parent)
 void GuiLoopingPopup::init(CSong* song)
 {
     m_song = song;
-    loopBarsSpin->setValue(m_song->getLoopingBars());
-    updateInfo();
+    updateControls();
 }
 
-void GuiLoopingPopup::updateInfo()
+void GuiLoopingPopup::updateControls()
 {
-    if (m_song->getLoopingBars() > 0.0)
-        loopingText->setText(tr("Repeat End Bar:") + " " + QString().setNum(m_song->getPlayUptoBar()));
-    else
-        loopingText->setText(tr("Repeat Bar is disabled"));
+    QSignalBlocker loopBarsBlocker(loopBarsSpin);
+    QSignalBlocker endBarBlocker(endBarSpin);
+
+    endBarSpin->setMinimum(m_song->getPlayFromBar());
+    loopBarsSpin->setValue(m_song->getLoopingBars());
+    endBarSpin->setValue(m_song->getPlayUptoBar());
 }
 
 void GuiLoopingPopup::on_loopBarsSpin_valueChanged(double bars)
@@ -58,7 +59,15 @@ void GuiLoopingPopup::on_loopBarsSpin_valueChanged(double bars)
     if (!m_song) return;
 
     m_song->setLoopingBars( bars);
-    updateInfo();
+    updateControls();
+}
+
+void GuiLoopingPopup::on_endBarSpin_valueChanged(double endBar)
+{
+    if (!m_song) return;
+
+    m_song->setLoopingBars(endBar - m_song->getPlayFromBar());
+    updateControls();
 }
 
 void GuiLoopingPopup::closeEvent(QCloseEvent *event)
@@ -68,4 +77,3 @@ void GuiLoopingPopup::closeEvent(QCloseEvent *event)
     if (parent)
         parent->setChecked(false);
 }
-

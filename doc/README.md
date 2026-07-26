@@ -89,6 +89,7 @@ Timing markers are new in version 0.6.2.
 - Adjust the *volume* of the current part or the *volume* your piano part.
 - See the *accuracy* of you playing.
 - Change the *start bar* to start playing from any bar in the music. The *repeat bars* allows you to practice just a few difficult bars continuously.
+- Drag the musical score horizontally with the left mouse button to hear and preview another position, then use Play/Pause to continue from there.
 - *Timing markers* are white crosses that are drawn over each note and show if you are playing ahead or behind the beat.
 - A different instrument sound is used for the right and wrong notes that you play.
 

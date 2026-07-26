@@ -32,13 +32,30 @@
       <item>
        <layout class="QGridLayout" name="gridLayout">
         <item row="1" column="0">
+         <widget class="QLabel" name="noteNameSizeLabel">
+          <property name="text">
+           <string>Note Name Size:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="noteNameSizeSpin">
+          <property name="toolTip">
+           <string>Adjust the note name size relative to the score</string>
+          </property>
+          <property name="suffix">
+           <string> %</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
          <widget class="QCheckBox" name="courtesyAccidentalsCheck">
           <property name="text">
            <string>Courtesy Accidentals</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="1">
+        <item row="6" column="1">
          <widget class="QComboBox" name="followStopPointCombo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -51,14 +68,14 @@
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
+        <item row="6" column="0">
          <widget class="QLabel" name="label">
           <property name="text">
            <string>Follow stop point:</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="2" column="1">
          <spacer name="horizontalSpacer_4">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -72,19 +89,16 @@
          </spacer>
         </item>
         <item row="0" column="1">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+         <widget class="QComboBox" name="noteNameStyleCombo">
+          <property name="toolTip">
+           <string>Choose how note names are displayed on the score</string>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContents</enum>
           </property>
-         </spacer>
+         </widget>
         </item>
-        <item row="2" column="0">
+        <item row="3" column="0">
          <widget class="QCheckBox" name="timingMarkersCheck">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -104,7 +118,7 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
+        <item row="3" column="1">
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -117,7 +131,7 @@
           </property>
          </spacer>
         </item>
-        <item row="3" column="1">
+        <item row="4" column="1">
          <spacer name="horizontalSpacer_3">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -130,14 +144,14 @@
           </property>
          </spacer>
         </item>
-        <item row="3" column="0">
+        <item row="4" column="0">
          <widget class="QCheckBox" name="followThroughErrorsCheck">
           <property name="text">
            <string>Follow Through Errors</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="0">
+        <item row="5" column="0">
          <widget class="QCheckBox" name="showColoredNotesCheck">
           <property name="toolTip">
            <string>Show color coded notes on the score</string>
@@ -147,7 +161,7 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
+        <item row="5" column="1">
          <spacer name="horizontalSpacer_5">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -159,6 +173,23 @@
            </size>
           </property>
          </spacer>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="pianoKeyboardModeLabel">
+          <property name="text">
+           <string>Piano keyboard mode:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QComboBox" name="pianoKeyboardModeCombo">
+          <property name="toolTip">
+           <string>The synchronized mode shows MIDI events sent by PianoBooster; it does not confirm audio output.</string>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContents</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
