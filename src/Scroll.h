@@ -61,6 +61,8 @@ public:
     }
     void reset();
     void scrollDeltaTime(qint64 ticks);
+    void setScrubVisualOffset(float pixels) { m_scrubVisualOffset = pixels; }
+    float pixelsPerTick() const { return m_noteSpacingFactor; }
     void transpose(int transpose);
     void refresh();
     void setPlayedNoteColor(int note, CColor color, qint64 wantedDelta, qint64 pianistTimming);
@@ -113,6 +115,7 @@ private:
     bool m_show; // set to true to show on the screen
     float m_noteSpacingFactor;
     float m_ppqnFactor; // if PulsesPerQuarterNote is 96 then the factor is 1.0
+    float m_scrubVisualOffset;
 };
 
 #endif //__SCROLL_H__

@@ -34,6 +34,7 @@
 #include "Settings.h"
 
 class CPianoKeyboardState;
+class CScrubPreviewState;
 
 class CScore : public CDraw
 {
@@ -91,6 +92,19 @@ public:
             scroll->scrollDeltaTime(ticks);
     }
 
+    void setScrubVisualOffset(float pixels)
+    {
+        if (m_activeScroll >= 0)
+            m_scroll[m_activeScroll]->setScrubVisualOffset(pixels);
+    }
+
+    float pixelsPerTick() const
+    {
+        if (m_activeScroll < 0)
+            return 1.0f;
+        return m_scroll[m_activeScroll]->pixelsPerTick();
+    }
+
     void setRatingObject(CRating* rating)
     {
         m_rating = rating;
@@ -100,6 +114,10 @@ public:
     void setPianoKeyboardState(const CPianoKeyboardState *pianoKeyboardState)
     {
         m_pianoKeyboardState = pianoKeyboardState;
+    }
+    void setScrubPreviewState(const CScrubPreviewState *scrubPreviewState)
+    {
+        m_scrubPreviewState = scrubPreviewState;
     }
     void setPianoKeyboardChannels(int leftChannel, int rightChannel)
     {
@@ -156,6 +174,7 @@ private:
     GLuint m_scoreDisplayListId;
     GLuint m_stavesDisplayListId;
     const CPianoKeyboardState *m_pianoKeyboardState = nullptr;
+    const CScrubPreviewState *m_scrubPreviewState = nullptr;
     int m_pianoKeyboardLeftChannel = -2;
     int m_pianoKeyboardRightChannel = -2;
 

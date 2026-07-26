@@ -126,9 +126,10 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR} ${OPENGL_INC
 
 SET(PB_BASE_SRCS MidiFile.cpp MidiTrack.cpp Song.cpp Conductor.cpp Util.cpp
     PianoKeyboardState.cpp
+    SongTimeline.cpp ScrubPreview.cpp
     Chord.cpp Tempo.cpp MidiDevice.cpp MidiDeviceRt.cpp ${PB_BASE_SRCS})
 SET(PB_BASE_HDR MidiFile.h MidiTrack.h Song.h Conductor.h Rating.h Util.h
-    PianoKeyboardState.h
+    PianoKeyboardState.h SongTimeline.h ScrubPreview.h
     Chord.h Tempo.h MidiDevice.h)
 
 if(USE_JACK)
@@ -385,6 +386,28 @@ if(BUILD_TESTING)
         AUTORCC OFF
         LINK_LIBRARIES "")
     add_test(NAME PianoKeyboardState COMMAND pianobooster_piano_keyboard_state_test)
+
+    add_executable(pianobooster_score_scrub_test EXCLUDE_FROM_ALL
+        ../tests/ScoreScrubTest.cpp
+        SongTimeline.cpp)
+    set_target_properties(pianobooster_score_scrub_test PROPERTIES
+        AUTOMOC OFF
+        AUTOUIC OFF
+        AUTORCC OFF)
+    target_link_libraries(pianobooster_score_scrub_test
+        ${QT_PACKAGE_NAME}::Core
+        ${QT_PACKAGE_NAME}::Widgets)
+    add_test(NAME ScoreScrub COMMAND pianobooster_score_scrub_test)
+
+    add_executable(pianobooster_scrub_preview_test EXCLUDE_FROM_ALL
+        ../tests/ScrubPreviewTest.cpp
+        ScrubPreview.cpp)
+    set_target_properties(pianobooster_scrub_preview_test PROPERTIES
+        AUTOMOC OFF
+        AUTOUIC OFF
+        AUTORCC OFF
+        LINK_LIBRARIES "")
+    add_test(NAME ScrubPreview COMMAND pianobooster_scrub_preview_test)
 endif()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../music/BoosterMusicBooks.zip ${CMAKE_CURRENT_BINARY_DIR}/ COPYONLY)

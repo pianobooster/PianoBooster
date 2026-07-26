@@ -94,7 +94,7 @@ void CBar::checkGotoBar()
 {
     double currentBar = getCurrentBarPos();
     ppDEBUG_BAR(("checkGotoBar currentBarPos %.1f", currentBar));
-    if (currentBar < m_playFromBar )
+    if (!m_directPosition && currentBar < m_playFromBar )
         m_seekingBarNumber = true;
     else
     {
@@ -109,10 +109,35 @@ void CBar::checkGotoBar()
 
 void CBar::setPlayFromBar(double bar)
 {
+    m_directPosition = false;
     m_playFromBar = bar;
     m_playUptoBar = m_playFromBar + m_loopingBars;
     setupEnableFlags();
     checkGotoBar();
+}
+
+void CBar::seekToPosition(int bar, int beat, qint64 ticksWithinBeat,
+                          int timeSigTop, int timeSigBottom)
+{
+    if (timeSigTop <= 0)
+        timeSigTop = 4;
+    if (timeSigBottom <= 0)
+        timeSigBottom = 4;
+
+    m_currentTimeSigTop = timeSigTop;
+    m_currentTimeSigBottom = timeSigBottom;
+    m_beatLength = (CMidiFile::getPulsesPerQuarterNote() * 4) / m_currentTimeSigBottom;
+    m_barLength = m_beatLength * m_currentTimeSigTop;
+
+    m_barCounter = qMax(0, bar);
+    m_beatCounter = qBound(0, beat, m_currentTimeSigTop - 1);
+    const qint64 boundedTicks = qBound<qint64>(0, ticksWithinBeat,
+                                               qMax<qint64>(0, m_beatLength - 1));
+    m_deltaTime = boundedTicks * SPEED_ADJUST_FACTOR;
+    m_seekingBarNumber = false;
+    m_flushTicks = false;
+    m_directPosition = true;
+    m_eventBits |= EVENT_BITS_newBarNumber | EVENT_BITS_forceFullRedraw;
 }
 
 void CBar::setPlayFromBar(int bar, int beat, int ticks)

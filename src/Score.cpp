@@ -29,6 +29,7 @@
 #include "Cfg.h"
 #include "Draw.h"
 #include "PianoKeyboardState.h"
+#include "ScrubPreview.h"
 #include "Score.h"
 
 CScore::CScore(CSettings* settings) : CDraw(settings)
@@ -232,6 +233,18 @@ void CScore::drawPianoKeyboard(){
             if (leftActiveKeys[key])
                 pianoKeyboard.state[k] = 4;
             if (rightActiveKeys[key])
+                pianoKeyboard.state[k] = 3;
+        }
+    }
+
+    if (m_scrubPreviewState != nullptr && m_scrubPreviewState->active()) {
+        const CScrubPreviewState::snapshot_t preview =
+                m_scrubPreviewState->snapshot();
+        for (int k = 0; k < keysCount; ++k) {
+            const std::size_t key = static_cast<std::size_t>(k);
+            if (preview.left[key])
+                pianoKeyboard.state[k] = 4;
+            if (preview.right[key])
                 pianoKeyboard.state[k] = 3;
         }
     }
