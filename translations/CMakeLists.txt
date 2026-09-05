@@ -14,6 +14,7 @@ SET( TRANSLATIONS_FILES
      pianobooster_pl.ts
      pianobooster_ru.ts
      pianobooster_sk.ts
+     pianobooster_sr.ts
      pianobooster_sv.ts
      pianobooster_uk.ts
      pianobooster_zh.ts
